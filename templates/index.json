@@ -830,6 +830,681 @@
         "atc_btn_big": false,
         "atc_btn_ani": false
       }
+    },
+    "e24c145a-a58e-4e51-95af-2654bc94dc42": {
+      "type": "kt_sc_faqs_page",
+      "disabled": true,
+      "blocks": {
+        "9c588fd0-0033-4da1-b5bb-42578492c581": {
+          "type": "parent",
+          "settings": {
+            "col": 8
+          }
+        },
+        "944e0b9b-ab37-44f0-be76-8ec76a0fd5cc": {
+          "type": "item_1",
+          "settings": {
+            "title": "Title 1"
+          }
+        },
+        "24da1a4d-1aa4-4d78-aa07-869fd8940486": {
+          "type": "item",
+          "settings": {
+            "title": "Title 1",
+            "content": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+          }
+        }
+      },
+      "block_order": [
+        "9c588fd0-0033-4da1-b5bb-42578492c581",
+        "944e0b9b-ab37-44f0-be76-8ec76a0fd5cc",
+        "24da1a4d-1aa4-4d78-aa07-869fd8940486"
+      ],
+      "settings": {
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "3rem 0 6rem",
+        "section_bg": ""
+      }
+    },
+    "f229cafc-d1d8-4b61-a46c-0fd52c49eece": {
+      "type": "rd_image_w_text_1",
+      "disabled": true,
+      "blocks": {
+        "189b4512-0de3-4bdb-8a2d-705013be5b5b": {
+          "type": "1",
+          "settings": {
+            "image_banner": "shopify:\/\/shop_images\/COS-LOGO.png",
+            "height": "adapt",
+            "layout": "text-first",
+            "image_link": "",
+            "text_align": "",
+            "title_section": "Title",
+            "stitle_section": "Subtitle",
+            "content_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "color_title": "#222222",
+            "color_sub_title": "#222222",
+            "color_desc": "#666666",
+            "name_btn": "Visit Our Store<i class=\"d-icon-arrow-right\"><\/i>",
+            "style_btn": "btn-dark btn-link btn-underline",
+            "style_btn_rounded": "",
+            "btn_shadow": false
+          }
+        },
+        "d0dea888-66a3-43e4-94af-24d8cd8708a6": {
+          "type": "1",
+          "settings": {
+            "height": "large",
+            "layout": "text-first",
+            "image_link": "",
+            "text_align": "",
+            "title_section": "Title",
+            "stitle_section": "Subtitle",
+            "content_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "color_title": "#222222",
+            "color_sub_title": "#222222",
+            "color_desc": "#666666",
+            "name_btn": "Visit Our Store<i class=\"d-icon-arrow-right\"><\/i>",
+            "style_btn": "btn-dark btn-link btn-underline",
+            "style_btn_rounded": "",
+            "btn_shadow": false
+          }
+        }
+      },
+      "block_order": [
+        "189b4512-0de3-4bdb-8a2d-705013be5b5b",
+        "d0dea888-66a3-43e4-94af-24d8cd8708a6"
+      ],
+      "settings": {
+        "off_mobile": false,
+        "off_desktop": false,
+        "title": "Image with text 1",
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "css": ""
+      }
+    },
+    "ce8ec8c1-ba48-465c-a726-2aaff1de4f11": {
+      "type": "rd_countto_w_text",
+      "disabled": true,
+      "settings": {
+        "title": "Count to with Text",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "title_section": "Provide perfect and practical services",
+        "stitle_section": "01. What We Do",
+        "descrip_section": "Lorem quis bibendum auctar, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
+        "reverse": false,
+        "count_1": "35",
+        "title_1": "Business Year",
+        "stitle_1": "Lorem ipsum dolor sit amet, conctetur adipisci elit. viverra erat orci.",
+        "count_2": "50",
+        "title_2": "Design Brands",
+        "stitle_2": "Lorem ipsum dolor sit amet, conctetur adipisci elit. viverra erat orci.",
+        "count_3": "130",
+        "title_3": "Team Members",
+        "stitle_3": "Lorem ipsum dolor sit amet, conctetur adipisci elit. viverra erat orci.",
+        "color_title": "#222222",
+        "color_sub_title": "#222222",
+        "color_desc": "#666666",
+        "css": ""
+      }
+    },
+    "8d71088b-ec20-475c-aa71-86457bb83d33": {
+      "type": "rd_banner_cta_01",
+      "disabled": true,
+      "blocks": {
+        "9d438e30-cc9d-4f82-b25e-061e4f1b702f": {
+          "type": "title",
+          "settings": {
+            "title_style": "auto",
+            "title": "",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        },
+        "b84aed08-44dc-4de1-9238-6f6134c1b0e2": {
+          "type": "it_banner",
+          "settings": {
+            "title": "Banner item",
+            "image_link": "",
+            "blank_link": false,
+            "desc": "",
+            "color_desc": "#fff",
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "name_btn": "SHOP NOW",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "text_align_top": 50,
+            "text_align_start": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_start_mb": 16,
+            "text_align_mb": "",
+            "title_right": "This Week's Most Wanted",
+            "color_title_right": "#262626",
+            "stitle_right": "",
+            "color_stitle_right": "#262626",
+            "name_btn_2": "Subscribe",
+            "style_btn_2": "btn-primary",
+            "style_btn_rounded_2": "",
+            "btn_shadow_2": false,
+            "banner-effect": ""
+          }
+        },
+        "68642538-97ed-4e97-9202-1ee55795b894": {
+          "type": "it_banner",
+          "settings": {
+            "title": "Banner item",
+            "image_link": "",
+            "blank_link": false,
+            "desc": "",
+            "color_desc": "#fff",
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "name_btn": "SHOP NOW",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "text_align_top": 50,
+            "text_align_start": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_start_mb": 16,
+            "text_align_mb": "",
+            "title_right": "This Week's Most Wanted",
+            "color_title_right": "#262626",
+            "stitle_right": "",
+            "color_stitle_right": "#262626",
+            "name_btn_2": "Subscribe",
+            "style_btn_2": "btn-primary",
+            "style_btn_rounded_2": "",
+            "btn_shadow_2": false,
+            "banner-effect": ""
+          }
+        }
+      },
+      "block_order": [
+        "9d438e30-cc9d-4f82-b25e-061e4f1b702f",
+        "b84aed08-44dc-4de1-9238-6f6134c1b0e2",
+        "68642538-97ed-4e97-9202-1ee55795b894"
+      ],
+      "settings": {
+        "title": "Banner Flexible",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "section_bg_op": 1,
+        "css_section": ""
+      }
+    },
+    "275cbf37-5eaf-4d88-8661-7eda9e89a00c": {
+      "type": "rd_banner_cta_02",
+      "disabled": true,
+      "settings": {
+        "title_banner": "Banner Fix 02",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "stitle": "",
+        "title": "",
+        "desc": "",
+        "link_to": "",
+        "name_link": "",
+        "style_btn": "btn-dark",
+        "border_radius": 10,
+        "autoplay": false,
+        "css_section": ""
+      }
+    },
+    "379b2398-64fc-43d7-a5e8-fb7a1bfe8cbb": {
+      "type": "rd_banner_fix01",
+      "disabled": true,
+      "blocks": {
+        "template--18286564376879__379b2398-64fc-43d7-a5e8-fb7a1bfe8cbb-1678686754f08f470e-0": {
+          "type": "it_banner",
+          "settings": {
+            "title": "Banner item",
+            "title_1": "SPORTING GOODS",
+            "image_link": "",
+            "blank_link": false,
+            "name_btn": "DISCOVER NOW",
+            "name_btn_2": "",
+            "image_link_2": "",
+            "subtitle_2": "Clearance",
+            "title_2": "For Fitness Classes",
+            "text_white_2": "from $19.99",
+            "btn_banner_2": "SHOP NOW",
+            "link_banner_2": "",
+            "subtitle_3": "On Sale",
+            "title_3": "Transform Your Life",
+            "text_white_3": "from $39.00",
+            "btn_banner_3": "Discover now",
+            "link_banner_3": "",
+            "subtitle_4": "Clearance",
+            "title_4": "Build Your Body",
+            "text_white_4": "from $19.99 pixels",
+            "btn_banner_4": "SHOP NOW",
+            "link_banner_4": "",
+            "subtitle_5": "Flash Sale",
+            "title_5": "30% OFF",
+            "btn_banner_5": "SHOP ALL SALE",
+            "link_banner_5": ""
+          }
+        },
+        "777269c8-3a85-40a7-bce8-1e4a33aa74f6": {
+          "type": "title",
+          "settings": {
+            "title_style": "auto",
+            "title": "",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        }
+      },
+      "block_order": [
+        "template--18286564376879__379b2398-64fc-43d7-a5e8-fb7a1bfe8cbb-1678686754f08f470e-0",
+        "777269c8-3a85-40a7-bce8-1e4a33aa74f6"
+      ],
+      "settings": {
+        "title": "Banner Flexible",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "border_radius": 10,
+        "css_section": ""
+      }
+    },
+    "eb46beb2-8277-438f-b35a-7279dcca7376": {
+      "type": "rd_brand_1",
+      "disabled": true,
+      "blocks": {
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/COS-LOGO.png",
+            "brand_call_to_action": ""
+          }
+        },
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-1": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-2": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-3": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-4": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-5": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-6": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-0",
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-1",
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-2",
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-3",
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-4",
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-5",
+        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-6"
+      ],
+      "settings": {
+        "title": "Brands",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "border_top": true,
+        "border_bottom": false,
+        "border_color": "#ebebeb",
+        "autoplay": false,
+        "use_navigation": true,
+        "nav_style": "-default",
+        "nav_mode": "default",
+        "nav_position": "nav-default",
+        "use_dots": false,
+        "dots_mode": "default",
+        "dots_position": "inside",
+        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 0\n  },\n  \"480\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 0\n  },\n  \"768\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 0\n  },\n  \"992\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 0\n  },\n  \"1200\": {\n    \"slidesPerView\": 7,\n    \"spaceBetween\": 0\n  }\n}",
+        "css": ""
+      }
+    },
+    "394155d1-218a-4b10-80f3-de72df4364f7": {
+      "type": "kt_banner_flexible",
+      "disabled": true,
+      "blocks": {
+        "3c083dc9-72b6-4ac1-8f4a-479d3fc6468b": {
+          "type": "it_banner",
+          "settings": {
+            "title": "Banner item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 6,
+            "width_lg": 4,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "image_link": "",
+            "blank_link": false,
+            "desc": "Trending now",
+            "color_desc": "#fff",
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "name_btn": "DISCOVER NOW",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "name_btn_2": "",
+            "image_link_2": "",
+            "style_btn_2": "btn-primary",
+            "style_btn_rounded_2": "",
+            "btn_shadow_2": false,
+            "text_align_top": 50,
+            "text_align_start": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_start_mb": 16,
+            "text_align_mb": "",
+            "banner-effect": ""
+          }
+        },
+        "b575c175-73b7-4046-afde-b51f4b06aebf": {
+          "type": "it_banner",
+          "settings": {
+            "title": "Banner item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 6,
+            "width_lg": 4,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "image_link": "",
+            "blank_link": false,
+            "desc": "Trending now",
+            "color_desc": "#fff",
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "name_btn": "DISCOVER NOW",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "name_btn_2": "",
+            "image_link_2": "",
+            "style_btn_2": "btn-primary",
+            "style_btn_rounded_2": "",
+            "btn_shadow_2": false,
+            "text_align_top": 50,
+            "text_align_start": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_start_mb": 16,
+            "text_align_mb": "",
+            "banner-effect": ""
+          }
+        },
+        "4528b534-ec2a-4fee-ab3b-d6069aae6480": {
+          "type": "it_banner",
+          "settings": {
+            "title": "Banner item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 6,
+            "width_lg": 4,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "image_link": "",
+            "blank_link": false,
+            "desc": "Trending now",
+            "color_desc": "#fff",
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "name_btn": "DISCOVER NOW",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "name_btn_2": "",
+            "image_link_2": "",
+            "style_btn_2": "btn-primary",
+            "style_btn_rounded_2": "",
+            "btn_shadow_2": false,
+            "text_align_top": 50,
+            "text_align_start": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_start_mb": 16,
+            "text_align_mb": "",
+            "banner-effect": ""
+          }
+        }
+      },
+      "block_order": [
+        "3c083dc9-72b6-4ac1-8f4a-479d3fc6468b",
+        "b575c175-73b7-4046-afde-b51f4b06aebf",
+        "4528b534-ec2a-4fee-ab3b-d6069aae6480"
+      ],
+      "settings": {
+        "title": "Banner Flexible",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "layout_mode": "normal",
+        "grid_gutter": 10,
+        "border_radius": 10,
+        "css_section": ""
+      }
+    },
+    "3445f257-26d0-4138-81f0-657a139c12de": {
+      "type": "rd_icon_boxes",
+      "disabled": true,
+      "blocks": {
+        "05571df4-f420-4148-9b51-ce9da3de2886": {
+          "type": "item_simple_icons",
+          "settings": {
+            "content_align": "center",
+            "icon_font": "",
+            "size": 36,
+            "title": "Quisque a lectus",
+            "content": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
+            "url": ""
+          }
+        },
+        "7169de60-10a8-4321-846e-c3e84f6dba39": {
+          "type": "item_sircle_icons",
+          "settings": {
+            "content_align": "center",
+            "icon_font": "",
+            "size": 36,
+            "title": "Suspendisse potenti",
+            "content": "Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.",
+            "url": ""
+          }
+        },
+        "69bfd45f-7bcb-48c9-930f-81e3e08f0b7e": {
+          "type": "item_simple_icons",
+          "settings": {
+            "content_align": "center",
+            "icon_font": "",
+            "size": 36,
+            "title": "Quisque a lectus",
+            "content": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "05571df4-f420-4148-9b51-ce9da3de2886",
+        "7169de60-10a8-4321-846e-c3e84f6dba39",
+        "69bfd45f-7bcb-48c9-930f-81e3e08f0b7e"
+      ],
+      "settings": {
+        "title": "Icon Boxes",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "border_top": true,
+        "border_bottom": false,
+        "border_color": "#ebebeb",
+        "color_icon": "#333",
+        "color_title": "#333",
+        "color_desc": "#ccc",
+        "title_font_weight": "400",
+        "use_slide": false,
+        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"476\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}",
+        "css_section": ""
+      }
+    },
+    "b828f374-dddb-47e6-8f7d-d8a972cd473d": {
+      "type": "rd_our_store_1",
+      "disabled": true,
+      "blocks": {
+        "2b3d5b1a-d491-4ebf-b150-b5dbf1f1add1": {
+          "type": "title",
+          "settings": {
+            "title_style": "auto",
+            "title": "",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        },
+        "e9fbf756-209c-4884-9a1e-dc313694dc02": {
+          "type": "item",
+          "settings": {
+            "name": "New York",
+            "twitter_link": "",
+            "facebook_link": "",
+            "instagram_link": "",
+            "info": "<p><a href=\"mail:#\">mail@newyorkriodestore.com<\/a><a href=\"tel:#\">Phone: (123) 456-7890<\/a><\/p>"
+          }
+        },
+        "ae7d7646-cf76-4f4c-929a-dac489665682": {
+          "type": "item",
+          "settings": {
+            "name": "New York",
+            "twitter_link": "",
+            "facebook_link": "",
+            "instagram_link": "",
+            "info": "<p><a href=\"mail:#\">mail@newyorkriodestore.com<\/a><a href=\"tel:#\">Phone: (123) 456-7890<\/a><\/p>"
+          }
+        },
+        "b67633b2-153a-4cee-8e7a-c81d1e2e946b": {
+          "type": "item",
+          "settings": {
+            "name": "New York",
+            "twitter_link": "",
+            "facebook_link": "",
+            "instagram_link": "",
+            "info": "<p><a href=\"mail:#\">mail@newyorkriodestore.com<\/a><a href=\"tel:#\">Phone: (123) 456-7890<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2b3d5b1a-d491-4ebf-b150-b5dbf1f1add1",
+        "e9fbf756-209c-4884-9a1e-dc313694dc02",
+        "ae7d7646-cf76-4f4c-929a-dac489665682",
+        "b67633b2-153a-4cee-8e7a-c81d1e2e946b"
+      ],
+      "settings": {
+        "title": "Our store",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "autoplay": false,
+        "use_navigation": false,
+        "nav_style": "-default",
+        "nav_mode": "default",
+        "nav_position": "nav-default",
+        "use_dots": true,
+        "dots_mode": "default",
+        "dots_position": "outside",
+        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1.3,\n    \"spaceBetween\": 20\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}"
+      }
     }
   },
   "order": [
@@ -842,6 +1517,16 @@
     "1636597550a198f3ec",
     "1634694028f2fa928a",
     "1636767334cb77ea28",
-    "026e34ea-1183-42a4-a153-f5fbf8e3357c"
+    "026e34ea-1183-42a4-a153-f5fbf8e3357c",
+    "e24c145a-a58e-4e51-95af-2654bc94dc42",
+    "f229cafc-d1d8-4b61-a46c-0fd52c49eece",
+    "ce8ec8c1-ba48-465c-a726-2aaff1de4f11",
+    "8d71088b-ec20-475c-aa71-86457bb83d33",
+    "275cbf37-5eaf-4d88-8661-7eda9e89a00c",
+    "379b2398-64fc-43d7-a5e8-fb7a1bfe8cbb",
+    "eb46beb2-8277-438f-b35a-7279dcca7376",
+    "394155d1-218a-4b10-80f3-de72df4364f7",
+    "3445f257-26d0-4138-81f0-657a139c12de",
+    "b828f374-dddb-47e6-8f7d-d8a972cd473d"
   ]
 }
