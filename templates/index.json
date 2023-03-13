@@ -487,52 +487,6 @@
         "use_nospace": false
       }
     },
-    "1635951743130493b4": {
-      "type": "rd_prds_sc_slide",
-      "blocks": {
-        "1635951743130493b4-0": {
-          "type": "item",
-          "settings": {
-            "title_style": "center",
-            "title": "Best Sellers",
-            "stitle": "",
-            "link_to": "",
-            "name_link": "",
-            "margin_btitle": 20,
-            "products": "best-selling-h2-1",
-            "limit": 8,
-            "load_btn": false,
-            "style_btn": "btn-dark btn-outline",
-            "style_btn_rounded": "",
-            "btn_shadow": false,
-            "autoplay": false,
-            "use_navigation": true,
-            "nav_style": "3",
-            "nav_mode": "default",
-            "nav_position": "nav-center-center",
-            "use_dots": false,
-            "dots_mode": "default",
-            "dots_position": "inside",
-            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}"
-          }
-        }
-      },
-      "block_order": [
-        "1635951743130493b4-0"
-      ],
-      "settings": {
-        "title": "Products slide(slide)",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "w-100",
-        "width_content": true,
-        "section_margin_top": "",
-        "section_margin_bottom": "60px",
-        "section_padding": "",
-        "section_bg": "",
-        "use_lazyload": true
-      }
-    },
     "1636597550a198f3ec": {
       "type": "rd_call_to_action",
       "blocks": {
@@ -828,6 +782,52 @@
         "atc_btn_shadow": false,
         "atc_btn_big": false,
         "atc_btn_ani": false
+      }
+    },
+    "1635951743130493b4": {
+      "type": "rd_prds_sc_slide",
+      "blocks": {
+        "1635951743130493b4-0": {
+          "type": "item",
+          "settings": {
+            "title_style": "center",
+            "title": "Best Sellers",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 20,
+            "products": "demo",
+            "limit": 8,
+            "load_btn": false,
+            "style_btn": "btn-dark btn-outline",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "autoplay": false,
+            "use_navigation": true,
+            "nav_style": "3",
+            "nav_mode": "default",
+            "nav_position": "nav-center-center",
+            "use_dots": false,
+            "dots_mode": "default",
+            "dots_position": "inside",
+            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}"
+          }
+        }
+      },
+      "block_order": [
+        "1635951743130493b4-0"
+      ],
+      "settings": {
+        "title": "Products slide(slide)",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "60px",
+        "section_padding": "",
+        "section_bg": "",
+        "use_lazyload": true
       }
     },
     "16340839546a8e5911": {
@@ -1696,11 +1696,11 @@
     "16361859527a526cba",
     "4d58f644-9136-474b-84e9-db359910521a",
     "163591206067ad1209",
-    "1635951743130493b4",
     "1636597550a198f3ec",
     "1634694028f2fa928a",
     "1636767334cb77ea28",
     "026e34ea-1183-42a4-a153-f5fbf8e3357c",
+    "1635951743130493b4",
     "16340839546a8e5911",
     "e24c145a-a58e-4e51-95af-2654bc94dc42",
     "f229cafc-d1d8-4b61-a46c-0fd52c49eece",
