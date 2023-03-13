@@ -1798,9 +1798,9 @@
             "image_link": "",
             "blank_link": false,
             "desc": "Trending now",
-            "color_desc": "#fff",
+            "color_desc": "#ffffff",
             "titlex": "This Week's Most Wanted",
-            "color_titlex": "#fff",
+            "color_titlex": "#ffffff",
             "name_btn": "DISCOVER NOW",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
@@ -1822,6 +1822,49 @@
       ],
       "settings": {
         "title": "Products slide + banner 2",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "use_lazyload": false,
+        "css_section": ""
+      }
+    },
+    "f8b2550c-b290-4798-be6f-148c053fa0e9": {
+      "type": "product-slider",
+      "blocks": {
+        "template--18286564376879__f8b2550c-b290-4798-be6f-148c053fa0e9-1678698276f4e1e51e-0": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "margin_btitle": 30,
+            "products": "demo",
+            "limit": 8,
+            "load_btn": false,
+            "style_btn": "btn-dark btn-outline",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "autoplay": false,
+            "use_navigation": true,
+            "nav_style": "-default",
+            "nav_mode": "default",
+            "nav_position": "nav-default",
+            "use_dots": false,
+            "dots_mode": "default",
+            "dots_position": "inside",
+            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}"
+          }
+        }
+      },
+      "block_order": [
+        "template--18286564376879__f8b2550c-b290-4798-be6f-148c053fa0e9-1678698276f4e1e51e-0"
+      ],
+      "settings": {
+        "title": "Products slide + banner",
         "off_mobile": false,
         "off_desktop": false,
         "width_section": "w-100",
@@ -1859,6 +1902,7 @@
     "b828f374-dddb-47e6-8f7d-d8a972cd473d",
     "332a18e8-a9ab-4cdc-be48-8d06f7bb16e8",
     "49014dd8-4eb0-45b4-9580-cf77a78d6e2c",
-    "f841971a-b5ce-4718-8cdf-f49be0faf046"
+    "f841971a-b5ce-4718-8cdf-f49be0faf046",
+    "f8b2550c-b290-4798-be6f-148c053fa0e9"
   ]
 }
