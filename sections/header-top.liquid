@@ -126,7 +126,8 @@
                 {%- if customer -%}
                 <a class="d-icon-user" href="{{routes.account_url}}"><span>{{"layout.customer.account" | t}}</span></a>
                 {%- else -%}
-                <a class="login-tab d-icon-user" href="{{routes.account_login_url}}"{%if settings.newsletter_popup%} data-bs-toggle="modal" data-bs-target="#rd_accModal" data-bs-modal="{{routes.account_login_url}}/?section_id=kt_account_popup&q=content"{%endif%}><span class="ms-1">{{"layout.customer.log_in" | t}}</span></a>
+                {% comment %} <a class="login-tab d-icon-user" href="{{routes.account_login_url}}"{%if settings.newsletter_popup%} data-bs-toggle="modal" data-bs-target="#rd_accModal" data-bs-modal="{{routes.account_login_url}}/?section_id=kt_account_popup&q=content"{%endif%}><span class="ms-1">{{"layout.customer.log_in" | t}}</span></a> {% endcomment %}
+                <a class="login-tab d-icon-user" href="{{routes.account_login_url}}"{%if settings.newsletter_popup%} ><span class="ms-1">{{"layout.customer.log_in" | t}}</span></a>
                 <span class="delimiter">/</span>
                 <a class="register-tab" href="{{routes.account_register_url }}"{%if settings.newsletter_popup%} data-bs-toggle="modal" data-bs-target="#rd_accModal" data-bs-modal="{{routes.account_register_url}}/?section_id=kt_account_popup&q=content"{%endif%}><span>{{"layout.customer.create_account" | t}}</span></a>
                 {%- endif -%}
