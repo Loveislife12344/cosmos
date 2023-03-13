@@ -99,14 +99,15 @@
         "dad60e3c-eec4-4707-8791-133f4f5632bc": {
           "type": "banner",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-12-20_at_9.44.33_am.png",
             "image_link": "",
-            "desc": "NEW ARRIVALS",
+            "desc": "",
             "color_desc": "#333333",
-            "titlex": "Spring Essentials",
+            "titlex": "",
             "color_titlex": "#333333",
             "stitle": "",
             "color_stitle": "#333333",
-            "name_btn": "SHOP NOW<i class=\"d-icon-arrow-right\"><\/i>",
+            "name_btn": "",
             "style_btn": "btn-underline btn-link",
             "style_btn_rounded": "",
             "btn_shadow": false,
