@@ -122,6 +122,7 @@
         "d099a318-92fe-41aa-bd5f-fc85fe0c50c6": {
           "type": "banner",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_13.png",
             "image_link": "",
             "desc": "",
             "color_desc": "#ffffff",
