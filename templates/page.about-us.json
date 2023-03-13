@@ -1,1 +1,300 @@
-{"sections":{"content":{"type":"main-page","settings":{"width_section":"w-100","width_content":true,"section_margin_top":"","section_margin_bottom":"","section_padding":"","section_bg":""}},"1627893029f6230223":{"type":"rd_countto_w_text","settings":{"title":"Count to with Text","off_mobile":false,"off_desktop":false,"width_section":"w-100","width_content":true,"section_margin_top":"60px","section_margin_bottom":"60px","section_padding":"","section_bg":"","title_section":"Provide perfect and practical services","stitle_section":"01. What We Do","descrip_section":"Lorem quis bibendum auctar, nisi elit consequat ipsum, nec sagittis sem nibh id elit.","reverse":false,"count_1":"35","title_1":"Business Year","stitle_1":"Lorem ipsum dolor sit amet, conctetur adipisci elit. viverra erat orci.","count_2":"50","title_2":"Design Brands","stitle_2":"Lorem ipsum dolor sit amet, conctetur adipisci elit. viverra erat orci.","count_3":"130","title_3":"Team Members","stitle_3":"Lorem ipsum dolor sit amet, conctetur adipisci elit. viverra erat orci.","color_title":"#222222","color_sub_title":"#222222","color_desc":"#666666","css":".section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n}\n.section_id .sub-title {\n    order: -1;\n}"}},"16278930620b05d394":{"type":"rd_image_w_text_1","blocks":{"d4c9d766-aeb5-421f-8bb2-b8a711042bba":{"type":"1","settings":{"image_banner":"shopify:\/\/shop_images\/customer.jpg","height":"adapt","layout":"image-first","image_link":"","text_align":"","title_section":"Provide fashionable and<br>\nqualifed products","stitle_section":"02. Happy Customer","content_text":"Already millions of people are very satisfied by thi.\ns page builder and the number is growing more and more. Technolog\ndeveloping, requirements are increasing. Riode has brought.","color_title":"#222222","color_sub_title":"#222222","color_desc":"#666666","name_btn":"VISIT OUR STORE<i class=\"d-icon-arrow-right\"><\/i>","style_btn":"btn-dark btn-link btn-underline","style_btn_rounded":"","btn_shadow":false}}},"block_order":["d4c9d766-aeb5-421f-8bb2-b8a711042bba"],"settings":{"off_mobile":false,"off_desktop":false,"title":"Image with text 1","width_section":"container","width_content":false,"section_margin_top":"","section_margin_bottom":"60px","section_padding":"","section_bg":"","css":".section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n}\n.section_id .sub-title {\n    order: -1;\n}"}},"16278930715fe8a30e":{"type":"rd_image_w_text_1","blocks":{"8191dd6a-5df3-41a9-acdc-429bcdff63be":{"type":"1","settings":{"image_banner":"shopify:\/\/shop_images\/store.jpg","height":"adapt","layout":"text-first","image_link":"","text_align":"","title_section":"Expect Restless<br>\nAmazing Support","stitle_section":"03. Our Store","content_text":"Already millions of people are very satisfied by thi.\ns page builder and the number is growing more and more. Technolog\ndeveloping, requirements are increasing. Riode has brought.","color_title":"#222222","color_sub_title":"#222222","color_desc":"#666666","name_btn":"GET OUR STORE<i class=\"d-icon-arrow-right\"><\/i>","style_btn":"btn-dark btn-link btn-underline","style_btn_rounded":"","btn_shadow":false}}},"block_order":["8191dd6a-5df3-41a9-acdc-429bcdff63be"],"settings":{"off_mobile":false,"off_desktop":false,"title":"Image with text 1","width_section":"container","width_content":false,"section_margin_top":"","section_margin_bottom":"60px","section_padding":"","section_bg":"","css":".section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n}\n.section_id .sub-title {\n    order: -1;\n}"}},"16278933153ac77724":{"type":"rd_brand_1","blocks":{"6f4fcc6c-e22f-4751-b8c9-923b34cdddd4":{"type":"title","settings":{"title_style":"center","title":"<span style=\"font-size: 1.875rem\">Popular Brands<\/span>","stitle":"<span style=\"font-size: 1.125rem\">04. Our Clients<\/span>","link_to":"","name_link":"","margin_btitle":30}},"16278933153ac77724-0":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/1.png","brand_call_to_action":""}},"16278933153ac77724-1":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/2.png","brand_call_to_action":""}},"16278933153ac77724-2":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/3.png","brand_call_to_action":""}},"16278933153ac77724-3":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/4.png","brand_call_to_action":""}},"16278933153ac77724-4":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/5.png","brand_call_to_action":""}},"16278933153ac77724-5":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/6.png","brand_call_to_action":""}},"16278933153ac77724-6":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/1.png","brand_call_to_action":""}}},"block_order":["6f4fcc6c-e22f-4751-b8c9-923b34cdddd4","16278933153ac77724-0","16278933153ac77724-1","16278933153ac77724-2","16278933153ac77724-3","16278933153ac77724-4","16278933153ac77724-5","16278933153ac77724-6"],"settings":{"title":"Brands","off_mobile":false,"off_desktop":false,"width_section":"w-100","width_content":true,"section_margin_top":"","section_margin_bottom":"60px","section_padding":"80px 0  90px","section_bg":"#f6f7f9","border_top":false,"border_bottom":false,"border_color":"#ebebeb","autoplay":false,"use_navigation":false,"nav_style":"-default","nav_mode":"default","nav_position":"nav-default","use_dots":false,"dots_mode":"default","dots_position":"inside","responsive":"{\n  \"0\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"480\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}","css":".section_id .icon__brand {\n    background: #fff;\n    border-radius: 10px;\n    box-shadow: 0 5px 30px 0 rgb(0 0 0 \/ 5%);\n}\n.section_id .icon__brand img {\n    height: 142px;\n    object-fit: contain;\n}\n.section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n}\n.section_id .sub-title {\n    order: -1;\n}"}},"1627893641ded4ec48":{"type":"rd_our_team_1","blocks":{"d279a4a8-6434-44fb-9141-d988293f3d92":{"type":"title","settings":{"title_style":"center","title":"<span style=\"font-size: 1.875rem\">Meet our team<\/span>","stitle":"<span style=\"font-size: 1.125rem\">05. Our Leaders<\/span>","link_to":"","name_link":"","margin_btitle":30}},"1627893641ded4ec48-0":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/team1.jpg","name":"Tomasz Treflerzan<span>Ceo \/ Founder<\/span>","social_twitter_link":"#","social_facebook_link":"#","social_instagram_link":"#"}},"1627893641ded4ec48-1":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/team2.jpg","name":"Tomasz Treflerzan<span>Ceo \/ Founder<\/span>","social_twitter_link":"#","social_facebook_link":"#","social_instagram_link":"#"}},"1627893641ded4ec48-2":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/team3.jpg","name":"Tomasz Treflerzan<span>Ceo \/ Founder<\/span>","social_twitter_link":"#","social_facebook_link":"#","social_instagram_link":""}},"1627893641ded4ec48-3":{"type":"item","settings":{"image":"shopify:\/\/shop_images\/team4.jpg","name":"Tomasz Treflerzan<span>Ceo \/ Founder<\/span>","social_twitter_link":"#","social_facebook_link":"#","social_instagram_link":"#"}}},"block_order":["d279a4a8-6434-44fb-9141-d988293f3d92","1627893641ded4ec48-0","1627893641ded4ec48-1","1627893641ded4ec48-2","1627893641ded4ec48-3"],"settings":{"title":"Our team","off_section":false,"off_mobile":false,"off_desktop":false,"width_section":"container","width_content":true,"section_margin_top":"60px","section_margin_bottom":"60px","section_padding":"","section_bg":"","css":".section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n}\n.section_id .sub-title {\n    order: -1;\n}"}}},"order":["content","1627893029f6230223","16278930620b05d394","16278930715fe8a30e","16278933153ac77724","1627893641ded4ec48"]}
+{
+  "sections": {
+    "content": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": ""
+      }
+    },
+    "1627893029f6230223": {
+      "type": "rd_countto_w_text",
+      "disabled": true,
+      "settings": {
+        "title": "Count to with Text",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "60px",
+        "section_margin_bottom": "60px",
+        "section_padding": "",
+        "section_bg": "",
+        "title_section": "Provide perfect and practical services",
+        "stitle_section": "01. What We Do",
+        "descrip_section": "Lorem quis bibendum auctar, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
+        "reverse": false,
+        "count_1": "35",
+        "title_1": "Business Year",
+        "stitle_1": "Lorem ipsum dolor sit amet, conctetur adipisci elit. viverra erat orci.",
+        "count_2": "50",
+        "title_2": "Design Brands",
+        "stitle_2": "Lorem ipsum dolor sit amet, conctetur adipisci elit. viverra erat orci.",
+        "count_3": "130",
+        "title_3": "Team Members",
+        "stitle_3": "Lorem ipsum dolor sit amet, conctetur adipisci elit. viverra erat orci.",
+        "color_title": "#222222",
+        "color_sub_title": "#222222",
+        "color_desc": "#666666",
+        "css": ".section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n}\n.section_id .sub-title {\n    order: -1;\n}"
+      }
+    },
+    "16278930620b05d394": {
+      "type": "rd_image_w_text_1",
+      "blocks": {
+        "d4c9d766-aeb5-421f-8bb2-b8a711042bba": {
+          "type": "1",
+          "settings": {
+            "image_banner": "shopify:\/\/shop_images\/Rectangle_13.png",
+            "height": "adapt",
+            "layout": "image-first",
+            "image_link": "",
+            "text_align": "",
+            "title_section": "Provide fashionable and<br>\nqualifed products",
+            "stitle_section": "02. Happy Customer",
+            "content_text": "Already millions of people are very satisfied by thi.\ns page builder and the number is growing more and more. Technolog\ndeveloping, requirements are increasing. Riode has brought.",
+            "color_title": "#222222",
+            "color_sub_title": "#222222",
+            "color_desc": "#666666",
+            "name_btn": "VISIT OUR STORE",
+            "style_btn": "btn-dark btn-link btn-underline",
+            "style_btn_rounded": "",
+            "btn_shadow": false
+          }
+        }
+      },
+      "block_order": [
+        "d4c9d766-aeb5-421f-8bb2-b8a711042bba"
+      ],
+      "settings": {
+        "off_mobile": false,
+        "off_desktop": false,
+        "title": "Image with text 1",
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "60px",
+        "section_padding": "",
+        "section_bg": "",
+        "css": ".section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n}\n.section_id .sub-title {\n    order: -1;\n}"
+      }
+    },
+    "16278930715fe8a30e": {
+      "type": "rd_image_w_text_1",
+      "blocks": {
+        "8191dd6a-5df3-41a9-acdc-429bcdff63be": {
+          "type": "1",
+          "settings": {
+            "image_banner": "shopify:\/\/shop_images\/Rectangle_13.png",
+            "height": "adapt",
+            "layout": "text-first",
+            "image_link": "",
+            "text_align": "",
+            "title_section": "Expect Restless<br>\nAmazing Support",
+            "stitle_section": "03. Our Store",
+            "content_text": "Already millions of people are very satisfied by thi.\ns page builder and the number is growing more and more. Technolog\ndeveloping, requirements are increasing. Riode has brought.",
+            "color_title": "#222222",
+            "color_sub_title": "#222222",
+            "color_desc": "#666666",
+            "name_btn": "GET OUR STORE",
+            "style_btn": "btn-dark btn-link btn-underline",
+            "style_btn_rounded": "",
+            "btn_shadow": false
+          }
+        }
+      },
+      "block_order": [
+        "8191dd6a-5df3-41a9-acdc-429bcdff63be"
+      ],
+      "settings": {
+        "off_mobile": false,
+        "off_desktop": false,
+        "title": "Image with text 1",
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "60px",
+        "section_padding": "",
+        "section_bg": "",
+        "css": ".section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n}\n.section_id .sub-title {\n    order: -1;\n}"
+      }
+    },
+    "16278933153ac77724": {
+      "type": "rd_brand_1",
+      "blocks": {
+        "6f4fcc6c-e22f-4751-b8c9-923b34cdddd4": {
+          "type": "title",
+          "settings": {
+            "title_style": "center",
+            "title": "<span style=\"font-size: 1.875rem\">Popular Brands<\/span>",
+            "stitle": "<span style=\"font-size: 1.125rem\">04. Our Clients<\/span>",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        },
+        "16278933153ac77724-0": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "16278933153ac77724-1": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "16278933153ac77724-2": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "16278933153ac77724-3": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "16278933153ac77724-4": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "16278933153ac77724-5": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        },
+        "16278933153ac77724-6": {
+          "type": "item",
+          "settings": {
+            "brand_call_to_action": ""
+          }
+        }
+      },
+      "block_order": [
+        "6f4fcc6c-e22f-4751-b8c9-923b34cdddd4",
+        "16278933153ac77724-0",
+        "16278933153ac77724-1",
+        "16278933153ac77724-2",
+        "16278933153ac77724-3",
+        "16278933153ac77724-4",
+        "16278933153ac77724-5",
+        "16278933153ac77724-6"
+      ],
+      "settings": {
+        "title": "Brands",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "60px",
+        "section_padding": "80px 0  90px",
+        "section_bg": "#f6f7f9",
+        "border_top": false,
+        "border_bottom": false,
+        "border_color": "#ebebeb",
+        "autoplay": false,
+        "use_navigation": false,
+        "nav_style": "-default",
+        "nav_mode": "default",
+        "nav_position": "nav-default",
+        "use_dots": false,
+        "dots_mode": "default",
+        "dots_position": "inside",
+        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"480\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}",
+        "css": ".section_id .icon__brand {\n    background: #fff;\n    border-radius: 10px;\n    box-shadow: 0 5px 30px 0 rgb(0 0 0 \/ 5%);\n}\n.section_id .icon__brand img {\n    height: 142px;\n    object-fit: contain;\n}\n.section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n}\n.section_id .sub-title {\n    order: -1;\n}"
+      }
+    },
+    "1627893641ded4ec48": {
+      "type": "rd_our_team_1",
+      "blocks": {
+        "d279a4a8-6434-44fb-9141-d988293f3d92": {
+          "type": "title",
+          "settings": {
+            "title_style": "center",
+            "title": "<span style=\"font-size: 1.875rem\">Meet our team<\/span>",
+            "stitle": "<span style=\"font-size: 1.125rem\">05. Our Leaders<\/span>",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        },
+        "1627893641ded4ec48-0": {
+          "type": "item",
+          "settings": {
+            "name": "Tomasz Treflerzan<span>Ceo \/ Founder<\/span>",
+            "social_twitter_link": "#",
+            "social_facebook_link": "#",
+            "social_instagram_link": "#"
+          }
+        },
+        "1627893641ded4ec48-1": {
+          "type": "item",
+          "settings": {
+            "name": "Tomasz Treflerzan<span>Ceo \/ Founder<\/span>",
+            "social_twitter_link": "#",
+            "social_facebook_link": "#",
+            "social_instagram_link": "#"
+          }
+        },
+        "1627893641ded4ec48-2": {
+          "type": "item",
+          "settings": {
+            "name": "Tomasz Treflerzan<span>Ceo \/ Founder<\/span>",
+            "social_twitter_link": "#",
+            "social_facebook_link": "#",
+            "social_instagram_link": ""
+          }
+        },
+        "1627893641ded4ec48-3": {
+          "type": "item",
+          "settings": {
+            "name": "Tomasz Treflerzan<span>Ceo \/ Founder<\/span>",
+            "social_twitter_link": "#",
+            "social_facebook_link": "#",
+            "social_instagram_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "d279a4a8-6434-44fb-9141-d988293f3d92",
+        "1627893641ded4ec48-0",
+        "1627893641ded4ec48-1",
+        "1627893641ded4ec48-2",
+        "1627893641ded4ec48-3"
+      ],
+      "settings": {
+        "title": "Our team",
+        "off_section": false,
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": true,
+        "section_margin_top": "60px",
+        "section_margin_bottom": "60px",
+        "section_padding": "",
+        "section_bg": "",
+        "css": ".section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n}\n.section_id .sub-title {\n    order: -1;\n}"
+      }
+    }
+  },
+  "order": [
+    "content",
+    "1627893029f6230223",
+    "16278930620b05d394",
+    "16278930715fe8a30e",
+    "16278933153ac77724",
+    "1627893641ded4ec48"
+  ]
+}
