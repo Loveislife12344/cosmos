@@ -703,8 +703,8 @@
               "logo_footer": "shopify:\/\/shop_images\/Group_72.png",
               "logo_footer_max_width": 155,
               "description": true,
-              "title_desc": "Contact Info",
-              "desc_content": "<ul class=\"list-unstyled widget-body\">\n<li>\n<label>Phone:<\/label>\n<a href=\"tel:1234567890\">Toll Free (123) 456-7890<\/a> \n<\/li>\n<li>\n<label>Email:<\/label><a href=\"mailto:mail@riode.com\">mail@riode.com<\/a>\n<\/li>\n<li>\n<label>Address:<\/label><span>123 Street Name, City, England<\/span>\n<\/li>\n<li><label>WORKING DAYS \/ HOURS:<\/label><\/li>\n<li><span>Mon - Sun \/ 9:00 AM - 8:00 PM<\/span><\/li>\n<\/ul>",
+              "title_desc": "",
+              "desc_content": "",
               "call_widget": false,
               "title_phone_00": "Got Question? Call us 24\/7",
               "about_info": false,
@@ -717,19 +717,28 @@
           "6f3718eb-5de0-4c38-b4d1-29fff6c0a639": {
             "type": "mid_link_01",
             "settings": {
-              "col": "col-sm-6 col-lg-3",
+              "col": "col-sm-6 col-lg-2",
               "not_drop": false,
-              "title": "My Account",
-              "footer_link": ""
+              "title": "",
+              "footer_link": "footer"
             }
           },
           "8a864723-14bf-48a8-adfc-0a3885927766": {
             "type": "mid_link_01",
             "settings": {
-              "col": "col-sm-6 col-lg-3",
+              "col": "col-sm-6 col-lg-2",
               "not_drop": false,
-              "title": "Contact Info",
-              "footer_link": ""
+              "title": "",
+              "footer_link": "footer-menu-1"
+            }
+          },
+          "8b226a9a-b9a3-49ed-80c4-89db365f61d6": {
+            "type": "mid_link_01",
+            "settings": {
+              "col": "col-sm-6 col-lg-2",
+              "not_drop": false,
+              "title": "",
+              "footer_link": "footer-menu-2"
             }
           },
           "cf3488bf-140e-43a9-8a3d-16235472bc78": {
@@ -750,8 +759,8 @@
               "logo_footer_svg": "",
               "logo_footer_max_width": 150,
               "description": true,
-              "title_desc": "Contact us",
-              "desc_content": "<a href=\"mailto:info@cosmac.com\">info@cosmac.com<\/a><br>\n<a href=\"tel:1300%20723%20092\">1300 723 092<\/a>\n<br><br>",
+              "title_desc": "",
+              "desc_content": "<br>Contact us<br>\n<a href=\"mailto:info@cosmac.com\">info@cosmac.com<\/a><br>\n<a href=\"tel:1300%20723%20092\">1300 723 092<\/a>\n<br><br>",
               "call_widget": false,
               "title_phone_00": "",
               "about_info": false,
@@ -785,16 +794,6 @@
               "logo_footer_max_width": 270,
               "copyright": ""
             }
-          },
-          "b7de1e78-4b8e-47e8-893a-c249f027db48": {
-            "type": "bottom_03",
-            "disabled": true,
-            "settings": {
-              "use_payment": true,
-              "payment_url": "",
-              "social_media": true,
-              "copyright": ""
-            }
           }
         },
         "block_order": [
@@ -802,14 +801,14 @@
           "feb28564-db25-4811-bbe9-73693bb2c193",
           "6f3718eb-5de0-4c38-b4d1-29fff6c0a639",
           "8a864723-14bf-48a8-adfc-0a3885927766",
+          "8b226a9a-b9a3-49ed-80c4-89db365f61d6",
           "cf3488bf-140e-43a9-8a3d-16235472bc78",
           "8a0cbd40-1fb5-436c-bb41-a94868d12973",
           "a29a3b31-a7e9-4d5b-8c63-554cd12fbf1e",
-          "c300f8d9-b7bd-4315-b852-6f011b9bf660",
-          "b7de1e78-4b8e-47e8-893a-c249f027db48"
+          "c300f8d9-b7bd-4315-b852-6f011b9bf660"
         ],
         "custom_css": [
-          ".subcribe-text{display:inline-block; max-width:363px;}"
+          ".subcribe-text {display: inline-block; max-width: 363px;}"
         ],
         "settings": {
           "width_section": "container",
