@@ -365,259 +365,6 @@
         "use_nospace": false
       }
     },
-    "1636597550a198f3ec": {
-      "type": "rd_call_to_action",
-      "blocks": {
-        "ea79ce29-0519-4c14-aa0f-f3203de0af21": {
-          "type": "item_title",
-          "settings": {
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 0,
-            "width_lg": 0,
-            "width_xl": 0,
-            "width_xxl": 0,
-            "title": "<span>Sign up to <strong class=\"text-uppercase\" style=\"font-weight: 800\">Riode<\/strong><\/span>",
-            "color_title": "#232323",
-            "stitle": "It only takes a second to find out about our latest<br> news and promotions...",
-            "color_stitle": "#ffffff",
-            "title_align": "text-center",
-            "margin_btitle": 14
-          }
-        },
-        "3561adeb-7ebc-4b8b-91c6-15e17c0fff05": {
-          "type": "design_1",
-          "settings": {
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 0,
-            "width_lg": 5,
-            "width_xl": 0,
-            "width_xxl": 0,
-            "title": "",
-            "color_title": "#ffffff",
-            "stitle": "",
-            "color_desc": "#ffffff",
-            "textBtn": "Subscribe <i class=\"d-icon-arrow-right\"><\/i>",
-            "style_btn": "btn-dark",
-            "style_btn_rounded": "btn-round",
-            "btn_shadow": false,
-            "social_media": true
-          }
-        }
-      },
-      "block_order": [
-        "ea79ce29-0519-4c14-aa0f-f3203de0af21",
-        "3561adeb-7ebc-4b8b-91c6-15e17c0fff05"
-      ],
-      "settings": {
-        "title": "Call to Action",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "container",
-        "width_content": true,
-        "section_margin_top": "",
-        "section_margin_bottom": "60px",
-        "section_padding": "60px 0",
-        "section_bg": "",
-        "use_round": false,
-        "color_title": "#333333",
-        "color_desc": "#cccccc",
-        "color_text_input": "#999999",
-        "color_border_input": "#dadada",
-        "color_placeholder": "#999999",
-        "color_bg_input": "#ffffff",
-        "preview": false,
-        "css_section": ".section_id .sc-title{\nletter-spacing: -.04em;\nmargin-bottom: 10px;\nfont-weight: 600;\nfont-size: 2.250em;\n}"
-      }
-    },
-    "1634694028f2fa928a": {
-      "type": "rd_blog",
-      "blocks": {
-        "7ad7449c-9a9e-4f08-bf7d-64251e5ab8c9": {
-          "type": "title",
-          "settings": {
-            "title_style": "center",
-            "title": "Latest News",
-            "stitle": "",
-            "link_to": "",
-            "name_link": "",
-            "margin_btitle": 30
-          }
-        },
-        "73c2ab1e-612e-48f5-962f-9e0f63738e80": {
-          "type": "1",
-          "settings": {
-            "blog": "classic",
-            "limit": 8,
-            "load_btn": false,
-            "style_btn": "btn-primary",
-            "style_btn_rounded": "",
-            "btn_shadow": false
-          }
-        }
-      },
-      "block_order": [
-        "7ad7449c-9a9e-4f08-bf7d-64251e5ab8c9",
-        "73c2ab1e-612e-48f5-962f-9e0f63738e80"
-      ],
-      "settings": {
-        "title": "Related post",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "container",
-        "width_content": true,
-        "section_margin_top": "",
-        "section_margin_bottom": "60px",
-        "section_padding": "",
-        "section_bg": "",
-        "fweight_title": "600",
-        "fsize_stitle": 1.8,
-        "color_title": "#333333",
-        "margin_btitle": 0.8,
-        "fweight_description": "300",
-        "fsize_description": 1.4,
-        "color_desc": "#999999",
-        "margin_bdescription": 0.8,
-        "use_lazyload": true,
-        "autoplay": false,
-        "use_navigation": false,
-        "nav_style": "-default",
-        "nav_mode": "default",
-        "nav_position": "nav-default",
-        "use_dots": false,
-        "dots_mode": "default",
-        "dots_position": "outside",
-        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"480\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  }\n}",
-        "css_section": ""
-      }
-    },
-    "1636767334cb77ea28": {
-      "type": "rd_instagram_1",
-      "blocks": {
-        "821d3c17-581b-4373-8341-066e215aebe6": {
-          "type": "item",
-          "settings": {
-            "name": "Jenson Gregory",
-            "info": "Customer",
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellente sque aliquet nibh nec urna. In nisi neque"
-          }
-        },
-        "30ee7c51-df59-4a2b-ab20-b4f32bbf7c80": {
-          "type": "item",
-          "settings": {
-            "name": "Jenson Gregory",
-            "info": "Customer",
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellente sque aliquet nibh nec urna. In nisi neque"
-          }
-        },
-        "8a878ee5-82d3-498e-91e8-ec7dc1b78e9f": {
-          "type": "item",
-          "settings": {
-            "name": "Jenson Gregory",
-            "info": "Customer",
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellente sque aliquet nibh nec urna. In nisi neque"
-          }
-        },
-        "e6dc8d9d-bc6c-4295-a384-d138106b099e": {
-          "type": "img_i",
-          "settings": {
-            "image_link": ""
-          }
-        },
-        "35d95e1c-7db3-4c2a-b5b1-e3e84af36098": {
-          "type": "img_i",
-          "settings": {
-            "image_link": ""
-          }
-        },
-        "90a88ea0-7992-4fa6-932a-7fb5fc4e99e6": {
-          "type": "img_i",
-          "settings": {
-            "image_link": ""
-          }
-        },
-        "54ba496e-2a1a-4c59-8da0-3f7b20c8ecb4": {
-          "type": "img_i",
-          "settings": {
-            "image_link": ""
-          }
-        },
-        "a072bc82-2299-4d1c-83e9-ecc00861380f": {
-          "type": "img_i",
-          "settings": {
-            "image_link": ""
-          }
-        },
-        "09e70388-416b-42bb-9626-bacadf06f49c": {
-          "type": "img_i",
-          "settings": {
-            "image_link": ""
-          }
-        },
-        "4cf448e2-99ef-48f2-b7de-82e8dfb4188d": {
-          "type": "img_i",
-          "settings": {
-            "image_link": ""
-          }
-        },
-        "4c9395f0-dc37-46aa-a4d2-7c85ac0a8540": {
-          "type": "img_i",
-          "settings": {
-            "image_link": ""
-          }
-        },
-        "012dd9f4-b63a-486b-bb4e-fd3559078f00": {
-          "type": "title",
-          "settings": {
-            "title_style": "center",
-            "title": "Follow Us on Instagram",
-            "stitle": "",
-            "link_to": "",
-            "name_link": "",
-            "margin_btitle": 30
-          }
-        }
-      },
-      "block_order": [
-        "821d3c17-581b-4373-8341-066e215aebe6",
-        "30ee7c51-df59-4a2b-ab20-b4f32bbf7c80",
-        "8a878ee5-82d3-498e-91e8-ec7dc1b78e9f",
-        "e6dc8d9d-bc6c-4295-a384-d138106b099e",
-        "35d95e1c-7db3-4c2a-b5b1-e3e84af36098",
-        "90a88ea0-7992-4fa6-932a-7fb5fc4e99e6",
-        "54ba496e-2a1a-4c59-8da0-3f7b20c8ecb4",
-        "a072bc82-2299-4d1c-83e9-ecc00861380f",
-        "09e70388-416b-42bb-9626-bacadf06f49c",
-        "4cf448e2-99ef-48f2-b7de-82e8dfb4188d",
-        "4c9395f0-dc37-46aa-a4d2-7c85ac0a8540",
-        "012dd9f4-b63a-486b-bb4e-fd3559078f00"
-      ],
-      "settings": {
-        "off_mobile": false,
-        "off_desktop": false,
-        "title": "Instagram 1",
-        "width_section": "container",
-        "width_content": false,
-        "section_margin_top": "",
-        "section_margin_bottom": "60px",
-        "section_padding": "",
-        "section_bg": "",
-        "images_limit": 8,
-        "range_row": 4,
-        "section_bgy": "#fef0e3",
-        "titley": "What they say about us",
-        "autoplay": false,
-        "use_navigation": false,
-        "nav_style": "-default",
-        "nav_mode": "default",
-        "nav_position": "nav-default",
-        "use_dots": true,
-        "dots_mode": "default",
-        "dots_position": "inside",
-        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"992\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"1200\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  }\n}"
-      }
-    },
     "f8b2550c-b290-4798-be6f-148c053fa0e9": {
       "type": "product-slider",
       "blocks": {
@@ -828,6 +575,259 @@
         "section_bg": "",
         "use_lazyload": false,
         "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}"
+      }
+    },
+    "1634694028f2fa928a": {
+      "type": "rd_blog",
+      "blocks": {
+        "7ad7449c-9a9e-4f08-bf7d-64251e5ab8c9": {
+          "type": "title",
+          "settings": {
+            "title_style": "center",
+            "title": "Latest News",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        },
+        "73c2ab1e-612e-48f5-962f-9e0f63738e80": {
+          "type": "1",
+          "settings": {
+            "blog": "classic",
+            "limit": 8,
+            "load_btn": false,
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false
+          }
+        }
+      },
+      "block_order": [
+        "7ad7449c-9a9e-4f08-bf7d-64251e5ab8c9",
+        "73c2ab1e-612e-48f5-962f-9e0f63738e80"
+      ],
+      "settings": {
+        "title": "Related post",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "60px",
+        "section_padding": "",
+        "section_bg": "",
+        "fweight_title": "600",
+        "fsize_stitle": 1.8,
+        "color_title": "#333333",
+        "margin_btitle": 0.8,
+        "fweight_description": "300",
+        "fsize_description": 1.4,
+        "color_desc": "#999999",
+        "margin_bdescription": 0.8,
+        "use_lazyload": true,
+        "autoplay": false,
+        "use_navigation": false,
+        "nav_style": "-default",
+        "nav_mode": "default",
+        "nav_position": "nav-default",
+        "use_dots": false,
+        "dots_mode": "default",
+        "dots_position": "outside",
+        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"480\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  }\n}",
+        "css_section": ""
+      }
+    },
+    "1636767334cb77ea28": {
+      "type": "rd_instagram_1",
+      "blocks": {
+        "821d3c17-581b-4373-8341-066e215aebe6": {
+          "type": "item",
+          "settings": {
+            "name": "Jenson Gregory",
+            "info": "Customer",
+            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellente sque aliquet nibh nec urna. In nisi neque"
+          }
+        },
+        "30ee7c51-df59-4a2b-ab20-b4f32bbf7c80": {
+          "type": "item",
+          "settings": {
+            "name": "Jenson Gregory",
+            "info": "Customer",
+            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellente sque aliquet nibh nec urna. In nisi neque"
+          }
+        },
+        "8a878ee5-82d3-498e-91e8-ec7dc1b78e9f": {
+          "type": "item",
+          "settings": {
+            "name": "Jenson Gregory",
+            "info": "Customer",
+            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellente sque aliquet nibh nec urna. In nisi neque"
+          }
+        },
+        "e6dc8d9d-bc6c-4295-a384-d138106b099e": {
+          "type": "img_i",
+          "settings": {
+            "image_link": ""
+          }
+        },
+        "35d95e1c-7db3-4c2a-b5b1-e3e84af36098": {
+          "type": "img_i",
+          "settings": {
+            "image_link": ""
+          }
+        },
+        "90a88ea0-7992-4fa6-932a-7fb5fc4e99e6": {
+          "type": "img_i",
+          "settings": {
+            "image_link": ""
+          }
+        },
+        "54ba496e-2a1a-4c59-8da0-3f7b20c8ecb4": {
+          "type": "img_i",
+          "settings": {
+            "image_link": ""
+          }
+        },
+        "a072bc82-2299-4d1c-83e9-ecc00861380f": {
+          "type": "img_i",
+          "settings": {
+            "image_link": ""
+          }
+        },
+        "09e70388-416b-42bb-9626-bacadf06f49c": {
+          "type": "img_i",
+          "settings": {
+            "image_link": ""
+          }
+        },
+        "4cf448e2-99ef-48f2-b7de-82e8dfb4188d": {
+          "type": "img_i",
+          "settings": {
+            "image_link": ""
+          }
+        },
+        "4c9395f0-dc37-46aa-a4d2-7c85ac0a8540": {
+          "type": "img_i",
+          "settings": {
+            "image_link": ""
+          }
+        },
+        "012dd9f4-b63a-486b-bb4e-fd3559078f00": {
+          "type": "title",
+          "settings": {
+            "title_style": "center",
+            "title": "Follow Us on Instagram",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        }
+      },
+      "block_order": [
+        "821d3c17-581b-4373-8341-066e215aebe6",
+        "30ee7c51-df59-4a2b-ab20-b4f32bbf7c80",
+        "8a878ee5-82d3-498e-91e8-ec7dc1b78e9f",
+        "e6dc8d9d-bc6c-4295-a384-d138106b099e",
+        "35d95e1c-7db3-4c2a-b5b1-e3e84af36098",
+        "90a88ea0-7992-4fa6-932a-7fb5fc4e99e6",
+        "54ba496e-2a1a-4c59-8da0-3f7b20c8ecb4",
+        "a072bc82-2299-4d1c-83e9-ecc00861380f",
+        "09e70388-416b-42bb-9626-bacadf06f49c",
+        "4cf448e2-99ef-48f2-b7de-82e8dfb4188d",
+        "4c9395f0-dc37-46aa-a4d2-7c85ac0a8540",
+        "012dd9f4-b63a-486b-bb4e-fd3559078f00"
+      ],
+      "settings": {
+        "off_mobile": false,
+        "off_desktop": false,
+        "title": "Instagram 1",
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "60px",
+        "section_padding": "",
+        "section_bg": "",
+        "images_limit": 8,
+        "range_row": 4,
+        "section_bgy": "#fef0e3",
+        "titley": "What they say about us",
+        "autoplay": false,
+        "use_navigation": false,
+        "nav_style": "-default",
+        "nav_mode": "default",
+        "nav_position": "nav-default",
+        "use_dots": true,
+        "dots_mode": "default",
+        "dots_position": "inside",
+        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"992\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"1200\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  }\n}"
+      }
+    },
+    "1636597550a198f3ec": {
+      "type": "rd_call_to_action",
+      "blocks": {
+        "ea79ce29-0519-4c14-aa0f-f3203de0af21": {
+          "type": "item_title",
+          "settings": {
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 0,
+            "width_lg": 0,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "title": "<span>Sign up to <strong class=\"text-uppercase\" style=\"font-weight: 800\">Riode<\/strong><\/span>",
+            "color_title": "#232323",
+            "stitle": "It only takes a second to find out about our latest<br> news and promotions...",
+            "color_stitle": "#ffffff",
+            "title_align": "text-center",
+            "margin_btitle": 14
+          }
+        },
+        "3561adeb-7ebc-4b8b-91c6-15e17c0fff05": {
+          "type": "design_1",
+          "settings": {
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 0,
+            "width_lg": 5,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "title": "",
+            "color_title": "#ffffff",
+            "stitle": "",
+            "color_desc": "#ffffff",
+            "textBtn": "Subscribe <i class=\"d-icon-arrow-right\"><\/i>",
+            "style_btn": "btn-dark",
+            "style_btn_rounded": "btn-round",
+            "btn_shadow": false,
+            "social_media": true
+          }
+        }
+      },
+      "block_order": [
+        "ea79ce29-0519-4c14-aa0f-f3203de0af21",
+        "3561adeb-7ebc-4b8b-91c6-15e17c0fff05"
+      ],
+      "settings": {
+        "title": "Call to Action",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "60px",
+        "section_padding": "60px 0",
+        "section_bg": "",
+        "use_round": false,
+        "color_title": "#333333",
+        "color_desc": "#cccccc",
+        "color_text_input": "#999999",
+        "color_border_input": "#dadada",
+        "color_placeholder": "#999999",
+        "color_bg_input": "#ffffff",
+        "preview": false,
+        "css_section": ".section_id .sc-title{\nletter-spacing: -.04em;\nmargin-bottom: 10px;\nfont-weight: 600;\nfont-size: 2.250em;\n}"
       }
     },
     "1635951743130493b4": {
@@ -1735,12 +1735,12 @@
     "1636168033f185e383",
     "16361859527a526cba",
     "163591206067ad1209",
-    "1636597550a198f3ec",
-    "1634694028f2fa928a",
-    "1636767334cb77ea28",
     "f8b2550c-b290-4798-be6f-148c053fa0e9",
     "026e34ea-1183-42a4-a153-f5fbf8e3357c",
     "4d58f644-9136-474b-84e9-db359910521a",
+    "1634694028f2fa928a",
+    "1636767334cb77ea28",
+    "1636597550a198f3ec",
     "1635951743130493b4",
     "16340839546a8e5911",
     "e24c145a-a58e-4e51-95af-2654bc94dc42",
