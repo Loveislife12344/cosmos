@@ -808,6 +808,9 @@
           "c300f8d9-b7bd-4315-b852-6f011b9bf660",
           "b7de1e78-4b8e-47e8-893a-c249f027db48"
         ],
+        "custom_css": [
+          ".subcribe-text{display:inline-block; max-width:363px;}"
+        ],
         "settings": {
           "width_section": "container",
           "width_content": false,
