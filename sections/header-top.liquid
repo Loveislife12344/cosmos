@@ -1,0 +1,473 @@
+{%- style -%}
+{%- capture header_css -%}
+  .header-top {
+    --text: {{section.settings.color_text_headert}};
+    --text_hv: {{section.settings.color_text_headert_hv}};    
+  }
+  .header-top .delimiter {
+    margin: 0 0.3125rem;
+    color: #aaa;
+    line-height: 0;
+  }
+  .header .divider {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 1.25rem;
+    height: 1.5625rem;
+    width: 1px;
+    background-color: {{section.settings.color_text_headert | color_modify: 'alpha', 0.3}};
+  }
+  .header-top .block-info,
+  .header-top .block-info .list {
+    font-size: 0.75rem;
+  }
+  .list-minicart .mini-cart a.icon-link{
+    display: flex;
+    --text: #fff;
+    --text_hv: #fff;
+    padding: 13px 12px;
+    background-color: #222;
+    transition: .3s all;
+  }
+  .list-minicart .mini-cart a.icon-link:hover{
+    background-color: var(--bs-primary);
+  }
+{%-endcapture-%}
+{{- header_css | strip_newlines | remove: '  ' | remove: '  ' -}}
+.header-top-wrapper{padding: {{section.settings.section_padding | default: '0' | split: '|' | first | replace : '-',' '}};margin-top: {{section.settings.section_margin_top | default: '0' | split: '|' | first }};margin-bottom: {{section.settings.section_margin_bottom | default: '0' | split: '|' | first }};background-position: center;}
+{%- endstyle -%}
+{%- liquid
+  if section.settings.header_top_onm
+    assign visible = 'd-none d-md-block'
+  endif
+  if section.settings.header_top_ont
+    assign visible = ' d-md-none d-lg-block'
+    if section.settings.header_top_ont
+      assign visible = visible | prepend: ' d-none'
+    endif
+  endif
+  unless section.settings.sticky_header_top
+    assign visible_tophead = 'not-sticky'
+  endunless
+  if template.name == 'product' and settings.show_sticky_add and settings.use_add_to_cart_btn
+    assign visible_tophead = 'not-sticky'
+  endif
+-%}
+{%- if section.blocks.size > 0 -%}
+<div class="content_{{section.id}} {{visible}} {{visible_tophead}}"{%if section.settings.color_headt_bg != blank%} style="background: {{ section.settings.color_headt_bg }};"{% endif %}>
+  {%-if section.settings.header_top_image-%}
+  {{ section.settings.header_top_image | image_url: width: section.settings.header_top_image.width | image_tag: class: 'img-fit-cover', alt: section.settings.header_top_image.alt, size: '100vw', widths: '480, 576, 720, 1067, 1903, 3827, 2147, 7667, 4307', loading: 'lazy' }}
+  {%-endif-%}
+  <div class="header-top {{section.settings.width_header_top}}">
+    <div class="kt--drop-w kt--drop-w-d">
+      <div class="header-top-wrapper" data-respon="{'el':'.header-top-wrapper','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+        <div class="row align-items-center justify-content-between">
+        {%- for block in section.blocks -%}
+          {%- assign col_resp = 'col-auto' -%}
+          {%- if block.settings.col != 'auto' -%}
+            {%- assign col_responsive = block.settings.col | split: '|' -%}
+            {% capture col_resp %}col-{{ col_responsive[0] }} col-sm-{{ col_responsive[1] }} col-md-{{ col_responsive[2] }} col-lg-{{ col_responsive[3] }} col-xl-{{ col_responsive[4] }}{% endcapture %}
+          {%- endif -%}
+          <div class="block-info{%if forloop.first%} _first{%elsif forloop.last%} _last{%endif%} {{col_resp}}{%if block.settings.welcome_msg_show %} block-welcome{% endif %}">
+            {%- assign drop_mobile_items = 0 -%}
+            {%- capture drop_mobile -%}
+            {%- if block.settings.call_us_show -%}
+            {%- assign drop_mobile_items = drop_mobile_items | plus: 1 -%}
+            <div class="list-phone">
+              <span class="infor">
+                <a class="d-icon-phone-square" href="tel:{{settings.phone_contact | default: shop.address.phone | remove: ' '}}">
+                  <span class="label">{{'contact.orther.call_us' | t}}{{settings.phone_contact | default: shop.phone}}</span>
+                </a>
+              </span>
+            </div>
+            {%- endif -%}
+            {%- if block.settings.email_show -%}
+            {%- assign drop_mobile_items = drop_mobile_items | plus: 1 -%}
+            <div class="list-email">
+              <span class="infor">
+                <a class="d-icon-envelope" href="mailto:{{settings.email_contact | default: shop.address.email}}">
+                  <span class="label">{{'contact.orther.email' | t}}{{settings.email_contact | default: shop.email}}</span>
+                </a>
+              </span>
+            </div>
+            {%- endif -%}
+            {%- if block.settings.social_contact_show -%}
+            {%- assign drop_mobile_items = drop_mobile_items | plus: 1 -%}
+            <div class="list-socails">
+              <div class="infor socials_">
+                {%-render "kt_socials"-%}
+              </div>
+            </div>
+            {%- endif -%}
+            {%- if block.settings.wishlist_show and settings.use_wishlist -%}
+            {%- assign drop_mobile_items = drop_mobile_items | plus: 1 -%}          
+            <div class="list-wishlist">
+              <div class="infor"><a class="d-icon-heart-o" href="{{pages['wishlist'].url}}"><span class="label">{{'products.wishlist.title' | t}}</span> (<span class="wishlistCount wishlist-count" style="background-color: transparent;">0</span>)</a></div>
+            </div>
+            {%- endif -%}
+            {%- if block.settings.compare_show and settings.use_compare -%}
+            {%- assign drop_mobile_items = drop_mobile_items | plus: 1 -%}
+            <div class="list-compare">
+              <div class="infor"><button type="button" class="d-icon-random btn-a" data-bs-toggle="offcanvas" data-bs-target="#compareOffcanvas" aria-controls="compareOffcanvas">{{'products.compare.title' | t}} (<span class="compareCount">0</span>)</button></div>
+            </div>
+            {%- endif -%}
+            {%- if block.settings.link_inline_show and linklists[block.settings.link_inline].links.size > 0 -%}
+            {%-for link in linklists[block.settings.link_inline].links-%}
+            {%- assign drop_mobile_items = drop_mobile_items | plus: 1 -%}
+            <div class="list-link">
+              <a href="{{link.url}}" title="{{link.title | strip_html}}">{{ link.title }}</a>
+            </div>
+            {%-endfor-%}
+            {%- endif -%}
+            {%- if block.settings.account_show and shop.customer_accounts_enabled -%}
+            {%- assign drop_mobile_items = drop_mobile_items | plus: 1 -%}
+            <div class="list-link-account">
+              <span class="infor">
+                {%- if customer -%}
+                <a class="d-icon-user" href="{{routes.account_url}}"><span>{{"layout.customer.account" | t}}</span></a>
+                {%- else -%}
+                <a class="login-tab d-icon-user" href="{{routes.account_login_url}}"{%if settings.newsletter_popup%} data-bs-toggle="modal" data-bs-target="#rd_accModal" data-bs-modal="{{routes.account_login_url}}/?section_id=kt_account_popup&q=content"{%endif%}><span class="ms-1">{{"layout.customer.log_in" | t}}</span></a>
+                <span class="delimiter">/</span>
+                <a class="register-tab" href="{{routes.account_register_url }}"{%if settings.newsletter_popup%} data-bs-toggle="modal" data-bs-target="#rd_accModal" data-bs-modal="{{routes.account_register_url}}/?section_id=kt_account_popup&q=content"{%endif%}><span>{{"layout.customer.create_account" | t}}</span></a>
+                {%- endif -%}
+              </span>
+            </div>
+            {%- endif -%}
+            {%- endcapture -%}
+            
+            {%- assign divider = false -%}
+            {%- if block.settings.link_dropdown_show and linklists[block.settings.link_dropdown].links.size > 0 -%}
+            {%-for link in linklists[block.settings.link_dropdown].links-%}
+            <div class="list-link-drop">
+              <a href="{{link.url}}" title="{{link.title | strip_html}}">{{ link.title }}</a>
+            </div>
+            {%-endfor-%}
+            {%- assign divider = true -%}
+            {%- endif -%}
+            {%- if block.settings.account_dropdown_show and shop.customer_accounts_enabled -%}
+            <div class="list-account">
+              <div class="block-account kt--drop-i">
+                <div class="kt--drop-title text-link d-icon-angle-down_ text-nowrap">
+                  <span class="account__name">{{ 'customer.account.mini_title' | t }}</span>
+                </div>
+                <div class="kt--drop-in">
+                  <ul class="mb-0 list-links list-unstyled">
+                  {%- if shop.customer_accounts_enabled -%}
+                    {%- if customer -%}
+                      <li>
+                        <a href="{{routes.account_url}}"><span>{{"layout.customer.account" | t}}</span></a>
+                        <span class="perlink"> / </span>
+                        <a href="{{routes.account_logout_url}}"><span>{{"layout.customer.log_out" | t}}</span></a>
+                      </li>
+                    {%- else -%}
+                      <li>
+                        <a href="{{routes.account_login_url}}"{%if settings.newsletter_popup%} data-bs-toggle="modal" data-bs-target="#rd_accModal" data-bs-modal="{{routes.account_login_url}}/?section_id=kt_account_popup&q=content"{%endif%}><span>{{"layout.customer.log_in" | t}}</span></a>
+                        <span class="perlink"> / </span>
+                        <a href="{{routes.account_register_url}}"{%if settings.newsletter_popup%} data-bs-toggle="modal" data-bs-target="#rd_accModal" data-bs-modal="{{routes.account_register_url}}/?section_id=kt_account_popup&q=content"{%endif%}><span>{{"layout.customer.create_account" | t}}</span></a>
+                      </li>
+                    {%- endif -%}
+                  {%- endif -%}
+                    {%- assign checkout_url = routes.root_url | append: '/checkout' | replace: '//', '/' -%}
+                    <li><a href="{{checkout_url}}"><span>{{'cart.general.checkout_small' | t}}</span></a></li>
+                  {%- if settings.use_compare -%}
+                    <li><button class="btn-a" type="button" data-bs-toggle="offcanvas" data-bs-target="#compareOffcanvas" aria-controls="compareOffcanvas"><span>{{'products.compare.title' | t}}</span></button></li>
+                  {% endif %}
+                  {%- if settings.use_wishlist -%}
+                    {%- if pages['wishlist'].title != empty -%}
+                    <li><a href="{{pages['wishlist'].url}}"><span>{{'products.wishlist.title' | t}}</span></a></li>
+                    {%- endif -%}
+                  {%- endif -%}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {%- assign divider = true -%}
+            {%- endif -%}
+            {%- if block.settings.currency_dropdown_show and shop.enabled_currencies.size > 1 -%}
+              <div class="list-currency">
+                <div class="block-currency kt--drop-i">
+                  <div class="kt--drop-title text-link d-icon-angle-down_ currency_display">
+                    <span class="currency__name">{{ cart.currency.iso_code | default: shop.currency }}</span>
+                  </div>
+                  <div class="kt--drop-in w-auto py-1i currency-list">
+                    <ul class="currency curcy_list list-unstyled mb-0 kt_scroll">
+                  {% assign unless_flags = 'XAF,XCD,XOF,XPF' | split: ',' %}
+                      {%- for currency in shop.enabled_currencies -%}
+                      <li class="curcy_item{% if currency == cart.currency %} active{% endif %}" data-currency="{{currency.iso_code}}">
+                        {%- assign country = currency.iso_code | split: "" -%}{%- assign country = country[0] | append: country[1] | downcase -%}
+                          <img width="26" height="19.5" src="{% unless unless_flags contains currency.iso_code %}//cdn.shopify.com/static/images/flags/{{country}}.svg{% else %}data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=={% endunless %}" alt="{{currency.name}}" loading="lazy">
+                        <span class="curc_label" aria-label="{{currency.name}}">{{currency.iso_code}}</span>
+                      </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              {%- assign divider = true -%}
+            {%- endif -%}
+            {%- if block.settings.language_app_show -%}
+            <div class="list-language_app list-locale text-uppercase">
+              {%- if shop.published_locales.size > 1 -%}
+              <div class="block-locale kt--drop-i">
+                <div class="kt--drop-title text-link locale_display d-icon-angle-down_">
+                  <span class="locale__name">{{ cart.locale.iso_code | default: shop.locale }}</span>
+                </div>
+                <div class="kt--drop-in w-auto py-1i locale-list text-uppercase">
+                  <ul class="locale locale_list list-unstyled mb-0 kt_scroll">
+                    {%- for locale in shop.published_locales -%}
+                    <li class="locale_item{% if locale.iso_code == shop.locale %} active{% endif %}">
+                      <a href="{{locale.root_url}}"><span class="locale_label" aria-label="{{locale.name}}">{{locale.iso_code}}</span></a>
+                    </li>
+                    {%- endfor -%}
+                  </ul>
+                </div>
+              </div>
+              {%- endif -%}
+              {{-block.settings.language_app_html | html-}}
+            </div>
+            {%- endif -%}
+            {%-if divider and drop_mobile != blank-%}<div class="divider d-none d-sm-block"></div>{%- endif -%}
+            {%- if block.settings.welcome_msg_show -%}
+            <div class="list-custom">              
+              <div class="welcome-msg d-block">{{-block.settings.welcome_msg | html-}}</div>
+            </div>
+            {%- endif -%}
+            {%- if drop_mobile_items > 2 -%}
+            <div class="list-link drop-mobile">
+              <span class="label-drop d-icon-angle-down_ d-lg-none">{{'general.accessibility.links' | t}} </span>
+              <div class="list-act row align-items-center">
+                {{-drop_mobile-}}
+              </div>
+            </div>
+            {%- else -%}
+              {{-drop_mobile-}}
+            {%- endif -%}
+            {%- if block.settings.custom_show -%}
+            <div class="list-custom">
+              {{-block.settings.custom_html | html-}}
+            </div>
+            {%- endif -%}
+            {%- if block.settings.cart_show -%}
+            <div class="list-minicart">
+              {%- render 'kt_mini-cart', layout: 'cart_top' -%}
+            </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+        </div>
+      </div>
+    </div>
+    {%- if section.settings.width_header_top == "container" -%}
+    <div class="clearfix border-top{%unless section.settings.sticky_header_top%} not-sticky{%endunless%}" style="--bs-border-color: {{section.settings.color_border}}"></div>
+    {%- endif -%}
+  </div>
+  {%- if section.settings.width_header_top != "container" -%}
+  <div class="clearfix border-top{%unless section.settings.sticky_header_top%} not-sticky{%endunless%}" style="--bs-border-color: {{section.settings.color_border}}"></div>
+  {%- endif -%}
+</div>
+{%-endif-%}
+{% schema %}
+{
+  "name": "Header top",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id" :"sticky_header_top",
+      "label": "Use sticky?"
+    },
+    {
+      "type": "select",
+      "id": "width_header_top",
+      "label": "Max width section",
+      "options": [
+        { "value": "container", "label": "1200px" },
+        { "value": "container-fluid wide", "label": "Wide" },
+        { "value": "w-100", "label": "Full width" }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "text",
+      "id": "section_margin_top",
+      "label": "Margin top",
+      "info": "25px|30px|35px|40px|45px|50px"
+    },
+    {
+      "type": "text",
+      "id": "section_margin_bottom",
+      "label": "Margin bottom",
+      "info": "25px|30px|35px|40px|45px|50px"
+    },
+    {
+      "type": "text",
+      "id": "section_padding",
+      "label": "Paddings (top right bottom left)",
+      "info": "60px 60px 0 60px"
+    },
+    {
+      "type": "color",
+      "id": "color_text_headert",
+      "label": "Color",
+      "default": "#555"
+    },
+    {
+      "type": "color",
+      "id": "color_text_headert_hv",
+      "label": "Hover color",
+      "default": "#555"
+    },
+    {
+      "type": "color_background",
+      "id": "color_headt_bg",
+      "label": "Background Header top"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_top_image",
+      "label": "Background image",
+      "info": "Size suggestion: 1920 x 752 pixels"
+    },
+    {
+      "type": "color",
+      "id": "color_border",
+      "label": "Boder color",
+      "default": "#212529"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_top_onm",
+      "label": "Hide on mobile?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "header_top_ont",
+      "label": "Hide on tablet?",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "top_menu",
+      "name": "Item [Top menu]",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "call_us_show",
+          "label": "Use Call us?"
+        },
+        {
+          "type": "checkbox",
+          "id": "email_show",
+          "label": "Use Email?"
+        },
+        {
+          "type": "checkbox",
+          "id": "social_contact_show",
+          "label": "Use Socials contact?"
+        },
+        {
+          "type": "checkbox",
+          "id": "wishlist_show",
+          "label": "Use Wishlist?"
+        },
+        {
+          "type": "checkbox",
+          "id": "compare_show",
+          "label": "Use Compare?"
+        },
+        {
+          "type": "checkbox",
+          "id": "account_show",
+          "label": "Use link Account?"
+        },
+        {
+          "type": "checkbox",
+          "id": "link_inline_show",
+          "label": "Use Linklist inline?"
+        },
+        {
+          "type": "link_list",
+          "id": "link_inline",
+          "label": "Linklist"
+        },
+        {
+          "type": "header",
+          "content": "Dropdown"
+        },
+        {
+          "type": "checkbox",
+          "id": "link_dropdown_show",
+          "label": "Use Linklist dropdown?"
+        },
+        {
+          "type": "link_list",
+          "id": "link_dropdown",
+          "label": "Linklist"
+        },
+        {
+          "type": "checkbox",
+          "id": "account_dropdown_show",
+          "label": "Use Account dropdown?"
+        },
+        {
+          "type": "checkbox",
+          "id": "currency_dropdown_show",
+          "label": "Use Currency dropdown?"
+        },
+        {
+          "type": "header",
+          "content": "Custom"
+        },
+        {
+          "type": "checkbox",
+          "id": "language_app_show",
+          "label": "Use Language app?"
+        },
+        {
+          "type": "liquid",
+          "id": "language_app_html",
+          "label": "HTML of Language app?"
+        },
+        {
+          "type": "checkbox",
+          "id": "custom_show",
+          "label": "Use Custom content?"
+        },
+        {
+          "type": "liquid",
+          "id": "custom_html",
+          "label": "HTML of custom?"
+        },
+        {
+          "type": "checkbox",
+          "id": "welcome_msg_show",
+          "label": "Use Welcome message?"
+        },
+        {
+          "type": "liquid",
+          "id": "welcome_msg",
+          "label": "Welcome message"
+        },
+        {
+          "type": "checkbox",
+          "id": "cart_show",
+          "label": "Use Cart button?"
+        },
+        {
+          "type": "header",
+          "content": "Responsive"
+        },
+        {
+          "type": "html",
+          "id": "col",
+          "label": "Item column (support reponsive)",
+          "default": "auto",
+          "info": "Responsive: 12|6|4|3|3"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

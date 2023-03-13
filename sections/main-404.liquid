@@ -1,0 +1,41 @@
+<!-- 404-template.liquid -->
+{%style%}
+.error-section {
+  background: {{section.settings.bg_sc}};
+  min-height: 694px;
+}
+.kt-breadcrumbs {
+  display: none;
+}
+{%endstyle%}
+<section class="error-section d-flex flex-column justify-content-center align-items-center text-center pl-3 pr-3">
+  <h1 class="mb-2 ls-m" style="font-size: 2.125rem;">{{'general.404.title' | t}}</h1>
+  {{-section.settings.img | img_url: 'master' | img_tag-}}
+  <!-- <img src="images/subpages/404.png" alt="error 404" width="609" height="131"> -->
+  <h4 class="_mt-4 mb-0 ls-m text-uppercase">{{'general.404.subtext' | t}}</h4>
+  <p class="text-grey font-primary ls-m">{{'general.404.subtext2' | t}}</p>
+  <a href="{{section.settings.url | default: shop.url}}" class="btn btn-primary btn-rounded mb-4">{{'general.404.link' | t}}</a>
+</section>
+{%schema%}
+  {
+    "name": "404 Template",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_sc",
+        "label": "Background color",
+        "default": "#f7f7f7"
+      },
+      { 
+        "type":"image_picker",
+        "id":"img",
+        "label":"Banner image"
+      },
+      { 
+        "type":"url",
+        "id":"url",
+        "label":"Link to"
+      }
+    ]
+  }
+{%endschema%}

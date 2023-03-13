@@ -1,0 +1,167 @@
+{%- case block.type -%}
+  {%- when 'item_simple_icons' -%}
+    <div class="{{item_grid}}">
+      {%-if block.settings.url-%}<a href="{{block.settings.url}}" aria-label="{{block.settings.title | escape}}">{%-endif-%}
+      <div class="icon-box text-{{block.settings.content_align}} icon-box-{{block.settings.content_align}}">
+        {%- if block.settings.icon_font != blank -%}
+        <div class="icon-box-icon"><i class="{{block.settings.icon_font}}"></i></div>
+        {%- elsif block.settings.icon -%}        
+        <div class="icon-box-icon">
+          {%- assign image_item = block.settings.icon -%}
+          <img class="lazyload mx-auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ image_item | img_url: '240x' }}" alt="{{ image_item.alt | default: shop.name | escape }}" width="{{block.settings.size}}" height="{{block.settings.size | divided_by: image_item.aspect_ratio}}">
+        </div>
+        {%- endif -%}
+        <div class="icon-box-content">
+          <h3 class="icon-box-title">{{block.settings.title}}</h3><p>{{block.settings.content}}</p>
+        </div>
+      </div>
+      {%-if block.settings.url-%}</a>{%-endif-%}
+    </div>
+  {%- when 'item_sircle_icons' -%}
+    <div class="{{item_grid}}">
+      {%-if block.settings.url-%}<a href="{{block.settings.url}}" aria-label="{{block.settings.title | escape}}">{%-endif-%}
+      <div class="icon-box icon-box-circle text-{{block.settings.content_align}} icon-box-{{block.settings.content_align}}">
+        {%- if block.settings.icon_font != blank -%}
+        <div class="icon-box-icon">
+          <i class="{{block.settings.icon_font }}"></i>
+        </div>
+        {%- elsif block.settings.icon -%}
+        <div class="icon-box-icon">
+          {%- assign image_item = block.settings.icon -%}
+          <img class="lazyload mx-auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ image_item | img_url: '240x' }}" alt="{{ image_item.alt | default: shop.name | escape }}" width="{{block.settings.size}}" height="{{block.settings.size | divided_by: image_item.aspect_ratio}}">
+        </div>
+        {%- endif -%}
+        <div class="icon-box-content">
+          <h3 class="icon-box-title">{{block.settings.title}}</h3><p>{{block.settings.content}}</p>
+        </div>
+      </div>
+      {%-if block.settings.url-%}</a>{%-endif-%}
+    </div>
+  {%- when 'item_icon_side' -%}
+    <div class="{{item_grid}}">
+      {%-if block.settings.url-%}<a href="{{block.settings.url}}" aria-label="{{block.settings.title | escape}}">{%-endif-%}
+      <div class="item-wrap">
+        <div class="icon-box icon-box-side">
+          {%- if block.settings.icon_font != blank -%}
+          <div class="icon-box-icon">
+            <i class="{{block.settings.icon_font }}"></i>
+          </div>
+          {%- elsif block.settings.icon -%}
+          <div class="icon-box-icon mr-2">
+            {%- assign image_item = block.settings.icon -%}
+            <img class="lazyload mx-auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ image_item | img_url: '240x' }}" alt="{{ image_item.alt | default: shop.name | escape }}" width="{{block.settings.size}}" height="{{block.settings.size | divided_by: image_item.aspect_ratio}}">
+          </div>
+          {%- endif -%}
+          <div class="icon-box-content">
+            <h3 class="icon-box-title">{{block.settings.title}}</h3><p>{{block.settings.content}}</p>
+          </div>
+        </div>
+      </div>
+      {%-if block.settings.url-%}</a>{%-endif-%}
+    </div>
+  {%- when 'item_icon_side_2' -%}
+    <div class="{{item_grid}}">
+      {%-if block.settings.url-%}<a href="{{block.settings.url}}" aria-label="{{block.settings.title | escape}}">{%-endif-%}
+      <div class="item-wrap">
+        <div class="icon-box icon-box-side-2 text-center">
+          <div class="icon-box-content">
+            <h3 class="icon-box-title">
+              {%- if block.settings.icon_font != blank -%}
+                <span class="icon-box-icon">
+                  <i class="{{block.settings.icon_font | default: 'd-icon-service'}}"></i>
+                </span>
+              {%- elsif block.settings.icon -%} 
+                <span class="icon-box-icon">           
+                  {%- assign image_item = block.settings.icon -%}
+                  <img class="lazyload mx-auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ image_item | img_url: '240x' }}" alt="{{ image_item.alt | default: shop.name | escape }}" width="{{block.settings.size}}" height="{{block.settings.size | divided_by: image_item.aspect_ratio}}">
+                </span>
+              {%- endif -%}
+              {{block.settings.title}}
+            </h3>
+            <p>{{block.settings.content}}</p>
+          </div>
+        </div>
+      </div>
+      {%-if block.settings.url-%}</a>{%-endif-%}
+    </div>
+  {%- when 'item_icon_side_light' -%}
+    <div class="{{item_grid}}">
+      {%-if block.settings.url-%}<a href="{{block.settings.url}}" aria-label="{{block.settings.title | escape}}">{%-endif-%}
+      <div class="icon-box icon-box-side item_icon_side_light">
+        {%- if block.settings.icon_font != blank -%}
+        <div class="icon-box-icon">
+          <i class="{{block.settings.icon_font}}"></i>
+        </div>
+        {%- elsif block.settings.icon -%}
+        <div class="icon-box-icon mr-2">
+          {%- assign image_item = block.settings.icon -%}
+          <img class="lazyload mx-auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ image_item | img_url: '240x' }}" alt="{{ image_item.alt | default: shop.name | escape }}" width="{{block.settings.size}}" height="{{block.settings.size | divided_by: image_item.aspect_ratio}}">
+        </div>
+        {%- endif -%}
+        <div class="icon-box-content">
+          <h3 class="icon-box-title">{{block.settings.title}}</h3><p>{{block.settings.content}}</p>
+        </div>
+      </div>
+      {%-if block.settings.url-%}</a>{%-endif-%}
+    </div>
+  {%- when 'item_icon_side_dark' -%}
+    <div class="{{item_grid}}">
+      {%-if block.settings.url-%}<a href="{{block.settings.url}}" aria-label="{{block.settings.title | escape}}">{%-endif-%}
+      <div class="icon-box icon-box-side dark-mode">
+        {%- if block.settings.icon_font != blank -%}
+        <div class="icon-box-icon">
+          <i class="{{block.settings.icon_font}}"></i>
+        </div>
+        {%- elsif block.settings.icon -%}
+        <div class="icon-box-icon mr-2">
+          {%- assign image_item = block.settings.icon -%}
+          <img class="lazyload mx-auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ image_item | img_url: '240x' }}" alt="{{ image_item.alt | default: shop.name | escape }}" width="{{block.settings.size}}" height="{{block.settings.size | divided_by: image_item.aspect_ratio}}">
+        </div>
+        {%- endif -%}
+        <div class="icon-box-content">
+          <h3 class="icon-box-title">{{block.settings.title}}</h3><p>{{block.settings.content}}</p>
+        </div>
+      </div>
+      {%-if block.settings.url-%}</a>{%-endif-%}
+    </div>
+  {%- when 'item_icon_box_card' -%}
+    <div class="{{item_grid}}">
+      {%-if block.settings.url-%}<a href="{{block.settings.url}}" aria-label="{{block.settings.title | escape}}">{%-endif-%}
+      <div class="icon-box icon-box-card text-center" style="background-color: {{block.settings.bg_color}}">
+        {%- if block.settings.icon_font != blank -%}
+        <div class="icon-box-icon">
+          <i class="{{block.settings.icon_font}}"></i>
+        </div>
+        {%- elsif block.settings.icon -%}
+        <div class="icon-box-icon mr-2">
+          {%- assign image_item = block.settings.icon -%}
+          <img class="lazyload mx-auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ image_item | img_url: '240x' }}" alt="{{ image_item.alt | default: shop.name | escape }}" width="{{block.settings.size}}" height="{{block.settings.size | divided_by: image_item.aspect_ratio}}">
+        </div>
+        {%- endif -%}
+        <div class="icon-box-content">
+          <h3 class="icon-box-title">{{block.settings.title}}</h3><p>{{block.settings.content}}</p>
+        </div>
+      </div>
+      {%-if block.settings.url-%}</a>{%-endif-%}
+    </div>
+  {%- when 'item_icon_box_card_2' -%}
+    <div class="{{item_grid}}">
+      {%-if block.settings.url-%}<a href="{{block.settings.url}}" aria-label="{{block.settings.title | escape}}">{%-endif-%}
+      <div class="icon-box icon-box-card-border text-center">
+        {%- if block.settings.icon_font != blank -%}
+        <div class="icon-box-icon">
+          <i class="{{block.settings.icon_font}}"></i>
+        </div>
+        {%- elsif block.settings.icon -%}
+        <div class="icon-box-icon">
+          {%- assign image_item = block.settings.icon -%}
+          <img class="lazyload mx-auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ image_item | img_url: '240x' }}" alt="{{ image_item.alt | default: shop.name | escape }}" width="{{block.settings.size}}" height="{{block.settings.size | divided_by: image_item.aspect_ratio}}">
+        </div>
+        {%- endif -%}
+        <div class="icon-box-content">
+          <h3 class="icon-box-title">{{block.settings.title}}</h3><p>{{block.settings.content}}</p>
+        </div>
+      </div>
+      {%-if block.settings.url-%}</a>{%-endif-%}
+    </div>
+{%- endcase -%}

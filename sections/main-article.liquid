@@ -1,0 +1,392 @@
+<!-- main-article.liquid -->
+{%- liquid
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+<div class="{{section.settings.width_section}}">
+  <div class="content_{{section.id}}">
+    <div class="section-width{%if section.settings.width_content and section.settings.width_section == 'w-100'%} container{%else%} w-100{%endif%}" data-template="blog-template">
+      <div class="row">
+        <div class="blog-content{%if section.settings.use_sidebar %} col-lg-9{%endif%}">
+        {%-if article.image-%}
+        {%- assign image_item = article.image -%}
+        <figure class="entry-media mx-auto" style="width: 100%; max-width: {{image_item.width}}px">
+          {%-assign width = image_item.width -%}{%-assign height = image_item.height | plus: 0.00-%}
+          <div class="img__banner lazyload mx-auto none-bg" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%" data-bgset="{%- render 'bgset', image: image_item -%}" data-sizes="auto" aria-label="{{shop.name | escape}}"></div>
+        </figure>
+        {%-endif-%}
+        {%- assign new_comment = false -%}
+        {%-if comment and comment.created_at-%}
+          {%- assign new_comment = true -%}
+          {%- assign new_comment_id = comment.id -%}
+        {%-endif-%}
+        {%-if new_comment-%}
+          {%- assign duplicate_comment = false-%}
+          {%-for comment in article.comments-%}
+            {%-if comment.id == new_comment_id-%}
+              {%- assign duplicate_comment = true-%}
+              {%-break-%}
+            {%-endif-%}
+          {%-endfor-%}
+          {%-if duplicate_comment-%}
+            {%- assign number_of_comments = article.comments_count -%}
+          {%-else-%}
+            {%- assign number_of_comments = article.comments_count | plus: 1 -%}
+          {%-endif-%}
+        {%-else-%}
+          {%- assign number_of_comments = article.comments_count -%}
+        {%-endif-%}
+        <article class="entry single-entry">
+          <div class="entry-body">
+            <div class="entry-meta">
+              {%- if section.settings.blog_show_author -%}
+              <span class="entry-author">{{ 'blogs.general.by_author' | t }} <a href="#">{{ article.author }}</a></span>
+              {%- endif -%}
+              {%- if section.settings.blog_show_date -%}
+              <span class="meta-separator">|</span>
+              <span>{{ article.published_at | date: format: "article_published_at" }}</span>
+              {%- endif -%}
+              {%- if blog.comments_enabled? -%}
+              <span class="meta-separator">|</span>
+              <span>{{ 'blogs.comments.comments_with_count_html' | t: count: article.comments_count }}</span>
+              {%- endif -%}
+            </div>
+            <h2 class="entry-title">{{ article.title }}</h2>
+            <!-- <div class="entry-cats">{{ 'blogs.general.in_categories' | t }} <a href="javascript:void(0)">{{blog.title}}</a></div> -->
+            <div class="entry-content editor-content">
+              {{article.content}}
+            </div>
+            <div class="entry-footer row no-gutters">
+              <div class="col-sm">
+                <div class="entry-tags">
+                  <span class="d-none">{{ 'blogs.article.title_tags' | t }}:</span>{%- for tag in article.tags -%}{{ tag.title | link_to: 'javascript:void(0)', tag.title }}{%- endfor -%}
+                </div>
+              </div>
+              {% if section.settings.show_share_buttons %}
+              <div class="col-sm-auto mt-2 mt-sm-0">
+                <div class="social-icons social-icons-color">
+                  <div class="socials_ style-01 socials_color social_label">
+                    <span class="social-label d-none">{{'blogs.article.title_social_share' | t}}:</span>
+                    {%-render 'kt_social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image-%}
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+        <nav class="pager-nav" aria-label="Page navigation">
+          {%- if blog.previous_article -%}
+          <a class="pager-link pager-link-prev" href="{{blog.previous_article.url}}" aria-label="Previous" tabindex="-1">
+            {{'blogs.article.previous_post_button' | t}}
+            <span class="pager-link-title">{{blog.previous_article.title}}</span>
+          </a>
+          {%- endif -%}
+          {%- if blog.next_article -%}
+          <a class="pager-link pager-link-next" href="{{blog.next_article.url}}" aria-label="Next" tabindex="-1">
+            {{'blogs.article.next_post_button' | t}}
+            <span class="pager-link-title">{{blog.next_article.title}}</span>
+          </a>
+          {%- endif -%}
+        </nav>
+        {%-if blog.comments_enabled?-%}
+          {%-paginate article.comments by 5-%}
+          <div class="comments">
+            {%-if blog.comments_enabled?-%}
+            <h3 class="sc-title">{{ 'blogs.comments.comments_with_count_html' | t: count: number_of_comments }}</h3>
+            {%-endif-%}
+            {%-if comment and comment.created_at-%}
+            <div class="alert alert-success alert-simple alert-inline mb-5" role="alert">
+              {%-if blog.moderated?-%}
+              {{ 'blogs.comments.success_moderated' | t }}
+              {%-else-%}
+              {{ 'blogs.comments.success' | t }}
+              {%-endif-%}
+            </div>
+            {%-endif-%}              
+            {%-if number_of_comments > 0-%}
+            <ul class="list-unstyled">
+              {%-for comment in article.comments-%}
+              <li>
+                <div class="comment">
+                  <figure class="comment-media">
+                    <img src="https://www.gravatar.com/avatar/{{ comment.email | remove: ' ' | strip_newlines | downcase | md5 }}?s=130&d=mm&r=g" srcset="https://www.gravatar.com/avatar/{{ comment.email | remove: ' ' | strip_newlines | downcase | md5 }}?s=130&d=mm&r=g 2x" alt="{{ comment.author }}">
+                  </figure>
+                  <div class="comment-body">
+                    <div class="comment-user">
+                      <span class="comment-date">{{ comment.created_at | date: "%B %d, %Y at %I:%M %p" }}</span>
+                      <h4>{{ comment.author }}</h4>
+                    </div>
+                    <div class="comment-content">
+                      {{ comment.content }}
+                    </div>
+                  </div>
+                </div>
+              </li>
+              {%-endfor-%}
+            </ul>
+            {%-endif-%}
+          </div>
+          <div class="reply">
+            <div class="heading">
+              <h3 class="sc-title">{{ 'blogs.comments.title' | t }}</h3>
+              <p class="title-desc">{{ 'blogs.comments.note' | t }}</p>
+            </div>
+            {%-form 'new_comment', article-%}
+              {%- if form.errors -%}
+                <div class="alert alert-warning" role="alert">
+                  {{ form.errors | default_errors }}
+                </div>
+              {%- endif -%}
+              <label for="reply-message" class="form-label d-none">{{ 'blogs.comments.message' | t }}</label>
+              <textarea name="comment[body]" cols="30" rows="4" class="form-control{%if form.errors contains 'body'%} error{%endif%}" required="" placeholder="{{ 'blogs.comments.message' | t }}"></textarea>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="reply-name" class="form-label d-none">{{ 'blogs.comments.name' | t }}</label>
+                  <input type="text" class="form-control{%if form.errors contains 'author'%} error{%endif%}" name="comment[author]" required="" placeholder="{{ 'blogs.comments.name' | t }}">
+                </div>
+                <div class="col-md-6">
+                  <label for="reply-email" class="form-label d-none">{{ 'blogs.comments.email' | t }}</label>
+                  <input type="email" class="form-control{%if form.errors contains 'email'%} error{%endif%}" name="comment[email]" required="" placeholder="{{ 'blogs.comments.email' | t }}">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-rounded">
+                <span>{{ 'blogs.comments.post' | t }}</span><i class="d-icon-arrow-right"></i>
+                <input class="button" type="hidden" name="comment_parent" value="0">
+              </button>
+            {%-endform-%}
+          </div>
+          {% if paginate.pages > 1 %}
+            <div class="pagination_ w-100">
+              {%- render 'pagination', paginate: paginate, cssAlign: cssAlign, cssAlign_rev: cssAlign_rev -%}
+            </div>
+          {% endif %}
+          {%-endpaginate-%}
+        {%-endif-%}
+        </div>
+        {%-if section.settings.use_sidebar-%}
+        <div class="sidebar col-lg-3">
+          {%- render 'kt_blog_sidebar', section: section -%}
+        </div>
+        {%-endif-%}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mb-3"></div>
+{% schema %}
+  {
+    "name": "Blog post",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "container"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?"
+      },/*
+      {
+        "type": "header",
+        "content": "Layout settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_masonry",
+        "label": "Use masonry layout?"
+      },*/
+      {
+        "type": "header",
+        "content": "Content settings"
+      },/*
+      {
+        "type": "select",
+        "id": "blog_layout",
+        "options": [
+          {
+            "value": "01",
+            "label": "Layout 1"
+          },
+          {
+            "value": "02",
+            "label": "Layout 2"
+          },
+          {
+            "value": "03",
+            "label": "Layout 3"
+          },
+          {
+            "value": "04",
+            "label": "Layout 4"
+          },
+          {
+            "value": "05",
+            "label": "Layout 5"
+          },
+          {
+            "value": "06",
+            "label": "Layout 6"
+          }
+        ],
+        "label": "Blog layout",
+        "default": "01"
+      },
+      {
+        "type": "range",
+        "id": "limit",
+        "min": 1,
+        "max": 18,
+        "step": 1,
+        "label": "Pagination",
+        "default": 9
+      },
+      {
+        "type": "checkbox",
+        "id": "filters",
+        "label": "Show Blog filters",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "blog_filters",
+        "label": "Fiters",
+        "default": "Fashion, Lifestyle, Shopping, Sport, Summer Sale, Travel, Winter Sale",
+        "placeholder": "tag1, tag2, ..."
+      },*/
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },/*
+      {
+        "type": "radio",
+        "id": "items_per_row",
+        "label": "Items per row",
+        "options": [
+          { "value": "1", "label": "1 item" },
+          { "value": "2", "label": "2 items" },
+          { "value": "3", "label": "3 items" },
+          { "value": "4", "label": "4 items" }
+        ],
+        "default": "2"
+      },*/
+      {
+        "type": "header",
+        "content": "Sidebar"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_sidebar",
+        "label": "Use",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "search",
+        "name": "Sidebar Search bar",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "use",
+            "label": "Use?",
+            "default": true
+          }
+        ]
+      },
+      {
+        "type": "linklist",
+        "name": "Sidebar Linklist",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "use",
+            "label": "Use?",
+            "default": true
+          },
+          {
+            "type": "link_list",
+            "id": "linklist",
+            "label": "Linklist categories"
+          }
+        ]
+      },
+      {
+        "type": "recent_posts",
+        "name": "Sidebar Recent posts",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "use",
+            "label": "Use?",
+            "default": true
+          }
+        ]
+      },
+      {
+        "type": "sb_banner",
+        "name": "Sidebar Banner",
+        "settings": [
+          { 
+            "type":"image_picker",
+            "id":"img",
+            "label":"Banner image"
+          },
+          { 
+            "type":"url",
+            "id":"url",
+            "label":"Link to"
+          }
+        ]
+      },
+      {
+        "type": "sb_about",
+        "name": "Sidebar About",
+        "settings": [
+          { 
+            "type":"html",
+            "id":"html",
+            "label":"Content"
+          }
+        ]
+      },
+      {
+        "type": "sb_tags",
+        "name": "Sidebar Tags",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "blog_tags_",
+            "label": "Tags",
+            "default": "Beauty, Cotton, Fashion, Style, Women",
+            "placeholder": "tag1, tag2, ..."
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

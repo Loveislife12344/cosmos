@@ -1,0 +1,236 @@
+<!-- rd_prds_sc_list.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+<div data-section-id="{{ section.id }}" id="Swiper-{{ section.id }}" data-section-type="swiper-section" class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}" data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+  {%-render 'sc_css' -%}
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%}>
+    <div class="section-width {{width_content_}}">
+      {%- assign responsive_ = section.settings.responsive | strip_newlines | json | remove: '\t' | remove: '\' | remove: ' ' | replace: '"{"','{"' | replace: '}}"','}}' -%}
+      {%- assign items_ = responsive_ | split: '"slidesPerView":' | last | split: ',' | first | plus: 0 -%}
+      <div class="swiper-fuild position-relative">
+        <div class="swiper" data-breakpoints='{{responsive_}}' data-autoplay="false" data-slides-per-view="{{items_}}" data-dots="false" data-nav="false" data-prev-el=".sw-btn-prev-{{section.id}}" data-next-el=".sw-btn-next-{{section.id}}">
+          <div class="swiper-wrapper">
+          {%-for block in section.blocks-%}
+            <div class="swiper-slide" {{ block.shopify_attributes }}>
+            {%-if block.settings.title != blank -%}
+              <div class="section-title w-100 {{block.settings.title_align}}" style="margin-bottom:1.25rem">
+                <h3 class="sc-title">{{block.settings.title}}</h3>
+              </div>
+            {%- endif -%}
+            {%-for i in (1..6)-%}
+              {%- assign id_ = 'id_' | append: i -%}
+              {%-if block.settings.id_1 == blank -%}              
+              <div class="grid-item --list mini-list _mb-2">
+                <div class="lz-place pin-mini2-place"></div>
+              </div>
+              {%-endif-%}
+              {%-if block.settings[id_] == blank -%}{%-continue-%}{%-endif-%}
+              <div class="grid-item --list mini-list _mb-2 lazyload loadvariant" data-include="{{ routes.root_url | append: '/' | replace: '//', '/'}}products/{{block.settings[id_]}}?view=list-mini">
+                <div class="lz-place pin-mini2-place"></div>
+              </div>
+            {%-endfor-%}
+            </div>
+          {%- endfor-%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Products (list)",
+    "class": "rd_prds_sc rd_prds_sc_list",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Products (list)",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "w-100"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type":"checkbox",
+        "id": "use_lazyload",
+        "label": "Use lazyload?",
+        "info": "Help speed up page loading."
+      },
+      {
+        "type": "header",
+        "content": "Slide settings"
+      },
+      {
+        "type": "liquid",
+        "id": "responsive",
+        "label": "__Responsive",
+        "default": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Section title"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "header",
+            "content": "Products settings"
+          },
+          {
+            "type": "product",
+            "id": "id_1",
+            "label": "Product for pin 1"
+          },
+          {
+            "type": "product",
+            "id": "id_2",
+            "label": "Product for pin 2"
+          },
+          {
+            "type": "product",
+            "id": "id_3",
+            "label": "Product for pin 3"
+          },
+          {
+            "type": "product",
+            "id": "id_4",
+            "label": "Product for pin 4"
+          },
+          {
+            "type": "product",
+            "id": "id_5",
+            "label": "Product for pin 5"
+          },
+          {
+            "type": "product",
+            "id": "id_6",
+            "label": "Product for pin 6"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Products (list)",
+        "category": "03. Section products",
+        "blocks": [
+          {
+            "type": "item"
+          },
+          {
+            "type": "item"
+          },
+          {
+            "type": "item"
+          },
+          {
+            "type": "item"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

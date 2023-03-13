@@ -1,0 +1,9 @@
+<ul class="kt--fl-sl list-unstyled">
+  {%- for filter in collection.filters -%}
+  {%- for item in filter.active_values -%}
+  <li class="kt--fl-sl-i" style="margin-right: 0 !important;">
+    <a data-pjax-filter href="{{item.url_to_remove}}"><span class="remove_kt--filter-sl" data-action="remove">{{item.label}}<i class="d-icon-times"></i></span></a>
+  </li>
+  {%- endfor -%}
+  {%- endfor -%}
+</ul>

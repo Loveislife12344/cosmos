@@ -1,0 +1,35 @@
+{%- layout none -%}
+{%- liquid
+  capture st_card
+    echo settings.use_new_label
+    echo '|'
+    echo settings.new_day
+    echo '|'
+    echo settings.use_sale_label
+    echo '|'
+    echo settings.product_grid_layout
+    echo '|'
+    echo false
+    echo '|'
+    echo false
+    echo '|'
+    echo false
+    echo '|'
+    echo false
+    echo '|'
+    echo false
+    echo '|'
+    echo settings.countdown_grid_style
+    echo '|'
+    echo false
+    echo '|'
+    echo settings.use_review_grid
+    echo '|'
+    echo false
+    echo '|'
+    echo settings.qs_hide_only_1_opt
+  endcapture
+  assign st_card = st_card | split: '|'
+-%}
+
+{%- render 'product-list-item-mini', product: product, st_card: st_card -%}

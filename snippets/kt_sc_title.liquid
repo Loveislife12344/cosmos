@@ -1,0 +1,19 @@
+{%-if block-%}
+  {%-if block.settings.title != blank or block.settings.stitle != blank-%}
+    <div class="section-title w-100 tt-{{block.settings.title_style}}{% if block.settings.name_link != blank %} with-link{% endif %}" style="margin-bottom:{{block.settings.margin_btitle}}px"{%if attr%} {{ block.shopify_attributes }}{%endif%}>
+      <h3 class="sc-title">
+        {%-if block.settings.name_link == blank and block.settings.link_to != blank -%}
+        <a href="{{block.settings.link_to | default: routes.root_url}}">{{block.settings.title}}</a>
+        {%-else-%}
+        <span>{{block.settings.title}}</span>
+        {%-endif-%}
+        {%-if block.settings.stitle != blank-%}
+        <span class="d-block sub-title fw-normal">{{block.settings.stitle}}</span>
+        {%-endif-%}
+      </h3>
+      {%-if block.settings.name_link != blank-%}
+      <a href="{{block.settings.link_to | default: routes.root_url}}" class="title-link">{{block.settings.name_link}}</a>
+      {%-endif-%}
+    </div>
+  {%-endif-%}
+{%-endif-%}

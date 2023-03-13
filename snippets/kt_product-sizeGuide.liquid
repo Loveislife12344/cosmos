@@ -1,0 +1,45 @@
+{%-assign size_guide = false-%}
+{%-capture header_name-%}
+  {%-if pages[settings.size_guide]-%}
+    {{- pages[settings.size_guide].title -}}
+  {%-else-%}
+    {{- 'products.product.size_chart' | t -}}
+  {%-endif-%}
+{%-endcapture-%}
+{%-capture content-%}
+{%-if product.metafields.meta.size_guide-%}
+  {{- product.metafields.meta.size_guide | html | strip_newlines -}}
+  {%-assign size_guide = true-%}
+{%-elsif collection.handle or product.collections.first.handle-%}
+  {%-for collection in product.collections-%}
+    {%-assign coll_szie_guide = collection.title | append: " - Size Guide" | handleize-%}
+    {%-if pages[coll_szie_guide] != empty-%}
+      {{- pages[coll_szie_guide].content | html | strip_newlines -}}
+      {%-assign size_guide = true-%}
+      {%-break-%}
+    {%-endif-%}
+  {%-endfor-%}
+{%-endif-%}
+{%-if settings.size_guide != blank and size_guide == false-%}
+  {{- pages[settings.size_guide].content | html | strip_newlines -}}
+  {%-assign size_guide = true-%}
+{%-endif-%}
+{%-endcapture-%}
+
+{%-if size_guide-%}
+<div class="modal fade" id="sizeModal" aria-hidden="true" aria-labelledby="sizeModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered container">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">{{- header_name -}}</h3>
+        <button type="button" class="btn-close" data-bs-target="#rd_qvModal" data-bs-toggle="modal" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="content-item">
+          {{- content -}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%-endif-%}

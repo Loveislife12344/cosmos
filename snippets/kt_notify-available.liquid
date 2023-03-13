@@ -1,0 +1,16 @@
+<div class="notify-available notify-{{product.id}}" style="{% if sold_out == false %}display: none{% endif %}">
+  <h4 class="h6 _mb-1">{{'products.notify.title_html' | t}}</h4>
+  {%- form 'contact', id: 'notify-form', class: 'contact-form _mb-2' -%}
+  {%- render 'form-status', form: form, form_id: formId -%}
+  <input type="hidden" name="contact[product link]" value="{{canonical_url}}" class="form-control">
+  {%- capture productname -%}
+    {{ product.title }}{% unless product.has_only_default_variant %} ({{product.selected_or_first_available_variant.title}}){%-endunless-%}
+  {%- endcapture -%}
+  <textarea name="contact[body]" class="form-control d-none" rows="8" required="">{{ 'products.notify.content' | t: name: productname }}</textarea>
+  <label class="d-none" for="notify">{{'products.notify.email_html' | t}}</label>
+  <div class="input-group flex-nowrap">
+    <input id="notify" type="email" name="contact[email]" placeholder="{{'products.notify.email_html' | t}}" autocorrect="off" autocapitalize="off" value="" class="form-control _mb-0" required="">
+    <button type="submit" class="btn btn-primary btn-rounded">{{'products.notify.button' | t}}</button>
+  </div>
+  {%-endform-%}
+</div>

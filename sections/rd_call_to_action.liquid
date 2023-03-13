@@ -1,0 +1,653 @@
+<!-- rd_call_to_action.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+{%-render 'sc_css'-%}
+<div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">      
+    <div class="section-width {{width_content_}}">
+      <div class="cta">
+        <div class="row justify-content-center">
+        {%- for block in section.blocks -%}
+          {%- capture col_it -%}
+            {%- if block.settings.width_sm != 0 %} d-sm-{%-if block.settings.width_sm == 13-%}none{%else%}block{%endif%} col-sm-{{block.settings.width_sm}} _mb-sm-0i{% endif -%}
+            {%- if block.settings.width_md != 0 %} d-md-{%-if block.settings.width_md == 13-%}none{%else%}block{%endif%} col-md-{{block.settings.width_md}} _mb-md-0i{% endif -%}
+            {%- if block.settings.width_lg != 0 %} d-lg-{%-if block.settings.width_lg == 13-%}none{%else%}block{%endif%} col-lg-{{block.settings.width_lg}} _mb-lg-0i{% endif -%}
+            {%- if block.settings.width_xl != 0 %} d-xl-{%-if block.settings.width_xl == 13-%}none{%else%}block{%endif%} col-xl-{{block.settings.width_xl}} _mb-xl-0i{% endif -%}
+            {%- if block.settings.width_xxl != 0 %} d-xxl-{%-if block.settings.width_xxl == 13-%}none{%else%}block{%endif%} col-xxl-{{block.settings.width_xxl}} _mb-xxl-0i{% endif -%}
+          {%- endcapture -%}
+          {%- if block.type == 'item_title' -%}
+          <div class="section-title col-12 {{col_it}} {{block.settings.title_align}}{% if block.settings.name_link != blank %} title-line title-underline d-flex flex-wrap justify-content-between align-items-center{% endif %}" style="margin-bottom:{{block.settings.margin_btitle}}px">
+            <h3 class="sc-title{%if block.settings.title_align == 'text-center'%} d-block{%endif%} lh-1" style="--text: {{block.settings.color_title}}">{{block.settings.title}}</h3>
+            {%- if block.settings.stitle != blank -%}
+            <span class="d-block sub-title fw-normal" style="--text: {{block.settings.color_stitle}}">{{block.settings.stitle}}</span>
+            {%- endif -%}
+          </div>
+          {%- endif -%}
+          {%-case block.type -%}
+          {%-when 'design_1' -%}
+            <div class="col-12 {{col_it}}">
+              <div class="row justify-content-center">
+                {%- if block.settings.title != blank or block.settings.stitle != blank -%}
+                <div class="col col-lg-4 col-xl-3 offset-xl-1">
+                  <h3 class="cta-title" style="--text: {{block.settings.color_title}}">{{block.settings.title}}</h3>
+                  <p class="cta-desc" style="--text: {{block.settings.color_stitle}}">{{block.settings.stitle}}</p>
+                </div>
+                {%- endif -%}
+                <div class="col{% if block.settings.title != blank or block.settings.stitle != blank %} col-lg-8 col-xl-7 mt-2 mt-lg-0{%- endif -%}">
+                  {%-form 'customer', class: 'form-subscribe', id: block.id-%}
+                  {{ form.errors | default_errors }}
+                  {%-if form.posted_successfully?-%}
+                  <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+                  {%- endif -%}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="input-group">
+                    <input type="email" name="contact[email]" class="form-control mb-0 {%if block.settings.style_btn_rounded == 'btn-round'%} round-pill{%endif%}" value="{%-if customer-%}{{ customer.email }}{%-endif-%}" placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}" required>
+                    <button class="btn btn-md {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} text-uppercase" type="submit">{{block.settings.textBtn}}</button>
+                  </div>
+                  {%-endform-%}
+                </div>
+              </div>
+            </div>
+            {%- if block.settings.social_media -%} 
+            <div class="col-12 social-icons text-center mt-4">
+              <div class="socials_ socials_color style-04">
+                {%-render "kt_socials"-%}
+              </div>
+            </div>
+            {%- endif -%}
+          {%-when 'design_2' -%}
+            <div class="d-xl-flex d-block align-items-center justify-content-between desigin-2">
+                {%- if block.settings.title != blank or block.settings.stitle != blank -%}
+                <div class="newsletter-info-head d-xl-flex d-block align-items-center">
+                  <h3 class="cta-title" style="--text: {{block.settings.color_title}}">{{block.settings.title}}</h3>
+                  <p class="cta-desc" style="--text: {{block.settings.color_stitle}}">{{block.settings.stitle}}</p>
+                </div>
+                {%- endif -%}
+                <div class="form-input w-100">
+                  {%-form 'customer', class: 'form-subscribe', id: block.id-%}
+                  {{ form.errors | default_errors }}
+                  {%-if form.posted_successfully?-%}
+                  <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+                  {%- endif -%}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="input-group">
+                    <input type="email" name="contact[email]" class="form-control mb-0 {%if block.settings.style_btn_rounded == 'btn-round'%} round-pill{%endif%}" value="{%-if customer-%}{{ customer.email }}{%-endif-%}" placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}" required>
+                    <button class="btn btn-md {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} text-uppercase" type="submit">{{block.settings.textBtn}}</button>
+                  </div>
+                  {%-endform-%}      
+                </div>
+                {%- if block.settings.social_media -%}
+                  <div class="social-links social-link-lg social-icons">
+                    <div class="socials_ socials_color style-04">
+                      {%-render "kt_socials"-%}
+                    </div>
+                  </div>
+                {%- endif -%}
+            </div>
+          {%- endcase -%}
+        {%- endfor -%}        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%-capture cta-css-%}
+{%-style-%}
+  {%- assign section_id = ' .content_' | append: section.id -%}
+  {{- section.settings.css_section | replace: ".section_id", section_id -}}
+  .content_{{section.id}} {
+    --cl_title: {{section.settings.color_title}};
+    --cl_desc: {{section.settings.color_desc}};
+    --cl_placeholder: {{section.settings.color_placeholder}};
+    --cl_text_iput: {{section.settings.color_text_input}};
+    --cl_border_iput: {{section.settings.color_border_input}};
+    --cl_bg_iput: {{section.settings.color_bg_input | default: 'transparent'}};
+  }
+  .cta .cta-title,
+  .cta .cta-title h3,
+  .cta .cta-title h4,
+  .cta .cta-icon{
+    color: var(--cl_title);
+  }
+  .cta .cta-desc,
+  .cta .cta-desc h4,
+  .cta .cta-desc h3,
+  .cta .newsletter-desc,
+  .cta .form--success {
+    color: var(--cl_desc);
+  }
+  .cta .sc-title,
+  .cta .sub-title{
+    color: var(--text);
+  }
+  .cta .input-group input::-webkit-input-placeholder {
+    color: var(--cl_placeholder);
+  }
+  .cta .input-group input::-moz-placeholder {
+    color: var(--cl_placeholder);
+  }
+  .cta .input-group input:-ms-input-placeholder {
+    color: var(--cl_placeholder);
+  }
+  .cta .input-group input:-moz-placeholder {
+    color: var(--cl_placeholder);
+  }
+  .cta .input-group input{
+    color: var(--cl_text_iput);
+    border-color: var(--cl_border_iput) !important;
+    background-color: var(--cl_bg_iput);
+  }
+  {%-endstyle-%}
+{%-endcapture-%}
+{{ cta-css | strip_newlines | remove: '  ' | remove: '  ' }}
+{% schema %}
+  {
+    "name": "Call to Action",
+    "class": "rd_call_to_action",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Call to Action",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section?",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "container"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920x pixels"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type":"checkbox",
+        "id": "use_round",
+        "label": "Use round style?"
+      },
+      {
+        "type": "color",
+        "id": "color_title",
+        "label": "Color title",
+        "default": "#333"
+      },
+      {
+        "type": "color",
+        "id": "color_desc",
+        "label": "Color description",
+        "default": "#ccc"
+      },
+      {
+        "type": "color",
+        "id": "color_text_input",
+        "label": "Color text input",
+        "default": "#999"
+      },
+      {
+        "type": "color",
+        "id": "color_border_input",
+        "label": "Color border input",
+        "default": "#dadada"
+      },
+      {
+        "type": "color",
+        "id": "color_placeholder",
+        "label": "Color placeholder input",
+        "default": "#999"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_input",
+        "label": "Color background input",
+        "default": "#fff"
+      },
+      {
+        "type": "checkbox",
+        "id": "preview",
+        "label": "[* Preview design](//cdn.shopify.com/s/files/1/0264/6972/8316/files/Midas-Cta.jpg)"
+      },
+      {
+        "type": "header",
+        "content": "Css custom"
+      },
+      {
+        "type":"liquid",
+        "id": "css_section",
+        "label": "Css for section",
+        "info": "Key start: .section_id"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item_title",
+        "name": "Item Title section",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Width of item"
+          },
+          {
+            "type": "range",
+            "id": "width",
+            "min": 1,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width",
+            "default": 12
+          },
+          {
+            "type": "range",
+            "id": "width_sm",
+            "min": 0,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width sm - (>= 576px)",
+            "default": 0
+          },
+          {
+            "type": "range",
+            "id": "width_md",
+            "min": 0,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width md - (>= 768px)",
+            "default": 0
+          },
+          {
+            "type": "range",
+            "id": "width_lg",
+            "min": 0,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width lg - (>= 992px)",
+            "default": 0
+          },
+          {
+            "type": "range",
+            "id": "width_xl",
+            "min": 0,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width xl - (>= 1200px)",
+            "default": 0
+          },
+          {
+            "type": "range",
+            "id": "width_xxl",
+            "min": 0,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width xxl - (>= 1400px)",
+            "default": 0
+          },
+          {
+            "type": "paragraph",
+            "content": "0 - Displayed by previous screen size."
+          },
+          {
+            "type": "paragraph",
+            "content": "13 - Hide at current and larger screen sizes."
+          },
+          {
+            "type": "header",
+            "content": "Title"
+          },
+          {
+            "type": "liquid",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "color",
+            "id": "color_title",
+            "label": "Color",
+            "default": "#fff"
+          }, 
+          {
+            "type": "liquid",
+            "id": "stitle",
+            "label": "Sub title"
+          },
+          {
+            "type": "color",
+            "id": "color_stitle",
+            "label": "Color",
+            "default": "#fff"
+          },
+          {
+            "type": "select",
+            "id": "title_align",
+            "options": [
+              {
+                "value": "",
+                "label": "Auto"
+              },
+              {
+                "value": "text-center",
+                "label": "Center"
+              }
+            ],
+            "label": "Align title",
+            "default": "text-center"
+          },
+          {
+            "type": "range",
+            "id": "margin_btitle",
+            "min": 0,
+            "max": 90,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin bottom of title",
+            "default": 30
+          }
+        ]
+      },
+      {
+        "type": "design_1",
+        "name": "Design 1",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Width of item"
+          },
+          {
+            "type": "range",
+            "id": "width",
+            "min": 1,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width",
+            "default": 12
+          },
+          {
+            "type": "range",
+            "id": "width_sm",
+            "min": 0,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width sm - (>= 576px)",
+            "default": 0
+          },
+          {
+            "type": "range",
+            "id": "width_md",
+            "min": 0,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width md - (>= 768px)",
+            "default": 0
+          },
+          {
+            "type": "range",
+            "id": "width_lg",
+            "min": 0,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width lg - (>= 992px)",
+            "default": 0
+          },
+          {
+            "type": "range",
+            "id": "width_xl",
+            "min": 0,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width xl - (>= 1200px)",
+            "default": 0
+          },
+          {
+            "type": "range",
+            "id": "width_xxl",
+            "min": 0,
+            "max": 13,
+            "step": 1,
+            "unit": "/12",
+            "label": "Width xxl - (>= 1400px)",
+            "default": 0
+          },
+          {
+            "type": "paragraph",
+            "content": "0 - Displayed by previous screen size."
+          },
+          {
+            "type": "paragraph",
+            "content": "13 - Hide at current and larger screen sizes."
+          },
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "liquid",
+            "id": "title",
+            "label": "Title",
+            "default": "Join Our Newsletter"
+          },
+          {
+            "type": "color",
+            "id": "color_title",
+            "label": "Color",
+            "default": "#fff"
+          },
+          {
+            "type": "liquid",
+            "id": "stitle",
+            "label": "Sub title",
+            "default": "Lorem ipsum dolor sit amet adipiscing."
+          },
+          {
+            "type": "color",
+            "id": "color_desc",
+            "label": "Color",
+            "default": "#fff"
+          },
+          {
+            "type": "header",
+            "content": "Button"
+          },
+          {
+            "type": "liquid",
+            "id": "textBtn",
+            "label": "Name button",
+            "default": "{{'general.newsletter_form.submit_html' | t}}<i class=\"d-icon-arrow-right\"><\/i>"
+          },
+          {
+            "type": "select",
+            "id": "style_btn",
+            "label": "Button style",
+            "default": "btn-primary",
+            "options": [
+              {
+                "value": "btn-primary",
+                "label": "Primary default",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-primary btn-outline",
+                "label": "Primary outline",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-secondary",
+                "label": "Secondary default",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-secondary btn-outline",
+                "label": "Secondary outline",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-white",
+                "label": "White default",
+                "group": "White"
+              },
+              {
+                "value": "btn-white btn-outline",
+                "label": "White outline",
+                "group": "White"
+              },
+              {
+                "value": "btn-dark",
+                "label": "Dark default",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-dark btn-outline",
+                "label": "Dark outline",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-underline btn-link",
+                "label": "Underline dark",
+                "group": "Underline"
+              },
+              {
+                "value": "btn-underline btn-white btn-link",
+                "label": "Underline white",
+                "group": "Underline"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "style_btn_rounded",
+            "label": "Button style radius",
+            "options": [
+              {
+                "value": "",
+                "label": "Square"
+              },
+              {
+                "value": "btn-rounded",
+                "label": "Rounded Corners"
+              },
+              {
+                "value": "btn-round",
+                "label": "Rounded"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "btn_shadow",
+            "label": "Use shadow for button?"
+          },
+          {
+            "type": "header",
+            "content": "Socials"
+          },
+          {
+            "type": "checkbox",
+            "id": "social_media",
+            "label": "Use?",
+            "default" : true
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Call to Action",
+        "category": "05. Element"
+      }
+    ]
+  }
+{% endschema %}

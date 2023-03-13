@@ -1,0 +1,127 @@
+<!-- kt_product_sidebar.liquid -->
+{%- liquid
+  capture st_card
+    echo settings.use_new_label
+    echo '|'
+    echo settings.new_day
+    echo '|'
+    echo settings.use_sale_label
+    echo '|'
+    echo settings.product_grid_layout
+    echo '|'
+    echo false
+    echo '|'
+    echo settings.use_quickview
+    echo '|'
+    echo settings.use_wishlist
+    echo '|'
+    echo settings.use_compare
+    echo '|'
+    echo settings.use_countdown_grid
+    echo '|'
+    echo settings.countdown_grid_style
+    echo '|'
+    echo settings.use_vendor_grid
+    echo '|'
+    echo settings.use_review_grid
+    echo '|'
+    echo false
+  endcapture
+  assign st_card = st_card | split: '|'  
+  
+  assign grid_ly = section.settings.product_grid_layout | default: st_card[3]
+
+-%}
+
+{% assign curr_product = product %}
+{%- for block in section.blocks -%}
+  {%-unless block.type contains 'sb_'-%}{%-continue-%}{%-endunless-%}
+  {%- if block.type == 'sb_related' -%}
+    <div class="special-products">
+      <div class="title-sidebar text-left">
+        <h3 class="m-0">{{block.settings.block_title}}</h3>
+      </div>
+      <div class="lazyload" data-include="{{ routes.product_recommendations_url }}?section_id=kt_related-products_sidebar&product_id={{product.id}}&limit={{block.settings.product_items}}"></div>
+    </div>
+    <div class="clearfix _pb-3"></div>
+  {%- elsif block.type == 'sb_tags' and block.settings.tags_list != blank -%}
+    <div class="popular_tags border _p-3">
+      <div class="title-sidebar text-left">
+        <h3 class="m-0">{{block.settings.block_title}}</h3>
+        <div class="clearfix _mb-5"></div>
+      </div>
+      <ul class="tags_list__sidebar list-unstyled _mb-5">
+        {%- assign tags_sidebar = block.settings.tags_list | split: ',' -%}
+        {%- for tag in tags_sidebar -%}
+          <li class="item_tags list-inline-item">
+            <a href="{{routes.all_products_collection_url}}/{{tag|handleize}}">{{ tag | lstrip | rstrip }}</a>                    
+          </li>
+        {%- endfor -%}
+      </ul>
+      <a href="{{routes.all_products_collection_url}}" class="view_all">{{'general.sidebar.view_all' | t}}</a>
+    </div>
+    <div class="clearfix _pb-3"></div>
+  {%- elsif block.type == 'sb_banner' and block.settings.img != blank -%}
+    <div class="block_banner _mb-3 _mt-2 text-center">
+      <div class="banner-effect1" style="position: relative">
+        <a href="{{block.settings.url}}"><img src="{{block.settings.img|img_url:'master'|img_tags}}"></a>
+      </div>
+    </div>
+  {%- elsif block.type == 'sb_custom' -%}
+    <div class="block_custom _mb-3 _mt-2">
+      {% if block.settings.text != blank %}
+        {{block.settings.text | html}}
+      {% endif %}
+      {% if block.settings.page != blank %}
+        {{pages[block.settings.page].content | html}}
+      {% endif %}
+    </div>
+  {%- elsif block.type == 'sb_custom_lq' -%}
+    <div class="block_custom _mb-3 _mt-2">
+      {% if block.settings.text != blank %}
+        {{block.settings.text}}
+      {% endif %}
+    </div>
+  {%- elsif block.type == 'sb_shipping' -%}
+    <div class="block_shipping _mb-3 border">
+      {%- for i in (1..4) -%}
+      {%- assign icon = 'icon_' | append: i -%}
+      {%- assign icon_font = 'icon_font_' | append: i -%}
+      {%- assign title = 'title_' | append: i -%}
+      {%- assign content = 'content_' | append: i -%}
+      {%- assign url = 'url_' | append: i -%}
+      {%-if block.settings[title] == blank -%}{%-continue-%}{%-endif-%}
+      <div class="icon-box icon-box-side">
+        <span class="icon-box-icon">   
+          {%- if block.settings[icon] != blank -%}
+          <a href="{{block.settings[url] | default: routes.root_url}}" aria-label="{{block.settings[title] | escape}}" class="mr-2">
+            {%- assign image_item = block.settings.icon -%}
+            <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ image_item | img_url: '240x' }}" alt="{{ image_item.alt | default: shop.name | escape }}" style="margin: 0 auto;" width="36" height="{{36 | divided_by: image_item.aspect_ratio}}">
+          </a>
+          {%- else -%}
+          <a href="{{block.settings[url] | default: routes.root_url}}" aria-label="{{block.settings[title] | escape}}"><i class="{{block.settings[icon_font] | default: 'fkt-rotate-left'}}"></i></a>
+          {%- endif -%}
+        </span>
+        <a href="{{block.settings[url] | default: routes.root_url}}" aria-label="{{block.settings[title] | escape}}" class="icon-box-content">
+          <h3 class="icon-box-title">{{block.settings[title]}}</h3><p>{{block.settings[content]}}</p>
+        </a>
+      </div>
+      {%- endfor -%}
+    </div>
+    {%-capture shipping-css-%}
+    {%-style-%}
+      .product-sidebar .block_shipping .icon-box-icon{
+        --cl_icon: {{block.settings.color_icon}};
+      }
+      .product-sidebar .block_shipping .icon-box-title {        
+        --cl_title: {{block.settings.color_title}};
+        --title_f_w: {{block.settings.title_font_weight}};
+      }
+      .product-sidebar .block_shipping .icon-box-content p{
+        --cl_desc: {{block.settings.color_desc}};
+      }
+    {%-endstyle-%}
+    {%-endcapture-%}
+    {{ shipping-css | strip_newlines | remove: '  ' | remove: '  ' }}
+  {%- endif -%}
+{%- endfor -%}

@@ -1,0 +1,429 @@
+{%- if cart.item_count > 0 and settings.ajax_cart != true -%}
+{%- capture contentCart -%}
+{%- for item in cart.items -%}
+{%- assign gift_item = '' -%}
+{%- if settings.use_gift_wrapping and settings.gift_wrap_product != blank and item.product.handle == settings.gift_wrap_product -%}
+  {%- assign gift_item = 'wrap_item' -%}
+{%- endif -%}
+{%- if item.discounted_price == 0 -%}
+  {%- assign gift_item = 'gift_item' -%}
+{%- endif -%}
+{%- if settings.use_gift_wrapping and settings.gift_wrap_product != blank and gift_item == '' and forloop.first -%}
+<div id="is-a-gift" class="d-none">
+  <input type="hidden" name="updates[{{ all_products[settings.gift_wrap_product].selected_or_first_available_variant.id }}]" value="0" id="gift-wrap_product">
+</div>
+{%- endif -%}
+<li class="item__{{item.id}} item__cart item__{{gift_item | default: 'normal'}} row _pb-2 position-relative"{% if gift_item == 'wrap_item' %} id="is-a-gift"{% endif %}>
+  {%- if gift_item == 'wrap_item' -%}
+    <input type="hidden" name="updates[{{ item.id }}]" value="1" id="gift-wrap_product">
+  {%- endif -%}
+  <div class="image__cart col is-contain">
+    <a href="{{ item.variant.url }}" class="aspectRatio">
+      {%- assign alt_it = item.title | escape | strip_html -%}
+      {{- item.image | image_url: width: item.image.width | image_tag: class: 'img-fit-cover', alt: alt_it, size: '100vw', widths: '104, 240', loading: 'lazy' -}}
+    </a>
+  </div>
+  <div class="info__cart col">
+    <h4 class="product-name h6 row gx-0 flex-nowrap align-items-center">
+      {%if item.discounted_price == 0 %}<i class="d-icon-gift col-auto me-2" style="color: #4CAF50;font-size: 1.25rem;"></i>{%endif%}
+      <a class="col" href="{{ item.variant.url }}" title="{{ item.product.title | escape | strip_html }}">
+        {{ item.product.title | truncate: 35 }}
+      </a>
+    </h4>
+    {%- unless item.product.has_only_default_variant -%}
+    <div class="variation kt__edit-opts" title="{{ item.title | escape | strip_html }}" data-view="{{ item.product.url }}" data-vrid="{{item.id}}" data-pid="{{item.product.id}}" data-qty="{{item.quantity}}" data-bs-toggle="offcanvas" data-bs-target="#editOptsOffcanvas" aria-controls="editOptsOffcanvas">
+      <span>{{item.variant.title}}</span>
+      <button type="button" class="mx-2 btn-link"><i class="far fa-edit"></i></button>
+    </div>
+    {%- endunless -%}
+    <span class="price">{%-if item.discounted_price -%}{{ item.discounted_price | money }}{%-else-%}{{ item.original_price | money }}{%-endif-%}</span>
+
+    {%-if item.unit_price -%}
+    {%- capture unit_price_base_unit -%}
+      <span class="base_unit">
+        {%- if item.unit_price_measurement -%}
+          {%- if item.unit_price_measurement.reference_value != 1 -%}
+            {{- item.unit_price_measurement.reference_value -}}
+          {%- endif -%}
+          {{ item.unit_price_measurement.reference_unit }}
+        {%- endif -%}
+      </span>
+    {%- endcapture -%}
+    <span class="UnitPrice-{{item.product.id}} text-nowrap">
+      {{item.unit_price_measurement.quantity_value | append: item.unit_price_measurement.quantity_unit}}
+      (<span class="unit_price">{{item.unit_price | money }}</span> / {{unit_price_base_unit}})
+    </span>
+    {%-endif-%}
+    <div class="action__cart">
+      {%-if gift_item == ''-%}
+      <div class="quantity">
+        <div class="control">
+          <button type="button" class="btn-number qtyminus"></button>  
+          <input type="text" data-id="{{ item.variant_id }}" name="updates[{{ item.id }}]" value="{{item.quantity}}" data-min="1" class="input-qty" size="4" pattern="[0-9]*">
+          <button type="button" class="btn-number qtyplus"></button>
+        </div>
+      </div>
+      {%- endif -%}
+      <button type="button" class="btn btn-link act-remove"><i class="fas fa-times"></i></button>
+    </div>  
+  </div>
+  {%- if gift_item == 'wrap_item' and settings.use_gift_message-%}
+  <div class="form-group _mt-1 _mb-0">
+    <textarea name="attributes[gift-note]" class="form-control mb-0" id="gift-note" placeholder="{{'cart.gift_wrap.input_placeholder' | t }}" rows="3" style="min-height: auto;">{{cart.attributes.gift-note}}</textarea>
+  </div>
+  {%-endif-%}
+</li>
+{%- endfor -%}
+{%- assign cart_items_ids = cart.items | map: 'id' -%}
+
+{%- if settings.cart_upsell.size != 0 -%}
+<li class="w-100 border-top _pb-2"></li>
+{%- for product in settings.cart_upsell -%}
+  {%- assign item_ids = product.variants | map:'id' -%}
+  {%- assign has = false -%}
+  {%-for item_id in item_ids-%}
+    {%- if cart_items_ids contains item_id -%}{%- assign has = true -%}{%-continue-%}{%-endif-%}
+  {%-endfor-%}
+  {%- if has -%}{%-continue-%}{%-endif-%}
+
+  {%- assign compare_at_price = product.compare_at_price -%}
+  {%- assign price = product.price -%}
+  {%- assign price_varies = product.price_varies -%}
+  {%- assign available = product.selected_or_first_available_variant.available-%}
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign on_sale = false-%}
+  {%- if compare_at_price > price -%}
+    {%- assign on_sale = true-%}
+  {%- endif-%}
+  {%- assign sold_out = true-%}
+  {%- assign preOrder = false-%}
+  {%- unless available == false-%}
+    {%- assign sold_out = false-%}
+  {%- endunless-%}
+  {%- if product.selected_or_current_variant_variant.inventory_quantity <= 0 and product.selected_or_current_variant_variant.inventory_policy == 'continue' and product.selected_or_current_variant_variant.incoming -%}
+    {%- assign preOrder = true -%}
+  {%- endif -%}
+  {%- if product.title != blank -%}
+  {%- unless product.has_only_default_variant or settings.qs_hide_only_1_opt and product.variants.size == 1 or settings.qs_show_vars_list == false -%}
+    {%- assign show_variant = true -%}
+  {%- endunless -%}
+  {%- endif -%}
+
+  <li class="item__{{current_variant.id}} item__cart item__upsell row _pb-2 position-relative">
+    <div class="image__cart col is-contain">
+      <a href="{{ product.url }}?variant={{current_variant.id}}" class="aspectRatio">
+        {%- assign alt_it = product.title | escape | strip_html -%}
+        {{- product.featured_image | image_url: width: product.featured_image.width | image_tag: class: 'img-fit-cover', alt: alt_it, size: '100vw', widths: '104, 240', loading: 'lazy' -}}
+      </a>
+    </div>
+    <div class="info__cart col">
+      <h4 class="product-name h6 row gx-0 flex-nowrap align-items-center">
+        <a class="col" href="{{ product.url }}?variant={{current_variant.id}}" title="{{ product.title | escape }}">{{ product.title | truncate: 35 }}</a>
+      </h4>
+      <span class="product-price">
+        <ins class="ProductPrice-{{product.id}}" data-id="{{product.id}}">{{- current_variant.price | money -}}</ins>
+        {%-unless current_variant.compare_at_price <= current_variant.price or current_variant.compare_at_price == null-%}
+        <del class="ComparePrice-{{product.id}}">
+          {{- current_variant.compare_at_price | default: 0 | money -}}
+        </del>
+        {%-endunless-%}
+      </span>
+      <div class="action__cart">
+        {%- assign small_text_add = 'products.product.add_small' | t -%}
+        {%- if product.has_only_default_variant -%}
+          <input type="hidden" name="id" value="{{product.selected_or_first_available_variant.id}}"><input type="hidden" name="quantity" value="1">
+          {%- if preOrder -%}
+            <div class="btn btn-primary rounded text-uppercase kt-button btn-onclick add_to_cart_button add-item-jx" data-vrid="{{product.selected_or_first_available_variant.id}}" data-pid="{{product.id}}"><span class="add-item-jx-text">{{'products.product.pre_order' | t}}</span></div>
+          {%- elsif sold_out == false -%}
+            <div class="btn btn-primary rounded text-uppercase kt-button btn-onclick add_to_cart_button add-item-jx" data-vrid="{{product.selected_or_first_available_variant.id}}" data-pid="{{product.id}}"><span class="add-item-jx-text">{{small_text_add}}</span></div>
+          {%- else -%}
+            <div class="btn btn-primary rounded text-uppercase kt-button add_to_cart_button add-item-jx sold_out disabled"><span class="add-item-jx-text">{{'products.product.sold_out' | t}}</span></div>
+          {%- endif -%}
+        {%- else -%}
+          {%-assign has_variants = true-%}
+          {%- if settings.qs_show_vars_list -%}
+            {%- if product.options.size == 1 or product.options.size > 1 and settings.qs_show_first_opt == false -%}
+              {%- if product.options_with_values[0].values.size <= 5 -%}
+                {%-assign has_variants = false-%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- capture onclick -%}
+            {%- if has_variants-%}
+              kt__quick-shop
+            {%- else -%}
+              add-item-jx
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- if preOrder -%}
+            <div class="btn btn-primary rounded text-uppercase kt-button btn-onclick add_to_cart_button {{onclick}}" data-view="{{ product.url }}" data-vrid="{{product.selected_or_first_available_variant.id}}" data-pid="{{product.id}}"><span class="add-item-jx-text">{{'products.product.pre_order' | t}}</span></div>
+          {%- elsif sold_out == false -%}
+            <div class="btn btn-primary rounded text-uppercase kt-button btn-onclick add_to_cart_button {{onclick}}" data-view="{{ product.url }}" data-vrid="{{product.selected_or_first_available_variant.id}}" data-pid="{{product.id}}"><span class="add-item-jx-text">{{small_text_add}}</span></div>
+          {%- else -%}
+            <div class="btn btn-primary rounded text-uppercase kt-button btn-onclick add_to_cart_button {{onclick}} sold_out disabled"><span class="add-item-jx-text">{{'products.product.sold_out' | t}}</span></div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>  
+    </div>
+  </li>
+{%- endfor -%}
+{%- endif -%}
+        
+{%- if settings.enable_auto_gift == true and settings.auto_gift_product != blank -%}
+  {%- assign product = all_products[settings.auto_gift_product] -%} 
+  {%- if product.title != blank -%}
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+    {%- unless cart_items_ids contains product.selected_or_first_available_variant.id -%}
+    <li class="item__{{product.selected_or_first_available_variant.id}} item__gift item__upsell row _pb-2 position-relative">
+      <div class="image__cart col is-contain">
+        <a href="#" class="aspectRatio">
+          {%- assign alt_it = product.title | escape | strip_html -%}
+          {{- product.featured_image | image_url: width: product.featured_image.width | image_tag: class: 'img-fit-cover', alt: alt_it, size: '100vw', widths: '104, 240', loading: 'lazy' -}}
+        </a>
+      </div>
+      <div class="info__cart col">
+        <h4 class="product-name h6 row gx-0 flex-nowrap align-items-center">
+          <a class="col" href="#" title="{{ product.title | escape }}">{{ product.title | truncate: 35 }}</a>
+        </h4>
+        <span class="product-price">
+          <ins class="ProductPrice-{{product.id}}" data-id="{{product.id}}">{{- current_variant.price | money -}}</ins>
+        </span>
+      </div>
+    </li>
+    {%- endunless -%}
+  {%- endif -%}
+{%- endif -%}
+{%- endcapture -%}
+{%- endif -%}
+
+{%- assign gift_wrap = false -%}
+{%- for item in cart.items -%}
+{%- if settings.use_gift_wrapping and item.product.handle == settings.gift_wrap_product -%}
+  {%- assign gift_wrap = item -%}
+  {%- break -%}
+{%- endif -%}
+{%- endfor -%}
+<div data-section-id="{{ section.id }}" id="offcanvas--{{ section.id }}" data-section-type="cart-offcanvas">
+<div class="offcanvas offcanvas-end cart-offcanvas overflow-hidden" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 id="cartOffcanvasLabel" class="h6 mb-0">{{ 'cart.drawer.title' | t }}</h5>
+    <button type="button" class="btn btn-dark btn-link btn-icon-right close-canvas" data-bs-dismiss="offcanvas" aria-label="Close">{{ 'cart.general.close' | t }}<i class="d-icon-arrow-right"></i></button>
+  </div>  
+  <div class="offcanvas-body cart-offcanvas__content">
+    <div class="content__cart-offcanvas">
+      {%- if section.settings.use_threshold -%}
+      {%- assign shipping_above = settings.free_shipping_above | remove: '.' | plus: 0 -%}
+      {%- if settings.free_shipping_above_prd != blank -%}
+        {%- assign shipping_above = all_products[settings.free_shipping_above_prd].price -%}
+      {%- endif -%}
+      <div class="spendFreeShip{%if cart.total_price >= shipping_above%} congratulations{%endif%} border-bottom text-center has-item" style="--bg: {{settings.threshold_bg}};--bar: {{settings.threshold_bg_process}};--bar-success: {{settings.threshold_bg_process_success}};{% if cart.item_count == 0 %}display:none{% endif %}">
+        <div class="progress">
+          {%- assign percent = cart.total_price | times: 1.0 | divided_by: shipping_above | times: 100.0 -%}
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{percent}}%;" aria-valuenow="{{percent}}" aria-valuemin="0" aria-valuemax="{{shipping_above}}"></div>
+        </div>
+        <div class="text_progress mt-1">
+          {%- assign shipping_above_html = shipping_above | money -%}
+          {%- if settings.threshold_layout == 'add_more' -%}
+            {%- assign shipping_above_html = shipping_above | minus: cart.total_price | money -%}
+          {%- endif -%}
+          <span{%if settings.threshold_layout == 'add_more'%} class="add_more_price"{%endif%}>{{'products.shipping_threshold.spend_text_html' | t: shipping_above: shipping_above_html}}</span>
+          <span class="mt-1">{{'products.shipping_threshold.congratulations' | t }}</span>
+        </div>
+      </div>
+      {%- endif -%}
+      <div class="spinner-box"><div class="pulse-container"><div class="pulse-bubble pulse-bubble-1"></div><div class="pulse-bubble pulse-bubble-2"></div><div class="pulse-bubble pulse-bubble-3"></div></div></div>
+      <p class="empty h4 no-item m-0 text-center"{% if cart.item_count > 0 %} style="display:none"{% endif %}>{{ 'cart.general.empty' | t }}</p>
+      <form action="{{routes.cart_url}}" method="post" novalidate id="upadteCartOffcanvas" style="--img_ar: 115.384615385%"><ul class="items__cart-offcanvas ajax__list-cart p-0 mb-0">{{contentCart}}</ul></form>
+    </div>
+    <div class="footer__cart-offcanvas has-item"{% if cart.item_count == 0 %} style="display:none"{% endif %}>
+      <div class="tab tab-nav-simple tab-nav-center tab-nav-boxed">
+        <ul class="nav nav-tabs _pb-1" role="tablist">
+          {%- if section.settings.note_cart -%}
+          <li class="nav-item"><a class="nav-link{% if cart.note != blank %} has-data{% endif %}" href="#" data-tab-content="tab-floating-note" data-toggle="tooltip" title="{{'cart.drawer.cart_notes' | t}}"><i class="fa fa-comment"></i></a></li>
+          {%- endif -%}
+          {%- if section.settings.gift_wrap and settings.use_gift_wrapping and settings.gift_wrap_product != blank -%}
+          <li class="nav-item"><a class="nav-link" href="#" data-tab-content="tab-floating-gift" data-toggle="tooltip" title="{{'cart.drawer.gift_wrap' | t}}"><i class="fa fa-gift"></i></a></li>
+          {%- endif -%}
+          {%- if settings.shipping_calculator and section.settings.shipping_calculator -%}
+          <li class="nav-item"><a class="nav-link" href="#" data-tab-content="tab-floating-shipping" data-toggle="tooltip" title="{{'cart.drawer.calculate_shipping_costs' | t}}"><i class="fa fa-truck"></i></a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+      <div class="tab-content">
+        <div class="tab-pane fade active show">
+          <form action="{{routes.root_url | append: '/checkout' | replace: '//', '/'}}" method="post" id="upadteCartCheckout">
+            <table class="table mb-2">
+              <tbody>
+                <!-- Cart level discounts -->
+                <tr class="summary-discounts{% unless cart.cart_level_discount_applications != blank %} d-none{% endunless %}">
+                  {%- if cart.cart_level_discount_applications != blank -%}
+                  <th>{{'cart.summary_box.discount' | t}}:</th>
+                  <td class="text-nowrap">
+                  {%- for discount_application in cart.cart_level_discount_applications -%}
+                    <span class="cartDiscount">-{{ discount_application.total_allocated_amount | money }}</span>
+                    <span class="question_mark position-relative"> (?)
+                      <div class="info-discount position-absolute text-uppercase">
+                        {{ discount_application.title }}
+                      </div>
+                    </span>
+                  {%- endfor -%}
+                  </td>
+                  {%- else -%}
+                  <th>{{'cart.summary_box.discount' | t}}:</th><td></td>
+                  {%- endif -%}
+                </tr>
+                <!-- Final cart total -->
+                <tr>
+                  <th scope="row">{{'cart.general.subtotal' | t}}: </th>
+                  <td><span class="cartCostTotal">{{ cart.total_price | money }}</span></td>
+                </tr>
+              </tbody>
+            </table>
+            {%- if section.settings.text_above != blank -%}
+              <p class="font-italic mb-1">{{ section.settings.text_above | html }}</p>
+            {%- endif -%}
+            {%- if settings.terms_conditions -%}
+            <div class="form-check agree_checkbox">
+              <input type="checkbox" name="checkbox" class="form-check-input kt_agree" id="agree_checkbox" required="required">
+              <label class="label-for-checkbox" for="agree_checkbox">
+                {{settings.terms_and_privacy_conditions | replace: '<p>', '' | replace: '</p>','' | html }}
+              </label>
+            </div>
+            {%- endif -%}
+            <div class="group-button border-top mt-3 pt-2">
+              <a href="{{routes.cart_url}}" class="btn btn-dark btn-link">{{ 'cart.general.view' | t }}</a>
+              <button type="submit" class="check-out btn btn-dark btn-block rounded">{{ 'cart.general.checkout' | t }}</button>
+            </div>
+            {%- comment -%}
+            {%- if settings.use_d_c_b_cart_drawer and additional_checkout_buttons and template.name != 'cart' -%}
+            <div class="kt_agree_swich" data-layout="checkout">
+              <div class="additional-checkout-buttons">
+                {{ content_for_additional_checkout_buttons }}
+              </div>
+            </div>
+            {%- endif -%}
+            {%- endcomment -%}
+            {%- assign img_trust = section.settings.trust_image | default: settings.trust_image_ -%}
+            {%- if img_trust != blank -%}
+            <div class="text-center mt-2">
+              <img class="lazyload" alt="{{img_trust.alt}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{img_trust | img_url: 'master'}}">
+            </div>
+            {%- endif -%}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane tab-floating tab-floating-note">
+      <form action="{{routes.cart_url}}" method="post" novalidate id="upadteCartNote">
+        <div class="form-group">
+          <label for="note_cart" class="mb-1">{{ 'cart.general.note' | t }}</label>{{--}}
+          <textarea id="note_cart" class="form-control" name="note" rows="4">{{ cart.note }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-dark btn-block rounded kt-button" style="margin-bottom: 0.9375rem;">{{ 'cart.general.update_small' | t }}</button>
+        <div class="d-block text-center"><button type="button" class="btn-link btn-x-tab-floating">{{'cart.general.close' | t}}</button></div>
+      </form>
+    </div>
+    {%- if settings.shipping_calculator -%}
+    <div class="tab-pane tab-floating tab-floating-shipping">
+      {%- capture currAddress -%}{{cart.attributes.theme_shipping}}{%- endcapture -%}
+      {%- assign currAddress = currAddress | replace:'&quot;','"' | split:','-%}
+      {%- assign zipcode = currAddress[0] | split: '{"zip":"' | last | remove:'"' -%}
+      {%- assign country = currAddress[1] | split: '"country":"' | last | remove:'"' -%}
+      {%- assign province = currAddress[2] | split: '"province":"' | last | remove:'"}' -%}
+      <div class="wrapper__shipping">
+        <div class="get__shipping"{%if currAddress.size == 3 %} data-curr-address='{{cart.attributes.theme_shipping | replace:'&quot;','"'}}'{%endif%}>
+          <div class="row">
+            <div class="col-12">
+              <label class="form-label" for="address_country">{{'cart.shipping_box.country' | t}}</label>{{--}}
+              <select class="form-select" id="address_country" name="address[country]"{%if currAddress.size == 3%} data-default="{{country}}"{%endif%}></select>
+            </div>
+            <div class="col-12"{%unless currAddress.size == 3 and zipcode != '1'%} style="display: none"{%endunless%}>
+              <label class="form-label" for="address_province">{{'cart.shipping_box.province' | t}}</label>{{--}}
+              <select class="form-select" id="address_province" name="address[province]"{%if currAddress.size == 3%} data-default="{{province}}"{%endif%}></select>
+            </div>
+            <div class="col-7">
+              <label class="form-label" for="address_zip">{{'cart.shipping_box.zip_code' | t}}</label>{{--}}
+              <input type="text" class="form-control _mb-0" id="address_zip" name="address[zip]" value="{{zipcode}}" placeholder="{{"cart.shipping_box.zip_code" | t}}" required="">
+            </div>
+            <div class="col-5 align-self-end">
+              <div class="calculate__shipping btn btn-dark btn-block rounded text-uppercase" data-toggle="tooltip" data-placement="top" title="{{'cart.shipping_box.button_calculate_tooltip' | t}}">{{'cart.shipping_box.button_calculate' | t}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="table mt-4">
+        <tbody>
+          <tr class="summary-shipping-row content__shipping" style="display: none"><td></td></tr>
+        </tbody>
+      </table>
+      <div class="d-block text-center" style="margin-top: 1.5rem;"><button type="button" class="btn-link btn-x-tab-floating">{{'cart.general.close' | t}}</button></div>
+    </div>
+    {%- endif -%}
+    {%- if section.settings.gift_wrap and settings.use_gift_wrapping and settings.gift_wrap_product != blank -%}
+    {%- assign gift_prd = all_products[settings.gift_wrap_product] -%}
+    <div class="tab-pane tab-floating tab-floating-gift product product-inner" data-href="{{gift_prd.url}}" data-handle="{{gift_prd.handle}}">
+      <form action="{{routes.cart_url}}" method="post" novalidate id="upadteCartGift">
+        <div class="text-center">
+          <input type="checkbox" name="attributes[gift-wrapping]" id="gift-wrapping" style="opacity: 0;position: absolute;visibility: hidden">
+          {%- assign p-gift-price = gift_wrap.price | default: gift_prd.selected_or_first_available_variant.price | money -%}
+          <span class="label">{{'cart.gift_wrap.notices_drawer_html' | t | replace : '#money', p-gift-price}}</span>
+          <label class="btn btn-dark btn-block rounded{%if gift_prd.has_only_default_variant == false%} kt__quick-shop{%else%} add-item-jx{%endif%} btn-onclick" data-view="{{gift_prd.url}}" data-pid="{{gift_prd.id}}" for="gift-wrapping" style="margin-bottom: 0.9375rem;">{{'cart.gift_wrap.button_in_cart_drawer' | t}}</label>          
+          {%-if gift_prd.has_only_default_variant-%}<input type="hidden" name="id" value="{{gift_prd.selected_or_first_available_variant.id}}"><input type="hidden" name="quantity" value="1">{%-endif-%}
+        </div>
+        <div class="d-block text-center"><button type="button" class="btn-link btn-x-tab-floating">{{'cart.general.close' | t}}</button></div>
+      </form>
+    </div>
+    {%- endif -%}
+  </div>
+</div>
+</div>
+{% schema %}
+  {
+    "name": "Cart Offcanvas",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "edit_it_cart_drawer",
+        "label": "Show button edit item?",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "gift_wrap",
+        "label": "Show the gift wrap?",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "shipping_calculator",
+        "label": "Show the shipping calculator?"
+      },
+      {
+        "type": "checkbox",
+        "id": "note_cart",
+        "label": "Show the note?",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "use_threshold",
+        "label": "Show shipping threshold?"
+      },
+      {
+        "type": "html",
+        "id": "text_above",
+        "label": "Text above checkout button",
+        "default": "Taxes calculated at checkout"
+      },
+      {
+        "type": "image_picker",
+        "id": "trust_image",
+        "label": "Trust Image"
+      }
+    ]
+  }
+{% endschema %}

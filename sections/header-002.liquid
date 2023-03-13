@@ -1,0 +1,1406 @@
+<!-- header-002.liquid -->
+{%- style -%}
+{%- capture header_css -%}
+  .header {
+    --text: {{section.settings.color_text_header}};
+    --text_hv: {{section.settings.color_text_header_hv}};
+    {%if section.settings.color_head_bg != blank%}--background: {{ section.settings.color_head_bg }};{% endif %}
+    background: var(--background, var(--bg));
+    --header_position: static;
+  }
+  {%- if section.settings.color_head_bg_op != 1-%}
+    .template-index #header {
+      --header_position: absolute;
+      {%if section.settings.color_head_bg != blank%}
+      --opHeader: {{ section.settings.color_head_bg_op }};
+      --head_bg_rgb: {{ section.settings.color_head_bg | color_to_rgb | remove: 'rgb(' | remove: ')' }};
+      background: rgba(var(--head_bg_rgb), var(--opHeader));
+      {% endif %}
+    }
+  {%- endif -%}
+  .header-bottom {
+    --text: {{ section.settings.color_text_headerb }};
+    --text_hv: {{ section.settings.color_text_headerb_hv }};
+    color: var(--text);
+    background: {{ section.settings.color_headb_bg }};
+  }
+  .header-bottom .mn-lv1:hover > a,
+  .header-bottom .mn-lv1.show > a,
+  .header-bottom .mn-lv1.active > a {
+    --text: {{ section.settings.color_text_headerb_hv }};
+  }
+  .main-mn{
+    --nv_pd_left: {{section.settings.padding_size}}px;
+  }
+  .main-mn>.mn-i>a {
+    padding: 1.25rem 1rem;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+  }
+  .header-bottom .main-mn .mn-lv1.active>a, .header-bottom .main-mn .mn-lv1.show>a, .header-bottom .main-mn .mn-lv1:hover>a {
+    background-color: var(--bs-primary);
+  }
+  .header .divider {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.125rem;
+    height: 1.5625rem;
+    border-right: thin solid #e1e1e1;
+  }
+  .header .cart-label {
+    display: none;
+  }
+  .header .call-label{
+    margin: 0 0 0 0.625rem;
+  }
+  [dir="rtl"] .header .call-label{
+    margin: 0 0.625rem 0 0;
+  }
+  .header .call-label p,
+  .header .cartCost{
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: -.0428em;
+    line-height: 1;
+    display: block;
+    margin-bottom: 0;
+  }
+  .header .call-label,
+  .header .cart-label{
+    text-align: initial;
+  }
+  .header .icon-link h4,
+  .header .icon-link p{
+    transition: color .3s;
+  }
+  .header .icon-link:hover h4,
+  .header .icon-link:hover p{
+    color: var(--bs-primary);
+  }
+  .header .control-inner>div .icon-link {
+    display: flex;
+    align-items: center;
+  }
+  .header .control-inner > div .icon-link .count {
+    position: absolute;
+    right: -0.625rem;
+    top: -0.1875rem;
+    width: 1.1875rem;
+    height: 1.1875rem;
+    font-size: 0.6875rem;
+    line-height: 1.125rem;
+  }
+  [dir="rtl"] .header .control-inner > div .icon-link .count {
+    right: auto;
+    left: -0.625rem;
+  }
+  .header .block-minicart .icon-count{
+    order: 1;
+    min-width: 0.1875rem;
+  }
+  .header .cart-label {
+    margin: 0 0.625rem 0 0;
+  }
+  [dir="rtl"] .header .cart-label {
+    margin: 0 0 0 0.625rem;
+  }
+  .header-logo {
+    margin-bottom: 1px;
+  }
+  .header .block-search {
+    flex: 1;
+    margin-right: 1.25rem;
+    max-width: 32.625rem;
+  }
+  [dir="rtl"] .header .block-search {
+    margin-right: 0;
+    margin-left: 1.25rem;
+  }
+  .header .box-search .button-search i {
+    margin: 0;
+  }
+  .header .box-search .searchDrop:before {
+    left: auto;
+    right: -0.1875rem;
+  }
+  [dir="rtl"] .header .box-search .searchDrop:before {
+    right: auto;
+    left: -0.1875rem;
+  }
+  .header-bottom .mn-lv1>a:before {
+    opacity: 0;
+  }
+  @media (min-width: 576px){
+    .header-logo {
+      margin-right: 1.25rem;
+    }
+    [dir="rtl"] .header-logo {
+      margin-right: 0;
+      margin-left: 1.25rem;
+    }
+    .control-inner>div .icon-link,
+    .control-inner>div .menu-toggle {
+      padding-right: 0.8125rem;
+      padding-left: 0.8125rem;
+    }
+  }
+  @media (min-width: 992px){
+    .min-height {
+      padding-top: 1.0625rem;
+      padding-bottom: 1.0625rem;
+    }
+    .header .cart-label {
+      display: block;
+    }
+  }
+  @media (min-width: 1200px){
+    .header-logo {
+      margin-right: 5rem;
+    }
+    [dir="rtl"] .header-logo {
+      margin-left: 5rem;
+      margin-right: 0;
+    }
+  }
+{%-endcapture-%}
+{{- header_css | strip_newlines | remove: '  ' | remove: '  ' -}}
+.content_{{section.id}}{margin-top: {{section.settings.header_margin_top | default: '0' | split: '|' | first }};margin-bottom: {{section.settings.header_margin_bottom | default: '0' | split: '|' | first }};padding: {{section.settings.header_padding | default: '0' | split: '|' | first | replace : '-',' '}};}
+{%- endstyle -%}
+<div class="{{section.settings.width_header}}" data-respon="{'el':'.header','mt':'{{section.settings.header_margin_top}}','mb':'{{section.settings.header_margin_bottom}}','p':'{{section.settings.header_padding}}'}">
+  <div class="main-header kt--drop-w kt--drop-w-d" data-header-sticky="{{section.settings.sticky_menu}}">
+    <div class="min-height d-flex flex-wrap align-items-center justify-content-between">
+      <div class="header-left">
+        <button type="button" class="btn-link mobile-menu-toggle menu-toggle d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuMb" aria-controls="offcanvasMenuMb">
+          <i class="d-icon-bars2"></i>
+        </button>
+        <div class="header-logo">
+          {%- render 'kt_logo_header' -%}
+        </div>
+        <div class="block-search d-none d-sm-block">
+          {% render 'search-bar', search_style: "input" %}
+        </div>
+      </div>
+      <div class="header-right header-control">
+        <div class="control-inner d-flex align-items-center justify-content-end">
+          {%- if section.settings.use_call-%}
+          <div class="block-call">
+            <a href="tel:{{settings.phone_contact | remove:' '}}" class="icon-link">
+              <span class="icon-count">
+                {% comment %}<svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-wishlist"></use></svg>{% endcomment %}
+                <span class="d-icon-phone"></span>
+              </span>
+              <span class="call-label d-none d-lg-block">
+                {{'layout.header.call_box_title' | t}}
+                <strong class="d-block">{{settings.phone_contact}}</strong>
+              </span>
+            </a>
+          </div>
+          <span class="divider d-none d-sm-block"></span>
+          {%- endif -%}
+          {%- if section.settings.use_account and shop.customer_accounts_enabled -%}
+          <div class="block-account d-none d-sm-block">
+            <a href="{%if customer%}{{routes.account_url}}{%else%}{{routes.account_login_url}}{%endif%}" class="icon-link"{%unless customer%}{%-if shop.customer_accounts_enabled and settings.modal_login-%} data-bs-toggle="modal" data-bs-target="#rd_accModal" data-bs-modal="{{routes.account_login_url}}/?section_id=kt_account_popup&q=content"{%endif%}{%endunless%}>
+              <div class="icon-count">
+                <!-- <svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-user"></use></svg> -->
+                <i class="d-icon-user"></i>
+              </div>
+              <span class="d-none">{{'customer.account.mini_title' | t}}</span>
+            </a>
+          </div>
+          {%- endif -%}
+          {%- if section.settings.use_compare and settings.use_compare-%}
+          <div class="block-compare d-none d-sm-block">
+            <div class="mini-compare load kt--drop-i">
+              <div class="icon-link kt--drop-title"><div class="icon-count kt-button" data-bs-toggle="offcanvas" data-bs-target="#compareOffcanvas" aria-controls="compareOffcanvas">
+                <!-- <svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-compare"></use></svg> -->
+                <span class="d-icon-compare"></span>
+                <span class="count compareCount d-none">0</span></div></div>
+              <div class="mini-compare-content kt--drop-in"><div class="no-compare"><p>{{'products.compare.no_compare' | t}}</p></div><div class="mini-compare-body"></div></div>
+            </div>
+          </div>
+          {%- endif -%}
+          {%- if section.settings.use_wishlist and settings.use_wishlist -%}
+          <div class="block-wishlist d-none d-sm-block">
+            
+            <a href="{{pages['wishlist'].url}}" class="icon-link">
+              <div class="icon-count">
+                {% comment %}<svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-wishlist"></use></svg>{% endcomment %}
+                <span class="d-icon-heart"></span>
+                <span class="count wishlist-count d-none">0</span>
+              </div>
+              <span class="d-none">{{'products.wishlist.title' | t}}</span>
+            </a>
+          </div>
+          {%- endif -%}
+          <span class="divider d-none d-sm-block"></span>
+          {%- if section.settings.use_cart-%}
+          <div class="block-minicart mr-lg-1">
+            {%- render 'kt_mini-cart' -%}
+          </div>
+          {%- endif -%}
+        </div>
+      </div>
+      {% comment %}{%- if settings.use_header_mobile_search_box and template.name != 'search' -%}
+      {%- endif -%}{% endcomment %}
+    </div>
+  </div>
+</div>
+
+{%- unless cart.attributes.theme_mobile == 'true' -%} 
+<div class="header-bottom d-none d-lg-block{%unless section.settings.sticky_main%} not-sticky{%endunless%}">
+  <div class="{{section.settings.width_header}} main-header header-menu horizon-menu" style="--mcontainer:1200px;">
+    <nav class="main-navigation" data-width="992">
+      {%-render 'menu_import'-%}
+    </nav>
+  </div>
+</div>
+{%- endunless -%}
+
+{% schema %}
+  {
+  "name": "Header main",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id" :"sticky_menu",
+      "label": "Use sticky?",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "width_header",
+      "label": "Max width section",
+      "options": [
+        { "value": "container", "label": "1200px" },
+        { "value": "container-fluid wide", "label": "Wide" },
+        { "value": "w-100", "label": "Full width" }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "text",
+      "id": "section_margin_top",
+      "label": "Margin top",
+      "info": "25px|30px|35px|40px|45px|50px"
+    },
+    {
+      "type": "text",
+      "id": "section_margin_bottom",
+      "label": "Margin bottom",
+      "info": "25px|30px|35px|40px|45px|50px"
+    },
+    {
+      "type": "text",
+      "id": "section_padding",
+      "label": "Paddings (top right bottom left)",
+      "info": "60px 60px 0 60px"
+    },
+    {
+      "type": "color",
+      "id": "color_text_header",
+      "label": "Color",
+      "default": "#555"
+    },
+    {
+      "type": "color",
+      "id": "color_text_header_hv",
+      "label": "Hover color",
+      "default": "{{ shop.brand.colors.primary[0].background }}"
+    },
+    {
+      "type": "color_background",
+      "id": "color_head_bg",
+      "label": "Background Header"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_image",
+      "label": "Background image",
+      "info": "Size suggestion: 1920 x 752 pixels"
+    },
+    {
+      "type": "range",
+      "id": "color_head_bg_op",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "___ Opacity background color",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "color_text_headerb",
+      "label": "Color (bottom)",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "color_text_headerb_hv",
+      "label": "Hover color (bottom)",
+      "default": "#fff"
+    },
+    {
+      "type": "color_background",
+      "id": "color_headb_bg",
+      "label": "Background Header (bottom)"
+    },
+    {
+      "type": "header",
+      "content": "Icons control"
+    },
+    {
+      "type": "checkbox",
+      "id" :"use_call",
+      "label": "Use call box?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id" :"use_account",
+      "label": "Use account?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id" :"use_compare",
+      "label": "Use compare?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id" :"use_wishlist",
+      "label": "Use wishlist?"
+    },
+    {
+      "type": "checkbox",
+      "id" :"use_cart",
+      "label": "Use cart?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Main Menu"
+    },
+    {
+      "type": "checkbox",
+      "id" :"sticky_main",
+      "label": "Use sticky?",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_size",
+      "min": 0,
+      "max": 55,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding item level 1",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Menu Basic"
+    },
+    {
+      "type":"link_list",
+      "id":"main_linklist",
+      "label":"Main Link list",
+      "info": "If you choose this option you will not be able to use megamenu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Item menu Link",
+      "settings": [
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Menu title",
+          "default":"Item link"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Menu link"
+        },
+        {
+          "type": "text",
+          "id": "icon_font",
+          "label": "Icon",
+          "info": "Class Icon font. [Find class icon](\/\/riode-demo-1.myshopify.com\/pages\/element-icons)"
+        },
+        {
+          "type":"text",
+          "id":"label",
+          "label":"Menu label"
+        }
+      ]
+    },
+    {
+      "type": "standard",
+      "name": "Item menu Standard",
+      "settings": [
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Menu title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Menu link"
+        },
+        {
+          "type": "text",
+          "id": "icon_font",
+          "label": "Icon",
+          "info": "Class Icon font. [Find class icon](\/\/riode-demo-1.myshopify.com\/pages\/element-icons)"
+        },
+        {
+          "type":"text",
+          "id":"label",
+          "label":"Menu label"
+        },
+        {
+          "type": "header",
+          "content": "Sub menu"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Choose the parent item menu"
+        }
+      ]
+    },
+    {
+      "type": "standard_collumn",
+      "name": "Item menu Standard Col",
+      "settings": [
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Menu title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Menu link"
+        },
+        {
+          "type": "text",
+          "id": "icon_font",
+          "label": "Icon",
+          "info": "Class Icon font. [Find class icon](\/\/riode-demo-1.myshopify.com\/pages\/element-icons)"
+        },
+        {
+          "type":"text",
+          "id":"label",
+          "label":"Menu label"
+        },
+        {
+          "type": "header",
+          "content": "Dropdown"
+        },
+        {
+          "type": "text",
+          "id": "menu_links_width",
+          "label": "Width",
+          "default": "830px",
+          "info": "Ex: 1200px or 100vw"
+        },
+        {
+          "type": "header",
+          "content": "Sub menu"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Choose the parent item menu"
+        }
+      ]
+    },
+    {
+      "type": "per_column",
+      "name": "Item menu Per column",
+      "settings": [
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Menu title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Menu link"
+        },
+        {
+          "type": "text",
+          "id": "icon_font",
+          "label": "Icon",
+          "info": "Class Icon font. [Find class icon](\/\/riode-demo-1.myshopify.com\/pages\/element-icons)"
+        },
+        {
+          "type":"text",
+          "id":"label",
+          "label":"Menu label"
+        },
+        {
+          "type": "header",
+          "content": "Dropdown"
+        },
+        {
+          "type": "text",
+          "id": "menu_links_width",
+          "label": "Width",
+          "default": "830px",
+          "info": "Ex: 1200px or 100vw"
+        },
+        {
+          "type": "header",
+          "content": "Sub menu"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Choose the parent item menu"
+        },
+        {
+          "type": "range",
+          "id": "cols",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "unit": "/12",
+          "label": "Cols",
+          "default": 2
+        }
+      ]
+    },
+    {
+      "type": "multi_collumn",
+      "name": "Item menu Multi column",
+      "settings": [
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Menu title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Menu link"
+        },
+        {
+          "type": "text",
+          "id": "icon_font",
+          "label": "Icon",
+          "info": "Class Icon font. [Find class icon](\/\/riode-demo-1.myshopify.com\/pages\/element-icons)"
+        },
+        {
+          "type":"text",
+          "id":"label",
+          "label":"Menu label"
+        },
+        {
+          "type": "header",
+          "content": "Dropdown"
+        },
+        {
+          "type": "text",
+          "id": "menu_links_width",
+          "label": "Width",
+          "default": "830px",
+          "info": "Ex: 1200px or 100vw"
+        },
+        {
+          "type": "header",
+          "content": "Sub menu"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Choose the parent item menu"
+        },
+        {
+          "type": "range",
+          "id": "cols",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "unit": "/12",
+          "label": "Cols",
+          "default": 2
+        },
+        {
+          "type":"image_picker",
+          "id":"bg_image",
+          "label":"Background image"
+        }
+      ]
+    },
+    {
+      "type": "promo",
+      "name": "Item menu Promo",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name_item",
+          "label": "Name item",
+          "default": "Features"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Menu link"
+        },
+        {
+          "type": "text",
+          "id": "icon_font",
+          "label": "Icon",
+          "info": "Class Icon font. [Find class icon](\/\/riode-demo-1.myshopify.com\/pages\/element-icons)"
+        },
+        {
+          "type":"text",
+          "id":"label",
+          "label":"Menu label"
+        },
+        {
+          "type": "header",
+          "content": "Dropdown"
+        },
+        {
+          "type": "text",
+          "id": "menu_links_width",
+          "label": "Width",
+          "default": "830px",
+          "info": "Ex: 1200px or 100vw"
+        },
+        {
+          "type": "header",
+          "content": "Sub menu"
+        },
+        {
+          "type": "range",
+          "id": "sub_width",
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "unit": "/12",
+          "label": "Width",
+          "default": 8
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Choose the parent item menu"
+        },
+        {
+          "type": "range",
+          "id": "cols",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "unit": "/12",
+          "label": "Cols",
+          "default": 2
+        },
+        {
+          "type": "header",
+          "content": "Promo"
+        },
+        {
+          "type": "range",
+          "id": "promo_width",
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "unit": "/12",
+          "label": "Width",
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "promo_image",
+          "label": "Promo image"
+        },
+        {
+          "type": "checkbox",
+          "id": "padding_0",
+          "label": "Padding 0",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "promo_link",
+          "label": "Promo link to"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_promo_html",
+          "label": "=== Use Promo with HTML",
+          "info": "Choose page or write to filed HTML"
+        },
+        {
+          "type": "page",
+          "id": "page_promo_html",
+          "label": "Choose page"
+        },
+        {
+          "type": "textarea",
+          "id": "textarea_promo_html",
+          "label": "HTML"
+        }
+      ]
+    },
+    {
+      "type": "coll_image",
+      "name": "Item menu Collections",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Dropdown"
+        },
+        {
+          "type": "text",
+          "id": "menu_links_width",
+          "label": "Width",
+          "default": "830px",
+          "info": "Ex: 1200px or 100vw"
+        },
+        {
+          "type": "header",
+          "content": "Sub menu"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Choose the parent item menu"
+        },
+        {
+          "type": "text",
+          "id": "name_item",
+          "label": "Name item",
+          "default": "Features"
+        },
+        {
+          "type": "text",
+          "id": "icon_font",
+          "label": "Icon",
+          "info": "Class Icon font. [Find class icon](\/\/riode-demo-1.myshopify.com\/pages\/element-icons)"
+        },
+        {
+          "type": "range",
+          "id": "cols",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "unit": "/12",
+          "label": "Cols",
+          "default": 2
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Menu link"
+        },
+        {
+          "type":"text",
+          "id":"label",
+          "label":"Menu label"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Label color",
+          "default":"#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "special_1",
+      "name": "Item menu Special",
+      "settings": [
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Menu link"
+        },
+        {
+          "type":"liquid",
+          "id":"title",
+          "label":"Menu title",
+          "default":"<i class=\"d-icon-truck\"><\/i> Join and Get Free Shipping"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background color"
+        },
+        {
+          "type": "color",
+          "id": "color_hv",
+          "label": "Color hover"
+        },
+        {
+          "type": "color",
+          "id": "bg_color_hv",
+          "label": "Background color hover"
+        }
+      ]
+    },
+    {
+      "type": "parent",
+      "name": "Item megamenu (parent)",
+      "settings": [
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Menu link"
+        },
+        {
+          "type":"text",
+          "id":"title_i",
+          "label":"Menu title",
+          "default":"Item link"
+        },
+        {
+          "type": "text",
+          "id": "icon_font",
+          "label": "Icon",
+          "info": "Class Icon font. [Find class icon](\/\/riode-demo-1.myshopify.com\/pages\/element-icons)"
+        },
+        {
+          "type":"text",
+          "id":"label",
+          "label":"Menu label"
+        },
+        {
+          "type": "header",
+          "content": "Dropdown"
+        },
+        {
+          "type": "text",
+          "id": "menu_links_width",
+          "label": "Width",
+          "default": "830px",
+          "info": "Ex: 1200px or 100vw"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name",
+          "default": "Parent",
+          "info": "Wrong: Don't change"
+        }
+      ]
+    },
+    {
+      "type": "linklist",
+      "name": "Item Linklist (child)",
+      "settings": [
+        {
+          "type":"text",
+          "id":"title_i",
+          "label":"Menu title",
+          "default":"Top Trending Products"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Choose the parent item menu"
+        },
+        {
+          "type": "range",
+          "id": "sub_width",
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "unit": "/12",
+          "label": "Width",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "cols",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "unit": "/12",
+          "label": "Cols",
+          "default": 2
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name",
+          "default": "Linklist (child)",
+          "info": "Wrong: Don't change"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "Item Products (child)",
+      "settings": [
+        {
+          "type":"text",
+          "id":"title_i",
+          "label":"Menu title",
+          "default":"Top Trending Products"
+        },
+        {
+          "type": "range",
+          "id": "sub_width",
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "unit": "/12",
+          "label": "Width",
+          "default": 8
+        },
+        {
+          "type": "header",
+          "content": "Products settings"
+        },
+        {
+          "type": "collection",
+          "id": "products",
+          "label": "Choose collection"
+        },
+        {
+          "type": "range",
+          "id": "limit",
+          "min": 1,
+          "max": 50,
+          "step": 1,
+          "label": "Limit display product",
+          "default": 8
+        },
+        {
+          "type": "header",
+          "content": "Button loadmore"
+        },
+        {
+          "type": "checkbox",
+          "id": "load_btn",
+          "label": "Use load button?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "style_btn",
+          "label": "Button style",
+          "default": "btn-dark btn-outline",
+          "options": [
+            {
+              "value": "btn-primary",
+              "label": "Primary default",
+              "group": "Primary"
+            },
+            {
+              "value": "btn-primary btn-outline",
+              "label": "Primary outline",
+              "group": "Primary"
+            },
+            {
+              "value": "btn-secondary",
+              "label": "Secondary default",
+              "group": "Secondary"
+            },
+            {
+              "value": "btn-secondary btn-outline",
+              "label": "Secondary outline",
+              "group": "Secondary"
+            },
+            {
+              "value": "btn-white",
+              "label": "White default",
+              "group": "White"
+            },
+            {
+              "value": "btn-white btn-outline",
+              "label": "White outline",
+              "group": "White"
+            },
+            {
+              "value": "btn-dark",
+              "label": "Dark default",
+              "group": "Dark"
+            },
+            {
+              "value": "btn-dark btn-outline",
+              "label": "Dark outline",
+              "group": "Dark"
+            },
+            {
+              "value": "btn-underline btn-link",
+              "label": "Underline dark",
+              "group": "Underline"
+            },
+            {
+              "value": "btn-underline btn-white btn-link",
+              "label": "Underline white",
+              "group": "Underline"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "style_btn_rounded",
+          "label": "Button style radius",
+          "options": [
+            {
+              "value": "",
+              "label": "Square"
+            },
+            {
+              "value": "btn-rounded",
+              "label": "Rounded Corners"
+            },
+            {
+              "value": "btn-round",
+              "label": "Rounded"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "btn_shadow",
+          "label": "Use shadow for button?"
+        },
+        {
+          "type": "header",
+          "content": "Slide settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "__Auto-rotate slides",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "use_navigation",
+          "label": "__Use navigation?",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "nav_style",
+          "options": [
+            {
+              "value": "-default",
+              "label": "Default"
+            },
+            {
+              "value": "1",
+              "label": "Style 1"
+            },
+            {
+              "value": "2",
+              "label": "Style 2"
+            },
+            {
+              "value": "3",
+              "label": "Style 3"
+            }
+          ],
+          "label": "Navigation style",
+          "default": "-default"
+        },
+        {
+          "type": "select",
+          "id": "nav_mode",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "white",
+              "label": "White"
+            },
+            {
+              "value": "primary",
+              "label": "Primary color"
+            }
+          ],
+          "label": "Navigation mode",
+          "default": "default"
+        },
+        {
+          "type": "select",
+          "id": "nav_position",
+          "options": [
+            {
+              "value": "nav-default",
+              "label": "Default"
+            },
+            {
+              "value": "nav-center-center",
+              "label": "Center center"
+            },
+            {
+              "value": "nav-center-outside",
+              "label": "Center outside"
+            },
+            {
+              "value": "nav-top-right",
+              "label": "Top right"
+            },
+            {
+              "value": "nav-top-left",
+              "label": "Top left"
+            }
+          ],
+          "label": "Navigation position",
+          "default": "nav-default"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_dots",
+          "label": "__Use dots?"
+        },
+        {
+          "type": "select",
+          "id": "dots_mode",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "white",
+              "label": "White"
+            },
+            {
+              "value": "primary",
+              "label": "Primary color"
+            }
+          ],
+          "label": "Dots mode",
+          "default": "default"
+        },
+        {
+          "type": "select",
+          "id": "dots_position",
+          "options": [
+            {
+              "value": "inside",
+              "label": "Inside"
+            },
+            {
+              "value": "outside",
+              "label": "Outside"
+            }
+          ],
+          "label": "Dots position",
+          "default": "inside"
+        },
+        {
+          "type": "textarea",
+          "id": "responsive",
+          "label": "__Responsive",
+          "default": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name",
+          "default": "Product (child)",
+          "info": "Wrong: Don't change"
+        }
+      ]
+    },
+    {
+      "type": "collections",
+      "name": "Item Collections (child)",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Choose the parent item menu"
+        },
+        {
+          "type": "range",
+          "id": "sub_width",
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "unit": "/12",
+          "label": "Width",
+          "default": 8
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name",
+          "default": "Collections (child)",
+          "info": "Wrong: Don't change"
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "name": "Item Banner (child)",
+      "settings": [
+        {
+          "type": "select",
+          "id": "banner-effect",
+          "options": [
+            {
+              "value": "",
+              "label": "None effect"
+            },
+            {
+              "value": "banner-effect1",
+              "label": "Banner effect 1"
+            },
+            {
+              "value": "banner-effect2",
+              "label": "Banner effect 2"
+            },
+            {
+              "value": "banner-effect3",
+              "label": "Banner effect 3"
+            },
+            {
+              "value": "banner-effect4",
+              "label": "Banner effect 4"
+            },
+            {
+              "value": "banner-effect5",
+              "label": "Banner effect 5"
+            },
+            {
+              "value": "banner-effect6",
+              "label": "Banner effect 6"
+            }
+          ],
+          "label": "Banner hover effect",
+          "default": ""
+        },
+        {
+          "type": "header",
+          "content": "List banner"
+        },
+        {
+          "type":"text",
+          "id":"title_i",
+          "label":"Menu title",
+          "default":"Top Trending Products"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Choose linklist",
+          "info": "You need upload image to [Files](\/admin\/settings\/files) and copy name of image to create [linklist](http:\/\/prntscr.com\/w8v18i)"
+        },
+        {
+          "type": "select",
+          "id": "per_col",
+          "label": "Per column",
+          "options": [
+            {
+              "value": "1",
+              "label": "None"
+            },
+            {
+              "value": "2",
+              "label": "2 column"
+            },
+            {
+              "value": "3",
+              "label": "3 column"
+            },
+            {
+              "value": "4",
+              "label": "4 column"
+            },
+            {
+              "value": "5",
+              "label": "5 column"
+            },
+            {
+              "value": "6",
+              "label": "6 column"
+            }
+          ],
+          "default": "3"
+        },
+        {
+          "type": "header",
+          "content": "One banner"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image banner",
+          "info": "Size suggestion: 575 x 630 px"
+        },
+        {
+          "type": "url",
+          "id": "image_link_1",
+          "label": "Link to"
+        },
+        {
+          "type": "range",
+          "id": "sub_width",
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "unit": "/12",
+          "label": "Width",
+          "default": 8
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name",
+          "default": "Banner (child)",
+          "info": "Wrong: Don't change"
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "name": "Item HTML (child)",
+      "settings": [
+        {
+          "type": "page",
+          "id": "page_promo_html",
+          "label": "Choose page"
+        },
+        {
+          "type": "textarea",
+          "id": "textarea_promo_html",
+          "label": "HTML"
+        },
+        {
+          "type": "range",
+          "id": "sub_width",
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "unit": "/12",
+          "label": "Width",
+          "default": 8
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name",
+          "default": "HTML (child)",
+          "info": "Wrong: Don't change"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

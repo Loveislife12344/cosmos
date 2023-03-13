@@ -1,0 +1,170 @@
+<!-- kt_bottom_bar.liquid -->
+{%- render 'kt_icons_system' -%}
+{%- assign blocks_size = section.blocks.size | default: 1 -%}
+{%- if blocks_size > 5 -%}
+  {%- assign blocks_size = 5 -%}
+{%- endif -%}
+<div class="bottom__bar-wrap">
+  <div class="bottom__bar d-md-none">
+    {%- for block in section.blocks -%}
+      {%- case block.settings.system_icon -%}
+        {%- when 'bars' -%}
+          <div class="bottom__bar-item">
+            <button type="button" class="menu-toggle" title="{{block.settings.title}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuMb" aria-controls="offcanvasMenuMb">
+              <div class="icon-bb"><svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-bars"></use></svg></div>
+              <div class="text-label">{{block.settings.title}}</div>
+            </button>
+          </div>
+        {%- when 'home' -%}
+          <div class="bottom__bar-item">
+            <a href="{{routes.root_url}}" title="{{block.settings.title}}">
+              <div class="icon-bb"><i class="d-icon-home"></i></div>
+              <div class="text-label">{{block.settings.title}}</div>
+            </a>
+          </div>
+        {%- when 'filter' -%}
+          {%- if template.name == "collection" or template.name == "list-collections" -%}
+          <div class="bottom__bar-item">
+            <button type="button" class="filter-by filterMobile" title="{{block.settings.title}}" data-bs-toggle="offcanvas" data-bs-target="#filter-m-offcanvas" aria-controls="filter-m-offcanvas">
+              <div class="icon-bb"><svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-filter"></use></svg></div>
+              <div class="text-label">{{block.settings.title}}</div>
+            </buttona>
+          </div>
+          {%- else -%}
+          {%- assign blocks_size = blocks_size | minus: 1 -%}
+          {%- endif -%}
+        {%- when 'compare' -%} 
+          <div class="bottom__bar-item">
+            <a href="#" onclick="KT.showModalCompare()" title="{{block.settings.title}}">
+              <div class="icon-bb">
+                <div class="icon-count">
+                  <svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-compare"></use></svg>
+                  <span class="count compareCount">0</span>
+                </div>
+              </div>
+              <div class="text-label">{{block.settings.title}}</div>
+            </a>
+          </div>
+        {%- when 'wishlist' -%}
+          {%- if settings.use_wishlist -%}
+            {%- if pages['wishlist'].title != empty -%}
+            <div class="bottom__bar-item">
+              <a href="{{pages['wishlist'].url}}" title="{{block.settings.title}}">
+                <div class="icon-bb">
+                  <div class="icon-count">
+                    <svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-wishlist"></use></svg>
+                    <span class="count wishlistCount wishlist-count">0</span>
+                  </div>
+                </div>
+                <div class="text-label">{{block.settings.title}}</div>
+              </a>
+            </div>
+            {%- endif -%}
+          {%- else -%}
+            {%- assign blocks_size = blocks_size | minus: 1 -%}
+          {%- endif -%}
+        {%- when 'cart' -%}
+          {%- if settings.type_ajax_cart != 'none' and cart.item_count > 0 -%}{%- assign load_class = 'load' -%}{%-endif-%}
+          {%- if settings.type_ajax_cart == 'drop' -%}{%- assign drop_class = 'kt--drop-i' -%}{%- endif -%}
+          {%- if settings.type_ajax_cart == 'offcanvas' -%}{%- assign onclick = ' data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas"' -%}{%- endif -%}
+          {%-if settings.type_ajax_cart == 'none' or settings.type_ajax_cart == 'drop'-%}{%- assign href = routes.cart_url -%}{%-else-%}{%- assign href = '#' -%}{%-endif-%}
+          <div class="bottom__bar-item mini-cart {{load_class}} {{drop_class}}" {{onclick}}>
+            <a href="{{href}}" title="{{block.settings.title}}">
+              <div class="icon-bb">
+                <div class="icon-count">
+                  <svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-cart"></use></svg>
+                  <span class="count cartCount">{{ cart.item_count }}</span>
+                </div>
+              </div>
+              <div class="text-label">{{block.settings.title}}</div>
+            </a>
+          </div>
+        {%- when 'user' -%}
+          <div class="bottom__bar-item">
+            <a href="{%if customer%}{{routes.account_url}}{%else%}{{routes.account_login_url}}{%endif%}"{%unless customer%}{%-if shop.customer_accounts_enabled and settings.modal_login-%} data-bs-toggle="modal" data-bs-target="#rd_accModal"{%endif%}{%endunless%} title="{{block.settings.title}}">
+              <div class="icon-bb"><svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-user"></use></svg></div>
+              <div class="text-label">{{block.settings.title}}</div>
+            </a>
+          </div>
+        {%- else -%}
+          <div class="bottom__bar-item">
+            <a href="{{block.settings.link | default: routes.root_url}}" title="{{block.settings.title}}">
+              {%- if block.settings.custom_icon_img -%}
+              <div class="icon-bb">
+                <img width="24" height="{{24.00 | divided_by: block.settings.custom_icon_img.aspect_ratio}}" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ block.settings.custom_icon_img | img_url: '120x' }}" data-aspectratio="{{ block.settings.custom_icon_img.aspect_ratio }}" data-sizes="auto" alt="{{ block.settings.custom_icon_img.alt | escape }}">
+              </div>
+              {%- else -%}
+              <div class="icon-bb"><i class="{{block.settings.custom_icon_font | default: 'd-icon-home'}}"></i></div>
+              {%- endif -%}
+              <div class="text-label">{{block.settings.title}}</div>
+            </a>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+{%- if blocks_size <= 0 -%}
+  {%- assign blocks_size = 1 -%}
+{%- endif -%}
+{%- style -%}.bottom__bar-wrap {position: fixed;padding-top: 0.9375rem;bottom: 0;left: 0;width: 100%;z-index: 10;overflow: hidden;}@media(min-width: 678px){.bottom__bar-wrap {padding-top: 0;}}.bottom__bar {display: -ms-flexbox;display: flex;flex-wrap: nowrap;overflow-x: auto;background-color: #fff;box-shadow: 0 -5px 10px rgba(0,0,0,0.05);-webkit-overflow-scrolling: touch;}.bottom__bar-item a,.bottom__bar-item button {margin: 0;}.bottom__bar > * {-ms-flex: 0 0 {{100 | divided_by: blocks_size}}%;flex: 0 0 {{100 | divided_by: blocks_size}}%;max-width: {{100 | divided_by: blocks_size}}%;padding: 0.625rem 0.3125rem;text-align: center;}.bottom__bar svg.molla-svg-icon {width: 1.5rem;height: 1.5rem;fill: #222;}.bottom__bar .icon-bb {line-height: 1;}.menu-toggle .icon-bb {height: 24px;}.bottom__bar .icon-bb i {font-size: 1.5rem;color: #222;line-height: 1;}.bottom__bar .text-label {font-size: 0.75rem;line-height: 1;margin-top: 0.125rem;color: #666;}.bottom__bar .filter-by.filterMobile{line-height: 1;margin: 0;padding: 0;text-transform: initial;text-indent: initial;overflow: initial;position: static;white-space: initial;box-shadow: none;background-color: transparent;border: none;font-weight: 400;padding: 0;}.bottom__bar .count {display: inline-block;border-radius: 90px;text-align: center;color: #fff;font-size: 0.625rem;position: absolute;top: 0;right: -0.625rem;line-height: 0.9375rem;width: 0.9375rem;height: 0.9375rem;}{%- endstyle -%}
+{% schema %}
+  {
+  "name": "Bottom bar",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Bottom bar"
+    },
+    {
+      "type": "paragraph",
+      "content": "Changes shown here: Theme settings > General > Mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "system_icon",
+          "label": "System icon",
+          "options": [
+            { "value": "", "label": "None" },
+            { "value": "home", "label": "Home" },
+            { "value": "filter", "label": "Filter" },
+            { "value": "bars", "label": "Bars" },
+            { "value": "compare", "label": "Compare" },
+            { "value": "wishlist", "label": "Wishlist" },
+            { "value": "cart", "label": "Cart" },
+            { "value": "user", "label": "User" }
+          ],
+          "default": "bars"
+        },
+        {
+          "type": "text",
+          "id": "custom_icon_font",
+          "label": "Custom icon",
+          "info": "You need change System icon to None. [Find class icon](\/\/riode-demo-1.myshopify.com\/pages\/element-icons)"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon_img",
+          "label": "Image icon"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Label",
+          "default": "Category"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

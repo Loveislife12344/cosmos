@@ -1,0 +1,69 @@
+{%-layout none-%}
+{%- liquid
+  assign on_sale = false
+  if product.compare_at_price > product.price 
+    assign on_sale = true
+  endif
+  assign sold_out = true
+  assign preOrder = false
+  unless available == false
+    assign sold_out = false
+  endunless
+  if product.selected_or_first_available_variant.inventory_quantity <= 0 and product.selected_or_first_available_variant.inventory_policy == 'continue' and product.selected_or_first_available_variant.incoming
+    assign preOrder = true 
+  endif
+	unless product.has_only_default_variant or st_card[13] == 'true' and product.variants.size == 1 or st_card[4] == 'false'
+  	assign show_variant = true
+	endunless
+-%}
+<div class="product product-inner ktlz" data-href="{{product.handle}}" data-ktlz="instant">
+	<form method="post" action="{{ routes.cart_add_url }}"{%if product.title%}{%unless product.has_only_default_variant%} id="ProductSection-{{product.id}}-qs" class="form form-ajax-- ktlz-form-pid-{{product.id}}" data-p-id="{{product.id}}" data-section-id="-{{product.id}}-qs" data-options="{{product.options.size}}" data-pr-vrs{%endunless%}{%endif%}>
+		<div class="modal-header">
+			<a class="modal-title h5 mb-0" href="{{product.url}}" tabindex="0">{{product.title}}</a>
+			<button type="button" class="btn-close btn-close-white close-outside" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+    <div class="modal-body _pt-0i">
+			<div class="border-top w-100 _pb-2"></div>
+			<div class="row">
+				<div class="col-5">
+					<div class="product-thumb images is-default">
+			      {%- capture ar_i-%}--ar_i:{{product.featured_image.height | times: 1.00 | divided_by: product.featured_image.width | times: 100.00000000}}%;{%-endcapture-%}
+			      <a class="aspectRatio{%if product.title != blank %} lazyload{%endif%}" data-include="{{product.url | split:'?' | first}}?variant={{product.selected_or_first_available_variant.id}}&view=imgcard" href="{{product.url | within: collection}}" title="{{product.title | escape}}" aria-label="{{product.title | escape}}" style="{{ar_i | replace:'--ar_i:NaN%',''}}"></a>
+					</div>
+				</div>
+				<div class="col-7">
+		      {%-if show_variant-%}
+		      <div class="product-variants-wrapper product-variants-wrapper-qs">
+		        <div class="prd-variants">
+		          {%- for i in (1..product.options.size) -%}
+		            <div class="prd--option{{i}} animated-background" data-n-opt="{{product.options[forloop.index0] | escape}}"></div>
+		          {%- endfor -%}
+		        </div>
+		        {%- render 'product-item-prices', product: product, on_sale: on_sale, price_varies: price_varies-%}
+		        <div class="quantity">
+		        	<label for="qty-qs">{{'products.product.quantity' | t}}<span>: </span></label>
+		        	<div class="control">
+                <button type="button" class="btn-number qtyminus"></button>
+		        		<input type="text" data-step="1" name="quantity" data-min="1" value="1" id="qty-qs" class="input-qty input-text qty" size="4" pattern="[0-9]*">
+			          <button type="button" class="btn-number qtyplus"></button>
+		        	</div>
+		        </div>
+		      </div>
+		      {%-endif-%}
+				</div>
+			</div>
+    </div>
+		<div class="modal-footer">
+			<div class="product-button-wrapper-qs">
+      {%- if settings.use_add_to_cart_btn -%}
+      {%- if product.selected_or_first_available_variant.available -%}
+	      <button type="button" data-submit class="btn btn-primary btn-rounded btn-block text-uppercase kt-button btn-onclick add_to_cart_button add-item-jx" data-view="{{product.url}}" data-vrid="{{product.selected_or_first_available_variant.id}}" data-pid="{{product.id}}"><span class="add-item-jx-text">{{'products.product.add_to_cart' | t}}</span></button>
+    	{%- else -%}
+	      <button type="button" data-submit class="btn btn-primary btn-rounded btn-block text-uppercase kt-button btn-onclick add_to_cart_button add-item-jx sold_out disabled" data-view="{{product.url}}" data-vrid="{{product.selected_or_first_available_variant.id}}" data-pid="{{product.id}}"><span class="add-item-jx-text">{{'products.product.sold_out' | t}}</span></button>
+      {%- endif -%}
+      {%- endif -%}
+			</div>
+		</div>
+		<input type="hidden" name="id" value="{{product.selected_or_first_available_variant.id}}">
+	</form>
+</div>

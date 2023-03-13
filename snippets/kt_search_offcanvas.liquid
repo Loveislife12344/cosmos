@@ -1,0 +1,43 @@
+<form class="box-search" action="{{routes.search_url}}" method="get" autocomplete="off">
+  <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasSearch" aria-labelledby="offcanvasSearchLabel">
+    <div class="offcanvas-header">
+      <div class="container mt-4">
+        <div class="input-cat-right input-group border rounded">
+          {%- if settings.use_types_dropdown -%}
+            <select class="searchTypes form-select mb-0" aria-label="{{'general.search_dropdown.all' | t}}" style="max-width: 200px;border-width: 0 1px 0 0;">
+              <option value=""{%if search.terms == "" %} selected="selected"{% endif %}>{{'general.search_dropdown.all' | t}}</option>
+              {%- for link in linklists['list-types-search'].links -%}
+                <option value="{{link.title | escape}}"{%if search.terms == link.title %} selected="selected"{% endif %}>{{link.title}}</option>
+                {%- for sub_link in link.links -%}
+                  <option value="{{sub_link.title | escape}}"{%if search.terms == sub_link.title %} selected="selected"{% endif %}>- {{sub_link.title}}</option>
+                  {%- for sub_sub_link in sub_link.links -%}
+                    <option value="{{sub_sub_link.title | escape}}"{%if search.terms == sub_sub_link.title %} selected="selected"{% endif %}>-- {{sub_sub_link.title}}</option>
+                  {%- endfor -%}
+                {%- endfor -%}
+              {%- else -%}
+                {%- for product_type in shop.types -%}
+                {%-if product_type == '' -%}{%continue%}{%-endif-%}
+                <option {%if search.terms == product_type %} selected="selected"{% endif %} value="{{product_type | escape}}">{{product_type}}</option>
+                {%- endfor -%}
+              {%- endfor -%}
+            </select>
+          {%- endif -%}
+          <input type="hidden" name="options[unavailable_products]" value="show">
+          <input type="hidden" name="type" value="product{%-if settings.search_type_page-%},page{%-endif-%}{%-if settings.search_type_article-%},article{%-endif-%}{%-if settings.search_type_collection-%},collection{%-endif-%}">
+          <input type="hidden" name="options[prefix]" value="last">
+          <input type="text" name="q" value="{{ earch.terms | escape }}" class="form-control search" placeholder="{{ 'general.search.placeholder' | t }}" required>
+          <button type="submit" class="button-search btn btn-primary rounded-end" aria-label="{{ 'general.search.placeholder' | t }}">
+            {%- comment -%}<svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-search"></use></svg>{%- endcomment -%}
+            <i class="d-icon-search"></i>
+          </button>
+        </div>
+      </div>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="container">
+        <ul class="li--s list-unstyled kt_scroll row mb-0" style="max-height: none;"></ul>
+      </div>
+    </div>
+  </div>
+</form>

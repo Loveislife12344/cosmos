@@ -1,0 +1,547 @@
+<!-- header-22.liquid -->
+{%- style -%}
+{%- capture header_css -%}
+  .header {
+    --text: {{section.settings.color_text_header}};
+    --text_hv: {{section.settings.color_text_header_hv}};
+    {%if section.settings.color_head_bg != blank%}--background: {{ section.settings.color_head_bg }};{% endif %}
+    background: var(--background, var(--bg));
+    --header_position: static;
+  }
+  {%- if section.settings.color_head_bg_op != 1-%}
+    .template-index #header {
+      --header_position: absolute;
+      {%if section.settings.color_head_bg != blank%}
+      --opHeader: {{ section.settings.color_head_bg_op }};
+      --head_bg_rgb: {{ section.settings.color_head_bg | color_to_rgb | remove: 'rgb(' | remove: ')' }};
+      background: rgba(var(--head_bg_rgb), var(--opHeader));
+      {% endif %}
+    }
+  {%- endif -%}
+  .header-bottom {
+    --text: {{ section.settings.color_text_headerb }};
+    --text_hv: {{ section.settings.color_text_headerb_hv }};
+    color: var(--text);
+    background: {{ section.settings.color_headb_bg }};
+  }
+  .header-bottom .mn-lv1:hover > a,
+  .header-bottom .mn-lv1.show > a,
+  .header-bottom .mn-lv1.active > a {
+    --text: {{ section.settings.color_text_headerb_hv }};
+  }
+  .main-mn{
+    --nv_pd_left: {{section.settings.padding_size}}px;
+  }
+  .header .divider {
+    margin: 0 0.3125rem;
+    background-color: #353535;
+  }
+  .header-top .divider {
+    background-color: #e1e1e1;
+  }
+  .header-top .block-info,
+  .header-top .block-info .list {
+    font-size: 0.75rem;
+  }
+  .header .block-multi-cat .nav-tabs {
+    border: none;
+  }
+  .header .block-multi-cat .nav-item {
+    position: relative;
+    margin-top: -44px;
+    margin-bottom: -46px;
+    border-width: 0px 1px 0px 1px;
+    border-style: solid;
+    /*border-color: {{ section.settings.color_headb_bg | color_modify: 'alpha', section.settings.color_headb_bg_op }};*/
+  }
+  .header .block-multi-cat .nav-item:nth-child(n+1) {
+    margin-left: -1px;
+  }
+  .header .block-multi-cat .nav-item .nav-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+    border: none;
+    color: var(--text);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  .header .block-multi-cat .nav-item .nav-link.active,
+  .header .block-multi-cat .nav-item.show .nav-link,
+  .header .block-multi-cat .nav-item:hover .nav-link {
+    background-color: {{ section.settings.color_headb_bg | color_modify: 'alpha', section.settings.color_headb_bg_op }};
+  }
+  .header .cart-label {
+    display: none;
+  }
+  .header .call-label{
+    margin: 0 0 0 0.625rem;
+  }
+  [dir="rtl"] .header .call-label{
+    margin: 0 0.625rem 0 0;
+  }
+  .header .call-label p,
+  .header .cartCost{
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: -.0428em;
+    display: block;
+    margin-bottom: 0;
+  }
+  .header .call-label,
+  .header .cart-label{
+    text-align: initial;
+    color: #aaa;
+  }
+  .header .control-inner>div .icon-link {
+    display: flex;
+    align-items: center;
+  }
+  .header .control-inner > div .icon-link .count {
+    position: absolute;
+    right: -0.625rem;
+    top: -0.1875rem;
+    width: 1.1875rem;
+    height: 1.1875rem;
+    font-size: 0.6875rem;
+    line-height: 1.125rem;
+  }
+  [dir="rtl"] .header .control-inner > div .icon-link .count {
+    left: -0.625rem;
+    right: auto;
+  }
+  .header .block-minicart .icon-count{
+    order: 1;
+    min-width: 1.875rem;
+  }
+  .header .cart-label {
+    margin: 0 0.625rem 0 0;
+  }
+  [dir="rtl"] .header .cart-label {
+    margin: 0 0 0 0.625rem;
+  }
+  .header-logo {
+    margin-bottom: .1rem;
+  }
+  .header .block-search {
+    flex: 1;
+    margin-right: 1.25rem;
+    max-width: 385px;
+  }
+  [dir="rtl"] .header .block-search {
+    margin-left: 1.25rem;
+    margin-right: auto;
+  }
+  .header .box-search .input-show {
+    background-color: #fff;
+  }
+  .header .box-search .button-search {
+    color: #222;
+  }
+  .header .box-search .button-search i {
+    margin: 0;
+  }
+  .header .box-search .searchDrop:before {
+    left: auto;
+    right: -0.1875rem;
+  }
+  [dir="rtl"] .header .box-search .searchDrop:before {
+    right: auto;
+    left: -0.1875rem;
+  }
+  .header-bottom .mn-lv1>a:before {
+    opacity: 0;
+  }
+  .main-mn>.mn-i>a {
+    padding: 1.25rem 0;
+  }
+  @media (min-width: 576px){
+    .header-logo {
+      margin-right: 1.25rem;
+    }
+    [dir="rtl"] .header-logo {
+      margin-left: 1.25rem;
+      margin-right: 0;
+    }
+    .control-inner>div .icon-link,
+    .control-inner>div .menu-toggle {
+      padding-right: 0.8125rem;
+      padding-left: 0.8125rem;
+    }
+  }
+  @media (min-width: 992px){
+    .min-height {
+      padding-top: 0.625rem;
+      padding-bottom: 0.625rem;
+    }
+    .header .cart-label {
+      display: block;
+    }
+  }
+  @media (min-width: 1200px){
+    .header-logo {
+      margin-right: 3.125rem;
+    }
+    [dir="rtl"] .header-logo {
+      margin-left: 3.125rem;
+      margin-right: 0;
+    }
+    .block-multi-cat {
+      margin-right: 3.125rem;
+    }
+    [dir="rtl"] .block-multi-cat {
+      margin-left: 3.125rem;
+      margin-right: 0;
+    }
+  }
+{%-endcapture-%}
+{{- header_css | strip_newlines | remove: '  ' | remove: '  ' -}}
+.content_{{section.id}}{margin-top: {{section.settings.header_margin_top | default: '0' | split: '|' | first }};margin-bottom: {{section.settings.header_margin_bottom | default: '0' | split: '|' | first }};padding: {{section.settings.header_padding | default: '0' | split: '|' | first | replace : '-',' '}};}{{--}}
+{%- endstyle -%}
+<div class="{{section.settings.width_header}}" data-respon="{'el':'.header','mt':'{{section.settings.header_margin_top}}','mb':'{{section.settings.header_margin_bottom}}','p':'{{section.settings.header_padding}}'}">
+  <div class="main-header kt--drop-w kt--drop-w-d" data-header-sticky="{{section.settings.sticky_menu}}">
+    <div class="min-height d-flex flex-wrap align-items-center justify-content-between">
+      <div class="header-left">
+        <button type="button" class="btn-link mobile-menu-toggle menu-toggle d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuMb" aria-controls="offcanvasMenuMb">
+          <i class="d-icon-bars2"></i>
+        </button>
+        <div class="header-logo">
+          {%- render 'kt_logo_header' -%}
+        </div>
+        <div class="block-multi-cat tab tab-nav-boxed">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="f63df7b">WOMENS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="48e809a">MENS</a>
+            </li>
+          </ul>
+        </div>
+        <div class="block-search d-none d-sm-block">
+          {% render 'search-bar', search_style: "input" %}
+        </div>
+      </div>
+      <div class="header-right header-control">
+        <div class="control-inner d-flex align-items-center justify-content-end">
+          {%- if section.settings.use_call-%}
+          <div class="block-call">
+            <a href="tel:{{settings.phone_contact | remove:' '}}" class="icon-link">
+              <span class="icon-count">
+                {% comment %}<svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-wishlist"></use></svg>{% endcomment %}
+                <span class="d-icon-phone"></span>
+              </span>
+              <span class="call-label d-none d-lg-block">
+                {{'layout.header.call_box_title' | t}}
+                <strong class="d-block">{{settings.phone_contact}}</strong>
+              </span>
+            </a>
+          </div>
+          <span class="divider d-none d-sm-block"></span>
+          {%- endif -%}
+          {%- if section.settings.use_account and shop.customer_accounts_enabled -%}
+          <div class="block-account d-none d-sm-block">
+            <a href="{%if customer%}{{routes.account_url}}{%else%}{{routes.account_login_url}}{%endif%}" class="icon-link"{%unless customer%}{%-if shop.customer_accounts_enabled and settings.modal_login-%} data-bs-toggle="modal" data-bs-target="#rd_accModal" data-bs-modal="{{routes.account_login_url}}/?section_id=kt_account_popup&q=content"{%endif%}{%endunless%}>
+              <span class="icon-count">
+                <!-- <svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-user"></use></svg> -->
+                <i class="d-icon-user"></i>
+              </span>
+              <span class="d-none">{{'customer.account.mini_title' | t}}</span>
+            </a>
+          </div>
+          {%- endif -%}
+          {%- if section.settings.use_compare and settings.use_compare-%}
+          <div class="block-compare d-none d-sm-block">
+            <div class="mini-compare load kt--drop-i">
+              <div class="icon-link kt--drop-title"><div class="icon-count kt-button" data-bs-toggle="offcanvas" data-bs-target="#compareOffcanvas" aria-controls="compareOffcanvas">
+                <!-- <svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-compare"></use></svg> -->
+                <span class="d-icon-compare"></span>
+                <span class="count compareCount d-none">0</span></div></div>
+              <div class="mini-compare-content kt--drop-in"><div class="no-compare"><p>{{'products.compare.no_compare' | t}}</p></div><div class="mini-compare-body"></div></div>
+            </div>
+          </div>
+          {%- endif -%}
+          {%- if section.settings.use_wishlist and settings.use_wishlist -%}
+          <div class="block-wishlist d-none d-sm-block">
+            <a href="{{pages['wishlist'].url}}" class="icon-link">
+              <span class="icon-count">
+                {% comment %}<svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-wishlist"></use></svg>{% endcomment %}
+                <span class="d-icon-heart"></span>
+                <span class="count wishlist-count d-none">0</span>
+              </span>
+              <span class="d-none">{{'products.wishlist.title' | t}}</span>
+            </a>
+          </div>
+          {%- endif -%}
+          <span class="divider d-none d-sm-block"></span>
+          {%- if section.settings.use_cart-%}
+          <div class="block-minicart mr-lg-1">
+            {%- render 'kt_mini-cart' -%}
+          </div>
+          {%- endif -%}
+        </div>
+      </div>
+      {% comment %}{%- if settings.use_header_mobile_search_box and template.name != 'search' -%}
+      {%- endif -%}{% endcomment %}
+    </div>
+  </div>
+</div>
+{%- unless cart.attributes.theme_mobile == 'true' -%} 
+{%- endunless -%}
+
+{% schema %}
+  {
+  "name": "Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id" :"sticky_menu",
+      "label": "Use sticky?",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "width_header",
+      "label": "Max width section",
+      "options": [
+        { "value": "container", "label": "1200px" },
+        { "value": "container-fluid wide", "label": "Wide" },
+        { "value": "w-100", "label": "Full width" }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "text",
+      "id": "header_margin_top",
+      "label": "Margin top",
+      "info": "25px|30px|35px|40px|45px|50px"
+    },
+    {
+      "type": "text",
+      "id": "header_margin_bottom",
+      "label": "Margin bottom",
+      "info": "25px|30px|35px|40px|45px|50px"
+    },
+    {
+      "type": "text",
+      "id": "header_padding",
+      "label": "Paddings (top right bottom left)",
+      "info": "60px 60px 0 60px"
+    },
+    {
+      "type": "color",
+      "id": "color_text_header",
+      "label": "Color",
+      "default": "#555"
+    },
+    {
+      "type": "color",
+      "id": "color_text_header_hv",
+      "label": "Hover color",
+      "default": "{{ shop.brand.colors.primary[0].background }}"
+    },
+    {
+      "type": "color_background",
+      "id": "color_head_bg",
+      "label": "Background Header"
+    },
+    {
+      "type": "range",
+      "id": "color_head_bg_op",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "___ Opacity background color",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "color_text_headerb",
+      "label": "Color (bottom)",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "color_text_headerb_hv",
+      "label": "Hover color (bottom)",
+      "default": "#fff"
+    },
+    {
+      "type": "color_background",
+      "id": "color_headb_bg",
+      "label": "Background Header (bottom)"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_image",
+      "label": "Background image",
+      "info": "Size suggestion: 1920 x 752 pixels"
+    },
+    {
+      "type": "header",
+      "content": "Icons control"
+    },
+    {
+      "type": "checkbox",
+      "id" :"use_call",
+      "label": "Use call box?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id" :"use_account",
+      "label": "Use account?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id" :"use_compare",
+      "label": "Use compare?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id" :"use_wishlist",
+      "label": "Use wishlist?"
+    },
+    {
+      "type": "checkbox",
+      "id" :"use_cart",
+      "label": "Use cart?",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "top_menu",
+      "name": "Item [Top menu]",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "call_us_show",
+          "label": "Use Call us?"
+        },
+        {
+          "type": "checkbox",
+          "id": "email_show",
+          "label": "Use Email?"
+        },
+        {
+          "type": "checkbox",
+          "id": "social_contact_show",
+          "label": "Use Socials contact?"
+        },
+        {
+          "type": "checkbox",
+          "id": "wishlist_show",
+          "label": "Use Wishlist?"
+        },
+        {
+          "type": "checkbox",
+          "id": "compare_show",
+          "label": "Use Compare?"
+        },
+        {
+          "type": "checkbox",
+          "id": "account_show",
+          "label": "Use link Account?"
+        },
+        {
+          "type": "checkbox",
+          "id": "link_inline_show",
+          "label": "Use Linklist inline?"
+        },
+        {
+          "type": "link_list",
+          "id": "link_inline",
+          "label": "Linklist"
+        },
+        {
+          "type": "header",
+          "content": "Dropdown"
+        },
+        {
+          "type": "checkbox",
+          "id": "link_dropdown_show",
+          "label": "Use Linklist dropdown?"
+        },
+        {
+          "type": "link_list",
+          "id": "link_dropdown",
+          "label": "Linklist"
+        },
+        {
+          "type": "checkbox",
+          "id": "account_dropdown_show",
+          "label": "Use Account dropdown?"
+        },
+        {
+          "type": "checkbox",
+          "id": "currency_dropdown_show",
+          "label": "Use Currency dropdown?"
+        },
+        {
+          "type": "header",
+          "content": "Custom"
+        },
+        {
+          "type": "checkbox",
+          "id": "language_app_show",
+          "label": "Use Language app?"
+        },
+        {
+          "type": "liquid",
+          "id": "language_app_html",
+          "label": "HTML of Language app?"
+        },
+        {
+          "type": "checkbox",
+          "id": "custom_show",
+          "label": "Use Custom content?"
+        },
+        {
+          "type": "liquid",
+          "id": "custom_html",
+          "label": "HTML of custom?"
+        },
+        {
+          "type": "checkbox",
+          "id": "welcome_msg_show",
+          "label": "Use Welcome message?"
+        },
+        {
+          "type": "liquid",
+          "id": "welcome_msg",
+          "label": "Welcome message"
+        },
+        {
+          "type": "header",
+          "content": "Responsive"
+        },
+        {
+          "type": "html",
+          "id": "col",
+          "label": "Item column (support reponsive)",
+          "default": "auto",
+          "info": "Responsive: 12|6|4|3|3"
+        }
+      ]
+    },
+    {
+      "type": "announcement",
+      "name": "Item [Announcement]",
+      "settings": [
+        {
+           "type": "html",
+           "id": "message",
+           "label": "Announcement text",
+           "default": "<p>Summer Sale Extra <strong>25% OFF</strong> with code <strong>SM2228A</strong></p>",
+           "info": "[Example](https:\/\/molla-docs.the4.co\/default-section\/header-+-announcement\/announcement#2-example)"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1324 @@
+<!-- rd_blog.liquid -->
+{%- if template.name != 'blog' -%}
+  {%- liquid
+    assign width_section = section.settings.width_section
+    assign width_content = section.settings.width_content
+    capture width_section_
+      if width_section == 'container-fluid wide' and width_content == false
+        echo 'w-100'
+      else
+        echo width_section
+      endif
+    endcapture
+    capture width_content_
+      if width_content and width_section == 'w-100'
+        echo 'container'
+      elsif width_section == 'container-fluid wide' and width_content == false
+        echo 'container-fluid wide'
+      else
+        echo 'w-100'
+      endif
+    endcapture
+    assign dir_body = settings.dir_body
+    assign cssAlign = 'left'
+    assign cssAlign_rev = 'right'
+    if dir_body == 'rtl'
+      assign cssAlign = 'right'
+      assign cssAlign_rev = 'left'
+    endif
+  -%}
+
+  {%-render 'sc_css'-%}
+  <div id="rd_blog--{{ section.id }}" class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}" data-section-id="{{ section.id }}" data-section-type="swiper-section">
+    <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+      <div class="section-width {{width_content_}}">
+      {%- assign block = section.blocks | where: 'type', 'title' | first -%}
+      {%- render 'kt_sc_title', block: block, attr: true -%}
+      {%- for block in section.blocks-%}
+        {%- case block.type -%}
+        {%- when '1' -%}
+          {%- assign responsive_ = section.settings.responsive | strip_newlines | json | remove: '\t' | remove: '\' | remove: ' ' | replace: '"{"','{"' | replace: '}}"','}}' -%}
+          {%- assign items_ = responsive_ | split: '"slidesPerView":' | last | split: ',' | first | plus: 0 -%}
+          <div class="lastest-blog __type0{{block.type}} swiper-fuild position-relative {{section.settings.nav_position}} nav-style{{section.settings.nav_style}} nav-mode-{{section.settings.nav_mode}}">
+            <div class="swiper" data-breakpoints='{{responsive_}}' data-autoplay="{{section.settings.autoplay}}" data-slides-per-view="{{items_}}" data-dots="{{section.settings.use_dots}}" data-nav="{{section.settings.use_navigation}}" data-prev-el=".sw-btn-prev-{{section.id}}" data-next-el=".sw-btn-next-{{section.id}}" data-pagination=".swiper-pagination-{{section.id}}"{% if section.settings.use_lazyload %} data-observer="true"{% endif %}>
+              <div class="swiper-wrapper{% if section.settings.use_lazyload and block.settings.blog != blank %} lazyload{%endif%}" data-include="{{blogs[block.settings.blog].url}}/?section_id={{section.id}}&q={{forloop.index0}}">
+                {%- if section.settings.use_lazyload -%}
+                  {%-for i in (1..block.settings.limit)-%}
+                    <div class="swiper-slide"><div class="animated-background aspectRatio _mb-2" style="padding-bottom: 56.25%"></div><div class="animated-background box-line-sm"></div><div class="animated-background box-line-xs _mb-3i"></div></div>
+                  {%-endfor-%}
+                {%- else -%}
+                  {%- for article in blogs[block.settings.blog].articles limit: block.settings.limit -%}
+                  <div class="swiper-slide">
+                    <article class="item-blog type01 post-display">
+                      <figure class="post-media">
+                        <div class="post-calendar">
+                          <span class="post-day">{{ article.published_at | date: "%d" }}</span>
+                          <span class="post-month">{{ article.published_at | date: "%b" }}</span>
+                        </div>
+                        <a href="{{ article.url }}">
+                          {%-assign width = article.image.width | default: 277.00 -%}{%-assign height = article.image.height | default: 540.00 | plus: 0.00-%}
+                          <div class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                            {{ article.image | image_url: width: article.image.width | image_tag: class: 'img-fit-cover', alt: article.image.alt, size: '100vw', widths: '375, 550, 750', loading: 'lazy' }}
+                          </div>
+                        </a>
+                      </figure>
+                      <div class="post-body">
+                        <h4 class="post-title">
+                          <a href="{{ article.url }}">{{ article.title }}</a>
+                        </h4>
+                        <div class="post-content">
+                          <p>{%if article.excerpt != blank%}{{article.excerpt | strip_html | truncatewords: 11}}{%else%}{{article.content | strip_html | truncatewords: 11}}{%endif%}</p>
+                          <a href="{{ article.url }}" class="btn btn-underline btn-link btn-primary">{{'blogs.general.read_more_button' | t}}<i class="d-icon-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  {%-endfor-%} 
+                {%- endif -%}
+              </div>
+              {%- if section.settings.use_dots -%}
+              <div class="swiper-pagination swiper-pagination-{{section.settings.dots_mode}} swiper-pagination-{{section.settings.dots_position}} swiper-pagination-{{section.id}}"></div>
+              {%- endif -%}
+            </div>            
+            {%- if section.settings.use_navigation -%}
+            <div class="swiper-buttons position-absolute"{% if section.settings.nav_position == 'nav-top-right' or section.settings.nav_position == 'nav-top-left' %} style="margin-top: -2.875rem" {%endif%}>
+              <div class="content-buttons position-relative">
+                <div class="swiper-button-prev sw-btn-prev-{{section.id}}"></div>
+                <div class="swiper-button-next sw-btn-next-{{section.id}}"></div>
+              </div>
+            </div>
+            {%- endif -%}
+          </div>
+          {%- if blogs[block.settings.blog].title != blank and blogs[block.settings.blog].articles_count > block.settings.limit and block.settings.load_btn -%}
+          <div class="more-container text-center mt-4">
+            <a href="{{blogs[block.settings.blog].url}}" class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} button-more">{{'blogs.general.loadmore_html'|t}}</a>
+          </div>
+          {%- endif -%}
+        {%- when '2' -%}
+          {%- assign responsive_ = section.settings.responsive | strip_newlines | json | remove: '\t' | remove: '\' | remove: ' ' | replace: '"{"','{"' | replace: '}}"','}}' -%}
+          {%- assign items_ = responsive_ | split: '"slidesPerView":' | last | split: ',' | first | plus: 0 -%}
+          <div class="lastest-blog swiper-fuild position-relative {{section.settings.nav_position}} nav-style{{section.settings.nav_style}} nav-mode-{{section.settings.nav_mode}}">
+            <div class="swiper" data-breakpoints='{{responsive_}}' data-autoplay="{{section.settings.autoplay}}" data-slides-per-view="{{items_}}" data-dots="{{section.settings.use_dots}}" data-nav="{{section.settings.use_navigation}}" data-prev-el=".sw-btn-prev-{{section.id}}" data-next-el=".sw-btn-next-{{section.id}}" data-pagination=".swiper-pagination-{{section.id}}"{% if section.settings.use_lazyload %} data-observer="true"{% endif %}>
+              <div class="swiper-wrapper{% if section.settings.use_lazyload and block.settings.blog != blank %} lazyload{%endif%}" data-include="{{blogs[block.settings.blog].url}}/?section_id={{section.id}}&q={{forloop.index0}}">
+                {%- if section.settings.use_lazyload -%}
+                  {%-for i in (1..block.settings.limit)-%}
+                    <div class="swiper-slide"><div class="animated-background aspectRatio _mb-2" style="padding-bottom: 56.25%"></div><div class="animated-background box-line-sm"></div><div class="animated-background box-line-xs _mb-3i"></div></div>
+                  {%-endfor-%}
+                {%- else -%}
+                  {%- for article in blogs[block.settings.blog].articles limit: block.settings.limit -%}
+                  <div class="swiper-slide">
+                    <article class="item-blog type02">
+                      <figure class="post-media">
+                        <a href="{{ article.url }}">
+                          {%- assign image_item = article.image -%}
+                          {%-assign width = image_item.width | default: 277.00 -%}{%-assign height = image_item.height | default: 540.00 | plus: 0.00-%}
+                          <div class="img__banner position-relative{% if article.image %} lazyload{% endif %}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;" data-bgset="{%- render 'bgset', image: image_item, imw: 576 -%}" data-sizes="auto">
+                          </div>
+                        </a>
+                      </figure>
+                      <div class="post-body">
+                        <div class="post-meta">
+                          <span class="post-time">{{'blogs.general.on' | t}} <span>{{ article.published_at | date: '%b %d, %Y' }}</span></span>
+                          {% if blogs[block.settings.blog].comments_enabled? %}
+                          <span class="comment"> | {{'blogs.comments.comments_with_count_html' | t: count: article.comments_count}}</span>
+                          {% endif %}
+                        </div>
+                        <h4 class="post-title">
+                          <a href="{{ article.url }}">{{ article.title }}</a>
+                        </h4>
+                        <div class="post-content">
+                          <a href="{{ article.url }}" class="btn btn-link btn-underline btn-underline">{{'blogs.general.read_more_button' | t}}<i class="d-icon-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  {%-endfor-%} 
+              {%- endif -%}
+              </div>
+              {%- if section.settings.use_dots -%}
+              <div class="swiper-pagination swiper-pagination-{{section.settings.dots_mode}} swiper-pagination-{{section.settings.dots_position}} swiper-pagination-{{section.id}}"></div>
+              {%- endif -%}
+            </div>            
+            {%- if section.settings.use_navigation -%}
+            <div class="swiper-buttons position-absolute"{% if section.settings.nav_position == 'nav-top-right' or section.settings.nav_position == 'nav-top-left' %} style="margin-top: -2.875rem" {%endif%}>
+              <div class="content-buttons position-relative">
+                <div class="swiper-button-prev sw-btn-prev-{{section.id}}"></div>
+                <div class="swiper-button-next sw-btn-next-{{section.id}}"></div>
+              </div>
+            </div>
+            {%- endif -%}
+          </div>
+          {%- if blogs[block.settings.blog].title != blank and blogs[block.settings.blog].articles_count > block.settings.limit and block.settings.load_btn -%}
+          <div class="more-container text-center mt-4">
+            <a href="{{blogs[block.settings.blog].url}}" class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} button-more">{{'blogs.general.loadmore_html'|t}}</a>
+          </div>
+          {%- endif -%}
+        {%- when '3' -%}
+          {%- assign responsive_ = section.settings.responsive | strip_newlines | json | remove: '\t' | remove: '\' | remove: ' ' | replace: '"{"','{"' | replace: '}}"','}}' -%}
+          {%- assign items_ = responsive_ | split: '"slidesPerView":' | last | split: ',' | first | plus: 0 -%}
+          <div class="lastest-blog swiper-fuild position-relative {{section.settings.nav_position}} nav-style{{section.settings.nav_style}} nav-mode-{{section.settings.nav_mode}}">
+            <div class="swiper" data-breakpoints='{{responsive_}}' data-autoplay="{{section.settings.autoplay}}" data-slides-per-view="{{items_}}" data-dots="{{section.settings.use_dots}}" data-nav="{{section.settings.use_navigation}}" data-prev-el=".sw-btn-prev-{{section.id}}" data-next-el=".sw-btn-next-{{section.id}}" data-pagination=".swiper-pagination-{{section.id}}"{% if section.settings.use_lazyload %} data-observer="true"{% endif %}>
+              <div class="swiper-wrapper{% if section.settings.use_lazyload %} lazyload{%endif%}" data-include="{{blogs[block.settings.blog].url}}/?section_id={{section.id}}&q={{forloop.index0}}">
+                {%- if section.settings.use_lazyload -%}
+                  {%-for i in (1..block.settings.limit)-%}
+                    <div class="swiper-slide"><div class="animated-background aspectRatio _mb-2" style="padding-bottom: 56.25%"></div><div class="animated-background box-line-sm"></div><div class="animated-background box-line-xs _mb-3i"></div></div>
+                  {%-endfor-%}
+                {%- else -%}
+                  {%- for article in blogs[block.settings.blog].articles limit: block.settings.limit -%}
+                  <div class="swiper-slide">
+                    <article class="item-blog type03">
+                      <figure class="post-media">
+                        <a href="{{ article.url }}">
+                          {%- assign image_item = article.image -%}
+                          {%-assign width = image_item.width | default: 277.00 -%}{%-assign height = image_item.height | default: 540.00 | plus: 0.00-%}
+                          <div class="img__banner position-relative{% if article.image %} lazyload{% endif %}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;" data-bgset="{%- render 'bgset', image: image_item, imw: 576 -%}" data-sizes="auto">
+                          </div>
+                        </a>
+                      </figure>
+                      <div class="post-body">
+                        <div class="post-meta">
+                          <span class="post-time">{{'blogs.general.on' | t}} <span>{{ article.published_at | date: '%b %d, %Y' }}</span></span>
+                          {% if blogs[block.settings.blog].comments_enabled? %}
+                          <span class="comment"> | {{'blogs.comments.comments_with_count_html' | t: count: article.comments_count}}</span>
+                          {% endif %}
+                        </div>
+                        <h4 class="post-title">
+                          <a href="{{ article.url }}">{{ article.title }}</a>
+                        </h4>
+                        <div class="post-content">
+                          {%-if block.settings.short_desc-%}<p>{%if article.excerpt != blank%}{{article.excerpt | strip_html | truncatewords: 11}}{%else%}{{article.content | strip_html | truncatewords: 11}}{%endif%}</p>{%-endif-%}
+                          <a href="{{ article.url }}" class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} button-more">{{'blogs.general.read_more_button' | t}}<i class="d-icon-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  {%-endfor-%} 
+              {%- endif -%}
+              </div>
+              {%- if section.settings.use_dots -%}
+              <div class="swiper-pagination swiper-pagination-{{section.settings.dots_mode}} swiper-pagination-{{section.settings.dots_position}} swiper-pagination-{{section.id}}"></div>
+              {%- endif -%}
+            </div>            
+            {%- if section.settings.use_navigation -%}
+            <div class="swiper-buttons position-absolute"{% if section.settings.nav_position == 'nav-top-right' or section.settings.nav_position == 'nav-top-left' %} style="margin-top: -2.875rem" {%endif%}>
+              <div class="content-buttons position-relative">
+                <div class="swiper-button-prev sw-btn-prev-{{section.id}}"></div>
+                <div class="swiper-button-next sw-btn-next-{{section.id}}"></div>
+              </div>
+            </div>
+            {%- endif -%}
+          </div>
+          {%- if blogs[block.settings.blog].title != blank and blogs[block.settings.blog].articles_count > block.settings.limit and block.settings.load_btn -%}
+          <div class="more-container text-center mt-4">
+            <a href="{{blogs[block.settings.blog].url}}" class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} button-more">{{'blogs.general.loadmore_html'|t}}</a>
+          </div>
+          {%- endif -%}
+        {%- when '4' -%}
+          {%- assign responsive_ = section.settings.responsive | strip_newlines | json | remove: '\t' | remove: '\' | remove: ' ' | replace: '"{"','{"' | replace: '}}"','}}' -%}
+          {%- assign items_ = responsive_ | split: '"slidesPerView":' | last | split: ',' | first | plus: 0 -%}
+          <div class="lastest-blog swiper-fuild position-relative {{section.settings.nav_position}} nav-style{{section.settings.nav_style}} nav-mode-{{section.settings.nav_mode}}">
+            <div class="swiper" data-breakpoints='{{responsive_}}' data-autoplay="{{section.settings.autoplay}}" data-slides-per-view="{{items_}}" data-dots="{{section.settings.use_dots}}" data-nav="{{section.settings.use_navigation}}" data-prev-el=".sw-btn-prev-{{section.id}}" data-next-el=".sw-btn-next-{{section.id}}" data-pagination=".swiper-pagination-{{section.id}}"{% if section.settings.use_lazyload %} data-observer="true"{% endif %}>
+              <div class="swiper-wrapper{% if section.settings.use_lazyload %} lazyload{%endif%}" data-include="{{blogs[block.settings.blog].url}}/?section_id={{section.id}}&q={{forloop.index0}}">
+                {%- if section.settings.use_lazyload -%}
+                  {%-for i in (1..block.settings.limit)-%}
+                    <div class="swiper-slide"><div class="animated-background aspectRatio _mb-2" style="padding-bottom: 56.25%"></div><div class="animated-background box-line-sm"></div><div class="animated-background box-line-xs _mb-3i"></div></div>
+                  {%-endfor-%}
+                {%- else -%}
+                  {%- for article in blogs[block.settings.blog].articles limit: block.settings.limit -%}
+                  <div class="swiper-slide">
+                    <article class="item-blog type04">
+                      <div class="row align-items-center row-cols-1 row-cols-md-2">
+                        <div class="col col-md-7">
+                          <figure class="post-media">
+                            <div class="post-calendar">
+                              <span class="post-day">{{ article.published_at | date: '%d' }}</span>
+                              <span class="post-month">{{ article.published_at | date: '%b' }}</span>
+                            </div>
+                            <a href="{{ article.url }}">
+                              {%- assign image_item = article.image -%}
+                              {%-assign width = image_item.width | default: 277.00 -%}{%-assign height = image_item.height | default: 540.00 | plus: 0.00-%}
+                              <div class="img__banner position-relative{% if article.image %} lazyload{% endif %}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;" data-bgset="{%- render 'bgset', image: image_item, imw: 576 -%}" data-sizes="auto">
+                              </div>
+                            </a>
+                          </figure>
+                        </div>
+                        <div class="col col-md-5">
+                          <div class="col post-body">
+                            <div class="post-meta">
+                              <!-- <span class="post-time">{{'blogs.general.on' | t}} <span>{{ article.published_at | date: '%b %d, %Y' }}</span></span> -->
+                              {% if blogs[block.settings.blog].comments_enabled? %}
+                              <span class="comment">{{'blogs.comments.comments_with_count_html' | t: count: article.comments_count}}</span>
+                              {% endif %}
+                            </div>
+                            <h4 class="post-title">
+                              <a href="{{ article.url }}">{{ article.title }}</a>
+                            </h4>
+                            <div class="post-content">
+                              {%-if block.settings.short_desc-%}<p>{%if article.excerpt != blank%}{{article.excerpt | strip_html | truncatewords: 7}}{%else%}{{article.content | strip_html | truncatewords: 7}}{%endif%}</p>{%-endif-%}
+                              <a href="{{ article.url }}" class="btn btn-sm {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} button-more">{{'blogs.general.read_more_button' | t}}<i class="d-icon-arrow-right"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  {%-endfor-%} 
+              {%- endif -%}
+              </div>
+              {%- if section.settings.use_dots -%}
+              <div class="swiper-pagination swiper-pagination-{{section.settings.dots_mode}} swiper-pagination-{{section.settings.dots_position}} swiper-pagination-{{section.id}}"></div>
+              {%- endif -%}
+            </div>            
+            {%- if section.settings.use_navigation -%}
+            <div class="swiper-buttons position-absolute"{% if section.settings.nav_position == 'nav-top-right' or section.settings.nav_position == 'nav-top-left' %} style="margin-top: -2.875rem" {%endif%}>
+              <div class="content-buttons position-relative">
+                <div class="swiper-button-prev sw-btn-prev-{{section.id}}"></div>
+                <div class="swiper-button-next sw-btn-next-{{section.id}}"></div>
+              </div>
+            </div>
+            {%- endif -%}
+          </div>
+          {%- if blogs[block.settings.blog].title != blank and blogs[block.settings.blog].articles_count > block.settings.limit and block.settings.load_btn -%}
+          <div class="more-container text-center mt-4">
+            <a href="{{blogs[block.settings.blog].url}}" class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} button-more">{{'blogs.general.loadmore_html'|t}}</a>
+          </div>
+          {%- endif -%}
+        {%- endcase -%}
+      {%- endfor -%}
+      </div>
+    </div>
+  </div>
+  {%-if section.settings.css_section != blank-%}
+  <noscript class="banner-css" data-section-type="{{section.id}}">
+    {%-capture banner-css-%}
+    {%style%}
+    {%- assign section_id = ' .content_' | append: section.id -%}
+    {{- section.settings.css_section | replace: ".section_id", section_id -}}
+    {%endstyle%}
+    {%-endcapture-%}
+    {{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+  </noscript>
+  {%- endif -%}
+{%- else -%}
+<!--lz_sc-->
+  {%- assign i = canonical_url | split: 'q=' | last | plus: 0 -%}
+  {%- assign block = section.blocks[i] -%} 
+  {%- case block.type -%}
+    {%- when '1' -%}
+      {%- for article in blog.articles limit: block.settings.limit -%}
+      <div class="swiper-slide">
+        <article class="item-blog type01 post-display">
+          <figure class="post-media">
+            <div class="post-calendar">
+              <span class="post-day">{{ article.published_at | date: "%d" }}</span>
+              <span class="post-month">{{ article.published_at | date: "%b" }}</span>
+            </div>
+            <a href="{{ article.url }}">
+              {%-assign width = article.image.width | default: 277.00 -%}{%-assign height = article.image.height | default: 540.00 | plus: 0.00-%}
+              <div class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                {{ article.image | image_url: width: article.image.width | image_tag: class: 'img-fit-cover', alt: article.image.alt, size: '100vw', widths: '375, 550, 750', loading: 'lazy' }}
+              </div>
+            </a>
+          </figure>
+          <div class="post-body">
+            <h4 class="post-title">
+              <a href="{{ article.url }}">{{ article.title }}</a>
+            </h4>
+            <div class="post-content">
+              <p>{%if article.excerpt != blank%}{{article.excerpt | strip_html | truncatewords: 11}}{%else%}{{article.content | strip_html | truncatewords: 11}}{%endif%}</p>
+              <a href="{{ article.url }}" class="btn btn-underline btn-link btn-primary">{{'blogs.general.read_more_button' | t}}<i class="d-icon-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+      {%-endfor-%} 
+    {%- when '2' -%}
+      {%- for article in blog.articles limit: block.settings.limit -%}
+      <div class="swiper-slide">
+        <article class="item-blog type02">
+          <figure class="post-media">
+            <a href="{{ article.url }}">
+              {%- assign image_item = article.image -%}
+              {%-assign width = image_item.width | default: 277.00 -%}{%-assign height = image_item.height | default: 540.00 | plus: 0.00-%}
+              <div class="img__banner position-relative{% if article.image %} lazyload{% endif %}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;" data-bgset="{%- render 'bgset', image: image_item, imw: 576 -%}" data-sizes="auto">
+              </div>
+            </a>
+          </figure>
+          <div class="post-body">
+            <div class="post-meta">
+              <span class="post-time">{{'blogs.general.on' | t}} <span>{{ article.published_at | date: '%b %d, %Y' }}</span></span>
+              {% if blog.comments_enabled? %}
+              <span class="comment"> | {{'blogs.comments.comments_with_count_html' | t: count: article.comments_count}}</span>
+              {% endif %}
+            </div>
+            <h4 class="post-title">
+              <a href="{{ article.url }}">{{ article.title }}</a>
+            </h4>
+            <div class="post-content">
+              <a href="{{ article.url }}" class="btn btn-link btn-underline btn-underline">{{'blogs.general.read_more_button' | t}}<i class="d-icon-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+      {%-endfor-%}
+    {%- when '3' -%}
+      {%- for article in blog.articles limit: block.settings.limit -%}
+      <div class="swiper-slide">
+        <article class="item-blog type03">
+          <figure class="post-media">
+            <a href="{{ article.url }}">
+              {%- assign image_item = article.image -%}
+              {%-assign width = image_item.width | default: 277.00 -%}{%-assign height = image_item.height | default: 540.00 | plus: 0.00-%}
+              <div class="img__banner position-relative{% if article.image %} lazyload{% endif %}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;" data-bgset="{%- render 'bgset', image: image_item, imw: 576 -%}" data-sizes="auto">
+              </div>
+            </a>
+          </figure>
+          <div class="post-body">
+            <div class="post-meta">
+              <span class="post-time">{{'blogs.general.on' | t}} <span>{{ article.published_at | date: '%b %d, %Y' }}</span></span>
+              {% if blog.comments_enabled? %}
+              <span class="comment"> | {{'blogs.comments.comments_with_count_html' | t: count: article.comments_count}}</span>
+              {% endif %}
+            </div>
+            <h4 class="post-title"><a href="{{ article.url }}">{{ article.title }}</a></h4>
+            <div class="post-content">
+              {%-if block.settings.short_desc-%}<p>{%if article.excerpt != blank%}{{article.excerpt | strip_html | truncatewords: 11}}{%else%}{{article.content | strip_html | truncatewords: 11}}{%endif%}</p>{%-endif-%}
+              <a href="{{ article.url }}" class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} button-more">{{'blogs.general.read_more_button' | t}}<i class="d-icon-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+      {%-endfor-%}
+    {%- when '4' -%}
+      {%- for article in blog.articles limit: block.settings.limit -%}
+      <div class="swiper-slide">
+        <article class="item-blog type04">
+          <div class="row align-items-center row-cols-1 row-cols-md-2">
+            <div class="col col-md-7">
+              <figure class="post-media">
+                <div class="post-calendar">
+                  <span class="post-day">{{ article.published_at | date: '%d' }}</span>
+                  <span class="post-month">{{ article.published_at | date: '%b' }}</span>
+                </div>
+                <a href="{{ article.url }}">
+                  {%- assign image_item = article.image -%}
+                  {%-assign width = image_item.width | default: 277.00 -%}{%-assign height = image_item.height | default: 540.00 | plus: 0.00-%}
+                  <div class="img__banner position-relative{% if article.image %} lazyload{% endif %}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;" data-bgset="{%- render 'bgset', image: image_item, imw: 576 -%}" data-sizes="auto">
+                  </div>
+                </a>
+              </figure>
+            </div>
+            <div class="col col-md-5">
+              <div class="col post-body">
+                <div class="post-meta">
+                  <!-- <span class="post-time">{{'blogs.general.on' | t}} <span>{{ article.published_at | date: '%b %d, %Y' }}</span></span> -->
+                  {% if blog.comments_enabled? %}
+                  <span class="comment">{{'blogs.comments.comments_with_count_html' | t: count: article.comments_count}}</span>
+                  {% endif %}
+                </div>
+                <h4 class="post-title">
+                  <a href="{{ article.url }}">{{ article.title }}</a>
+                </h4>
+                <div class="post-content">
+                  {%-if block.settings.short_desc-%}<p>{%if article.excerpt != blank%}{{article.excerpt | strip_html | truncatewords: 7}}{%else%}{{article.content | strip_html | truncatewords: 7}}{%endif%}</p>{%-endif-%}
+                  <a href="{{ article.url }}" class="btn btn-sm {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} button-more">{{'blogs.general.read_more_button' | t}}<i class="d-icon-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      {%-endfor-%}
+  {%- endcase -%}
+<!--lz_sc-->
+{%- endif -%}
+{% schema %}
+  {
+    "name": "Related post",
+    "class": "rd_blog",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Related post",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section?",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "container"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920x pixels"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type": "select",
+        "id": "fweight_title",
+        "label": "Font weight Title",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+          {
+            "value": "600",
+            "label": "600"
+          }
+        ],
+        "default": "600"
+      },
+      {
+        "type": "range",
+        "id": "fsize_stitle",
+        "label": "Font size Title",
+        "min": 1.4,
+        "max": 1.8,
+        "step": 0.1,
+        "unit": "rem",
+        "default": 1.8
+      },
+      {
+        "type": "color",
+        "id": "color_title",
+        "label": "Color title",
+        "default": "#333"
+      },
+      {
+        "type": "range",
+        "id": "margin_btitle",
+        "min": 0,
+        "max": 2,
+        "step": 0.1,
+        "label": "Margin bottom of title",
+        "default": 0.8
+      },
+      {
+        "type": "select",
+        "id": "fweight_description",
+        "label": "Font weight Description",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+          {
+            "value": "600",
+            "label": "600"
+          }
+        ],
+        "default": "300"
+      },
+      {
+        "type": "range",
+        "id": "fsize_description",
+        "label": "Font size Description",
+        "min": 1.4,
+        "max": 1.8,
+        "step": 0.1,
+        "unit": "rem",
+        "default": 1.4
+      },
+      {
+        "type": "color",
+        "id": "color_desc",
+        "label": "Color description",
+        "default": "#999"
+      },
+      {
+        "type": "range",
+        "id": "margin_bdescription",
+        "min": 0,
+        "max": 2,
+        "step": 0.1,
+        "label": "Margin bottom of description",
+        "default": 0.8
+      },
+      {
+        "type":"checkbox",
+        "id": "use_lazyload",
+        "label": "Use lazyload?",
+        "info": "Help speed up page loading."
+      },
+      {
+        "type": "header",
+        "content": "Slide settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "__Auto-rotate slides",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "use_navigation",
+        "label": "__Use navigation?",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "nav_style",
+        "options": [
+          {
+            "value": "-default",
+            "label": "Default"
+          },
+          {
+            "value": "1",
+            "label": "Style 1"
+          },
+          {
+            "value": "2",
+            "label": "Style 2"
+          }
+        ],
+        "label": "Navigation style",
+        "default": "-default"
+      },
+      {
+        "type": "select",
+        "id": "nav_mode",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "white",
+            "label": "White"
+          },
+          {
+            "value": "primary",
+            "label": "Primary color"
+          }
+        ],
+        "label": "Navigation mode",
+        "default": "default"
+      },
+      {
+        "type": "select",
+        "id": "nav_position",
+        "options": [
+          {
+            "value": "nav-default",
+            "label": "Default"
+          },
+          {
+            "value": "nav-center-center",
+            "label": "Center center"
+          },
+          {
+            "value": "nav-center-outside",
+            "label": "Center outside"
+          },
+          {
+            "value": "nav-top-right",
+            "label": "Top right"
+          },
+          {
+            "value": "nav-top-left",
+            "label": "Top left"
+          }
+        ],
+        "label": "Navigation position",
+        "default": "nav-default"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_dots",
+        "label": "__Use dots?"
+      },
+      {
+        "type": "select",
+        "id": "dots_mode",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "white",
+            "label": "White"
+          },
+          {
+            "value": "primary",
+            "label": "Primary color"
+          }
+        ],
+        "label": "Dots mode",
+        "default": "default"
+      },
+      {
+        "type": "select",
+        "id": "dots_position",
+        "options": [
+          {
+            "value": "inside",
+            "label": "Inside"
+          },
+          {
+            "value": "outside",
+            "label": "Outside"
+          }
+        ],
+        "label": "Dots position",
+        "default": "inside"
+      },
+      {
+        "type": "liquid",
+        "id": "responsive",
+        "label": "== Responsive",
+        "default": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"480\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  }\n}"
+      },
+      {
+        "type": "header",
+        "content": "Custom CSS"
+      },
+      {
+        "type": "html",
+        "id": "css_section",
+        "label": "Css for section",
+        "info": "Key start: .section_id"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "1",
+        "name": "Item blogs type01",
+        "settings": [
+          {
+            "type": "blog",
+            "id": "blog",
+            "label": "Choose blog"
+          },
+          {
+            "type": "range",
+            "id": "limit",
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "label": "Limit item",
+            "default": 8
+          },
+          {
+            "type": "header",
+            "content": "Button loadmore"
+          },
+          {
+            "type": "checkbox",
+            "id": "load_btn",
+            "label": "__Use load button?",
+            "default": false
+          },
+          {
+            "type": "select",
+            "id": "style_btn",
+            "label": "Button Style",
+            "default": "btn-primary",
+            "options": [
+              {
+                "value": "btn-primary",
+                "label": "Primary default",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-primary btn-outline",
+                "label": "Primary outline",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-secondary",
+                "label": "Secondary default",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-secondary btn-outline",
+                "label": "Secondary outline",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-white",
+                "label": "White default",
+                "group": "White"
+              },
+              {
+                "value": "btn-white btn-outline",
+                "label": "White outline",
+                "group": "White"
+              },
+              {
+                "value": "btn-dark",
+                "label": "Dark default",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-dark btn-outline",
+                "label": "Dark outline",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-underline btn-link",
+                "label": "Underline dark",
+                "group": "Underline"
+              },
+              {
+                "value": "btn-underline btn-white btn-link",
+                "label": "Underline white",
+                "group": "Underline"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "style_btn_rounded",
+            "label": "Button Radius",
+            "options": [
+              {
+                "value": "",
+                "label": "Square"
+              },
+              {
+                "value": "btn-rounded",
+                "label": "Rounded Corners"
+              },
+              {
+                "value": "btn-round",
+                "label": "Rounded"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "btn_shadow",
+            "label": "Use shadow for button?"
+          }
+        ]
+      },
+      {
+        "type": "2",
+        "name": "Item blogs type02",
+        "settings": [
+          {
+            "type": "blog",
+            "id": "blog",
+            "label": "Choose blog"
+          },
+          {
+            "type": "range",
+            "id": "limit",
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "label": "Limit item",
+            "default": 8
+          },
+          {
+            "type": "header",
+            "content": "Button loadmore"
+          },
+          {
+            "type": "checkbox",
+            "id": "load_btn",
+            "label": "__Use load button?",
+            "default": false
+          },
+          {
+            "type": "select",
+            "id": "style_btn",
+            "label": "Button Style",
+            "default": "btn-primary",
+            "options": [
+              {
+                "value": "btn-primary",
+                "label": "Primary default",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-primary btn-outline",
+                "label": "Primary outline",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-secondary",
+                "label": "Secondary default",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-secondary btn-outline",
+                "label": "Secondary outline",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-white",
+                "label": "White default",
+                "group": "White"
+              },
+              {
+                "value": "btn-white btn-outline",
+                "label": "White outline",
+                "group": "White"
+              },
+              {
+                "value": "btn-dark",
+                "label": "Dark default",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-dark btn-outline",
+                "label": "Dark outline",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-underline btn-link",
+                "label": "Underline dark",
+                "group": "Underline"
+              },
+              {
+                "value": "btn-underline btn-white btn-link",
+                "label": "Underline white",
+                "group": "Underline"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "style_btn_rounded",
+            "label": "Button Radius",
+            "options": [
+              {
+                "value": "",
+                "label": "Square"
+              },
+              {
+                "value": "btn-rounded",
+                "label": "Rounded Corners"
+              },
+              {
+                "value": "btn-round",
+                "label": "Rounded"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "btn_shadow",
+            "label": "Use shadow for button?"
+          }
+        ]
+      },
+      {
+        "type": "3",
+        "name": "Item blogs type03",
+        "settings": [
+          {
+            "type": "blog",
+            "id": "blog",
+            "label": "Choose blog"
+          },
+          {
+            "type": "range",
+            "id": "limit",
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "label": "Limit item",
+            "default": 8
+          },
+          {
+            "type": "checkbox",
+            "id": "short_desc",
+            "label": "Use short description?",
+            "default": true
+          },
+          {
+            "type": "header",
+            "content": "Button loadmore"
+          },
+          {
+            "type": "checkbox",
+            "id": "load_btn",
+            "label": "__Use load button?",
+            "default": false
+          },
+          {
+            "type": "select",
+            "id": "style_btn",
+            "label": "Button Style",
+            "default": "btn-primary",
+            "options": [
+              {
+                "value": "btn-primary",
+                "label": "Primary default",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-primary btn-outline",
+                "label": "Primary outline",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-secondary",
+                "label": "Secondary default",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-secondary btn-outline",
+                "label": "Secondary outline",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-white",
+                "label": "White default",
+                "group": "White"
+              },
+              {
+                "value": "btn-white btn-outline",
+                "label": "White outline",
+                "group": "White"
+              },
+              {
+                "value": "btn-dark",
+                "label": "Dark default",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-dark btn-outline",
+                "label": "Dark outline",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-primary btn-underline btn-link",
+                "label": "Underline primary",
+                "group": "Underline"
+              },
+              {
+                "value": "btn-underline btn-link",
+                "label": "Underline dark",
+                "group": "Underline"
+              },
+              {
+                "value": "btn-underline btn-white btn-link",
+                "label": "Underline white",
+                "group": "Underline"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "style_btn_rounded",
+            "label": "Button Radius",
+            "options": [
+              {
+                "value": "",
+                "label": "Square"
+              },
+              {
+                "value": "btn-rounded",
+                "label": "Rounded Corners"
+              },
+              {
+                "value": "btn-round",
+                "label": "Rounded"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "btn_shadow",
+            "label": "Use shadow for button?"
+          }
+        ]
+      },
+      {
+        "type": "4",
+        "name": "Item blogs type04",
+        "settings": [
+          {
+            "type": "blog",
+            "id": "blog",
+            "label": "Choose blog"
+          },
+          {
+            "type": "range",
+            "id": "limit",
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "label": "Limit item",
+            "default": 8
+          },
+          {
+            "type": "checkbox",
+            "id": "short_desc",
+            "label": "Use short description?",
+            "default": true
+          },
+          {
+            "type": "header",
+            "content": "Button loadmore"
+          },
+          {
+            "type": "checkbox",
+            "id": "load_btn",
+            "label": "__Use load button?",
+            "default": false
+          },
+          {
+            "type": "select",
+            "id": "style_btn",
+            "label": "Button Style",
+            "default": "btn-primary btn-outline",
+            "options": [
+              {
+                "value": "btn-primary",
+                "label": "Primary default",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-primary btn-outline",
+                "label": "Primary outline",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-secondary",
+                "label": "Secondary default",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-secondary btn-outline",
+                "label": "Secondary outline",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-white",
+                "label": "White default",
+                "group": "White"
+              },
+              {
+                "value": "btn-white btn-outline",
+                "label": "White outline",
+                "group": "White"
+              },
+              {
+                "value": "btn-dark",
+                "label": "Dark default",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-dark btn-outline",
+                "label": "Dark outline",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-primary btn-underline btn-link",
+                "label": "Underline primary",
+                "group": "Underline"
+              },
+              {
+                "value": "btn-underline btn-link",
+                "label": "Underline dark",
+                "group": "Underline"
+              },
+              {
+                "value": "btn-underline btn-white btn-link",
+                "label": "Underline white",
+                "group": "Underline"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "style_btn_rounded",
+            "label": "Button Radius",
+            "options": [
+              {
+                "value": "",
+                "label": "Square"
+              },
+              {
+                "value": "btn-rounded",
+                "label": "Rounded Corners"
+              },
+              {
+                "value": "btn-round",
+                "label": "Rounded"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "btn_shadow",
+            "label": "Use shadow for button?"
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "name": "Item title",
+        "settings": [
+          {
+            "type": "select",
+            "id": "title_style",
+            "options": [
+              {
+                "value": "auto",
+                "label": "Auto",
+                "group": "Simple"
+              },
+              {
+                "value": "center",
+                "label": "Center",
+                "group": "Simple"
+              },
+              {
+                "value": "cross",
+                "label": "Auto",
+                "group": "Cross"
+              },
+              {
+                "value": "center-cross",
+                "label": "Center",
+                "group": "Cross"
+              },
+              {
+                "value": "custom-cross",
+                "label": "Custom",
+                "group": "Cross"
+              },
+              {
+                "value": "underline",
+                "label": "Simple",
+                "group": "Underline"
+              },
+              {
+                "value": "active-underline",
+                "label": "Active",
+                "group": "Underline"
+              },
+              {
+                "value": "custom-underline",
+                "label": "Custom",
+                "group": "Underline"
+              }
+            ],
+            "label": "Title Styles",
+            "default": "auto"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "stitle",
+            "label": "Sub title"
+          },
+          {
+            "type": "url",
+            "id": "link_to",
+            "label": "Link to"
+          },
+          {
+            "type": "textarea",
+            "id": "name_link",
+            "label": "Name link"
+          },
+          {
+            "type": "range",
+            "id": "margin_btitle",
+            "min": 0,
+            "max": 90,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin bottom of title",
+            "default": 30
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Related post",
+        "category": "04. Section"
+      }
+    ]
+  }
+{% endschema %}

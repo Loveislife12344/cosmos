@@ -1,0 +1,620 @@
+<!-- rd_banner_fix01.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+{%-render 'sc_css'-%}
+<div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">      
+    <div class="section-width {{width_content_}}">
+      {%- assign block = section.blocks | where: 'type', 'title' | first -%}
+      {%- render 'kt_sc_title', block: block, attr: true -%}
+      {%- for block in section.blocks -%}
+      {%- unless block.type != 'title' -%}{%- continue -%}{%- endunless -%}
+      {%- if block.settings.turnoff -%}{%- continue -%}{%- endif -%}
+      <div class="row justify-content-center imgs__banner_flexible" data-section-id="{{section.id}}" id="Masonry-{{section.id}}" data-section-type="masonry-section" style="--radius: {{section.settings.border_radius}}px">
+        <div class="masonry-item item_1 col-lg-3 col-sm-6 pb-gutter">
+          <div class="banner-wrap banner-effect4">
+            {%-assign width = block.settings.image.width | default: 280.00 -%}{%-assign height = block.settings.image.height | default: 231.00 | plus: 0.00-%}
+            <a href="{{block.settings.image_link | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+              {%- if block.settings.image -%}
+                {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: class: 'img-fit-cover', alt: block.settings.image.alt, size: '100vw', loading: 'lazy' }}
+              {%- endif -%}
+            </a>
+            <div class="text-content position-absolute wait-for-css text-center" style="--top: 50%; --left: 50%; --x: -50%; --y: -50%;">
+              <h3 class="titlex mb-2 mt-2 text-uppercase">{{ block.settings.title_1 }}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item item_2 col-lg-5 col-sm-6 pb-gutter">
+          <div class="banner-wrap banner-effect4">
+            {%-assign width = block.settings.image_2.width | default: 480.00 -%}{%-assign height = block.settings.image_2.height | default: 231.00 | plus: 0.00-%}
+            <a href="{{block.settings.image_link_2 | default: routes.root_url}}"{%if block.settings.blank_link_2 %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+              {%- if block.settings.image_2 -%}
+                {{ block.settings.image_2 | image_url: width: block.settings.image_2.width | image_tag: class: 'img-fit-cover', alt: block.settings.image_2.alt, size: '100vw', loading: 'lazy' }}
+              {%- endif -%}
+            </a>
+            <div class="text-content position-absolute wait-for-css text-start" style="--top: 50%; --left: 10%; --x: -10%; --y: -50%;">
+              <h4 class="stitle ls-s mb-1 text-white">{{ block.settings.subtitle_2 }}</h4>
+              <h3 class="titlex mb-0 text-white text-capitalize">{{ block.settings.title_2 }}</h3>
+              <p class="desc text-white">{{ block.settings.text_white_2 }}</p>
+              <a href="{{block.settings.image_link_2}}" class="btn btn-outline btn-primary text-white btn-md">{{ block.settings.btn_banner_2 }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item item_3 col-lg-4 col-sm-6 pb-gutter">
+          <div class="banner-wrap banner-effect4">
+            {%-assign width = block.settings.image_3.width | default: 385.00 -%}{%-assign height = block.settings.image_3.height | default: 488.00 | plus: 0.00-%}
+            <a href="{{block.settings.image_link_3 | default: routes.root_url}}"{%if block.settings.blank_link_3 %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+              {%- if block.settings.image_3 -%}
+                {{ block.settings.image_3 | image_url: width: block.settings.image_3.width | image_tag: class: 'img-fit-cover', alt: block.settings.image_3.alt, size: '100vw', loading: 'lazy' }}
+              {%- endif -%}
+            </a>
+            <div class="text-content position-absolute wait-for-css text-start" style="--top: 90%; --left: 10%; --x: -10%; --y: -90%;">
+              <h4 class="stitle ls-normal mb-1 text-white">{{ block.settings.subtitle_3 }}</h4>
+              <h3 class="titlex mb-0 text-white text-capitalize">{{ block.settings.title_3 }}</h3>
+              <p class="desc text-white ls-s">{{ block.settings.text_white_3 }}</p>
+              <a href="{{block.settings.image_link_3}}" class="btn btn-outline btn-primary text-white">{{ block.settings.btn_banner_3 }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item item_4 col-lg-5 col-sm-6 pb-gutter">
+          <div class="banner-wrap banner-effect4">
+            {%-assign width = block.settings.image_4.width | default: 480.00 -%}{%-assign height = block.settings.image_4.height | default: 231.00 | plus: 0.00-%}                             
+            <a href="{{block.settings.image_link_4 | default: routes.root_url}}"{%if block.settings.blank_link_4 %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+              {%- if block.settings.image_4 -%}
+                {{ block.settings.image_4 | image_url: width: block.settings.image_4.width | image_tag: class: 'img-fit-cover', alt: block.settings.image_3.alt, size: '100vw', loading: 'lazy' }}
+              {%- endif -%}
+            </a>
+            <div class="text-content position-absolute wait-for-css text-start" style="--top: 50%; --left: 10%; --x: -10%; --y: -50%;">
+              <h4 class="stitle ls-s mb-1 text-white">{{ block.settings.subtitle_4 }}</h4>
+              <h3 class="titlex mb-0 text-white text-capitalize">{{ block.settings.title_4 }}</h3>
+              <p class="desc text-white">{{ block.settings.text_white_4 }}</p>
+              <a href="{{block.settings.image_link_4}}" class="btn btn-outline btn-primary text-white btn-md">{{ block.settings.btn_banner_4 }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item item_5 col-lg-3 col-sm-6 pb-gutter">
+          {%-assign width = block.settings.image.width | default: 280.00 -%}{%-assign height = block.settings.image.height | default: 231.00 | plus: 0.00-%}
+          <div class="banner-wrap bg-primary" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+            <div class="text-content position-absolute wait-for-css text-center" style="--top: 50%; --left: 50%; --x: -50%; --y: -50%;">
+              <h4 class="stitle mb-0 text-white">{{ block.settings.subtitle_5 }}</h4>
+              <h3 class="titlex mt-0 text-white text-uppercase">{{ block.settings.title_5 }}</h3>
+              <a href="{{block.settings.image_link_5}}" class="btn btn-outline btn-white btn-sm">{{ block.settings.btn_banner_5 }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+<noscript class="banner-css" data-section-type="rd_banner_fix01">
+  {%-capture banner-css-%}
+  {%style%}
+    @media (hover: none){
+      .rd_banner_fix01 .img__banner {
+        background-size: cover;
+      }
+    }
+    .rd_banner_fix01 .desc{
+      color:var(--color);
+      font-weight:400;
+      font-size:1.500em;
+      line-height:1;
+      margin-bottom:0;
+    }
+    .rd_banner_fix01 .titlex{
+      margin-top:0.625rem;
+      margin-bottom: 0;
+      color:var(--color);
+      font-weight: 700;
+      font-size: 1.500em;
+      line-height: 1.25;
+    }
+    .rd_banner_fix01 .stitle{
+      font-size: 1em;
+      margin-top:0.3125rem;
+      color:var(--color);
+      font-weight:400;
+    }
+    .rd_banner_fix01 .btn{
+      margin-top:1rem;
+      min-width:auto;
+    }
+    .rd_banner_fix01 .text-content{
+      top: var(--top);
+      left: var(--left);
+      z-index:1;
+      width: intrinsic;
+      width: -moz-max-content;
+      width: -webkit-max-content;
+      width: max-content;
+      max-width: 100%;
+      padding: 0 1rem;
+      transform: translate(var(--x),var(--y));
+    }
+    .rd_banner_fix01 .item_1 .text-content {
+      width: 100%;
+      background-color: rgba(255,255,255,0.8);
+    }
+    .rd_banner_fix01 .item_1 .titlex {
+      font-size: 1.125em;
+    }
+    .rd_banner_fix01,
+    .rd_banner_fix01 .btn {
+      font-size: 0.75rem;
+    }
+    @media (min-width: 992px) {
+      .rd_banner_fix01,
+      .rd_banner_fix01 .btn {
+        font-size: 0.8125rem;
+      }
+    }
+    @media (min-width: 1200px) {
+      .rd_banner_fix01,
+      .rd_banner_fix01 .btn {
+        font-size: 0.875rem;
+      }
+    }
+    @media (min-width: 1200px) {
+      .rd_banner_fix01 {
+        font-size: 1rem;
+      }
+    }
+  {%endstyle%}
+  {%-endcapture-%}
+  {{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+</noscript>
+{%-if section.settings.css_section != blank-%}
+<noscript class="banner-css" data-section-type="{{section.id}}">
+  {%-capture banner-css-%}
+  {%style%}
+  {%- assign section_id = ' .content_' | append: section.id -%}
+  {{- section.settings.css_section | replace: ".section_id", section_id -}}
+  {%endstyle%}
+  {%-endcapture-%}
+  {{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+</noscript>
+{%- endif -%}
+{% schema %}
+  {
+    "name": "Banner Fix 01",
+    "class": "rd_banner_fix01",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Banner Flexible",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "w-100"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 px"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type": "range",
+        "id": "border_radius",
+        "min": 0,
+        "max": 15,
+        "step": 1,
+        "unit": "px",
+        "label": "Border radius",
+        "default": 10
+      },
+      {
+        "type": "header",
+        "content": "Css custom"
+      },
+      {
+        "type":"liquid",
+        "id": "css_section",
+        "label": "Css for section",
+        "info": "Key start: .section_id"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "title",
+        "name": "Item title",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "select",
+            "id": "title_style",
+            "options": [
+              {
+                "value": "auto",
+                "label": "Auto",
+                "group": "Simple"
+              },
+              {
+                "value": "center",
+                "label": "Center",
+                "group": "Simple"
+              },
+              {
+                "value": "cross",
+                "label": "Auto",
+                "group": "Cross"
+              },
+              {
+                "value": "center-cross",
+                "label": "Center",
+                "group": "Cross"
+              },
+              {
+                "value": "custom-cross",
+                "label": "Custom",
+                "group": "Cross"
+              },
+              {
+                "value": "underline",
+                "label": "Simple",
+                "group": "Underline"
+              },
+              {
+                "value": "active-underline",
+                "label": "Active",
+                "group": "Underline"
+              },
+              {
+                "value": "custom-underline",
+                "label": "Custom",
+                "group": "Underline"
+              }
+            ],
+            "label": "Title Styles",
+            "default": "auto"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "stitle",
+            "label": "Sub title"
+          },
+          {
+            "type": "url",
+            "id": "link_to",
+            "label": "Link to"
+          },
+          {
+            "type": "textarea",
+            "id": "name_link",
+            "label": "Name link"
+          },
+          {
+            "type": "range",
+            "id": "margin_btitle",
+            "min": 0,
+            "max": 90,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin bottom of title",
+            "default": 30
+          }
+        ]
+      },
+      {
+        "type": "it_banner",
+        "name": "Item",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Block settings"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title block",
+            "default": "Banner item",
+            "info": "Name block (in editor bar)"
+          },
+          {
+            "type": "header",
+            "content": "Settings item 1"
+          },
+          {
+            "type": "text",
+            "id": "title_1",
+            "label": "Title item 1",
+            "default": "SPORTING GOODS"
+          },
+          {
+            "type": "header",
+            "content": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Banner",
+            "info": "Dimension: 280 x 231 pixels"
+          },
+          {
+            "type": "url",
+            "id": "image_link",
+            "label": "Link to"
+          },
+          {
+            "type":"checkbox",
+            "id": "blank_link",
+            "label": "Open link in new window?"
+          },
+          {
+            "type": "header",
+            "content": "Button 1"
+          },
+          {
+            "type":"text",
+            "id":"name_btn",
+            "label": "Name button",
+            "default":"DISCOVER NOW"
+          },
+          {
+            "type": "header",
+            "content": "Button 2"
+          },
+          {
+            "type":"text",
+            "id":"name_btn_2",
+            "label": "Name button"
+          },
+          {
+            "type": "url",
+            "id": "image_link_2",
+            "label": "Link to"
+          },
+          {
+            "type": "header",
+            "content": "Block settings banner 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "Banner",
+            "info": "Dimension: 484 x 233 pixels"
+          },
+          {
+            "type": "liquid",
+            "id": "subtitle_2",
+            "label": "Subtitle banner 2",
+            "default": "Clearance"
+          },
+          {
+            "type": "liquid",
+            "id": "title_2",
+            "label": "Title banner 2",
+            "default": "For Fitness Classes"
+          },
+          {
+            "type": "liquid",
+            "id": "text_white_2",
+            "label": "Text content banner 2",
+            "default": "from $19.99"
+          },
+          {
+            "type": "text",
+            "id": "btn_banner_2",
+            "label": "Name button 2",
+            "default": "SHOP NOW"
+          },
+          {
+            "type": "url",
+            "id": "link_banner_2",
+            "label": "Link 2"
+          },
+          {
+            "type": "header",
+            "content": "Block settings banner 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_3",
+            "label": "Banner",
+            "info": "Dimension: 383 x 484 pixels"
+          },
+          {
+            "type": "liquid",
+            "id": "subtitle_3",
+            "label": "Subtitle banner 3",
+            "default": "On Sale"
+          },
+          {
+            "type": "liquid",
+            "id": "title_3",
+            "label": "Title banner 3",
+            "default": "Transform Your Life"
+          },
+          {
+            "type": "liquid",
+            "id": "text_white_3",
+            "label": "Text content banner 3",
+            "default": "from $39.00"
+          },
+          {
+            "type": "text",
+            "id": "btn_banner_3",
+            "label": "Name button 3",
+            "default": "Discover now"
+          },
+          {
+            "type": "url",
+            "id": "link_banner_3",
+            "label": "Link 3"
+          },
+          {
+            "type": "header",
+            "content": "Block settings banner 4"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_4",
+            "label": "Banner",
+            "info": "Dimension: 484 x 233 pixels"
+          },
+          {
+            "type": "liquid",
+            "id": "subtitle_4",
+            "label": "Subtitle banner 4",
+            "default": "Clearance"
+          },
+          {
+            "type": "liquid",
+            "id": "title_4",
+            "label": "Title banner 4",
+            "default": "Build Your Body"
+          },
+          {
+            "type": "liquid",
+            "id": "text_white_4",
+            "label": "Text content banner 4",
+            "default": "from $19.99 pixels"
+          },
+          {
+            "type": "text",
+            "id": "btn_banner_4",
+            "label": "Name button 4",
+            "default": "SHOP NOW"
+          },
+           {
+            "type": "url",
+            "id": "link_banner_4",
+            "label": "Link 4"
+          },
+          {
+            "type": "header",
+            "content": "Block settings banner 5"
+          },
+          {
+            "type": "liquid",
+            "id": "subtitle_5",
+            "label": "Subtitle banner 5",
+            "default": "Flash Sale"
+          },
+          {
+            "type": "liquid",
+            "id": "title_5",
+            "label": "Title banner 5",
+            "default": "30% OFF"
+          },
+          {
+            "type": "text",
+            "id": "btn_banner_5",
+            "label": "Name button 5",
+            "default": "SHOP ALL SALE"
+          },
+          {
+            "type": "url",
+            "id": "link_banner_5",
+            "label": "Link 5"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner Fix 01",
+        "category": "02. Section Banner",
+        "blocks": [
+            {
+               "type": "it_banner"
+            }
+        ]
+      }
+    ]
+  }
+{% endschema %}

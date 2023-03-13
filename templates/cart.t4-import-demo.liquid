@@ -1,0 +1,64 @@
+{%layout none%}
+<div class="t4-import-demo" style="padding: 0 15px;">
+  <div class="t4-imports row row-cols-1">
+    {%-for i in (1..35)-%}
+    {%- capture ii -%}{%- if forloop.index < 10 -%}0{%- endif -%}{{i}}{%- endcapture -%}
+    {%- capture ip -%}{%- if forloop.index < 9 -%}0{%- endif -%}{{i | plus: 1}}{%- endcapture -%}
+    {%- assign unlessmap = '03,13,14,15,18,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35' | split: ',' -%}
+    {%- if unlessmap contains ii -%}{%-continue-%}{%- endif -%}
+    <div class="t4-import-dm-i col mb-4">
+      <div class="card item-import loading text-center">
+        <img src="//cdn.shopify.com/s/files/1/0568/7902/2234/files/{{ip}}_Home{{ii}}.jpg?v=1647397894" class="card-img-top" alt="...">
+        <div class="card-body d-flex align-items-center justify-content-between bg-dark rounded-bottom">
+          <h5 class="h6 card-title mb-0 text-white">Demo {{ii}}</h5>
+          <button type="button" class="btn btn-white btn-rounded btn-sm t4-import-btn" data-js="https://cdn.shopify.com/s/files/1/0568/7902/2234/t/19/assets/index_{{ii}}.json?v={{"now" | date: "%9N"}}">IMPORT</button>
+        </div>
+      </div>
+    </div>
+    {%-endfor-%}
+  </div>
+</div>
+<style type="text/css">
+  .t4-import-dm-i .item-import{
+    transition: all 0.3s;
+  }
+  .t4-import-dm-i .item-import:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  }
+</style>
+{%comment%}
+{%-if settings.access_token == blank-%}
+<div class="alert alert-danger alert-dark alert-round alert-inline" role="alert">
+  <h4 class="alert-title">Danger:</h4> You need to provide an Access token to be able to use this feature.
+  <a href="https://kitisummus.gitbook.io/riode/general/required-application">How to generate code?</a>
+</div>
+{%else%}
+<div class="t4-import-demo" style="padding: 0 15px;">
+  <div class="t4-imports row row-cols-1">
+  	{%-for i in (1..35)-%}
+    {%- capture ii -%}{%- if forloop.index < 10 -%}0{%- endif -%}{{i}}{%- endcapture -%}
+    {%- capture ip -%}{%- if forloop.index < 9 -%}0{%- endif -%}{{i | plus: 1}}{%- endcapture -%}
+    {%- assign unlessmap = '03,13,14,15,18,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35' | split: ',' -%}
+    {%- if unlessmap contains ii -%}{%-continue-%}{%- endif -%}
+    <div class="t4-import-dm-i col mb-4">
+      <div class="card item-import loading text-center">
+        <img src="//cdn.shopify.com/s/files/1/0568/7902/2234/files/{{ip}}_Home{{ii}}.jpg?v=1647397894" class="card-img-top" alt="...">
+        <div class="card-body d-flex align-items-center justify-content-between bg-dark rounded-bottom">
+          <h5 class="h6 card-title mb-0 text-white">Demo {{ii}}</h5>
+          <button type="button" class="btn btn-white btn-rounded btn-sm t4-import-btn" data-js="https://cdn.shopify.com/s/files/1/0568/7902/2234/t/19/assets/index_{{ii}}.json?v={{"now" | date: "%9N"}}">IMPORT</button>
+        </div>
+      </div>
+    </div>
+    {%-endfor-%}
+  </div>
+</div>
+<style type="text/css">
+  .t4-import-dm-i .item-import{
+    transition: all 0.3s;
+  }
+  .t4-import-dm-i .item-import:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  }
+</style>
+{%-endif-%}
+{%endcomment%}

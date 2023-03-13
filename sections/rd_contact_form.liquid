@@ -1,0 +1,219 @@
+<!-- rd_contact_form.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+{%-render 'sc_css'-%}
+<div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
+  <div class="contact-section content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">   
+    <div class="section-width {{width_content_}}">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 ls-m mb-4">
+          <div class="grey-section d-flex align-items-center h-100">
+            <div>
+              <h4 class="mb-2 text-capitalize">{{section.settings.address}}</h4>
+              {{section.settings.address_content}}
+              <h4 class="mb-2 text-capitalize">{{section.settings.phone}}</h4>
+              {{section.settings.phone_content}}
+              <h4 class="mb-2 text-capitalize">{{section.settings.support}}</h4>
+              {{section.settings.support_content}}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-6 d-flex align-items-center mb-4">
+          <div class="w-100">
+            {%- assign formId = 'ContactForm' -%}
+            {%- form 'contact', class: 'contact-form pl-lg-2' -%}
+            {% render 'form-status', form: form, form_id: formId %}
+              <h4 class="ls-m fw-bold">{{section.settings.from_title}}</h4>
+              {{section.settings.from_content}}
+              <div class="row mb-2">
+                <div class="col-12">
+                  <textarea class="form-control" name="contact[body]" required="" placeholder="{{ 'contact.form.message' | t }} *"></textarea>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control" type="text" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="{{ 'contact.form.name' | t }} *" required="">
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control" name="contact[email]" placeholder="{{ 'contact.form.email' | t }} *" required="">
+                </div>
+              </div>
+              <button class="btn btn-dark btn-rounded">{{ 'contact.form.submit' | t }}<i class="d-icon-arrow-right"></i></button>
+            {%- endform -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%style%}
+.grey-section {padding: 1.5625rem 2rem 0.875rem;}.grey-section h4 {font-size: 1.25rem;line-height: 1.1;}.grey-section p {margin-bottom: 2rem;line-height: 1.72;}.grey-section p:last-of-type {margin-bottom: 1.25rem;}.contact-us .grey-section {background-color: #f7f7f9;}@media(min-width: 992px){.pl-lg-2 {padding-left: 0.625rem;}}
+{%endstyle%}
+{% schema %}
+  {
+    "name": "Section Contact form",
+    "class": "rd_contact_form contact-us",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Section Contact form",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "container"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type": "header",
+        "content": "Info box"
+      },
+      {
+        "type": "text",
+        "id": "address",
+        "label": "Address title",
+        "default": "Headquarters"
+      },
+      {
+        "type": "richtext",
+        "id": "address_content",
+        "label": "Address content",
+        "default": "<p>1600 Amphitheatre Parkway<br>New York WC1 1BA<\/p>"
+      },
+      {
+        "type": "html",
+        "id": "phone",
+        "label": "Phone title",
+        "default": "Phone Number"
+      },
+      {
+        "type": "richtext",
+        "id": "phone_content",
+        "label": "Phone content",
+        "default": "<p><a href=\"tel:#\">1.800.458.56</a><br><a href=\"tel:#\">1.800.458.56</a></p>"
+      },
+      {
+        "type": "html",
+        "id": "support",
+        "label": "Support title",
+        "default": "Support"
+      },
+      {
+        "type": "richtext",
+        "id": "support_content",
+        "label": "Support content",
+        "default": "<p><a href=\"#\">support@your-domain.com<\/a><br><a href=\"#\">help@your-domain.com<\/a><br><a href=\"#\">Sale<\/a><\/p>"
+      },
+      {
+        "type": "header",
+        "content": "From box"
+      },
+      {
+        "type": "html",
+        "id": "from_title",
+        "label": "From title",
+        "default": "Let’s Connect"
+      },
+      {
+        "type": "richtext",
+        "id": "from_content",
+        "label": "From content",
+        "default": "<p>Your email address will not be published. Required fields are marked *<\/p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Contact form",
+        "category": "04. Section"
+      }
+    ]
+  }
+{% endschema %}

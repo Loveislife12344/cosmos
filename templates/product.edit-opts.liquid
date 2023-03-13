@@ -1,0 +1,123 @@
+{%-layout none-%}
+{%- liquid
+  assign on_sale = false
+  if product.compare_at_price > product.price 
+    assign on_sale = true
+  endif
+  assign sold_out = true
+  assign preOrder = false
+  unless available == false
+    assign sold_out = false
+  endunless
+  if product.selected_or_first_available_variant.inventory_quantity <= 0 and product.selected_or_first_available_variant.inventory_policy == 'continue' and product.selected_or_first_available_variant.incoming
+    assign preOrder = true 
+  endif
+	unless product.has_only_default_variant or st_card[13] == 'true' and product.variants.size == 1 or st_card[4] == 'false'
+  	assign show_variant = true
+	endunless
+-%}
+<div class="product product-inner ktlz" data-href="{{product.handle}}" data-ktlz="instant">
+	<form method="post" action="{{ routes.cart_change_url }}"{%if product.title%}{%unless product.has_only_default_variant%} id="ProductSection-{{product.id}}-qs" class="form form-ajax-- ktlz-form-pid-{{product.id}} addItemsAjaxFrom" data-p-id="{{product.id}}" data-section-id="-{{product.id}}-qs" data-options="{{product.options.size}}" data-pr-vrs{%endunless%}{%endif%} data-noneid="true">
+		<div class="product-thumb images is-default">
+      {%- capture ar_i-%}--ar_i:{{product.featured_image.height | times: 1.00 | divided_by: product.featured_image.width | times: 100.00000000}}%;{%-endcapture-%}
+      <a class="aspectRatio{%if product.title != blank %} lazyload{%endif%}" data-include="{{product.url | split:'?' | first}}?variant={{product.selected_or_first_available_variant.id}}&view=imgcard" href="{{product.url | within: collection}}" title="{{product.title | escape}}" aria-label="{{product.title | escape}}" style="{{ar_i | replace:'--ar_i:NaN%',''}}"></a>
+		</div>
+		<div class="product-body" grid-info="">
+			<a href="{{product.url}}" tabindex="0" class="product-name">{{product.title}}</a>
+			{%- liquid
+        unless on_sale != null
+          assign compare_at_price = product.compare_at_price 
+          assign price = product.price 
+          assign price_varies = product.price_varies 
+          assign available = product.available
+          assign on_sale = false
+          if compare_at_price > price 
+            assign on_sale = true
+          endif
+          assign sold_out = true
+          assign preOrder = false
+          unless available == false
+            assign sold_out = false
+          endunless
+          if product.selected_or_first_available_variant.inventory_quantity <= 0 and product.selected_or_first_available_variant.inventory_policy == 'continue' and product.selected_or_first_available_variant.incoming
+            assign preOrder = true 
+          endif
+        endunless
+      -%}
+      {%- case settings.price_visible -%}
+        {%- when "show" -%}{%- assign show = true -%}
+        {%- when "show_login" -%}
+          {%- if shop.customer_accounts_enabled and customer -%}
+            {%- assign show = true -%}
+          {%- else -%}
+            {%- assign show = false -%}
+          {%- endif -%}
+      {%- endcase -%}
+      {%- if show -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <div class="product-price{%unless product.available%} product-price-out{%endunless%}{%if on_sale%} product-price-onsale{%endif%}">
+          <ins class="ProductPrice-{{product.id}}" data-id="{{product.id}}">{{- current_variant.price | money -}}</ins>          
+          <del class="ComparePrice-{{product.id}}{%if current_variant.compare_at_price <= current_variant.price or current_variant.compare_at_price == null%} d-none{%endif%}">
+            {{- current_variant.compare_at_price | default: 0 | money -}}
+          </del>          
+          {%- capture unit_price_base_unit -%}
+            <span class="base_unit">
+              {%- if current_variant.unit_price_measurement -%}
+                {%- if current_variant.unit_price_measurement.reference_value != 1 -%}
+                  {{- current_variant.unit_price_measurement.reference_value -}}
+                {%- endif -%}
+                {{- current_variant.unit_price_measurement.reference_unit -}}
+              {%- endif -%}
+            </span>
+          {%- endcapture -%}
+          {%-if current_variant.unit_price -%}
+          <span class="UnitPrice-{{product.id}} text-nowrap d-none">
+            {{- current_variant.unit_price_measurement.quantity_value | append: current_variant.unit_price_measurement.quantity_unit -}}
+            (<span class="unit_price">{{- current_variant.unit_price | money -}}</span> / {{ unit_price_base_unit }})
+          </span>
+          {%-endif-%}
+          {%- comment -%}{%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+          <div class="product__policies">
+            {%- if cart.taxes_included -%}
+              {{ 'products.product.include_taxes' | t }}
+            {%- endif -%}
+            {%- if shop.shipping_policy.body != blank -%}
+              {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+            {%- endif -%}
+          </div>
+          {%- endif -%}{%- endcomment -%}
+        </div>
+      {%- elsif show == false -%}
+        <a href="{{routes.account_login_url}}" class="product-price">{{'products.product.see-price' | t}}</a>
+      {%- endif -%}
+		</div>
+    {%-if show_variant-%}
+    <div class="product-variants-wrapper product-variants-wrapper-eo" style="display: block !important;">
+      <div class="prd-variants">
+        {%- for i in (1..product.options.size) -%}
+          <div class="prd--option{{i}} animated-background" data-n-opt="{{product.options[forloop.index0] | escape}}"></div>
+        {%- endfor -%}
+      </div>
+      <div class="quantity">
+      	<label for="qty-eo">{{'products.product.quantity' | t}}<span>: </span></label>
+      	<div class="control">
+          <button type="button" class="btn-number qtyminus"></button>
+      		<input type="text" data-id="{{product.selected_or_first_available_variant.id}}" data-step="1" data-min="1" value="1" id="qty-eo" class="input-qty input-text qty" size="4" pattern="[0-9]*">
+          <button type="button" class="btn-number qtyplus"></button>
+      	</div>
+      </div>
+    </div>
+    {%-endif-%}
+		<div class="product-button-wrapper-eo _mt-2 _mb-3">
+    {%- if settings.use_add_to_cart_btn -%}
+    {%- if product.selected_or_first_available_variant.available -%}
+      <button type="button" data-submit class="btn btn-primary btn-rounded btn-block text-uppercase kt-button btn-onclick add_to_cart_button addItemsAjax" data-view="{{product.url}}" data-vrid="{{product.selected_or_first_available_variant.id}}" data-pid="{{product.id}}" data-form="#ProductSection-{{product.id}}-qs"><span class="add-item-jx-text" data-text="{{'products.product.edit_submit' | t}}">{{'products.product.edit_submit' | t}}</span></button>
+  	{%- else -%}
+      <button type="button" data-submit class="btn btn-primary btn-rounded btn-block text-uppercase kt-button btn-onclick add_to_cart_button addItemsAjax sold_out disabled" data-view="{{product.url}}" data-vrid="{{product.selected_or_first_available_variant.id}}" data-pid="{{product.id}}" data-form="#ProductSection-{{product.id}}-qs"><span class="add-item-jx-text">{{'products.product.sold_out' | t}}</span></button>
+    {%- endif -%}
+    {%- endif -%}
+		</div>
+		<input type="hidden" name="id" value="{{product.selected_or_first_available_variant.id}}">
+		<input class="it-ip-editing" type="hidden" name="updates[{{product.selected_or_first_available_variant.id}}]" value="1">
+	</form>
+</div>

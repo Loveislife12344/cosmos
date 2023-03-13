@@ -1,0 +1,66 @@
+{%- if settings.use_search -%}
+{%-case search_style-%}
+  {%-when "input"-%}
+  <form class="box-search" action="{{routes.search_url}}" method="get" autocomplete="off">
+    <div class="input-group input-show">
+      <input type="hidden" name="type" value="product{%-if settings.search_type_page-%},page{%-endif-%}{%-if settings.search_type_article-%},article{%-endif-%}">
+      <input type="text" name="q" value="{{ search.terms | escape }}" class="form-control search" placeholder="{{ 'general.search.placeholder' | t }}" required>
+      <button type="submit" class="button-search btn btn-primary" aria-label="{{ 'general.search.placeholder' | t }}">
+        {%- comment -%}<svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-search"></use></svg>{%- endcomment -%}
+        <i class="d-icon-search"></i>
+      </button>
+    </div>
+    <div class="li--s-drop kt--drop-in"><ul class="li--s list-unstyled kt_scroll row mb-0"></ul></div>
+  </form>
+  {%-when "icon"-%}
+  <form class="box-search" action="{{routes.search_url}}" method="get" autocomplete="off">
+    <div class="show-icon kt--drop-i">
+      <div class="kt--drop-title icon-link" aria-label="Search">    
+        {% comment %}<svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-search"></use></svg>{% endcomment %}
+        <i class="d-icon-search"></i>
+      </div>
+      <div class="inner kt--drop-in not_onhover inline">
+        <div class="position-relative">
+          <div class="control input-group">
+            <input type="hidden" name="type" value="product{%-if settings.search_type_page-%},page{%-endif-%}{%-if settings.search_type_article-%},article{%-endif-%}">
+            <input type="text" name="q" value="{{ search.terms | escape }}" class="form-control search" placeholder="{{ 'general.search.placeholder' | t }}" required>
+            <button type="submit" class="button-search btn border-0" aria-label="{{ 'general.search.placeholder' | t }}">
+              {% comment %}<svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-search"></use></svg>{% endcomment %}
+              <i class="d-icon-search"></i>
+            </button>
+          </div>
+          <div class="li--s-drop"><ul class="li--s list-unstyled kt_scroll row mb-0"></ul></div>
+        </div>
+      </div>
+    </div>
+  </form>
+  {%-when "icon-text"-%}
+  <form class="box-search" action="{{routes.search_url}}" method="get" autocomplete="off">  
+    <div class="show-icon-text">
+      <div class="kt--drop-title icon-link">
+        <div class="input-group">
+          <button class="btn btn-icon-right btn-link" type="button" aria-label="{{ 'general.search.submit' | t }}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch" style="font-weight: 600;">
+            {%- comment -%}<svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-search"></use></svg>{%- endcomment -%}
+            <i class="d-icon-search"></i>
+            <span class="d-block">{{ 'general.search.submit' | t }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  {%-when "mobile"-%}
+  <form class="box-search" action="{{routes.search_url}}" method="get" autocomplete="off">
+    <input type="hidden" name="type" value="product{%-if settings.search_type_page-%},page{%-endif-%}{%-if settings.search_type_article-%},article{%-endif-%}">
+    <div class="mobile-search">
+      <div class="control input-group">
+        <input type="search" class="form-control search input-rounded" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" required>
+        <button type="submit" class="btn btn-primary button-search btn-rounded" aria-label="{{ 'general.search.placeholder' | t }}">
+          {%- comment -%}<svg class="molla-svg-icon" viewBox="0 0 32 32" style="width: 2.4rem;"><use xlink:href="#icon-search"></use></svg>{%- endcomment -%}
+          <i class="d-icon-search"></i>
+        </button>
+      </div>
+      <div class="li--s-drop"><ul class="li--s list-unstyled kt_scroll row mb-0"></ul></div>
+    </div>
+  </form>
+{%-endcase-%}
+{%- endif -%}

@@ -1,0 +1,610 @@
+<!-- kt_instagram_1.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+{%-render 'sc_css'-%}
+{%- assign responsive_ = section.settings.responsive | strip_newlines | json | remove: '\t' | remove: '\' | remove: ' ' | replace: '"{"','{"' | replace: '}}"','}}' -%}
+{%- assign items_ = responsive_ | split: '"slidesPerView":' | last | split: ',' | first | plus: 0 -%}
+{%- assign mapTypes_imgs = section.blocks | where: 'type', 'img_i' -%}
+{%- assign mapTypes_pins = section.blocks | where: 'type', 'item_pins' -%}
+{%- if mapTypes_imgs.size > 0 or mapTypes_pins.size > 0 -%}
+<div data-section-id="{{ section.id }}" id="Instagram-{{ section.id }}" data-section-type="swiper-section" class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+    <div class="section-width {{width_content_}}">
+      {%- assign block = section.blocks | where: 'type', 'title' | first -%}
+      {%- render 'kt_sc_title', block: block, attr: true -%}
+      <div class="swiper-fuild position-relative">
+        <div class="swiper" data-breakpoints='{{responsive_}}' data-slides-per-view="{{items_}}" data-dots="false" data-nav="false">
+          <div id="instagramWrapper-{{ section.id }}" class="instagramWrapper swiper-wrapper{%unless section.settings.use_slide%} row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-{{section.settings.per_row}} justify-content-center{%if section.settings.use_nospace%} gx-0{%endif%}{%endunless%}" data-access-token="{{settings.accessToken_instagram}}" data-limit="{{section.settings.images_limit}}" data-tag="{{settings.byTag_instagram}}" data-use-slide="{{section.settings.use_slide}}">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'title' -%}{%- continue -%}{%- endif -%}
+            <div class="item{%unless section.settings.use_slide%} col{%else%} swiper-slide{%endunless%}"{%unless section.settings.use_slide%} style="order: {{forloop.index}}"{%endunless%}>
+              {%-assign width = block.settings.image.width | default: 575.00 -%}{%-assign height = block.settings.image.height | default: 575.00 | plus: 0.00-%}
+              <a href="{{block.settings.image_link | default: routes.root_url}}" class="instagram-feed d-icon-instagram img__banner" style="padding-bottom: 100%;">
+                {%- if block.settings.image -%}
+                {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: class: 'img-fit-cover', alt: block.settings.image.alt, size: '100vw', widths: '385, 550, 750', loading: 'lazy' }}
+                {%- endif -%}
+              </a> 
+              {%-if block.type == 'item_pins' -%}         
+              <div class="kt_lookbook kt_pin_item">
+                <div class="kt_pins">
+                  {%- for i in (1..5) -%}
+                  {%- assign id_ = 'id_' | append: i -%}
+                  {%- if block.settings[id_] != blank -%}
+                  {%- assign top_pin_ = 'top_pin_' | append: i -%}{%- assign top_pin_ = block.settings[top_pin_] -%}
+                  {%- assign left_pin_ = 'left_pin_' | append: i -%}{%- assign left_pin_ = block.settings[left_pin_] -%}
+                  {%- assign size_ = 'size_' | append: i -%}{%- assign size_ = block.settings[size_] -%}
+                  {%- assign bg_ = 'bg_' | append: i -%}{%- assign bg_ = block.settings[bg_] -%}
+                  {%- assign pr_lb = all_products[block.settings[id_]] -%}
+                    <div class="button kt_pin quick-view" data-view="{{pr_lb.url}}" data-target="#md_qvModal" style="--top: {{top_pin_}}%;--left: {{left_pin_}}%;--size: {{size_}}px; background-color: {{bg_}}">
+                      <span class="kt_pin_name">
+                        <span class="kt_pin_icon">+</span>
+                        <span class="kt_pin_animate" style="border-color: {{bg_ | color_modify: 'alpha', 0.5}}"></span>
+                      </span>
+                    </div>
+                  {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+              {%- endif -%}
+            </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- else -%}
+<div data-section-id="{{ section.id }}" id="Instagram-{{ section.id }}" data-section-type="instagram-section" class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+    <div class="section-width {{width_content_}}">
+      {%- assign block = section.blocks | where: 'type', 'title' | first -%}
+      {%- render 'kt_sc_title', block: block, attr: true -%}
+      <div class="swiper-fuild position-relative">        
+        <div class="swiper" data-breakpoints='{{responsive_}}' data-slides-per-view="{{items_}}" data-dots="false" data-nav="false">
+          <div id="instagramWrapper-{{ section.id }}" class="instagramWrapper swiper-wrapper{%unless section.settings.use_slide%} row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-xl-{{section.settings.per_row}} justify-content-center{%if section.settings.use_nospace%} gx-0{%endif%}{%endunless%}" data-access-token="{{settings.accessToken_instagram}}" data-limit="{{section.settings.images_limit}}" data-tag="{{settings.byTag_instagram}}" data-use-slide="{{section.settings.use_slide}}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Instagram 1",
+    "class": "kt_instagram_1",
+    "settings": [
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Instagram 1",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "container"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type": "paragraph",
+        "content": ">>> Title"
+      },
+      {
+        "type": "text",
+        "id": "titlex",
+        "label": "Title",
+        "default": "Follow Us On Instagram"
+      },
+      {
+        "type": "text",
+        "id": "stitle",
+        "label": "Subtitle",
+        "default": "Wanna share your style with us?"
+      },
+      {
+        "type":"checkbox",
+        "id": "reverse",
+        "label": "Reverse title and subtitle?"
+      },
+      {
+        "type": "select",
+        "id": "title_align",
+        "options": [
+          {
+            "value": "text-left",
+            "label": "Left"
+          },
+          {
+            "value": "text-center",
+            "label": "Center"
+          },
+          {
+            "value": "text-right",
+            "label": "Right"
+          }
+        ],
+        "label": "Align title",
+        "default": "text-center"
+      },
+      {
+        "type": "text",
+        "id": "name_link",
+        "label": "Name link"
+      },
+      {
+        "type": "range",
+        "id": "margin_btitle",
+        "min": 0,
+        "max": 90,
+        "step": 2,
+        "unit": "px",
+        "label": "Margin bottom of title",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "images_limit",
+        "min": 4,
+        "max": 20,
+        "step": 1,
+        "label": "Limit images",
+        "default": 12
+      },
+      {
+        "type": "paragraph",
+        "content": ">>> Space"
+      },
+      {
+        "type": "range",
+        "id": "per_row",
+        "min": 4,
+        "max": 7,
+        "step": 1,
+        "label": "Items per row",
+        "default": 5
+      },
+      {
+        "type":"checkbox",
+        "id": "use_nospace",
+        "label": "No space?",
+        "info": "The product cards will be close together."
+      },
+      {
+        "type": "header",
+        "content": "Slide mode"
+      },
+      {
+        "type":"checkbox",
+        "id": "use_slide",
+        "label": "Use?"
+      },
+      {
+        "type": "liquid",
+        "id": "responsive",
+        "label": "Responsive",
+        "default": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "title",
+        "name": "Item title",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "select",
+            "id": "title_style",
+            "options": [
+              {
+                "value": "auto",
+                "label": "Auto",
+                "group": "Simple"
+              },
+              {
+                "value": "center",
+                "label": "Center",
+                "group": "Simple"
+              },
+              {
+                "value": "cross",
+                "label": "Auto",
+                "group": "Cross"
+              },
+              {
+                "value": "center-cross",
+                "label": "Center",
+                "group": "Cross"
+              },
+              {
+                "value": "custom-cross",
+                "label": "Custom",
+                "group": "Cross"
+              },
+              {
+                "value": "underline",
+                "label": "Simple",
+                "group": "Underline"
+              },
+              {
+                "value": "active-underline",
+                "label": "Active",
+                "group": "Underline"
+              },
+              {
+                "value": "custom-underline",
+                "label": "Custom",
+                "group": "Underline"
+              }
+            ],
+            "label": "Title Styles",
+            "default": "auto"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "stitle",
+            "label": "Sub title"
+          },
+          {
+            "type": "url",
+            "id": "link_to",
+            "label": "Link to"
+          },
+          {
+            "type": "textarea",
+            "id": "name_link",
+            "label": "Name link"
+          },
+          {
+            "type": "range",
+            "id": "margin_btitle",
+            "min": 0,
+            "max": 90,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin bottom of title",
+            "default": 30
+          }
+        ]
+      },
+      { 
+        "type": "img_i",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "Dimension: 300x300"
+          },
+          {
+            "type": "url",
+            "id": "image_link",
+            "label": "Link to"
+          }
+        ]
+      },
+      {
+        "type": "item_pins",
+        "name": "Pins for item image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "Dimension: 300x300"
+          },
+          {
+            "type": "paragraph",
+            "content": "Pins"
+          },
+          {
+            "type": "product",
+            "id": "id_1",
+            "label": "Product for pin 1"
+          },
+          {
+            "type": "range",
+            "id": "top_pin_1",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position Top",
+            "default": 46
+          },
+          {
+            "type": "range",
+            "id": "left_pin_1",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position Left",
+            "default": 30
+          },
+          {
+            "type": "range",
+            "id": "size_1",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Size",
+            "default": 30
+          },
+          {
+            "type": "color",
+            "id": "bg_1",
+            "label": "Select Color",
+            "default": "#222"
+          },
+          {
+            "type": "product",
+            "id": "id_2",
+            "label": "Product for pin 2"
+          },
+          {
+            "type": "range",
+            "id": "top_pin_2",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position Top",
+            "default": 46
+          },
+          {
+            "type": "range",
+            "id": "left_pin_2",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position Left",
+            "default": 30
+          },
+          {
+            "type": "range",
+            "id": "size_2",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Size",
+            "default": 30
+          },
+          {
+            "type": "color",
+            "id": "bg_2",
+            "label": "Select Color",
+            "default": "#222"
+          },
+          {
+            "type": "product",
+            "id": "id_3",
+            "label": "Product for pin 3"
+          },
+          {
+            "type": "range",
+            "id": "top_pin_3",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position Top",
+            "default": 46
+          },
+          {
+            "type": "range",
+            "id": "left_pin_3",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position Left",
+            "default": 30
+          },
+          {
+            "type": "range",
+            "id": "size_3",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Size",
+            "default": 30
+          },
+          {
+            "type": "color",
+            "id": "bg_3",
+            "label": "Select Color",
+            "default": "#222"
+          },
+          {
+            "type": "product",
+            "id": "id_4",
+            "label": "Product for pin 4"
+          },
+          {
+            "type": "range",
+            "id": "top_pin_4",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position Top",
+            "default": 46
+          },
+          {
+            "type": "range",
+            "id": "left_pin_4",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position Left",
+            "default": 30
+          },
+          {
+            "type": "range",
+            "id": "size_4",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Size",
+            "default": 30
+          },
+          {
+            "type": "color",
+            "id": "bg_4",
+            "label": "Select Color",
+            "default": "#222"
+          },
+          {
+            "type": "product",
+            "id": "id_5",
+            "label": "Product for pin 5"
+          },
+          {
+            "type": "range",
+            "id": "top_pin_5",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position Top",
+            "default": 46
+          },
+          {
+            "type": "range",
+            "id": "left_pin_5",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position Left",
+            "default": 30
+          },
+          {
+            "type": "range",
+            "id": "size_5",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Size",
+            "default": 30
+          },
+          {
+            "type": "color",
+            "id": "bg_5",
+            "label": "Select Color",
+            "default": "#222"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Instagram 1",
+        "category": "09. Socials"
+      }
+    ]
+  }
+{% endschema %}

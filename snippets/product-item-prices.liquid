@@ -1,0 +1,82 @@
+{%- liquid
+  unless on_sale != null
+    assign compare_at_price = product.compare_at_price 
+    assign price = product.price 
+    assign price_varies = product.price_varies 
+    assign available = product.available
+    assign on_sale = false
+    if compare_at_price > price 
+      assign on_sale = true
+    endif
+    assign sold_out = true
+    assign preOrder = false
+    unless available == false
+      assign sold_out = false
+    endunless
+    if product.selected_or_first_available_variant.inventory_quantity <= 0 and product.selected_or_first_available_variant.inventory_policy == 'continue' and product.selected_or_first_available_variant.incoming
+      assign preOrder = true 
+    endif
+  endunless
+-%}
+{%- case settings.price_visible -%}
+  {%- when "show" -%}{%- assign show = true -%}
+  {%- when "show_login" -%}
+    {%- if shop.customer_accounts_enabled and customer -%}
+      {%- assign show = true -%}
+    {%- else -%}
+      {%- assign show = false -%}
+    {%- endif -%}
+{%- endcase -%}
+{%- if show -%}
+  {%- assign price_varies = product.price_varies -%}
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- if settings.price_varies_style == '0' -%}{%- assign price_varies = false -%}{%- endif -%}
+  <div class="product-price{%unless product.available%} product-price-out{%endunless%}{%if on_sale%} product-price-onsale{%endif%}">
+    <ins class="ProductPrice-{{product.id}}{%if price_varies%} d-none{%endif%}" data-id="{{product.id}}">{{- current_variant.price | money -}}</ins>
+    {%- if price_varies -%}
+    <span class="ProductVaries-{{product.id}}">
+      {%- if settings.price_varies_style == '1' -%}
+        {{- product.price_min | money }} - {{ product.price_max | money -}}
+      {%- else -%}
+        <span class="from-title">{{- 'products.product.from-price' | t -}}</span>{{- product.price_min | money -}}
+      {%- endif -%}
+    </span>
+    {%- endif -%}
+    {%-unless price_varies or current_variant.compare_at_price <= current_variant.price or current_variant.compare_at_price == null-%}
+    <del class="ComparePrice-{{product.id}}">
+      {{- current_variant.compare_at_price | default: 0 | money -}}
+    </del>
+    {%-endunless-%}
+    {%- capture unit_price_base_unit -%}
+      <span class="base_unit">
+        {%- if current_variant.unit_price_measurement -%}
+          {%- if current_variant.unit_price_measurement.reference_value != 1 -%}
+            {{- current_variant.unit_price_measurement.reference_value -}}
+          {%- endif -%}
+          {{- current_variant.unit_price_measurement.reference_unit -}}
+        {%- endif -%}
+      </span>
+    {%- endcapture -%}
+    {%-if current_variant.unit_price -%}
+    <span class="UnitPrice-{{product.id}} text-nowrap d-none">
+      {{- current_variant.unit_price_measurement.quantity_value | append: current_variant.unit_price_measurement.quantity_unit -}}
+      (<span class="unit_price">{{- current_variant.unit_price | money -}}</span> / {{ unit_price_base_unit }})
+    </span>
+    {%-endif-%}
+    {%-if current_variant.available == false and settings.label_style == '02'-%}
+    <span class="out-text">{{- 'products.product.out_of_stock' | t -}}</span>
+    {%- endif -%}
+    {%- comment -%}{%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+    <div class="product__policies">
+      {%- if cart.taxes_included -%}
+        {{ 'products.product.include_taxes' | t }}
+      {%- endif -%}
+      {%- if shop.shipping_policy.body != blank -%}
+        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+      {%- endif -%}
+    </div>
+    {%- endif -%}{%- endcomment -%}
+  </div>
+{%- elsif show == false -%}
+  <a href="{{routes.account_login_url}}" class="product-price">{{'products.product.see-price' | t}}</a>
+{%- endif -%}

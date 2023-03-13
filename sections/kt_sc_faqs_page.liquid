@@ -1,0 +1,185 @@
+<!-- kt_sc_faqs_page.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+{%-render 'sc_css'-%}
+<div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">   
+    <div class="section-width {{width_content_}}">
+      <div class="accordion accordion-simple accordion-plus row" id="collapse-{{section.id}}">
+        {%- assign tab_count = 0 -%}
+        {% for block in section.blocks-%}
+        {%-if forloop.index != 1 and block.type == 'parent' -%}</div>{%-endif-%}
+        {%-if forloop.first or block.type == 'parent' -%}
+        <div class="col-12 col-lg-{{block.settings.col}}">
+        {%- assign tab_count = 0 -%}
+        {%-endif-%}
+
+        {%-if block.type == 'item_1' -%}
+          <h2 class="title-accordion" {{ block.shopify_attributes }}>{{block.settings.title | html}}</h2>
+        {%-elsif block.type == 'item' -%}
+        <div class="accordion-item" {{ block.shopify_attributes }}>
+          <div class="accordion-header" id="heading-collapse-{{block.id}}">
+            <button class="accordion-button{%unless tab_count == 0%} collapsed{%endunless%}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{block.id}}" aria-expanded="{%if tab_count == 0%}true{%else%}false{%endif%}" aria-controls="collapse-{{block.id}}">{{-block.settings.title-}}</button>
+          </div>
+          <div id="collapse-{{block.id}}" class="accordion-collapse collapse{%if tab_count == 0%} show{%endif%}" aria-labelledby="heading-collapse-{{block.id}}">
+            <div class="accordion-body mb-2">
+              {%- if block.settings.content_page != blank -%}
+              {{-pages[block.settings.content_page].content | html-}}
+              {%-else-%}
+              {{-block.settings.content-}}
+              {%-endif-%}
+            </div>
+          </div>
+        </div>
+        {%- assign tab_count = tab_count | plus: 1 -%}
+        {%-endif-%}
+        {%- if forloop.last -%}
+          </div>
+        {%- endif -%}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "FAQ's content",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "w-100"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "6rem 6rem 0 6rem",
+        "default": "3rem 0 6rem"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "parent",
+        "name": "Item Parent",
+        "settings": [
+          {
+            "type": "range",
+            "id": "col",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "unit": "/12",
+            "label": "Col",
+            "default": 2
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "name": "Item FAQ",
+        "settings": [
+          {
+             "type": "liquid",
+             "id": "title",
+             "label": "Title",
+             "default": "Title 1"
+          },
+          {
+             "type": "liquid",
+             "id": "content",
+             "label": "Content",
+             "default": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+          }
+        ]
+      },
+      {
+        "type": "item_1",
+        "name": "Item Title",
+        "settings": [
+          {
+             "type": "liquid",
+             "id": "title",
+             "label": "Title",
+             "default": "Title 1"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQ's",
+        "category": "04. Section"
+      }
+    ]
+  }
+{% endschema %}

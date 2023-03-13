@@ -1,0 +1,483 @@
+<!-- rd_shop_by_brand_01.liquid -->
+{%- liquid  capture st_card
+    echo settings.use_new_label
+    echo '|'
+    echo settings.new_day
+    echo '|'
+    echo settings.use_sale_label
+    echo '|'
+    echo settings.product_grid_layout
+    echo '|'
+    echo settings.qs_show_vars_list
+    echo '|'
+    echo settings.use_quickview
+    echo '|'
+    echo settings.use_wishlist
+    echo '|'    
+    echo settings.use_compare
+    echo '|'
+    echo settings.use_countdown_grid
+    echo '|'
+    echo settings.countdown_grid_style
+    echo '|'
+    echo settings.use_vendor_grid
+    echo '|'
+    echo settings.use_review_grid
+    echo '|'
+    echo settings.use_add_to_cart_btn
+    echo '|'
+    echo settings.qs_hide_only_1_opt
+  endcapture
+  assign st_card = st_card | split: '|'  
+  
+  assign grid_ly = "01"
+
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+{%-render 'sc_css'-%}
+<div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">      
+    <div class="section-width {{width_content_}}">
+    	{%-for block in section.blocks-%}
+    	<div class="row gx-0 align-items-center">
+    		<div class="col-md-6{%unless block.settings.first%} order-lg-last{%endunless%}">
+    			<div class="row gx-0">
+    				<div class="col-sm-6{%if block.settings.first%} order-lg-last{%endif%}">
+    					<div class="banner-wrap">
+	              {%- assign image_item = block.settings.image1 -%}
+	              {%-assign width = image_item.width | default: 480.00 -%}{%-assign height = image_item.height | default: 480.00 | plus: 0.00-%}
+	    					<a href="{{block.settings.link1 | default: routes.root_url}}" class="img__banner lazyload" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;;"{%if block.settings.image1%} data-bgset="{{block.settings.image1 | img_url: 'master'}}" data-sizes="auto" data-parent-fit="cover"{%endif%}></a>
+	    					<div class="text-content position-absolute wait-for-css text-center">
+                  {%-if block.settings.titlex1 != blank -%}<div class="titlex" style="--color: {{block.settings.color_titlex1}}">{{block.settings.titlex1}}</div>{%- endif -%}
+	                <div class="--button">
+	                  {%-if block.settings.stitle1 != blank -%}<div class="stitle" style="--color: {{block.settings.color_stitle1}}">{{block.settings.stitle1}}</div>{%- endif -%}
+	                  {%-if block.settings.name_btn1 != blank -%}
+	                  <a href="{{block.settings.link1 | default: routes.root_url}}" class="btn {{block.settings.class_btn1}}" aria-label="{{block.settings.name_btn1 | strip_html}}">{{block.settings.name_btn1}}</a>
+	                  {%- endif -%}
+	                </div>
+	              </div>
+	    				</div>
+    					<div class="banner-wrap">
+	              {%- assign image_item = block.settings.image2 -%}
+	              {%-assign width = image_item.width | default: 480.00 -%}{%-assign height = image_item.height | default: 480.00 | plus: 0.00-%}
+	    					<a href="{{block.settings.link2 | default: routes.root_url}}" class="img__banner lazyload" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;;"{%if block.settings.image2%} data-bgset="{{block.settings.image2 | img_url: 'master'}}" data-sizes="auto" data-parent-fit="cover"{%endif%}></a>
+	    					<div class="text-content position-absolute wait-for-css text-center">
+                  {%-if block.settings.titlex2 != blank -%}<div class="titlex" style="--color: {{block.settings.color_titlex2}}">{{block.settings.titlex2}}</div>{%- endif -%}
+	                <div class="--button">
+	                  {%-if block.settings.stitle2 != blank -%}<div class="stitle" style="--color: {{block.settings.color_stitle2}}">{{block.settings.stitle2}}</div>{%- endif -%}
+	                  {%-if block.settings.name_btn2 != blank -%}
+	                  <a href="{{block.settings.link2 | default: routes.root_url}}" class="btn {{block.settings.class_btn2}}" aria-label="{{block.settings.name_btn2 | strip_html}}">{{block.settings.name_btn2}}</a>
+	                  {%- endif -%}
+	                </div>
+	              </div>
+	    				</div>
+    				</div>
+    				<div class="col-sm-6">
+    					<div class="banner-wrap">
+	              {%- assign image_item = block.settings.image3 -%}
+	              {%-assign width = image_item.width | default: 480.00 -%}{%-assign height = image_item.height | default: 960.00 | plus: 0.00-%}
+	    					<a href="{{block.settings.link3 | default: routes.root_url}}" class="img__banner lazyload" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;;"{%if block.settings.image3%} data-bgset="{{block.settings.image3 | img_url: 'master'}}" data-sizes="auto" data-parent-fit="cover"{%endif%}></a>
+	    					<div class="text-content position-absolute wait-for-css text-center">
+                  {%-if block.settings.titlex3 != blank -%}<div class="titlex" style="--color: {{block.settings.color_titlex3}}">{{block.settings.titlex3}}</div>{%- endif -%}
+	                <div class="--button">
+	                  {%-if block.settings.stitle3 != blank -%}<div class="stitle" style="--color: {{block.settings.color_stitle3}}">{{block.settings.stitle3}}</div>{%- endif -%}
+	                  {%-if block.settings.name_btn3 != blank -%}
+	                  <a href="{{block.settings.link3 | default: routes.root_url}}" class="btn {{block.settings.class_btn3}}" aria-label="{{block.settings.name_btn3 | strip_html}}">{{block.settings.name_btn3}}</a>
+	                  {%- endif -%}
+	                </div>
+	              </div>
+	    				</div>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-6 mt-4 mt-md-0">
+  				<div class="section-title text-center" style="margin-bottom:20px">
+            <h3 class="sc-title d-block">{{block.settings.title}}</h3>
+    			</div>
+    			<div class="products-card-grid p-style-{{grid_ly}}">
+	    			<div class="row row-cols-2 ">
+	    			{%-for i in (1..2)-%}
+	    			{%-assign product = 'prd' | append: i-%}
+	          <div class="grid-item col">
+	            {%- render "product-grid-item", product: block.settings[product], grid_layout: grid_ly, st_card: st_card -%}
+	          </div>
+	          {%-endfor %}
+	    			</div>
+    			</div>
+    		</div>
+    	</div>
+    	{%-endfor-%}
+    </div>
+  </div>
+</div>
+<noscript class="banner-css" data-section-type="rd_shop_by_brand">
+  {%-capture banner-css-%}
+  {%style%}
+    .rd_shop_by_brand .titlex{
+      margin-top:0.625rem;
+      margin-bottom: 0;
+      color:var(--color);
+      font-weight: 600;
+      font-size: 2.143em;
+      line-height:1.2;
+    }
+    .rd_shop_by_brand .stitle{
+    	font-size: 1.143em;
+      margin-top:0.3125rem;
+      color:var(--color);
+      font-weight: 600;
+    }
+    .rd_shop_by_brand .banner-wrap .btn{
+      margin-top:1rem;
+      min-width:auto;
+    }
+    .rd_shop_by_brand .img__banner{
+      background-size: cover;
+    }
+    .rd_shop_by_brand .--button {
+	    margin-top: -95px;
+	    opacity: 0;
+	    -webkit-transition: all 0.4s ease;
+	    transition: all 0.4s ease;
+		}
+    .rd_shop_by_brand .banner-wrap:hover .--button {
+	    margin-top: 0;
+	    opacity: 1;
+		}
+    .rd_shop_by_brand .text-content{
+      top: 50%;
+      left: 50%;
+      z-index:1;
+      width: 100%;
+      padding: 0 1rem;
+      transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%);
+    }
+    @media (min-width: 768px) {
+    	.rd_shop_by_brand .products-card-grid {
+    		padding: 0 11.3%;
+    	}
+    }
+  {%endstyle%}
+  {%-endcapture-%}
+  {{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+</noscript>
+{%-if section.settings.css_section != blank-%}
+<noscript class="banner-css" data-section-type="{{section.id}}">
+  {%-capture banner-css-%}
+  {%style%}
+  {%- assign section_id = ' .content_' | append: section.id -%}
+  {{- section.settings.css_section | replace: ".section_id", section_id -}}
+  {%endstyle%}
+  {%-endcapture-%}
+  {{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+</noscript>
+{%- endif -%}
+{% schema %}
+  {
+    "name": "Shop by brand",
+    "class": "rd_shop_by_brand",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Shop by brand",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section?",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "container"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 395x pixels"
+      },
+      {
+        "type": "header",
+        "content": "Css custom"
+      },
+      {
+        "type":"liquid",
+        "id": "css_section",
+        "label": "Css for section",
+        "info": "Key start: .section_id"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+		      {
+		        "type": "header",
+		        "content": "Banners block"
+		      },
+		      {
+		        "type":"checkbox",
+		        "id": "first",
+		        "label": "First block?",
+		        "default": true
+		      },
+		      {
+		        "type": "image_picker",
+		        "id": "image1",
+		        "label": "Banner 1",
+		        "info": "Size suggestion: 480x480 pixels"
+		      },
+          {
+            "type": "url",
+            "id": "link1",
+            "label": "Link to"
+          },
+          {
+            "type": "paragraph",
+            "content": ">>>>> Content 1"
+          },
+          {
+            "type":"liquid",
+            "id":"titlex1",
+            "label": "Title",
+            "default":"NIKE"
+          },
+          {
+            "type": "color",
+            "id": "color_titlex1",
+            "label": "Color",
+            "default": "#fff"
+          },
+          {
+            "type":"liquid",
+            "id":"stitle1",
+            "label": "Sub title",
+            "default": "SHOES COLLECTION"
+          },
+          {
+            "type": "color",
+            "id": "color_stitle1",
+            "label": "Color1",
+            "default": "#fff"
+          },
+          {
+            "type":"text",
+            "id":"name_btn1",
+            "label": "Name button",
+            "default":"SHOP CALVIN"
+          },
+          {
+            "type":"text",
+            "id":"class_btn1",
+            "label": "Class button",
+            "default":"btn-white btn-outline btn-rounded"
+          },
+		      {
+		        "type": "image_picker",
+		        "id": "image2",
+		        "label": "Banner 2",
+		        "info": "Size suggestion: 480x480 pixels"
+		      },
+          {
+            "type": "url",
+            "id": "link2",
+            "label": "Link to"
+          },
+          {
+            "type": "paragraph",
+            "content": ">>>>> Content 2"
+          },
+          {
+            "type":"liquid",
+            "id":"titlex2",
+            "label": "Title"
+          },
+          {
+            "type": "color",
+            "id": "color_titlex2",
+            "label": "Color",
+            "default": "#fff"
+          },
+          {
+            "type":"liquid",
+            "id":"stitle2",
+            "label": "Sub title"
+          },
+          {
+            "type": "color",
+            "id": "color_stitle2",
+            "label": "Color1",
+            "default": "#fff"
+          },
+          {
+            "type":"text",
+            "id":"name_btn2",
+            "label": "Name button"
+          },
+          {
+            "type":"text",
+            "id":"class_btn2",
+            "label": "Class button",
+            "default":"btn-white btn-outline btn-rounded"
+          },
+		      {
+		        "type": "image_picker",
+		        "id": "image3",
+		        "label": "Banner 3",
+		        "info": "Size suggestion: 480x960 pixels"
+		      },
+          {
+            "type": "url",
+            "id": "link3",
+            "label": "Link to"
+          },
+          {
+            "type": "paragraph",
+            "content": ">>>>> Content 3"
+          },
+          {
+            "type":"liquid",
+            "id":"titlex3",
+            "label": "Title",
+            "default":"OGP"
+          },
+          {
+            "type": "color",
+            "id": "color_titlex3",
+            "label": "Color",
+            "default": "#fff"
+          },
+          {
+            "type":"liquid",
+            "id":"stitle3",
+            "label": "Sub title",
+            "default": "SPORTWEAR COLLECTION"
+          },
+          {
+            "type": "color",
+            "id": "color_stitle3",
+            "label": "Color1",
+            "default": "#fff"
+          },
+          {
+            "type":"text",
+            "id":"name_btn3",
+            "label": "Name button",
+            "default":"SHOP NIKE"
+          },
+          {
+            "type":"text",
+            "id":"class_btn3",
+            "label": "Class button",
+            "default":"btn-white btn-outline btn-rounded"
+          },
+		      {
+		        "type": "header",
+		        "content": "Products block"
+		      },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "SHOES COLLECTION"
+          },
+		      {
+		        "type": "product",
+		        "id": "prd1",
+		        "label": "Product 1"
+		      },
+		      {
+		        "type": "product",
+		        "id": "prd2",
+		        "label": "Product 2"
+		      }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop by brand",
+        "category": "05. Element"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,308 @@
+<!doctype html>
+{%- liquid
+  assign dir_body = settings.dir_body
+  assign map_rtl = 'ar,dv,ha,he,ku,fa,ur,ps,yi' | split: ','
+  if dir_body == 'ltr'
+    assign dir_css = ''
+  else
+    assign dir_css = '-rtl'
+  endif
+  if map_rtl contains shop.locale
+    assign dir_body = 'rtl'
+    assign dir_css = '-rtl'
+  endif
+  if settings.popup_ageVer and settings.popup_ageVer_coll_list != blank
+    assign coll_list = settings.popup_ageVer_coll_list | split: ', '
+    if coll_list contains collection.handle
+      assign ageVer = ' ageVerModal"'
+    endif
+  elsif settings.popup_ageVer
+    assign ageVer = ' ageVerModal"'
+  endif 
+-%}
+<html class="no-js{{ageVer}}" lang="{{request.locale.iso_code}}" dir="{{dir_body}}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{settings.color_primary}}">
+    {%-render 'meta-tags', dir_body: dir_body-%}
+    {%- if settings.font_source == 'google' -%}{{settings.embed_google_font}}{%- endif -%}
+    <noscript>
+      <link type="text/css" rel="stylesheet" id="color_sw-css" href="{{'swatch-color.css' | asset_url}}">
+      <link type="text/css" rel="stylesheet" id="awesome_font-css" href="{{'all.min.css' | asset_url}}">
+    </noscript>
+    <link type="text/css" rel="stylesheet" id="riode_icon-css" href="{{'riode-icon.css' | asset_url}}">
+    {%- assign bootstrap_css = 'bootstrap' | append: dir_css | append: '.min.css' -%}
+    <link href="{{bootstrap_css | replace: '-', '.' | asset_url}}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{'style-speed.css' | asset_url}}" rel="stylesheet" type="text/css" media="all">
+    {%- assign style_css = 'style' | append: dir_css | append: '.min.css' -%}
+    {{- style_css | asset_url | stylesheet_tag -}} 
+    {%- assign theme_css = 'theme' | append: dir_css | append: '.min.css' -%}
+    {{- theme_css | asset_url | stylesheet_tag -}}
+    {%- if template.name == 'collection' or template.name == 'search' -%}
+      {%- assign filter_css = 'kt_filters' | append: dir_css | append: '.min.css' -%}
+      {{- filter_css | asset_url | stylesheet_tag -}}
+    {%- endif -%} 
+    {%- if template.name == 'cart' or template.name == 'order' -%}
+      {%- assign cart_css = 'theme.cart' | append: dir_css | append: '.min.css' -%}
+      {{- cart_css | asset_url | stylesheet_tag -}}
+    {%- endif -%}
+    {{- settings.custom_html_head | html -}}
+    {%- assign card_grid_css = 'md_prd_card_grid' | append: dir_css | append: '.min.css' -%}
+    {{- card_grid_css | asset_url | stylesheet_tag -}}
+    {%- if template.name == 'blog' or template.name == 'article' -%}
+    {%- assign blog_css = 'blog' | append: dir_css | append: '.min.css' -%}
+    {{- blog_css | asset_url | stylesheet_tag -}}
+    {%- endif -%}
+    <link id="custom-css" href="{{'kiti-var.css' | asset_url}}" rel="stylesheet" type="text/css" media="all">
+    {{ content_for_header }}
+    {%-render 'theme_header_js'-%}
+    <!-- <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=615725d44ec3a20019789cff&product=sop' async='async'></script> -->
+  </head>
+  <body class="template-{{ request.page_type | default: page_title | handle }} --{{ page_title | handle }}{%if settings.img_type == 'stretch'%} is-cover{%elsif settings.img_type == 'nonstretch'%} is-contain{%else%} is-default{%endif%}{%if settings.import_header == '20'%} mn-sidebar-active{%endif%}" grid-info="{{settings.pr_grid_talg}}" grid-name-opt="{{settings.qs_use_name_opt}}" grid-ol-first-opt="{{settings.qs_show_first_opt}}" grid-flash="{{settings.label_style}}">
+    {%- if request.design_mode -%}{%- section 'kt-dear-customers'-%}{%-endif-%}
+    <div class="content_for_page{%if settings.use_wrap_container %} wrap-container{%endif%}">
+      <div class="header-main w-100">
+        <header data-section-id="header-0{{settings.import_header}}" data-section-type="header-section">
+          <div id="header-ontop" class="header-ontop is-sticky"></div>
+          <div id="header" class="header">
+            {%-section 'header-announcement'-%}
+            {%-section 'header-top'-%}
+            {%-case settings.import_header-%}
+            {%-when '01'-%}
+              {%-section 'header-001'-%}
+            {%-when '02'-%}
+              {%-section 'header-002'-%}
+            {%-when '03'-%}
+              {%-section 'header-003'-%}
+            {%-when '04'-%}
+              {%-section 'header-004'-%}
+            {%-when '05'-%}
+              {%-section 'header-005'-%}
+            {%-when '06'-%}
+              {%-section 'header-006'-%}
+            {%-when '07'-%}
+              {%-section 'header-007'-%}
+            {%-when '08'-%}
+              {%-section 'header-008'-%}
+            {%-when '09'-%}
+              {%-section 'header-009'-%}
+            {%-when '10'-%}
+              {%-section 'header-010'-%}
+            {%-when '11'-%}
+              {%-section 'header-011'-%}
+            {%-when '12'-%}
+              {%-section 'header-012'-%}
+            {%-when '13'-%}
+              {%-section 'header-013'-%}
+            {%-when '14'-%}
+              {%-section 'header-014'-%}
+            {%-when '15'-%}
+              {%-section 'header-015'-%}
+            {%-when '16'-%}
+              {%-section 'header-016'-%}
+            {%-when '17'-%}
+              {%-section 'header-017'-%}
+            {%-when '18'-%}
+              {%-section 'header-018'-%}
+            {%-when '19'-%}
+              {%-section 'header-019'-%}
+            {%-when '20'-%}
+              {%-section 'header-020'-%}
+            {%-when '21'-%}
+              {%-section 'header-021'-%}
+            {%-when '22'-%}
+              {%-section 'header-022'-%}
+            {%-when '23'-%}
+              {%-section 'header-023'-%}
+            {%-when '24'-%}
+              {%-section 'header-024'-%}
+            {%-endcase-%}
+          </div>
+        </header>
+        <main class="main-content{%unless template.name == 'index'%} page-container{%endunless%}" id="PageContainer">
+          {%- assign headers = '08,09,11,12,23,24' | split: ',' -%}
+          {%-if headers contains settings.import_header -%}
+            {%-render 'kt_search_offcanvas'-%}
+          {%-endif-%}
+          {%- liquid
+            if request.design_mode
+              section 'kt_mega_mn-vertical'
+            endif
+            section 'header-mobile'
+          -%}
+          {%- liquid
+            unless template contains 'index'
+              section 'kt_banner_all_page'
+              section 'kt_top_banner'
+            endunless
+          -%}
+          {%- unless template contains 'index' -%}
+          <section class="kt-breadcrumbs">          
+            <div class="w-100 border-top" style="border-color: rgba(235, 235, 235, 0.55) !important"></div>
+            <div class="container">
+              {%-render 'kt_breadcrumb' -%}
+            </div>
+          </section>
+          {%- endunless -%}
+          {{ content_for_layout }}
+        </main>
+      </div>
+      <footer>        
+        {%- section 'footer' -%}
+      </footer>
+    </div>
+    <div class="content_for_extension">
+      {%- if settings.enable_suggest_products -%}
+        <div class="toast-container position-fixed bottom-0 start-0 p-3">
+          <div id="suggestToast" class="toast fade" role="alert" aria-live="assertive" aria-atomic="true" data-bs-config='{"delay":{{settings.show_time}}}' data-bs-animation="true" style="--bs-toast-padding-x: 0.5rem; --bs-toast-bg: rgba(255, 255, 255, 1)">
+            <div class="toast-content">
+              <div class="toast-header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18" fill="#428445"><path d="M466.5 83.71l-192-80c-5.875-2.5-12.16-3.703-18.44-3.703S243.5 1.203 237.6 3.703L45.61 83.71C27.73 91.08 16 108.6 16 127.1C16 385.4 205.4 512 255.9 512C305.2 512 496 387.3 496 127.1C496 108.6 484.3 91.08 466.5 83.71zM463.9 128.3c0 225.3-166.2 351.7-207.8 351.7C213.3 479.1 48 352.2 48 128c0-6.5 3.875-12.25 9.75-14.75l192-80c1.973-.8275 4.109-1.266 6.258-1.266c2.071 0 4.154 .4072 6.117 1.266l192 80C463.3 117.1 463.9 125.8 463.9 128.3zM336 181.3c-4.094 0-8.188 1.562-11.31 4.688L229.3 281.4L187.3 239.4C184.2 236.2 180.1 234.7 176 234.7c-9.139 0-16 7.473-16 16c0 4.094 1.562 8.188 4.688 11.31l53.34 53.33C221.2 318.4 225.3 320 229.3 320s8.188-1.562 11.31-4.688l106.7-106.7C350.4 205.5 352 201.4 352 197.3C352 188.8 345.1 181.3 336 181.3z"></path>
+                </svg>
+                <strong class="me-auto ps-2">{{'general.suggest.title' | t}}</strong>
+                {%- if settings.use_suggest_time -%}
+                  <small><span class="minute-number"></span> <span>{{'general.suggest.minutes_ago' | t}}</span></small>
+                {%- endif -%}
+                <button type="button" class="btn-close" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                <div class="d-flex align-items-center">
+                  <div class="img-suggest me-3">
+                    <a href="/" class="aspectRatio quick-view" data-view="{{product.url}}">
+                      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="" alt=""> 
+                    </a>
+                  </div>
+                  <div class="info-suggest">
+                    <a href="/" class="title-sg quick-view" data-view="{{product.url}}">{{shop.name}}</a>
+                    <div class="price-sg"></div>
+                    {%- if settings.use_fake_location and settings.fake_location != blank -%}
+                      <div class="from-ago">{{'general.suggest.from' | t}} <span class="from"></span></div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if settings.use_quickview -%}
+        {%-section 'main-product-qv'-%}
+      {%- endif -%}
+      <section class="modal fade modalQuickShop" id="quickShop-modal" aria-hidden="true" aria-labelledby="quickShop-modalLabel" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"></div></div></section>
+      {%- if settings.use_compare-%}
+        <div class="offcanvas offcanvas-top compareOffcanvas vh-100" tabindex="-1" id="compareOffcanvas" aria-labelledby="compareOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 id="compareOffcanvasLabel" style="opacity: 0;margin: 0;">compareOffcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body position-relative">    
+            <div class="no-compare position-absolute">
+              <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12">{{'products.compare.no_compare' | t}}</div>
+              </div>
+            </div> 
+            <div class="table-responsive" id="compare-content" style="min-height: 30rem"></div>
+          </div>
+        </div>
+      {%-endif-%}
+      {%- if settings.sticky_icon_cart -%}
+        <div class="block-minicart icon-fixed">
+          <div class="mini-cart">
+            <a href="{{routes.cart_url}}" class="icon-link">
+            {%-render 'icon-cart', pos: 'sticky'-%}<span class="count cartCount fixed">{{ cart.item_count }}</span><span class="total d-none">{{ 0 | money }}</span>
+            </a>
+          </div>
+        </div>
+      {%- endif -%}
+      <div class="offcanvas offcanvas-end cart-offcanvas editOpts-offcanvas" tabindex="-1" id="editOptsOffcanvas" aria-labelledby="editOptsOffcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 id="editOptsOffcanvasLabel" class="h6 mb-0">{{ 'products.product.edit_option' | t }}</h5>
+          <button type="button" class="btn btn-dark btn-link btn-icon-right close-canvas" aria-label="Close"{% if template.name != 'cart' %} data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas"{%else%} data-bs-dismiss="offcanvas"{%endif%}>{{ 'cart.general.back' | t }}<i class="d-icon-arrow-right"></i></button>
+        </div>
+        <div class="offcanvas-body"></div>
+      </div>
+      {%-if settings.disable_backtotop-%}<button type="button" class="scroll_top position-fixed border"><i class="d-icon-arrow-up" aria-hidden="true"></i></button>{%-endif-%}
+      {%-if settings.use_snow-%}<div id="kt-snow"></div>{%-endif-%}
+      <!-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="//cdn.shopify.com/s/files/1/0568/7902/2234/products/product-12-2_240x.jpg?v=1621925141" class="rounded me-2" alt="...">
+          <strong class="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+      </div> -->
+      {%- unless request.design_mode -%}
+        {{pages['riode'].content}}
+      {%- endunless -%}
+    </div>
+    {%- liquid
+      if template.name == 'index' and settings.newsletter_popup
+        section 'newsletter-popup'
+      endif
+      if request.design_mode and settings.popup_cookies
+        section 'cookies_popup'
+      endif
+      if ageVer
+        section 'kt_ageVerification'
+      endif
+      if shop.customer_accounts_enabled and settings.modal_login
+        section 'kt_account_popup'
+      endif
+      if template.name != 'cart' and settings.type_ajax_cart == 'offcanvas'
+        section 'kt_cart_offcanvas'
+      endif
+      section 'custom_color'
+      if settings.use_mobile_bottom_bar
+        section 'kt_bottom_bar'
+      endif
+    -%}
+    {%- if shop.enabled_currencies -%}
+    {%- form "currency", class: "d-none" -%}<input type="hidden" name="currency" value="{{cart.currency.iso_code}}">{%- endform -%}
+    {%- endif -%}
+    {%- if settings.enable_auto_gift == true and settings.auto_gift_product != blank and all_products[settings.auto_gift_product].title != blank -%}
+      <script type="application/json" data-gift-auto-add>
+        {
+          "price_limit": {{ all_products[settings.auto_gift_limit].selected_or_first_available_variant.price | json }},
+          "id": {{ all_products[settings.auto_gift_product].selected_or_first_available_variant.id | json }}
+        }
+      </script>
+    {%- endif -%}
+    <script src="{{ 'lazysizes.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
+    <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'theme_footer_js.js' | asset_url }}" defer="defer"></script>
+    {%- if settings.ajax_cart -%}
+      <script src="{{ 'theme.ajax-cart.min.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    {%- if settings.shipping_calculator -%}
+      <script src="{{ 'theme.get-shipping.min.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer="defer"></script>
+    {%- case template.name -%}
+      {%- when 'collection' or 'search' -%}
+        <script src="{{ 'jquery-ui.slider.min.js' | asset_url }}" defer="defer"></script>
+      {%- when 'product' -%}
+        <script src="{{ 'ktjs_product_sg.min.js' | asset_url }}" defer="defer"></script>
+    {%- endcase -%}
+    {%- if template.directory == 'customers' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    <script src="{{ 'theme.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'custom.min.js' | asset_url }}" defer="defer"></script>
+    {%- if template.name == 'cart' and settings.ajax_cart_page -%}
+      <script src="{{ 'theme.ajax-cart-page.min.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    {%- if request.design_mode -%}
+      {%-render 't4-toolkit'-%}
+      {%- if shop.metafields.t4pcc.riode != 'true' -%}
+        {%- render 't4-pcc', theme: 'riode' -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- render 'googleRich' -%}
+  </body>
+</html>

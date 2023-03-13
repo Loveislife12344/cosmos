@@ -1,0 +1,448 @@
+<!-- rd_banner_cta_02.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+{%-render 'sc_css'-%}
+<div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}" data-section-id="{{ section.id }}" data-section-type="swiper-section">
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+    <div class="section-width {{width_content_}}">
+      <div class="row banner-content">
+        <div class="col-sm-12 col-md-8 d-flex align-items-center">
+          <div class="banner-wrap position-relative">
+            <div class="text-content wait-for-css text-start">
+              <h4 class="stitle ls-s mb-1 text-white">{{ section.settings.stitle }}</h4>
+              <h3 class="titlex mb-0 text-white text-capitalize">{{ section.settings.title }}</h3>
+              <p class="desc text-white">{{ section.settings.desc }}</p>
+              <a href="{{section.settings.link_to}}" class="btn {{section.settings.style_btn}}">{{ section.settings.name_link }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="lastest-blog swiper-fuild position-relative">
+            <div class="swiper" data-breakpoints='1' data-autoplay="{{section.settings.autoplay}}" data-slides-per-view='1' data-nav="true" data-prev-el=".sw-btn-prev-{{section.id}}" data-next-el=".sw-btn-next-{{section.id}}" data-pagination=".swiper-pagination-{{section.id}}"{% if section.settings.use_lazyload %} data-observer="true"{% endif %}>
+              <div class="swiper-wrapper">
+                {%- for block in section.blocks -%}
+                <div class="swiper-slide">
+                  <div class="text-content wait-for-css">
+                    <h4 class="stitle ls-s mb-1">{{ block.settings.stitle }}</h4>
+                    <h3 class="titlex mb-0">{{ block.settings.title_block }}</h3>
+                    <a href="{{block.settings.link_to}}" class="btn {{block.settings.style_btn}}">{{ block.settings.name_link }}</a>
+                  </div>
+                </div>
+                {%-endfor-%} 
+              </div>
+            </div>            
+            <div class="swiper-buttons position-absolute">
+              <div class="content-buttons position-relative">
+                <div class="swiper-button-prev sw-btn-prev-{{section.id}}"></div>
+                <div class="swiper-button-next sw-btn-next-{{section.id}}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<noscript class="banner-css" data-section-type="rd_banner_cta_02">
+  {%-capture banner-css-%}
+  {%style%}
+    @media (hover: none){
+      .rd_banner_cta_02 .img__banner {
+        background-size: cover;
+      }
+    }
+    .rd_banner_cta_02 .banner-content {
+      padding:40px;
+    }
+    .rd_banner_cta_02 .btn{
+      min-width:auto;
+    }
+    .rd_banner_cta_02 .swiper-slide .text-content {
+       text-align: center !important;
+    }
+    .rd_banner_cta_02 .text-content .stitle {
+        color: #fff;
+    }
+    .rd_banner_cta_02 .text-content .titlex {
+        color: var(--bs-primary);
+        font-size:2.5rem;
+        font-weight: 800;
+    }
+    .rd_banner_cta_02 .bg-image {
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @media (max-width: 767px){
+      .rd_banner_cta_02 .banner-wrap .text-content {
+        text-align: center !important;
+      }
+    }
+    @media (min-width: 992px) {
+      .rd_banner_cta_02,
+      .rd_banner_cta_02 .btn {
+        font-size: 0.8125rem;
+      }
+    }
+    @media (min-width: 1200px) {
+      .rd_banner_cta_02,
+      .rd_banner_cta_02 .btn {
+        font-size: 0.875rem;
+      }
+    }
+    @media (min-width: 1200px) {
+      .rd_banner_cta_02 {
+        font-size: 1rem;
+      }
+    }
+  {%endstyle%}
+  {%-endcapture-%}
+  {{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+</noscript>
+{%-if section.settings.css_section != blank-%}
+<noscript class="banner-css" data-section-type="{{section.id}}">
+  {%-capture banner-css-%}
+  {%style%}
+  {%- assign section_id = ' .content_' | append: section.id -%}
+  {{- section.settings.css_section | replace: ".section_id", section_id -}}
+  {%endstyle%}
+  {%-endcapture-%}
+  {{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+</noscript>
+{%- endif -%}
+{% schema %}
+  {
+    "name": "Banner + CTA",
+    "class": "rd_banner_cta_02",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_banner",
+        "label": "Title",
+        "default": "Banner Fix 02",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "w-100"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 px"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type": "textarea",
+        "id": "stitle",
+        "label": "Sub title"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "desc",
+        "label": "Descriptopm"
+      },
+      {
+        "type": "url",
+        "id": "link_to",
+        "label": "Link to"
+      },
+      {
+        "type": "text",
+        "id": "name_link",
+        "label": "Name link"
+      },
+      {
+        "type": "paragraph",
+        "content": "========"
+      },
+      {
+        "type": "select",
+        "id": "style_btn",
+        "label": "Button Style",
+        "default": "btn-dark",
+        "options": [
+          {
+            "value": "btn-primary",
+            "label": "Primary default",
+            "group": "Primary"
+          },
+          {
+            "value": "btn-primary btn-outline",
+            "label": "Primary outline",
+            "group": "Primary"
+          },
+          {
+            "value": "btn-secondary",
+            "label": "Secondary default",
+            "group": "Secondary"
+          },
+          {
+            "value": "btn-secondary btn-outline",
+            "label": "Secondary outline",
+            "group": "Secondary"
+          },
+          {
+            "value": "btn-white",
+            "label": "White default",
+            "group": "White"
+          },
+          {
+            "value": "btn-white btn-outline",
+            "label": "White outline",
+            "group": "White"
+          },
+          {
+            "value": "btn-dark",
+            "label": "Dark default",
+            "group": "Dark"
+          },
+          {
+            "value": "btn-dark btn-outline",
+            "label": "Dark outline",
+            "group": "Dark"
+          },
+          {
+            "value": "btn-underline btn-link",
+            "label": "Underline dark",
+            "group": "Underline"
+          },
+          {
+            "value": "btn-underline btn-white btn-link",
+            "label": "Underline white",
+            "group": "Underline"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "border_radius",
+        "min": 0,
+        "max": 15,
+        "step": 1,
+        "unit": "px",
+        "label": "Border radius",
+        "default": 10
+      },
+      {
+        "type": "header",
+        "content": "Slide settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "__Auto-rotate slides",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Css custom"
+      },
+      {
+        "type":"liquid",
+        "id": "css_section",
+        "label": "Css for section",
+        "info": "Key start: .section_id"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "it_banner",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Block settings"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title block",
+            "default": "Banner item",
+            "info": "Name block (in editor bar)"
+          },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type": "textarea",
+        "id": "stitle",
+        "label": "Sub title"
+      },
+      {
+        "type": "textarea",
+        "id": "title_block",
+        "label": "Title"
+      },
+      {
+        "type": "url",
+        "id": "link_to",
+        "label": "Link to"
+      },
+      {
+        "type": "text",
+        "id": "name_link",
+        "label": "Name link"
+      },
+      {
+        "type": "paragraph",
+        "content": "========"
+      },
+      {
+        "type": "select",
+        "id": "style_btn",
+        "label": "Button Style",
+        "default": "btn-dark",
+        "options": [
+          {
+            "value": "btn-primary",
+            "label": "Primary default",
+            "group": "Primary"
+          },
+          {
+            "value": "btn-primary btn-outline",
+            "label": "Primary outline",
+            "group": "Primary"
+          },
+          {
+            "value": "btn-secondary",
+            "label": "Secondary default",
+            "group": "Secondary"
+          },
+          {
+            "value": "btn-secondary btn-outline",
+            "label": "Secondary outline",
+            "group": "Secondary"
+          },
+          {
+            "value": "btn-white",
+            "label": "White default",
+            "group": "White"
+          },
+          {
+            "value": "btn-white btn-outline",
+            "label": "White outline",
+            "group": "White"
+          },
+          {
+            "value": "btn-dark",
+            "label": "Dark default",
+            "group": "Dark"
+          },
+          {
+            "value": "btn-dark btn-outline",
+            "label": "Dark outline",
+            "group": "Dark"
+          },
+          {
+            "value": "btn-underline btn-link",
+            "label": "Underline dark",
+            "group": "Underline"
+          },
+          {
+            "value": "btn-underline btn-white btn-link",
+            "label": "Underline white",
+            "group": "Underline"
+          }
+        ]
+      }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner + CTA",
+        "category": "02. Section Banner"
+      }
+    ]
+  }
+{% endschema %}

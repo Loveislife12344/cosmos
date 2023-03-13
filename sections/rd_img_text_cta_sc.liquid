@@ -1,0 +1,549 @@
+<!-- rd_img_text_cta_sc.liquid -->
+  {%- liquid
+    assign width_section = section.settings.width_section
+    assign width_content = section.settings.width_content
+    capture width_section_
+      if width_section == 'container-fluid wide' and width_content == false
+        echo 'w-100'
+      else
+        echo width_section
+      endif
+    endcapture
+    capture width_content_
+      if width_content and width_section == 'w-100'
+        echo 'container'
+      elsif width_section == 'container-fluid wide' and width_content == false
+        echo 'container-fluid wide'
+      else
+        echo 'w-100'
+      endif
+    endcapture
+    assign dir_body = settings.dir_body
+    assign cssAlign = 'left'
+    assign cssAlign_rev = 'right'
+    if dir_body == 'rtl'
+      assign cssAlign = 'right'
+      assign cssAlign_rev = 'left'
+    endif
+  -%}
+
+  <div data-section-id="{{ section.id }}" id="Swiper-{{ section.id }}" data-section-type="swiper-section" class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}" data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+    {%-render 'sc_css' -%}
+    <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%}>
+      <div class="section-width {{width_content_}}">
+        <div class="row">
+          <div class="col col-md-8">
+            {%-assign block = section.blocks | where: 'type', 'item' | first-%}
+            {%-if block.settings.title != blank or block.settings.stitle != blank -%}
+              <div class="section-title w-100" style="margin-bottom:{{block.settings.margin_btitle}}px">
+                <h3 class="sc-title">
+                  {{block.settings.title}}
+                </h3>
+              </div>
+            {%- endif -%}
+            <div class="item-img">
+              <div class="row align-items-center {{block.settings.layout}} {{block.settings.text_align}}">
+                <div class="col-12 col-md-6 order-md-last">
+                  <div style="padding: 3% 5.5% 3% 5.5%;">
+                  {%- if block.settings.title_section != blank -%}
+                    <div class="section-title w-100">
+                      {%- if block.settings.reverse -%}
+                      <h5 class="sub-title fw-normal" style="--text:{{block.settings.color_sub_title}}">{{block.settings.stitle_section}}</h5>
+                      {%- endif -%}
+                      <h3 class="sc-title" style="--text:{{block.settings.color_title}}">{{block.settings.title_section}}</h3>
+                      {%- unless block.settings.reverse -%}
+                      <h5 class="sub-title fw-normal" style="--text:{{block.settings.color_sub_title}}">{{block.settings.stitle_section}}</h5>
+                      {%- endunless -%}
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.content_text != blank -%}
+                  <div class="content-text _mb-4" style="--text:{{block.settings.color_desc}}">{{block.settings.content_text}}</div>
+                  {%- endif -%}
+                  {%- if block.settings.name_btn != blank -%}
+                  <a href="{{block.settings.image_link | default: routes.root_url}}" class="btn btn-md {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%}" aria-label="{{block.settings.name_btn| strip_html}}">{{block.settings.name_btn}}</a>
+                  {%- endif -%}
+                  </div>
+                </div>
+                  {%- assign image_item = block.settings.image_banner -%}
+                  {%- assign width = image_item.width | default: 580.00 -%}{%-assign height = image_item.height | default: 507.00 | plus: 0.00 -%}
+                  {%- assign img_url = image_item | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                <div class="image_block col-12 col-md-6">
+                  <a href="{{block.settings.image_link | default: routes.root_url}}" class="img__banner kt_media --{{block.settings.height}}" aria-label="{{block.settings.image_banner.alt | default: shop.name | escape}}" style="--img_w: {{width}}px;--img_h: {{height}}px;border-radius: 8px 0 0 8px;">
+                    <figure style="{% if block.settings.height == 'adapt' and block.settings.image_banner != blank %}padding-bottom: {{ 1 | divided_by: block.settings.image_banner.aspect_ratio | times: 100 }}%;{% endif %}">
+                      {%- if block.settings.image_banner != blank -%}
+                        <img width="{{block.settings.image_banner.width}}" height="{{block.settings.image_banner.height}}" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ img_url }}" data-widths="[360, 535, 720, 940, 1070]" data-aspectratio="{{ block.settings.image_banner.aspect_ratio }}" data-sizes="auto" alt="{{ block.settings.image_banner.alt | escape }}">
+                      {%- else -%}
+                        {{- 'image' | placeholder_svg_tag: 'placeholder-svg' -}}
+                      {%- endif -%}
+                    </figure>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-md-4 item-banner">
+            {%-assign block = empty-%}
+            {%-assign block = section.blocks | where: 'type', 'cta' | first-%}
+            {%-if block.settings.title != blank or block.settings.stitle != blank -%}
+              <div class="section-title w-100" style="margin-bottom:{{block.settings.margin_btitle}}px">
+                <h3 class="sc-title">
+                  {{block.settings.title}}
+                </h3>
+              </div>
+            {%- endif -%}
+            <div class="cta{%if block.settings.image%} bg-image lazyload{%endif%}"{%if block.settings.image%} data-bgset="{{block.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%}>
+              <div class="cta-text text-center">
+                <h3 class="cta-title">{{block.settings.title_cta | html}}</h3>
+                <p class="cta-desc">{{block.settings.description_cta | html}}</p>
+                {%-form 'customer', class: 'form-subscribe', id: block.id-%}
+                {{ form.errors | default_errors }}
+                {%-if form.posted_successfully?-%}
+                <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+                {%- endif -%}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input type="email" name="contact[email]" class="form-control" value="{%-if customer-%}{{ customer.email }}{%-endif-%}" placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}" required>
+                <button class="btn btn-md btn-white btn-outline btn-icon btn-rounded text-uppercase" id="subscribe{{id_form}}" type="submit">{{'general.newsletter_form.submit_html' | t}}</button>
+                {%-endform-%}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <noscript class="banner-css" data-section-type="rd_img_text_cta_sc">
+    {%-capture banner-css-%}
+    {%style%}
+    .rd_img_text_cta_sc .item-img{
+      border-radius: 8px;
+      background-color: #f4f4f4;
+    }
+    .rd_img_text_cta_sc .cta{
+      border-radius: 8px;
+      padding: 56px 10px;
+      background-color: var(--bs-primary);
+    }
+    .rd_img_text_cta_sc .cta .cta-title{
+      --text: #fff;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+    .rd_img_text_cta_sc .cta .cta-desc{
+      color: #fff;
+      font-size: 1.143em;
+    }
+    .rd_img_text_cta_sc .form-control {
+      text-align: center;
+      color: #fff;
+      border: none;
+      border-radius: 4rem;
+      background-color: rgba(255,255,255,0.3);
+    }
+    {%endstyle%}
+    {%-endcapture-%}
+    {{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+  </noscript>
+  {%- if section.settings.css_section -%}
+  <noscript class="banner-css" data-section-type="{{section.id}}">
+    {%-capture banner-css-%}
+    {%style%}
+    {%- assign section_id = ' .content_' | append: section.id -%}
+    {{- section.settings.css_section | replace: ".section_id", section_id -}}
+    {%endstyle%}
+    {%-endcapture-%}
+    {{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+  </noscript>
+  {%- endif -%}
+
+{% schema %}
+  {
+    "name": "Image text + cta",
+    "class": "rd_img_text_cta_sc",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Image text + cta",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "w-100"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type":"checkbox",
+        "id": "use_lazyload",
+        "label": "Use lazyload?",
+        "info": "Help speed up page loading."
+      },
+      {
+        "type": "header",
+        "content": "Css custom"
+      },
+      {
+        "type":"liquid",
+        "id": "css_section",
+        "label": "Css for section",
+        "info": "Key start: .section_id"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item image text",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Section title"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "range",
+            "id": "margin_btitle",
+            "min": 0,
+            "max": 90,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin bottom of title",
+            "default": 30
+          },
+          {
+            "type": "header",
+            "content": "Banner"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_banner",
+            "label": "Image banner",
+            "info": "Size suggestion: 580 x 507 px"
+          },
+          {
+            "id": "height",
+            "type": "select",
+            "options": [
+              {
+                "value": "adapt",
+                "label": "Adapt to image"
+              },
+              {
+                "value": "small",
+                "label": "Small"
+              },
+              {
+                "value": "large",
+                "label": "Large"
+              }
+            ],
+            "default": "adapt",
+            "label": "Image ratio"
+          },
+          {
+            "id": "layout",
+            "type": "select",
+            "options": [
+              {
+                "value": "image-first",
+                "label": "Image first"
+              },
+              {
+                "value": "text-first",
+                "label": "Text first"
+              }
+            ],
+            "default": "image-first",
+            "label": "Desktop layout",
+            "info": "Image first is the default mobile layout."
+          },
+          {
+            "type": "url",
+            "id": "image_link",
+            "label": "Link to"
+          },
+          {
+            "type": "header",
+            "content": "Content Text"
+          },
+          {
+            "type": "select",
+            "id": "text_align",
+            "options": [
+              {
+                "value": "",
+                "label": "Auto"
+              },
+              {
+                "value": "text-center",
+                "label": "Center"
+              }
+            ],
+            "label": "Align text",
+            "default": ""
+          },
+          {
+            "type": "html",
+            "id": "title_section",
+            "label": "Title",
+            "default": "Title"
+          },
+          {
+            "type": "color",
+            "id": "color_title",
+            "label": "Color title",
+            "default": "#222222"
+          },
+          {
+            "type": "html",
+            "id": "stitle_section",
+            "label": "Subtitle"
+          },
+          {
+            "type": "color",
+            "id": "color_sub_title",
+            "label": "Color sub title",
+            "default": "#222222"
+          },
+          {
+            "type": "html",
+            "id": "content_text",
+            "label": "Description",
+            "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          },
+          {
+            "type": "color",
+            "id": "color_desc",
+            "label": "Color description",
+            "default": "#666666"
+          },
+          {
+            "type": "header",
+            "content": "Button"
+          },
+          {
+            "type":"text",
+            "id":"name_btn",
+            "label": "Name button",
+            "default":"READ MORE<i class=\"d-icon-arrow-right\"><\/i>"
+          },
+          {
+            "type": "select",
+            "id": "style_btn",
+            "label": "Button Style",
+            "default": "btn-dark btn-outline",
+            "options": [
+              {
+                "value": "btn-primary",
+                "label": "Primary default",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-primary btn-outline",
+                "label": "Primary outline",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-secondary",
+                "label": "Secondary default",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-secondary btn-outline",
+                "label": "Secondary outline",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-white",
+                "label": "White default",
+                "group": "White"
+              },
+              {
+                "value": "btn-white btn-outline",
+                "label": "White outline",
+                "group": "White"
+              },
+              {
+                "value": "btn-dark",
+                "label": "Dark default",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-dark btn-outline",
+                "label": "Dark outline",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-underline btn-link",
+                "label": "Underline dark",
+                "group": "Underline"
+              },
+              {
+                "value": "btn-underline btn-white btn-link",
+                "label": "Underline white",
+                "group": "Underline"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "style_btn_rounded",
+            "label": "Button style radius",
+            "options": [
+              {
+                "value": "",
+                "label": "Square"
+              },
+              {
+                "value": "btn-rounded",
+                "label": "Rounded Corners"
+              },
+              {
+                "value": "btn-round",
+                "label": "Rounded"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "btn_shadow",
+            "label": "Use shadow for button?"
+          }
+        ]
+      },
+      {
+        "type": "cta",
+        "name": "Item cta",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Background image",
+            "info": "Size suggestion: 1920 x 497 pixels"
+          },
+          {
+            "type": "header",
+            "content": "Section title"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "range",
+            "id": "margin_btitle",
+            "min": 0,
+            "max": 90,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin bottom of title",
+            "default": 30
+          },
+          {
+            "type": "html",
+            "id": "title_cta",
+            "label": "Title",
+            "default": "SUBSCRIBE TO OUR <strong>NEWSLETTER<\/strong>"
+          },
+          {
+            "type": "html",
+            "id": "description_cta",
+            "label": "Description",
+            "default": "Start Shopping Right Now"
+          },
+          {
+            "type": "url",
+            "id": "link_cta",
+            "label": "Link to"
+          },
+          {
+            "type": "text",
+            "id": "btn_name_cta",
+            "label": "Name button",
+            "default": "Click Here"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image text + cta",
+        "category": "02. Section Image",
+        "blocks": [
+          {
+            "type": "item"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

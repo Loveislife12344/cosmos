@@ -1,0 +1,372 @@
+<!-- login-register-template.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+{%-render 'sc_css'-%}
+<div class="login-page {{width_section_}}">
+  <div class="content_{{section.id}}{%if section.settings.image %} bg-image lazyload{%endif%}"{%if section.settings.image  %} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+    <div class="section-width {{width_content_}}">
+      <div class="form-box">
+        {%- if template.name == 'login' or template.name == 'register' -%}
+        <div class="form-tab tab tab-nav-center">
+          <ul class="nav nav-tabs align-items-center" role="tablist">
+            {%- if template.name == 'login' -%}
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#signin" type="button" role="tab" aria-controls="signin" aria-selected="true">{{'customer.login.sign_in' | t}}</button>
+            </li>
+            <li class="nav-item disabled" style=""><button type="button" class="nav-link">or</button></li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">{{'customer.register.submit' | t}}</button>
+            </li>
+            {%- else -%}
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#signin" type="button" role="tab" aria-controls="signin" aria-selected="false">{{'customer.login.sign_in' | t}}</button>
+            </li>
+            <li class="nav-item disabled" style=""><button type="button" class="nav-link">or</button></li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="true">{{'customer.register.submit' | t}}</button>
+            </li>
+            {%- endif -%}
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade{% if template.name == 'login' %} active show{%- endif -%}" id="signin" role="tabpanel" aria-labelledby="">
+              {% form 'customer_login', id: 'CustomerLoginForm', class: 'needs-validation' %}
+              {{ form.errors | default_errors }}
+              <label for="singin-password" class="form-label">{{ 'customer.login.email' | t }}</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="singin-password" name="customer[email]" required="" aria-describedby="{{ 'customer.login.email' | t }}">
+              </div>
+              {%- if form.password_needed -%}
+              <label for="singin-password" class="form-label">{{ 'customer.login.password' | t }}</label>
+              <div class="input-group">
+                <input type="password" class="form-control" id="singin-password" name="customer[password]" required="" aria-describedby="{{ 'customer.login.password' | t }}">
+              </div>
+              {%- endif -%}
+              <div class="form-footer text-center">
+                <button type="submit" class="btn btn-primary btn-rounded btn-block">
+                  <span>{{ 'customer.login.sign_in' | t }}</span>
+                </button>
+                {%- if form.password_needed -%}
+                <a href="#recover" id="RecoverPassword" class="forgot-link _mt-1 _mb-1">{{ 'customer.login.forgot_password' | t }}</a>
+                {%- endif -%}
+              </div>
+              {% endform %}
+              {% form 'recover_customer_password', id: 'RecoverPasswordForm', class: 'd-none needs-validation' %}
+              {{ form.errors | default_errors }}
+              {% if form.posted_successfully? %}
+              <span class="d-none reset-password-success">{{ 'customer.recover_password.success' | t }}</span>
+              {% endif %}
+              <div class="form-group">
+                <label for="RecoverEmail">{{ 'customer.login.email' | t }}</label>
+                <input type="email" id="RecoverEmail" class="form-control" name="email" required="">
+              </div>
+              <div class="form-footer text-center">
+                <button type="submit" class="btn btn-primary btn-rounded btn-block">
+                  <span>{{ 'customer.recover_password.submit' | t }}</span>
+                </button>
+                <a href="#recover" id="HideRecoverPasswordLink" class="forgot-link _mt-2 _mb-1">{{ 'customer.recover_password.cancel' | t }}</a>
+              </div>
+              {% endform %}
+              {% if shop.checkout.guest_login %}
+              {% form 'guest_login' %}
+              <h2 class="h4" style="font-weight: 400;">{{ 'customer.login.guest_title' | t }}</h2>
+              <div class="form-footer text-center">
+                <button type="submit" class="btn btn-primary btn-rounded btn-block">
+                  <span>{{ 'customer.login.guest_continue' | t }}</span>
+                </button>
+              </div>
+              {% endform %}
+              {% endif %}
+            </div>
+            <div class="tab-pane fade{% if template.name == 'register' %} active show{%- endif -%}" id="register" role="tabpanel" aria-labelledby="">
+              {% form 'create_customer', class: 'needs-validation' %}
+              {{ form.errors | default_errors }}
+
+              <label for="register-email" class="form-label">{{ 'customer.login.email' | t }}</label>
+              <div class="input-group">
+                <input type="email" class="form-control" id="register-email" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} required="" aria-describedby="{{ 'customer.login.email' | t }}">
+              </div>
+
+              <label for="register-password" class="form-label">{{ 'customer.register.password' | t }}</label>
+              <div class="input-group">
+                <input type="password" class="form-control" id="register-password" name="customer[password]" required="">
+              </div>
+
+              <div class="form-check">
+                <input type="hidden" name="customer[accepts_marketing]" value="" />
+                <input class="form-check-input" id="register-subcrible" type="checkbox" name="customer[accepts_marketing]" checked="checked" />
+                <label class="form-check-label" for="register-policy">{{ 'customer.register.subcrible' | t }}</label>
+              </div>
+
+              <div class="form-footer agree_checkbox">
+                {%- if settings.terms_conditions_register -%}
+                <div class="form-check _mt-1 _mb-1">
+                  <input class="form-check-input kt_agree" type="checkbox" value="" id="register-policy" required="">
+                  <label class="form-check-label" for="register-policy">
+                    <div class="d-flex">{{settings.terms_and_privacy_conditions_register | replace: '<p>','' | replace: '</p>','' | html}}</div>
+                  </label>
+                </div>
+                {%- endif -%}
+                <button type="submit" class="btn btn-primary btn-rounded btn-block kt_agree_swich" data-layout="account">
+                  <span>{{ 'customer.register.submit' | t }}</span>
+                </button>
+              </div>
+              {% endform %}
+            </div>
+          </div>
+        </div>
+        {%- elsif template.name == 'reset_password' -%}
+        {% form 'reset_customer_password', id: 'CustomerResetForm', class: 'needs-validation' %}
+        <p class="text-center">{{ 'customer.reset_password.subtext' | t: email: email }}</p>
+        {{ form.errors | default_errors }}
+
+        <label for="singin-password" class="form-label">{{ 'customer.reset_password.password' | t }}</label>
+        <div class="input-group">
+          <input type="password" id="singin-password" class="form-control" name="customer[password]" required="">
+        </div>
+
+        <label for="singin-password_confirmation" class="form-label">{{ 'customer.reset_password.password_confirm' | t }}</label>
+        <div class="input-group">
+          <input type="password" id="singin-password_confirmation" class="form-control" name="customer[password_confirmation]" required="">
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="btn btn-primary btn-rounded">
+            <span>{{ 'customer.reset_password.submit' | t }}</span>
+          </button>
+        </div>
+        {% endform %}
+        {%- elsif template.name == 'activate_account' -%}
+        {% form 'activate_customer_password', id: 'CustomerActivateForm', class: 'needs-validation' %}
+        {{ form.errors | default_errors }}
+
+        <label for="singin-password" class="form-label">{{ 'customer.activate_account.password' | t }}</label>
+        <div class="input-group">
+          <input type="password" id="singin-password" class="form-control" name="customer[password]" required="">
+        </div>
+
+        <label for="singin-password_confirmation" class="form-label">{{ 'customer.activate_account.password_confirm' | t }}</label>
+        <div class="input-group">
+          <input type="password" id="singin-password_confirmation" class="form-control" name="customer[password_confirmation]" required="">
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="btn btn-primary btn-rounded">
+            <span>{{ 'customer.activate_account.password_confirm' | t }}</span>
+          </button>
+          <button type="submit" class="btn btn-primary btn-outline btn-rounded">
+            <span>{{ 'customer.activate_account.cancel' | t }}</span>
+          </button>
+        </div>
+        {% endform %}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Login & Register page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "w-100"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px",
+        "default": "175px 0 175px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      }
+    ]
+  }
+{% endschema %}
+
+{%-style-%}
+/* Login */
+.form-box {
+  max-width: 575px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  padding: 2.3125rem 1.25rem;
+  box-shadow: 0 3px 16px rgba(51, 51, 51, 0.1);
+}
+@media (min-width: 767px) {
+  .form-box {
+    padding: 2.3125rem 3.75rem 4rem;
+  }
+}
+.form-box .btn {
+  min-width: 7.1875rem;
+}
+.form-tab .nav-tabs {
+  border: none;
+  min-height: 1.875rem;
+}
+.form-tab .nav-item {
+  margin-right: 0;
+  padding: 0;
+  border: none;
+}
+.form-tab .nav-item .nav-link{
+  font-size: 1.125rem;
+  padding: 0;
+  border: none;
+  font-weight: 700;
+  color: #999;
+  -webkit-transition: color 0.3s, font-size 0.3s;
+  transition: color 0.3s, font-size 0.3s;
+}
+.form-tab .nav-item.disabled .nav-link{
+  padding: 0 0.5rem;
+  font-weight: 400;
+  color: #ccc;
+}
+.form-tab .nav-item .nav-link.active{
+  font-size: 1.875rem;
+}
+
+.form-tab .tab-content .tab-pane {
+  padding: 1.25rem 0 0;
+}
+.form-tab .form-group {
+  margin-bottom: 0.8125rem;
+}
+.form-tab .form-footer {
+  display: block;
+  padding-top: 6px;
+  padding-bottom: 1.875rem;
+  border-bottom: thin solid #ebebeb;
+  margin-bottom: 1.4375rem;
+}
+[dir="ltr"] .form-tab .form-footer .btn {
+  margin-right: 1rem;
+}
+[dir="rtl"] .form-tab .form-footer .btn {
+  margin-left: 1rem;
+}
+.form-tab .form-footer a {
+  color: inherit;
+  display: block;
+}
+.form-tab .form-footer a:hover, .form-tab .form-footer a:focus {
+  color: var(--primary);
+}
+.form-tab .form-footer a:not(.forgot-link) {
+  text-decoration: underline;
+}
+.form-tab .form-footer .custom-control {
+  margin: 0;
+}
+.form-choice {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+}
+.form-choice p {
+  margin-bottom: 1.6875rem;
+}
+.btn.btn-login {
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+  -ms-flex-align: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.85rem 1rem;
+  border: thin solid #ebebeb;
+  min-width: 0;
+}
+.btn.btn-login i {
+  text-align: initial;
+  display: inline-block;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  min-width: 1.25rem;
+}
+.btn.btn-login.btn-g i {
+  color: #cc3333;
+  min-width: 1.625rem;
+}
+.btn.btn-login.btn-f i {
+  color: #3366cc;
+}
+.btn.btn-login:hover, .btn.btn-login:focus {
+  background-color: #f5f6f9;
+}
+{%-endstyle-%}

@@ -1,0 +1,490 @@
+<!-- rd_prds_sc_grid.liquid -->
+{%- if template.name != 'collection' -%}
+  {%- liquid
+    capture st_card
+      echo settings.use_new_label
+      echo '|'
+      echo settings.new_day
+      echo '|'
+      echo settings.use_sale_label
+      echo '|'
+      echo settings.product_grid_layout
+      echo '|'
+      echo settings.qs_show_vars_list
+      echo '|'
+      echo settings.use_quickview
+      echo '|'
+      echo settings.use_wishlist
+      echo '|'
+      echo settings.use_compare
+      echo '|'
+      echo settings.use_countdown_grid
+      echo '|'
+      echo settings.countdown_grid_style
+      echo '|'
+      echo settings.use_vendor_grid
+      echo '|'
+      echo settings.use_review_grid
+      echo '|'
+      echo settings.use_add_to_cart_btn
+      echo '|'
+      echo settings.qs_hide_only_1_opt
+    endcapture
+    assign st_card = st_card | split: '|'  
+    
+    assign grid_ly = section.settings.product_grid_layout | default: st_card[3]
+
+    assign width_section = section.settings.width_section
+    assign width_content = section.settings.width_content
+    capture width_section_
+      if width_section == 'container-fluid wide' and width_content == false
+        echo 'w-100'
+      else
+        echo width_section
+      endif
+    endcapture
+    capture width_content_
+      if width_content and width_section == 'w-100'
+        echo 'container'
+      elsif width_section == 'container-fluid wide' and width_content == false
+        echo 'container-fluid wide'
+      else
+        echo 'w-100'
+      endif
+    endcapture
+    assign dir_body = settings.dir_body
+    assign cssAlign = 'left'
+    assign cssAlign_rev = 'right'
+    if dir_body == 'rtl'
+      assign cssAlign = 'right'
+      assign cssAlign_rev = 'left'
+    endif
+  -%}
+
+  {%-render 'sc_css'-%}
+  <div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}" {{ block.shopify_attributes }} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+  {%-for block in section.blocks-%}
+    <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} {{ block.shopify_attributes }}>      
+      <div class="section-width {{width_content_}}"> 
+        {%- render 'kt_sc_title', block: block -%}
+        {%- case block.settings.limit_per_row -%}
+        {%- when 2 -%}
+        {%- assign cols = ' row-cols-xs-2' -%}
+        {%- when 3 -%}
+        {%- assign cols = ' row-cols-xs-2 row-cols-sm-3' -%}
+        {%- when 4 -%}
+        {%- assign cols = ' row-cols-xs-2 row-cols-sm-3 row-cols-lg-4' -%}
+        {%- when 5 -%}
+        {%- assign cols = ' row-cols-xs-2 row-cols-sm-3 row-cols-lg-5' -%}
+        {%- when 6 -%}
+        {%- assign cols = ' row-cols-xs-2 row-cols-sm-3 row-cols-md-5 row-cols-lg-6' -%}
+        {%- endcase -%}
+        {%- assign collection = collections[block.settings.products] -%}
+        {%-if collection.title != blank -%}
+          <div class="product-list-grid p-style-{{grid_ly}} row {{cols}} justify-content-center{%if section.settings.use_nospace%} gx-0{%endif%}{% if section.settings.use_lazyload %} lazyload loadvariant{% endif %}" data-include="{{collection.url}}/?section_id={{section.id}}&q={{forloop.index0}}" style="--bs-gutter-y: {{block.settings.range_row}}px">
+            {%- if section.settings.use_lazyload -%}
+              {%-for i in (1..block.settings.limit)-%}
+              <div class="grid-item col"><div class="animated-background aspectRatio mb-2"></div><div class="animated-background box-line-sm"></div><div class="animated-background box-line-xs mb-3i"></div></div>
+              {%-endfor-%}
+            {%- else -%}
+              {%-for product in collection.products limit: block.settings.limit-%}
+              <div class="grid-item col">
+                {%- render "product-grid-item", product: product, grid_layout: grid_ly, st_card: st_card -%}
+              </div>
+              {%-endfor-%}
+            {%- endif -%}
+          </div>
+          {%- if collection.all_products_count > block.settings.limit and block.settings.load_btn -%}
+          <div class="col-lg-12 p-0 text-center">
+            <a class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} button-more" href="{{collection.url}}">{{block.settings.name_btn}}</a>
+          </div>
+          {%- endif -%}
+        {%- else -%}
+          <div class="product-list-grid p-style-{{grid_ly}} row {{cols}} justify-content-center{%if section.settings.use_nospace%} gx-0{%endif%}">
+            {%-for i in (1..block.settings.limit) -%}
+            <div class="grid-item col">
+              {%- render "product-grid-item", product: product, grid_layout: grid_ly, st_card: st_card -%}
+            </div>
+            {%-endfor-%}
+          </div>
+          {%- if block.settings.load_btn -%}
+          <div class="col-lg-12 p-0 text-center">
+            <a class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%} button-more" href="#">{{block.settings.name_btn}}</a>
+          </div>
+          {%- endif -%}
+        {%-endif-%}
+      </div>
+    </div>
+  {%- endfor-%}
+  </div>
+{%- else -%}
+<!--lz_sc-->
+{%- liquid
+  capture st_card
+    echo settings.use_new_label
+    echo '|'
+    echo settings.new_day
+    echo '|'
+    echo settings.use_sale_label
+    echo '|'
+    echo settings.product_grid_layout
+    echo '|'
+    echo settings.qs_show_vars_list
+    echo '|'
+    echo settings.use_quickview
+    echo '|'
+    echo settings.use_wishlist
+    echo '|'
+    echo settings.use_compare
+    echo '|'
+    echo settings.use_countdown_grid
+    echo '|'
+    echo settings.countdown_grid_style
+    echo '|'
+    echo settings.use_vendor_grid
+    echo '|'
+    echo settings.use_review_grid
+    echo '|'
+    echo settings.use_add_to_cart_btn
+    echo '|'
+    echo settings.qs_hide_only_1_opt
+  endcapture
+  assign st_card = st_card | split: '|'
+  
+  assign grid_ly = section.settings.product_grid_layout | default: st_card[3]
+-%}
+  {% assign i = canonical_url | split: 'q=' | last | plus: 0 %}
+  {%-assign block = section.blocks[i] -%}
+  {%-for product in collections[block.settings.products].products limit: block.settings.limit-%}
+  <div class="grid-item">
+    {%- render "product-grid-item", product: product, grid_layout: grid_ly, st_card: st_card -%}
+  </div>
+  {%-endfor-%}
+<!--lz_sc-->
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Products grid",
+    "class": "md_prds_sc rd_prds_sc_grid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Products (grid)",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "w-100"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type":"checkbox",
+        "id": "use_lazyload",
+        "label": "Use lazyload?",
+        "info": "Help speed up page loading."
+      },
+      {
+        "type":"checkbox",
+        "id": "use_nospace",
+        "label": "No space?",
+        "info": "The product cards will be close together."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Section title"
+          },
+          {
+            "type": "select",
+            "id": "title_style",
+            "options": [
+              {
+                "value": "auto",
+                "label": "Auto",
+                "group": "Simple"
+              },
+              {
+                "value": "center",
+                "label": "Center",
+                "group": "Simple"
+              },
+              {
+                "value": "cross",
+                "label": "Auto",
+                "group": "Cross"
+              },
+              {
+                "value": "center-cross",
+                "label": "Center",
+                "group": "Cross"
+              },
+              {
+                "value": "custom-cross",
+                "label": "Custom",
+                "group": "Cross"
+              },
+              {
+                "value": "underline",
+                "label": "Simple",
+                "group": "Underline"
+              },
+              {
+                "value": "active-underline",
+                "label": "Active",
+                "group": "Underline"
+              },
+              {
+                "value": "custom-underline",
+                "label": "Custom",
+                "group": "Underline"
+              }
+            ],
+            "label": "Title Styles",
+            "default": "auto"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "stitle",
+            "label": "Sub title"
+          },
+          {
+            "type": "url",
+            "id": "link_to",
+            "label": "Link to"
+          },
+          {
+            "type": "textarea",
+            "id": "name_link",
+            "label": "Name link"
+          },
+          {
+            "type": "range",
+            "id": "margin_btitle",
+            "min": 0,
+            "max": 90,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin bottom of title",
+            "default": 30
+          },
+          {
+            "type": "header",
+            "content": "Products settings"
+          },
+          {
+            "type": "collection",
+            "id": "products",
+            "label": "Choose collection"
+          },
+          {
+            "type": "range",
+            "id": "limit_per_row",
+            "min": 2,
+            "max": 6,
+            "step": 1,
+            "label": "Products per row",
+            "default": 4
+          },
+          {
+            "type": "range",
+            "id": "limit",
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "label": "Limit display product",
+            "default": 8
+          },
+          {
+            "type": "range",
+            "id": "range_row",
+            "min": 20,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "label": "Margin bottom grid product",
+            "default": 20
+          },
+          {
+            "type": "header",
+            "content": "Button loadmore"
+          },
+          {
+            "type": "checkbox",
+            "id": "load_btn",
+            "label": "Use load button?",
+            "default": false
+          },
+          {
+            "type": "select",
+            "id": "style_btn",
+            "label": "Button Style",
+            "default": "btn-dark btn-outline",
+            "options": [
+              {
+                "value": "btn-primary",
+                "label": "Primary default",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-primary btn-outline",
+                "label": "Primary outline",
+                "group": "Primary"
+              },
+              {
+                "value": "btn-secondary",
+                "label": "Secondary default",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-secondary btn-outline",
+                "label": "Secondary outline",
+                "group": "Secondary"
+              },
+              {
+                "value": "btn-white",
+                "label": "White default",
+                "group": "White"
+              },
+              {
+                "value": "btn-white btn-outline",
+                "label": "White outline",
+                "group": "White"
+              },
+              {
+                "value": "btn-dark",
+                "label": "Dark default",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-dark btn-outline",
+                "label": "Dark outline",
+                "group": "Dark"
+              },
+              {
+                "value": "btn-underline btn-link",
+                "label": "Underline dark",
+                "group": "Underline"
+              },
+              {
+                "value": "btn-underline btn-white btn-link",
+                "label": "Underline white",
+                "group": "Underline"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "style_btn_rounded",
+            "label": "Button style radius",
+            "options": [
+              {
+                "value": "",
+                "label": "Square"
+              },
+              {
+                "value": "btn-rounded",
+                "label": "Rounded Corners"
+              },
+              {
+                "value": "btn-round",
+                "label": "Rounded"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "btn_shadow",
+            "label": "Use shadow for button?"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Products (grid)",
+        "category": "03. Section products",
+        "blocks": [
+          {
+            "type": "item"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

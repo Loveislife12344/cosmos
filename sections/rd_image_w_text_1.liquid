@@ -1,0 +1,404 @@
+<!-- rd_image_w_text_1.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+{%-render 'sc_css'-%}
+<div data-section-id="{{ section.id }}" id="Banner-{{ section.id }}" data-section-type="banner-section" class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">      
+    <div class="section-width {{width_content_}}">
+      {%- for block in section.blocks -%}
+      <div class="row align-items-center {{block.settings.layout}} {{block.settings.text_align}}{%unless forloop.first%} _mt-5{%endunless%}">
+        <div class="col-12 col-md-{%if block.settings.layout == 'image-first' %}5{%else%}6{%endif%} order-md-last _mb-2 mb-md-0">
+          {%- if block.settings.title_section != blank -%}
+            <div class="section-title w-100">
+              <h3 class="sc-title">
+                <span>{{block.settings.title_section}}</span>
+                {%-if block.settings.stitle_section != blank-%}
+                <span class="d-block sub-title fw-normal">{{block.settings.stitle_section}}</span>
+                {%-endif-%}
+              </h3>
+            </div>
+          {%- endif -%}
+          {%- if block.settings.content_text != blank -%}
+          <div class="content-text _mb-4" style="--text:{{block.settings.color_desc}}">{{block.settings.content_text}}</div>
+          {%- endif -%}
+          {%- if block.settings.name_btn != blank -%}
+          <a href="{{block.settings.image_link | default: routes.root_url}}" class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%}" aria-label="{{block.settings.name_btn | strip_html}}">{{block.settings.name_btn}}</a>
+          {%- endif -%}
+        </div>
+          {%- assign image_item = block.settings.image_banner -%}
+          {%- assign width = image_item.width | default: 580.00 -%}{%-assign height = image_item.height | default: 507.00 | plus: 0.00 -%}
+          {%- assign img_url = image_item | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        <div class="image_block col-12 col-md-{%if block.settings.layout == 'image-first' %}7{%else%}6{%endif%} mb-4">
+          <a href="{{block.settings.image_link | default: routes.root_url}}" class="img__banner kt_media --{{block.settings.height}}" aria-label="{{block.settings.image_banner.alt | default: shop.name | escape}}" style="--img_w: {{width}}px;--img_h: {{height}}px;">
+            <figure style="{% if block.settings.height == 'adapt' and block.settings.image_banner != blank %}padding-bottom: {{ 1 | divided_by: block.settings.image_banner.aspect_ratio | times: 100 }}%;{% endif %}">
+              {%- if block.settings.image_banner != blank -%}
+                <img width="{{block.settings.image_banner.width}}" height="{{block.settings.image_banner.height}}" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ img_url }}" data-widths="[360, 535, 720, 940, 1070]" data-aspectratio="{{ block.settings.image_banner.aspect_ratio }}" data-sizes="auto" alt="{{ block.settings.image_banner.alt | escape }}">
+              {%- else -%}
+                {{- 'image' | placeholder_svg_tag: 'placeholder-svg' -}}
+              {%- endif -%}
+            </figure>
+          </a>
+        </div>
+      </div>
+      {%- endfor -%}
+		</div>
+	</div>
+</div>
+{%- if section.settings.css != blank -%}
+{%- style-%}
+{%- assign section_id = 'content_' | append: section.id -%}
+{{- section.settings.css | replace: 'section_id', section_id -}}
+{%- endstyle-%}
+{%- endif -%}
+<noscript class="banner-css" data-section-type="rd_image_w_text_1">
+{%-capture banner-css-%}
+  {%style%}  
+  .rd_image_w_text_1 .section-title .sub-title {
+    font-size: 1.125rem;
+    letter-spacing: -.03em;
+    line-height: 2;
+    margin-bottom: .2rem;
+  }
+  .rd_image_w_text_1 .sc-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.875rem;
+    letter-spacing: -1.8px;
+    margin-bottom: 1.375rem;
+  }
+  .rd_image_w_text_1 .content-text{
+    margin-bottom: 2.625rem;
+    letter-spacing: -.036em;
+    line-height: 1.75;
+  }
+  @media (min-width:576px){
+    .md_banner_with_text_1 .btn:before {
+      font-size: 1.75rem;
+      margin: 0 5px;
+    }
+  }
+  .rd_image_w_text_1 .kt_media {
+    background-color: transparent;
+    min-height: 100%;
+  }
+  .rd_image_w_text_1 .kt_media.--adapt img{
+    height: auto;
+  }
+  .rd_image_w_text_1 .kt_media.--small {
+    height: 12.125rem;
+  }
+  .rd_image_w_text_1 .kt_media.--large {
+    height: 27.1875rem;
+  }
+  @media screen and (min-width: 768px){
+    .rd_image_w_text_1 .text-first>div:first-child {
+      padding-left: 3.75rem;
+    }
+    .rd_image_w_text_1 .text-first .image_block {
+      order: 6!important;
+    }
+    .rd_image_w_text_1 .text-first .image_block .kt_media {
+      margin-left: auto;
+    }
+    .rd_image_w_text_1 .kt_media{
+      max-width: var(--img_w);
+    }
+    .rd_image_w_text_1 .kt_media.--small {
+      height: 19.625rem;
+    }
+    .rd_image_w_text_1 .kt_media.--large {
+      height: 43.4375rem;
+    }
+  }
+  {%endstyle%}
+{%-endcapture-%}
+{{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+</noscript>
+{% schema %}
+  {
+    "name": "With text 1 (text side)",
+    "class": "rd_image_w_text_1",    
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Image with text 1",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "container"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      },
+      {
+        "type": "header",
+        "content": "Custom CSS"
+      },
+      {
+        "type": "html",
+        "id": "css",
+        "label": "Css for section",
+        "info": "Key start: .section_id"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "1",
+        "name": "With text",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Banner"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_banner",
+            "label": "Image banner",
+            "info": "Size suggestion: 580 x 507 px"
+          },
+          {
+            "id": "height",
+            "type": "select",
+            "options": [
+              {
+                "value": "adapt",
+                "label": "Adapt to image"
+              },
+              {
+                "value": "small",
+                "label": "Small"
+              },
+              {
+                "value": "large",
+                "label": "Large"
+              }
+            ],
+            "default": "adapt",
+            "label": "Image ratio"
+          },
+          {
+            "id": "layout",
+            "type": "select",
+            "options": [
+              {
+                "value": "image-first",
+                "label": "Image first"
+              },
+              {
+                "value": "text-first",
+                "label": "Text first"
+              }
+            ],
+            "default": "image-first",
+            "label": "Desktop layout",
+            "info": "Image first is the default mobile layout."
+          },
+          {
+            "type": "url",
+            "id": "image_link",
+            "label": "Link to"
+          },
+          {
+            "type": "header",
+            "content": "Content Text"
+          },
+          {
+            "type": "select",
+            "id": "text_align",
+            "options": [
+              {
+                "value": "",
+                "label": "Auto"
+              },
+              {
+                "value": "text-center",
+                "label": "Center"
+              }
+            ],
+            "label": "Align text",
+            "default": ""
+          },
+          {
+            "type": "html",
+            "id": "title_section",
+            "label": "Title",
+            "default": "Title"
+          },
+          {
+            "type": "html",
+            "id": "stitle_section",
+            "label": "Subtitle",
+            "default": "Subtitle"
+          },
+          {
+            "type": "html",
+            "id": "content_text",
+            "label": "Description",
+            "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          },
+          {
+            "type": "header",
+            "content": "Color"
+          },
+          {
+            "type": "color",
+            "id": "color_title",
+            "label": "Color title",
+            "default": "#222222"
+          },
+          {
+            "type": "color",
+            "id": "color_sub_title",
+            "label": "Color sub title",
+            "default": "#222222"
+          },
+          {
+            "type": "color",
+            "id": "color_desc",
+            "label": "Color description",
+            "default": "#666666"
+          },
+          {
+            "type": "header",
+            "content": "Button"
+          },
+          {
+            "type":"text",
+            "id":"name_btn",
+            "label": "Name button",
+            "default":"Visit Our Store<i class=\"d-icon-arrow-right\"><\/i>"
+          },
+          {
+            "type": "textarea",
+            "id": "style_btn",
+            "label": "Button style",
+            "default": "btn-dark btn-link btn-underline"
+          },
+          {
+            "type": "select",
+            "id": "style_btn_rounded",
+            "label": "Button style radius",
+            "options": [
+              {
+                "value": "",
+                "label": "Square"
+              },
+              {
+                "value": "btn-rounded",
+                "label": "Rounded Corners"
+              },
+              {
+                "value": "btn-round",
+                "label": "Rounded"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "btn_shadow",
+            "label": "Use shadow for button?"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with text 1 (text side)",
+        "category": "02. Section Image"
+      }
+    ]
+  }
+{% endschema %}

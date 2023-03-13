@@ -1,0 +1,183 @@
+{%-layout none-%}
+<table class="table table-borderless table-cart mt-1">
+  <thead>
+    <tr>
+      <th>{{ 'cart.label.product' | t }}</th>
+      <th>{{ 'cart.label.price' | t }}</th>
+      <th>{{ 'cart.label.quantity' | t }}</th>
+      <th>{{ 'cart.label.total' | t }}</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- assign gift_wrap = false -%}
+    {%- for item in cart.items -%}
+    {%- if settings.use_gift_wrapping and item.product.handle == settings.gift_wrap_product -%}{%- assign gift_wrap = item -%}{%-continue-%}{%- endif -%}
+    <tr class="mb-2 mb-md-0">
+      <td class="product-col">
+        <div class="product w-100 d-flex align-items-start align-items-md-center">
+          <figure class="product-media">
+            <a href="{{ item.url }}">
+              {%- if item.image -%}
+                <img class="cart__image" alt="{{ item.title | escape |strip_html }}" src="{{ item.image | img_url: '104x120', crop:'top'}}">
+              {%- else-%}
+                <img class="cart__image" alt="{{ item.title | escape |strip_html }}" src="{{ 'noimage.gif'| asset_img_url: '104x120', crop:'top' }}">
+              {%- endif -%}
+            </a>
+          </figure>
+          <div class="cart__meta">
+            <h3 class="product-title">
+              <a href="{{ item.url }}">{{ item.product.title }}</a>
+            </h3>
+            {% unless item.variant.title contains 'Default' %}
+            <div class="cart__meta-text">
+              {% for option in item.product.options %}
+              {{ option }}: {{ item.variant.options[forloop.index0] }}<br>
+              {% endfor %}
+            </div>
+            {% endunless %}
+            {%- assign property_size = item.properties | size -%}
+            {% if property_size > 0 %}
+              <div class="cart__meta-text">
+                {% for p in item.properties %}
+                  {% unless p.last == blank %}
+                      {% if p.last contains 'h5' %}
+                        <div class="bundle_properties">{{ p.first }}: {{ p.last}}</div>
+                      {% else %}
+                    {{ p.first }}:
+                    {% if p.last contains '/uploads/' %}
+                      <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                    {% else %}
+                      {{ p.last}}                    
+                    {% endif %}
+                    {% endif %}
+                  {% endunless %}
+                {% endfor %}
+              </div>
+            {% endif %}
+            <div class="cart__meta-price d-md-none">
+              <span>{{ item.line_price | money }}</span>
+              {% if item.line_level_discount_allocations.size > 0 %}
+              <span class="question_mark position-relative"> (?)
+              {% for discount_allocation in item.line_level_discount_allocations %}
+                <div class="info-discount position-absolute text-uppercase">
+                  {{ discount_allocation.discount_application.title }} -{{ discount_allocation.amount | money }}
+                </div>
+              {%- endfor -%}
+              </span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </td>
+      <td class="price-col">
+        {{ item.original_price | money }}
+      </td>
+      <td class="quantity-col quantity">
+        <div class="cart-product-quantity">
+          <div class="control">
+            <button type="button" class="btn-number qtyminus"></button>
+            <input type="text" data-step="1" data-min="1" name="updates[{{ item.id }}]" value="{{ item.quantity }}" class="input-qty input-text qty rounded" size="4" pattern="[0-9]*">
+            <button type="button" class="btn-number qtyplus"></button>
+          </div>
+        </div>
+      </td>
+      <td class="total-col">
+        <span>{{ item.original_line_price | money }}</span>
+        {% if item.line_level_discount_allocations.size > 0 %}
+        <div class="text-nowrap">
+          {% for discount_allocation in item.line_level_discount_allocations %}
+          <span>-{{ discount_allocation.amount | money }}</span>
+          <span class="question_mark position-relative"> (?)
+            <div class="info-discount position-absolute text-uppercase">
+              {{ discount_allocation.discount_application.title }}
+            </div>
+          </span>
+        {%- endfor -%}
+        </div>
+        {% endif %}
+      </td>
+      <td class="remove-col">
+        <a href="{{routes.cart_change_url}}?line={{ forloop.index }}&amp;quantity=0" class="btn-remove" title="{{ 'cart.general.remove' | t }}">
+          <i class="d-icon-close" aria-hidden="true"></i>
+        </a>
+      </td>
+    </tr>
+    {%- endfor -%}
+  </tbody>
+</table>
+<div class="cart-bottom mb-2i">
+  {% if settings.cart_notes_enable %}
+  <div class="cart-note w-100">
+    <div class="input-group">
+      <textarea rows="3" name="note" class="form-control" placeholder="{{'cart.general.note' | t}}">{{ cart.note }}</textarea>
+    </div>
+  </div>
+  {% endif %}
+</div>
+<div class="cart-bottom mb-2i row">
+  {%- if settings.use_gift_wrapping and settings.gift_wrap_product != blank -%}
+  {%- assign gift_prd = all_products[settings.gift_wrap_product] -%}
+  <div id="is-a-gift" class="col-12">
+    <input type="hidden" name="updates[{{ gift_wrap.id | default: gift_prd.selected_or_first_available_variant.id }}]" value="{%-if gift_wrap-%}1{%-else-%}0{%-endif-%}" id="gift-wrap_product">
+    <div class="row align-items-center">
+      {%- if gift_wrap != false -%}
+        <div class="col p-gift-image">
+          {{gift_wrap.variant.featured_image | img_url: '240x' | img_tag }}
+        </div>
+      {%- endif -%}
+      <div class="col">
+        {%- if gift_wrap == false -%}
+        <div class="form-check">
+          <input class="form-check-input{%if gift_prd.has_only_default_variant == false%} kt__edit-opts{%endif%}" type="checkbox" name="attributes[gift-wrapping]" value="" id="gift-wrapping"{% if gift_wrap != false %} checked="checked"{%endif%} data-view="{{ gift_prd.url }}" data-vrid="{{gift_wrap.id | default: gift_prd.selected_or_first_available_variant.id}}" data-pid="{{gift_prd.id}}" data-qty="1" data-bs-toggle="offcanvas" data-bs-target="#editOptsOffcanvas" aria-controls="editOptsOffcanvas">
+          {%- assign p-gift-price = gift_wrap.price | default: gift_prd.selected_or_first_available_variant.price | money -%}
+          <label class="form-check-label" for="gift-wrapping">{{'cart.gift_wrap.notices_html' | t | replace : '#money', p-gift-price}}</label>
+        </div>
+        {%- endif -%}
+        <div class="p-gift-info">
+          {%- if gift_wrap != false -%}
+            <h3 class="p-gift-title">{{ gift_prd.title }}
+              {%-if gift_prd.has_only_default_variant == false-%} - <span class="p-gift-variant kt__edit-opts" data-view="{{ gift_prd.url }}" data-vrid="{{gift_wrap.id | default: gift_prd.selected_or_first_available_variant.id}}" data-pid="{{gift_prd.id}}" data-qty="1" data-bs-toggle="offcanvas" data-bs-target="#editOptsOffcanvas" aria-controls="editOptsOffcanvas">{{ gift_wrap.variant.title }}<i class="far fa-edit" aria-hidden="true"></i></span>{%-endif-%}
+            </h3>
+            <span class="p-gift-price text-primary">{{ gift_wrap.original_price | money }}</span>
+            {%- if settings.ajax_cart_page -%}
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="attributes[gift-wrapping]" value="" id="gift-wrapping"{% if gift_wrap != false %} checked="checked"{%endif%}>
+              <label class="form-check-label" for="gift-wrapping">{{'cart.general.remove' | t }}</label>
+            </div>
+            {%-else-%}
+              <a href="{{routes.cart_change_url}}?line={{ cart.count | plus: 1 }}&amp;quantity=0" class="remove" title="{{ 'cart.general.remove' | t }}">
+                <p class="m-0">{{'cart.general.remove' | t }}</p>
+              </a>
+            {%-endif-%}
+          {%-endif-%}
+        </div>
+      </div>
+    </div>
+    {%- if gift_wrap != false and settings.use_gift_message-%}
+    <div class="form-group mt-1">
+      <textarea name="attributes[gift-note]" class="form-control" id="gift-note" placeholder="{{'cart.gift_wrap.input_placeholder' | t }}" rows="3" style="min-height: auto;">{{cart.attributes.gift-note}}</textarea>
+    </div>
+    {%-endif-%}
+  </div>
+  {%- endif -%}
+  {%- unless settings.ajax_cart_page -%}
+  <div class="col-12 col-md-4 ml-auto">
+    <button type="submit" class="btn btn-outline-dark-2"><span>{{'cart.general.update' | t}}</span><i class="d-icon-refresh"></i></button>
+  </div>
+  {%- endunless -%}
+</div>
+<!-- summary-discounts -->
+{%- if cart.cart_level_discount_applications != blank -%}
+  <td>{{'cart.summary_box.discount' | t}}:</td>
+  <td class="text-nowrap">
+  {%- for discount_application in cart.cart_level_discount_applications -%}
+    <span>-{{ discount_application.total_allocated_amount | money }}</span>
+    <span class="question_mark position-relative"> (?)
+      <div class="info-discount position-absolute text-uppercase">
+        {{ discount_application.title }}
+      </div>
+    </span>
+  {%- endfor -%}
+  </td>
+{%- endif -%}

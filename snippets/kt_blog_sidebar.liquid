@@ -1,0 +1,99 @@
+{%- for block in section.blocks -%}
+  {%- if block.type == 'search' -%}
+    <div class="widget widget-search">
+      <h3 class="widget-title d-none">{{'blogs.sidebar.title_search' | t}}</h3>
+      <form action="{{routes.search_url}}">
+        <input type="search" class="form-control rounded-3" name="q" placeholder="{{'blogs.sidebar.placeholder_search' | t}}" required="">
+        <input type="hidden" name="type" value="article">
+        <input type="hidden" name="options[prefix]" value="last">
+        <button type="submit" class="btn"><i class="d-icon-search"></i></button>
+      </form>
+    </div>
+  {%- elsif block.type == 'linklist' -%}
+    <div class="widget widget-cats">
+      <h3 class="widget-title">{{ 'blogs.sidebar.title_categories' | t }}</h3>
+      <ul class="widget-body list-unstyled">
+        {%- assign list_categories_linklist = linklists[block.settings.linklist].links -%}
+        {%- for lin_1 in list_categories_linklist -%}
+        <li class="level-1{%if lin_1.links.size > 0%} level-has-child{%endif%}{% if lin_1.active %} current-cat showAny{% endif %}{%if forloop.first%} opened{%endif%}">
+          <a class="custom-control custom-checkbox"{% if lin_1.active %} href="javascript:void(0)"{%else%} href="{{lin_1.url | default: 'javascript:void(0)'}}"{% endif %}>
+            <span class="custom-control-label">{{lin_1.title}}</span>
+            {%if lin_1.links.size > 0%}<i class="fas fa-chevron-down"></i>{%endif%}
+          </a>
+          {% if lin_1.links.size == 0-%}{%-continue-%}{%- endif -%}
+          <ul class="child_link list-unstyled">
+            {% for lin_2 in lin_1.links-%}
+              <li class="level-2{%if lin_2.links.size > 0%} level-has-child{%endif%}{% if lin_2.active %} current-cat{% endif %}">
+                <a class="custom-control custom-checkbox"{% if lin_2.active %} href="javascript:void(0)"{%else%} href="{{lin_2.url | default: 'javascript:void(0)'}}"{% endif %}>
+                  <span class="custom-control-label">{{lin_2.title}}</span>
+                  {%if lin_2.links.size > 0%}<i class="fas fa-chevron-down"></i>{%endif%}
+                </a>
+                {% if lin_2.links.size == 0-%}{%-continue-%}{%- endif -%}
+                <ul class="child_link list-unstyled">
+                  {% for lin_3 in lin_2.links-%}
+                    <li class="level-3{% if lin_3.active %} current-cat{% endif %}">
+                      <a class="custom-control custom-checkbox"{% if lin_3.active %} href="javascript:void(0)"{%else%} href="{{lin_3.url | default: 'javascript:void(0)'}}"{% endif %}>
+                        <span class="custom-control-label">{{lin_3.title}}</span>
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- elsif block.type == 'recent_posts' -%}
+    <div class="widget"> 
+      <h3 class="widget-title">{{ 'blogs.sidebar.title_popular_post' | t }}</h3>
+      <ul class="widget-body posts-list list-unstyled">
+        {%- for article_ in blog.articles limit: 3 -%}
+        {%- unless article_.id == article.id -%}
+        <li>
+          <figure>
+            <a href="{{ article_.url }}" class="rounded-3 overflow-hidden">
+              <img src="{{ article_.image | img_url: '200x200', crop: 'center' }}">
+            </a>
+          </figure>
+          <div>
+            <span>{{ article_.published_at | date: "%b %d, %Y" }}</span>
+            <h4><a href="{{ article_.url }}">{{ article_.title | truncatewords: 5 }}</a></h4>
+          </div>
+        </li>        
+        {%- endunless -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- elsif block.type == 'sb_banner' and block.settings.img != blank -%}
+    <div class="widget widget-banner-sidebar text-center">
+      <div class="banner-sidebar widget-body">
+        <a href="{{block.settings.url}}"><img src="{{block.settings.img|img_url:'master'|img_tags}}"></a>
+      </div>
+    </div>
+  {%- elsif block.type == 'sb_about' -%}
+    <div class="widget widget-text">
+      <h3 class="widget-title">{{ 'blogs.sidebar.title_about_blog' | t }}</h3>
+      <div class="widget-body widget-text-content">
+        <p>{{block.settings.html}}</p>
+      </div>
+    </div>
+  {%- elsif block.type == 'sb_tags' -%}
+    <div class="widget widget_tag_cloud">
+      <h3 class="widget-title">{{ 'blogs.sidebar.title_tags' | t }}</h3>
+      <div class="widget-body tagcloud">
+      {%-if blog.settings.blog_tags_ != blank-%}                
+        {%-assign tags = blog.settings.blog_tags_ | split: ', '-%}
+        {%- for tag in tags -%}
+        {{ tag | link_to_tag: tag }}
+        {%- endfor -%}
+      {%-else-%}
+        {%- for tag in blog.all_tags limit: 15 -%}
+        {{ tag | link_to_tag: tag }}
+        {%- endfor -%}
+      {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+{%- endfor -%}

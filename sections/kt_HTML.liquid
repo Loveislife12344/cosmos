@@ -1,0 +1,343 @@
+<!-- kt_HTML.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+
+{%-render 'sc_css'-%}
+<div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">   
+    <div class="section-width {{width_content_}}">
+      {%- if section.settings.border_top -%}<div class="w-100 border-top" style="border-top-color: {{section.settings.border_color}} !important"></div>{%- endif -%}
+      <div class="row{% if width_section_ == 'w-100' and width_content_ == 'w-100' %} gx-0{% endif %}">
+        {%- for block in section.blocks -%}
+          {%-case block.type-%}
+            {%-when 'title'-%}
+              {%- render 'kt_sc_title' with block as block-%}
+            {%-when 'content1'-%}
+              <div class="col-12">{{pages[section.settings.page].content | html}}</div>
+            {%-when 'content2'-%}
+              <div class="col-12">{{block.settings.text | html}}</div>
+            {%-when 'content3'-%}
+              {%- assign img_url = block.settings.image_banner | img_url: 'master' -%}
+              <div class="col-12">
+                <a href="{{block.settings.link | default: routes.root_url}}">
+                  <img src="{{block.settings.image_banner | img_url:'master'}}" alt="{{block.settings.image_banner.alt}}">
+                </a>
+              </div>
+          {%-endcase-%}
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.border_bottom -%}<div class="w-100 border-bottom" style="border-bottom-color: {{section.settings.border_color}} !important"></div>{%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section Customize",
+    "class": "kt_HTML",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Section Customize",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "container"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      },
+      {
+        "type": "header",
+        "content": "Section title"
+      },
+      {
+        "type": "text",
+        "id": "title_section",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "stitle_section",
+        "label": "Subtitle"
+      },
+      {
+        "type":"checkbox",
+        "id": "reverse",
+        "label": "Reverse title and subtitle?"
+      },
+      {
+        "type": "select",
+        "id": "title_align",
+        "options": [
+          {
+            "value": "",
+            "label": "Auto"
+          },
+          {
+            "value": "text-center",
+            "label": "Center"
+          }
+        ],
+        "label": "Align title",
+        "default": ""
+      },
+      {
+        "type": "url",
+        "id": "link_to",
+        "label": "Link to"
+      },
+      {
+        "type": "text",
+        "id": "name_link",
+        "label": "Name link"
+      },
+      {
+        "type": "range",
+        "id": "margin_btitle",
+        "min": 0,
+        "max": 90,
+        "step": 2,
+        "label": "Margin bottom of title",
+        "default": 30
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "border_top",
+        "label": "Use border top",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "border_bottom",
+        "label": "Use border bottom"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "label": "Border color",
+        "default": "#ebebeb"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "title",
+        "name": "Item title",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "select",
+            "id": "title_style",
+            "options": [
+              {
+                "value": "auto",
+                "label": "Auto",
+                "group": "Simple"
+              },
+              {
+                "value": "center",
+                "label": "Center",
+                "group": "Simple"
+              },
+              {
+                "value": "cross",
+                "label": "Auto",
+                "group": "Cross"
+              },
+              {
+                "value": "center-cross",
+                "label": "Center",
+                "group": "Cross"
+              },
+              {
+                "value": "custom-cross",
+                "label": "Custom",
+                "group": "Cross"
+              },
+              {
+                "value": "underline",
+                "label": "Simple",
+                "group": "Underline"
+              },
+              {
+                "value": "active-underline",
+                "label": "Active",
+                "group": "Underline"
+              },
+              {
+                "value": "custom-underline",
+                "label": "Custom",
+                "group": "Underline"
+              }
+            ],
+            "label": "Title Styles",
+            "default": "auto"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "stitle",
+            "label": "Sub title"
+          },
+          {
+            "type": "url",
+            "id": "link_to",
+            "label": "Link to"
+          },
+          {
+            "type": "textarea",
+            "id": "name_link",
+            "label": "Name link"
+          },
+          {
+            "type": "range",
+            "id": "margin_btitle",
+            "min": 0,
+            "max": 90,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin bottom of title",
+            "default": 30
+          }
+        ]
+      },
+      {
+        "type": "content1",
+        "name": "Item page",
+        "settings": [
+          {
+            "type": "page",
+            "id": "page",
+            "label": "Choose page"
+          }
+        ]
+      },
+      {
+        "type": "content2",
+        "name": "Item HTML",
+        "settings": [
+          {
+            "type": "liquid",
+            "id": "text",
+            "label": "Text content"
+          }
+        ]
+      },
+      {
+        "type": "content3",
+        "name": "Item Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_banner",
+            "label": "Image banner"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Customize",
+        "category": "07. Customize"
+      }
+    ]
+  }
+{% endschema %}

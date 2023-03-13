@@ -1,0 +1,604 @@
+<!-- main-blog.liquid -->
+{%- liquid
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+<div class="{{section.settings.width_section}}">
+  <div class="content_{{section.id}}">
+    <div class="section-width{%if section.settings.width_content and section.settings.width_section == 'w-100'%} container{%else%} w-100{%endif%} py-2" data-template="blog-template">
+      <div class="sticky-top d-lg-none" style="top:120px;left: auto;text-align: right;z-index:10;transform: translate(15px,10px);">
+        <button class="btn btn-sm btn-dark btn-rounded py-2 px-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBlog" aria-controls="offcanvasBlog" style="border-color: transparent;background-color: rgb(34, 34, 34, 0.8);"><i class="m-0 fas fa-chevron-left"></i></button>
+      </div>
+      <div class="row align-items-start mt-2">
+        <div class="blog-content{%if section.settings.use_sidebar %} col-lg-9{%endif%}">
+        {%- if section.settings.use_sidebar == false and section.settings.filters-%}
+        {%- if blog.tags.size > 0 -%}
+        <nav class="blog-nav d-block">
+          <ul id="masonry-filters" class="nav-filters filter-underline blog-filters justify-content-center list-unstyled">
+            <li><button type="button" class="nav-filter active" data-filter="*">{{ 'blogs.general.filters_all' | t }}</button></li>
+            {%-assign tags = blog.tags-%}
+            {%- if section.settings.blog_filters != blank -%}{%-assign tags = section.settings.blog_filters | split: ', '-%}{%-endif-%}
+            {%- for tag in tags -%}
+            <li><button type="button" class="nav-filter" data-filter=".{{tag | handleize}}">{{tag}}</button></li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+        {%- endif -%}
+        {%- endif -%}
+          <h2 class="page-title d-none">{{ blog.title }}</h2>
+          {%- if blog.articles_count > 0 -%}
+            {%-case section.settings.items_per_row-%}
+              {%- when '1' -%}
+                {%- assign row_cols = 'row-cols-1' -%}
+              {%- when '2' -%}
+                {%- assign row_cols = 'row-cols-1 row-cols-sm-2' -%}
+              {%- when '3' -%}
+                {%- assign row_cols = 'row-cols-1 row-cols-sm-2 row-cols-lg-3' -%}
+              {%- when '4' -%}
+                {%- assign row_cols = 'row-cols-1 row-cols-sm-2 row-cols-lg-4' -%}
+            {%-endcase-%}
+            {%- assign layoutMode = 'fitRows' -%}
+            {%- if section.settings.use_masonry -%}
+              {%- assign layoutMode = 'packery' -%}
+            {%- endif -%}
+            {%- paginate blog.articles by section.settings.limit -%}
+            {%- case section.settings.blog_layout -%}
+              {%- when '01' -%}
+                <div class="blog-grid-list style01 row {{row_cols}}"{% if section.settings.use_masonry or section.settings.filters %} data-section-id="content_blog-template-2" id="Masonry-content_blog-template-2" data-section-type="masonry-section" data-filter="#masonry-filters" data-layout-mode="{{layoutMode}}"{%- endif -%}>
+                  {%- for article in blog.articles -%}                  
+                  <div class="masonry-item col {{article.tags | join: '-kk-' | handleize | split: '-kk-' | join: ' '}}">
+                    <article class="entry entry-grid">
+                      {%- assign video = false-%}
+                      {%- if article.content contains '//www.youtube.com/embed/' -%}
+                        {%- assign video = true -%}
+                      {%- elsif article.content contains '//player.vimeo.com/video/' -%}
+                        {%- assign video = true -%}
+                      {%- endif -%}
+                      {%- assign audio = false-%}
+                      {%- if article.content contains '//w.soundcloud.com/player/' -%}
+                        {% assign audio = true %}
+                      {%- endif -%}
+                      {%-assign width = article.image.width | default: 277.00 -%}{%-assign height = article.image.height | default: 540.00 | plus: 0.00-%}
+                      <a href="{{ article.url }}" class="img__banner banner-effect9 entry-media{%if video%} entry-video{%endif%}{%if audio%} entry-audio{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                        {%- if article.image -%}
+                          {{- article.image | image_url: width: article.image.width | image_tag: class: 'img-fit-cover', alt: article.image.alt, size: '100vw', widths: '375, 550, 750', loading: 'lazy' -}}
+                        {%- endif -%}
+                      </a>
+                      <div class="entry-body">
+                        <div class="entry-meta">
+                          {%- if section.settings.blog_show_author -%}
+                          <span class="entry-author">{{ 'blogs.general.by_author' | t }} <span style="color: var(--text)">{{ article.author }}</span></span>
+                          {%- endif -%}
+                          {%- if section.settings.blog_show_date -%}
+                          <span class="meta-separator">|</span>
+                          <span style="color: var(--text)">{{ article.published_at | date: format: "article_published_at" }}</span>
+                          {%- endif -%}
+                          {%- if blog.comments_enabled? -%}
+                          <span class="meta-separator">|</span>
+                          <span>{{ 'blogs.comments.comments_with_count_html' | t: count: article.comments_count }}</span>
+                          {%- endif -%}
+                        </div>
+                        <h2 class="entry-title">
+                          <a href="{{ article.url }}">{{ article.title }}</a>
+                        </h2>
+                        <!-- <div class="entry-cats">{{ 'blogs.general.in_categories' | t }} <a href="javascript:void(0)">{{blog.title}}</a></div> -->
+                        <div class="entry-content">
+                          <p>
+                            {%- if article.excerpt.size > 0 -%}
+                            {{ article.excerpt }}
+                            {%- else -%}
+                            {{ article.content | strip_html | truncate: 200 }}
+                            {%- endif -%}
+                          </p>
+                          <a href="{{ article.url }}" class="btn btn-link btn-underline btn-primary read-more">{{ 'blogs.article.read_more_button' | t }}<i class="d-icon-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  {%- endfor -%}
+                </div>
+              {%- when '02' -%}
+                <div class="blog-grid-list style02 row {{row_cols}}"{% if section.settings.use_masonry or section.settings.filters %} data-section-id="content_blog-template-2" id="Masonry-content_blog-template-2" data-section-type="masonry-section" data-filter="#masonry-filters" data-layout-mode="{{layoutMode}}"{%- endif -%}>
+                  {%- assign items_per_row = section.settings.items_per_row -%}
+                  {%-case section.settings.items_per_row-%}
+                    {%- when '2' -%}
+                      {%- assign col_item = ' col-sm-6' -%}
+                    {%- when '3' -%}
+                      {%- assign col_item = ' col-sm-6 col-lg-4' -%}
+                    {%- when '4' -%}
+                      {%- assign col_item = ' col-sm-6 col-lg-3' -%}
+                  {%-endcase-%}
+                  {%- for article in blog.articles -%}
+                  <div class="masonry-item col {{article.tags | join: '-kk-' | handleize | split: '-kk-' | join: ' '}}">
+                    <article class="entry entry-grid">
+                      {%- assign video = false-%}
+                      {%- if article.content contains '//www.youtube.com/embed/' -%}
+                        {%- assign video = true -%}
+                      {%- elsif article.content contains '//player.vimeo.com/video/' -%}
+                        {%- assign video = true -%}
+                      {%- endif -%}
+                      {%- assign audio = false-%}
+                      {%- if article.content contains '//w.soundcloud.com/player/' -%}
+                        {% assign audio = true %}
+                      {%- endif -%}
+                      {%-assign width = article.image.width | default: 277.00 -%}{%-assign height = article.image.height | default: 540.00 | plus: 0.00-%}
+                      <a href="{{ article.url }}" class="img__banner entry-media{%if video%} entry-video{%endif%}{%if audio%} entry-audio{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                        {%- if article.image -%}
+                          {{- article.image | image_url: width: article.image.width | image_tag: class: 'img-fit-cover', alt: article.image.alt, size: '100vw', widths: '375, 550, 750', loading: 'lazy' -}}
+                        {%- endif -%}
+                      </a>
+                      <div class="entry-body">
+                        <div class="entry-meta">
+                          {%- if section.settings.blog_show_author -%}
+                          <span class="entry-author">{{ 'blogs.general.by_author' | t }} <a href="#">{{ article.author }}</a></span>
+                          {%- endif -%}
+                          {%- if section.settings.blog_show_date -%}
+                          <span class="meta-separator">|</span>
+                          <a href="javascript:void(0)">{{ article.published_at | date: format: "article_published_at" }}</a>
+                          {%- endif -%}
+                          {%- if blog.comments_enabled? -%}
+                          <span class="meta-separator">|</span>
+                          <a href="javascript:void(0)">{{ 'blogs.comments.comments_with_count_html' | t: count: article.comments_count }}</a>
+                          {%- endif -%}
+                        </div>
+                        <h2 class="entry-title">
+                          <a href="{{ article.url }}">{{ article.title }}</a>
+                        </h2>
+                        <!-- <div class="entry-cats">{{ 'blogs.general.in_categories' | t }} <a href="javascript:void(0)">{{blog.title}}</a></div> -->
+                        <div class="entry-content">
+                          <p>
+                            {%- if article.excerpt.size > 0 -%}
+                            {{ article.excerpt }}
+                            {%- else -%}
+                            {{ article.content | strip_html | truncate: 200 }}
+                            {%- endif -%}
+                          </p>
+                          <a href="{{ article.url }}" class="btn btn-link btn-underline btn-primary read-more">{{ 'blogs.article.read_more_button' | t }}<i class="d-icon-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  {%- endfor -%}
+                </div>
+              {%- when '03' -%}
+                <div class="blog-grid-list style03 row {{row_cols}}"{% if section.settings.use_masonry or section.settings.filters %} data-section-id="content_blog-template-3" id="Masonry-content_blog-template-3" data-section-type="masonry-section" data-filter="#masonry-filters" data-layout-mode="packery"{%- endif -%}>
+                  {%- for article in blog.articles -%}
+                  <div class="masonry-item grid-item col {{article.tags | join: '-kk-' | handleize | split: '-kk-' | join: ' '}}">
+                    <article class="entry entry-mask">
+                      {%- assign video = false-%}
+                      {%- if article.content contains '//www.youtube.com/embed/' -%}
+                        {%- assign video = true -%}
+                      {%- elsif article.content contains '//player.vimeo.com/video/' -%}
+                        {%- assign video = true -%}
+                      {%- endif -%}
+                      {%- assign audio = false-%}
+                      {%- if article.content contains '//w.soundcloud.com/player/' -%}
+                        {% assign audio = true %}
+                      {%- endif -%}
+                      {%-assign width = article.image.width | default: 376.00 -%}{%-assign height = article.image.height | default: 400.00 | plus: 0.00-%}
+                      <a href="{{ article.url }}" class="img__banner entry-media{%if video%} entry-video{%endif%}{%if audio%} entry-audio{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                        {%- if article.image -%}
+                          {{- article.image | image_url: width: article.image.width | image_tag: class: 'img-fit-cover', alt: article.image.alt, size: '100vw', widths: '375, 550, 750', loading: 'lazy' -}}
+                        {%- endif -%}
+                      </a>
+                      <div class="entry-body">
+                        <div class="entry-meta">
+                          {%- if section.settings.blog_show_date -%}
+                          <a href="javascript:void(0)">{{ article.published_at | date: format: "article_published_at" }}</a>
+                          {%- endif -%}
+                          {%- if blog.comments_enabled? -%}
+                          <span class="meta-separator">|</span>
+                          <a href="javascript:void(0)">{{ 'blogs.comments.comments_with_count_html' | t: count: article.comments_count }}</a>
+                          {%- endif -%}
+                        </div>
+                        <h2 class="entry-title">
+                          <a href="{{ article.url }}">{{ article.title }}</a>
+                        </h2>
+                        <a href="{{ article.url }}" class="btn btn-link btn-underline btn-white read-more">{{ 'blogs.article.read_more_button' | t }}<i class="d-icon-arrow-right"></i></a>
+                      </div>
+                    </article>
+                  </div>
+                  {%- endfor -%}
+                </div>
+              {%- when '04' -%}
+                <div class="blog-grid-list style04 row {{row_cols}}"{% if section.settings.use_masonry or section.settings.filters %} data-section-id="content_blog-template-4" id="Masonry-content_blog-template-4" data-section-type="masonry-section" data-filter="#masonry-filters" data-layout-mode="{{layoutMode}}"{%- endif -%}>
+                  {%- for article in blog.articles -%}
+                  <div class="masonry-item grid-item col {{article.tags | join: '-kk-' | handleize | split: '-kk-' | join: ' '}}">
+                    <article class="entry entry-grid text-center">
+                      {%- assign video = false-%}
+                      {%- if article.content contains '//www.youtube.com/embed/' -%}
+                        {%- assign video = true -%}
+                      {%- elsif article.content contains '//player.vimeo.com/video/' -%}
+                        {%- assign video = true -%}
+                      {%- endif -%}
+                      {%- assign audio = false-%}
+                      {%- if article.content contains '//w.soundcloud.com/player/' -%}
+                        {% assign audio = true %}
+                      {%- endif -%}
+                      {%- assign image_item = article.image -%}
+                      {%-assign width = image_item.width | default: 376.00 -%}{%-assign height = image_item.height | default: 400.00 | plus: 0.00-%}
+                      <a href="{{ article.url }}" class="img__banner entry-media{%if video%} entry-video{%endif%}{%if audio%} entry-audio{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                        {%- if article.image -%}
+                          {{- article.image | image_url: width: article.image.width | image_tag: class: 'img-fit-cover', alt: article.image.alt, size: '100vw', widths: '375, 550, 750', loading: 'lazy' -}}
+                        {%- endif -%}
+                      </a>
+                      <div class="entry-body">
+                        <div class="entry-meta">
+                          {%- if section.settings.blog_show_author and section.settings.items_per_row != '4' -%}
+                          <span class="entry-author">{{ 'blogs.general.by_author' | t }} <a href="#">{{ article.author }}</a></span>
+                          {%- endif -%}
+                          {%- if section.settings.blog_show_date -%}
+                          <span class="meta-separator">|</span>
+                          <a href="javascript:void(0)">{{ article.published_at | date: format: "article_published_at" }}</a>
+                          {%- endif -%}
+                          {%- if blog.comments_enabled? -%}
+                          <span class="meta-separator">|</span>
+                          <a href="javascript:void(0)">{{ 'blogs.comments.comments_with_count_html' | t: count: article.comments_count }}</a>
+                          {%- endif -%}
+                        </div>
+                        <h2 class="entry-title">
+                          <a href="{{ article.url }}">{{ article.title }}</a>
+                        </h2>
+                        <a href="{{ article.url }}" class="btn btn-link btn-underline btn-primary read-more">{{ 'blogs.article.read_more_button' | t }}<i class="d-icon-arrow-right"></i></a>
+                        <!-- <div class="entry-cats">{{ 'blogs.general.in_categories' | t }} <a href="javascript:void(0)">{{blog.title}}</a></div> -->
+                      </div>
+                    </article>
+                  </div>
+                  {%- endfor -%}
+                </div>
+              {%- when '05' -%}
+                <div class="blog-grid-list style05 row {{row_cols}}"{% if section.settings.use_masonry or section.settings.filters %} data-section-id="content_blog-template-5" id="Masonry-content_blog-template-5" data-section-type="masonry-section" data-filter="#masonry-filters" data-layout-mode="{{layoutMode}}"{%- endif -%}>
+                  {%- for article in blog.articles -%}
+                  <div class="masonry-item grid-item col {{article.tags | join: '-kk-' | handleize | split: '-kk-' | join: ' '}}">
+                    <article class="entry entry-grid">
+                      {%- assign video = false-%}
+                      {%- if article.content contains '//www.youtube.com/embed/' -%}
+                        {%- assign video = true -%}
+                      {%- elsif article.content contains '//player.vimeo.com/video/' -%}
+                        {%- assign video = true -%}
+                      {%- endif -%}
+                      {%- assign audio = false-%}
+                      {%- if article.content contains '//w.soundcloud.com/player/' -%}
+                        {% assign audio = true %}
+                      {%- endif -%}
+                      {%-assign width = image_item.width | default: 1920.00 -%}{%-assign height = image_item.height | default: 1080.00 | plus: 0.00-%}
+                      <a href="{{ article.url }}" class="img__banner banner-opacity entry-media{%if video%} entry-video{%endif%}{%if audio%} entry-audio{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                        {%- if article.image -%}
+                          {{- article.image | image_url: width: article.image.width | image_tag: class: 'img-fit-cover', alt: article.image.alt, size: '100vw', loading: 'lazy' -}}
+                        {%- endif -%}
+                      </a>
+                      <div class="entry-body">
+                        <div class="entry-meta">
+                          {%- if section.settings.blog_show_author and section.settings.items_per_row != '4' -%}
+                          <span class="entry-author">{{ 'blogs.general.by_author' | t }} <a href="#">{{ article.author }}</a></span>
+                          {%- endif -%}
+                          {%- if section.settings.blog_show_date -%}
+                          <span class="meta-separator">|</span>
+                          <a href="javascript:void(0)">{{ article.published_at | date: format: "article_published_at" }}</a>
+                          {%- endif -%}
+                          {%- if blog.comments_enabled? -%}
+                          <span class="meta-separator">|</span>
+                          <a href="javascript:void(0)">{{ 'blogs.comments.comments_with_count_html' | t: count: article.comments_count }}</a>
+                          {%- endif -%}
+                        </div>
+                        <h2 class="entry-title">
+                          <a href="{{ article.url }}">{{ article.title }}</a>
+                        </h2>
+                        <!-- <div class="entry-cats">{{ 'blogs.general.in_categories' | t }} <a href="javascript:void(0)">{{blog.title}}</a></div> -->
+                        <div class="entry-content" style="color: #999">
+                          <p>
+                            {%- if article.excerpt.size > 0 -%}
+                            {{ article.excerpt }}
+                            {%- else -%}
+                            {{ article.content | strip_html | truncate: 200 }}
+                            {%- endif -%}
+                          </p>
+                          <a href="{{ article.url }}" class="btn btn-link btn-underline btn-primary read-more">{{ 'blogs.article.read_more_button' | t }}<i class="d-icon-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  {%- endfor -%}
+                </div>                
+              {%- when '06' -%}
+                <div class="blog-grid-list style06 row"{% if section.settings.use_masonry or section.settings.filters %} data-section-id="content_blog-template-6" id="Masonry-content_blog-template-6" data-section-type="masonry-section" data-filter="#masonry-filters" data-layout-mode="{{layoutMode}}"{%- endif -%}>
+                  {%- for article in blog.articles -%}
+                  <div class="masonry-item grid-item col-12 {{article.tags | join: '-kk-' | handleize | split: '-kk-' | join: ' '}}">
+                    <article class="entry entry-list">
+                      <div class="row align-items-center">
+                        <div class="col-md-5">
+                          {%- assign video = false-%}
+                          {%- if article.content contains '//www.youtube.com/embed/' -%}
+                            {%- assign video = true -%}
+                          {%- elsif article.content contains '//player.vimeo.com/video/' -%}
+                            {%- assign video = true -%}
+                          {%- endif -%}
+                          {%- assign audio = false-%}
+                          {%- if article.content contains '//w.soundcloud.com/player/' -%}
+                            {% assign audio = true %}
+                          {%- endif -%}
+                          {%-assign width = image_item.width | default: 355.00 -%}{%-assign height = image_item.height | default: 250.00 | plus: 0.00-%}
+                          <a href="{{ article.url }}" class="img__banner entry-media{%if video%} entry-video{%endif%}{%if audio%} entry-audio{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                            {%- if article.image -%}
+                              {{- article.image | image_url: width: article.image.width | image_tag: class: 'img-fit-cover', alt: article.image.alt, size: '100vw', loading: 'lazy' -}}
+                            {%- endif -%}
+                          </a>
+                        </div>
+                        <div class="col-md-7">
+                          <div class="entry-body">
+                            <div class="entry-meta">
+                              {%- if section.settings.blog_show_author and section.settings.items_per_row != '4' -%}
+                              <span class="entry-author">{{ 'blogs.general.by_author' | t }} <a href="#">{{ article.author }}</a></span>
+                              {%- endif -%}
+                              {%- if section.settings.blog_show_date -%}
+                              <span class="meta-separator">|</span>
+                              <a href="javascript:void(0)">{{ article.published_at | date: format: "article_published_at" }}</a>
+                              {%- endif -%}
+                              {%- if blog.comments_enabled? -%}
+                              <span class="meta-separator">|</span>
+                              <a href="javascript:void(0)">{{ 'blogs.comments.comments_with_count_html' | t: count: article.comments_count }}</a>
+                              {%- endif -%}
+                            </div>
+                            <h2 class="entry-title">
+                              <a href="{{ article.url }}">{{ article.title }}</a>
+                            </h2>
+                            <!-- <div class="entry-cats">{{ 'blogs.general.in_categories' | t }} <a href="javascript:void(0)">{{blog.title}}</a></div> -->
+                            <div class="entry-content">
+                              <p>
+                                {%- if article.excerpt.size > 0 -%}
+                                {{ article.excerpt }}
+                                {%- else -%}
+                                {{ article.content | strip_html | truncate: 200 }}
+                                {%- endif -%}
+                              </p>
+                              <a href="{{ article.url }}" class="btn btn-link btn-underline btn-primary read-more">{{ 'blogs.article.read_more_button' | t }}<i class="d-icon-arrow-right"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  {%- endfor -%}
+                </div>
+            {%- endcase -%}
+            {%-if paginate.pages > 1-%}  
+            <div class="pagination_ container text-center clearfix _mt-4">
+              {%- render 'pagination', paginate: paginate, cssAlign: cssAlign, cssAlign_rev: cssAlign_rev -%}
+            </div>
+            {%-endif-%}
+            {%- endpaginate -%}
+          {% else %}
+          <p class="text-left py-4">{{'blogs.general.no_article' | t}}</p>
+          {%- endif -%}
+        </div>
+        {%-if section.settings.use_sidebar-%}
+        <div class="sidebar col-lg-3">
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasBlog" aria-labelledby="offcanvasBlogLabel">
+            <button type="button" class="btn-close btn-close-white close-outside d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasBlog" aria-label="Close" style="right: auto;top: 20px;left: -50px;"></button>
+            <div class="offcanvas-body">
+              {%- render 'kt_blog_sidebar' -%}
+            </div>
+          </div>
+        </div>
+        {%-endif-%}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="_mb-3"></div>
+{% schema %}
+  {
+    "name": "Blogs",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "container"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?"
+      },
+      {
+        "type": "header",
+        "content": "Layout settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_masonry",
+        "label": "Use masonry layout?"
+      },
+      {
+        "type": "select",
+        "id": "blog_layout",
+        "options": [
+          {
+            "value": "01",
+            "label": "Layout 1"
+          },
+          {
+            "value": "02",
+            "label": "Layout 2"
+          },
+          {
+            "value": "03",
+            "label": "Layout 3"
+          },
+          {
+            "value": "04",
+            "label": "Layout 4"
+          },
+          {
+            "value": "05",
+            "label": "Layout 5"
+          },
+          {
+            "value": "06",
+            "label": "Layout 6"
+          }
+        ],
+        "label": "Blog layout",
+        "default": "01"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type": "range",
+        "id": "limit",
+        "min": 1,
+        "max": 18,
+        "step": 1,
+        "label": "Pagination",
+        "default": 9
+      },
+      {
+        "type": "checkbox",
+        "id": "filters",
+        "label": "Show Blog filters",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "blog_filters",
+        "label": "Fiters",
+        "default": "Fashion, Lifestyle, Shopping, Sport, Summer Sale, Travel, Winter Sale",
+        "placeholder": "tag1, tag2, ..."
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "radio",
+        "id": "items_per_row",
+        "label": "Items per row",
+        "options": [
+          { "value": "1", "label": "1 item" },
+          { "value": "2", "label": "2 items" },
+          { "value": "3", "label": "3 items" },
+          { "value": "4", "label": "4 items" }
+        ],
+        "default": "2"
+      },
+      {
+        "type": "header",
+        "content": "Sidebar"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_sidebar",
+        "label": "Use",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "search",
+        "name": "Sidebar Search bar",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "use",
+            "label": "Use?",
+            "default": true
+          }
+        ]
+      },
+      {
+        "type": "linklist",
+        "name": "Sidebar Linklist",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "use",
+            "label": "Use?",
+            "default": true
+          },
+          {
+            "type": "link_list",
+            "id": "linklist",
+            "label": "Linklist categories"
+          }
+        ]
+      },
+      {
+        "type": "recent_posts",
+        "name": "Sidebar Recent posts",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "use",
+            "label": "Use?",
+            "default": true
+          }
+        ]
+      },
+      {
+        "type": "sb_banner",
+        "name": "Sidebar Banner",
+        "settings": [
+          { 
+            "type":"image_picker",
+            "id":"img",
+            "label":"Banner image"
+          },
+          { 
+            "type":"url",
+            "id":"url",
+            "label":"Link to"
+          }
+        ]
+      },
+      {
+        "type": "sb_about",
+        "name": "Sidebar About",
+        "settings": [
+          { 
+            "type":"html",
+            "id":"html",
+            "label":"Content"
+          }
+        ]
+      },
+      {
+        "type": "sb_tags",
+        "name": "Sidebar Tags",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "blog_tags_",
+            "label": "Tags",
+            "default": "Beauty, Cotton, Fashion, Style, Women",
+            "placeholder": "tag1, tag2, ..."
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

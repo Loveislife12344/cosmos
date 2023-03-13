@@ -1,0 +1,304 @@
+{%-capture fbt-prds-css-%}
+{%-style-%}
+  .fbt-box .fbt-title h3 {
+    font-size: 1.25rem;
+	}
+	.fbt-prds.lazyloaded{
+		-ms-flex-align: center;
+    align-items: center;
+  }
+  [class*="fbt-item-"] {
+  	transition: opacity .3s;
+  }
+  .fbt-item {
+    margin-bottom: 0.625rem;
+	}
+  .fbt-item .form-ajax--{
+		display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+	.fbt-media .swiper-slide {
+		width: auto;
+	}
+	.fbt-media .swiper {
+    min-height: 100%;
+  }
+  .fbt-media .swiper-scrollbar{
+    transition: all .3s;
+  }
+  .fbt-media .swiper-horizontal .swiper-scrollbar:not(:hover){
+  	opacity: .3;
+    height: 0.1875rem;
+  }
+  .fbt-media .img{
+		width: 6.25rem;
+		display: flex;
+		align-items: center;
+  }
+  .fbt-media .img .aspectRatio {
+    background-color: transparent;
+	}
+  .fbt-media img{
+    background-size: 2.5rem;
+  }
+	.fbt-media span.d-icon-plus {
+    padding: 0 0.625rem;
+	}
+  .fbt-prd-name a:not(:hover){
+  	color: #666;
+  }
+  .fbt-info {
+  	display: none;
+    text-align: initial;
+  }
+  .fbt-btn h4{
+    font-size: 1rem;
+    margin-bottom: 0.125rem;
+  }
+  .fbt-btn .btn{
+    padding: .9em 1em;
+  }
+  @media(min-width: 768px){
+  	.fbt-info {
+	  	display: block;
+	  }
+	  .fbt-media {
+	    flex: 0 0 auto;
+      width: auto;
+	    max-width: 66.666667%;
+		}
+	  .fbt-prds-sc .fbt-media .img{
+			width: 8.4375rem;
+	  }
+		.fbt-btn {
+	    flex: 0 0 auto;
+      width: auto;
+	    max-width: 33.333333%;
+		}
+  }
+  @media(max-width: 768px){
+  	.fbt-btn {
+	    text-align: center;
+		}
+  	.fbt-btn h4, .fbt-btn .product-price{
+  		display: inline-block;
+	    margin-bottom: 0.8125rem;
+	    vertical-align: middle;
+	    margin-top: 0.625rem;
+  	}
+  }
+  .fbt-info .form-label, .fbt-info .form-select {
+  	margin: 0 0 0 0.625rem;
+  }
+  [dir="rtl"] .fbt-info .form-label, [dir="rtl"] .fbt-info .form-select {
+  	margin: 0 0.625rem 0 0;
+  }
+  .fbt-info .form-select {
+    padding: 0.15625rem 2.25rem 0.15625rem 0.75rem;
+    min-height: auto;
+	}
+  [dir="rtl"] .fbt-info .form-select {
+    padding: 0.15625rem 0.75rem 0.15625rem 2.25rem;
+    min-height: auto;
+	}
+  .fbt-info .fbt-vars-price {
+    display: flex;
+    align-items: center;
+  }
+  .fbt-info .fbt-vars-price span {
+    padding: 0 0.625rem;
+	}
+  .fbt-info .form-control-sm {
+		height: 1.625rem !important;
+    padding: 0.15625rem 0.3125rem;
+		font-size: 0.8125rem;
+		line-height: 1.5;
+		border-radius: 0.125rem;
+		margin-bottom: 0;
+		display: inline-block;
+		width: auto;
+		background-color: transparent;
+		color: #000;
+	}
+  .fbt-info .product-price {
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+	}
+	.fbt-prds-sc .fbt-title h3{
+	  font-size: {{settings.fsize_section_title_mb | times: 1.0 | divided_by: 16}}rem;
+	  font-weight: {{settings.fweight_section_title}};
+	}
+	@media(min-width: 768px){
+		.fbt-prds-sc .fbt-title h3{
+		  font-size: {{settings.fsize_section_title | times: 1.0 | divided_by: 16}}rem;
+		}
+	}
+	.img {
+		position: relative;
+    display: block;
+    cursor: pointer;
+	}
+	.img a{
+    pointer-events: none;
+	}
+	.img:hover .d-icon-search {
+		opacity: 1;
+	}
+	.img .d-icon-search {
+		position: absolute;
+    text-align: center;
+    fill: #333333;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.875rem;
+    margin-top: -0.875rem;
+    line-height: 1;
+    min-height: 1.75rem;
+    min-width: 1.5rem;
+    border-radius: 0.125rem;
+    padding: 0.125rem;
+    background-color: rgb(255 255 255 / .9);
+    width: 1.75rem;
+    opacity: 0;
+    transition: all .3s;
+    z-index: 1;
+    pointer-events: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+	}
+	.fbt-info .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: #444;
+    background-color: #444;
+    border: none;
+	}
+	.fbt-info .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before,
+	.fbt-info .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+    opacity: .5;
+	}	
+  .fbt-prds-sc .order-last .border-top{
+		display: none;
+  }
+  .btn.fbt-view {
+		border-color: var(--bs-primary-lighten);
+    background-color: transparent;
+    color: var(--bs-primary);
+    padding: 0.125rem 0.625rem;
+    min-width: auto;
+    border-width: 0 0 1px;
+	}
+  .btn.fbt-view i{
+		font-size: 0.875rem;
+	}
+{%-endstyle-%}
+{%-endcapture-%}
+{{ fbt-prds-css | strip_newlines | remove: '  ' | remove: '  '  }}
+<svg class="d-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path id="icon-enlarge" d="M20,1.4H4A2.6,2.6,0,0,0,1.4,4V20A2.6,2.6,0,0,0,4,22.6H20A2.6,2.6,0,0,0,22.6,20V4A2.6,2.6,0,0,0,20,1.4ZM4,21.4A1.4,1.4,0,0,1,2.6,20V14A1.4,1.4,0,0,1,4,12.6h6A1.4,1.4,0,0,1,11.4,14v6A1.4,1.4,0,0,1,10,21.4ZM21.4,20A1.4,1.4,0,0,1,20,21.4H12.18A2.58,2.58,0,0,0,12.6,20V14A2.6,2.6,0,0,0,10,11.4H4a2.58,2.58,0,0,0-1.4.42V4A1.4,1.4,0,0,1,4,2.6H20A1.4,1.4,0,0,1,21.4,4ZM19,5.6V8.4a.6.6,0,1,1-1.2,0V7l-3.38,3.38a.6.6,0,1,1-.85-.85L17,6.2H15.6a.6.6,0,0,1,0-1.2h2.8A.6.6,0,0,1,19,5.6Z"/></svg>
+<div class="col-12 _mt-1 order-first"></div>
+<div class="col-12 fbt-title">
+	{%- assign title_html = 'products.fbt_products.title_html' | t -%}
+	{%- assign sub_title_html = 'products.fbt_products.sub_title_html' | t -%}
+	{%- if title_html != blank -%}
+		<h3 class="mb-0">{{'products.fbt_products.title_html' | t }}</h3>
+	{%- endif -%}
+	{%- if sub_title_html != blank -%}
+		<p class="_mb-2">{{'products.fbt_products.sub_title_html' | t }}</p>
+	{%- endif -%}
+</div>
+<div class="col-12 order-1 fbt-media" data-section-id="fbt" id="Swiper-fbt" data-section-type="swiper-section">
+	<div class="swiper" data-slides-per-view="auto" data-space-between="0" data-scrollbar="true" data-mousewheel="true">
+    <div class="swiper-wrapper">
+    	{% assign price_sum = 0 %}
+    	{% assign c_price_sum = 0 %}
+    	{%- assign prd_cprice = null -%}
+			{%- for handle in prds -%}
+			{%- assign prd = all_products[handle] -%}
+    	<div class="swiper-slide">
+    		<div class="d-flex align-items-center _mb-1 fbt-item-{{prd.id}}">
+					<div{%if settings.use_quickview%} class="img quick-view kt-button" data-view="{{prd.url}}"{%else%} class="img" onclick="window.open('{{prd.url}}','_blank')"{%endif%}>
+						{%- capture ar_i-%}--ar_i:{{prd.featured_image.height | times: 1.00 | divided_by: prd.featured_image.width | times: 100.00000000}}%;{%-endcapture-%}
+			      <div class="aspectRatio" style="{{ar_i | replace:'--ar_i:NaN%',''}}">
+							{%unless prd.id == product.id%}<span class="d-icon-search"></span>{%endunless%}
+							{%- liquid
+							assign as_r = '1/1'
+							assign featured_image = prd.featured_image
+							if settings.use_first_avai_img and prd.selected_or_first_available_variant.image
+							  assign featured_image = prd.selected_or_first_available_variant.image
+							endif
+							if forloop.first and variant.image
+								assign slect_variant = prd.variants | where: 'id', variant | first
+							  assign featured_image = slect_variant.image
+							endif
+							-%}
+							{%- if featured_image != blank -%}
+							<div class="primary-thumb" data-ogr="{{ featured_image | img_url: 'master' }}">
+							  {%- assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+							  <img width="{{featured_image.width}}" height="{{featured_image.height}}" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ img_url }}" data-widths="[240]" data-aspectratio="{{ featured_image.aspect_ratio }}" data-sizes="auto" alt="{{ featured_image.alt | escape }}">
+							</div>
+							{%- else -%}
+							<div class="primary-thumb" data-ogr="">
+							  <img class="lazyload {{image_fit}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://cdn.shopify.com/s/files/1/1958/5719/files/no-image.webp?v=1534478004" data-aspectratio="1/1" data-sizes="auto" alt="">
+							</div>
+							{%- endif -%}
+						</div>
+					</div>
+				{% unless forloop.last %}<span class="d-icon-plus"></span>{% endunless %}
+    		</div>
+      </div>
+    	{%- assign price_sum = price_sum | plus: prd.price -%}
+    	{%- assign prd_cprice = prd.compare_at_price | default: prd.price -%}
+    	{%- assign c_price_sum = c_price_sum | plus: prd_cprice -%}
+			{%- endfor -%}
+    </div>
+    <div class="swiper-scrollbar"></div>
+	</div>
+</div>
+<div class="col-12 order-4 order-md-2 _mt-1 mt-md-0 fbt-btn">
+	<h4>{{'products.fbt_products.price_label_label' | t }}</h4>
+	<div class="product-price">
+		<ins>{{ price_sum | money }}</ins>
+		<del{%if c_price_sum <= price_sum%} style="display: none;"{%endif%}>{{ c_price_sum | money }}</del>
+	</div>
+	<div data-submit class="btn btn-primary rounded addItemsAjax btn-block" data-form="#fbt-prds">{{'products.fbt_products.add_button_html' | t }}</div>
+</div>
+<div class="col-12 _mt-1 fbt-info order-3">	
+{%- for handle in prds -%}
+	{%- assign prd = all_products[handle] -%}
+	{%- assign slect_variant = prd.selected_or_first_available_variant -%}
+	{%- if forloop.first and variant != '' and  variant != 0 -%}
+		{%- assign slect_variant = prd.variants | where: 'id', variant | first -%}
+	{%- endif -%}
+	<div class="fbt-item{% unless prd.has_only_default_variant %} ktlz{%endunless%}" data-href="{{prd.handle}}" data-pid="{{prd.id}}" data-ktlz="onLoad">
+		<div class="form-ajax-- ktlz-form-pid-{{prd.id}}">
+			<div class="form-check mb-0">
+				<input type="checkbox" class="form-check-input" id="ip_{{prd.id}}" checked="checked"{%if prd.id == product.id%} disabled {%endif%}>		
+		    <label class="form-check-label fbt-prd-name" for="ip_{{prd.id}}">{{prd.title | strip_html }}</label>
+		  </div>  
+			<div class="fbt-vars-price">
+				<select class="form-select{%if prd.has_only_default_variant or prd.id == product.id%} d-none{%endif%} prd-mirror-{{prd.id}}">
+			  {%- for variant in prd.variants -%}
+		      <option{% if variant == slect_variant %} selected="selected"{% endif %} value="{{ variant.id }}"{% if variant.inventory_quantity > 0 %} data-inventory-quantity="{{variant.inventory_quantity}}"{%endif%}{%if variant.incoming%} data-incoming="{{variant.next_incoming_date | date: format: 'pre_order_date'}}"{%endif%} data-price="{{variant.price}}" data-cprice="{{variant.compare_at_price | default:variant.price}}">{{ variant.title }}{% unless variant.available %} {{'products.product.sold_out' | t }}{% endunless %}</option>
+			  {%- endfor -%}
+				</select>
+				<input type="hidden" name="updates[{{slect_variant.id}}]" value="1">
+				<span> - </span>
+		    <div class="product-price" name="id"> {% comment %} name="id" block worker from inserting input id{% endcomment %}
+					<ins>{{ slect_variant.price | money }}</ins>
+					<del{%if slect_variant.compare_at_price <= slect_variant.price%} style="display: none;"{%endif%}>{{ slect_variant.compare_at_price | money }}</del>
+				</div>
+			</div>
+	  </div>
+	</div>
+{%- endfor -%}
+</div>
+<div class="col-12 order-last text-center d-md-none">
+	<div class="btn fbt-view _mt-1">
+		<span class="more">{{'products.fbt_products.view_more_html' | t }}</span>
+		<span class="less" style="display: none;">{{'products.fbt_products.view_less_html' | t }}</span>
+	</div>
+</div>
+<div class="col-12 _mb-2 order-last"><div class="w-100 border-top _mt-3"></div></div>

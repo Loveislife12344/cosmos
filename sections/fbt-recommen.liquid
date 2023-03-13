@@ -1,0 +1,10 @@
+{%- layout none -%}
+<!--lz_sc-->
+{%- assign prds = product.handle | split: '+' -%}
+{%- assign recommendations = recommendations.products | map: 'handle' -%}
+{%- assign prds = prds | concat: recommendations -%}
+{%- assign variant = canonical_url | split: 'q=' | last | split: '&' | first | plus: 0 -%}
+{%- if prds.size >= 2 -%}
+	{%- render 'fbt-content', prds: prds, variant: variant, st_card: '1,1,1,1,1,1/1,1,nonstretch' | split: ',' -%}
+{%- endif -%}
+<!--lz_sc-->

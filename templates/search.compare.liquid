@@ -1,0 +1,200 @@
+{%layout none%}
+{%- liquid
+  capture st_card
+    echo settings.use_new_label
+    echo '|'
+    echo settings.new_day
+    echo '|'
+    echo settings.use_sale_label
+    echo '|'
+    echo settings.product_grid_layout
+    echo '|'
+    echo settings.qs_show_vars_list
+    echo '|'
+    echo settings.use_quickview
+    echo '|'
+    echo settings.use_wishlist
+    echo '|'
+    echo settings.use_compare
+    echo '|'
+    echo settings.use_countdown_grid
+    echo '|'
+    echo settings.countdown_grid_style
+    echo '|'
+    echo settings.use_vendor_grid
+    echo '|'
+    echo settings.use_review_grid
+    echo '|'
+    echo settings.use_add_to_cart_btn
+    echo '|'
+    echo settings.qs_hide_only_1_opt
+  endcapture
+  assign st_card = st_card | split: '|'
+-%}
+
+{%- assign products = search.results -%}
+<div class="table-responsive table-compare">
+  <table class="table">
+  	{%- assign products_plus = search.results_count | plus: 1 -%}
+  	<thead>
+			<tr>
+				{%- for i in (1..products_plus) -%}
+		    <th></th>
+				{%- endfor -%}
+			</tr>
+		</thead>
+		<tbody>
+	  	<tr class="cp_prd-thumb">
+	  		<th scope="col" style="width: 218px;vertical-align: middle;">{{'products.compare.product' | t}}</th>
+				{%- for product in search.results -%}
+			  {%- assign show_variant = false -%}
+				{%- unless product.has_only_default_variant -%}
+				  {%- assign show_variant = true -%}
+				{%- endunless -%}
+				{%- liquid
+				  assign price_varies = product.price_varies
+				  if st_card[0] == "true"
+				    unless product.tags contains 'notnew'
+				      assign on_new = false
+				      assign now_date_int = "now" | date: "%j" | plus: 0
+				      assign now_year_int = "now" | date: '%Y' | plus: 0
+				      assign pub_date_int = product.created_at | date: "%j" | plus: 0
+				      assign pub_year_int = product.created_at | date: '%Y' | plus: 0
+				      if now_year_int == pub_year_int
+				        assign new_day_int = st_card[1] | default: 30 | plus: 0
+				        assign check_new = now_date_int | minus: pub_date_int
+				        if check_new >= 0 and check_new <= new_day_int
+				          assign on_new = true
+				        endif
+				      else
+				        assign new_day_int = st_card[1] | default: 30 | pub_date_int
+				        assign check_new = now_date_int | plus: 366
+				        if check_new <= new_day_int
+				          assign on_new = true
+				        endif
+				      endif
+				    endunless
+				  endif
+				  assign on_sale = false
+				  if product.compare_at_price > product.price 
+				    assign on_sale = true
+				  endif
+				  assign sold_out = true
+				  assign preOrder = false
+				  unless product.selected_or_first_available_variant.available == false
+				    assign sold_out = false
+				  endunless
+				  if product.selected_or_first_available_variant.inventory_quantity <= 0 and product.selected_or_first_available_variant.inventory_policy == 'continue' and product.selected_or_first_available_variant.incoming
+				    assign preOrder = true
+				  endif
+				  unless grid_layout
+				    assign grid_layout = st_card[3]
+				  endunless
+				  unless block_id
+				    assign block_id = block.id
+				  endunless
+				  unless section_id
+				    assign section_id = section.id
+				  endunless
+				-%}
+	  		<td class="cp-{{product.id}}">
+	  			<button type="button" class="btn-close compare-remove" data-pid="{{product.id}}"></button>
+	  			<div class="product product-card product-inner --card{% if show_variant %} ktlz{%endif%}"{%unless product.has_only_default_variant%} data-href="{{product.handle}}"{{ktlz}}{%endunless%}>
+					  <form method="post" action="{{ routes.cart_add_url }}"{%unless product.has_only_default_variant%} id="ProductSection-{{product.id}}-{{block_id}}" class="form form-ajax-- ktlz-form-pid-{{product.id}}" data-p-id="{{product.id}}" data-section-id="-{{product.id}}-{{block_id}}" data-options="{{product.options.size}}" data-pr-vrs{%endunless%}>          
+					    <div class="product-thumb images">
+					      {%- render 'product-item-flashs', product: product, st_card: st_card, on_new: on_new, on_sale: on_sale, sold_out: sold_out, preOrder: preOrder -%}
+					      {%- capture ar_i-%}--ar_i:{{product.featured_image.height | times: 1.00 | divided_by: product.featured_image.width | times: 100.00000000}}%;{%-endcapture-%}
+					      <a class="aspectRatio{%if product.title != blank %} lazyload{%endif%}" data-include="{{product.url | split:'?' | first}}?view=imgscard" href="{{product.url | within: collection}}" title="{{product.title | escape}}" aria-label="{{product.title | escape}}" style="{{ar_i | replace:'--ar_i:NaN%',''}}"></a>
+					      <div class="cta-btn">
+					      {%- if st_card[6] == 'true'-%}
+						      <div class="btn-dark btn-outline btn-product-icon kt-button wishlist kt-wishlist d-icon-heart" data-action="add" data-handle="{{product.handle}}" data-id="{{product.id}}"></div>
+					      {%- endif -%}
+					      </div>
+					    </div>
+					    <h3 class="product-name"><a href="{{product.url | within: collection}}" tabindex="0">{{product.title}}</a></h3>
+					    <div class="product-cta-wrapper">
+			        {%- if settings.use_add_to_cart_btn -%}
+			          <div class="product product-inner --card{% if show_variant %} ktlz{%endif%}"{%unless product.has_only_default_variant%} data-href="{{product.handle}}"{{ktlz}}{%endunless%}>
+			            <form method="post" action="{{ routes.cart_add_url }}"{%unless product.has_only_default_variant%} id="ProductSection-{{product.id}}-wishlist-mb" class="form form-ajax-- ktlz-form-pid-{{product.id}}" data-p-id="{{product.id}}" data-section-id="-{{product.id}}-wishlist-mb" data-options="{{product.options.size}}" data-pr-vrs{%endunless%} style="width: 100%;">
+			              {%- if product.has_only_default_variant -%}
+			                {%- render 'kt_button_no_variant', product: product, preOrder: preOrder, sold_out: sold_out, style_btn: 'btn btn-dark btn-rounded w-100 text-uppercase kt-button' -%}
+			              {%- else -%}
+			                {%- render 'kt_button_has_variant', product: product, position_btn: "compare", preOrder: preOrder, sold_out: sold_out, style_btn: 'btn btn-dark btn-rounded w-100 text-uppercase kt-button' -%}
+			              {%- endif -%}
+			            </form>
+			          </div>
+			        {%- endif -%}
+					    {%- unless product.has_only_default_variant -%}
+					    <div class="product-variants-wrapper _mt-2">
+					      <div class="prd-variants">
+					        {%- for i in (1..product.options.size) -%}
+					          <div class="prd--option{{i}} animated-background" data-n-opt="{{product.options[forloop.index0] | escape}}"></div>
+					        {%- endfor -%}
+					      </div>
+					    </div>
+					    {%-endunless-%}
+					  </form>
+					</div>
+	  		</td>
+				{%- endfor -%}
+				{% comment %}<td>
+					<div class="add_new aspectRatio">
+						<div class="text-center position-absolute">
+							<i class="d-icon-plus"></i>
+							<span class="d-block">Add New Product</span>
+						</div>
+					</div>
+				</td>{% endcomment %}
+	  	</tr>
+	  	<tr class="cp_prd-price">
+	  		<th scope="col" style="width: 218px;">{{'products.compare.price' | t}}</th>
+				{%- for product in search.results -%}
+	  		<td class="cp-{{product.id}}">
+		    	<div class="paddi">
+	          {%-render 'product-item-prices', product: product, on_sale: on_sale, price_varies: price_varies-%}
+	        </div>
+	  		</td>
+				{%- endfor -%}
+				{% comment %}<td></td>{% endcomment %}
+	  	</tr>
+	  	<tr class="cp_prd-availability">
+	  		<th scope="col" style="width: 218px;">{{'products.compare.availability' | t}}</th>
+				{%- for product in search.results -%}
+	  		<td class="cp-{{product.id}}">
+	  			<span class="Availability-{{product.id}}{% if product.available  %} in_stock{% endif %}">
+		  			{% if product.available  %}{{'products.product.in_stock' | t }}{% else %}{{'products.product.out_of_stock' | t }}{% endif %}
+		  		</span>
+	  		</td>
+				{%- endfor -%}
+				{% comment %}<td></td>{% endcomment %}
+	  	</tr>
+
+	    <tr class="cp_prd-description">
+	  		<th scope="col" style="width: 218px">{{'products.compare.description' | t}}</th>
+				{%- for product in search.results -%}
+	  		<td class="cp-{{product.id}}">		
+		    	<div class="product-excerpt">
+			    	{%- if product.metafields.meta.short_description -%}
+	          {{ product.metafields.meta.short_description | html }}
+	          {%-else-%}
+	          {{ product.description | strip_html | truncatewords: 30 }}
+	          {%-endif-%}
+		      </div>
+		    </td>
+				{%- endfor -%}
+				{% comment %}<td></td>{% endcomment %}
+	    </tr>
+				
+	    <tr class="cp_prd-rating">
+	  		<th scope="col" style="width: 218px;">{{'products.compare.ratings' | t}}</th>
+				{%- for product in search.results -%}
+	  		<td class="cp-{{product.id}}">		  			
+      		{%-render 'rating_star', product: product, type: 'collection'-%}
+	  		</td>
+				{%- endfor -%}
+				{% comment %}<td></td>{% endcomment %}
+	    </tr>
+
+	  </tbody>
+  </table>
+</div>

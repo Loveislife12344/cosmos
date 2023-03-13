@@ -1,0 +1,157 @@
+{%- if settings.ajax_cart != true -%}
+  {%- capture contentCart -%}
+    {%- for item in cart.items -%}
+    {%- assign gift_item = '' -%}
+    {%- if settings.use_gift_wrapping and item.product.handle == settings.gift_wrap_product -%}
+      {%- assign gift_item = 'wrap_item' -%}
+    {%- endif -%}
+    {%- if item.discounted_price == 0 -%}
+      {%- assign gift_item = 'gift_item' -%}
+    {%- endif -%}
+    <li class="item__{{item.id}} item__cart item__{{gift_item | default: 'normal'}} row _pb-2 position-relative">
+      <div class="image__cart col">
+        <a href="{{ item.variant.url }}">
+          <img width="{{item.image.width}}" height="{{item.image.height}}" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ item.image | img_url: '104x120', crop:'center'}}" alt="{{ item.title | escape | strip_html }}">
+        </a>
+      </div>
+      <div class="info__cart col">
+        <h4 class="product-name h6 row gx-0 flex-nowrap align-items-center">
+          {%if item.discounted_price == 0 %}<i class="d-icon-gift-1 col-auto" style="color: #4CAF50;font-size: 1.6rem;padding-right: .5rem;"></i>{%endif%}
+          <a class="col" href="{{ item.variant.url }}" title="{{ item.product.title | strip_html }}">
+            {%if item.discounted_price == 0 %}{{'cart.gift.label_html' | t }}{%endif%} {{ item.product.title | truncate: 35 }}
+          </a>
+        </h4>
+        {%- unless item.product.has_only_default_variant -%}
+        <div class="variation" title="{{ item.title | escape | strip_html }}">
+          <span>{{item.variant.title}}</span>
+        </div>
+        {%- endunless -%}
+        <span class="price">{{ item.quantity | append : " x " }}<span>{%-if item.discounted_price -%}{{ item.discounted_price | money }}{%-else-%}{{ item.original_price | money }}{%-endif-%}</span></span>
+
+        {%if item.unit_price %}
+        {%- capture unit_price_base_unit -%}
+          <span class="base_unit">
+            {%- if item.unit_price_measurement -%}
+              {%- if item.unit_price_measurement.reference_value != 1 -%}
+                {{- item.unit_price_measurement.reference_value -}}
+              {%- endif -%}
+              {{ item.unit_price_measurement.reference_unit }}
+            {%- endif -%}
+          </span>
+        {%- endcapture -%}
+        <span class="UnitPrice-{{item.product.id}} text-nowrap">
+          {{item.unit_price_measurement.quantity_value | append: item.unit_price_measurement.quantity_unit}}
+          (<span class="unit_price">{{item.unit_price | money }}</span> / {{unit_price_base_unit}})
+        </span>
+        {%endif%}
+      </div>
+      {%- if settings.ajax_cart -%}
+      <button type="button" class="btn btn-link act-remove" data-vrid="{{ item.variant_id }}"><i class="fas fa-times"></i><span class="sr-only">{{'cart.general.remove' | t }}</span></button>
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  {%- endcapture -%}
+{%- endif -%}
+{%- capture contentDrop -%}
+  {%- assign style_0 = '' -%}
+  {%- if cart.item_count == 0 -%}{%- assign style_0 = 'style="display:none"' -%}{%- endif -%}
+  {%- assign style_1 = '' -%}
+  {%- if cart.item_count > 0 -%}{%- assign style_1 = 'style="display:none"' -%}{%- endif -%}
+  <div class="kt--drop-in">
+    <div class="spinner-box"><div class="pulse-container"><div class="pulse-bubble pulse-bubble-1"></div><div class="pulse-bubble pulse-bubble-2"></div><div class="pulse-bubble pulse-bubble-3"></div></div></div>
+    <ul class="items__cart-drop ajax__list-cart has-item kt_scroll _mb-2 list-unstyled" {{style_0}} style="--count: {{cart.items | size}}">{{contentCart}}</ul>
+    <div class="sub-total _py-1 _mb-1 has-item border-top border-bottom" {{style_0}}>
+      {{ 'cart.general.subtotal' | t }}: <span class="cartCost" data-price="{{ cart.total_price }}">{{- cart.total_price | money -}}</span>
+    </div>
+    {%- if settings.text_above_cart_drawer != blank -%}
+      <p class=" has-item font-italic _mb-1" {{style_0}}>{{- settings.text_above_cart_drawer | html -}}</p>
+    {%- endif -%}
+    {%- if settings.use_threshold_in_drop -%}
+    {%- assign shipping_above = settings.free_shipping_above | remove:'.' | plus: 0 -%}
+    {%- if settings.free_shipping_above_prd != blank -%}
+      {%- assign shipping_above = all_products[settings.free_shipping_above_prd].price -%}
+    {%- endif -%}
+    <div class="spendFreeShip has-item{%if cart.total_price >= shipping_above%} congratulations{%endif%}" {{style_0}}>
+      <div class="progress">
+        {% assign percent = cart.total_price | times: 1.0 | divided_by: shipping_above | times: 100.0 %}
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{percent}}%;" aria-valuenow="{{percent}}" aria-valuemin="0" aria-valuemax="{{shipping_above}}"></div>
+      </div>
+      <div class="text_progress _mb-1i">
+        {%- assign shipping_above_html = shipping_above | money -%}
+        {%- if settings.threshold_layout == 'add_more' -%}
+          {%- assign shipping_above_html = shipping_above | minus: cart.total_price | money -%}
+        {%- endif -%}
+        <span{%if settings.threshold_layout == 'add_more'%} class="add_more_price"{%endif%}>{{- 'products.shipping_threshold.spend_text_html' | t: shipping_above: shipping_above_html -}}</span>
+        <span>{{- 'products.shipping_threshold.congratulations' | t -}}</span>
+      </div>
+    </div>
+    {%- endif -%}
+    <form action="{{routes.root_url | append: '/checkout' | replace: '//', '/'}}" method="post">
+      {%- if settings.terms_conditions -%}
+      <div class="form-check agree_checkbox has-item" {{style_0}}>
+        <input type="checkbox" name="checkbox" class="form-check-input kt_agree" id="agree_checkbox" required="required">
+        <label class="label-for-checkbox" for="agree_checkbox">
+          {{settings.terms_and_privacy_conditions | replace: '<p>', '' | replace: '</p>','' | html }}
+        </label>
+      </div>
+      {%- endif -%}
+      <div class="group-button text-center has-item" {{style_0}}>
+        <a href="{{routes.cart_url}}" class="btn btn-dark btn-link">{{ 'cart.general.view' | t }}</a>
+        <button type="submit" class="check-out btn btn-dark btn-block rounded"><span>{{ 'cart.general.checkout_small' | t }}</span></a>
+        {%- comment -%}
+        {%- if additional_checkout_buttons and settings.use_d_c_b_cart_drop and template.name != 'cart' -%}
+          <div class="additional-checkout-buttons">
+            {{ content_for_additional_checkout_buttons }}
+          </div>
+        {%- endif -%}
+        {%- endcomment -%}
+      </div>
+    </form>
+    <h3 class="empty-text no-item _pb-1 text-center border-bottom" {{style_1}}>{{ 'cart.general.empty' | t }}</h3>
+    <div class="group-button _mt-2 no-item" {{style_1}}>
+      <a href="{{routes.all_products_collection_url}}" class="btn btn-dark btn-block rounded">{{ 'cart.general.continue_shopping' | t }}</a>
+    </div>
+  </div>
+{%- endcapture -%}
+
+{%- if settings.type_ajax_cart != 'none' and cart.item_count > 0 -%}{%- assign load_class = 'load' -%}{%-endif-%}
+{%- if settings.type_ajax_cart == 'drop' -%}{%- assign drop_class = 'kt--drop-i' -%}{%- endif -%}
+{%- if settings.type_ajax_cart == 'offcanvas' -%}{%- assign onclick = ' data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas"' -%}{%- endif -%}
+<div class="mini-cart {{load_class}} {{drop_class}} cart-{{settings.type_ajax_cart}}" {{onclick}}>
+  {%- if layout == 'text' -%}
+  <a href="{{routes.cart_url}}" class="icon-link{% if settings.type_ajax_cart == 'drop' %} kt--drop-title{%endif%} text-nowrap">
+    <span class="cart-label">
+      {{'layout.header.cart_box_title_2' | t}}
+      <span class="cart-name-delimiter">/</span>
+      <strong class="cart-price cartCost" data-price="{{ cart.total_price }}">{{ cart.total_price | default: 0 | money }}</strong>
+    </span>
+    <span class="count cartCountItemx">({{cart.item_count}} {{'layout.cart.items_count' | t: count: cart.item_count }})</span>
+  </a>
+  {%- elsif layout == 'cart_top' -%}
+  <a href="{{routes.cart_url}}" class="icon-link{% if settings.type_ajax_cart == 'drop' %} kt--drop-title{%endif%} text-nowrap">
+    {%-render 'icon-cart', pos: 'header'-%}{{'layout.header.cart_box_title_2' | t}}
+    <span class="count cartCountItemx d-none">({{cart.item_count}} {{'layout.cart.items_count' | t: count: cart.item_count }})</span>
+  </a>
+  {%- elsif layout == 'only_number' -%}
+  <a href="{{routes.cart_url}}" class="icon-link{% if settings.type_ajax_cart == 'drop' %} kt--drop-title{%endif%} text-nowrap">
+    <span class="cart-label">
+      {{'layout.header.cart_box_title_3' | t}}
+      <span class="cart-name-delimiter">/</span>
+      <strong class="cart-price cartCost" data-price="{{ cart.total_price }}">{{ cart.total_price | default: 0 | money }}</strong>
+    </span>
+    <span class="count">(<span class="cartCount">{{cart.item_count}}</span>)</span>
+  </a>
+  {%- else -%}
+  <a href="{{routes.cart_url}}" class="icon-link{% if settings.type_ajax_cart == 'drop' %} kt--drop-title{%endif%} text-nowrap">
+    <span class="icon-count kt-button">
+      {%-render 'icon-cart', pos: 'header'-%}
+      <span class="count cartCount">{{ cart.item_count }}</span>
+    </span>
+    <span class="cart-label">
+      {{'layout.header.cart_box_title' | t}}
+      <strong class="cart-price cartCost" data-price="{{ cart.total_price }}">{{ cart.total_price | default: 0 | money }}</strong>
+    </span>
+  </a>
+  {%- endif -%}
+{%-if settings.type_ajax_cart == 'drop'-%}{{contentDrop}}{%-endif-%}
+</div>

@@ -1,0 +1,23 @@
+{%- style -%}{%-unless sc-%}{%- assign sc = section -%}{%-endunless-%}
+.content_{{id | default: sc.id}}{ {{--}}
+margin-top: {{sc.settings.section_margin_top | default: '0' | split: '|' | first }};{{--}}
+margin-bottom: {{sc.settings.section_margin_bottom | default: '0' | split: '|' | first }};{{--}}
+padding: {{sc.settings.section_padding | default: '0' | split: '|' | first }};{{--}}
+{%- if sc.settings.section_bg and sc.settings.section_bg != '' and sc.settings.width_section != 'container-fluid wide' -%}
+background:{{sc.settings.section_bg }};{{--}}
+{%- endif -%}
+{%- if bgcl -%}
+background:{{bgcl}};{{--}}
+{%- endif -%}
+}
+{%- if sc.settings.width_section == 'container-fluid wide' -%}
+#shopify-section-{{id | default: sc.id}}{ {{--}}
+{%- if sc.settings.section_bg and sc.settings.section_bg != '' -%}
+background:{{sc.settings.section_bg }};{{--}}
+{%- endif -%}
+{%- if bgcl -%}
+background:{{bgcl}};{{--}}
+{%- endif -%}
+}
+{%- endif -%}
+{%- endstyle -%}

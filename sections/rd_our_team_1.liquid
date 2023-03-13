@@ -1,0 +1,428 @@
+<!-- rd_our_team_1.liquid -->
+{%- liquid
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+{%-render 'sc_css'-%}
+<div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}" data-section-id="{{ section.id }}" id="Swiper-{{ section.id }}" data-section-type="swiper-section" data-clone-section="md-collection-brand.liquid">
+  <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+    <div class="section-width {{width_content_}}">
+      {%- assign block = section.blocks | where: 'type', 'title' | first -%}
+      {%- render 'kt_sc_title', block: block, attr: true -%}
+      <div class="row justify-content-center">
+        {%- for block in section.blocks -%}
+        {%- if block.type == 'title' -%}{%- continue -%}{%- endif -%}
+        <div class="col-md-3">
+          <div class="member text-center">
+            <figure class="member-media">
+            {%- assign image_item = block.settings.image -%}
+            {%-assign width = image_item.width | default: 100 -%}{%-assign height = image_item.height | default: 100 | plus: 0.00-%}
+            <div class="img__banner lazyload" style="padding-bottom: {{height|divided_by: width | times: 100.00000000}}%;" data-bgset="{%- render 'bgset', image: image_item -%}" data-sizes="auto" aria-label="{{image_item.alt | default: shop.name | escape}}"></div>
+              <figcaption class="member-overlay">
+                <div class="member-overlay-content">
+                  <div class="social-icons social-icons-simple">
+                    {%- if block.settings.social_twitter_link != blank -%}
+                    <a href="{{block.settings.social_twitter_link}}" class="social-icon" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    {%- endif -%}
+                    {%- if block.settings.social_facebook_link != blank -%}
+                    <a href="{{block.settings.social_twitter_link}}" class="social-icon" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    {%- endif -%}
+                    {%- if block.settings.social_instagram_link != blank -%}
+                    <a href="{{block.settings.social_twitter_link}}" class="social-icon" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+            <div class="member-content">
+              <h3 class="h6 member-title">{{block.settings.name}}</h3>
+            </div>
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+{%- if section.settings.css != blank -%}
+{%- style-%}
+{%- assign section_id = 'content_' | append: section.id -%}
+{{- section.settings.css|replace: 'section_id', section_id -}}
+{%- endstyle-%}
+{%- endif -%}
+<noscript class="banner-css" data-section-type="rd_our_team_1">
+{%-capture banner-css-%}
+  {%style%}  
+    h3.member-title {
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      margin-bottom: 0;
+    }
+    h3.member-title span {
+      display: block;
+      font-weight: 400;
+      text-transform: none;
+      font-size: 0.75rem;
+    }
+    .member-media {
+      position: relative;
+      margin: 0;
+    }
+    .member-overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0,0,0,0.3);
+      color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+    }
+    
+    .member-overlay .social-icons {
+      padding-top: 6.25rem;
+      transition: padding-top 0.45s ease;
+    }
+    .member-overlay .social-icon {
+      display: inline-block;
+      margin: 0.125rem 0.5rem 0.125rem 0;
+      width: 1.875rem;
+      height: 1.875rem;
+      line-height: 1.75rem;
+      font-size: 0.9375rem;
+      border-radius: 50%;
+      border: 0.125rem solid #fff;
+      color: inherit;
+      transition: color .4s, border .4s, background .4s;
+      text-align: center;
+    }
+    .member-overlay .social-icon:not(:hover) {
+      color: inherit;
+    }
+    .member-content {
+      margin-top: 1.25rem;
+    }
+    .member-content,
+    .member-overlay {
+      transition: all 0.45s ease;
+    }
+    .member:hover .member-overlay {
+      visibility: visible;
+      opacity: 1;
+    }
+    .member:hover .member-overlay .social-icons {
+      padding-top: 0;
+    }
+    .member:hover.member-anim .member-overlay .member-title,
+    .member:hover.member-anim .member-overlay p,
+    .member:hover.member-anim .member-overlay .social-icons {
+      animation-name: fadeInUpShort;
+      animation-duration: 0.65s;
+      animation-fill-mode: both;
+    }
+    .member:hover.member-anim .member-overlay p {
+      animation-delay: 0.1s;
+    }
+    .member:hover.member-anim .member-overlay .social-icons {
+      animation-delay: 0.2s;
+    }
+    .member:hover.member-anim .member-content .member-title {
+      animation-name: fadeOutUpShort;
+      animation-duration: 0.65s;
+      animation-fill-mode: both;
+    }
+
+    @keyframes fadeInUpShort {
+      from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100px, 0);
+        transform: translate3d(0, 100px, 0);
+      }
+      to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    @keyframes fadeOutUpShort {
+      from {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100px, 0);
+        transform: translate3d(0, -100px, 0);
+      }
+    }
+  {%endstyle%}
+{%-endcapture-%}
+{{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
+</noscript>
+{% schema %}
+  {
+    "name": "Our team",
+    "class": "rd_our_team_1",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Our team",
+        "info": "Name section (in editor bar)"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_section",
+        "label": "Turn off section?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_mobile",
+        "label": "Turn off on mobile?"
+      },
+      {
+        "type":"checkbox",
+        "id": "off_desktop",
+        "label": "Turn off on desktop?"
+      },
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section?",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "container"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      },
+      {
+        "type": "header",
+        "content": "Custom CSS"
+      },
+      {
+        "type": "html",
+        "id": "css",
+        "label": "Css for section",
+        "info": "Key start: .section_id"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "title",
+        "name": "Item title",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "select",
+            "id": "title_style",
+            "options": [
+              {
+                "value": "auto",
+                "label": "Auto",
+                "group": "Simple"
+              },
+              {
+                "value": "center",
+                "label": "Center",
+                "group": "Simple"
+              },
+              {
+                "value": "cross",
+                "label": "Auto",
+                "group": "Cross"
+              },
+              {
+                "value": "center-cross",
+                "label": "Center",
+                "group": "Cross"
+              },
+              {
+                "value": "custom-cross",
+                "label": "Custom",
+                "group": "Cross"
+              },
+              {
+                "value": "underline",
+                "label": "Simple",
+                "group": "Underline"
+              },
+              {
+                "value": "active-underline",
+                "label": "Active",
+                "group": "Underline"
+              },
+              {
+                "value": "custom-underline",
+                "label": "Custom",
+                "group": "Underline"
+              }
+            ],
+            "label": "Title Styles",
+            "default": "auto"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "stitle",
+            "label": "Sub title"
+          },
+          {
+            "type": "url",
+            "id": "link_to",
+            "label": "Link to"
+          },
+          {
+            "type": "textarea",
+            "id": "name_link",
+            "label": "Name link"
+          },
+          {
+            "type": "range",
+            "id": "margin_btitle",
+            "min": 0,
+            "max": 90,
+            "step": 2,
+            "unit": "px",
+            "label": "Margin bottom of title",
+            "default": 30
+          }
+        ]
+      },
+      {
+        "type": "item",
+        "name": "Item box",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Members image",
+            "info": "Size suggestion: 280 x 280 pixels"
+          },
+          {
+            "type": "textarea",
+            "id": "name",
+            "label": "Name and position",
+            "default": "Tomasz Treflerzan<span>Ceo / Founder<\/span>"
+          },
+          {
+            "type": "text",
+            "id": "social_twitter_link",
+            "label": "Twitter",
+            "info": "https:\/\/twitter.com\/shopify"
+          },
+          {
+            "type": "text",
+            "id": "social_facebook_link",
+            "label": "Facebook",
+            "info": "https:\/\/facebook.com\/shopify"
+          },
+          {
+            "type": "text",
+            "id": "social_instagram_link",
+            "label": "Instagram",
+            "info": "http:\/\/instagram.com\/shopify"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our team",
+        "category": "04. Section",
+        "blocks": [
+          {
+            "type": "item"
+          },
+          {
+            "type": "item"
+          },
+          {
+            "type": "item"
+          },
+          {
+            "type": "item"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,42 @@
+{%-layout none-%}
+{%- liquid
+assign featured_image = product.featured_image
+if settings.use_first_avai_img and product.selected_or_first_available_variant.image
+  assign featured_image = product.selected_or_first_available_variant.image
+endif
+-%}
+{%- if featured_image -%}
+<div class="primary-thumb" data-ogr="{{ featured_image | img_url: 'master' }}">
+  {%- assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  <img width="{{featured_image.width}}" height="{{featured_image.height}}" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ img_url }}" data-widths="[240, 360, 540, 720]" data-aspectratio="{{ featured_image.aspect_ratio }}" data-sizes="auto" alt="{{ featured_image.alt | escape }}">
+</div>
+{%- else -%}
+<div class="primary-thumb" data-ogr="">
+  <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://cdn.shopify.com/s/files/1/1958/5719/files/no-image.webp?v=1534478004" data-aspectratio="1/1" data-sizes="auto" alt="">
+</div>
+{%- endif -%}
+{%- if product.images.size > 1 and settings.use_second_img-%}
+  {%- capture second_image -%}
+    <div class="second-thumb">
+      {%- assign img_url = product.images[1] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      <img width="{{product.images[1].width}}" height="{{product.images[1].height}}" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ img_url }}" data-widths="[240, 360, 540, 720]" data-aspectratio="{{ product.images[1].aspect_ratio }}" data-sizes="auto" alt="{{ product.images[1].alt | escape }}">
+    </div>
+  {%- endcapture -%}
+  {%- if settings.use_first_avai_img -%}
+    {%- assign has_next_vr_img = false -%}
+    {%- assign map_opt1 = product.variants | map: 'option1' | uniq -%}
+    {%- assign variant =  product.variants | where: 'option1', map_opt1[1] | where: 'image' | first -%}
+    {%- if variant -%}
+    <div class="second-thumb">
+      {%- assign img_url = variant.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      <img width="{{variant.image.width}}" height="{{variant.image.height}}" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ img_url }}" data-widths="[240, 360, 540, 720]" data-aspectratio="{{ variant.image.aspect_ratio }}" data-sizes="auto" alt="{{ variant.image.alt | escape }}">
+    </div>
+    {%- assign has_next_vr_img = true -%}
+    {%- endif -%}
+    {%- if has_next_vr_img == false -%}
+      {{second_image}}
+    {%- endif -%}
+  {%- else -%}
+    {{second_image}}
+  {%- endif -%}
+{%-endif-%}

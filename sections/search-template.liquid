@@ -1,0 +1,665 @@
+<!-- search-template.liquid -->
+{%- liquid
+  capture st_card
+    echo settings.use_new_label
+    echo '|'
+    echo settings.new_day
+    echo '|'
+    echo settings.use_sale_label
+    echo '|'
+    echo settings.product_grid_layout
+    echo '|'
+    echo settings.qs_show_vars_list
+    echo '|'
+    echo settings.use_quickview
+    echo '|'
+    echo settings.use_wishlist
+    echo '|'
+    echo settings.use_compare
+    echo '|'
+    echo settings.use_countdown_grid
+    echo '|'
+    echo settings.countdown_grid_style
+    echo '|'
+    echo settings.use_vendor_grid
+    echo '|'
+    echo settings.use_review_grid
+    echo '|'
+    echo settings.use_add_to_cart_btn
+    echo '|'
+    echo settings.qs_hide_only_1_opt
+  endcapture
+  assign st_card = st_card | split: '|'  
+  
+  assign grid_ly = settings.grid_layout | default: st_card[3]
+
+  assign width_section = section.settings.width_section
+  assign width_content = section.settings.width_content
+  capture width_section_
+    if width_section == 'container-fluid wide' and width_content == false
+      echo 'w-100'
+    else
+      echo width_section
+    endif
+  endcapture
+  capture width_content_
+    if width_content and width_section == 'w-100'
+      echo 'container'
+    elsif width_section == 'container-fluid wide' and width_content == false
+      echo 'container-fluid wide'
+    else
+      echo 'w-100'
+    endif
+  endcapture
+  assign dir_body = settings.dir_body
+  assign cssAlign = 'left'
+  assign cssAlign_rev = 'right'
+  if dir_body == 'rtl'
+    assign cssAlign = 'right'
+    assign cssAlign_rev = 'left'
+  endif
+-%}
+
+{%-liquid  
+  assign limit = section.settings.limit
+  case section.settings.grid
+    when '2'
+      assign gl = '2'
+      assign layout_gl = '2grid'
+      assign grid_item_width = ' row-cols-xs-2 row-cols-sm-2'
+    when '3'
+      assign gl = '3'
+      assign layout_gl = '3grid'
+      assign grid_item_width = ' row-cols-xs-2 row-cols-sm-3'
+    when '4'
+      assign gl = '4'
+      assign layout_gl = '4grid'
+      assign grid_item_width = ' row-cols-xs-2 row-cols-sm-3 row-cols-lg-4'
+    when '5'
+      assign gl = '5'
+      assign layout_gl = '5grid'
+      assign grid_item_width = ' row-cols-xs-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5'
+    when '6'
+      assign gl = '6'
+      assign layout_gl = '6grid'
+      assign grid_item_width = ' row-cols-xs-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6'
+    when '7'
+      assign gl = '7'
+      assign layout_gl = '7grid'
+      assign grid_item_width = ' row-cols-xs-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xxl-7'
+    when '8'
+      assign gl = '8'
+      assign layout_gl = '8grid'
+      assign grid_item_width = ' row-cols-xs-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xxl-8'
+  endcase
+  if section.settings.list_enable
+    assign ly = section.settings.sidebar | append: 'lis'
+    assign gl = 'list'
+    assign layout_gl = 'list'
+  else
+    if section.settings.masonry == true
+      assign ly = 'ms'
+    else
+      assign ly = 'gr'
+    endif    
+  endif
+  assign view = cart.attributes.theme_coll_layout | split: '_'
+  if view.size == 2
+    assign split_check = view[0] | split: 'gr'
+    assign split_check_ = view[0] | split: 'li'
+    assign limit = view[1] | replace: 'pds','' | plus: 0
+    if split_check contains 'id'
+      assign gl = view[0] | replace: 'grid',''
+      assign layout_gl = view[0]
+      if section.settings.masonry == true
+        assign ly = 'ms'
+      else
+        assign ly = 'gr'
+      endif
+    elsif split_check_ contains 'st'
+    assign ly = section.settings.sidebar | append: 'lis'
+      assign gl = 'list'
+      assign layout_gl = view[0]
+    endif
+  elsif view != blank
+    assign split_check = view[0] | split: 'gr'
+    assign split_check_ = view[0] | split: 'li'
+    if split_check contains 'id'
+      assign gl = view[0] | replace: 'grid',''
+      assign layout_gl = view[0]
+      if section.settings.masonry == true
+        assign ly = 'ms'
+      else
+        assign ly = 'gr'
+      endif
+    elsif split_check_ contains 'st'
+      assign ly = section.settings.sidebar | append: 'lis'
+      assign gl = 'list'
+      assign layout_gl = view[0]
+    endif
+  endif
+  case limit
+    when 16
+      assign limit_pds = '_16pds'
+    when 20
+      assign limit_pds = '_20pds'
+    when 30
+      assign limit_pds = '_30pds'
+    when 50
+      assign limit_pds = '_50pds'
+    else
+      assign limit_pds = ''
+  endcase
+  if gl == 'list'
+    assign grid_item_width = ''
+  endif
+  assign settings_collection_layout = section.settings.layout
+-%}
+
+{%-render 'sc_css' -%}
+{%style%}
+.template-search .product {
+  height: auto;
+}
+.template-search .grid-item .noImage {
+  padding: 2.8125rem 0.9375rem;
+  background-color: #efefef;
+  z-index: 0;
+  height: 100%;
+}
+.template-search .grid-item .noImage a {
+  --bs-primary: var(--text);
+}
+.template-search .grid-item .item-name {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+.template-search .grid-item .thumb-name .item-name {
+  font-size: 1.125rem;
+}
+.template-search .grid-item .thumb-name {
+  padding: 0.9375rem 0.375rem 0;
+}
+.template-search .btn-search-page {
+  min-width: 6.25rem;
+}
+@media (min-width: 992px){  
+  .template-search .btn-search-page {
+    min-width: 8.75rem;
+  }
+}
+{%endstyle%}
+
+
+<a data-pjax-filter class="ktjax d-none" href="javascript:void(0)"></a>
+<div class="page-content search-page {{width_section_}}">
+  <div class="content_{{section.id}}{%if section.settings.image %} bg-image lazyload{%endif%}"{%if section.settings.image  %} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">      
+    <div class="section-width {{width_content_}} {{section.settings.sidebar | default: 'no'}}-sidebar filters-{{settings.filter_type | default:'default'}}">
+      <form action="{{ routes.search_url }}">
+        <div class="input-group"> 
+          <input type="hidden" name="type" value="product{%-if settings.search_type_page-%},page{%-endif-%}{%-if settings.search_type_article-%},article{%-endif-%}">
+          <input type="search" class="form-control _mb-0" name="q" placeholder="{{ 'general.search.placeholder' | t }}" required="" value="{{ search.terms | remove: isCollection | escape }}">
+          <button type="submit" class="btn btn-primary btn-rounded btn-search-page">
+            <i class="d-icon-search"></i>
+            {%-comment-%}<span class="form-label d-none">{{'blogs.sidebar.button_search' | t}}</span>{%-endcomment-%}
+          </button>    
+        </div>
+      </form>
+      {%- if search.results_count == 0 -%}
+      <h3 class="h5 sc-title text-center _mt-4">
+        {{ 'general.search.no_results_html' | t: terms: search.terms }}
+      </h3>
+      {%- else -%}
+      <h3 class="h5 sc-title text-center mt-4{% unless section.settings.use_flts %} _mb-3{% endunless %}">
+        {{ 'general.search.results_for_html' | t: terms: search.terms }}
+      </h3>
+      {%- endif -%}
+      {%- if search.results_count > 0 -%}
+      <div class="shop-top kt--drop-w kt--drop-w-d mt-4" data-section-id="{{ section.id }}" data-section-type="collection-template">
+        <div class="row align-items-center">
+          {%- if section.settings.use_flts -%}
+          <div class="col-auto d-lg-none">
+            <div class="filter-by filterMobile btn btn-primary btn-outline btn-rounded _m-0i" data-bs-toggle="offcanvas" data-bs-target="#filter-m-offcanvas" aria-controls="filter-m-offcanvas"><i class="d-icon-filter-2"></i>{{'collections.filters.title' | t}}</div>
+          </div>
+          {%- endif -%}
+          <div class="col d-flex align-items-center justify-content-between">
+            {%- if section.settings.use_flts -%}
+              {%- if section.settings.filters_type == 'off-canvas'-%}
+                <div class="filter-by filterCanvas d-none d-lg-block btn btn-primary btn-outline btn-rounded" data-bs-toggle="offcanvas" data-bs-target="#filter-canvas-offcanvas" aria-controls="filter-canvas-offcanvas">{{'collections.filters.title' | t}}<i class="d-icon-arrow-right"></i></div>
+              {% endif -%}
+              {%- if section.settings.filters_type == 'navigation'-%}
+                <div class="filter-by filterNav d-none d-lg-block btn btn-primary btn-outline btn-rounded"><i class="d-icon-filter-2"></i>{{'collections.filters.title' | t}}</div>
+              {% endif -%}
+            {%- endif -%}
+            {%- if section.settings.filters_type == 'horizontal'-%}
+            <div class="kt--filter kt_drop p-0i d-none d-xl-block">
+              <div class="kt--filter-grs kt--filter-grs-d">
+                {%- render 'kt_filters_form', obj: search, sc: 'dk' -%}
+              </div>
+            </div>
+            {%- endif -%}
+            {%- if section.settings.sort_enable -%}
+              <div class="sorter d-flex align-items-center">
+                <span class="label d-none d-sm-block _me-2 text-uppercase fw-600">{{'collections.sorting.title' | t}} </span>
+                <div class="select-wrapper kt--drop-i" id="sort_by">
+                  {%- assign sort_by = search.sort_by | default: search.default_sort_by -%}
+                  <div class="kt--drop-title mb-0 btn-rounded">
+                    <span class="kt--drop-text">
+                      {%- assign sort_by_name = search.sort_options | where: 'value', sort_by | first -%}
+                      {{-sort_by_name.name-}}
+                    </span><span class="ico"><i class="fas fa-chevron-down"></i></span>
+                  </div>
+                  <ul class="kt--drop-in list-unstyled">
+                    {%- for option in search.sort_options -%}
+                    <li class="form-check{% if option.value == sort_by %} selected{% endif %}">
+                      <input class="form-check-input d-none" id="sort-by-{{ forloop.index }}" type="radio" name="sort_by" value="{{ option.value | escape }}"{% if option.value == sort_by %} checked{%endif%}>
+                      <label class="form-check-label w-100" for="sort-by-{{ forloop.index }}" role="button">
+                        <span class="form-check-title">{{ option.name | escape }}</span>
+                      </label>
+                    </li>
+                    {%- endfor -%}
+                  </ul>    
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+          {%- if section.settings.filters_type == 'navigation'-%}
+          <div class="kt--filter kt_nav col-12">
+            <div class="filter-clean _mt-2">
+              <div class="head hide_op">
+                <a data-pjax-filter="" href="{{collections[collection.handle].url}}" class="sidebar-filter-clear ml-auto">{{'collections.filters.clean' | t}}</a>
+              </div>
+            </div>
+            <div class="filter_nav_wrapper">
+              <div class="kt--filter-grs kt--filter-grs-d">                  
+                {%- render 'kt_filters_form', obj: search, toggle: "show", sc: 'dk' -%}
+              </div>
+            </div>
+          </div>
+          {%- endif -%}
+        </div>
+        <div class="kt--filter-wrap-sl my-3">
+          <ul class="kt--fl-sl list-unstyled">
+            {%- for filter in search.filters -%}
+            {%- for item in filter.active_values -%}
+            <li class="kt--fl-sl-i" style="margin-right: 0 !important;">
+              <a data-pjax-filter href="{{item.url_to_remove}}"><span class="remove_kt--filter-sl" data-action="remove">{{item.label}}<i class="d-icon-times"></i></span></a>
+            </li>
+            {%- endfor -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+      {%- endif -%}
+      {%- paginate search.results by section.settings.limit_search -%}
+      <div class="row">
+        <div class="col-12">
+          <div class="product-list-grid row {{grid_item_width}}" style="--bs-gutter-y: 1.25rem">
+            {% for item in search.results %}
+            {%- if item.object_type == 'product'-%}
+            <div class="grid-item p-style-{{grid_ly}} col ly__gr">
+              {%- render "product-grid-item", product: item, grid_layout: grid_ly, st_card: st_card -%}
+            </div>
+            {% else %}
+            <div class="grid-item col ly__gr">
+              <div class="thumb noImage position-relative">
+                <div class="flashs">
+                  {%-if item.object_type == 'page' -%}
+                  <span class="page onnew">{{'general.search_dropdown.pages_group' | t }}</span>
+                  {%-else-%}
+                  <span class="blog onnew">{{'general.search_dropdown.articles_group' | t }}</span>
+                  {%-endif-%}
+                </div>
+                <a href="{{item.url}}">
+                  <div class="thumb-name">
+                    <h4 class="item-name">{{ item.title | strip_html | truncate: 25}}</h4>
+                    <div class="product-description">
+                      {% if item.published_at %}<i class="fa fa-clock-o" aria-hidden="true"></i> {{ item.published_at | date: "%b %d, %Y" }}{%- unless item.object_type == 'page'-%} , <i class="fa fa-comment"></i> {{item.comments_count}}{% endunless %}<br/> {% endif %}
+                      <div class="claerfix _mt-2">
+                        {{- item.content | strip_html | truncate: 150 | capitalize -}}
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {%- if paginate.pages > 1 -%}
+            <div class="pagination_ text-center w-100">
+              {%- render 'pagination', paginate: paginate, cssAlign: cssAlign, cssAlign_rev: cssAlign_rev -%}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      {%- endpaginate -%}
+    </div>
+  </div>
+</div>
+{%- if section.settings.filters_type == 'off-canvas' -%}
+<div class="offcanvas offcanvas-start vh-100" tabindex="-1" id="filter-canvas-offcanvas" aria-labelledby="filter-canvas-offcanvasLabel">
+  <div class="offcanvas-body kt_scroll">
+    <div class="kt--filter kt_canvas">
+      <div class="filter_cavas_wrapper">
+        <div class="filter-clean">
+          <div class="head d-flex justify-content-between align-items-center">
+            <div class="filter-by filter-close d-none d-lg-block btn btn-primary btn-outline btn-rounded" data-bs-toggle="offcanvas" data-bs-target="#filter-canvas-offcanvas" aria-controls="filter-canvas-offcanvas">{{'collections.filters.title' | t}}<i class="d-icon-arrow-left"></i></div>
+            <a data-pjax-filter="" href="{{collections[collection.handle].url}}" class="sidebar-filter-clear">{{'collections.filters.clean' | t}}</a>
+          </div>
+          {%-comment-%}
+          <div class="kt--filter-wrap-sl">
+            {%- render 'kt_filter_selected' -%}
+          </div>
+          {%-endcomment-%}
+        </div>
+        <div class="kt--filter-grs kt--filter-grs-d">
+          {%- render 'kt_filters_form', obj: search, toggle: "show", sc: 'dk' -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+<div class="loadingFilter"><div class="card d-none"><div class="bar-loading ifinite"></div></div></div>
+<div class="offcanvas offcanvas-bottom vh-100 d-lg-none" tabindex="-1" id="filter-m-offcanvas" aria-labelledby="filter-m-offcanvasLabel">
+  <div class="offcanvas-header headFilter flex-wrap px-4">
+    <span class="offcanvas-title h5 m-0">{{'collections.filters_mobile.title' | t}}</span>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="kt--filter-sl-gr w-100"><div id="kt--filter-sl">{%- render 'kt_filter_selected' -%}</div></div>
+  </div>
+  <div class="offcanvas-body">
+    <div class="kt--filter kt--filter-m">
+      <div class="kt--filter-grs kt--filter-grs-m">{%- render 'kt_filters_form', obj: search, toggle: "show", sc: 'mb' -%}</div>
+      <!-- <div class="kt--filter-btn-gr fixed-bottom text-center"><button class="btn btn-primary btn-rounded btn-shadow" id="filterApply" type="submit">{{'collections.filters_mobile.apply' | t}}</button></div> -->
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Search page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Space settings"
+      },
+      {
+        "type": "select",
+        "id": "width_section",
+        "label": "Max width section",
+        "options": [
+          { "value": "container", "label": "1200px" },
+          { "value": "container-fluid wide", "label": "Wide" },
+          { "value": "w-100", "label": "Full width" }
+        ],
+        "default": "w-100"
+      },
+      {
+        "type":"checkbox",
+        "id": "width_content",
+        "label": "Max width content?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "25px|30px|35px|40px|45px|50px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding",
+        "label": "Paddings (top right bottom left)",
+        "info": "60px 60px 0 60px",
+        "default": "3rem 0 6rem"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image",
+        "info": "Size suggestion: 1920 x 497 pixels"
+      },
+      {
+        "type": "header",
+        "content": "Content settings"
+      },
+      {
+        "type": "range",
+        "id": "limit_search",
+        "min": 5,
+        "max": 50,
+        "step": 1,
+        "label": "Limit display product",
+        "default": 15
+      },
+      {
+        "type": "header",
+        "content": "Function settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "sort_enable",
+        "label": "Enable sorting",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Layout settings"
+      },
+      {
+        "type": "select",
+        "id": "sidebar",
+        "label": "Sidebar",
+        "options": [
+          {
+            "value": "",
+            "label": "None"
+          },
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "grid",
+        "label": "Products per row (grid only)",
+        "default": "4",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "7",
+            "label": "7"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Filters settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_flts",
+        "label": "Use Filters?",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Type"
+      },
+      {
+        "type": "select",
+        "id": "filters_type",
+        "label": "Filters type",
+        "options": [
+          {
+            "value": "sidebar",
+            "label": "Sidebar"
+          },
+          {
+            "value": "horizontal",
+            "label": "Horizontal"
+          },
+          {
+            "value": "navigation",
+            "label": "Navigation"
+          },
+          {
+            "value": "off-canvas",
+            "label": "Off-Canvas"
+          },
+          {
+            "value": "toggle-sidebar",
+            "label": "Toggle Sidebar"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "filter_item",
+        "name": "Filter By...",
+        "settings": [
+          { 
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Filter By"
+          },
+          {
+            "type": "header",
+            "content": "Custom style"
+           },
+          { 
+            "type": "text",
+            "id": "key",
+            "label": "Filter keyword",
+            "default": "Color",
+            "info": "Filter keyword containing will apply this style"
+          },
+          {
+            "type": "header",
+            "content": "Select block style"
+          },
+          {
+            "type": "select",
+            "id": "block_style",
+            "options": [
+              {
+                "value": "1",
+                "label": "Detail"
+              },
+              {
+                "value": "2",
+                "label": "Color list"
+              },
+              {
+                "value": "3",
+                "label": "Tag"
+              },
+              {
+                "value": "4",
+                "label": "Color tag"
+              },
+              {
+                "value": "5",
+                "label": "Color icon"
+              },
+              {
+                "value": "6",
+                "label": "Brand icon"
+              },
+              {
+                "value": "7",
+                "label": "Brand with icon"
+              }
+            ],
+            "label": "Style",
+            "default": "1"
+          },
+          {
+            "type": "checkbox",
+            "id": "use_split",
+            "label": "Split the column into 2"
+          },
+          {
+            "type": "checkbox",
+            "id": "always_show",
+            "label": "Always show."
+          }          
+        ]
+      },
+      {
+        "type": "filter_categories",
+        "name": "Filter Categories",
+        "limit": 1,
+        "settings": [ 
+          {
+            "type": "link_list",
+            "id": "list_categories_linklist",
+            "label": "Linklist categories"
+          },
+          { 
+            "type":"text",
+            "id":"key",
+            "label":"Filter keyword",
+            "default":"kt_categories",
+            "info": "Wrong: Don't change"
+          },
+          {
+            "type": "header",
+            "content": "Select block style"
+          },          
+          {
+            "type": "checkbox",
+            "id": "always_show",
+            "label": "Always show."
+          } 
+        ]
+      }
+    ]
+  }
+{% endschema %}

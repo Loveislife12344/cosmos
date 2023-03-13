@@ -1,0 +1,145 @@
+{%- style -%}
+.header-announcement{--text: {{section.settings.color_text_announcement}};--text_hv: {{section.settings.color_text_announcement_hv}};{%- unless request.design_mode -%}display: none;{%endunless%}padding: {{section.settings.announcement_padding | default: '0' | split: '|' | first | replace : '-',' '}};margin-top: {{section.settings.announcement_margin_top | default: '0' | split: '|' | first }};margin-bottom: {{section.settings.announcement_margin_bottom | default: '0' | split: '|' | first }};background-position: center;{%if section.settings.color_announcement_bg != blank%}background: {{ section.settings.color_announcement_bg }};{% endif %}}
+{%- endstyle -%}
+{%- liquid
+  if section.settings.announcement_onm
+    assign visible = 'd-none d-md-block'
+  endif
+  if section.settings.announcement_ont
+    assign visible = ' d-md-none d-lg-block'
+    if section.settings.announcement_ont
+      assign visible = visible | prepend: ' d-none'
+    endif
+  endif
+  unless section.settings.sticky_header_announcement
+    assign visible_announcement = 'not-sticky'
+  endunless
+  if template.name == 'product' and settings.show_sticky_add and settings.use_add_to_cart_btn
+    assign visible_announcement = 'not-sticky'
+  endif
+-%}
+{%- if section.blocks.size > 0 -%}
+<div class="content_{{section.id}} {{visible}} {{visible_announcement}}">
+  {%-if section.settings.announcement_image-%}
+  {{ section.settings.announcement_image | image_url: width: section.settings.announcement_image.width | image_tag: class: 'img-fit-cover', alt: section.settings.announcement_image.alt, size: '100vw', widths: '480, 576, 720, 1067, 1903, 3827, 2147, 7667, 4307', loading: 'lazy' }}
+  {%-endif-%}
+  {%- assign responsive_ = section.settings.announcement_reponsive | strip_newlines | json | remove: '\t' | remove: '\' | remove: ' ' | replace: '"{"','{"' | replace: '}}"','}}' -%}
+  {%- assign items_ = responsive_ | split: '"slidesPerView":' | last | split: ',' | first | plus: 0 -%}
+  <div class="announcement header-announcement" data-respon="{'el':'.header-announcement','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">
+    <div class="section-width {{section.settings.width_announcement}}">
+      <div class="swiper nav-default" data-breakpoints='{{responsive_}}' data-autoplay="true" data-slides-per-view="{{items_}}" data-nav="false" data-delay="10">
+        <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+        {%- if block.settings.message == blank -%}{%-continue-%}{%- endif -%}
+          <div class="swiper-slide"><div class="announcement-item text-center">{{block.settings.message}}</div></div>
+        {%- endfor -%}
+        </div>
+      </div><button type="button" class="btn-close close close-header-announcement"></button>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Announcement",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id" :"sticky_header_announcement",
+      "label": "Use sticky?"
+    },
+    {
+      "type": "select",
+      "id": "width_announcement",
+      "label": "Max width section",
+      "options": [
+        { "value": "container", "label": "1200px" },
+        { "value": "container-fluid wide", "label": "Wide" },
+        { "value": "w-100", "label": "Full width" }
+      ],
+      "default": "container"
+    },
+    {
+      "type":"checkbox",
+      "id": "width_content",
+      "label": "Max width content?",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "section_margin_top",
+      "label": "Margin top",
+      "info": "25px|30px|35px|40px|45px|50px"
+    },
+    {
+      "type": "text",
+      "id": "section_margin_bottom",
+      "label": "Margin bottom",
+      "info": "25px|30px|35px|40px|45px|50px"
+    },
+    {
+      "type": "text",
+      "id": "section_padding",
+      "label": "Paddings (top right bottom left)",
+      "info": "60px 60px 0 60px"
+    },
+    {
+      "type": "color",
+      "id": "color_text_announcement",
+      "label": "Color",
+      "default": "#555"
+    },
+    {
+      "type": "color",
+      "id": "color_text_announcement_hv",
+      "label": "Hover color",
+      "default": "#555"
+    },
+    {
+      "type": "color_background",
+      "id": "color_announcement_bg",
+      "label": "Background Announcement block",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "announcement_image",
+      "label": "Background image",
+      "info": "Size suggestion: 1920 x 752 pixels"
+    },
+    {
+      "type": "checkbox",
+      "id": "announcement_onm",
+      "label": "Hide on mobile?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "announcement_ont",
+      "label": "Hide on tablet?",
+      "default": false
+    },
+    {
+      "type": "liquid",
+      "id": "announcement_reponsive",
+      "label": "## Responsive",
+      "default": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"768\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"992\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"1200\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  }\n}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Item [Announcement]",
+      "settings": [
+        {
+           "type": "html",
+           "id": "message",
+           "label": "Announcement text",
+           "default": "<p>Summer Sale Extra <strong>25% OFF</strong> with code <strong>SM2018A</strong></p>",
+           "info": "[Example](https:\/\/molla-docs.the4.co\/default-section\/header-+-announcement\/announcement#2-example)"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
