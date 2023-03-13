@@ -681,16 +681,15 @@
         "blocks": {
           "9bc4ee75-1d05-4e93-b3d7-d350eb7949f3": {
             "type": "top_logo_newsletter_01",
-            "disabled": true,
             "settings": {
               "col": "col-sm-12 col-lg-12",
               "not_drop": false,
-              "logo": true,
+              "logo": false,
               "logo_footer_svg": "",
-              "logo_footer_max_width": 155,
+              "logo_footer_max_width": 175,
               "newsletter": true,
-              "title_newsletter": "Subscribe to our Newsletter",
-              "stitle_newsletter": "Get all the latest information, Sales and Offers."
+              "title_newsletter": "Subscribe & SAVE",
+              "stitle_newsletter": "<span class=\"subcribe-text\">\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, \nsed diam nonumy eirmod\n tempor invidunt.\n<\/span>"
             }
           },
           "feb28564-db25-4811-bbe9-73693bb2c193": {
@@ -701,6 +700,7 @@
               "dark_mode": false,
               "logo": true,
               "logo_footer_svg": "",
+              "logo_footer": "shopify:\/\/shop_images\/Group_72.png",
               "logo_footer_max_width": 155,
               "description": true,
               "title_desc": "Contact Info",
@@ -740,6 +740,27 @@
               "payment_url": ""
             }
           },
+          "8a0cbd40-1fb5-436c-bb41-a94868d12973": {
+            "type": "mid_logo_info_01",
+            "settings": {
+              "col": "col-sm-6 col-lg-3",
+              "not_drop": false,
+              "dark_mode": false,
+              "logo": false,
+              "logo_footer_svg": "",
+              "logo_footer_max_width": 150,
+              "description": true,
+              "title_desc": "Contact us",
+              "desc_content": "<a href=\"mailto:info@cosmac.com\">info@cosmac.com<\/a><br>\n<a href=\"tel:1300%20723%20092\">1300 723 092<\/a>\n<br><br>",
+              "call_widget": false,
+              "title_phone_00": "",
+              "about_info": false,
+              "title_phone_01": "Got Question? Call us 24\/7",
+              "payment_method": "Payment Method",
+              "payment_url": "",
+              "social_media": true
+            }
+          },
           "a29a3b31-a7e9-4d5b-8c63-554cd12fbf1e": {
             "type": "mid_news_01",
             "disabled": true,
@@ -774,27 +795,6 @@
               "social_media": true,
               "copyright": ""
             }
-          },
-          "8a0cbd40-1fb5-436c-bb41-a94868d12973": {
-            "type": "mid_logo_info_01",
-            "settings": {
-              "col": "col-sm-6 col-lg-3",
-              "not_drop": false,
-              "dark_mode": false,
-              "logo": false,
-              "logo_footer_svg": "",
-              "logo_footer_max_width": 150,
-              "description": true,
-              "title_desc": "",
-              "desc_content": "Fringilla urna porttitor rhoncus dolor purus luctus venenatis lectus magna fringilla diam maecenas ultricies mi eget mauris.\n<br><br>\nRiode@example.com",
-              "call_widget": false,
-              "title_phone_00": "Got Question? Call us 24\/7",
-              "about_info": false,
-              "title_phone_01": "Got Question? Call us 24\/7",
-              "payment_method": "Payment Method",
-              "payment_url": "",
-              "social_media": false
-            }
           }
         },
         "block_order": [
@@ -803,10 +803,10 @@
           "6f3718eb-5de0-4c38-b4d1-29fff6c0a639",
           "8a864723-14bf-48a8-adfc-0a3885927766",
           "cf3488bf-140e-43a9-8a3d-16235472bc78",
+          "8a0cbd40-1fb5-436c-bb41-a94868d12973",
           "a29a3b31-a7e9-4d5b-8c63-554cd12fbf1e",
           "c300f8d9-b7bd-4315-b852-6f011b9bf660",
-          "b7de1e78-4b8e-47e8-893a-c249f027db48",
-          "8a0cbd40-1fb5-436c-bb41-a94868d12973"
+          "b7de1e78-4b8e-47e8-893a-c249f027db48"
         ],
         "settings": {
           "width_section": "container",
