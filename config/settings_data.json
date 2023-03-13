@@ -818,7 +818,7 @@
           "section_padding": "20px 0",
           "section_bg": "#222222",
           "section_bg_op": 1,
-          "color": "#888888",
+          "color": "#fcfcfc",
           "color_title": "#ffffff",
           "border_color": "#333333",
           "border_top": false,
@@ -1094,6 +1094,11 @@
       }
     },
     "content_for_index": [
+
+    ]
+  },
+  "platform_customizations": {
+    "custom_css": [
 
     ]
   }
