@@ -323,6 +323,130 @@
         "css_section": ""
       }
     },
+    "4d58f644-9136-474b-84e9-db359910521a": {
+      "type": "rd_prds_sc_list",
+      "blocks": {
+        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-0": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "id_1": "demo-1",
+            "id_2": "",
+            "id_3": "",
+            "id_4": "",
+            "id_5": "",
+            "id_6": ""
+          }
+        },
+        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-1": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "id_1": "demo-1",
+            "id_2": "",
+            "id_3": "",
+            "id_4": "",
+            "id_5": "",
+            "id_6": ""
+          }
+        },
+        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-2": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "id_1": "demo-1",
+            "id_2": "",
+            "id_3": "",
+            "id_4": "",
+            "id_5": "",
+            "id_6": ""
+          }
+        },
+        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-3": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "id_1": "demo-1",
+            "id_2": "",
+            "id_3": "",
+            "id_4": "",
+            "id_5": "",
+            "id_6": ""
+          }
+        },
+        "94b9b8e6-7eab-4e6f-89d7-16c4a56057ed": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "id_1": "demo-1",
+            "id_2": "",
+            "id_3": "",
+            "id_4": "",
+            "id_5": "",
+            "id_6": ""
+          }
+        },
+        "195dac97-7fb7-409f-85e2-24f2d6a136a0": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "id_1": "demo-1",
+            "id_2": "",
+            "id_3": "",
+            "id_4": "",
+            "id_5": "",
+            "id_6": ""
+          }
+        },
+        "b0ac77de-f594-41ee-9613-f0e1d4f092f8": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "id_1": "demo-1",
+            "id_2": "",
+            "id_3": "",
+            "id_4": "",
+            "id_5": "",
+            "id_6": ""
+          }
+        },
+        "f3e2c73b-3cc6-4fc2-8e74-2088801870ed": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "id_1": "demo-1",
+            "id_2": "",
+            "id_3": "",
+            "id_4": "",
+            "id_5": "",
+            "id_6": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-0",
+        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-1",
+        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-2",
+        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-3",
+        "94b9b8e6-7eab-4e6f-89d7-16c4a56057ed",
+        "195dac97-7fb7-409f-85e2-24f2d6a136a0",
+        "b0ac77de-f594-41ee-9613-f0e1d4f092f8",
+        "f3e2c73b-3cc6-4fc2-8e74-2088801870ed"
+      ],
+      "settings": {
+        "title": "Sale",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "use_lazyload": false,
+        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}"
+      }
+    },
     "163591206067ad1209": {
       "type": "rd_prds_sc_grid",
       "blocks": {
@@ -361,70 +485,6 @@
         "section_bg": "",
         "use_lazyload": true,
         "use_nospace": false
-      }
-    },
-    "16340839546a8e5911": {
-      "type": "rd_list_item_cattegories_1",
-      "blocks": {
-        "161effdb-fd63-4cb5-ae02-55d02685e0fb": {
-          "type": "title",
-          "settings": {
-            "title_style": "center",
-            "title": "Popular Categories",
-            "stitle": "",
-            "link_to": "",
-            "name_link": "",
-            "margin_btitle": 20
-          }
-        },
-        "16340839546a8e5911-0": {
-          "type": "item",
-          "settings": {
-            "link": "",
-            "title": "Backpacks & Fashion Bags"
-          }
-        },
-        "405a60b9-f611-47db-951c-1b08d05e74da": {
-          "type": "item",
-          "settings": {
-            "link": "",
-            "title": "Travel & Clothing"
-          }
-        },
-        "51fd322d-034e-4c5a-b8f1-e67d41e25326": {
-          "type": "item",
-          "settings": {
-            "link": "",
-            "title": "Musical instruments"
-          }
-        },
-        "5c476410-7eac-4f3d-8bfa-209480aca148": {
-          "type": "item",
-          "settings": {
-            "link": "",
-            "title": "Sneakers"
-          }
-        }
-      },
-      "block_order": [
-        "161effdb-fd63-4cb5-ae02-55d02685e0fb",
-        "16340839546a8e5911-0",
-        "405a60b9-f611-47db-951c-1b08d05e74da",
-        "51fd322d-034e-4c5a-b8f1-e67d41e25326",
-        "5c476410-7eac-4f3d-8bfa-209480aca148"
-      ],
-      "settings": {
-        "off_mobile": false,
-        "off_desktop": false,
-        "title": "List categories",
-        "width_section": "container",
-        "width_content": false,
-        "section_margin_top": "",
-        "section_margin_bottom": "60px",
-        "section_padding": "",
-        "section_bg": "",
-        "style": "03",
-        "items": 4
       }
     },
     "1635951743130493b4": {
@@ -768,6 +828,71 @@
         "atc_btn_shadow": false,
         "atc_btn_big": false,
         "atc_btn_ani": false
+      }
+    },
+    "16340839546a8e5911": {
+      "type": "rd_list_item_cattegories_1",
+      "disabled": true,
+      "blocks": {
+        "161effdb-fd63-4cb5-ae02-55d02685e0fb": {
+          "type": "title",
+          "settings": {
+            "title_style": "center",
+            "title": "Popular Categories",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 20
+          }
+        },
+        "16340839546a8e5911-0": {
+          "type": "item",
+          "settings": {
+            "link": "",
+            "title": "Backpacks & Fashion Bags"
+          }
+        },
+        "405a60b9-f611-47db-951c-1b08d05e74da": {
+          "type": "item",
+          "settings": {
+            "link": "",
+            "title": "Travel & Clothing"
+          }
+        },
+        "51fd322d-034e-4c5a-b8f1-e67d41e25326": {
+          "type": "item",
+          "settings": {
+            "link": "",
+            "title": "Musical instruments"
+          }
+        },
+        "5c476410-7eac-4f3d-8bfa-209480aca148": {
+          "type": "item",
+          "settings": {
+            "link": "",
+            "title": "Sneakers"
+          }
+        }
+      },
+      "block_order": [
+        "161effdb-fd63-4cb5-ae02-55d02685e0fb",
+        "16340839546a8e5911-0",
+        "405a60b9-f611-47db-951c-1b08d05e74da",
+        "51fd322d-034e-4c5a-b8f1-e67d41e25326",
+        "5c476410-7eac-4f3d-8bfa-209480aca148"
+      ],
+      "settings": {
+        "off_mobile": false,
+        "off_desktop": false,
+        "title": "List categories",
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "60px",
+        "section_padding": "",
+        "section_bg": "",
+        "style": "03",
+        "items": 4
       }
     },
     "e24c145a-a58e-4e51-95af-2654bc94dc42": {
@@ -1564,142 +1689,19 @@
         "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"480\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  }\n}",
         "css_section": ""
       }
-    },
-    "4d58f644-9136-474b-84e9-db359910521a": {
-      "type": "rd_prds_sc_list",
-      "blocks": {
-        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-0": {
-          "type": "item",
-          "settings": {
-            "title": "",
-            "id_1": "demo-1",
-            "id_2": "",
-            "id_3": "",
-            "id_4": "",
-            "id_5": "",
-            "id_6": ""
-          }
-        },
-        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-1": {
-          "type": "item",
-          "settings": {
-            "title": "",
-            "id_1": "demo-1",
-            "id_2": "",
-            "id_3": "",
-            "id_4": "",
-            "id_5": "",
-            "id_6": ""
-          }
-        },
-        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-2": {
-          "type": "item",
-          "settings": {
-            "title": "",
-            "id_1": "demo-1",
-            "id_2": "",
-            "id_3": "",
-            "id_4": "",
-            "id_5": "",
-            "id_6": ""
-          }
-        },
-        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-3": {
-          "type": "item",
-          "settings": {
-            "title": "",
-            "id_1": "demo-1",
-            "id_2": "",
-            "id_3": "",
-            "id_4": "",
-            "id_5": "",
-            "id_6": ""
-          }
-        },
-        "94b9b8e6-7eab-4e6f-89d7-16c4a56057ed": {
-          "type": "item",
-          "settings": {
-            "title": "",
-            "id_1": "demo-1",
-            "id_2": "",
-            "id_3": "",
-            "id_4": "",
-            "id_5": "",
-            "id_6": ""
-          }
-        },
-        "195dac97-7fb7-409f-85e2-24f2d6a136a0": {
-          "type": "item",
-          "settings": {
-            "title": "",
-            "id_1": "demo-1",
-            "id_2": "",
-            "id_3": "",
-            "id_4": "",
-            "id_5": "",
-            "id_6": ""
-          }
-        },
-        "b0ac77de-f594-41ee-9613-f0e1d4f092f8": {
-          "type": "item",
-          "settings": {
-            "title": "",
-            "id_1": "demo-1",
-            "id_2": "",
-            "id_3": "",
-            "id_4": "",
-            "id_5": "",
-            "id_6": ""
-          }
-        },
-        "f3e2c73b-3cc6-4fc2-8e74-2088801870ed": {
-          "type": "item",
-          "settings": {
-            "title": "",
-            "id_1": "demo-1",
-            "id_2": "",
-            "id_3": "",
-            "id_4": "",
-            "id_5": "",
-            "id_6": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-0",
-        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-1",
-        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-2",
-        "template--18286564376879__4d58f644-9136-474b-84e9-db359910521a-1678696484cd14629b-3",
-        "94b9b8e6-7eab-4e6f-89d7-16c4a56057ed",
-        "195dac97-7fb7-409f-85e2-24f2d6a136a0",
-        "b0ac77de-f594-41ee-9613-f0e1d4f092f8",
-        "f3e2c73b-3cc6-4fc2-8e74-2088801870ed"
-      ],
-      "settings": {
-        "title": "Products (list)",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "w-100",
-        "width_content": true,
-        "section_margin_top": "",
-        "section_margin_bottom": "",
-        "section_padding": "",
-        "section_bg": "",
-        "use_lazyload": false,
-        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}"
-      }
     }
   },
   "order": [
     "1636168033f185e383",
     "16361859527a526cba",
+    "4d58f644-9136-474b-84e9-db359910521a",
     "163591206067ad1209",
-    "16340839546a8e5911",
     "1635951743130493b4",
     "1636597550a198f3ec",
     "1634694028f2fa928a",
     "1636767334cb77ea28",
     "026e34ea-1183-42a4-a153-f5fbf8e3357c",
+    "16340839546a8e5911",
     "e24c145a-a58e-4e51-95af-2654bc94dc42",
     "f229cafc-d1d8-4b61-a46c-0fd52c49eece",
     "ce8ec8c1-ba48-465c-a726-2aaff1de4f11",
@@ -1711,7 +1713,6 @@
     "394155d1-218a-4b10-80f3-de72df4364f7",
     "3445f257-26d0-4138-81f0-657a139c12de",
     "b828f374-dddb-47e6-8f7d-d8a972cd473d",
-    "332a18e8-a9ab-4cdc-be48-8d06f7bb16e8",
-    "4d58f644-9136-474b-84e9-db359910521a"
+    "332a18e8-a9ab-4cdc-be48-8d06f7bb16e8"
   ]
 }
