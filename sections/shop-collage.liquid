@@ -40,7 +40,7 @@
       
         <div class="row justify-content-center imgs__banner_flexible" {{layout_st}} style="--bs-gutter-x:{{section.settings.grid_gutter | times: 2}}px; --radius: {{section.settings.border_radius}}px">
         {%- for block in section.blocks -%}
-        {%- unless block.type != 'title' -%}{%- continue -%}{%- endunless -%}
+       
         {%- if block.settings.turnoff -%}{%- continue -%}{%- endif -%}
         {%- capture col_it -%}
           {%- if block.settings.width_sm != 0 %} d-sm-{%-if block.settings.width_sm == 13-%}none{%else%}block{%endif%} col-sm-{{block.settings.width_sm}}{% endif -%}
