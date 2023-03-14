@@ -40,7 +40,7 @@
       
         <div class="row justify-content-center imgs__banner_flexible" {{layout_st}} style="--bs-gutter-x:{{section.settings.grid_gutter | times: 2}}px; --radius: {{section.settings.border_radius}}px">
         {%- for block in section.blocks -%}
-        {%- unless block.type != 'title' -%}  {%- render 'kt_sc_title', block: block, attr: true -%}{%- endunless -%}
+        {%- unless block.type != 'title' -%}{%- continue -%}{%- endunless -%}
         {%- if block.settings.turnoff -%}{%- continue -%}{%- endif -%}
         {%- capture col_it -%}
           {%- if block.settings.width_sm != 0 %} d-sm-{%-if block.settings.width_sm == 13-%}none{%else%}block{%endif%} col-sm-{{block.settings.width_sm}}{% endif -%}
@@ -52,6 +52,8 @@
         <div class="masonry-item item_{{forloop.index}} {{block.type}} col-{{block.settings.width}} {{-col_it | strip_newlines}} pb-gutter" {{ block.shopify_attributes }}>
           <div class="banner-wrap {{block.settings.banner-effect}}">
             {%- case block.type -%}
+              {%- when 'title' -%}
+                {%- render 'kt_sc_title', block: block, attr: true -%}
               {%- when 'it_banner' -%}
                 {%-assign width = block.settings.image.width | default: 575.00 -%}{%-assign height = block.settings.image.height | default: 575.00 | plus: 0.00-%}
                 <a href="{{block.settings.image_link | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner{%if block.settings.image_mb != blank%} d-none d-md-block{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
