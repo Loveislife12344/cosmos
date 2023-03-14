@@ -452,6 +452,76 @@
         "css_section": ""
       }
     },
+    "cb32a200-b1f4-4d8b-9c93-cff843d876ee": {
+      "type": "who-we-are",
+      "blocks": {
+        "d77b3b3a-2941-4783-90f6-a8b2afe1d443": {
+          "type": "it_cat_1",
+          "settings": {
+            "title": "Categories item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 6,
+            "width_lg": 6,
+            "width_xl": 6,
+            "width_xxl": 6,
+            "image": "shopify:\/\/shop_images\/Rectangle_13.png",
+            "image_link": "",
+            "blank_link": false,
+            "titlex": "Hand &amp; wrist",
+            "preheading": "Featured products",
+            "title-below": false,
+            "description": "",
+            "color_titlex": "#222222",
+            "name_btn": "",
+            "style_btn": "btn-underline btn-link",
+            "banner-effect": ""
+          }
+        },
+        "a77d64a8-0627-45fe-b369-a76205ae56ae": {
+          "type": "it_cat_1",
+          "settings": {
+            "title": "Categories item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 6,
+            "width_lg": 6,
+            "width_xl": 6,
+            "width_xxl": 6,
+            "image": "shopify:\/\/shop_images\/Rectangle_13.png",
+            "image_link": "",
+            "blank_link": false,
+            "titlex": "Foot &amp; ankle",
+            "preheading": "",
+            "title-below": true,
+            "description": "",
+            "color_titlex": "#222222",
+            "name_btn": "",
+            "style_btn": "btn-underline btn-white btn-link",
+            "banner-effect": ""
+          }
+        }
+      },
+      "block_order": [
+        "d77b3b3a-2941-4783-90f6-a8b2afe1d443",
+        "a77d64a8-0627-45fe-b369-a76205ae56ae"
+      ],
+      "settings": {
+        "title": "Who We Are",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "layout_mode": "normal",
+        "grid_gutter": 10,
+        "border_radius": 10,
+        "css_section": ""
+      }
+    },
     "026e34ea-1183-42a4-a153-f5fbf8e3357c": {
       "type": "rd_featured_product",
       "blocks": {
@@ -913,76 +983,6 @@
         "color_bg_input": "#ffffff",
         "preview": false,
         "css_section": ".section_id .sc-title{\nletter-spacing: -.04em;\nmargin-bottom: 10px;\nfont-weight: 600;\nfont-size: 2.250em;\n}"
-      }
-    },
-    "cb32a200-b1f4-4d8b-9c93-cff843d876ee": {
-      "type": "who-we-are",
-      "blocks": {
-        "d77b3b3a-2941-4783-90f6-a8b2afe1d443": {
-          "type": "it_cat_1",
-          "settings": {
-            "title": "Categories item",
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 6,
-            "width_lg": 6,
-            "width_xl": 6,
-            "width_xxl": 6,
-            "image": "shopify:\/\/shop_images\/Rectangle_13.png",
-            "image_link": "",
-            "blank_link": false,
-            "titlex": "Hand &amp; wrist",
-            "preheading": "Featured products",
-            "title-below": false,
-            "description": "",
-            "color_titlex": "#222222",
-            "name_btn": "",
-            "style_btn": "btn-underline btn-link",
-            "banner-effect": ""
-          }
-        },
-        "a77d64a8-0627-45fe-b369-a76205ae56ae": {
-          "type": "it_cat_1",
-          "settings": {
-            "title": "Categories item",
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 6,
-            "width_lg": 6,
-            "width_xl": 6,
-            "width_xxl": 6,
-            "image": "shopify:\/\/shop_images\/Rectangle_13.png",
-            "image_link": "",
-            "blank_link": false,
-            "titlex": "Foot &amp; ankle",
-            "preheading": "",
-            "title-below": true,
-            "description": "",
-            "color_titlex": "#222222",
-            "name_btn": "",
-            "style_btn": "btn-underline btn-white btn-link",
-            "banner-effect": ""
-          }
-        }
-      },
-      "block_order": [
-        "d77b3b3a-2941-4783-90f6-a8b2afe1d443",
-        "a77d64a8-0627-45fe-b369-a76205ae56ae"
-      ],
-      "settings": {
-        "title": "Who We Are",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "w-100",
-        "width_content": true,
-        "section_margin_top": "",
-        "section_margin_bottom": "",
-        "section_padding": "",
-        "section_bg": "",
-        "layout_mode": "normal",
-        "grid_gutter": 10,
-        "border_radius": 10,
-        "css_section": ""
       }
     },
     "1635951743130493b4": {
@@ -1867,13 +1867,13 @@
     "16361859527a526cba",
     "33519491-43fc-497a-bdcf-63fd13eccd1c",
     "f8b2550c-b290-4798-be6f-148c053fa0e9",
+    "cb32a200-b1f4-4d8b-9c93-cff843d876ee",
     "026e34ea-1183-42a4-a153-f5fbf8e3357c",
     "163591206067ad1209",
     "4d58f644-9136-474b-84e9-db359910521a",
     "1634694028f2fa928a",
     "1636767334cb77ea28",
     "1636597550a198f3ec",
-    "cb32a200-b1f4-4d8b-9c93-cff843d876ee",
     "1635951743130493b4",
     "16340839546a8e5911",
     "e24c145a-a58e-4e51-95af-2654bc94dc42",
