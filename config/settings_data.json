@@ -5,6 +5,7 @@
     "logo": "shopify:\/\/shop_images\/COS-LOGO.png",
     "logo_max_width": "153",
     "import_header": "01",
+    "dir_body": "ltr",
     "use_mobile_bottom_bar": true,
     "phone_contact": "0(800) 123-456",
     "aspect_ratio": "279\/313",
@@ -503,11 +504,17 @@
       "kt_banner_all_page": {
         "type": "kt_banner_all_page",
         "settings": {
+          "title": "Banner all page",
           "off_section": true,
+          "off_mobile": false,
+          "off_desktop": false,
+          "width_section": "container",
+          "width_content": true,
           "section_margin_top": "",
           "section_margin_bottom": "",
           "section_padding": "2.5rem 0",
           "section_bg": "#008060",
+          "section_bg_op": 1,
           "message": "<p>Now These Bestsellers are back in stock & ready for action!<\/p>",
           "link": "",
           "textBtn": "Shop Now <i class=\"fkt-angle-right\" aria-hidden=\"true\"><\/i>",
@@ -524,6 +531,8 @@
             "type": "collection_banner",
             "settings": {
               "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
               "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle\">CATEGORIES<\/h3>\n<h1 class=\"page-title\">{{collection.title}}<\/h1>\n<\/div>",
               "color_white": true,
               "breadcrumb": true,
@@ -531,12 +540,13 @@
               "by_handle_2": "",
               "by_handle_3": "",
               "by_handle_11": "all_handle",
+              "width_section": "container",
+              "width_content": true,
               "section_margin_top": "",
               "section_margin_bottom": "",
               "section_padding": "60px 0",
               "section_bg": "",
               "section_bg_op": 1,
-              "image": "shopify:\/\/shop_images\/page-header-back.jpg",
               "link_banner": ""
             }
           },
@@ -544,6 +554,8 @@
             "type": "page_banner",
             "settings": {
               "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
               "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle fw-600\">WELCOME RIODE<\/h3>\n\n<h1 class=\"page-title fw-bold text-capitalize mb-1\">Our Services<\/h1>\n\n<p class=\"page-desc text-white mb-0\">Lorem quis bibendum auctor, nisi elit consequat ipsum,<br> nec                    sagittis sem nibh id elit.<\/p>\n<\/div>",
               "color_white": true,
               "breadcrumb": false,
@@ -551,12 +563,13 @@
               "by_handle_2": "",
               "by_handle_3": "",
               "by_handle_11": "",
+              "width_section": "container",
+              "width_content": true,
               "section_margin_top": "",
               "section_margin_bottom": "",
               "section_padding": "60px 0",
               "section_bg": "",
               "section_bg_op": 1,
-              "image": "shopify:\/\/shop_images\/page-header.jpg",
               "link_banner": ""
             }
           },
@@ -564,6 +577,8 @@
             "type": "page_banner",
             "settings": {
               "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
               "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle\">CATEGORIES<\/h3>\n<h1 class=\"page-title\">{{page.title}}<\/h1>\n<\/div>",
               "color_white": true,
               "breadcrumb": true,
@@ -571,12 +586,13 @@
               "by_handle_2": "",
               "by_handle_3": "",
               "by_handle_11": "element-buttons, element-typography, element-accordions, element-testimonials, element-alert-notification",
+              "width_section": "container",
+              "width_content": true,
               "section_margin_top": "",
               "section_margin_bottom": "",
               "section_padding": "60px 0",
               "section_bg": "#f2f2f2",
               "section_bg_op": 1,
-              "image": "shopify:\/\/shop_images\/page-header.jpg",
               "link_banner": ""
             }
           },
@@ -584,6 +600,8 @@
             "type": "page_banner",
             "settings": {
               "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
               "html": "<div class=\"page-header text-center\">\n<h1 class=\"page-title\">{{page.title}}<\/h1>\n<\/div>",
               "color_white": true,
               "breadcrumb": true,
@@ -591,12 +609,13 @@
               "by_handle_2": "",
               "by_handle_3": "",
               "by_handle_11": "",
+              "width_section": "container",
+              "width_content": true,
               "section_margin_top": "",
               "section_margin_bottom": "100px",
               "section_padding": "130px 0",
               "section_bg": "",
               "section_bg_op": 1,
-              "image": "shopify:\/\/shop_images\/contact-us.jpg",
               "link_banner": ""
             }
           },
@@ -604,6 +623,8 @@
             "type": "page_banner",
             "settings": {
               "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
               "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle\">FREQUENTLY<\/h3>\n<h1 class=\"page-title\">Asked Questions<\/h1>\n<\/div>",
               "color_white": true,
               "breadcrumb": false,
@@ -611,12 +632,13 @@
               "by_handle_2": "",
               "by_handle_3": "",
               "by_handle_11": "",
+              "width_section": "container",
+              "width_content": true,
               "section_margin_top": "",
               "section_margin_bottom": "",
               "section_padding": "115px 0",
               "section_bg": "",
               "section_bg_op": 1,
-              "image": "shopify:\/\/shop_images\/faq.jpg",
               "link_banner": ""
             }
           },
@@ -624,15 +646,18 @@
             "type": "account_banner",
             "settings": {
               "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
               "html": "<div class=\"page-header text-center\">\n<h1 class=\"page-title\">{{page_title}}<\/h1>\n<\/div>",
               "color_white": true,
               "breadcrumb": true,
+              "width_section": "container",
+              "width_content": true,
               "section_margin_top": "",
               "section_margin_bottom": "",
               "section_padding": "",
               "section_bg": "",
               "section_bg_op": 1,
-              "image": "shopify:\/\/shop_images\/page-header-back.jpg",
               "link_banner": ""
             }
           }
