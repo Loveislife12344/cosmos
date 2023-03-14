@@ -1905,7 +1905,7 @@
         "section_bg": "",
         "layout_mode": "normal",
         "grid_gutter": 10,
-        "border_radius": 10,
+        "border_radius": 0,
         "css_section": ""
       }
     }
