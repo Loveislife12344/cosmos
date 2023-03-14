@@ -37,10 +37,10 @@
     <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">      
       <div class="section-width {{width_content_}}">
         {%- assign block = section.blocks | where: 'type', 'title' | first -%}
-        {%- render 'kt_sc_title', block: block, attr: true -%}
+      
         <div class="row justify-content-center imgs__banner_flexible" {{layout_st}} style="--bs-gutter-x:{{section.settings.grid_gutter | times: 2}}px; --radius: {{section.settings.border_radius}}px">
         {%- for block in section.blocks -%}
-        {%- unless block.type != 'title' -%}{%- continue -%}{%- endunless -%}
+        {%- unless block.type != 'title' -%}  {%- render 'kt_sc_title', block: block, attr: true -%}{%- endunless -%}
         {%- if block.settings.turnoff -%}{%- continue -%}{%- endif -%}
         {%- capture col_it -%}
           {%- if block.settings.width_sm != 0 %} d-sm-{%-if block.settings.width_sm == 13-%}none{%else%}block{%endif%} col-sm-{{block.settings.width_sm}}{% endif -%}
