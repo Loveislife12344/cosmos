@@ -325,6 +325,127 @@
         "css_section": ""
       }
     },
+    "8766b700-96a8-4636-bc3c-b53fe41bf70c": {
+      "type": "kt_banner_flexible",
+      "blocks": {
+        "876b5edb-209c-4a18-a0e0-9dd9c1a358d1": {
+          "type": "it_cat_1",
+          "settings": {
+            "title": "Categories item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 6,
+            "width_lg": 3,
+            "width_xl": 3,
+            "width_xxl": 3,
+            "image": "shopify:\/\/shop_images\/Rectangle_13.png",
+            "image_link": "",
+            "blank_link": false,
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#222",
+            "name_btn": "SHOP NOW",
+            "style_btn": "btn-underline btn-link",
+            "banner-effect": ""
+          }
+        },
+        "568b3325-159b-4e39-9152-9bce78e7880f": {
+          "type": "it_banner",
+          "settings": {
+            "title": "Banner item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 6,
+            "width_lg": 9,
+            "width_xl": 9,
+            "width_xxl": 9,
+            "image": "shopify:\/\/shop_images\/Rectangle_13.png",
+            "image_mb": "shopify:\/\/shop_images\/Rectangle_13.png",
+            "image_link": "",
+            "blank_link": false,
+            "desc": "",
+            "color_desc": "#fff",
+            "titlex": "",
+            "color_titlex": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "name_btn": "",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "name_btn_2": "",
+            "image_link_2": "",
+            "style_btn_2": "btn-primary",
+            "style_btn_rounded_2": "",
+            "btn_shadow_2": false,
+            "text_align_top": 50,
+            "text_align_start": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_start_mb": 16,
+            "text_align_mb": "",
+            "banner-effect": ""
+          }
+        },
+        "b9e4430d-5990-43e9-b7be-0c2e003594ff": {
+          "type": "it_text",
+          "disabled": true,
+          "settings": {
+            "title": "Text item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 0,
+            "width_lg": 0,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "bg_item": "",
+            "image_link": "",
+            "blank_link": false,
+            "desc": "Trending now",
+            "color_desc": "#fff",
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "name_btn": "DISCOVER NOW",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "name_btn_2": "",
+            "image_link_2": "",
+            "style_btn_2": "btn-primary",
+            "style_btn_rounded_2": "",
+            "btn_shadow_2": false,
+            "text_align_top": 50,
+            "text_align_start": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_start_mb": 16,
+            "text_align_mb": "",
+            "banner-effect": ""
+          }
+        }
+      },
+      "block_order": [
+        "876b5edb-209c-4a18-a0e0-9dd9c1a358d1",
+        "568b3325-159b-4e39-9152-9bce78e7880f",
+        "b9e4430d-5990-43e9-b7be-0c2e003594ff"
+      ],
+      "settings": {
+        "title": "Banner Flexible",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "layout_mode": "normal",
+        "grid_gutter": 10,
+        "border_radius": 10,
+        "css_section": ""
+      }
+    },
     "163591206067ad1209": {
       "type": "rd_prds_sc_grid",
       "blocks": {
@@ -1734,6 +1855,7 @@
   "order": [
     "1636168033f185e383",
     "16361859527a526cba",
+    "8766b700-96a8-4636-bc3c-b53fe41bf70c",
     "163591206067ad1209",
     "f8b2550c-b290-4798-be6f-148c053fa0e9",
     "026e34ea-1183-42a4-a153-f5fbf8e3357c",
