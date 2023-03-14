@@ -615,6 +615,109 @@
         "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"476\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}",
         "css_section": ""
       }
+    },
+    "ccbfbc4a-1bac-4d39-b5fc-30d3c7d32cc2": {
+      "type": "kt_HTML",
+      "blocks": {
+        "44a797e5-86af-450b-ae7c-5a51c50cc1c4": {
+          "type": "title",
+          "settings": {
+            "title_style": "auto",
+            "title": "Account Enquiries",
+            "stitle": "Contact Cosmac to open an account, or to obtain details of our trading terms and conditions.",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        },
+        "3670f200-cc76-4460-b913-00053809a940": {
+          "type": "content2",
+          "disabled": true,
+          "settings": {
+            "text": ""
+          }
+        },
+        "b1370dc5-937b-4c74-a522-0186d8e231bb": {
+          "type": "content1",
+          "disabled": true,
+          "settings": {
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "44a797e5-86af-450b-ae7c-5a51c50cc1c4",
+        "3670f200-cc76-4460-b913-00053809a940",
+        "b1370dc5-937b-4c74-a522-0186d8e231bb"
+      ],
+      "settings": {
+        "title": "Section Customize",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "title_section": "",
+        "stitle_section": "",
+        "reverse": false,
+        "title_align": "",
+        "link_to": "",
+        "name_link": "",
+        "margin_btitle": 30,
+        "border_top": true,
+        "border_bottom": false,
+        "border_color": "#ebebeb"
+      }
+    },
+    "5d212a61-84e4-4fdc-8406-1420dea2c61d": {
+      "type": "kt_HTML",
+      "blocks": {
+        "ecfc224c-ce2c-4b09-b760-56a6621952f7": {
+          "type": "title",
+          "settings": {
+            "title_style": "auto",
+            "title": "Our ABN’s Number",
+            "stitle": "1234567890",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        },
+        "b51f59ce-d11a-4c31-add4-abc25a5fd363": {
+          "type": "content2",
+          "settings": {
+            "text": "<span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.<\/span><br><br>"
+          }
+        }
+      },
+      "block_order": [
+        "ecfc224c-ce2c-4b09-b760-56a6621952f7",
+        "b51f59ce-d11a-4c31-add4-abc25a5fd363"
+      ],
+      "settings": {
+        "title": "Section Customize",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "title_section": "",
+        "stitle_section": "",
+        "reverse": false,
+        "title_align": "",
+        "link_to": "",
+        "name_link": "",
+        "margin_btitle": 30,
+        "border_top": true,
+        "border_bottom": false,
+        "border_color": "#ebebeb"
+      }
     }
   },
   "order": [
@@ -627,6 +730,8 @@
     "16278933153ac77724",
     "1627893641ded4ec48",
     "f6503f0d-861c-4eb5-b496-e4afac98aab5",
-    "dd4d33fa-a4e2-4056-981b-8c983c7f2f38"
+    "dd4d33fa-a4e2-4056-981b-8c983c7f2f38",
+    "ccbfbc4a-1bac-4d39-b5fc-30d3c7d32cc2",
+    "5d212a61-84e4-4fdc-8406-1420dea2c61d"
   ]
 }
