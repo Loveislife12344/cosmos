@@ -280,6 +280,11 @@
     {{ banner-css | strip_newlines | remove: '  ' | remove: '  ' }}
   </noscript>
   {%- endif -%}
+  <style>
+    .shop-collage .row{
+    column-count:3;
+    }
+</style>
   {%-if section.settings.css_section != blank-%}
   <noscript class="banner-css" data-section-type="{{section.id}}">
     {%-capture banner-css-%}
