@@ -734,6 +734,7 @@
     },
     "1634694028f2fa928a": {
       "type": "rd_blog",
+      "disabled": true,
       "blocks": {
         "7ad7449c-9a9e-4f08-bf7d-64251e5ab8c9": {
           "type": "title",
@@ -795,9 +796,11 @@
     },
     "1636767334cb77ea28": {
       "type": "rd_instagram_1",
+      "disabled": true,
       "blocks": {
         "821d3c17-581b-4373-8341-066e215aebe6": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "name": "Jenson Gregory",
             "info": "Customer",
@@ -806,6 +809,7 @@
         },
         "30ee7c51-df59-4a2b-ab20-b4f32bbf7c80": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "name": "Jenson Gregory",
             "info": "Customer",
@@ -814,6 +818,7 @@
         },
         "8a878ee5-82d3-498e-91e8-ec7dc1b78e9f": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "name": "Jenson Gregory",
             "info": "Customer",
@@ -870,6 +875,7 @@
         },
         "012dd9f4-b63a-486b-bb4e-fd3559078f00": {
           "type": "title",
+          "disabled": true,
           "settings": {
             "title_style": "center",
             "title": "Follow Us on Instagram",
@@ -904,10 +910,10 @@
         "section_margin_bottom": "60px",
         "section_padding": "",
         "section_bg": "",
-        "images_limit": 8,
-        "range_row": 4,
+        "images_limit": 18,
+        "range_row": 5,
         "section_bgy": "#fef0e3",
-        "titley": "What they say about us",
+        "titley": "",
         "autoplay": false,
         "use_navigation": false,
         "nav_style": "-default",
@@ -921,6 +927,7 @@
     },
     "1636597550a198f3ec": {
       "type": "rd_call_to_action",
+      "disabled": true,
       "blocks": {
         "ea79ce29-0519-4c14-aa0f-f3203de0af21": {
           "type": "item_title",
