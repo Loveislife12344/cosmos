@@ -133,10 +133,12 @@
                   {%- endif -%}
                 </a>
                 {%- unless block.settings.titlex == blank -%}
-                
+                <span>
+                {{block.settings.description}}
+                </span>
                   
-                  <div class="--button btn-secondary btn-outline">
-                    <a href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="btn {{block.settings.style_btn}}" aria-label="{{block.settings.name_btn | strip_html}}">{{block.settings.name_btn}}</a>
+                  <div class="--button ">
+                    <a href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="btn btn-secondary btn-outline" aria-label="{{block.settings.name_btn | strip_html}}">{{block.settings.name_btn}}</a>
                   </div>
               
                 {%- endunless -%}
@@ -1551,7 +1553,13 @@
             {
               "type":"html",
               "id":"preheading",
-              "label": "Title",
+              "label": "preheading",
+              "default":"This Week's Most Wanted"
+            },
+            {
+              "type":"html",
+              "id":"description",
+              "label": "Description",
               "default":"This Week's Most Wanted"
             },
             {
