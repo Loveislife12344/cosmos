@@ -388,7 +388,6 @@
         },
         "b9e4430d-5990-43e9-b7be-0c2e003594ff": {
           "type": "it_text",
-          "disabled": true,
           "settings": {
             "title": "Text item",
             "width": 12,
@@ -403,9 +402,9 @@
             "desc": "Trending now",
             "color_desc": "#fff",
             "titlex": "This Week's Most Wanted",
-            "color_titlex": "#fff",
-            "stitle": "",
-            "color_stitle": "#fff",
+            "color_titlex": "#222222",
+            "stitle": "ad",
+            "color_stitle": "#222222",
             "name_btn": "DISCOVER NOW",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
