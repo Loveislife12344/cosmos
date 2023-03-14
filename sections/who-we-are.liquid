@@ -143,7 +143,7 @@
                 <span>
                 {{block.settings.description}}
                 </span>
-                  {% if block.settings.name_btn %}
+                  {% if block.settings.name_btn != blank %}
                     <div class="">
                     <a href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="btn btn-secondary btn-outline" aria-label="{{block.settings.name_btn | strip_html}}">{{block.settings.name_btn}}</a>
                   </div>
