@@ -558,7 +558,7 @@
               "off_desktop": false,
               "html": "<div class=\"page-header text-center\">\n\n\n<h2 class=\"page-title fw-bold text-capitalize mb-1\">About us<\/h2>\n\n\n<\/div>",
               "color_white": true,
-              "breadcrumb": false,
+              "breadcrumb": true,
               "by_handle_1": "about-us",
               "by_handle_2": "",
               "by_handle_3": "",
