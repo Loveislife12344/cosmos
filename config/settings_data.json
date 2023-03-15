@@ -676,7 +676,7 @@
               "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle\">CATEGORIES<\/h3>\n<h1 class=\"page-title\">{{page.title}}<\/h1>\n<\/div>",
               "color_white": true,
               "breadcrumb": true,
-              "by_handle_1": "",
+              "by_handle_1": "contact",
               "by_handle_2": "",
               "by_handle_3": "",
               "by_handle_11": "",
