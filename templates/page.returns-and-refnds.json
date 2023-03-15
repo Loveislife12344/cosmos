@@ -738,6 +738,7 @@
     },
     "e863fe0c-f75b-4fc5-a263-d04ebe574e72": {
       "type": "kt_banner_flexible",
+      "disabled": true,
       "blocks": {
         "dde8c4fd-51cd-4ce5-895c-3386b2edb4ac": {
           "type": "it_banner",
@@ -867,6 +868,7 @@
     },
     "a1358eb3-d385-4d09-b3c8-1e39988a7808": {
       "type": "rd_banner_cta_01",
+      "disabled": true,
       "settings": {
         "title": "Banner Flexible",
         "off_mobile": false,
