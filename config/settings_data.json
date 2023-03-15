@@ -556,7 +556,7 @@
               "off_section": false,
               "off_mobile": false,
               "off_desktop": false,
-              "html": "<div class=\"page-header text-center\">\n\n\n<h2 class=\"page-title fw-bold text-capitalize mb-1\">Department of veterans affairs<\/h2>\n\n\n<\/div>",
+              "html": "<div class=\"page-header text-center\">\n\n\n<h2 class=\"page-title fw-bold text-capitalize mb-1\">About us<\/h2>\n\n\n<\/div>",
               "color_white": true,
               "breadcrumb": false,
               "by_handle_1": "about-us",
@@ -662,6 +662,29 @@
               "section_bg_op": 1,
               "link_banner": ""
             }
+          },
+          "393ba105-6ac2-4fe2-b0ad-3e4e813b5a3e": {
+            "type": "page_banner",
+            "settings": {
+              "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
+              "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle\">CATEGORIES<\/h3>\n<h1 class=\"page-title\">{{page.title}}<\/h1>\n<\/div>",
+              "color_white": true,
+              "breadcrumb": true,
+              "by_handle_1": "",
+              "by_handle_2": "",
+              "by_handle_3": "",
+              "by_handle_11": "",
+              "width_section": "container",
+              "width_content": true,
+              "section_margin_top": "",
+              "section_margin_bottom": "",
+              "section_padding": "",
+              "section_bg": "",
+              "section_bg_op": 1,
+              "link_banner": ""
+            }
           }
         },
         "block_order": [
@@ -670,7 +693,8 @@
           "e60a834f-68d4-47ca-aab5-a4bce5dc194a",
           "9acc149b-043b-4b21-803e-be6217cb4e8a",
           "2c405e7c-d95d-4c97-8591-86f933ee32eb",
-          "fac1838b-ee0e-4b78-ad1f-fec8a2baf0f9"
+          "fac1838b-ee0e-4b78-ad1f-fec8a2baf0f9",
+          "393ba105-6ac2-4fe2-b0ad-3e4e813b5a3e"
         ],
         "settings": {
           "title": "(Banner) Page top"
