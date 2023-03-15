@@ -527,29 +527,6 @@
       "kt_top_banner": {
         "type": "kt_top_banner",
         "blocks": {
-          "30fc4e69-4811-4997-ac38-433fa1dc1e8d": {
-            "type": "collection_banner",
-            "settings": {
-              "off_section": false,
-              "off_mobile": false,
-              "off_desktop": false,
-              "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle\">CATEGORIES<\/h3>\n<h1 class=\"page-title\">{{collection.title}}<\/h1>\n<\/div>",
-              "color_white": true,
-              "breadcrumb": true,
-              "by_handle_1": "",
-              "by_handle_2": "",
-              "by_handle_3": "",
-              "by_handle_11": "all_handle",
-              "width_section": "container",
-              "width_content": true,
-              "section_margin_top": "",
-              "section_margin_bottom": "",
-              "section_padding": "60px 0",
-              "section_bg": "",
-              "section_bg_op": 1,
-              "link_banner": ""
-            }
-          },
           "a898b9d9-a825-4877-a93a-b1e8e857bfc9": {
             "type": "page_banner",
             "settings": {
@@ -621,6 +598,7 @@
               "section_bg": "",
               "section_bg_op": 1,
               "image": "shopify:\/\/shop_images\/Rectangle_2.png",
+              "image_mb": "shopify:\/\/shop_images\/Rectangle_2.png",
               "link_banner": ""
             }
           },
@@ -642,6 +620,29 @@
               "section_margin_top": "",
               "section_margin_bottom": "",
               "section_padding": "115px 0",
+              "section_bg": "",
+              "section_bg_op": 1,
+              "link_banner": ""
+            }
+          },
+          "30fc4e69-4811-4997-ac38-433fa1dc1e8d": {
+            "type": "collection_banner",
+            "settings": {
+              "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
+              "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle\">CATEGORIES<\/h3>\n<h1 class=\"page-title\">{{collection.title}}<\/h1>\n<\/div>",
+              "color_white": true,
+              "breadcrumb": true,
+              "by_handle_1": "",
+              "by_handle_2": "",
+              "by_handle_3": "",
+              "by_handle_11": "all_handle",
+              "width_section": "container",
+              "width_content": true,
+              "section_margin_top": "",
+              "section_margin_bottom": "",
+              "section_padding": "60px 0",
               "section_bg": "",
               "section_bg_op": 1,
               "link_banner": ""
@@ -691,11 +692,11 @@
           }
         },
         "block_order": [
-          "30fc4e69-4811-4997-ac38-433fa1dc1e8d",
           "a898b9d9-a825-4877-a93a-b1e8e857bfc9",
           "e60a834f-68d4-47ca-aab5-a4bce5dc194a",
           "9acc149b-043b-4b21-803e-be6217cb4e8a",
           "2c405e7c-d95d-4c97-8591-86f933ee32eb",
+          "30fc4e69-4811-4997-ac38-433fa1dc1e8d",
           "fac1838b-ee0e-4b78-ad1f-fec8a2baf0f9",
           "393ba105-6ac2-4fe2-b0ad-3e4e813b5a3e"
         ],
