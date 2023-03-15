@@ -2,6 +2,7 @@
   "sections": {
     "6c95f6ee-4048-4d6e-86cd-c82001950c6b": {
       "type": "who-we-are",
+      "disabled": true,
       "blocks": {
         "bbbebb89-f48d-4812-9e61-97ff35b48809": {
           "type": "it_cat_1",
@@ -20,7 +21,7 @@
             "preheading": "",
             "title-below": false,
             "description": "<br>Cosmac Healthcare is one of the longest-established suppliers of healthcare products in Australia.\n<br><br>\nWe back this up with a well-deserved reputation for providing quick, efficient service, and strong customer support.",
-            "color_titlex": "#222",
+            "color_titlex": "#222222",
             "name_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
@@ -41,11 +42,11 @@
             "image_link": "",
             "blank_link": false,
             "desc": "",
-            "color_desc": "#fff",
+            "color_desc": "#ffffff",
             "titlex": "",
-            "color_titlex": "#fff",
+            "color_titlex": "#ffffff",
             "stitle": "",
-            "color_stitle": "#fff",
+            "color_stitle": "#ffffff",
             "name_btn": "",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
@@ -63,11 +64,34 @@
             "text_align_mb": "",
             "banner-effect": ""
           }
+        },
+        "cc4db527-4d60-4491-8eaa-4eb92d5ad86f": {
+          "type": "it_cat_1",
+          "settings": {
+            "title": "Categories item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 6,
+            "width_lg": 6,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "image_link": "",
+            "blank_link": false,
+            "titlex": "This Week's Most Wanted",
+            "preheading": "This Week's Most Wanted",
+            "title-below": false,
+            "description": "This Week's Most Wanted",
+            "color_titlex": "#222",
+            "name_btn": "SHOP NOW",
+            "style_btn": "btn-underline btn-link",
+            "banner-effect": ""
+          }
         }
       },
       "block_order": [
         "bbbebb89-f48d-4812-9e61-97ff35b48809",
-        "14f356fd-961b-4662-b708-a5f8030267b9"
+        "14f356fd-961b-4662-b708-a5f8030267b9",
+        "cc4db527-4d60-4491-8eaa-4eb92d5ad86f"
       ],
       "settings": {
         "title": "Who We Are",
@@ -87,6 +111,7 @@
     },
     "008f7694-152e-452f-b17a-c18f38112722": {
       "type": "who-we-are",
+      "disabled": true,
       "blocks": {
         "764d6dad-2ecc-4d64-94a7-d5fc95fa1f8a": {
           "type": "it_banner",
@@ -103,11 +128,11 @@
             "image_link": "",
             "blank_link": false,
             "desc": "",
-            "color_desc": "#fff",
+            "color_desc": "#ffffff",
             "titlex": "",
-            "color_titlex": "#fff",
+            "color_titlex": "#ffffff",
             "stitle": "",
-            "color_stitle": "#fff",
+            "color_stitle": "#ffffff",
             "name_btn": "",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
@@ -143,7 +168,7 @@
             "preheading": "",
             "title-below": false,
             "description": "Cosmac Healthcare specialises in products relating to body compression, support and protection.\nNo-one knows more about these products than Cosmac.\n\nOur trained and experienced staff members are always happy to assist in providing helpful and constructive advice.\n\nThrough our affiliated company, Axcess Nutrition, the group is also active in the supply of clinical nutrition and texture-modified products, and feeding pumps &amp; accessories.\n\nAxcess is a contracted supplier under the NSW Home Enteral Nutrition (HEN) programme.",
-            "color_titlex": "#222",
+            "color_titlex": "#222222",
             "name_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
@@ -435,6 +460,7 @@
     },
     "dd4d33fa-a4e2-4056-981b-8c983c7f2f38": {
       "type": "rd_icon_boxes",
+      "disabled": true,
       "blocks": {
         "4cb1da94-d3ba-4934-bfac-dbfe7c784bf0": {
           "type": "item_title",
@@ -503,9 +529,9 @@
         "border_top": true,
         "border_bottom": false,
         "border_color": "#ebebeb",
-        "color_icon": "#333",
-        "color_title": "#333",
-        "color_desc": "#ccc",
+        "color_icon": "#333333",
+        "color_title": "#333333",
+        "color_desc": "#cccccc",
         "title_font_weight": "400",
         "use_slide": false,
         "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"476\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}",
@@ -607,6 +633,7 @@
     },
     "ccbfbc4a-1bac-4d39-b5fc-30d3c7d32cc2": {
       "type": "kt_HTML",
+      "disabled": true,
       "blocks": {
         "44a797e5-86af-450b-ae7c-5a51c50cc1c4": {
           "type": "title",
@@ -663,6 +690,7 @@
     },
     "5d212a61-84e4-4fdc-8406-1420dea2c61d": {
       "type": "kt_HTML",
+      "disabled": true,
       "blocks": {
         "ecfc224c-ce2c-4b09-b760-56a6621952f7": {
           "type": "title",
