@@ -14,6 +14,10 @@
     },
     "1633509379ea861af9": {
       "type": "rd_contact_form",
+      "custom_css": [
+        ".grey-section h4:not(first-child) {margin-top: 30px;}",
+        ".grey-section p {margin-bottom: 5px;}"
+      ],
       "settings": {
         "title": "Section Contact form",
         "off_mobile": false,
