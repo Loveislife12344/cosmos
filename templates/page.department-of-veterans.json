@@ -87,6 +87,7 @@
     },
     "008f7694-152e-452f-b17a-c18f38112722": {
       "type": "who-we-are",
+      "disabled": true,
       "blocks": {
         "764d6dad-2ecc-4d64-94a7-d5fc95fa1f8a": {
           "type": "it_banner",
@@ -435,6 +436,7 @@
     },
     "dd4d33fa-a4e2-4056-981b-8c983c7f2f38": {
       "type": "rd_icon_boxes",
+      "disabled": true,
       "blocks": {
         "4cb1da94-d3ba-4934-bfac-dbfe7c784bf0": {
           "type": "item_title",
