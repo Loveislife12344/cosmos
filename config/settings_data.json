@@ -556,7 +556,7 @@
               "off_section": false,
               "off_mobile": false,
               "off_desktop": false,
-              "html": "<div class=\"page-header text-center\">\n\n\n<h2 class=\" fw-bold text-capitalize mb-1\">Department of veterans affairs<\/h2>\n\n\n<\/div>",
+              "html": "<div class=\"page-header text-center\">\n\n\n<h2 class=\"page-title fw-bold text-capitalize mb-1\">Department of veterans affairs<\/h2>\n\n\n<\/div>",
               "color_white": true,
               "breadcrumb": false,
               "by_handle_1": "about-us",
