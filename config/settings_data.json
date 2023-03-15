@@ -309,7 +309,7 @@
         ],
         "settings": {
           "sticky_menu": true,
-          "width_header": "container",
+          "width_header": "container-fluid wide",
           "section_margin_top": "",
           "section_margin_bottom": "",
           "section_padding": "",
@@ -874,7 +874,7 @@
           ".subcribe-text {display: inline-block; max-width: 363px;}"
         ],
         "settings": {
-          "width_section": "container",
+          "width_section": "container-fluid wide",
           "width_content": false,
           "section_margin_top": "",
           "section_margin_bottom": "",
@@ -1011,7 +1011,7 @@
         ],
         "settings": {
           "sticky_header_top": false,
-          "width_header_top": "container",
+          "width_header_top": "container-fluid wide",
           "section_margin_top": "",
           "section_margin_bottom": "",
           "section_padding": "7px 0",
