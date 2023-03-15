@@ -147,6 +147,7 @@
     },
     "798344cf-6f9e-4aac-88a1-a9cae916f69f": {
       "type": "kt_banner_flexible",
+      "disabled": true,
       "settings": {
         "title": "Banner Flexible",
         "off_mobile": false,
@@ -165,6 +166,7 @@
     },
     "2ee5a51f-f1e9-4c56-8f02-c3045908fe37": {
       "type": "kt_sc_faqs_page",
+      "disabled": true,
       "settings": {
         "width_section": "w-100",
         "width_content": true,
@@ -176,6 +178,7 @@
     },
     "94b0d9cb-fa51-4177-8117-e25569e9a6b2": {
       "type": "kt_sc_faqs_page",
+      "disabled": true,
       "settings": {
         "width_section": "w-100",
         "width_content": true,
@@ -187,6 +190,7 @@
     },
     "af50e6ac-119d-4baa-b95a-6cf4dc1b67e9": {
       "type": "kt_sc_faqs_page",
+      "disabled": true,
       "settings": {
         "width_section": "w-100",
         "width_content": true,
@@ -198,6 +202,7 @@
     },
     "f70ff727-4745-406f-9a2b-ae246645a3aa": {
       "type": "kt_sc_faqs_page",
+      "disabled": true,
       "settings": {
         "width_section": "w-100",
         "width_content": true,
