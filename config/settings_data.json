@@ -579,6 +579,7 @@
           },
           "9acc149b-043b-4b21-803e-be6217cb4e8a": {
             "type": "page_banner",
+            "disabled": true,
             "settings": {
               "off_section": false,
               "off_mobile": false,
@@ -627,6 +628,7 @@
           },
           "30fc4e69-4811-4997-ac38-433fa1dc1e8d": {
             "type": "collection_banner",
+            "disabled": true,
             "settings": {
               "off_section": false,
               "off_mobile": false,
@@ -650,6 +652,7 @@
           },
           "fac1838b-ee0e-4b78-ad1f-fec8a2baf0f9": {
             "type": "account_banner",
+            "disabled": true,
             "settings": {
               "off_section": false,
               "off_mobile": false,
@@ -664,6 +667,8 @@
               "section_padding": "",
               "section_bg": "",
               "section_bg_op": 1,
+              "image": "shopify:\/\/shop_images\/Rectangle_2.png",
+              "image_mb": "shopify:\/\/shop_images\/Rectangle_2.png",
               "link_banner": ""
             }
           },
@@ -684,9 +689,11 @@
               "width_content": true,
               "section_margin_top": "",
               "section_margin_bottom": "",
-              "section_padding": "",
+              "section_padding": "0|45px",
               "section_bg": "",
               "section_bg_op": 1,
+              "image": "shopify:\/\/shop_images\/Rectangle_2.png",
+              "image_mb": "shopify:\/\/shop_images\/Rectangle_2.png",
               "link_banner": ""
             }
           }
