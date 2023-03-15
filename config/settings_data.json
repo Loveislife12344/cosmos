@@ -588,13 +588,15 @@
               "by_handle_2": "",
               "by_handle_3": "",
               "by_handle_11": "element-buttons, element-typography, element-accordions, element-testimonials, element-alert-notification",
-              "width_section": "container",
+              "width_section": "w-100",
               "width_content": true,
               "section_margin_top": "",
-              "section_margin_bottom": "",
+              "section_margin_bottom": "116px",
               "section_padding": "60px 0",
               "section_bg": "#f2f2f2",
               "section_bg_op": 1,
+              "image": "shopify:\/\/shop_images\/Rectangle_2.png",
+              "image_mb": "shopify:\/\/shop_images\/Rectangle_2.png",
               "link_banner": ""
             }
           },
