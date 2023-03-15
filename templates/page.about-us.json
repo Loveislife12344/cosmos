@@ -216,6 +216,7 @@
     },
     "16278930620b05d394": {
       "type": "rd_image_w_text_1",
+      "disabled": true,
       "blocks": {
         "d4c9d766-aeb5-421f-8bb2-b8a711042bba": {
           "type": "1",
@@ -256,6 +257,7 @@
     },
     "16278930715fe8a30e": {
       "type": "rd_image_w_text_1",
+      "disabled": true,
       "blocks": {
         "8191dd6a-5df3-41a9-acdc-429bcdff63be": {
           "type": "1",
