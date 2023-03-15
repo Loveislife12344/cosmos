@@ -607,85 +607,17 @@
         "css": ".section_id .icon__brand {\n    background: #fff;\n    border-radius: 10px;\n    box-shadow: 0 5px 30px 0 rgb(0 0 0 \/ 5%);\n}\n.section_id .icon__brand img {\n    height: 142px;\n    object-fit: contain;\n}\n.section_id .sc-title {\n    display: flex;\n    flex-direction: column;\n}\n.section_id .sub-title {\n    order: -1;\n}"
       }
     },
-    "ccbfbc4a-1bac-4d39-b5fc-30d3c7d32cc2": {
-      "type": "kt_HTML",
-      "blocks": {
-        "44a797e5-86af-450b-ae7c-5a51c50cc1c4": {
-          "type": "title",
-          "settings": {
-            "title_style": "auto",
-            "title": "Account Enquiries",
-            "stitle": "Contact Cosmac to open an account, or to obtain details of our trading terms and conditions.",
-            "link_to": "",
-            "name_link": "",
-            "margin_btitle": 30
-          }
-        },
-        "3670f200-cc76-4460-b913-00053809a940": {
-          "type": "content2",
-          "disabled": true,
-          "settings": {
-            "text": ""
-          }
-        },
-        "b1370dc5-937b-4c74-a522-0186d8e231bb": {
-          "type": "content1",
-          "disabled": true,
-          "settings": {
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "44a797e5-86af-450b-ae7c-5a51c50cc1c4",
-        "3670f200-cc76-4460-b913-00053809a940",
-        "b1370dc5-937b-4c74-a522-0186d8e231bb"
-      ],
-      "settings": {
-        "title": "Section Customize",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "container",
-        "width_content": false,
-        "section_margin_top": "",
-        "section_margin_bottom": "",
-        "section_padding": "",
-        "section_bg": "",
-        "title_section": "",
-        "stitle_section": "",
-        "reverse": false,
-        "title_align": "",
-        "link_to": "",
-        "name_link": "",
-        "margin_btitle": 30,
-        "border_top": true,
-        "border_bottom": false,
-        "border_color": "#ebebeb"
-      }
-    },
     "5d212a61-84e4-4fdc-8406-1420dea2c61d": {
       "type": "kt_HTML",
       "blocks": {
-        "ecfc224c-ce2c-4b09-b760-56a6621952f7": {
-          "type": "title",
-          "settings": {
-            "title_style": "auto",
-            "title": "Our ABN’s Number",
-            "stitle": "1234567890",
-            "link_to": "",
-            "name_link": "",
-            "margin_btitle": 30
-          }
-        },
         "b51f59ce-d11a-4c31-add4-abc25a5fd363": {
           "type": "content2",
           "settings": {
-            "text": "<span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.<\/span><br><br>"
+            "text": "To place an order with Cosmac for entitled veterans, war widow\/ers and dependants the Direct Order Form below needs to be completed by the appropriate Healthcare Professional and can be either emailed or faxed to us:\n<br><br>\nE: vetorders@cosmac.com.au  \n<br><br>\nF: (02) 9033 7410"
           }
         }
       },
       "block_order": [
-        "ecfc224c-ce2c-4b09-b760-56a6621952f7",
         "b51f59ce-d11a-4c31-add4-abc25a5fd363"
       ],
       "settings": {
@@ -722,7 +654,6 @@
     "f6503f0d-861c-4eb5-b496-e4afac98aab5",
     "dd4d33fa-a4e2-4056-981b-8c983c7f2f38",
     "16278933153ac77724",
-    "ccbfbc4a-1bac-4d39-b5fc-30d3c7d32cc2",
     "5d212a61-84e4-4fdc-8406-1420dea2c61d"
   ]
 }
