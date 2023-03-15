@@ -3,29 +3,6 @@
     "6c95f6ee-4048-4d6e-86cd-c82001950c6b": {
       "type": "who-we-are",
       "blocks": {
-        "bbbebb89-f48d-4812-9e61-97ff35b48809": {
-          "type": "it_cat_1",
-          "settings": {
-            "title": "Categories item",
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 6,
-            "width_lg": 4,
-            "width_xl": 3,
-            "width_xxl": 3,
-            "image": "shopify:\/\/shop_images\/Rectangle_12.png",
-            "image_link": "",
-            "blank_link": false,
-            "titlex": "Who We Are",
-            "preheading": "",
-            "title-below": false,
-            "description": "<br>Cosmac Healthcare is one of the longest-established suppliers of healthcare products in Australia.\n<br><br>\nWe back this up with a well-deserved reputation for providing quick, efficient service, and strong customer support.",
-            "color_titlex": "#222",
-            "name_btn": "",
-            "style_btn": "btn-underline btn-link",
-            "banner-effect": ""
-          }
-        },
         "14f356fd-961b-4662-b708-a5f8030267b9": {
           "type": "it_banner",
           "settings": {
@@ -33,19 +10,19 @@
             "width": 12,
             "width_sm": 0,
             "width_md": 6,
-            "width_lg": 8,
-            "width_xl": 9,
-            "width_xxl": 9,
+            "width_lg": 6,
+            "width_xl": 6,
+            "width_xxl": 6,
             "image": "shopify:\/\/shop_images\/Rectangle_14_d715a9ed-f812-4e95-a0cd-a96111e63cb4.png",
             "image_mb": "shopify:\/\/shop_images\/Rectangle_13.png",
             "image_link": "",
             "blank_link": false,
             "desc": "",
-            "color_desc": "#fff",
+            "color_desc": "#ffffff",
             "titlex": "",
-            "color_titlex": "#fff",
+            "color_titlex": "#ffffff",
             "stitle": "",
-            "color_stitle": "#fff",
+            "color_stitle": "#ffffff",
             "name_btn": "",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
@@ -63,11 +40,34 @@
             "text_align_mb": "",
             "banner-effect": ""
           }
+        },
+        "bbbebb89-f48d-4812-9e61-97ff35b48809": {
+          "type": "it_cat_1",
+          "settings": {
+            "title": "Categories item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 6,
+            "width_lg": 6,
+            "width_xl": 6,
+            "width_xxl": 6,
+            "image": "shopify:\/\/shop_images\/Rectangle_12.png",
+            "image_link": "",
+            "blank_link": false,
+            "titlex": "Who We Are",
+            "preheading": "",
+            "title-below": false,
+            "description": "<br>Cosmac Healthcare is one of the longest-established suppliers of healthcare products in Australia.\n<br><br>\nWe back this up with a well-deserved reputation for providing quick, efficient service, and strong customer support.",
+            "color_titlex": "#222222",
+            "name_btn": "",
+            "style_btn": "btn-underline btn-link",
+            "banner-effect": ""
+          }
         }
       },
       "block_order": [
-        "bbbebb89-f48d-4812-9e61-97ff35b48809",
-        "14f356fd-961b-4662-b708-a5f8030267b9"
+        "14f356fd-961b-4662-b708-a5f8030267b9",
+        "bbbebb89-f48d-4812-9e61-97ff35b48809"
       ],
       "settings": {
         "title": "Who We Are",
@@ -103,11 +103,11 @@
             "image_link": "",
             "blank_link": false,
             "desc": "",
-            "color_desc": "#fff",
+            "color_desc": "#ffffff",
             "titlex": "",
-            "color_titlex": "#fff",
+            "color_titlex": "#ffffff",
             "stitle": "",
-            "color_stitle": "#fff",
+            "color_stitle": "#ffffff",
             "name_btn": "",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
@@ -143,7 +143,7 @@
             "preheading": "",
             "title-below": false,
             "description": "Cosmac Healthcare specialises in products relating to body compression, support and protection.\nNo-one knows more about these products than Cosmac.\n\nOur trained and experienced staff members are always happy to assist in providing helpful and constructive advice.\n\nThrough our affiliated company, Axcess Nutrition, the group is also active in the supply of clinical nutrition and texture-modified products, and feeding pumps &amp; accessories.\n\nAxcess is a contracted supplier under the NSW Home Enteral Nutrition (HEN) programme.",
-            "color_titlex": "#222",
+            "color_titlex": "#222222",
             "name_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
@@ -503,9 +503,9 @@
         "border_top": true,
         "border_bottom": false,
         "border_color": "#ebebeb",
-        "color_icon": "#333",
-        "color_title": "#333",
-        "color_desc": "#ccc",
+        "color_icon": "#333333",
+        "color_title": "#333333",
+        "color_desc": "#cccccc",
         "title_font_weight": "400",
         "use_slide": false,
         "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"476\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}",
