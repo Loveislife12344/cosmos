@@ -556,7 +556,7 @@
               "off_section": false,
               "off_mobile": false,
               "off_desktop": false,
-              "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle fw-600\">WELCOME RIODE<\/h3>\n\n<h1 class=\"page-title fw-bold text-capitalize mb-1\">Our Services<\/h1>\n\n<p class=\"page-desc text-white mb-0\">Lorem quis bibendum auctor, nisi elit consequat ipsum,<br> nec                    sagittis sem nibh id elit.<\/p>\n<\/div>",
+              "html": "<div class=\"page-header text-center\">\n\n\n<h2 class=\" fw-bold text-capitalize mb-1\">Department of veterans affairs<\/h2>\n\n\n<\/div>",
               "color_white": true,
               "breadcrumb": false,
               "by_handle_1": "about-us",
@@ -568,8 +568,10 @@
               "section_margin_top": "",
               "section_margin_bottom": "",
               "section_padding": "60px 0",
-              "section_bg": "",
+              "section_bg": "#716f6f",
               "section_bg_op": 1,
+              "image": "shopify:\/\/shop_images\/Rectangle_2.png",
+              "image_mb": "shopify:\/\/shop_images\/Rectangle_2.png",
               "link_banner": ""
             }
           },
