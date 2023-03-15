@@ -656,9 +656,9 @@
             "width_xl": 0,
             "width_xxl": 0,
             "title": "",
-            "color_title": "#fff",
+            "color_title": "#ffffff",
             "stitle": "",
-            "color_stitle": "#fff",
+            "color_stitle": "#ffffff",
             "title_align": "text-center",
             "margin_btitle": 30
           }
@@ -673,9 +673,9 @@
             "width_xl": 0,
             "width_xxl": 0,
             "title": "Join Our Newsletter",
-            "color_title": "#fff",
+            "color_title": "#ffffff",
             "stitle": "Lorem ipsum dolor sit amet adipiscing.",
-            "color_desc": "#fff",
+            "color_desc": "#ffffff",
             "textBtn": "{{'general.newsletter_form.submit_html' | t}}<i class=\"d-icon-arrow-right\"><\/i>",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
@@ -699,12 +699,12 @@
         "section_padding": "",
         "section_bg": "",
         "use_round": false,
-        "color_title": "#333",
-        "color_desc": "#ccc",
-        "color_text_input": "#999",
+        "color_title": "#333333",
+        "color_desc": "#cccccc",
+        "color_text_input": "#999999",
         "color_border_input": "#dadada",
-        "color_placeholder": "#999",
-        "color_bg_input": "#fff",
+        "color_placeholder": "#999999",
+        "color_bg_input": "#ffffff",
         "preview": true,
         "css_section": ""
       }
@@ -727,6 +727,162 @@
         "border_radius": 10,
         "css_section": ""
       }
+    },
+    "a8af80d0-2d84-4bff-a5c8-46989665595a": {
+      "type": "btn-section",
+      "blocks": {
+        "552f1ca0-3efd-4074-9c6e-cd6e0229abff": {
+          "type": "it_banner",
+          "settings": {
+            "title": "Banner item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 12,
+            "width_lg": 12,
+            "width_xl": 12,
+            "width_xxl": 12,
+            "image_link": "",
+            "blank_link": false,
+            "desc": "Trending now",
+            "color_desc": "#fff",
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "name_btn": "DOWNLOAD THE DVA RAP MFS",
+            "style_btn": "btn-secondary btn-outline",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "name_btn_2": "",
+            "image_link_2": "",
+            "style_btn_2": "btn-primary",
+            "style_btn_rounded_2": "",
+            "btn_shadow_2": false,
+            "text_align_top": 50,
+            "text_align_start": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_start_mb": 16,
+            "text_align_mb": "",
+            "banner-effect": ""
+          }
+        },
+        "3a4b665c-9ea0-484e-958a-7a6497bca23f": {
+          "type": "it_banner",
+          "disabled": true,
+          "settings": {
+            "title": "Banner item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 6,
+            "width_lg": 4,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "image_link": "",
+            "blank_link": false,
+            "desc": "Trending now",
+            "color_desc": "#fff",
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "name_btn": "DISCOVER NOW",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "name_btn_2": "",
+            "image_link_2": "",
+            "style_btn_2": "btn-primary",
+            "style_btn_rounded_2": "",
+            "btn_shadow_2": false,
+            "text_align_top": 50,
+            "text_align_start": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_start_mb": 16,
+            "text_align_mb": "",
+            "banner-effect": ""
+          }
+        }
+      },
+      "block_order": [
+        "552f1ca0-3efd-4074-9c6e-cd6e0229abff",
+        "3a4b665c-9ea0-484e-958a-7a6497bca23f"
+      ],
+      "settings": {
+        "title": "Who We Are",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "layout_mode": "normal",
+        "grid_gutter": 10,
+        "border_radius": 0,
+        "css_section": ""
+      }
+    },
+    "a5b26c90-ce4c-4199-8cd1-50d1d359e06f": {
+      "type": "btn-section",
+      "blocks": {
+        "e49e25cc-be4a-424a-bd70-685c7d7494ca": {
+          "type": "it_banner",
+          "settings": {
+            "title": "Banner item",
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 12,
+            "width_lg": 12,
+            "width_xl": 12,
+            "width_xxl": 12,
+            "image_link": "",
+            "blank_link": false,
+            "desc": "Trending now",
+            "color_desc": "#fff",
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "name_btn": "DOWNLOAD THE SUMMARY…",
+            "style_btn": "btn-secondary btn-outline",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "name_btn_2": "",
+            "image_link_2": "",
+            "style_btn_2": "btn-primary",
+            "style_btn_rounded_2": "",
+            "btn_shadow_2": false,
+            "text_align_top": 50,
+            "text_align_start": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_start_mb": 16,
+            "text_align_mb": "",
+            "banner-effect": ""
+          }
+        }
+      },
+      "block_order": [
+        "e49e25cc-be4a-424a-bd70-685c7d7494ca"
+      ],
+      "settings": {
+        "title": "Who We Are",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "layout_mode": "normal",
+        "grid_gutter": 15,
+        "border_radius": 0,
+        "css_section": ""
+      }
     }
   },
   "order": [
@@ -742,6 +898,8 @@
     "16278933153ac77724",
     "5d212a61-84e4-4fdc-8406-1420dea2c61d",
     "016a8bae-ad1e-4ca0-be49-c27dd4330c74",
-    "37861495-22a2-481b-a252-9e5dc35607a9"
+    "37861495-22a2-481b-a252-9e5dc35607a9",
+    "a8af80d0-2d84-4bff-a5c8-46989665595a",
+    "a5b26c90-ce4c-4199-8cd1-50d1d359e06f"
   ]
 }
