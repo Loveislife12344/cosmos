@@ -1,4 +1,4 @@
-{%- comment -%}
+{% capture redirectScript %}{% render 'bsscommerce-redirect-product-page-logic', product: product %}{% endcapture %}{% assign redirectScript = redirectScript | strip %}{% unless redirectScript contains "Liquid error" %}{% if redirectScript != "" %}<script id="bss-redirect" type="text/javascript">window.location.replace("{{ redirectScript }}")</script>{% endif %}{% endunless %}{%- comment -%}
 ------- Swatch -----------
 {%- endcomment -%}
 {%- liquid
