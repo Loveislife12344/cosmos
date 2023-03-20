@@ -5,7 +5,7 @@
     "logo": "shopify:\/\/shop_images\/COS-LOGO.png",
     "logo_max_width": "153",
     "holiday-date": "25-04-2023",
-    "on-holiday": true,
+    "on-holiday": false,
     "holiday-massage": "we are on holiday",
     "import_header": "01",
     "dir_body": "ltr",
