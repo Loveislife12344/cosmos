@@ -120,23 +120,6 @@
                 "label": "Holiday Massage For Homepage",
                 "info": "this massage will be shown on home page ",
                 "default": "153"
-            },
-            {
-                "type": "header",
-                "content": "LOGO MOBILE"
-            },
-            {
-                "type": "text",
-                "id": "body_logo_mobile_svg",
-                "label": "Logo mobile svg",
-                "placeholder": "Logo_site_mb.svg",
-                "info": "[Upload svg file to Files](\/admin\/settings\/files) and copy name file to input."
-            },
-            {
-                "type": "image_picker",
-                "id": "logo_mobile",
-                "label": "Logo mobile image",
-                "info": "Dimension: 250x**"
             }
         ]
     },
