@@ -308,7 +308,7 @@
     {%- endif -%}
     {%- render 'googleRich' -%}
     <script >
-      Window.is_on_holiday = `{{settings.on-holiday}}` || null;
+      Window.is_on_holiday = {{settings.on-holiday}} || null;
       Window.holiday_duration = `{{settings.holiday-date}}` || null;
       Window.holiday_massage_product_page = `{{settings.holiday-massage}}` || null;
   
