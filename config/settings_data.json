@@ -12,7 +12,7 @@
     "use_wishlist": true,
     "use_compare": false,
     "accessToken_instagram": "IGQVJVQ1VuVDhHUjVocFVRb1RSYUkwV243LVVKRm1tdjVibEc2RVJmUTNiS3k0NG82clpmRkxkRUFKZAmxmSmc4ZAmhPS2Y3UVdtU0l6REJNTFJPYTkwYUhzNVJhd3N5ZA0l3N3o5d2I2aTNON1c1bmd3MAZDZD",
-    "newsletter_popup": false,
+    "newsletter_popup": true,
     "ajax_cart": true,
     "shipping_calculator": true,
     "use_gift_wrapping": true,
