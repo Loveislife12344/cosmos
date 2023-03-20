@@ -6,7 +6,7 @@
     "logo_max_width": "153",
     "holiday-date": "25-04-2023",
     "on-holiday": true,
-    "massage": "We are on holiday  Order will be shipped when we return",
+    "holiday-massage": "we are on holiday",
     "import_header": "01",
     "dir_body": "ltr",
     "use_mobile_bottom_bar": true,
@@ -110,6 +110,7 @@
     "md_custom_css": "",
     "lg_custom_css": "",
     "xl_custom_css": "",
+    "massage": "We are on holiday  Order will be shipped when we return",
     "sections": {
       "header-mobile": {
         "type": "header-mobile",
