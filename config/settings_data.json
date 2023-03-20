@@ -469,7 +469,7 @@
             "type": "link",
             "settings": {
               "title": "Department of Veterans Affair DVA",
-              "button_link": "",
+              "button_link": "shopify:\/\/pages\/department-of-veterans-affairs",
               "icon_font": "",
               "label": ""
             }
@@ -1185,15 +1185,7 @@
     },
     "content_for_index": [
 
-    ],
-    "blocks": {
-      "11944173544948763772": {
-        "type": "shopify:\/\/apps\/b2b-login-lock-hide-price\/blocks\/bss-login\/2f6e9bdf-2dd6-42c6-8d67-58be57506f80",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    }
+    ]
   },
   "platform_customizations": {
     "custom_css": [
