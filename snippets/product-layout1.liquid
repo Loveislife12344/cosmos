@@ -285,6 +285,7 @@
             {%- endform -%}
             
             {% if settings.on-holiday == true %}
+              <h3>now is--  {{now}}</h3>
               {%- if holiday_date != now  -%}
               <div class="d-flex" >
                 <input type="checkbox" class="holiday-validator"> <label> {{settings.holiday-massage}} </label>
