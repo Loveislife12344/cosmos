@@ -279,6 +279,9 @@
               <div class="border-top _mb-2" style="border-top-color: #eee !important;"></div>
               {%- endif -%}
             {%- endform -%}
+            {% if settings.on_holiday == true %}
+              <input type="checkbox" class="holiday-validator"> <label> {{settings.holiday-massage}} </label>
+            {% endif %}
             {%-if section.settings.use_store_avai-%}
               <div class="psgl__store-avai-container _mb-1" data-store-avai-container data-product-title="{{ product.title | escape }}" data-has-only-default-variant="{{ product.has_only_default_variant }}" data-base-url="{{ shop.url }}{{ routes.root_url }}"></div>
             {%-endif-%}
@@ -350,3 +353,9 @@
     </div>
   </div>
 </div>
+<style>
+.on-holiday{
+opacity:.5;
+cursor:not-allowed;
+}
+</style>
