@@ -320,6 +320,7 @@
       var product_form = document.querySelector('.product-form');
       product_form.classList.add('on-holiday');
       var  HolidayCheckbox = document.querySelector('.holiday-validator');
+     if(HolidayCheckbox != null){
       HolidayCheckbox.addEventListener('change',() => {
         if ( HolidayCheckbox.checked ) {
           product_form.classList.remove('on-holiday');
@@ -327,6 +328,7 @@
           product_form.classList.add('on-holiday');
         }
       })
+    }
       
 
       }
