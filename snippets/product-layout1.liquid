@@ -219,8 +219,12 @@
               {%-render 'kt_psgl_swatch'-%}
             </div>
             {%- assign id = 'cart-form--' | append: section.id -%}
+            {% if settings.on-holiday == true %}
+              {% assign holiday = `on-holiday` %}
+              
+            {% endif %}
             {%- assign class = 'cart product-form product-form-' | append: section.id -%}
-            {%- assign class = class | append: ' may-add' -%}
+            {%- assign class = class | append: ' may-add' | append:holiday -%}
             {%- form 'product', product, id: id, class: class, novalidate: 'novalidate' -%}
               {%- if template.suffix == 'mix-a-match' -%}
                 {%-render 'kt_prd_mix_a_match'-%}

@@ -317,7 +317,18 @@
       var holiday_massage_product_page = Window.holiday_massage_product_page;
   
       if(is_on_holiday == true){
-      alert(holiday_massage_product_page);
+      var product_form = document.querySelector('.product-form');
+      product_form.classList.add('on-holiday');
+      var = HolidayCheckbox = document.querySelector('.holiday-validator');
+      HolidayCheckbox.addEventListener('change',() => {
+        if ( HolidayCheckbox.checked ) {
+          product_form.classList.remove('on-holiday');
+        }else{
+          product_form.classList.add('on-holiday');
+        }
+      })
+      
+
       }
       </script>
   {% if content_for_header contains 'bss-b2b-cp' %}{% include 'bss-b2b-jquery-341-js' %}{% include 'bss-b2b-js' %}{% endif %}</body>
