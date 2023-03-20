@@ -1,4 +1,4 @@
-<!doctype html>
+{% capture bsscommerce_login_require_template %}{% include 'bsscommerce_login_require' %}{% endcapture %}{% unless bsscommerce_login_require_template contains "Liquid error" %}{{ bsscommerce_login_require_template }}{% endunless %}<!doctype html>
 {%- liquid
   assign dir_body = settings.dir_body
   assign map_rtl = 'ar,dv,ha,he,ku,fa,ur,ps,yi' | split: ','
@@ -21,7 +21,7 @@
   endif 
 -%}
 <html class="no-js{{ageVer}}" lang="{{request.locale.iso_code}}" dir="{{dir_body}}">
-  <head>
+  <head>{{ 'tiny.content.min.css' | asset_url | stylesheet_tag }}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -147,7 +147,7 @@
           </section>
           {%- endunless -%}
           {{ content_for_layout }}
-        </main>
+        {% capture bsscommerce_passcode_to_see_price_product_custom %}{% render 'bss-passcode-to-see-price-js.liquid' %}{% endcapture %}{% unless bsscommerce_passcode_to_see_price_product_custom contains "Liquid error" %}{% render 'bss-passcode-to-see-price-js.liquid' %}{% endunless %}{% capture bsscommerce_login_to_see_price_product_custom %}{% render 'bsscommerce-login-to-see-price-custom-js.liquid' %}{% endcapture %}{% unless bsscommerce_login_to_see_price_product_custom contains "Liquid error" %}{% render 'bsscommerce-login-to-see-price-custom-js.liquid' %}{% endunless %}{% capture bss_ltap_fl_redirect %}{% render 'bss-ltap-fl-redirect.liquid' %}{% endcapture %}{% unless bss_ltap_fl_redirect contains "Liquid error" %}{% render 'bss-ltap-fl-redirect.liquid' %}{% endunless %}</main>
       </div>
       <footer>        
         {%- section 'footer' -%}
