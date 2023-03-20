@@ -279,8 +279,8 @@
               <div class="border-top _mb-2" style="border-top-color: #eee !important;"></div>
               {%- endif -%}
             {%- endform -%}
-            {{settings.on_holiday}}
-            {% if settings.on_holiday == true %}
+            
+            {% if settings.on-holiday == true %}
               <input type="checkbox" class="holiday-validator"> <label> {{settings.holiday-massage}} </label>
             {% endif %}
             {%-if section.settings.use_store_avai-%}
