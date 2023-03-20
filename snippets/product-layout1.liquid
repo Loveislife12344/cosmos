@@ -220,8 +220,12 @@
             </div>
             {%- assign id = 'cart-form--' | append: section.id -%}
             {% if settings.on-holiday == true %}
-              {% assign holiday = " on-holiday" %}
               
+              {% assign holiday_date = settings.holiday-date %}
+              {% assign now = "now" | date: "%d-%m-%Y"  %}
+              {%- if holiday_date != now  -%}
+                {% assign holiday = " on-holiday" %}
+              {%- endif -%}
             {% endif %}
             {%- assign class = 'cart product-form product-form-' | append: section.id -%}
             {%- assign class = class | append: ' may-add' | append:holiday -%}
@@ -279,12 +283,14 @@
               <div class="border-top _mb-2" style="border-top-color: #eee !important;"></div>
               {%- endif -%}
             {%- endform -%}
-            <div class="d-flex" >
             
-              {% if settings.on-holiday == true %}
+            {% if settings.on-holiday == true %}
+              {%- if holiday_date != now  -%}
+              <div class="d-flex" >
                 <input type="checkbox" class="holiday-validator"> <label> {{settings.holiday-massage}} </label>
+              </div>
               {% endif %}
-            </div>
+              {% endif %}
             {%-if section.settings.use_store_avai-%}
               <div class="psgl__store-avai-container _mb-1" data-store-avai-container data-product-title="{{ product.title | escape }}" data-has-only-default-variant="{{ product.has_only_default_variant }}" data-base-url="{{ shop.url }}{{ routes.root_url }}"></div>
             {%-endif-%}
@@ -368,6 +374,5 @@ pointer-events:none;
 .holiday-validator{
 margin-right:10px;
 width: 35px;
-height: 24px;
 }
 </style>
