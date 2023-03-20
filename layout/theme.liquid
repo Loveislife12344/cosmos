@@ -277,22 +277,7 @@
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme_footer_js.js' | asset_url }}" defer="defer"></script>
     {% comment %} holiday script {% endcomment %}
-    <script >
-    Window.is_on_holiday = {{settings.on-holiday}};
-    Window.holiday_duration = {{settings.holiday-date}};
-    Window.holiday_massage_product_page = {{settings.Holiday-massage}};
-
-    var is_on_holiday = Window.is_on_holiday;
-    var holiday_duration = Window.holiday_duration;
-    var holiday_massage_product_page = Window.holiday_massage_product_page;
-
-    if(is_on_holiday == true){
-    alert(holiday_massage_product_page);
-    }else{
-      alert('holiday mode off ')
-    return false;
-    }
-    </script>
+    
  {% comment %} holiday script end here{% endcomment %}
     {%- if settings.ajax_cart -%}
       <script src="{{ 'theme.ajax-cart.min.js' | asset_url }}" defer="defer"></script>
@@ -322,5 +307,21 @@
       {%- endif -%}
     {%- endif -%}
     {%- render 'googleRich' -%}
+    <script >
+      Window.is_on_holiday = {{settings.on-holiday}};
+      Window.holiday_duration = {{settings.holiday-date}};
+      Window.holiday_massage_product_page = {{settings.Holiday-massage}};
+  
+      var is_on_holiday = Window.is_on_holiday;
+      var holiday_duration = Window.holiday_duration;
+      var holiday_massage_product_page = Window.holiday_massage_product_page;
+  
+      if(is_on_holiday == true){
+      alert(holiday_massage_product_page);
+      }else{
+        alert('holiday mode off ')
+      return false;
+      }
+      </script>
   {% if content_for_header contains 'bss-b2b-cp' %}{% include 'bss-b2b-jquery-341-js' %}{% include 'bss-b2b-js' %}{% endif %}</body>
 </html>
