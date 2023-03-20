@@ -277,17 +277,17 @@
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme_footer_js.js' | asset_url }}" defer="defer"></script>
     {% comment %} holiday script {% endcomment %}
-    <script src="" defer="defer">
+    <script src="" >
     Window.is_on_holiday = {{settings.on-holiday}};
-    Window.holiday_duration = {{settings.on-holiday}};
-    Window.holiday_massage_product_page = {{settings.on-holiday}};
+    Window.holiday_duration = {{settings.holiday-date}};
+    Window.holiday_massage_product_page = {{settings.Holiday-massage}};
 
     var is_on_holiday = Window.is_on_holiday;
     var holiday_duration = Window.holiday_duration;
     var holiday_massage_product_page = Window.holiday_massage_product_page;
 
-    if(is_on_holiday){
-    alert('holiday mode on ');
+    if(is_on_holiday == true){
+    alert(holiday_massage_product_page);
     }else{
       alert('holiday mode off ')
     return false;
