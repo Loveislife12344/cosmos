@@ -1003,11 +1003,38 @@
               "cart_show": false,
               "col": "auto"
             }
+          },
+          "7e556386-c825-4718-841e-35563ee378c1": {
+            "type": "top_menu",
+            "disabled": true,
+            "settings": {
+              "call_us_show": false,
+              "email_show": false,
+              "social_contact_show": false,
+              "wishlist_show": false,
+              "compare_show": false,
+              "account_show": false,
+              "link_inline_show": false,
+              "link_inline": "",
+              "link_dropdown_show": false,
+              "link_dropdown": "",
+              "account_dropdown_show": false,
+              "currency_dropdown_show": false,
+              "language_app_show": false,
+              "language_app_html": "",
+              "custom_show": false,
+              "custom_html": "",
+              "welcome_msg_show": false,
+              "welcome_msg": "",
+              "cart_show": false,
+              "col": "auto"
+            }
           }
         },
         "block_order": [
           "68dd89c7-43db-497a-88ab-aaa133e466ee",
-          "232314ca-bb97-4779-ba18-01ae08047a20"
+          "232314ca-bb97-4779-ba18-01ae08047a20",
+          "7e556386-c825-4718-841e-35563ee378c1"
         ],
         "settings": {
           "sticky_header_top": false,
@@ -1158,7 +1185,15 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "11944173544948763772": {
+        "type": "shopify:\/\/apps\/b2b-login-lock-hide-price\/blocks\/bss-login\/2f6e9bdf-2dd6-42c6-8d67-58be57506f80",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "platform_customizations": {
     "custom_css": [
