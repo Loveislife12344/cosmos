@@ -1953,7 +1953,7 @@
           "type": "item",
           "settings": {
             "title_style": "auto",
-            "title": "<span style=\"font-size='12px'\">TOP OF THE LIST<\/span>\n<h3>Sale<\/h3>",
+            "title": "<span style=\"font-size:14px\">TOP OF THE LIST<\/span>\n<h3>Sale<\/h3>",
             "stitle": "",
             "link_to": "",
             "name_link": "",
