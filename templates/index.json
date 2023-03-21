@@ -409,6 +409,80 @@
         "css_section": ""
       }
     },
+    "ddd22133-ec32-46c2-86d9-f7f73064f5ab": {
+      "type": "rd_prds_sc_slide",
+      "blocks": {
+        "template--18286564376879__ddd22133-ec32-46c2-86d9-f7f73064f5ab-167938362701aeb5a8-0": {
+          "type": "item",
+          "settings": {
+            "title_style": "auto",
+            "title": "<span style=\"font-size:14px\">TOP OF THE LIST<\/span>\n<h3>Products on Sale<\/h3>",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30,
+            "products": "demo",
+            "limit": 8,
+            "load_btn": true,
+            "style_btn": "btn-dark btn-outline",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "autoplay": true,
+            "use_navigation": true,
+            "nav_style": "-default",
+            "nav_mode": "default",
+            "nav_position": "nav-top-right",
+            "use_dots": false,
+            "dots_mode": "default",
+            "dots_position": "inside",
+            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}"
+          }
+        },
+        "dddd48d7-07b0-40f1-b068-aa71a832a9e5": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title_style": "auto",
+            "title": "",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30,
+            "products": "",
+            "limit": 8,
+            "load_btn": false,
+            "style_btn": "btn-dark btn-outline",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "autoplay": false,
+            "use_navigation": false,
+            "nav_style": "-default",
+            "nav_mode": "default",
+            "nav_position": "nav-default",
+            "use_dots": false,
+            "dots_mode": "default",
+            "dots_position": "inside",
+            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}"
+          }
+        }
+      },
+      "block_order": [
+        "template--18286564376879__ddd22133-ec32-46c2-86d9-f7f73064f5ab-167938362701aeb5a8-0",
+        "dddd48d7-07b0-40f1-b068-aa71a832a9e5"
+      ],
+      "settings": {
+        "title": "Products slide(grid)",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container-fluid wide",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "use_lazyload": false
+      }
+    },
     "f8b2550c-b290-4798-be6f-148c053fa0e9": {
       "type": "product-slider",
       "blocks": {
@@ -1945,86 +2019,13 @@
         "use_lazyload": false,
         "css_section": ""
       }
-    },
-    "ddd22133-ec32-46c2-86d9-f7f73064f5ab": {
-      "type": "rd_prds_sc_slide",
-      "blocks": {
-        "template--18286564376879__ddd22133-ec32-46c2-86d9-f7f73064f5ab-167938362701aeb5a8-0": {
-          "type": "item",
-          "settings": {
-            "title_style": "auto",
-            "title": "<span style=\"font-size:14px\">TOP OF THE LIST<\/span>\n<h3>Products on Sale<\/h3>",
-            "stitle": "",
-            "link_to": "",
-            "name_link": "",
-            "margin_btitle": 30,
-            "products": "demo",
-            "limit": 8,
-            "load_btn": true,
-            "style_btn": "btn-dark btn-outline",
-            "style_btn_rounded": "",
-            "btn_shadow": false,
-            "autoplay": true,
-            "use_navigation": true,
-            "nav_style": "-default",
-            "nav_mode": "default",
-            "nav_position": "nav-top-right",
-            "use_dots": false,
-            "dots_mode": "default",
-            "dots_position": "inside",
-            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}"
-          }
-        },
-        "dddd48d7-07b0-40f1-b068-aa71a832a9e5": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "title_style": "auto",
-            "title": "",
-            "stitle": "",
-            "link_to": "",
-            "name_link": "",
-            "margin_btitle": 30,
-            "products": "",
-            "limit": 8,
-            "load_btn": false,
-            "style_btn": "btn-dark btn-outline",
-            "style_btn_rounded": "",
-            "btn_shadow": false,
-            "autoplay": false,
-            "use_navigation": false,
-            "nav_style": "-default",
-            "nav_mode": "default",
-            "nav_position": "nav-default",
-            "use_dots": false,
-            "dots_mode": "default",
-            "dots_position": "inside",
-            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}"
-          }
-        }
-      },
-      "block_order": [
-        "template--18286564376879__ddd22133-ec32-46c2-86d9-f7f73064f5ab-167938362701aeb5a8-0",
-        "dddd48d7-07b0-40f1-b068-aa71a832a9e5"
-      ],
-      "settings": {
-        "title": "Products slide(grid)",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "container-fluid wide",
-        "width_content": true,
-        "section_margin_top": "",
-        "section_margin_bottom": "",
-        "section_padding": "",
-        "section_bg": "",
-        "use_lazyload": false
-      }
     }
   },
   "order": [
     "1636168033f185e383",
     "16361859527a526cba",
     "33519491-43fc-497a-bdcf-63fd13eccd1c",
+    "ddd22133-ec32-46c2-86d9-f7f73064f5ab",
     "f8b2550c-b290-4798-be6f-148c053fa0e9",
     "cb32a200-b1f4-4d8b-9c93-cff843d876ee",
     "60638b2f-4edb-44c8-b532-fd1dc3160830",
@@ -2045,7 +2046,6 @@
     "379b2398-64fc-43d7-a5e8-fb7a1bfe8cbb",
     "36e322f5-bb5b-4fc1-ac56-1c226c8feb41",
     "cbeb399c-b618-43c9-bcdd-222a82881fe2",
-    "623127cb-f2a0-4951-b7df-538d3e393009",
-    "ddd22133-ec32-46c2-86d9-f7f73064f5ab"
+    "623127cb-f2a0-4951-b7df-538d3e393009"
   ]
 }
