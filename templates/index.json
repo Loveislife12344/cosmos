@@ -1741,146 +1741,101 @@
         "css_section": ""
       }
     },
-    "eb46beb2-8277-438f-b35a-7279dcca7376": {
-      "type": "rd_brand_1",
+    "36e322f5-bb5b-4fc1-ac56-1c226c8feb41": {
+      "type": "rd_banner_products_set_1",
       "disabled": true,
       "blocks": {
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-0": {
-          "type": "item",
+        "33a0fbc8-8926-4c02-bf63-1630109f73e1": {
+          "type": "1",
           "settings": {
-            "image": "shopify:\/\/shop_images\/COS-LOGO.png",
-            "brand_call_to_action": ""
+            "dark_mode": false,
+            "title": "About This Look",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.",
+            "products": "",
+            "limit": 8,
+            "banner_left": false,
+            "image_link": "",
+            "style_btn": "btn-dark btn-outline",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "title_banner": "01. Get your <br>inspiration <br>in the street.",
+            "stitle_banner": "IN THIS LOOK",
+            "name_btn": "<span>BUY ALL<\/span><i class=\"fkt-long-arrow-right\"><\/i>"
           }
         },
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-1": {
-          "type": "item",
+        "87937932-4abb-4052-b5dd-839ff639385e": {
+          "type": "1",
           "settings": {
-            "brand_call_to_action": ""
-          }
-        },
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-2": {
-          "type": "item",
-          "settings": {
-            "brand_call_to_action": ""
-          }
-        },
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-3": {
-          "type": "item",
-          "settings": {
-            "brand_call_to_action": ""
-          }
-        },
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-4": {
-          "type": "item",
-          "settings": {
-            "brand_call_to_action": ""
-          }
-        },
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-5": {
-          "type": "item",
-          "settings": {
-            "brand_call_to_action": ""
-          }
-        },
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-6": {
-          "type": "item",
-          "settings": {
-            "brand_call_to_action": ""
+            "dark_mode": false,
+            "title": "About This Look",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.",
+            "products": "",
+            "limit": 8,
+            "banner_left": false,
+            "image_link": "",
+            "style_btn": "btn-dark btn-outline",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "title_banner": "01. Get your <br>inspiration <br>in the street.",
+            "stitle_banner": "IN THIS LOOK",
+            "name_btn": "<span>BUY ALL<\/span><i class=\"fkt-long-arrow-right\"><\/i>"
           }
         }
       },
       "block_order": [
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-0",
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-1",
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-2",
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-3",
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-4",
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-5",
-        "template--18286564376879__eb46beb2-8277-438f-b35a-7279dcca7376-16786868279c303229-6"
+        "33a0fbc8-8926-4c02-bf63-1630109f73e1",
+        "87937932-4abb-4052-b5dd-839ff639385e"
       ],
       "settings": {
-        "title": "Brands",
         "off_mobile": false,
         "off_desktop": false,
-        "width_section": "container",
+        "title": "Product set 1",
+        "width_section": "w-100",
         "width_content": true,
         "section_margin_top": "",
         "section_margin_bottom": "",
         "section_padding": "",
-        "section_bg": "",
-        "border_top": true,
-        "border_bottom": false,
-        "border_color": "#ebebeb",
-        "autoplay": false,
-        "use_navigation": true,
-        "nav_style": "-default",
-        "nav_mode": "default",
-        "nav_position": "nav-default",
-        "use_dots": false,
-        "dots_mode": "default",
-        "dots_position": "inside",
-        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 0\n  },\n  \"480\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 0\n  },\n  \"768\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 0\n  },\n  \"992\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 0\n  },\n  \"1200\": {\n    \"slidesPerView\": 7,\n    \"spaceBetween\": 0\n  }\n}",
-        "css": ""
+        "section_bg": ""
       }
     },
-    "394155d1-218a-4b10-80f3-de72df4364f7": {
-      "type": "kt_banner_flexible",
-      "disabled": true,
+    "cbeb399c-b618-43c9-bcdd-222a82881fe2": {
+      "type": "rd_prds_sc_slide_banner",
       "blocks": {
-        "3c083dc9-72b6-4ac1-8f4a-479d3fc6468b": {
-          "type": "it_banner",
+        "template--18286564376879__cbeb399c-b618-43c9-bcdd-222a82881fe2-1679383499936b6a34-0": {
+          "type": "item",
           "settings": {
-            "title": "Banner item",
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 6,
-            "width_lg": 4,
-            "width_xl": 0,
-            "width_xxl": 0,
-            "image_link": "",
-            "blank_link": false,
-            "desc": "Trending now",
-            "color_desc": "#ffffff",
-            "titlex": "This Week's Most Wanted",
-            "color_titlex": "#ffffff",
-            "stitle": "",
-            "color_stitle": "#ffffff",
-            "name_btn": "DISCOVER NOW",
-            "style_btn": "btn-primary",
+            "title": "",
+            "margin_btitle": 30,
+            "products": "",
+            "limit": 8,
+            "load_btn": false,
+            "style_btn": "btn-dark btn-outline",
             "style_btn_rounded": "",
             "btn_shadow": false,
-            "name_btn_2": "",
-            "image_link_2": "",
-            "style_btn_2": "btn-primary",
-            "style_btn_rounded_2": "",
-            "btn_shadow_2": false,
-            "text_align_top": 50,
-            "text_align_start": 16,
-            "text_align": "",
-            "text_align_top_mb": 50,
-            "text_align_start_mb": 16,
-            "text_align_mb": "",
-            "banner-effect": ""
+            "autoplay": false,
+            "use_navigation": true,
+            "nav_style": "-default",
+            "nav_mode": "default",
+            "nav_position": "nav-default",
+            "use_dots": false,
+            "dots_mode": "default",
+            "dots_position": "inside",
+            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}"
           }
         },
-        "b575c175-73b7-4046-afde-b51f4b06aebf": {
-          "type": "it_banner",
+        "74254ad3-a69e-42b0-b224-b311ea49ed2e": {
+          "type": "banner",
           "settings": {
-            "title": "Banner item",
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 6,
-            "width_lg": 4,
-            "width_xl": 0,
-            "width_xxl": 0,
+            "title": "",
+            "margin_btitle": 30,
             "image_link": "",
             "blank_link": false,
             "desc": "Trending now",
-            "color_desc": "#ffffff",
+            "color_desc": "#fff",
             "titlex": "This Week's Most Wanted",
-            "color_titlex": "#ffffff",
+            "color_titlex": "#fff",
             "stitle": "",
-            "color_stitle": "#ffffff",
+            "color_stitle": "#fff",
             "name_btn": "DISCOVER NOW",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
@@ -1891,58 +1846,21 @@
             "style_btn_rounded_2": "",
             "btn_shadow_2": false,
             "text_align_top": 50,
-            "text_align_start": 16,
+            "text_align_left": 16,
             "text_align": "",
             "text_align_top_mb": 50,
-            "text_align_start_mb": 16,
-            "text_align_mb": "",
-            "banner-effect": ""
-          }
-        },
-        "4528b534-ec2a-4fee-ab3b-d6069aae6480": {
-          "type": "it_banner",
-          "settings": {
-            "title": "Banner item",
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 6,
-            "width_lg": 4,
-            "width_xl": 0,
-            "width_xxl": 0,
-            "image_link": "",
-            "blank_link": false,
-            "desc": "Trending now",
-            "color_desc": "#ffffff",
-            "titlex": "This Week's Most Wanted",
-            "color_titlex": "#ffffff",
-            "stitle": "",
-            "color_stitle": "#ffffff",
-            "name_btn": "DISCOVER NOW",
-            "style_btn": "btn-primary",
-            "style_btn_rounded": "",
-            "btn_shadow": false,
-            "name_btn_2": "",
-            "image_link_2": "",
-            "style_btn_2": "btn-primary",
-            "style_btn_rounded_2": "",
-            "btn_shadow_2": false,
-            "text_align_top": 50,
-            "text_align_start": 16,
-            "text_align": "",
-            "text_align_top_mb": 50,
-            "text_align_start_mb": 16,
+            "text_align_left_mb": 16,
             "text_align_mb": "",
             "banner-effect": ""
           }
         }
       },
       "block_order": [
-        "3c083dc9-72b6-4ac1-8f4a-479d3fc6468b",
-        "b575c175-73b7-4046-afde-b51f4b06aebf",
-        "4528b534-ec2a-4fee-ab3b-d6069aae6480"
+        "template--18286564376879__cbeb399c-b618-43c9-bcdd-222a82881fe2-1679383499936b6a34-0",
+        "74254ad3-a69e-42b0-b224-b311ea49ed2e"
       ],
       "settings": {
-        "title": "Banner Flexible",
+        "title": "Products slide + banner",
         "off_mobile": false,
         "off_desktop": false,
         "width_section": "w-100",
@@ -1951,75 +1869,155 @@
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
-        "layout_mode": "normal",
-        "grid_gutter": 10,
-        "border_radius": 10,
+        "use_lazyload": false,
         "css_section": ""
       }
     },
-    "3445f257-26d0-4138-81f0-657a139c12de": {
-      "type": "rd_icon_boxes",
+    "623127cb-f2a0-4951-b7df-538d3e393009": {
+      "type": "rd_prds_sc_slide_banner_2",
       "disabled": true,
       "blocks": {
-        "05571df4-f420-4148-9b51-ce9da3de2886": {
-          "type": "item_simple_icons",
+        "template--18286564376879__623127cb-f2a0-4951-b7df-538d3e393009-167938356409cbf49b-0": {
+          "type": "title",
           "settings": {
-            "content_align": "center",
-            "icon_font": "",
-            "size": 36,
-            "title": "Quisque a lectus",
-            "content": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
-            "url": ""
+            "title_style": "auto",
+            "title": "",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
           }
         },
-        "7169de60-10a8-4321-846e-c3e84f6dba39": {
-          "type": "item_sircle_icons",
+        "template--18286564376879__623127cb-f2a0-4951-b7df-538d3e393009-167938356409cbf49b-1": {
+          "type": "item",
           "settings": {
-            "content_align": "center",
-            "icon_font": "",
-            "size": 36,
-            "title": "Suspendisse potenti",
-            "content": "Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.",
-            "url": ""
+            "products": "",
+            "limit": 8,
+            "autoplay": false,
+            "use_navigation": true,
+            "nav_style": "-default",
+            "nav_mode": "default",
+            "nav_position": "nav-default",
+            "use_dots": false,
+            "dots_mode": "default",
+            "dots_position": "inside",
+            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}"
           }
         },
-        "69bfd45f-7bcb-48c9-930f-81e3e08f0b7e": {
-          "type": "item_simple_icons",
+        "template--18286564376879__623127cb-f2a0-4951-b7df-538d3e393009-167938356409cbf49b-2": {
+          "type": "banner",
           "settings": {
-            "content_align": "center",
-            "icon_font": "",
-            "size": 36,
-            "title": "Quisque a lectus",
-            "content": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
-            "url": ""
+            "image_link": "",
+            "blank_link": false,
+            "desc": "Trending now",
+            "color_desc": "#fff",
+            "titlex": "This Week's Most Wanted",
+            "color_titlex": "#fff",
+            "name_btn": "DISCOVER NOW",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "text_align_top": 50,
+            "text_align_left": 16,
+            "text_align": "",
+            "text_align_top_mb": 50,
+            "text_align_left_mb": 16,
+            "text_align_mb": "",
+            "banner-effect": ""
           }
         }
       },
       "block_order": [
-        "05571df4-f420-4148-9b51-ce9da3de2886",
-        "7169de60-10a8-4321-846e-c3e84f6dba39",
-        "69bfd45f-7bcb-48c9-930f-81e3e08f0b7e"
+        "template--18286564376879__623127cb-f2a0-4951-b7df-538d3e393009-167938356409cbf49b-0",
+        "template--18286564376879__623127cb-f2a0-4951-b7df-538d3e393009-167938356409cbf49b-1",
+        "template--18286564376879__623127cb-f2a0-4951-b7df-538d3e393009-167938356409cbf49b-2"
       ],
       "settings": {
-        "title": "Icon Boxes",
+        "title": "Products slide + banner 2",
         "off_mobile": false,
         "off_desktop": false,
-        "width_section": "container",
-        "width_content": false,
+        "width_section": "w-100",
+        "width_content": true,
         "section_margin_top": "",
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
-        "border_top": true,
-        "border_bottom": false,
-        "border_color": "#ebebeb",
-        "color_icon": "#333333",
-        "color_title": "#333333",
-        "color_desc": "#cccccc",
-        "title_font_weight": "400",
-        "use_slide": false,
-        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"476\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}",
+        "use_lazyload": false,
         "css_section": ""
+      }
+    },
+    "ddd22133-ec32-46c2-86d9-f7f73064f5ab": {
+      "type": "rd_prds_sc_slide",
+      "blocks": {
+        "template--18286564376879__ddd22133-ec32-46c2-86d9-f7f73064f5ab-167938362701aeb5a8-0": {
+          "type": "item",
+          "settings": {
+            "title_style": "auto",
+            "title": "Sale",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30,
+            "products": "demo",
+            "limit": 8,
+            "load_btn": false,
+            "style_btn": "btn-dark btn-outline",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "autoplay": false,
+            "use_navigation": true,
+            "nav_style": "-default",
+            "nav_mode": "default",
+            "nav_position": "nav-top-right",
+            "use_dots": false,
+            "dots_mode": "default",
+            "dots_position": "inside",
+            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}"
+          }
+        },
+        "dddd48d7-07b0-40f1-b068-aa71a832a9e5": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title_style": "auto",
+            "title": "",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30,
+            "products": "",
+            "limit": 8,
+            "load_btn": false,
+            "style_btn": "btn-dark btn-outline",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "autoplay": false,
+            "use_navigation": false,
+            "nav_style": "-default",
+            "nav_mode": "default",
+            "nav_position": "nav-default",
+            "use_dots": false,
+            "dots_mode": "default",
+            "dots_position": "inside",
+            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}"
+          }
+        }
+      },
+      "block_order": [
+        "template--18286564376879__ddd22133-ec32-46c2-86d9-f7f73064f5ab-167938362701aeb5a8-0",
+        "dddd48d7-07b0-40f1-b068-aa71a832a9e5"
+      ],
+      "settings": {
+        "title": "Products slide(grid)",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container-fluid wide",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "use_lazyload": false
       }
     }
   },
@@ -2045,8 +2043,9 @@
     "162911842017396d40",
     "275cbf37-5eaf-4d88-8661-7eda9e89a00c",
     "379b2398-64fc-43d7-a5e8-fb7a1bfe8cbb",
-    "eb46beb2-8277-438f-b35a-7279dcca7376",
-    "394155d1-218a-4b10-80f3-de72df4364f7",
-    "3445f257-26d0-4138-81f0-657a139c12de"
+    "36e322f5-bb5b-4fc1-ac56-1c226c8feb41",
+    "cbeb399c-b618-43c9-bcdd-222a82881fe2",
+    "623127cb-f2a0-4951-b7df-538d3e393009",
+    "ddd22133-ec32-46c2-86d9-f7f73064f5ab"
   ]
 }
