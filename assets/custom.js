@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", (event) => {
 // multisteps form
-var stapper = docuemnt.querySelector('.login-step-toggler');
+var stapper = document.querySelector('.login-step-toggler');
 stapper.addEventListener('click',function(){
     var allSteps = document.querySelectorAll('.login-tab .step');
     var activeStep = document.querySelector('.login-tab .step.show');
