@@ -53,16 +53,16 @@
             {%- endif -%}
           </ul>
           <div class="tab-content">
-            <div class="tab-pane fade{% if template.name == 'login' %} active show{%- endif -%}" id="signin" role="tabpanel" aria-labelledby="">
+            <div class="login-tab tab-pane fade{% if template.name == 'login' %} active show{%- endif -%}" id="signin" role="tabpanel" aria-labelledby="">
               {% form 'customer_login', id: 'CustomerLoginForm', class: 'needs-validation' %}
               {{ form.errors | default_errors }}
-            <div class="step--1 fade show">
+            <div class="step step--1 fade show">
               <label for="singin-password" class="form-label">{{ 'customer.login.email' | t }}</label>
               <div class="input-group">
                 <input type="text" class="form-control" id="singin-password" name="customer[email]" required="" aria-describedby="{{ 'customer.login.email' | t }}">
               </div>
             </div>
-            <div class="step--2 fade">
+            <div class="step step--2 fade last--step">
               {%- if form.password_needed -%}
               <label for="singin-password" class="form-label">{{ 'customer.login.password' | t }}</label>
               <div class="input-group">
@@ -71,10 +71,10 @@
               {%- endif -%}
             </div>
               <div class="form-footer text-center">
-                <button type="submit" class="btn btn-primary btn-rounded btn-block d-none">
+                <button type="submit" class="login-submit btn btn-primary btn-rounded btn-block d-none">
                   <span>{{ 'customer.login.sign_in' | t }}</span>
                 </button>
-                <button type="button" data-steps="2" class="btn btn-primary btn-rounded btn-block">
+                <button type="button" data-steps="2" class="btn btn-primary btn-rounded btn-block login-step-toggler">
                   <span>Next</span>
                 </button>
 
