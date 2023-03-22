@@ -67,9 +67,13 @@
               </div>
               {%- endif -%}
               <div class="form-footer text-center">
-                <button type="submit" class="btn btn-primary btn-rounded btn-block">
+                <button type="submit" class="btn btn-primary btn-rounded btn-block d-none">
                   <span>{{ 'customer.login.sign_in' | t }}</span>
                 </button>
+                <button type="button" data-steps="2" class="btn btn-primary btn-rounded btn-block">
+                  <span>Next</span>
+                </button>
+
                 {%- if form.password_needed -%}
                 <a href="#recover" id="RecoverPassword" class="forgot-link _mt-1 _mb-1">{{ 'customer.login.forgot_password' | t }}</a>
                 {%- endif -%}

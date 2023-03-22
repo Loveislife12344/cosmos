@@ -307,6 +307,7 @@
       {%- endif -%}
     {%- endif -%}
     {%- render 'googleRich' -%}
+    <script src="{{ 'custom.js' | asset_url }}"></script>
     <script >
       Window.is_on_holiday = {{settings.on-holiday}} || null;
       Window.holiday_duration = `{{settings.holiday-date}}` || null;
