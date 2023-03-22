@@ -1,0 +1,5 @@
+ /* multistep form */
+ .step--1:not(.show),.step--2:not(.show){
+    display:none;
+ }
+ /* multistep form end */
