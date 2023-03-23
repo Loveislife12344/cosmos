@@ -410,6 +410,27 @@
               "textarea_promo_html": ""
             }
           },
+          "889da515-cc8a-43f2-bbe1-cdf5ef7585af": {
+            "type": "parent",
+            "settings": {
+              "button_link": "",
+              "title_i": "Item link",
+              "icon_font": "",
+              "label": "",
+              "menu_links_width": "830px",
+              "title": "Parent"
+            }
+          },
+          "f8b20a6e-174d-4b25-aa22-e96ee4680431": {
+            "type": "linklist",
+            "settings": {
+              "title_i": "Top Trending Products",
+              "menu_links": "",
+              "cols": 2,
+              "sub_width": 8,
+              "title": "Linklist (child)"
+            }
+          },
           "005c05a8-2568-403f-ba4c-54944de8aea3": {
             "type": "promo",
             "settings": {
@@ -585,6 +606,8 @@
           "1f9a83d7-aa12-4066-b10f-e6fe3a2052a0",
           "d0545317-c9e8-42cd-820d-cd5a98703300",
           "63159770-24a1-4584-bfab-fe7cc5b58b5a",
+          "889da515-cc8a-43f2-bbe1-cdf5ef7585af",
+          "f8b20a6e-174d-4b25-aa22-e96ee4680431",
           "005c05a8-2568-403f-ba4c-54944de8aea3",
           "c8e0a7a5-1530-4ca8-96da-82b66406ab2f",
           "02f6358a-f375-401e-9c86-9fc85282db1d",
