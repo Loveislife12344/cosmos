@@ -444,6 +444,40 @@
               "title": "Banner (child)"
             }
           },
+          "0ae7fa24-1513-4ee4-afe5-5d5c02514720": {
+            "type": "parent",
+            "settings": {
+              "button_link": "",
+              "title_i": "Support",
+              "icon_font": "d-icon-t-shirt1",
+              "label": "",
+              "menu_links_width": "830px",
+              "title": "Parent"
+            }
+          },
+          "454c9e8c-255c-466c-b8f3-487535bb7a6c": {
+            "type": "linklist",
+            "settings": {
+              "title_i": "",
+              "menu_links": "support",
+              "cols": 3,
+              "sub_width": 6,
+              "title": "Linklist (child)"
+            }
+          },
+          "201210f3-a537-4b18-9c94-8ae3623a289e": {
+            "type": "banner",
+            "settings": {
+              "banner-effect": "",
+              "title_i": "",
+              "menu_links": "",
+              "per_col": "3",
+              "image_1": "shopify:\/\/shop_images\/image_eed4dd68-8f21-4c63-9a82-131b45ed8014.jpg",
+              "image_link_1": "",
+              "sub_width": 6,
+              "title": "Banner (child)"
+            }
+          },
           "c8e0a7a5-1530-4ca8-96da-82b66406ab2f": {
             "type": "promo",
             "settings": {
@@ -592,17 +626,6 @@
               "label": "",
               "color": "#ffffff"
             }
-          },
-          "0ae7fa24-1513-4ee4-afe5-5d5c02514720": {
-            "type": "parent",
-            "settings": {
-              "button_link": "",
-              "title_i": "Support",
-              "icon_font": "",
-              "label": "",
-              "menu_links_width": "830px",
-              "title": "Parent"
-            }
           }
         },
         "block_order": [
@@ -614,6 +637,9 @@
           "889da515-cc8a-43f2-bbe1-cdf5ef7585af",
           "f8b20a6e-174d-4b25-aa22-e96ee4680431",
           "1c88a524-c9b1-41f3-a7fe-637fe477e8f3",
+          "0ae7fa24-1513-4ee4-afe5-5d5c02514720",
+          "454c9e8c-255c-466c-b8f3-487535bb7a6c",
+          "201210f3-a537-4b18-9c94-8ae3623a289e",
           "c8e0a7a5-1530-4ca8-96da-82b66406ab2f",
           "02f6358a-f375-401e-9c86-9fc85282db1d",
           "5c77a362-ab23-41bf-8f37-d2d74b852779",
@@ -624,8 +650,7 @@
           "733bd55b-79d0-4423-9f89-2ced1d09c0d8",
           "8d90c833-36f4-4c40-9f32-bd521fcaa558",
           "df0474d1-8870-438f-9d53-9d7b2739cd41",
-          "b83e7c76-a180-438b-89f5-12c90bbdb2bf",
-          "0ae7fa24-1513-4ee4-afe5-5d5c02514720"
+          "b83e7c76-a180-438b-89f5-12c90bbdb2bf"
         ],
         "settings": {
           "title_categories": "Browse Categories",
