@@ -592,6 +592,17 @@
               "label": "",
               "color": "#ffffff"
             }
+          },
+          "0ae7fa24-1513-4ee4-afe5-5d5c02514720": {
+            "type": "parent",
+            "settings": {
+              "button_link": "",
+              "title_i": "Support",
+              "icon_font": "",
+              "label": "",
+              "menu_links_width": "830px",
+              "title": "Parent"
+            }
           }
         },
         "block_order": [
@@ -613,7 +624,8 @@
           "733bd55b-79d0-4423-9f89-2ced1d09c0d8",
           "8d90c833-36f4-4c40-9f32-bd521fcaa558",
           "df0474d1-8870-438f-9d53-9d7b2739cd41",
-          "b83e7c76-a180-438b-89f5-12c90bbdb2bf"
+          "b83e7c76-a180-438b-89f5-12c90bbdb2bf",
+          "0ae7fa24-1513-4ee4-afe5-5d5c02514720"
         ],
         "settings": {
           "title_categories": "Browse Categories",
