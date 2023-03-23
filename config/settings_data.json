@@ -817,6 +817,7 @@
         "blocks": {
           "9bc4ee75-1d05-4e93-b3d7-d350eb7949f3": {
             "type": "top_logo_newsletter_01",
+            "disabled": true,
             "settings": {
               "col": "col-sm-12 col-lg-12",
               "not_drop": false,
