@@ -482,8 +482,8 @@
             "type": "parent",
             "settings": {
               "button_link": "",
-              "title_i": "Item link",
-              "icon_font": "",
+              "title_i": "Post Surgical",
+              "icon_font": "d-icon-t-shirt1",
               "label": "",
               "menu_links_width": "830px",
               "title": "Parent"
@@ -510,25 +510,6 @@
               "image_link_1": "",
               "sub_width": 6,
               "title": "Banner (child)"
-            }
-          },
-          "02f6358a-f375-401e-9c86-9fc85282db1d": {
-            "type": "promo",
-            "settings": {
-              "name_item": "Post Surgical",
-              "icon_font": "d-icon-t-shirt1",
-              "button_link": "",
-              "label": "",
-              "menu_links_width": "830px",
-              "sub_width": 8,
-              "menu_links": "",
-              "cols": 1,
-              "promo_width": 4,
-              "padding_0": true,
-              "promo_link": "",
-              "use_promo_html": false,
-              "page_promo_html": "",
-              "textarea_promo_html": ""
             }
           },
           "5c77a362-ab23-41bf-8f37-d2d74b852779": {
@@ -584,7 +565,6 @@
           "772de0ce-35de-4e39-86ec-e4048ec199ac",
           "72f1b58d-7470-4a44-b56c-f40c828f6461",
           "275283dd-a7bd-47f9-9f3b-09a6b8897e56",
-          "02f6358a-f375-401e-9c86-9fc85282db1d",
           "5c77a362-ab23-41bf-8f37-d2d74b852779",
           "301ea914-5651-490c-b746-ada1f7017acd",
           "2411103c-a825-4db5-9411-1923a0ab2e72"
