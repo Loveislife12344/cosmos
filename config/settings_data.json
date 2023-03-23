@@ -478,25 +478,6 @@
               "title": "Banner (child)"
             }
           },
-          "c8e0a7a5-1530-4ca8-96da-82b66406ab2f": {
-            "type": "promo",
-            "settings": {
-              "name_item": "Support",
-              "icon_font": "d-icon-t-shirt1",
-              "button_link": "",
-              "label": "",
-              "menu_links_width": "830px",
-              "sub_width": 8,
-              "menu_links": "",
-              "cols": 1,
-              "promo_width": 4,
-              "padding_0": true,
-              "promo_link": "",
-              "use_promo_html": false,
-              "page_promo_html": "",
-              "textarea_promo_html": ""
-            }
-          },
           "02f6358a-f375-401e-9c86-9fc85282db1d": {
             "type": "promo",
             "settings": {
@@ -562,58 +543,6 @@
               "label": ""
             }
           },
-          "26308da3-139d-4140-8fac-0c8e13e09f4c": {
-            "type": "per_column",
-            "disabled": true,
-            "settings": {
-              "title": "compresion",
-              "button_link": "",
-              "icon_font": "",
-              "label": "",
-              "menu_links_width": "830px",
-              "menu_links": "compression",
-              "cols": 2
-            }
-          },
-          "733bd55b-79d0-4423-9f89-2ced1d09c0d8": {
-            "type": "per_column",
-            "disabled": true,
-            "settings": {
-              "title": "new",
-              "button_link": "",
-              "icon_font": "",
-              "label": "",
-              "menu_links_width": "830px",
-              "menu_links": "compression",
-              "cols": 3
-            }
-          },
-          "8d90c833-36f4-4c40-9f32-bd521fcaa558": {
-            "type": "standard_collumn",
-            "disabled": true,
-            "settings": {
-              "title": "stanserd col",
-              "button_link": "",
-              "icon_font": "",
-              "label": "",
-              "menu_links_width": "830px",
-              "menu_links": "compression"
-            }
-          },
-          "df0474d1-8870-438f-9d53-9d7b2739cd41": {
-            "type": "multi_collumn",
-            "disabled": true,
-            "settings": {
-              "title": "multicolum",
-              "button_link": "",
-              "icon_font": "",
-              "label": "",
-              "menu_links_width": "830px",
-              "menu_links": "products",
-              "cols": 3,
-              "bg_image": "shopify:\/\/shop_images\/Rectangle_2.png"
-            }
-          },
           "b83e7c76-a180-438b-89f5-12c90bbdb2bf": {
             "type": "coll_image",
             "settings": {
@@ -640,16 +569,11 @@
           "0ae7fa24-1513-4ee4-afe5-5d5c02514720",
           "454c9e8c-255c-466c-b8f3-487535bb7a6c",
           "201210f3-a537-4b18-9c94-8ae3623a289e",
-          "c8e0a7a5-1530-4ca8-96da-82b66406ab2f",
           "02f6358a-f375-401e-9c86-9fc85282db1d",
           "5c77a362-ab23-41bf-8f37-d2d74b852779",
           "a19bdadc-2161-465e-91b4-bf3f73c50afb",
           "301ea914-5651-490c-b746-ada1f7017acd",
           "2411103c-a825-4db5-9411-1923a0ab2e72",
-          "26308da3-139d-4140-8fac-0c8e13e09f4c",
-          "733bd55b-79d0-4423-9f89-2ced1d09c0d8",
-          "8d90c833-36f4-4c40-9f32-bd521fcaa558",
-          "df0474d1-8870-438f-9d53-9d7b2739cd41",
           "b83e7c76-a180-438b-89f5-12c90bbdb2bf"
         ],
         "settings": {

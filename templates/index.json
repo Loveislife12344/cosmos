@@ -36,39 +36,6 @@
             "css_block": ""
           }
         },
-        "12a6d01e-2dc6-47ec-9c70-0557e4179b9b": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/istockphoto-1299130883-1024x1024_1.jpg",
-            "image_mb": "shopify:\/\/shop_images\/istockphoto-1299130883-1024x1024_1.jpg",
-            "lazypreload": false,
-            "heading": "<span class=\"text-primary fw-bold\">02. <\/span>BEST SELLERS STORE",
-            "font_heading": "poppins_n5",
-            "subheading": "Big Sale<br>for women",
-            "font_subheading": "poppins_n7",
-            "description": "Up To<strong class=\"text-primary ms-1 me-1\">$24.00<\/strong><strong>Off<\/strong>",
-            "font_description": "poppins_n4",
-            "text_alignment_top": 50,
-            "text_alignment_left": 90,
-            "text_alignment": "",
-            "text_alignment_top_mb": 50,
-            "text_alignment_left_mb": 90,
-            "text_alignment_mb": "",
-            "style_btn_1": "btn-white",
-            "style_btn_rounded_1": "btn-rounded",
-            "btn_shadow_1": true,
-            "link_1": "",
-            "textBtn_1": "SHOP NOW",
-            "style_btn_2": "btn-dark",
-            "style_btn_rounded_2": "",
-            "btn_shadow_2": false,
-            "link_2": "",
-            "textBtn_2": "",
-            "title": "Item image",
-            "width_section": true,
-            "css_block": ""
-          }
-        },
         "782d32c8-77f8-4d34-bf43-418691a58194": {
           "type": "image",
           "settings": {
@@ -159,7 +126,6 @@
       },
       "block_order": [
         "1636168033f185e383-0",
-        "12a6d01e-2dc6-47ec-9c70-0557e4179b9b",
         "782d32c8-77f8-4d34-bf43-418691a58194",
         "dad60e3c-eec4-4707-8791-133f4f5632bc",
         "d099a318-92fe-41aa-bd5f-fc85fe0c50c6",
