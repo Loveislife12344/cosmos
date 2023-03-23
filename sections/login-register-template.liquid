@@ -74,9 +74,9 @@
                 <button type="submit" class="login-submit btn btn-primary btn-rounded btn-block d-none">
                   <span>{{ 'customer.login.sign_in' | t }}</span>
                 </button>
-                <button type="button" data-steps="2" class="btn btn-primary btn-rounded btn-block login-step-toggler">
+                <a href="#" data-steps="2" class="btn btn-primary btn-rounded btn-block login-step-toggler">
                   <span>Next</span>
-                </button>
+                </a>
 
                 {%- if form.password_needed -%}
                 <a href="#recover" id="RecoverPassword" class="forgot-link _mt-1 _mb-1">{{ 'customer.login.forgot_password' | t }}</a>
@@ -145,9 +145,9 @@
                   <span>{{ 'customer.register.submit' | t }}</span>
                 </button>
 
-                <button type="button" data-steps="2" class="btn btn-primary btn-rounded btn-block register-step-toggler">
+                <a href="#" data-steps="2" class="btn btn-primary btn-rounded btn-block register-step-toggler">
                   <span>Next</span>
-                </button>
+                </a>
               </div>
               {% endform %}
             </div>
