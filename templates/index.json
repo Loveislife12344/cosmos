@@ -417,17 +417,16 @@
             "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}"
           }
         },
-        "dddd48d7-07b0-40f1-b068-aa71a832a9e5": {
+        "3d6de060-7a79-4e84-80c2-985cea1b92d0": {
           "type": "item",
-          "disabled": true,
           "settings": {
             "title_style": "auto",
-            "title": "",
+            "title": "<span style=\"font-size:14px\">TOP OF THE LIST<\/span>\n<h3>Clearance Items<\/h3>",
             "stitle": "",
             "link_to": "",
             "name_link": "",
             "margin_btitle": 30,
-            "products": "",
+            "products": "demo",
             "limit": 8,
             "load_btn": false,
             "style_btn": "btn-dark btn-outline",
@@ -441,13 +440,13 @@
             "use_dots": false,
             "dots_mode": "default",
             "dots_position": "inside",
-            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 6,\n    \"spaceBetween\": 20\n  }\n}"
+            "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 0\n  },\n  \"375\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 5,\n    \"spaceBetween\": 20\n  }\n}"
           }
         }
       },
       "block_order": [
         "template--18286564376879__ddd22133-ec32-46c2-86d9-f7f73064f5ab-167938362701aeb5a8-0",
-        "dddd48d7-07b0-40f1-b068-aa71a832a9e5"
+        "3d6de060-7a79-4e84-80c2-985cea1b92d0"
       ],
       "settings": {
         "title": "Products slide(grid)",
