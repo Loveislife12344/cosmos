@@ -1646,68 +1646,6 @@
         "css_section": ""
       }
     },
-    "162911842017396d40": {
-      "type": "rd_icon_boxes",
-      "disabled": true,
-      "blocks": {
-        "9d00696e-3c9a-4e39-b1dc-33a7337f247d": {
-          "type": "item_icon_side",
-          "settings": {
-            "icon_font": "d-icon-truck",
-            "size": 36,
-            "title": "Free Shipping & Return",
-            "content": "Free shipping on orders over $99",
-            "url": ""
-          }
-        },
-        "346de24d-975a-40ce-9e48-0d1acb935436": {
-          "type": "item_icon_side",
-          "settings": {
-            "icon_font": "d-icon-service",
-            "size": 36,
-            "title": "Customer Support 24\/7",
-            "content": "Instant access to perfect support",
-            "url": ""
-          }
-        },
-        "c8b02bff-f109-43ec-9a41-bb17b06e5813": {
-          "type": "item_icon_side",
-          "settings": {
-            "icon_font": "d-icon-secure",
-            "size": 36,
-            "title": "100% Secure Payment",
-            "content": "We ensure secure payment!",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "9d00696e-3c9a-4e39-b1dc-33a7337f247d",
-        "346de24d-975a-40ce-9e48-0d1acb935436",
-        "c8b02bff-f109-43ec-9a41-bb17b06e5813"
-      ],
-      "settings": {
-        "title": "Icon Boxes",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "container",
-        "width_content": false,
-        "section_margin_top": "",
-        "section_margin_bottom": "60px",
-        "section_padding": "",
-        "section_bg": "",
-        "border_top": true,
-        "border_bottom": false,
-        "border_color": "#ebebeb",
-        "color_icon": "#333333",
-        "color_title": "#333333",
-        "color_desc": "#666666",
-        "title_font_weight": "600",
-        "use_slide": true,
-        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"320\": {\n    \"slidesPerView\": 1.2,\n    \"spaceBetween\": 20\n  },\n  \"476\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  }\n}",
-        "css_section": "@media (min-width: 768px) {\n  .content_{{section.id}} .icon-boxes-container {\n    overflow: hidden;\n    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.07);\n  }\n  .content_{{section.id}} .item-wrap {\n    display: flex;\n    justify-content: center;\n  }\n  .content_{{section.id}} .icon-box-side {\n    width: auto;\n  }\n  .content_{{section.id}} .swiper-slide:not(:last-child) .icon-box::after {\n    content: '';\n    height: 37px;\n    width: 1px;\n    background: #e1e1e1;\n    position: absolute;\n    right: 0;\n    top: 50%;\n    transform: translateY(-50%);\n  }\n}"
-      }
-    },
     "275cbf37-5eaf-4d88-8661-7eda9e89a00c": {
       "type": "rd_banner_cta_02",
       "disabled": true,
@@ -1729,71 +1667,6 @@
         "style_btn": "btn-dark",
         "border_radius": 10,
         "autoplay": false,
-        "css_section": ""
-      }
-    },
-    "379b2398-64fc-43d7-a5e8-fb7a1bfe8cbb": {
-      "type": "rd_banner_fix01",
-      "disabled": true,
-      "blocks": {
-        "template--18286564376879__379b2398-64fc-43d7-a5e8-fb7a1bfe8cbb-1678686754f08f470e-0": {
-          "type": "it_banner",
-          "settings": {
-            "title": "Banner item",
-            "title_1": "SPORTING GOODS",
-            "image_link": "",
-            "blank_link": false,
-            "name_btn": "DISCOVER NOW",
-            "name_btn_2": "",
-            "image_link_2": "",
-            "subtitle_2": "Clearance",
-            "title_2": "For Fitness Classes",
-            "text_white_2": "from $19.99",
-            "btn_banner_2": "SHOP NOW",
-            "link_banner_2": "",
-            "subtitle_3": "On Sale",
-            "title_3": "Transform Your Life",
-            "text_white_3": "from $39.00",
-            "btn_banner_3": "Discover now",
-            "link_banner_3": "",
-            "subtitle_4": "Clearance",
-            "title_4": "Build Your Body",
-            "text_white_4": "from $19.99 pixels",
-            "btn_banner_4": "SHOP NOW",
-            "link_banner_4": "",
-            "subtitle_5": "Flash Sale",
-            "title_5": "30% OFF",
-            "btn_banner_5": "SHOP ALL SALE",
-            "link_banner_5": ""
-          }
-        },
-        "777269c8-3a85-40a7-bce8-1e4a33aa74f6": {
-          "type": "title",
-          "settings": {
-            "title_style": "auto",
-            "title": "",
-            "stitle": "",
-            "link_to": "",
-            "name_link": "",
-            "margin_btitle": 30
-          }
-        }
-      },
-      "block_order": [
-        "template--18286564376879__379b2398-64fc-43d7-a5e8-fb7a1bfe8cbb-1678686754f08f470e-0",
-        "777269c8-3a85-40a7-bce8-1e4a33aa74f6"
-      ],
-      "settings": {
-        "title": "Banner Flexible",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "w-100",
-        "width_content": true,
-        "section_margin_top": "",
-        "section_margin_bottom": "",
-        "section_padding": "",
-        "section_bg": "",
-        "border_radius": 10,
         "css_section": ""
       }
     },
@@ -1939,9 +1812,7 @@
     "f229cafc-d1d8-4b61-a46c-0fd52c49eece",
     "ce8ec8c1-ba48-465c-a726-2aaff1de4f11",
     "8d71088b-ec20-475c-aa71-86457bb83d33",
-    "162911842017396d40",
     "275cbf37-5eaf-4d88-8661-7eda9e89a00c",
-    "379b2398-64fc-43d7-a5e8-fb7a1bfe8cbb",
     "36e322f5-bb5b-4fc1-ac56-1c226c8feb41",
     "1223ffad-1eef-4908-a6a3-54632e584348",
     "3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb"

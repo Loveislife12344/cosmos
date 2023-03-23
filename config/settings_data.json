@@ -965,6 +965,21 @@
       },
       "kt_bottom_bar": {
         "type": "kt_bottom_bar",
+        "blocks": {
+          "6cb9c2cf-105c-4f2b-9660-58a8d1508f6c": {
+            "type": "item",
+            "settings": {
+              "system_icon": "home",
+              "custom_icon_font": "",
+              "custom_icon_img": "shopify:\/\/shop_images\/image_eed4dd68-8f21-4c63-9a82-131b45ed8014.jpg",
+              "link": "",
+              "title": "Category"
+            }
+          }
+        },
+        "block_order": [
+          "6cb9c2cf-105c-4f2b-9660-58a8d1508f6c"
+        ],
         "settings": {
         }
       },
