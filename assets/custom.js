@@ -21,6 +21,7 @@ Registerstapper.addEventListener('click',function(){
     nextStep.classList.add('show')
     activeStep.classList.remove('show')
     if(nextStep.classList.contains('last--step')){
+        alert('under')
         stapper.classList.add('d-none')
         document.querySelector('.register-submit').classList.remove('d-none')
     }
