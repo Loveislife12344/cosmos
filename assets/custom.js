@@ -19,7 +19,9 @@ Registerstapper.addEventListener('click',function(){
     var activeStep = document.querySelector('.register-tab .step.show');
     var nextStep = activeStep.nextElementSibling;
     nextStep.classList.add('show')
+
     activeStep.classList.remove('show')
+    alert(nextStep.classList)
     if(nextStep.classList.contains('last--step')){
         alert('under')
         stapper.classList.add('d-none')
