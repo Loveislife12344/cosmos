@@ -6,6 +6,8 @@
         "1636168033f185e383-0": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Capture.png",
+            "image_mb": "shopify:\/\/shop_images\/Capture.png",
             "lazypreload": false,
             "heading": "<span class=\"text-primary fw-bold\">01.  <\/span>BEST SELLERS STORE",
             "font_heading": "poppins_n5",
@@ -37,6 +39,8 @@
         "12a6d01e-2dc6-47ec-9c70-0557e4179b9b": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/istockphoto-1299130883-1024x1024_1.jpg",
+            "image_mb": "shopify:\/\/shop_images\/istockphoto-1299130883-1024x1024_1.jpg",
             "lazypreload": false,
             "heading": "<span class=\"text-primary fw-bold\">02. <\/span>BEST SELLERS STORE",
             "font_heading": "poppins_n5",
@@ -68,8 +72,10 @@
         "782d32c8-77f8-4d34-bf43-418691a58194": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/istockphoto-1297679060-1024x1024.jpg",
+            "image_mb": "shopify:\/\/shop_images\/istockphoto-1297679060-1024x1024.jpg",
             "lazypreload": false,
-            "heading": "<span class=\"text-primary fw-bold\">03. <\/span>BEST SELLERS STORE",
+            "heading": "<span class=\"text-primary fw-bold\"><\/span>BEST SELLERS STORE",
             "font_heading": "poppins_n5",
             "subheading": "Fashionable <br>for men's",
             "font_subheading": "poppins_n7",
@@ -1907,11 +1913,11 @@
             "image_link": "",
             "blank_link": false,
             "desc": "Trending now",
-            "color_desc": "#fff",
+            "color_desc": "#ffffff",
             "titlex": "This Week's Most Wanted",
-            "color_titlex": "#fff",
+            "color_titlex": "#ffffff",
             "stitle": "",
-            "color_stitle": "#fff",
+            "color_stitle": "#ffffff",
             "name_btn": "DISCOVER NOW",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
@@ -1986,9 +1992,9 @@
             "image_link": "",
             "blank_link": false,
             "desc": "Trending now",
-            "color_desc": "#fff",
+            "color_desc": "#ffffff",
             "titlex": "This Week's Most Wanted",
-            "color_titlex": "#fff",
+            "color_titlex": "#ffffff",
             "name_btn": "DISCOVER NOW",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
