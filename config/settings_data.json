@@ -369,7 +369,7 @@
           "1f9a83d7-aa12-4066-b10f-e6fe3a2052a0": {
             "type": "linklist",
             "settings": {
-              "title_i": "Top Trending Products",
+              "title_i": "",
               "menu_links": "compression",
               "cols": 6,
               "sub_width": 6,
