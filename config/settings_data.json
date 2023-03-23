@@ -370,9 +370,9 @@
             "type": "linklist",
             "settings": {
               "title_i": "Top Trending Products",
-              "menu_links": "main-menu",
-              "cols": 3,
-              "sub_width": 4,
+              "menu_links": "compression",
+              "cols": 6,
+              "sub_width": 6,
               "title": "Linklist (child)"
             }
           },
@@ -380,12 +380,12 @@
             "type": "banner",
             "settings": {
               "banner-effect": "",
-              "title_i": "Top Trending Products",
+              "title_i": "",
               "menu_links": "",
               "per_col": "5",
               "image_1": "shopify:\/\/shop_images\/image_eed4dd68-8f21-4c63-9a82-131b45ed8014.jpg",
               "image_link_1": "",
-              "sub_width": 7,
+              "sub_width": 6,
               "title": "Banner (child)"
             }
           },
