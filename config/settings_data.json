@@ -414,8 +414,8 @@
             "type": "parent",
             "settings": {
               "button_link": "",
-              "title_i": "Item link",
-              "icon_font": "",
+              "title_i": "Protection",
+              "icon_font": "d-icon-camera1",
               "label": "",
               "menu_links_width": "830px",
               "title": "Parent"
@@ -442,25 +442,6 @@
               "image_link_1": "",
               "sub_width": 6,
               "title": "Banner (child)"
-            }
-          },
-          "005c05a8-2568-403f-ba4c-54944de8aea3": {
-            "type": "promo",
-            "settings": {
-              "name_item": "Protection",
-              "icon_font": "d-icon-camera1",
-              "button_link": "",
-              "label": "",
-              "menu_links_width": "685px",
-              "sub_width": 8,
-              "menu_links": "",
-              "cols": 2,
-              "promo_width": 4,
-              "padding_0": true,
-              "promo_link": "#",
-              "use_promo_html": false,
-              "page_promo_html": "",
-              "textarea_promo_html": ""
             }
           },
           "c8e0a7a5-1530-4ca8-96da-82b66406ab2f": {
@@ -622,7 +603,6 @@
           "889da515-cc8a-43f2-bbe1-cdf5ef7585af",
           "f8b20a6e-174d-4b25-aa22-e96ee4680431",
           "1c88a524-c9b1-41f3-a7fe-637fe477e8f3",
-          "005c05a8-2568-403f-ba4c-54944de8aea3",
           "c8e0a7a5-1530-4ca8-96da-82b66406ab2f",
           "02f6358a-f375-401e-9c86-9fc85282db1d",
           "5c77a362-ab23-41bf-8f37-d2d74b852779",
