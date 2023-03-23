@@ -355,6 +355,40 @@
               "title": "Browse Our Categories"
             }
           },
+          "f3ecc8b1-9418-40d4-98f3-a94211122660": {
+            "type": "parent",
+            "settings": {
+              "button_link": "",
+              "title_i": "Compression",
+              "icon_font": "d-icon-t-shirt1",
+              "label": "",
+              "menu_links_width": "830px",
+              "title": "Parent"
+            }
+          },
+          "1f9a83d7-aa12-4066-b10f-e6fe3a2052a0": {
+            "type": "linklist",
+            "settings": {
+              "title_i": "Top Trending Products",
+              "menu_links": "main-menu",
+              "cols": 3,
+              "sub_width": 4,
+              "title": "Linklist (child)"
+            }
+          },
+          "d0545317-c9e8-42cd-820d-cd5a98703300": {
+            "type": "banner",
+            "settings": {
+              "banner-effect": "",
+              "title_i": "Top Trending Products",
+              "menu_links": "",
+              "per_col": "5",
+              "image_1": "shopify:\/\/shop_images\/image_eed4dd68-8f21-4c63-9a82-131b45ed8014.jpg",
+              "image_link_1": "",
+              "sub_width": 7,
+              "title": "Banner (child)"
+            }
+          },
           "63159770-24a1-4584-bfab-fe7cc5b58b5a": {
             "type": "promo",
             "disabled": true,
@@ -543,44 +577,13 @@
               "label": "",
               "color": "#ffffff"
             }
-          },
-          "f3ecc8b1-9418-40d4-98f3-a94211122660": {
-            "type": "parent",
-            "settings": {
-              "button_link": "",
-              "title_i": "Item link",
-              "icon_font": "",
-              "label": "",
-              "menu_links_width": "830px",
-              "title": "Parent"
-            }
-          },
-          "1f9a83d7-aa12-4066-b10f-e6fe3a2052a0": {
-            "type": "linklist",
-            "settings": {
-              "title_i": "Top Trending Products",
-              "menu_links": "main-menu",
-              "cols": 3,
-              "sub_width": 4,
-              "title": "Linklist (child)"
-            }
-          },
-          "d0545317-c9e8-42cd-820d-cd5a98703300": {
-            "type": "banner",
-            "settings": {
-              "banner-effect": "",
-              "title_i": "Top Trending Products",
-              "menu_links": "",
-              "per_col": "5",
-              "image_1": "shopify:\/\/shop_images\/image_eed4dd68-8f21-4c63-9a82-131b45ed8014.jpg",
-              "image_link_1": "",
-              "sub_width": 7,
-              "title": "Banner (child)"
-            }
           }
         },
         "block_order": [
           "77447a98-7b2a-4e87-b59a-2f73966af675",
+          "f3ecc8b1-9418-40d4-98f3-a94211122660",
+          "1f9a83d7-aa12-4066-b10f-e6fe3a2052a0",
+          "d0545317-c9e8-42cd-820d-cd5a98703300",
           "63159770-24a1-4584-bfab-fe7cc5b58b5a",
           "005c05a8-2568-403f-ba4c-54944de8aea3",
           "c8e0a7a5-1530-4ca8-96da-82b66406ab2f",
@@ -593,10 +596,7 @@
           "733bd55b-79d0-4423-9f89-2ced1d09c0d8",
           "8d90c833-36f4-4c40-9f32-bd521fcaa558",
           "df0474d1-8870-438f-9d53-9d7b2739cd41",
-          "b83e7c76-a180-438b-89f5-12c90bbdb2bf",
-          "f3ecc8b1-9418-40d4-98f3-a94211122660",
-          "1f9a83d7-aa12-4066-b10f-e6fe3a2052a0",
-          "d0545317-c9e8-42cd-820d-cd5a98703300"
+          "b83e7c76-a180-438b-89f5-12c90bbdb2bf"
         ],
         "settings": {
           "title_categories": "Browse Categories",
