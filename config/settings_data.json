@@ -424,11 +424,24 @@
           "f8b20a6e-174d-4b25-aa22-e96ee4680431": {
             "type": "linklist",
             "settings": {
-              "title_i": "Top Trending Products",
-              "menu_links": "",
-              "cols": 2,
-              "sub_width": 8,
+              "title_i": "",
+              "menu_links": "protection",
+              "cols": 6,
+              "sub_width": 6,
               "title": "Linklist (child)"
+            }
+          },
+          "1c88a524-c9b1-41f3-a7fe-637fe477e8f3": {
+            "type": "banner",
+            "settings": {
+              "banner-effect": "",
+              "title_i": "",
+              "menu_links": "",
+              "per_col": "3",
+              "image_1": "shopify:\/\/shop_images\/image.jpg",
+              "image_link_1": "",
+              "sub_width": 6,
+              "title": "Banner (child)"
             }
           },
           "005c05a8-2568-403f-ba4c-54944de8aea3": {
@@ -608,6 +621,7 @@
           "63159770-24a1-4584-bfab-fe7cc5b58b5a",
           "889da515-cc8a-43f2-bbe1-cdf5ef7585af",
           "f8b20a6e-174d-4b25-aa22-e96ee4680431",
+          "1c88a524-c9b1-41f3-a7fe-637fe477e8f3",
           "005c05a8-2568-403f-ba4c-54944de8aea3",
           "c8e0a7a5-1530-4ca8-96da-82b66406ab2f",
           "02f6358a-f375-401e-9c86-9fc85282db1d",
