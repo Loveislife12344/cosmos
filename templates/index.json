@@ -402,7 +402,7 @@
             "margin_btitle": 30,
             "products": "demo",
             "limit": 8,
-            "load_btn": true,
+            "load_btn": false,
             "style_btn": "btn-dark btn-outline",
             "style_btn_rounded": "",
             "btn_shadow": false,
