@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
 
     // Back Step funtion
-    function BackStep(activeStep) {
+    function BackStep(activeStep,SubmitBtn,nextStepToggler,backStepToggler) {
     
         var backStep = activeStep.previousElementSibling;
         console.log( "under backstep back " + backStep)
@@ -27,10 +27,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
         console.log( activeStep.classList)
         backStep.classList.add('show')
         activeStep.classList.remove('show')
+        SubmitBtn.classList.add('d-none')
+        nextStepToggler.classList.add('show')
         if (backStep.classList.contains('step--1')) {
-            // backStep.classList.add('d-none')
-            backStep.classList.add('show')
-            activeStep.classList.remove('show')
+            backStepToggler.classList.add('d-none')
         }
     }
 // variables 
@@ -53,7 +53,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     if (loginBackStep != null) {
         loginBackStep.addEventListener('click', function () {
             var loginActiveStep = document.querySelector('#signin .step.show')
-            BackStep(loginActiveStep)
+            var loginSubmitBtn = document.querySelector('.login-submit');
+            BackStep(loginActiveStep,loginSubmitBtn,stapper,loginBackStep)
         })
     }
 
