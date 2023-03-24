@@ -64,7 +64,7 @@
     "is_use1": false,
     "option_style_1": "combobox",
     "op1_size": 30,
-    "op1_attach": true,
+    "op1_attach": false,
     "op1_pre_select": false,
     "op_swatch2": "Size",
     "option_style_2": "combobox",
