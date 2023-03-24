@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     var Registerstapper = document.querySelector('.register-step-toggler');
     
     var registerBackStep = document.querySelector('.register-beck-step-toggler');
-    var ragisterSubmitBtn = document.querySelector('.register-submit');
+    
 // events ------
 
 // login
@@ -61,12 +61,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
     // ragister 
     if (Registerstapper != null) {
         var registerActiveStep = document.querySelector('#register .step.show');
+        var ragisterSubmitBtn = document.querySelector('.register-submit');
         Registerstapper.addEventListener('click', function () {
             NextStep(registerActiveStep, Registerstapper, registerBackStep, ragisterSubmitBtn)
         })
     }
     if (registerBackStep != null) {
         var registerActiveStep = document.querySelector('#register .step.show');
+        var ragisterSubmitBtn = document.querySelector('.register-submit');
         registerBackStep.addEventListener('click',function(){
             BackStep(registerActiveStep,ragisterSubmitBtn,Registerstapper,registerBackStep)
         })
