@@ -3,7 +3,9 @@
     display:none;
  }
  input.error{
-border-color: rgb(226, 11, 11)
-;
+border-color: rgb(226, 11, 11);
+ }
+ .register-beck-step-toggler,.login-beck-step-toggler{
+margin-top: 15px;
  }
  /* multistep form end */

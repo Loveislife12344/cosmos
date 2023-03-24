@@ -1,8 +1,7 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-    // multisteps form
+// multisteps form
 // email validate 
 function ValidateEmail(input) {
-
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (input.value.match(validRegex)) {
       return true;
@@ -26,7 +25,6 @@ function ValidateEmail(input) {
 
     // Back Step funtion
     function BackStep(activeStep,SubmitBtn,nextStepToggler,backStepToggler) {
-  
         var backStep = activeStep.previousElementSibling;
         backStep.classList.add('show')
         activeStep.classList.remove('show')
@@ -55,7 +53,7 @@ function ValidateEmail(input) {
                 inputD.classList.remove('error') 
                 NextStep(loginActiveStep, stapper, loginBackStep, loginSubmitBtn)
             }else{
-                inputD.classList.add('error') 
+                inputD.classList.add('error');
             }
         })
     }
@@ -63,7 +61,6 @@ function ValidateEmail(input) {
         loginBackStep.addEventListener('click', function () {
             var loginActiveStep = document.querySelector('#signin .step.show')
             var loginSubmitBtn = document.querySelector('.login-submit');
-            
             BackStep(loginActiveStep,loginSubmitBtn,stapper,loginBackStep)
         })
     }
@@ -73,7 +70,6 @@ function ValidateEmail(input) {
         var registerActiveStep = document.querySelector('#register .step.show');
         var ragisterSubmitBtn = document.querySelector('.register-submit');
         Registerstapper.addEventListener('click', function () {
-
             var inputD = registerActiveStep.querySelector('.input-group input')
             var validated = ValidateEmail(inputD)
             if(validated){
@@ -86,7 +82,6 @@ function ValidateEmail(input) {
         })
     }
     if (registerBackStep != null) {
-        
         var ragisterSubmitBtn = document.querySelector('.register-submit');
         registerBackStep.addEventListener('click',function(){
             var registerActiveStep = document.querySelector('#register .step.show');
