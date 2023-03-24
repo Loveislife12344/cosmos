@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
     if (registerBackStep != null) {
         registerBackStep.addEventListener('click',function(){
-            BackStep(registerActiveStep)
+            BackStep(registerActiveStep,ragisterSubmitBtn,Registerstapper,registerBackStep)
         })
     }
 });
