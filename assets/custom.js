@@ -4,8 +4,8 @@ var stapper = document.querySelector('.login-step-toggler');
 var Registerstapper = document.querySelector('.register-step-toggler');
 if(stapper != null){
     stapper.addEventListener('click',function(){
-        var allSteps = document.querySelectorAll('.login-tab .step');
-        var activeStep = document.querySelector('.login-tab .step.show');
+        var allSteps = document.querySelectorAll('#signin .step');
+        var activeStep = document.querySelector('#signin .step.show');
         var nextStep = activeStep.nextElementSibling;
         nextStep.classList.add('show')
         activeStep.classList.remove('show')
