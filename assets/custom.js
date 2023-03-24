@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         backStep.classList.add('show')
         activeStep.classList.remove('show')
         if (backStep.classList.contains('step--1')) {
-            backStep.classList.add('d-none')
+            // backStep.classList.add('d-none')
             backStep.classList.add('show')
             activeStep.classList.remove('show')
         }
@@ -46,7 +46,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     if (stapper != null) {
         stapper.addEventListener('click', function () {
             var loginActiveStep = document.querySelector('#signin .step.show');
-            
             var loginSubmitBtn = document.querySelector('.login-submit');
             NextStep(loginActiveStep, stapper, loginBackStep, loginSubmitBtn)
         })
