@@ -77,6 +77,9 @@
                 <button type="button" class="login-step-toggler btn btn-primary btn-rounded btn-block">
                   <span>Next</span>
                 </button>
+                <button type="submit" class="btn btn-primary btn-rounded btn-block kt_agree_swich login-beck-step-toggler d-none" data-layout="account">
+                  <span>Back</span>
+                </button>
                 {%- if form.password_needed -%}
                 <a href="#recover" id="RecoverPassword" class="forgot-link _mt-1 _mb-1">{{ 'customer.login.forgot_password' | t }}</a>
                 {%- endif -%}
@@ -112,12 +115,13 @@
             <div class="tab-pane fade{% if template.name == 'register' %} active show{%- endif -%}" id="register" role="tabpanel" aria-labelledby="">
               {% form 'create_customer', class: 'needs-validation' %}
               {{ form.errors | default_errors }}
-
+              <div class="step step--1 show">
               <label for="register-email" class="form-label">{{ 'customer.login.email' | t }}</label>
               <div class="input-group">
                 <input type="email" class="form-control" id="register-email" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} required="" aria-describedby="{{ 'customer.login.email' | t }}">
               </div>
-
+              </div>
+              <div class="step step--2 final--step">
               <label for="register-password" class="form-label">{{ 'customer.register.password' | t }}</label>
               <div class="input-group">
                 <input type="password" class="form-control" id="register-password" name="customer[password]" required="">
@@ -138,8 +142,14 @@
                   </label>
                 </div>
                 {%- endif -%}
-                <button type="submit" class="btn btn-primary btn-rounded btn-block kt_agree_swich" data-layout="account">
+                <button type="submit" class="register-submit btn btn-primary btn-rounded btn-block kt_agree_swich" data-layout="account">
                   <span>{{ 'customer.register.submit' | t }}</span>
+                </button>
+                <button type="submit" class="btn btn-primary btn-rounded btn-block kt_agree_swich register-step-toggler" data-layout="account">
+                  <span>Next</span>
+                </button>
+                <button type="submit" class="btn btn-primary btn-rounded btn-block kt_agree_swich register-beck-step-toggler d-none" data-layout="account">
+                  <span>Back</span>
                 </button>
               </div>
               {% endform %}
