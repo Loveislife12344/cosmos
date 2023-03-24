@@ -56,13 +56,13 @@
             <div class="tab-pane fade{% if template.name == 'login' %} active show{%- endif -%}" id="signin" role="tabpanel" aria-labelledby="">
               {% form 'customer_login', id: 'CustomerLoginForm', class: 'needs-validation' %}
               {{ form.errors | default_errors }}
-              <div class="step step--2">
+              <div class="step ">
               <label for="singin-password" class="form-label">{{ 'customer.login.email' | t }}</label>
               <div class="input-group">
                 <input type="text" class="form-control" id="singin-password" name="customer[email]" required="" aria-describedby="{{ 'customer.login.email' | t }}">
               </div>
               </div>
-              <div class="step step--2 ">
+              <div class="step ">
               {%- if form.password_needed -%}
               <label for="singin-password" class="form-label">{{ 'customer.login.password' | t }}</label>
               <div class="input-group">
