@@ -66,9 +66,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
         })
     }
     if (registerBackStep != null) {
-        var registerActiveStep = document.querySelector('#register .step.show');
+        
         var ragisterSubmitBtn = document.querySelector('.register-submit');
         registerBackStep.addEventListener('click',function(){
+            var registerActiveStep = document.querySelector('#register .step.show');
             BackStep(registerActiveStep,ragisterSubmitBtn,Registerstapper,registerBackStep)
         })
     }
