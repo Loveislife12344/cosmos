@@ -121,12 +121,12 @@
                 <input type="email" class="form-control" id="register-email" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} required="" aria-describedby="{{ 'customer.login.email' | t }}">
               </div>
               </div>
-              <div class="step step--2 final--step">
+            <div class="step step--2 final--step">
               <label for="register-password" class="form-label">{{ 'customer.register.password' | t }}</label>
               <div class="input-group">
                 <input type="password" class="form-control" id="register-password" name="customer[password]" required="">
               </div>
-
+            </div>
               <div class="form-check">
                 <input type="hidden" name="customer[accepts_marketing]" value="" />
                 <input class="form-check-input" id="register-subcrible" type="checkbox" name="customer[accepts_marketing]" checked="checked" />
