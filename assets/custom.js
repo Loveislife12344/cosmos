@@ -9,7 +9,7 @@ if(stapper != null){
         var nextStep = activeStep.nextElementSibling;
         nextStep.classList.add('show')
         activeStep.classList.remove('show')
-        if(nextStep.classList.contains('last--step')){
+        if(nextStep.classList.contains('final--step')){
             stapper.classList.add('d-none')
             document.querySelector('.login-submit').classList.remove('d-none')
         }
