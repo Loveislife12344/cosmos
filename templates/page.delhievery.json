@@ -992,8 +992,8 @@
             "color_title": "#222222",
             "color_sub_title": "#222222",
             "color_desc": "#666666",
-            "name_btn": "Visit Our Store",
-            "style_btn": "btn-dark btn-link btn-underli",
+            "name_btn": "",
+            "style_btn": "btn-dark btn-link btn-underline",
             "style_btn_rounded": "btn-round",
             "btn_shadow": true
           }
