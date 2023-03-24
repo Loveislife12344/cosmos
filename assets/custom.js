@@ -52,8 +52,10 @@ function ValidateEmail(input) {
             var inputD = loginActiveStep.querySelector('.input-group input')
             var validated = ValidateEmail(inputD)
             if(validated){
-
+                inputD.classList.remove('error') 
                 NextStep(loginActiveStep, stapper, loginBackStep, loginSubmitBtn)
+            }else{
+                inputD.classList.add('error') 
             }
         })
     }
@@ -71,7 +73,16 @@ function ValidateEmail(input) {
         var registerActiveStep = document.querySelector('#register .step.show');
         var ragisterSubmitBtn = document.querySelector('.register-submit');
         Registerstapper.addEventListener('click', function () {
-            NextStep(registerActiveStep, Registerstapper, registerBackStep, ragisterSubmitBtn)
+
+            var inputD = registerActiveStep.querySelector('.input-group input')
+            var validated = ValidateEmail(inputD)
+            if(validated){
+                inputD.classList.remove('error') 
+                NextStep(registerActiveStep, Registerstapper, registerBackStep, ragisterSubmitBtn)
+            }else{
+                inputD.classList.add('error') 
+            }
+            
         })
     }
     if (registerBackStep != null) {

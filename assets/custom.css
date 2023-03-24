@@ -2,4 +2,8 @@
  .step--1:not(.show),.step--2:not(.show){
     display:none;
  }
+ input.error{
+border-color: rgb(226, 11, 11)
+;
+ }
  /* multistep form end */
