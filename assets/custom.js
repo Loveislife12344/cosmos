@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // Back Step funtion
     function BackStep(activeStep,SubmitBtn,nextStepToggler,backStepToggler) {
-    
+    console.log(activeStep)
         var backStep = activeStep.previousElementSibling;
         backStep.classList.add('show')
         activeStep.classList.remove('show')
@@ -28,7 +28,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         if (backStep.classList.contains('step--1')) {
             console.warn('back step toggler')
             console.log(backStepToggler)
-
             backStepToggler.classList.add('d-none')
         }
     }
