@@ -791,7 +791,7 @@
         "show_shortdes": true,
         "shortdes_type": "short",
         "gallery": false,
-        "use_zoom": true,
+        "use_zoom": false,
         "use_ask": false,
         "use_notify_onavai": false,
         "use_d_c_b": false,
