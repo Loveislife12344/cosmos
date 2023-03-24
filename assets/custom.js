@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         SubmitBtn.classList.add('d-none')
         console.log(nextStepToggler)
         nextStepToggler.classList.add('show')
+        nextStepToggler.classList.remove('d-none')
         console.log(nextStepToggler.classList)
         if (backStep.classList.contains('step--1')) {
             backStepToggler.classList.add('d-none')
