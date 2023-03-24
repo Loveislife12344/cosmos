@@ -988,12 +988,12 @@
             "text_align": "",
             "title_section": "Delivery Policy",
             "stitle_section": "",
-            "content_text": "We aim to dispatch all in stock items within 1-2 business days.\n<br>",
+            "content_text": "We aim to dispatch all in stock items within 1-2 business days.\n<br><br>\n\nDelivery takes between 3-10 business days depending on your location.",
             "color_title": "#222222",
             "color_sub_title": "#222222",
             "color_desc": "#666666",
             "name_btn": "Visit Our Store",
-            "style_btn": "btn-dark btn-link btn-underline",
+            "style_btn": "btn-dark btn-link btn-underli",
             "style_btn_rounded": "btn-round",
             "btn_shadow": true
           }
