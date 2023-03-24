@@ -1,6 +1,15 @@
 window.addEventListener("DOMContentLoaded", (event) => {
     // multisteps form
+// email validate 
+function ValidateEmail(input) {
 
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (input.value.match(validRegex)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
     // next step function
     function NextStep(activeStep, nextStepToggler, backStepToggler, submitBtn) {
         var nextStep = activeStep.nextElementSibling;
@@ -17,17 +26,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // Back Step funtion
     function BackStep(activeStep,SubmitBtn,nextStepToggler,backStepToggler) {
-    console.log(activeStep)
+  
         var backStep = activeStep.previousElementSibling;
         backStep.classList.add('show')
         activeStep.classList.remove('show')
         SubmitBtn.classList.add('d-none')
         nextStepToggler.classList.remove('d-none')
-        console.log(backStep.classList)
-        console.log(backStep)
         if (backStep.classList.contains('step--1')) {
-            console.warn('back step toggler')
-            console.log(backStepToggler)
             backStepToggler.classList.add('d-none')
         }
     }
@@ -35,7 +40,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     var stapper = document.querySelector('.login-step-toggler');
     var loginBackStep = document.querySelector('.login-beck-step-toggler');
     var Registerstapper = document.querySelector('.register-step-toggler');
-    
     var registerBackStep = document.querySelector('.register-beck-step-toggler');
     
 // events ------
@@ -45,14 +49,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
         stapper.addEventListener('click', function () {
             var loginActiveStep = document.querySelector('#signin .step.show');
             var loginSubmitBtn = document.querySelector('.login-submit');
-            NextStep(loginActiveStep, stapper, loginBackStep, loginSubmitBtn)
+            var inputD = loginActiveStep.querySelector('.input-group input')
+            var validated = ValidateEmail(inputD)
+            if(validated){
+
+                NextStep(loginActiveStep, stapper, loginBackStep, loginSubmitBtn)
+            }
         })
     }
     if (loginBackStep != null) {
         loginBackStep.addEventListener('click', function () {
             var loginActiveStep = document.querySelector('#signin .step.show')
             var loginSubmitBtn = document.querySelector('.login-submit');
-            console.log(stapper)
+            
             BackStep(loginActiveStep,loginSubmitBtn,stapper,loginBackStep)
         })
     }
