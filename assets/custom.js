@@ -17,7 +17,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // Back Step funtion
     function BackStep(activeStep) {
+        alert('under backstep')
         var backStep = activeStep.previousElementSibling;
+        console.log( "under backstep back "+ backStep)
+        console.log( "under backstep active" +activeStep)
         backStep.classList.add('show')
         activeStep.classList.remove('show')
         if (backStep.classList.contains('step--1')) {
