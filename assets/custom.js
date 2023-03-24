@@ -29,6 +29,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
         activeStep.classList.remove('show')
         if (backStep.classList.contains('step--1')) {
             backStep.classList.add('d-none')
+            backStep.classList.add('show')
+            activeStep.classList.remove('show')
         }
     }
 // variables 
