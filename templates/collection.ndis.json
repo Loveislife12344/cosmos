@@ -7,7 +7,7 @@
         "6adf62aa-bdd2-4e01-87fe-94e57609cf48": {
           "type": "filter_categories",
           "settings": {
-            "list_categories_linklist": "categories",
+            "list_categories_linklist": "products",
             "key": "kt_categories",
             "always_show": false
           }
@@ -52,6 +52,7 @@
       "settings": {
         "width_section": "w-100",
         "width_content": true,
+        "show_desc": true,
         "sort_enable": true,
         "masonry": false,
         "numbershow_enable": true,
