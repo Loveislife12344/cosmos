@@ -24,6 +24,7 @@
         },
         "92ca61f1-fdfb-4bad-a6ad-17468f154ca6": {
           "type": "filter_item",
+          "disabled": true,
           "settings": {
             "title": "Color",
             "key": "Color",
@@ -34,6 +35,7 @@
         },
         "fc496820-ab6c-4f2f-b1cb-77856453150a": {
           "type": "filter_item",
+          "disabled": true,
           "settings": {
             "title": "Size",
             "key": "Size",
@@ -44,6 +46,7 @@
         },
         "c7cb9d40-e46e-410f-b9b0-cd69d76956d2": {
           "type": "filter_item",
+          "disabled": true,
           "settings": {
             "title": "Availability",
             "key": "Availability",
