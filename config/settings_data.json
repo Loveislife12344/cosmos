@@ -14,7 +14,7 @@
     "aspect_ratio": "279\/313",
     "use_wishlist": true,
     "use_compare": false,
-    "use_quickview": false,
+    "use_quickview": true,
     "popup_cookies": false,
     "use_prd_reviews": true,
     "zero_review": false,
