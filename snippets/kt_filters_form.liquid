@@ -3,7 +3,13 @@
 	{%- if block -%}
 	<div class="kt--filter-gr-i col kt--filter-gr-i0 widget widget_product_categories unshowAny {{toggle}}">
 		<div class="layered_subtitle_heading">
-	    <span class="layered_subtitle">{{ 'collections.sidebar.categories' | t }}<span></span></span>
+	    <span class="layered_subtitle">
+			{% if block.settings.cat_title != blank%}
+			{{block.settings.cat_title}}
+				{% else %}	
+				{{ 'collections.sidebar.categories' | t }}
+			{% endunless %}
+			<span></span></span>
 	    <span class="ico"></span>
 	  </div>
 	  <ul class="product-categories kt--filter-gr-i_ul list-unstyled">
