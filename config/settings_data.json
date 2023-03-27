@@ -430,7 +430,7 @@
           "0ae7fa24-1513-4ee4-afe5-5d5c02514720": {
             "type": "parent",
             "settings": {
-              "button_link": "",
+              "button_link": "shopify:\/\/collections\/support",
               "title_i": "Support",
               "icon_font": "d-icon-t-shirt1",
               "label": "",
