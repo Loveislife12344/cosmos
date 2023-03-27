@@ -16,7 +16,7 @@
         "e098f3c4-1e48-4a32-8245-a926ab0de693": {
           "type": "filter_categories",
           "settings": {
-            "list_categories_linklist": "compression",
+            "list_categories_linklist": "brands",
             "key": "kt_categories",
             "cat_title": "Brand",
             "always_show": false
