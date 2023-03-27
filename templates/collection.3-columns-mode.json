@@ -21,47 +21,11 @@
             "cat_title": "Brand",
             "always_show": false
           }
-        },
-        "92ca61f1-fdfb-4bad-a6ad-17468f154ca6": {
-          "type": "filter_item",
-          "disabled": true,
-          "settings": {
-            "title": "Color",
-            "key": "Color",
-            "block_style": "5",
-            "use_split": false,
-            "always_show": false
-          }
-        },
-        "fc496820-ab6c-4f2f-b1cb-77856453150a": {
-          "type": "filter_item",
-          "disabled": true,
-          "settings": {
-            "title": "Size",
-            "key": "Size",
-            "block_style": "1",
-            "use_split": false,
-            "always_show": false
-          }
-        },
-        "c7cb9d40-e46e-410f-b9b0-cd69d76956d2": {
-          "type": "filter_item",
-          "disabled": true,
-          "settings": {
-            "title": "Availability",
-            "key": "Availability",
-            "block_style": "1",
-            "use_split": false,
-            "always_show": false
-          }
         }
       },
       "block_order": [
         "6adf62aa-bdd2-4e01-87fe-94e57609cf48",
-        "e098f3c4-1e48-4a32-8245-a926ab0de693",
-        "92ca61f1-fdfb-4bad-a6ad-17468f154ca6",
-        "fc496820-ab6c-4f2f-b1cb-77856453150a",
-        "c7cb9d40-e46e-410f-b9b0-cd69d76956d2"
+        "e098f3c4-1e48-4a32-8245-a926ab0de693"
       ],
       "settings": {
         "width_section": "w-100",
