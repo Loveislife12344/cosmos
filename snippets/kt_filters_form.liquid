@@ -5,10 +5,10 @@
 			<div class="kt--filter-gr-i col kt--filter-gr-i0 widget widget_product_categories unshowAny {{toggle}}">
 				<div class="layered_subtitle_heading">
 				<span class="layered_subtitle">
-					{% if block.settings.cat_title != blank %}
-					{{block.settings.cat_title}}
-						{% else %}	
+					{% if block.settings.cat_title == blank %}
 						{{ 'collections.sidebar.categories' | t }}
+						{% else %}	
+						{{block.settings.cat_title}}
 					{% endif %}
 					<span></span></span>
 				<span class="ico"></span>
