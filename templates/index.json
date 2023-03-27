@@ -73,7 +73,7 @@
           "type": "banner",
           "settings": {
             "image": "shopify:\/\/shop_images\/nids.png",
-            "image_link": "",
+            "image_link": "shopify:\/\/collections\/ndis",
             "desc": "",
             "color_desc": "#333333",
             "titlex": "",
