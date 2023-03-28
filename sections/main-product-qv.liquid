@@ -536,14 +536,14 @@
 </div>
 <style>#ProductSection-{{ section.id }} .aspectRatio{padding-bottom: {{1|divided_by: product.featured_image.aspect_ratio | times: 100.00000000}}%;}</style>
 <!-- noscript -->
-<noscript>var initialSlide = {{ imgPos | minus: imgsPos0 }};</noscript>
+<script>var initialSlide = {{ imgPos | minus: imgsPos0 }};</script>
 {%-unless product == empty-%}
-<noscript type="application/json" id="ProductJson-{{ section.id }}">
+<script type="application/json" id="ProductJson-{{ section.id }}">
   {{ product | json }}
-</noscript>
-<noscript type="application/json" id="ModelJson-{{ section.id }}">
+</script>
+<script type="application/json" id="ModelJson-{{ section.id }}">
   {{ product.media | where: 'media_type', 'model' | json }}
-</noscript>
+</script>
 {%-endunless-%}
 {%- endif -%}
 {% schema %}
