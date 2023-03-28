@@ -9,7 +9,7 @@
 </section>
 {%- else -%}
 {%- layout none -%}
-
+<!-- Product_Attr -->
 {%-assign size_guide = false-%}
 {%-capture header_name-%}
   {%-if pages[settings.size_guide]-%}
@@ -38,7 +38,7 @@
   {%-assign size_guide = true-%}
 {%-endif-%}
 {%-endcapture-%}
-<!-- Product_Attr -->
+
 {%-if size_guide-%}
 <div class="modal fade" id="sizeModalqv" aria-hidden="true" aria-labelledby="sizeModalqvToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered container">
@@ -536,14 +536,14 @@
 </div>
 <style>#ProductSection-{{ section.id }} .aspectRatio{padding-bottom: {{1|divided_by: product.featured_image.aspect_ratio | times: 100.00000000}}%;}</style>
 <!-- noscript -->
-<script>var initialSlide = {{ imgPos | minus: imgsPos0 }};</script>
+<noscript>var initialSlide = {{ imgPos | minus: imgsPos0 }};</noscript>
 {%-unless product == empty-%}
-<script type="application/json" id="ProductJson-{{ section.id }}">
+<noscript type="application/json" id="ProductJson-{{ section.id }}">
   {{ product | json }}
-</script>
-<script type="application/json" id="ModelJson-{{ section.id }}">
+</noscript>
+<noscript type="application/json" id="ModelJson-{{ section.id }}">
   {{ product.media | where: 'media_type', 'model' | json }}
-</script>
+</noscript>
 {%-endunless-%}
 {%- endif -%}
 {% schema %}
