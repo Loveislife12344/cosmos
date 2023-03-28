@@ -9,7 +9,7 @@
 </section>
 {%- else -%}
 {%- layout none -%}
-<!-- Product_Attr -->
+
 {%-assign size_guide = false-%}
 {%-capture header_name-%}
   {%-if pages[settings.size_guide]-%}
@@ -38,7 +38,7 @@
   {%-assign size_guide = true-%}
 {%-endif-%}
 {%-endcapture-%}
-
+<!-- Product_Attr -->
 {%-if size_guide-%}
 <div class="modal fade" id="sizeModalqv" aria-hidden="true" aria-labelledby="sizeModalqvToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered container">
