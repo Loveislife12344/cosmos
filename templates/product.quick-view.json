@@ -1,0 +1,30 @@
+{
+  "wrapper": "div#kt--psgl-js.kt--psgl-js",
+  "sections": {
+    "main": {
+      "type": "main-product-qv",
+      "settings": {
+        "img_type_prd_single": "normal",
+        "use_thumb": true,
+        "use_thumb_vertical": true,
+        "use_thumb_hidden_on_mb": false,
+        "show_shortdes": true,
+        "shortdes_type": "short",
+        "gallery": false,
+        "use_ask": false,
+        "use_notify_onavai": false,
+        "use_d_c_b": false,
+        "show_quantity_selector": true,
+        "show_add_to_cart_btn": true,
+        "atc_btn": "btn-primary",
+        "atc_btn_rounded": "btn-rounded",
+        "atc_btn_shadow": true,
+        "atc_btn_big": false,
+        "atc_btn_ani": false
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
