@@ -383,6 +383,7 @@
           },
           "d0545317-c9e8-42cd-820d-cd5a98703300": {
             "type": "banner",
+            "disabled": true,
             "settings": {
               "banner-effect": "",
               "title_i": "",
@@ -417,6 +418,7 @@
           },
           "1c88a524-c9b1-41f3-a7fe-637fe477e8f3": {
             "type": "banner",
+            "disabled": true,
             "settings": {
               "banner-effect": "",
               "title_i": "",
@@ -451,6 +453,7 @@
           },
           "201210f3-a537-4b18-9c94-8ae3623a289e": {
             "type": "banner",
+            "disabled": true,
             "settings": {
               "banner-effect": "",
               "title_i": "",
@@ -485,6 +488,7 @@
           },
           "275283dd-a7bd-47f9-9f3b-09a6b8897e56": {
             "type": "banner",
+            "disabled": true,
             "settings": {
               "banner-effect": "",
               "title_i": "",
