@@ -40,8 +40,10 @@ margin-top: 15px;
   color:#fff;
 }
 .sub-mn{
-/*   left:0 !important; */
   background-color:#faf5fa;
+}
+li:hover .sub-mn{
+    left:0 !important;
 }
 [class^=d-icon-]:before, [class*=" d-icon-"]:before {
   color:#700073;
