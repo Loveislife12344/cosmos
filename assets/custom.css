@@ -15,6 +15,7 @@ margin-top: 15px;
   color:#700073;
 }
 .nav-box{
-  background-color:#faf5fa;
+  --bg-box:#faf5fa;
+  background-color:--bg-box;
 }
 /* header custome css end */
