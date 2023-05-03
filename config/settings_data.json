@@ -502,6 +502,7 @@
           },
           "5c77a362-ab23-41bf-8f37-d2d74b852779": {
             "type": "promo",
+            "disabled": true,
             "settings": {
               "name_item": "Wraps",
               "icon_font": "d-icon-t-shirt1",
