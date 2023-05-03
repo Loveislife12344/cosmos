@@ -50,7 +50,7 @@ margin-top: 15px;
 
 /* footer custome css  */
 .rd_call_to_action .cta-title,.rd_call_to_action .cta-desc{
-  color:#700073;
+  color:#700073 !important;
 }
 #shopify-section-template--18286564376879__3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb{
   background-color:#d3f6fe!important;
