@@ -26,5 +26,7 @@ margin-top: 15px;
   background-color:#d6dbe6;
   color:#3c3c3c;
 }
-
+.mn-lv1.mn-i.show-submn>.sub-mn{
+      transform: translateY(0);
+}
 /* header custome css end */
