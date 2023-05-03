@@ -42,4 +42,7 @@ margin-top: 15px;
   left:0 !important;
   background-color:#faf5fa;
 }
+[class^=d-icon-]:before, [class*=" d-icon-"]:before {
+  color:#700073;
+}
 /* header custome css end */
