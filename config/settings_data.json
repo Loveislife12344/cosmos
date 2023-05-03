@@ -1053,7 +1053,7 @@
           "232314ca-bb97-4779-ba18-01ae08047a20": {
             "type": "top_menu",
             "settings": {
-              "call_us_show": false,
+              "call_us_show": true,
               "email_show": false,
               "social_contact_show": false,
               "wishlist_show": false,
