@@ -32,4 +32,7 @@ margin-top: 15px;
 .main-mn>.mn-i>a{
     padding: 20px 12px;
 }
+.horizon-menu .mn-lv1 > li:hover{
+  background-color:#781d7e;
+}
 /* header custome css end */
