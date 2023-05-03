@@ -32,7 +32,7 @@ margin-top: 15px;
 .main-mn>.mn-i>a{
     padding: 20px 12px;
 }
-.mn-lv1.li:hover{
+.main-mn>li:not(:last-child):hover{
   background-color:#781d7e;
 }
 /* header custome css end */
