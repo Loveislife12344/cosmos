@@ -40,7 +40,7 @@ margin-top: 15px;
   color:#fff;
 }
 .sub-mn{
-  left:0 !important;
+/*   left:0 !important; */
   background-color:#faf5fa;
 }
 [class^=d-icon-]:before, [class*=" d-icon-"]:before {
