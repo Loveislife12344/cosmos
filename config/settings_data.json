@@ -1067,7 +1067,7 @@
               "currency_dropdown_show": true,
               "language_app_show": false,
               "language_app_html": "",
-              "custom_show": false,
+              "custom_show": true,
               "custom_html": "<a> Contact <\/a>",
               "welcome_msg_show": false,
               "welcome_msg": "",
