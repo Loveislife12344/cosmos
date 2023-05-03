@@ -18,6 +18,9 @@ margin-top: 15px;
  --bg-box:#faf5fa !important;
 
 }
+.special_link{
+  --color_special_link:#700073 !important;
+}
 .menu-vertical .--title{
   color:#781d7e;
 }
