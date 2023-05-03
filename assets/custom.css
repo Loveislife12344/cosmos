@@ -21,4 +21,7 @@ margin-top: 15px;
 .menu-vertical .--title{
   color:#781d7e;
 }
+.menu-vertical .i-megamn.--vt .sub-mn{
+  height100%;
+}
 /* header custome css end */
