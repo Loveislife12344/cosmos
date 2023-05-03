@@ -330,7 +330,7 @@
           "color_head_bg_op": 1,
           "color_text_headerb": "#ffffff",
           "color_text_headerb_hv": "#e82d7c",
-          "color_headb_bg": "#333333",
+          "color_headb_bg": "",
           "use_call": true,
           "use_account": false,
           "use_compare": true,
