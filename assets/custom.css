@@ -35,7 +35,7 @@ margin-top: 15px;
 .main-mn>li:not(:last-child):hover{
   background-color:#781d7e;
 }
-.main-mn>li:not(:last-child):hover > a{
+.main-mn>li:hover:not(:last-child) > a{
   color:#fff;
 }
 /* header custome css end */
