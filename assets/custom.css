@@ -38,4 +38,7 @@ margin-top: 15px;
 .main-mn>li:hover:not(:last-child) > a{
   color:#fff;
 }
+.sub-mn{
+  left:0 !important;
+}
 /* header custome css end */
