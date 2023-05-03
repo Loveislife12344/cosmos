@@ -29,4 +29,7 @@ margin-top: 15px;
 .mn-lv1.mn-i.show-submn>.sub-mn{
       transform: translateY(0);
 }
+.main-mn>.mn-i>a{
+    padding: 20px 12px;
+}
 /* header custome css end */
