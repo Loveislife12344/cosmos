@@ -482,7 +482,7 @@
             "image": "shopify:\/\/shop_images\/senior-female-patient-with-rhizoarthrosis-of-the-r-2022-03-18-08-38-53-utc.png",
             "image_link": "",
             "blank_link": false,
-            "titlex": "Hand &amp; wrist",
+            "titlex": "Wrist &amp; thumb",
             "preheading": "Featured products",
             "title-below": false,
             "description": "",
@@ -519,6 +519,9 @@
       "block_order": [
         "d77b3b3a-2941-4783-90f6-a8b2afe1d443",
         "a77d64a8-0627-45fe-b369-a76205ae56ae"
+      ],
+      "custom_css": [
+        ".container-fluid{margin-top:165px;}"
       ],
       "settings": {
         "title": "Who We Are",
