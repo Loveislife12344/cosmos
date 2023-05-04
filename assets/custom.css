@@ -78,7 +78,15 @@ li:hover .sub-mn{
   margin-right:5px;
 }
 /* default btn secendory  override  */
-
+.btn-outline{
+   border-color:#fff;
+  color:#fff;
+}
+.btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover{
+  border-color:#fff;
+    background-color:#fff;
+  color:#700073;
+}
 .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover{
   border-color:#fff;
     background-color:#fff;
