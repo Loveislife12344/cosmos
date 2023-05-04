@@ -118,6 +118,9 @@ li:hover .sub-mn{
   margin:26px 0;
   display:inline-block;
 }
+.container-fluid{
+  max-width:1345px;
+}
 /* other end */
 
 /* footer custome css  */
