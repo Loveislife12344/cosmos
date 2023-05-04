@@ -38,6 +38,7 @@
         },
         "782d32c8-77f8-4d34-bf43-418691a58194": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/istockphoto-1297679060-1024x1024.jpg",
             "image_mb": "shopify:\/\/shop_images\/istockphoto-1297679060-1024x1024.jpg",
@@ -72,7 +73,7 @@
         "dad60e3c-eec4-4707-8791-133f4f5632bc": {
           "type": "banner",
           "settings": {
-            "image": "shopify:\/\/shop_images\/nids.png",
+            "image": "shopify:\/\/shop_images\/woman-with-disability-using-credit-card-and-atm-ma-2022-03-29-07-08-45-utc_2.png",
             "image_link": "shopify:\/\/collections\/ndis",
             "desc": "",
             "color_desc": "#333333",
