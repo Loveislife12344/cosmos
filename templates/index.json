@@ -197,13 +197,13 @@
             "style_btn_2": "btn-secondary",
             "style_btn_rounded_2": "",
             "btn_shadow_2": false,
-            "text_align_top": 45,
+            "text_align_top": 79,
             "text_align_start": 45,
             "text_align": "center",
             "text_align_top_mb": 50,
             "text_align_start_mb": 50,
             "text_align_mb": "",
-            "banner-effect": "banner-effect3"
+            "banner-effect": ""
           }
         },
         "9785be95-8106-4e8c-ac1b-b5721733fbdc": {
@@ -217,7 +217,7 @@
             "width_xl": 0,
             "width_xxl": 0,
             "image": "shopify:\/\/shop_images\/5e7ae705d160ce6c801b4f6f_compression-stocking.png",
-            "image_mb": "shopify:\/\/shop_images\/istockphoto-1220553564-1024x1024.jpg",
+            "image_mb": "shopify:\/\/shop_images\/5e7ae705d160ce6c801b4f6f_compression-stocking.png",
             "image_link": "",
             "blank_link": false,
             "desc": "",
@@ -226,7 +226,7 @@
             "color_titlex": "#ffffff",
             "stitle": "",
             "color_stitle": "#666666",
-            "name_btn": "KNOW MORE",
+            "name_btn": "CLICK HERE",
             "style_btn": "btn-secondary btn-outline",
             "style_btn_rounded": "",
             "btn_shadow": false,
@@ -235,13 +235,13 @@
             "style_btn_2": "btn-primary",
             "style_btn_rounded_2": "",
             "btn_shadow_2": false,
-            "text_align_top": 50,
-            "text_align_start": 50,
+            "text_align_top": 79,
+            "text_align_start": 69,
             "text_align": "center",
-            "text_align_top_mb": 50,
+            "text_align_top_mb": 51,
             "text_align_start_mb": 50,
             "text_align_mb": "center",
-            "banner-effect": "banner-effect6"
+            "banner-effect": ""
           }
         },
         "77e7c83a-3a8a-4219-9aa5-2c03a02d62c0": {
