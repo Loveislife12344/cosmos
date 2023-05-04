@@ -43,6 +43,9 @@ margin-top: 15px;
   background-color:transparent;
   box-shadow:none;
 }
+.sub-mn span{
+  white-space:nowrap;
+}
 li:hover .sub-mn{
 /*     left:0 !important; */
 }
