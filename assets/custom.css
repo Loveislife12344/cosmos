@@ -49,14 +49,16 @@ li:hover .sub-mn{
   color:#700073;
 }
 .mn-lv1.mn-has-child.show-submn:before{
-content: "";
-    position: absolute;
+    content: "";
+    position: fixed;
     width: 100%;
-    top: 54px;
+    left: 20px;
+    top: 135px;
     max-width: 1000px;
     height: 100vh;
     max-height: 350px;
     background: #faf5fa;
+    z-index: 5;
 }
 /* header custome css end */
 
