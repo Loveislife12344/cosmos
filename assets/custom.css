@@ -77,6 +77,13 @@ li:hover .sub-mn{
   width:20px;
   margin-right:5px;
 }
+/* default btn secendory  override  */
+
+.btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover{
+  border-color:#fff;
+    background-color:#fff;
+}
+/* default btn secendory  override  end */
 /* header custome css end */
 
 /* footer custome css  */
