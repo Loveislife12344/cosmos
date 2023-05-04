@@ -840,7 +840,7 @@
           "feb28564-db25-4811-bbe9-73693bb2c193": {
             "type": "mid_logo_info_01",
             "settings": {
-              "col": "col-sm-6 col-lg-3",
+              "col": "col-sm-6 col-lg-4",
               "not_drop": false,
               "dark_mode": false,
               "logo": true,
