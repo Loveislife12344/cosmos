@@ -954,8 +954,8 @@
         ],
         "custom_css": [
           ".subcribe-text {display: inline-block; max-width: 363px;}",
-          " .widget{width: fit-content; float: right;}",
-          ".widget.widget-about{float:left;}"
+          ".widget {width: fit-content; float: right;}",
+          ".col-sm-6:not(:last-child) .widget.widget-about {float: left;}"
         ],
         "settings": {
           "width_section": "container-fluid wide",
