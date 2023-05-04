@@ -451,7 +451,7 @@
         ".container-fluid {margin-top: 165px;}",
         ".item_1 .titlex {margin-bottom: 67px;}",
         ".masonry-item {padding-bottom: 0;}",
-        ".img__banner + span{display:non}"
+        ".img__banner + span {margin:0;}"
       ],
       "settings": {
         "title": "Who We Are",
