@@ -1540,7 +1540,8 @@
       ],
       "custom_css": [
         ".outlined {line-height: 1; color: #d3f6fe !important; text-shadow: -1px -1px 0 #700073, 1px -1px 0 #700073, -1px 1px 0 #700073, 1px 1px 0 #700073;}",
-        ".cta-title,p {line-height: 1;}"
+        ".cta-title,p {line-height: 1;}",
+        ".col-lg-8{align-self:center;}"
       ],
       "settings": {
         "title": "Call to Action",
