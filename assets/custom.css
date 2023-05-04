@@ -107,6 +107,12 @@ li:hover .sub-mn{
 /* default btn secendory  override  end */
 /* header custome css end */
 
+/* bootstrap css override */
+.kt_slideshow .row>*{
+  padding:0;
+}
+/* bootstrap css override end */
+
 /* footer custome css  */
 .rd_call_to_action .cta-title,.rd_call_to_action .cta-desc{
   color:#700073 !important;
