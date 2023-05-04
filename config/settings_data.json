@@ -897,7 +897,7 @@
           "8a0cbd40-1fb5-436c-bb41-a94868d12973": {
             "type": "mid_logo_info_01",
             "settings": {
-              "col": "col-sm-6 col-lg-3",
+              "col": "col-sm-6 col-lg-2",
               "not_drop": false,
               "dark_mode": false,
               "logo": false,
