@@ -67,6 +67,9 @@ li:hover .sub-mn{
 .onsticky .mn-lv1.mn-has-child.show-submn:before{
   top: 120px;
 }
+.item-7057bc14-9e9f-49b3-a360-2b5f6ad6857e:before{
+  display:none !important;
+}
 /* header custome css end */
 
 /* footer custome css  */
