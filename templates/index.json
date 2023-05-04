@@ -755,7 +755,7 @@
       ],
       "custom_css": [
         ".kt_banner_flexible .text-content {padding: 0;}",
-        ".shop-collage .banner-wrap a{width:100%;}"
+        ".shop-collage .banner-wrap a,.kt_banner_flexible .text-content {width: 100%;}"
       ],
       "settings": {
         "title": "Who We Are",
