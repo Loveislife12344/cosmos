@@ -522,7 +522,7 @@
       ],
       "custom_css": [
         ".container-fluid {margin-top: 165px;}",
-        ".item_1 .titlex {margin-bottom:67px;}"
+        ".item_1 .titlex {margin-bottom: 67px;}"
       ],
       "settings": {
         "title": "Who We Are",
@@ -535,7 +535,7 @@
         "section_padding": "",
         "section_bg": "",
         "layout_mode": "normal",
-        "grid_gutter": 10,
+        "grid_gutter": 15,
         "border_radius": 10,
         "css_section": ""
       }
