@@ -116,6 +116,7 @@ li:hover .sub-mn{
 /* other */
 .img__banner + span{
   margin:26px 0;
+  display:inline-block;
 }
 /* other end */
 
