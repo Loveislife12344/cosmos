@@ -82,6 +82,9 @@ li:hover .sub-mn{
    border-color:#fff;
   color:#fff;
 }
+.vtm.btn{
+  margin-top:20px;
+}
 .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover{
   border-color:#fff;
     background-color:#fff;
