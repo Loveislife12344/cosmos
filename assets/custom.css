@@ -95,6 +95,13 @@ li:hover .sub-mn{
     background-color:#fff;
   color:#700073;
 }
+.vtm.inverse{
+  background-color:transparent;
+}
+/* .vtm.inverse:hover{
+  background-color:#700073;
+  color:#fff;
+} */
 /* default btn secendory  override  end */
 /* header custome css end */
 
