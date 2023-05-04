@@ -159,8 +159,8 @@
         "h_reponsive_1400": "",
         "autoplay_speed": 7,
         "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"768\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"992\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  },\n  \"1200\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 10\n  }\n}",
-        "width_lg": 0,
-        "width_xxl": 0,
+        "width_lg": 6,
+        "width_xxl": 6,
         "border_radius": 3,
         "css_section": ".section_id .slideshow__title {\ncolor: #333;\nfont-size: 1em;\nmargin-bottom: .5rem;\n}\n.section_id .slideshow__subtitle{\ncolor: #333;\nfont-size: 1.875em;\nmargin-bottom: .7rem;\nline-height: 1.2;\n}\n.section_id .slideshow__description{\ncolor: #333;\nfont-size: 1em;\nmargin-bottom: 1.2rem;\n}\n.section_id .btn{\npadding: 0.625em 1.188em;\n}\n@media(max-width: 576px){\n.kt_home_slide .imgRatio__text-wrap {\n    font-size: .75rem;\n}\n}"
       }
