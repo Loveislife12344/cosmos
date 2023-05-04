@@ -113,6 +113,12 @@ li:hover .sub-mn{
 }
 /* bootstrap css override end */
 
+/* other */
+.img__banner + span{
+  margin:26px 0;
+}
+/* other end */
+
 /* footer custome css  */
 .rd_call_to_action .cta-title,.rd_call_to_action .cta-desc{
   color:#700073 !important;
