@@ -64,6 +64,9 @@ li:hover .sub-mn{
     background: #faf5fa;
     z-index: 5;
 }
+.onsticky .mn-lv1.mn-has-child.show-submn:before{
+  top: 138px;
+}
 /* header custome css end */
 
 /* footer custome css  */
