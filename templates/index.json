@@ -1539,7 +1539,7 @@
         "3587ecc8-f687-45ad-831f-31ce58bd31e2"
       ],
       "custom_css": [
-        ".outlined{color:#d3f6fe!important; color: white; text-shadow: 1px -1px 0 #000, -1px 1px 0 #000, 1px 2px 0 #000;}"
+        ".outlined {color: #d3f6fe !important; text-shadow: -1px -1px 0 #700073, 1px -1px 0 #700073, -1px 1px 0 #700073, 1px 1px 0 #700073; }"
       ],
       "settings": {
         "title": "Call to Action",
