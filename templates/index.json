@@ -754,7 +754,8 @@
         "222e21fc-0d43-4679-811d-c8d31021298a"
       ],
       "custom_css": [
-        ".kt_banner_flexible .text-content{padding:0;}"
+        ".kt_banner_flexible .text-content {padding: 0;}",
+        ".shop-collage .banner-wrap a{width:100%;}"
       ],
       "settings": {
         "title": "Who We Are",
