@@ -40,7 +40,11 @@
   {%-case block.type -%}
     {%-when 'button'-%}
       <li class="mn-lv1 mn-i item-{{block.id}}" data-block="title" {{ block.shopify_attributes }}>
-       <div class="--button"><a href="{{ block.settings.url }}" class="btn btn-secondary btn-outline " aria-label="KNOW MORE">{{ block.settings.button-text }}</a></div>
+       <div class="--button"><a href="{{ block.settings.url }}" class="btn btn-secondary " aria-label="{{ block.settings.button-text }}">{{ block.settings.button-text }}</a></div>
+      </li>
+    {%-when 'button-outlined'-%}
+      <li class="mn-lv1 mn-i item-{{block.id}}" data-block="title" {{ block.shopify_attributes }}>
+       <div class="--button"><a href="{{ block.settings.url }}" class="btn btn-secondary btn-outline " aria-label="{{ block.settings.button-text }}">{{ block.settings.button-text }}</a></div>
       </li>
     {%-when 'title'-%}
       <li class="mn-lv1 mn-i item-{{block.id}}" data-block="title" {{ block.shopify_attributes }}>
