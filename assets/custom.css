@@ -82,6 +82,7 @@ li:hover .sub-mn{
 .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover{
   border-color:#fff;
     background-color:#fff;
+  color:#700073;
 }
 /* default btn secendory  override  end */
 /* header custome css end */
