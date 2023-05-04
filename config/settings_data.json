@@ -550,8 +550,8 @@
           "29aa19e3-a856-4400-9894-e579b82d6ce3": {
             "type": "button-outlined",
             "settings": {
-              "button-text": "Item link",
-              "url": ""
+              "button-text": "View PDF catalogue",
+              "url": "shopify:\/\/collections\/thigh-calf-support"
             }
           }
         },
