@@ -521,7 +521,8 @@
         "a77d64a8-0627-45fe-b369-a76205ae56ae"
       ],
       "custom_css": [
-        ".container-fluid{margin-top:165px;}"
+        ".container-fluid {margin-top: 165px;}",
+        ".item_1 .titlex {margin-bottom:67px;}"
       ],
       "settings": {
         "title": "Who We Are",
