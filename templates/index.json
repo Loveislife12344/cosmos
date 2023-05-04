@@ -211,7 +211,7 @@
           "settings": {
             "title": "Banner item",
             "width": 12,
-            "width_sm": 6,
+            "width_sm": 12,
             "width_md": 6,
             "width_lg": 3,
             "width_xl": 0,
