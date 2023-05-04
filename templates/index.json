@@ -755,7 +755,7 @@
       ],
       "custom_css": [
         ".kt_banner_flexible .text-content {padding: 0;}",
-        ".shop-collage .banner-wrap a,.kt_banner_flexible .text-content {width: 100%; text-align:left;}"
+        ".shop-collage .banner-wrap a,.kt_banner_flexible .text-content {width: 100%; text-align: left;}"
       ],
       "settings": {
         "title": "Who We Are",
@@ -775,6 +775,7 @@
     },
     "026e34ea-1183-42a4-a153-f5fbf8e3357c": {
       "type": "rd_featured_product",
+      "disabled": true,
       "blocks": {
         "5bef387e-2196-47bc-823d-5e02a967ad9b": {
           "type": "1",
@@ -1492,6 +1493,7 @@
     },
     "1223ffad-1eef-4908-a6a3-54632e584348": {
       "type": "rd_banner_cta_01",
+      "disabled": true,
       "settings": {
         "title": "Banner Flexible",
         "off_mobile": false,
