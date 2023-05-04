@@ -295,7 +295,7 @@
         "width_section": "container-fluid wide",
         "width_content": false,
         "section_margin_top": "",
-        "section_margin_bottom": "60px",
+        "section_margin_bottom": "147px|130px|100px|80px|60px|40px",
         "section_padding": "",
         "section_bg": "",
         "layout_mode": "normal",
