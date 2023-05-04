@@ -537,6 +537,20 @@
               "icon_font": "",
               "label": ""
             }
+          },
+          "fa3894eb-8522-450f-aee8-1ddb73822845": {
+            "type": "button",
+            "settings": {
+              "button-text": "Item link",
+              "url": ""
+            }
+          },
+          "29aa19e3-a856-4400-9894-e579b82d6ce3": {
+            "type": "button-outlined",
+            "settings": {
+              "button-text": "Item link",
+              "url": ""
+            }
           }
         },
         "block_order": [
@@ -555,7 +569,9 @@
           "275283dd-a7bd-47f9-9f3b-09a6b8897e56",
           "5c77a362-ab23-41bf-8f37-d2d74b852779",
           "301ea914-5651-490c-b746-ada1f7017acd",
-          "2411103c-a825-4db5-9411-1923a0ab2e72"
+          "2411103c-a825-4db5-9411-1923a0ab2e72",
+          "fa3894eb-8522-450f-aee8-1ddb73822845",
+          "29aa19e3-a856-4400-9894-e579b82d6ce3"
         ],
         "settings": {
           "title_categories": "Browse Categories",
