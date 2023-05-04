@@ -522,6 +522,7 @@
           },
           "301ea914-5651-490c-b746-ada1f7017acd": {
             "type": "link",
+            "disabled": true,
             "settings": {
               "title": "Department of Veterans Affair DVA",
               "button_link": "shopify:\/\/pages\/department-of-veterans-affairs",
@@ -531,6 +532,7 @@
           },
           "2411103c-a825-4db5-9411-1923a0ab2e72": {
             "type": "link",
+            "disabled": true,
             "settings": {
               "title": "View PDF catalogue",
               "button_link": "",
@@ -541,7 +543,7 @@
           "fa3894eb-8522-450f-aee8-1ddb73822845": {
             "type": "button",
             "settings": {
-              "button-text": "Item link",
+              "button-text": "Sale Items",
               "url": ""
             }
           },
