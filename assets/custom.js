@@ -98,6 +98,7 @@ var icons_html = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://ww
 
 var icons = document.querySelectorAll('.v-m-icon');
 console.log('test')
+console.log(icons)
 icons.forEach(icon =>{
   icon.innerHTML = icons_html;
   alert('aa',icon)
