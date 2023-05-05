@@ -142,6 +142,9 @@ li:hover .sub-mn{
 /* bootstrap css override end */
 
 /* social icon */
+.socials_.style-02 a.social-icon{
+  border:0 !important;
+}
 .facbook-icon:before{
   content:url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Icon_awesome-facebook.png?v=1683266821') /* with class ModalCarrot ??*/
 }
