@@ -141,7 +141,7 @@ li:hover .sub-mn{
     left: 20%;
     z-index: 2;
 }
-  #shopify-section-template--18286564376879__cb32a200-b1f4-4d8b-9c93-cff843d876ee .item_1 .titlex {
+  #shopify-section-template--18286564376879__cb32a200-b1f4-4d8b-9c93-cff843d876ee .item_1 .titlex:after {
     content: "";
   display: block;
   position: absolute;
