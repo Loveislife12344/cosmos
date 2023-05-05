@@ -163,6 +163,7 @@ li:hover .sub-mn{
 .kt_banner_flexible .stitle{
   font-size:15px !important;
   line-height:25px !important;
+  text-transform:uppercase;
   margin:0 !important;
 }
 /* font sizes end */
