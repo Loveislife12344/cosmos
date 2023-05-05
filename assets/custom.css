@@ -126,6 +126,9 @@ li:hover .sub-mn{
 .container-fluid{
   max-width:1345px;
 }
+.kt_slideshow .side-nav.has-banner{
+  height:100%;
+}
 .shop-collage .row{
   grid-gap:0 !important;
 }
