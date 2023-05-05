@@ -82,6 +82,10 @@ li:hover .sub-mn{
   width:20px;
   margin-right:5px;
 }
+.clearfix.border-top.not-sticky{
+  max-width:1345px;
+  margin:auto;
+}
 /* default btn secendory  override  */
 .btn-secondary.btn-outline{
    border-color:#fff;
