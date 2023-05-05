@@ -132,6 +132,9 @@
         "d099a318-92fe-41aa-bd5f-fc85fe0c50c6",
         "5f720cd7-f5b4-45a4-b025-29195ad28166"
       ],
+      "custom_css": [
+        ".img__banner{height:100%;}"
+      ],
       "settings": {
         "title": "Slideshow Master",
         "off_mobile": false,
