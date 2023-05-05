@@ -1,8 +1,57 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Store Locater",
+  "tag": "section",
+  "class": "store-locater",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "parent",
+      "name": "parent",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title"
+        },
+        {
+          "type": "text",
+          "label": "pre heading",
+          "id": "pre_heading"
+        },
+        {
+          "type": "number",
+          "label": "block id",
+          "id": "block_id",
+          "info": "it used to assign child with same id "
+        }
+      ]
+    },
+    {
+      "type": "child",
+      "name": "child",
+      "settings": [
+        {
+          "type": "html",
+          "label": "Content",
+          "id": "content"
+        },
+        {
+          "type": "number",
+          "label": "Parent Id",
+          "id": "parent_id",
+          "info": "It is used to select parent"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Locater"
+    }
+  ]
+}
 {% endschema %}
 
 {% stylesheet %}
