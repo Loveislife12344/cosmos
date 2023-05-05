@@ -92,6 +92,13 @@ li:hover .sub-mn{
 .block-info._last{
   flex-direction: row-reverse !important;
 }
+.list-custom{
+  padding-right:25px;
+  margin-right:20px;
+}
+.list-custom:after{
+  content:"|";
+}
 /* default btn secendory  override  */
 .btn-secondary.btn-outline{
    border-color:#fff;
