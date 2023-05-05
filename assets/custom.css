@@ -134,9 +134,8 @@ li:hover .sub-mn{
   display: block;
   position: absolute;
   width: 232px;
-  border-bottom-width: .5px;
-  border-style: solid;
-  border-color: #707070;
+    height:1px;
+ background-color: #707070;
       top: 20%;
     left: 20%;
     z-index: 2;
@@ -145,10 +144,9 @@ li:hover .sub-mn{
     content: "";
   display: block;
   position: absolute;
+    width:1px;
   height:155px;
-  border-bottom-width: .5px;
-  border-style: solid;
-  border-color: --primary-color;
+  background-color: --primary-color;
       top: 20%;
     left: 20%;
     z-index: 2;
