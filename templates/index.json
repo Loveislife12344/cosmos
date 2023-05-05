@@ -133,7 +133,7 @@
         "5f720cd7-f5b4-45a4-b025-29195ad28166"
       ],
       "custom_css": [
-        ".img__banner,.banner {height: 100%;}"
+        ".img__banner,.banner {height: 100%; background-size:cover;}"
       ],
       "settings": {
         "title": "Slideshow Master",
