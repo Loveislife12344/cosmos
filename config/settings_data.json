@@ -339,7 +339,7 @@
           "use_wishlist": true,
           "use_cart": true,
           "sticky_main": true,
-          "padding_size": 30,
+          "padding_size": 55,
           "main_linklist": ""
         }
       },
