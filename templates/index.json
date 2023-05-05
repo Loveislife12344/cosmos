@@ -390,7 +390,7 @@
         "width_content": true,
         "section_margin_top": "",
         "section_margin_bottom": "",
-        "section_padding": "40px 0 0 0|60px 0 0 0|80px 0 0 0|100px 0 0 0|120px 0 0 0|147px 0 0 0",
+        "section_padding": "0 0 40px 0|0 0 60px  0|0 0 80px  0| 0 0 100px 0|0 0 120px  0|0 0 147px  0",
         "section_bg": "",
         "layout_mode": "normal",
         "grid_gutter": 10,
