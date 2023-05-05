@@ -248,9 +248,9 @@ li:hover .sub-mn{
 
 /* font  sizes & color */
 .item-f3ecc8b1-9418-40d4-98f3-a94211122660 a{
-  color:#064C73;
+  --text:#064C73 !important;
   font-weight:bold;
-  font-size:15px;
+  font-size:15
 }
 .kt_banner_flexible .it_cat_1 .titlex{
   font-size:36px !important;
