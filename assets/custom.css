@@ -1,4 +1,9 @@
- /* multistep form */
+/* variables */
+:root{
+  --primary-color:#66066F;
+}
+/* variables */
+/* multistep form */
  .step--1:not(.show),.step--2:not(.show){
     display:none;
  }
@@ -123,6 +128,7 @@ li:hover .sub-mn{
 }
 
 @media(min-width:768px){
+ 
   #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_1:after {
   content: "";
   display: block;
@@ -135,6 +141,18 @@ li:hover .sub-mn{
     left: 20%;
     z-index: 2;
 }
+  #shopify-section-template--18286564376879__cb32a200-b1f4-4d8b-9c93-cff843d876ee .item_1 .titlex {
+    content: "";
+  display: block;
+  position: absolute;
+  height:155px;
+  border-bottom-width: .5px;
+  border-style: solid;
+  border-color: --primary-color;
+      top: 20%;
+    left: 20%;
+    z-index: 2;
+  }
 }
 @media(min-width:1025px){
  #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_1:after {
