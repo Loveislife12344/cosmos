@@ -86,6 +86,9 @@ li:hover .sub-mn{
   max-width:1345px;
   margin:auto;
 }
+.block-info _last{
+  flex-direction: row-reverse;
+}
 /* default btn secendory  override  */
 .btn-secondary.btn-outline{
    border-color:#fff;
