@@ -247,10 +247,10 @@ li:hover .sub-mn{
 /* other end */
 
 /* font  sizes & color */
-.item-f3ecc8b1-9418-40d4-98f3-a94211122660 a:before,
-.item-889da515-cc8a-43f2-bbe1-cdf5ef7585af a:before,
-.item-772de0ce-35de-4e39-86ec-e4048ec199ac a:before,
-.item-0ae7fa24-1513-4ee4-afe5-5d5c02514720 a:before{
+.item-f3ecc8b1-9418-40d4-98f3-a94211122660 a i:before,
+.item-889da515-cc8a-43f2-bbe1-cdf5ef7585af a i:before,
+.item-772de0ce-35de-4e39-86ec-e4048ec199ac a i:before,
+.item-0ae7fa24-1513-4ee4-afe5-5d5c02514720 a i:before{
   color:inherit !important;
 }
 .item-f3ecc8b1-9418-40d4-98f3-a94211122660 a{
