@@ -160,12 +160,13 @@ li:hover .sub-mn{
   line-height:65px !important;
   margin:0 !important;
 }
-.kt_banner_flexible .stitle{
+.kt_banner_flexible .stitle, .kt_banner_flexible .btn{
   font-size:15px !important;
   line-height:25px !important;
   text-transform:uppercase;
   margin:0 !important;
 }
+ 
 /* font sizes end */
 
 /* footer custome css  */
