@@ -172,7 +172,7 @@ li:hover .sub-mn{
 }
 /* other end */
 
-/* font sizes */
+/* font  sizes & color */
 .kt_banner_flexible .it_cat_1 .titlex{
   font-size:36px !important;
   line-height:65px !important;
@@ -186,6 +186,9 @@ li:hover .sub-mn{
 .kt_banner_flexible .stitle{
    line-height:25px !important;
   color:#3C3C3C!important;
+}
+.sc-title{
+ --text:var(--primary-color)
 }
   .kt_banner_flexible .btn{
      line-height:20px !important;
