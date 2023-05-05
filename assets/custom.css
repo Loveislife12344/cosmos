@@ -57,6 +57,9 @@ li:hover .sub-mn{
 [class^=d-icon-]:before, [class*=" d-icon-"]:before {
   color:#700073;
 }
+.d-icon-user:before{
+   content:url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Icon_feather-user.png?v=1683268135')
+}
 .mn-lv1.mn-has-child.show-submn:before{
     content: "";
     position: fixed;
