@@ -90,7 +90,7 @@ li:hover .sub-mn{
   margin:auto;
 }
 .block-info _last{
-  flex-direction: row-reverse;
+  flex-direction: row-reverse !important;
 }
 /* default btn secendory  override  */
 .btn-secondary.btn-outline{
