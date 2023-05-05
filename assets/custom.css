@@ -126,9 +126,12 @@ li:hover .sub-mn{
   display: block;
   position: absolute;
   width: 232px;
-  border-bottom-width: 1px;
+  border-bottom-width: .5px;
   border-style: solid;
-  border-color: #3e3e3e;
+  border-color: #707070;
+      top: 30%;
+    left: 25%;
+    z-index: 33;
 }
 /* other end */
 
