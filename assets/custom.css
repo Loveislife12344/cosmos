@@ -152,11 +152,16 @@ li:hover .sub-mn{
 /* social icon end*/
 
 /* other */
+@media(min-width:768px){
+  #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .content_template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c:before{
+   content:url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Group_2455.png?v=1683268629') ; 
+}
+}
 #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .content_template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c{
   position:relative;
 }
 #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .content_template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c:before{
-   content:url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Group_2455.png?v=1683268629') ;
+  
   position:absolute;
   z-index:2;
   bottom:150px;
