@@ -453,7 +453,7 @@
       ],
       "custom_css": [
         ".container-fluid {margin-top: 165px;}",
-        ".item_1 .titlex {margin-bottom: 67px;}",
+        ".item_1 .titlex {margin-bottom: 67px !important;}",
         ".masonry-item {padding-bottom: 0;}",
         ".img__banner + span {margin: 0;}"
       ],
