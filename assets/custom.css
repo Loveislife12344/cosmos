@@ -118,6 +118,15 @@ li:hover .sub-mn{
 }
 /* bootstrap css override end */
 
+/* social icon */
+facbook-icon:before{
+  content:url('blackCarrot.png') /* with class ModalCarrot ??*/
+}
+insta-icon:before{
+  content:url('blackCarrot.png') /* with class ModalCarrot ??*/
+}
+/* social icon end*/
+
 /* other */
 .img__banner + span{
   margin:26px 0;
