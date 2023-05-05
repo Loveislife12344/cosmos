@@ -367,7 +367,7 @@
             "settings": {
               "button_link": "shopify:\/\/collections\/compression",
               "title_i": "Compression",
-              "icon_font": "d-icon-t-shirt1",
+              "icon_font": "v-m-icon",
               "label": "",
               "menu_links_width": "830px",
               "title": "Parent"
@@ -402,7 +402,7 @@
             "settings": {
               "button_link": "shopify:\/\/collections\/protection",
               "title_i": "Protection",
-              "icon_font": "d-icon-camera1",
+              "icon_font": "v-m-icon",
               "label": "",
               "menu_links_width": "830px",
               "title": "Parent"
@@ -437,7 +437,7 @@
             "settings": {
               "button_link": "shopify:\/\/collections\/support",
               "title_i": "Support",
-              "icon_font": "d-icon-t-shirt1",
+              "icon_font": "v-m-icon",
               "label": "",
               "menu_links_width": "830px",
               "title": "Parent"
@@ -472,7 +472,7 @@
             "settings": {
               "button_link": "shopify:\/\/collections\/post-surgical",
               "title_i": "Post Surgical",
-              "icon_font": "d-icon-t-shirt1",
+              "icon_font": "v-m-icon",
               "label": "",
               "menu_links_width": "830px",
               "title": "Parent"
