@@ -160,8 +160,16 @@ li:hover .sub-mn{
   position:absolute;
   z-index:2;
   bottom:93px;
-  left:25%;
+  left:33.33%;
   
+}
+@media(min-width:1200px){
+
+#shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .content_template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c:before{
+  bottom:93px;
+  left:24%;
+  
+}
 }
 .img__banner + span{
   margin:26px 0;
