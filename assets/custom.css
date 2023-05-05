@@ -95,9 +95,12 @@ li:hover .sub-mn{
 .list-custom{
   padding-right:25px;
   margin-right:20px;
+  position:relative;
 }
 .list-custom:after{
   content:"|";
+  position:absolute;
+  right:0;
 }
 /* default btn secendory  override  */
 .btn-secondary.btn-outline{
