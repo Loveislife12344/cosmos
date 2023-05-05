@@ -134,7 +134,8 @@
       ],
       "custom_css": [
         ".img__banner,.banner {height: 100%; background-size: cover;}",
-        ".item-banner {padding: 0;}"
+        ".item-banner {padding: 0;}",
+        ".d-xl-block{padding-right: 0;}"
       ],
       "settings": {
         "title": "Slideshow Master",
