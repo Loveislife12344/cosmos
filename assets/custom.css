@@ -152,6 +152,9 @@ li:hover .sub-mn{
 /* social icon end*/
 
 /* other */
+#shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_2 .banner-wrap:before{
+   content:url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Group_2455.png?v=1683268629') 
+}
 .img__banner + span{
   margin:26px 0;
   display:inline-block;
