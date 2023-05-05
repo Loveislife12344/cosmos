@@ -142,7 +142,11 @@ li:hover .sub-mn{
 }
 @media(min-width:1200px){
  #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_1:after {
-    left: 15%;}
+    left: 18%;}
+}
+@media(min-width:1400px){
+ #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_1:after {
+    left: 22%;}
 }
 /* other end */
 
