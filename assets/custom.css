@@ -120,10 +120,10 @@ li:hover .sub-mn{
 
 /* social icon */
 facbook-icon:before{
-  content:url('blackCarrot.png') /* with class ModalCarrot ??*/
+  content:url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Icon_awesome-facebook.png?v=1683266821') /* with class ModalCarrot ??*/
 }
 insta-icon:before{
-  content:url('blackCarrot.png') /* with class ModalCarrot ??*/
+  content:url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Group_2493_1f1c1888-b793-47b1-8a7e-cd9f089c65af.png?v=1683266821') /* with class ModalCarrot ??*/
 }
 /* social icon end*/
 
