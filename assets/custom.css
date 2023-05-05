@@ -251,6 +251,11 @@ li:hover .sub-mn{
 /* other end */
 
 /* font  sizes & color */
+.kt-nav.main-mn>.mn-i>a, .main-mn .special_link a, .show-icon-text .kt--drop-title{
+   font-size:17 !important;
+  line-height:22px !important;
+  
+}
 .item-f3ecc8b1-9418-40d4-98f3-a94211122660 a i:before,
 .item-889da515-cc8a-43f2-bbe1-cdf5ef7585af a i:before,
 .item-772de0ce-35de-4e39-86ec-e4048ec199ac a i:before,
