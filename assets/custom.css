@@ -19,6 +19,9 @@ margin-top: 15px;
 .social-facebook{
   color:#700073;
 }
+.main_header .divider{
+  display:none !important;
+}
 .nav-box{
  --bg-box:#faf5fa !important;
 
