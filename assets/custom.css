@@ -188,6 +188,7 @@ li:hover .sub-mn{
   color:#3C3C3C!important;
 }
 .sc-title{
+  max-width:50%;
    font-size:36px !important;
    line-height:40px !important;
  --text:var(--primary-color)
