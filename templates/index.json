@@ -134,13 +134,13 @@
       ],
       "custom_css": [
         ".img__banner,.banner {height: 100%; background-size: cover;}",
-        ".item-banner{padding:0;}"
+        ".item-banner {padding: 0;}"
       ],
       "settings": {
         "title": "Slideshow Master",
         "off_mobile": false,
         "off_desktop": false,
-        "width_section": "container-fluid wide",
+        "width_section": "w-100",
         "width_content": false,
         "section_margin_top": "",
         "section_margin_bottom": "",
