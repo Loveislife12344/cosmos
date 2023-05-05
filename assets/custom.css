@@ -125,6 +125,10 @@ li:hover .sub-mn{
 .insta-icon:before{
   content:url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Group_2493_1f1c1888-b793-47b1-8a7e-cd9f089c65af.png?v=1683266821') /* with class ModalCarrot ??*/
 }
+.socials.list-inline{
+  height:24px;
+  margin:0 !important;
+}
 /* social icon end*/
 
 /* other */
