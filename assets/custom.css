@@ -154,6 +154,13 @@ li:hover .sub-mn{
 }
 /* other end */
 
+/* font sizes */
+.titlex{
+  font-size:36px;
+  line-height:65px;
+}
+/* font sizes end */
+
 /* footer custome css  */
 .rd_call_to_action .cta-title,.rd_call_to_action .cta-desc{
   color:#700073 !important;
