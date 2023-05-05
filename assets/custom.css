@@ -299,6 +299,10 @@ li:hover .sub-mn{
     font-size:18px !important;
   line-height:28px !important;
 }
+.v-m-icon *{
+  stroke:inherit;
+  fill:inherit;
+}
 /* font sizes end */
 
 /* footer custome css  */
