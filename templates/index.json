@@ -135,7 +135,7 @@
       "custom_css": [
         ".img__banner,.banner {height: 100%; background-size: cover;}",
         ".item-banner {padding: 0;}",
-        ".d-xl-block{padding-right: 0;}"
+        ".d-xl-block {padding-right: 0;}"
       ],
       "settings": {
         "title": "Slideshow Master",
@@ -389,8 +389,8 @@
         "width_section": "container-fluid wide",
         "width_content": true,
         "section_margin_top": "",
-        "section_margin_bottom": "40px|60px|80px|100px|120px|147px",
-        "section_padding": "",
+        "section_margin_bottom": "",
+        "section_padding": "40px 0 0 0|60px 0 0 0|80px 0 0 0|100px 0 0 0|120px 0 0 0|147px 0 0 0",
         "section_bg": "",
         "layout_mode": "normal",
         "grid_gutter": 10,
