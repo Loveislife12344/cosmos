@@ -156,6 +156,9 @@ li:hover .sub-mn{
 #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_2 .img__banner{
   height:100%;
 }
+.control-inner>div .icon-link:hover{
+  color:#222;
+}
 @media(min-width:768px){
   #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c 
   .content_template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c:before{
