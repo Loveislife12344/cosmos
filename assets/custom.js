@@ -93,17 +93,7 @@ function ValidateEmail(input) {
 // multistep form module end here 
 
 // icon on verticle menu added
-var icons_html = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Group_28" data-name="Group 28" width="14" height="14" viewBox="0 0 14 14">
-  <defs>
-    <clipPath id="clip-path">
-      <rect id="Rectangle_6" data-name="Rectangle 6" width="14" height="14" fill="#064c73"/>
-    </clipPath>
-  </defs>
-  <g id="Group_27" data-name="Group 27" clip-path="url(#clip-path)">
-    <path id="Path_31" data-name="Path 31" d="M12.657,7.538H10.492V4.966a.382.382,0,0,0-.382-.382H8.4V1.91A1.912,1.912,0,0,0,6.494,0H1.91A1.912,1.912,0,0,0,0,1.91v9.219a1.912,1.912,0,0,0,1.91,1.91h8.2a.382.382,0,0,0,.382-.382V10.085h2.165a.382.382,0,0,0,.382-.382V7.92a.382.382,0,0,0-.382-.382M.764,1.91A1.147,1.147,0,0,1,1.91.764H6.494A1.147,1.147,0,0,1,7.64,1.91V3.438A1.147,1.147,0,0,1,6.494,4.584H1.91A1.147,1.147,0,0,1,.764,3.438ZM9.728,12.275H1.91A1.147,1.147,0,0,1,.764,11.129V4.965a1.9,1.9,0,0,0,1.146.383H9.728v2.19H7.564a.382.382,0,0,0-.382.382V9.7a.382.382,0,0,0,.382.382H9.728ZM8.71,9.321H7.946V8.3H8.71Zm2.037,0H9.474V8.3h1.273Zm1.528,0h-.764V8.3h.764Z" transform="translate(0.481 0.481)" fill="#064c73"/>
-    <path id="Path_32" data-name="Path 32" d="M45.891,47.292h3.565a.892.892,0,0,0,.891-.891v-.509A.892.892,0,0,0,49.457,45H45.891a.892.892,0,0,0-.891.891V46.4a.892.892,0,0,0,.891.891m-.127-1.4a.128.128,0,0,1,.127-.127h3.565a.128.128,0,0,1,.127.127V46.4a.128.128,0,0,1-.127.127H45.891a.128.128,0,0,1-.127-.127Z" transform="translate(-42.991 -42.991)" fill="#064c73"/>
-  </g>
-</svg>`
+var icons_html = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Group_28" data-name="Group 28" width="14" height="14" viewBox="0 0 14 14"><defs><clipPath id="clip-path"><rect id="Rectangle_6" data-name="Rectangle 6" width="14" height="14" fill="#064c73"/></clipPath></defs><g id="Group_27" data-name="Group 27" clip-path="url(#clip-path)"><path id="Path_31" data-name="Path 31" d="M12.657,7.538H10.492V4.966a.382.382,0,0,0-.382-.382H8.4V1.91A1.912,1.912,0,0,0,6.494,0H1.91A1.912,1.912,0,0,0,0,1.91v9.219a1.912,1.912,0,0,0,1.91,1.91h8.2a.382.382,0,0,0,.382-.382V10.085h2.165a.382.382,0,0,0,.382-.382V7.92a.382.382,0,0,0-.382-.382M.764,1.91A1.147,1.147,0,0,1,1.91.764H6.494A1.147,1.147,0,0,1,7.64,1.91V3.438A1.147,1.147,0,0,1,6.494,4.584H1.91A1.147,1.147,0,0,1,.764,3.438ZM9.728,12.275H1.91A1.147,1.147,0,0,1,.764,11.129V4.965a1.9,1.9,0,0,0,1.146.383H9.728v2.19H7.564a.382.382,0,0,0-.382.382V9.7a.382.382,0,0,0,.382.382H9.728ZM8.71,9.321H7.946V8.3H8.71Zm2.037,0H9.474V8.3h1.273Zm1.528,0h-.764V8.3h.764Z" transform="translate(0.481 0.481)" fill="#064c73"/><path id="Path_32" data-name="Path 32" d="M45.891,47.292h3.565a.892.892,0,0,0,.891-.891v-.509A.892.892,0,0,0,49.457,45H45.891a.892.892,0,0,0-.891.891V46.4a.892.892,0,0,0,.891.891m-.127-1.4a.128.128,0,0,1,.127-.127h3.565a.128.128,0,0,1,.127.127V46.4a.128.128,0,0,1-.127.127H45.891a.128.128,0,0,1-.127-.127Z" transform="translate(-42.991 -42.991)" fill="#064c73"/></g></svg>`;
 var icons = document.querySelectorAll('.v-m-icon');
 icons.forEach(icon =>{
   icon.innerHTML = icons_html;
