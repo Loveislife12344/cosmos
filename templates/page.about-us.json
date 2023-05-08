@@ -442,7 +442,7 @@
           "settings": {
             "title_style": "center",
             "title": "Our Customers",
-            "stitle": "Our Customers",
+            "stitle": "",
             "link_to": "#",
             "name_link": "",
             "margin_btitle": 30
