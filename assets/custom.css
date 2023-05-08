@@ -447,14 +447,28 @@ footer .insta-icon:before{
 .icon-box-card{
   height: 100%;
   padding: 60px;
-  margin: 15px;
 }
-.icon-boxes-container .col{
-  width: 50%;
-}
+
 .icon-boxes-container{
 max-width: 884px;
 margin:0 auto;
+}
+@media (max-width:767px) {
+  .icon-box-card{
+    padding: 30px;
+  }
+}
+@media (max-width:575px) {
+  .icon-box-card{
+    padding: 30px;
+  }
+}
+@media (min-width:576px) {
+  .icon-boxes-container .col{
+    width: calc(50% - 30px );
+    margin: 15px;
+    padding: 0;
+  }
 }
 /* icon-box-card */
 /* section call ton action */
