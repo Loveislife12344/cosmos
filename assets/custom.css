@@ -261,6 +261,8 @@ footer .insta-icon:before{
   content: 'Our Customers';
   font-size: 36px;
   line-height: 65px;
+  font-weight: 700;
+  text-align: center;
   color: var(--primary-color);
 }
 #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_2 .banner-wrap ,
