@@ -315,8 +315,8 @@ footer .insta-icon:before{
 .mobile-menu li a{
   color: var(--primary-color);
 }
-.mobile-menu .d-icon-search::before{
-  color: #fff;
+.mobile-search .d-icon-search::before{
+  color: #fff !important;
 }
 .menu-vertical .fw-bold{
   font-weight: 300!important;
@@ -392,7 +392,7 @@ footer .insta-icon:before{
   fill:inherit;
 }
 @media (max-width:991px) {
-  .kt_banner_flexible .it_cat_1 .titlex{
+  .kt_banner_flexible .it_cat_1 .titlex,.sc-title{
     font-size: 24px !important;
     line-height: 36px !important;
 
