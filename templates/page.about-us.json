@@ -75,7 +75,7 @@
         "off_desktop": false,
         "width_section": "container-fluid wide",
         "width_content": true,
-        "section_margin_top": "40px|80px |116px",
+        "section_margin_top": "40px|60px|80px|100px|116px",
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
