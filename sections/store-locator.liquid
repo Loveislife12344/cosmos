@@ -1,6 +1,7 @@
 
 <section class="{{section.id}} container-fluid wide">
 {% for block in section.blocks %}
+
   {% case block.type %}
     {% when 'parent' %}
       {%- assign parent_id = block.settings.block_id -%}
@@ -22,7 +23,11 @@
               {% endcase %}
             {%- endfor -%}
         </div> 
+        {% else %}
+        {%- continue -%}
   {% endcase %}
+
+
 {% endfor %}
 </section>
 
