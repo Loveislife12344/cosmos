@@ -514,7 +514,7 @@
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
-        "border_top": true,
+        "border_top": false,
         "border_bottom": false,
         "border_color": "#ebebeb",
         "color_icon": "#333333",
