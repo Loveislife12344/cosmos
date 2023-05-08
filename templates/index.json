@@ -1588,14 +1588,21 @@
         "18a3e08a-52d5-4d99-9c13-ffcfd58e9f28": {
           "type": "child",
           "settings": {
-            "content": "<a><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> Contact <\/a>",
+            "content": "<a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY<\/a>",
             "parent_id": 1
           }
         },
         "ac4809b2-9bb9-4925-940a-6548c66e2c79": {
           "type": "child",
           "settings": {
-            "content": "<a><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> Contact <\/a>",
+            "content": "<a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY<\/a>",
+            "parent_id": 1
+          }
+        },
+        "cf536ca4-bb45-4ea0-b78d-e6bde6128ea5": {
+          "type": "child",
+          "settings": {
+            "content": "<a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY<\/a>",
             "parent_id": 1
           }
         },
@@ -1612,6 +1619,7 @@
         "59ead641-970b-4d05-809c-d1115840744b",
         "18a3e08a-52d5-4d99-9c13-ffcfd58e9f28",
         "ac4809b2-9bb9-4925-940a-6548c66e2c79",
+        "cf536ca4-bb45-4ea0-b78d-e6bde6128ea5",
         "554b278c-71e6-4a40-9a74-73c53a66e49f"
       ],
       "settings": {
