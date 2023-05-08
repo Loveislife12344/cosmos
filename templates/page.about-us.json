@@ -543,6 +543,7 @@
         },
         "16278933153ac77724-0": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "brand_call_to_action": ""
           }
