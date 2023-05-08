@@ -75,7 +75,7 @@
         "off_desktop": false,
         "width_section": "container-fluid wide",
         "width_content": true,
-        "section_margin_top": "116px|80px|40px",
+        "section_margin_top": "40px|60px|80px|100px|116px",
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
@@ -160,7 +160,7 @@
         "off_desktop": false,
         "width_section": "container-fluid wide",
         "width_content": true,
-        "section_margin_top": "",
+        "section_margin_top": "40px|60px|80px|100px|116px",
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
@@ -442,7 +442,7 @@
           "settings": {
             "title_style": "center",
             "title": "Our Customers",
-            "stitle": "Our Customers",
+            "stitle": "",
             "link_to": "#",
             "name_link": "",
             "margin_btitle": 30
@@ -510,11 +510,11 @@
         "off_desktop": false,
         "width_section": "container-fluid wide",
         "width_content": false,
-        "section_margin_top": "",
+        "section_margin_top": "40px|60px|80px|100px|116px|140px",
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
-        "border_top": true,
+        "border_top": false,
         "border_bottom": false,
         "border_color": "#ebebeb",
         "color_icon": "#333333",
@@ -543,6 +543,7 @@
         },
         "16278933153ac77724-0": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "brand_call_to_action": ""
           }
