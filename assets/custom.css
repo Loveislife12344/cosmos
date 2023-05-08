@@ -152,6 +152,8 @@ margin-top: 15px;
 margin-bottom: 40px;
 }
 .store-locater .container-fluid{
+  width: 100%;
+  max-width: 100%;
   margin-left: calc((100% - 1345px) / 2);
 }
 .block-content *{
