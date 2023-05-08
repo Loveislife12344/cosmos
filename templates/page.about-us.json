@@ -298,7 +298,6 @@
     },
     "1627893641ded4ec48": {
       "type": "rd_our_team_1",
-      "disabled": true,
       "blocks": {
         "d279a4a8-6434-44fb-9141-d988293f3d92": {
           "type": "title",
@@ -441,7 +440,7 @@
           "type": "item_title",
           "settings": {
             "title_style": "center",
-            "title": "Our Customers",
+            "title": "Our Customers\n<span style=\"font-size: 1.875rem\">Meet our team<\/span>",
             "stitle": "",
             "link_to": "#",
             "name_link": "",
