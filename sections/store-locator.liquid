@@ -13,9 +13,11 @@
   {% if block.type == 'child' %}
     {%- if block.settings.parent_id == parent_id -%}
       <div class="block-content">
-      {{block.setting.Content}}
+      {{block.settings.Content}}
       </div>
     {%- endif -%}
+    {% else %}
+    {%- continue -%} 
   {% endif %}
  
 {% endfor %}
