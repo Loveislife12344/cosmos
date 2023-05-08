@@ -158,22 +158,6 @@ margin-bottom: 40px;
 .store-locater{
   margin-bottom: 40px;
 }
-
-@media (min-width:768px) {
-  .store-locater{
-    margin-bottom: 60px;
-  }
-}
-@media (min-width:992px) {
-  .store-locater{
-    margin-bottom: 100px;
-  }
-}
-@media (min-width:1200px) {
-  .store-locater{
-    margin-bottom: 145px;
-  }
-}
 @media (min-width:1400px) {
   .store-locater{
     margin-bottom: 156px;
@@ -184,6 +168,24 @@ margin-bottom: 40px;
     margin-left: calc((100% - 1345px) / 2) !important;
   }
 }
+@media (min-width:1200px) {
+  .store-locater{
+    margin-bottom: 145px;
+  }
+}
+@media (min-width:992px) {
+  .store-locater{
+    margin-bottom: 100px;
+  }
+}
+@media (min-width:768px) {
+  .store-locater{
+    margin-bottom: 60px;
+  }
+}
+
+
+
 /* store-locater */
 @media (min-width:769px) {
   #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_1 .banner-wrap{
