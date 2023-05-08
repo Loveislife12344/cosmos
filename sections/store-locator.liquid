@@ -17,9 +17,10 @@
                     <div class="block-content">
                       {{block.settings.content}}
                     </div>
-                    {%- else -%}
-                    {%- continue -%}   
+                      
                   {% endif %}
+                  {%- else -%}
+                    {%- continue -%} 
               {% endcase %}
             {%- endfor -%}
         </div> 
