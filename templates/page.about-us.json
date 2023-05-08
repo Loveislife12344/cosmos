@@ -660,7 +660,7 @@
         "off_desktop": false,
         "width_section": "container-fluid wide",
         "width_content": false,
-        "section_margin_top": "",
+        "section_margin_top": "40px|60px|80px|93px",
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
@@ -670,8 +670,8 @@
         "title_align": "",
         "link_to": "",
         "name_link": "",
-        "margin_btitle": 30,
-        "border_top": true,
+        "margin_btitle": 0,
+        "border_top": false,
         "border_bottom": false,
         "border_color": "#ebebeb"
       }
