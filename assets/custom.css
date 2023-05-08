@@ -16,6 +16,13 @@ margin-top: 15px;
  /* multistep form end */
 
 /* header custome css */
+.block-info._first{
+  padding: 0;
+}
+.header-logo{
+  margin-right: 13px !important;
+}
+
 .social-facebook{
   color:#700073;
 }
