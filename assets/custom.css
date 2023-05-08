@@ -158,6 +158,9 @@ margin-top: 15px;
   .sc-title{
     max-width:50%;
   }
+  .shop-collage .section-title{
+    margin-bottom: 38px;
+  }
 }
 
 @media (max-width:768px) {
