@@ -437,6 +437,17 @@
     "dd4d33fa-a4e2-4056-981b-8c983c7f2f38": {
       "type": "rd_icon_boxes",
       "blocks": {
+        "b07e83e8-99b3-4657-a056-f8bd2ad4da7b": {
+          "type": "item_title",
+          "settings": {
+            "title_style": "center",
+            "title": "<span style=\"font-size: 1.875rem\">Meet our team<\/span>",
+            "stitle": "<span style=\"font-size: 1.875rem\">Meet our team<\/span>",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        },
         "b6123392-4ded-4e1a-a716-04f8f974b047": {
           "type": "item_icon_box_card",
           "settings": {
@@ -487,6 +498,7 @@
         }
       },
       "block_order": [
+        "b07e83e8-99b3-4657-a056-f8bd2ad4da7b",
         "b6123392-4ded-4e1a-a716-04f8f974b047",
         "87e81b18-a380-4e2b-8a82-22e6db5a2e3d",
         "3b0b4a48-1a35-4476-a634-49d4cbd3dd33",
