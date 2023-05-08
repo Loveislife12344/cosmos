@@ -449,7 +449,7 @@ margin-top: 20px;
   --text:#700973 !important;
   fill:#700973 !important;
 }
-.kt_banner_flexible .it_cat_1 .titlex{
+.kt_banner_flexible .it_cat_1 .titlex,.icon-box-title{
   font-size:36px !important;
   line-height:65px !important;
   margin:0 !important;
