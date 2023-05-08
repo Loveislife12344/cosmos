@@ -448,7 +448,9 @@ footer .insta-icon:before{
   height: 100%;
   padding: 60px;
 }
-
+.icon-boxes-container .col{
+  margin: 15px;
+}
 .icon-boxes-container{
 max-width: 884px;
 margin:0 auto;
