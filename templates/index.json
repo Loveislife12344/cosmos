@@ -1577,6 +1577,14 @@
             "block_id": 1
           }
         },
+        "59ead641-970b-4d05-809c-d1115840744b": {
+          "type": "parent",
+          "settings": {
+            "title": "",
+            "pre_heading": "",
+            "block_id": 2
+          }
+        },
         "18a3e08a-52d5-4d99-9c13-ffcfd58e9f28": {
           "type": "child",
           "settings": {
@@ -1591,14 +1599,6 @@
             "parent_id": 1
           }
         },
-        "59ead641-970b-4d05-809c-d1115840744b": {
-          "type": "parent",
-          "settings": {
-            "title": "",
-            "pre_heading": "",
-            "block_id": 2
-          }
-        },
         "554b278c-71e6-4a40-9a74-73c53a66e49f": {
           "type": "child",
           "settings": {
@@ -1609,9 +1609,9 @@
       },
       "block_order": [
         "cd7c0249-a519-42ab-a9ad-ec1106e1ca57",
+        "59ead641-970b-4d05-809c-d1115840744b",
         "18a3e08a-52d5-4d99-9c13-ffcfd58e9f28",
         "ac4809b2-9bb9-4925-940a-6548c66e2c79",
-        "59ead641-970b-4d05-809c-d1115840744b",
         "554b278c-71e6-4a40-9a74-73c53a66e49f"
       ],
       "settings": {
