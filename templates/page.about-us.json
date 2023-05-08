@@ -510,7 +510,7 @@
         "off_desktop": false,
         "width_section": "container-fluid wide",
         "width_content": false,
-        "section_margin_top": "",
+        "section_margin_top": "40px|60px|80px|100px|116px|155px",
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
