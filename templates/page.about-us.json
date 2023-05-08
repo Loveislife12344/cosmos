@@ -298,6 +298,7 @@
     },
     "1627893641ded4ec48": {
       "type": "rd_our_team_1",
+      "disabled": true,
       "blocks": {
         "d279a4a8-6434-44fb-9141-d988293f3d92": {
           "type": "title",
@@ -436,17 +437,6 @@
     "dd4d33fa-a4e2-4056-981b-8c983c7f2f38": {
       "type": "rd_icon_boxes",
       "blocks": {
-        "4cb1da94-d3ba-4934-bfac-dbfe7c784bf0": {
-          "type": "item_title",
-          "settings": {
-            "title_style": "center",
-            "title": "Our Customers\n<span style=\"font-size: 1.875rem\">Meet our team<\/span>",
-            "stitle": "",
-            "link_to": "#",
-            "name_link": "",
-            "margin_btitle": 30
-          }
-        },
         "b6123392-4ded-4e1a-a716-04f8f974b047": {
           "type": "item_icon_box_card",
           "settings": {
@@ -497,7 +487,6 @@
         }
       },
       "block_order": [
-        "4cb1da94-d3ba-4934-bfac-dbfe7c784bf0",
         "b6123392-4ded-4e1a-a716-04f8f974b047",
         "87e81b18-a380-4e2b-8a82-22e6db5a2e3d",
         "3b0b4a48-1a35-4476-a634-49d4cbd3dd33",
