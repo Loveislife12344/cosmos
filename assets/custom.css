@@ -54,9 +54,7 @@ margin-top: 15px;
 .sub-mn span{
   white-space:nowrap;
 }
-li:hover .sub-mn{
-/*     left:0 !important; */
-}
+
 [class^=d-icon-]:before, [class*=" d-icon-"]:before {
   color:#700073;
 }
