@@ -147,7 +147,11 @@ margin-top: 15px;
 /* bootstrap css override end */
 
 /* home page  */
-
+/* store-locater */
+.store-locater .block-content:not(:last-child){
+margin-bottom: 40px;
+}
+/* store-locater */
 @media (min-width:769px) {
   #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_1 .banner-wrap{
     margin-right: 50px;
@@ -175,6 +179,9 @@ margin-top: 15px;
     margin: 0 !important;
 
   }
+  .store-locater .block-content:not(:last-child){
+    margin-bottom: 20px;
+    }
   .shop-collage .row>*{
     padding-right: 0 !important;
     padding-left: 0 !important;
