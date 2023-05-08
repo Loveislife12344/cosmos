@@ -463,4 +463,9 @@ footer .insta-icon:before{
     float: left;
   }
 }
+@media (max-width:576px) {
+  footer{
+    text-align: center;
+  }
+}
 /* footer custome css  end */
