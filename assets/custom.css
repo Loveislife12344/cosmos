@@ -443,6 +443,13 @@ footer .insta-icon:before{
   }
 }
 /* font sizes end */
+/* icon-box-card */
+.icon-box-card{
+  height: 100%;
+  padding: 60px;
+  margin: 15px;
+}
+/* icon-box-card */
 /* section call ton action */
 @media (max-width:767px) {
   
