@@ -306,6 +306,9 @@ footer .insta-icon:before{
 /* other end */
 
 /* font  sizes & color */
+.kt_banner_flexible .titlex{
+  text-transform: uppercase;
+}
 .kt-nav.main-mn>.mn-i>a, .main-mn .special_link a, .show-icon-text .kt--drop-title{
    font-size:17px !important;
   line-height:22px !important;
