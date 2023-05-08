@@ -101,7 +101,7 @@
             "image_link": "",
             "desc": "",
             "color_desc": "#ffffff",
-            "titlex": "Department\nof veterans\naffairs (DVA)",
+            "titlex": "<span style=\"max-width:165px;\">Department\nof veterans\naffairs (DVA)<\/span>",
             "color_titlex": "#ffffff",
             "stitle": "",
             "color_stitle": "#333333",
