@@ -309,6 +309,10 @@ footer .insta-icon:before{
 /* other end */
 
 /* font  sizes & color */
+.menu-vertical .fw-bold{
+  font-weight: 300!important;
+  font-size: 16px !important;
+}
 .kt_banner_flexible .titlex{
   text-transform: uppercase;
 }
