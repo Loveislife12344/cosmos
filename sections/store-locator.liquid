@@ -10,7 +10,7 @@
       <div>
 {% for block in section.blocks %}
   {% if block.type == 'child' %}
-    <h1>child</h1>
+    <h1>child {{block.settings.parent_id}} -- {{parent_id}}</h1>
     {%- if block.settings.parent_id == parent_id -%}
       <div class="block-content">
       {{block.setting.Content}}
