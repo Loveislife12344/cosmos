@@ -953,9 +953,7 @@
           "c300f8d9-b7bd-4315-b852-6f011b9bf660"
         ],
         "custom_css": [
-          ".subcribe-text {display: inline-block; max-width: 363px;}",
-          ".widget {width: fit-content; float: right;}",
-          ".col-sm-6:not(:last-child) .widget.widget-about {float: left;}"
+
         ],
         "settings": {
           "width_section": "container-fluid wide",
