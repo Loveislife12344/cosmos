@@ -9,9 +9,8 @@
       <h3 class="custom-title-h3">{{block.settings.title}}</h3>
       <div>
 {% for block in section.blocks offset: forloop.index %}
-  {{block.type}}
+ 
   {% if block.type == 'child' %}
-    <h1>child {{block.settings.parent_id}} -- {{parent_id}}</h1>
     {%- if block.settings.parent_id == parent_id -%}
       <div class="block-content">
       {{block.setting.Content}}
