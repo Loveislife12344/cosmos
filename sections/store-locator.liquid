@@ -16,6 +16,8 @@
                     <div class="block-content">
                       {{block.settings.content}}
                     </div>
+                    {%- else -%}
+                    {%- continue -%}   
                   {% endif %}
               {% endcase %}
             {%- endfor -%}
