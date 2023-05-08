@@ -1513,59 +1513,6 @@
         "css_section": ""
       }
     },
-    "3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb": {
-      "type": "rd_call_to_action",
-      "blocks": {
-        "3587ecc8-f687-45ad-831f-31ce58bd31e2": {
-          "type": "design_1",
-          "settings": {
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 0,
-            "width_lg": 0,
-            "width_xl": 0,
-            "width_xxl": 0,
-            "title": "<p>Subscribe<br\/><span class=\"outlined\">&<\/span> Save<\/p>",
-            "color_title": "#ffffff",
-            "stitle": "Lorem ipsum dolor sit amet adipiscing.",
-            "color_desc": "#ffffff",
-            "textBtn": "{{'general.newsletter_form.submit_html' | t}}<i class=\"d-icon-arrow-right\"><\/i>",
-            "style_btn": "btn-primary",
-            "style_btn_rounded": "btn-rounded",
-            "btn_shadow": false,
-            "social_media": false
-          }
-        }
-      },
-      "block_order": [
-        "3587ecc8-f687-45ad-831f-31ce58bd31e2"
-      ],
-      "custom_css": [
-        ".outlined {line-height: 1; color: #d3f6fe !important; text-shadow: -1px -1px 0 #700073, 1px -1px 0 #700073, -1px 1px 0 #700073, 1px 1px 0 #700073;}",
-        ".cta-title,p {line-height: 1;}",
-        ".col-lg-8 {align-self: center;}"
-      ],
-      "settings": {
-        "title": "Call to Action",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "container-fluid wide",
-        "width_content": true,
-        "section_margin_top": "",
-        "section_margin_bottom": "",
-        "section_padding": "30px",
-        "section_bg": "#d2d2d2",
-        "use_round": false,
-        "color_title": "#333333",
-        "color_desc": "#221f1f",
-        "color_text_input": "#999999",
-        "color_border_input": "#dadada",
-        "color_placeholder": "#999999",
-        "color_bg_input": "#ffffff",
-        "preview": false,
-        "css_section": ""
-      }
-    },
     "fa7fe549-8389-4aa9-bb23-1d50ceffd364": {
       "type": "store-locator",
       "blocks": {
@@ -1624,6 +1571,59 @@
       ],
       "settings": {
       }
+    },
+    "3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb": {
+      "type": "rd_call_to_action",
+      "blocks": {
+        "3587ecc8-f687-45ad-831f-31ce58bd31e2": {
+          "type": "design_1",
+          "settings": {
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 0,
+            "width_lg": 0,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "title": "<p>Subscribe<br\/><span class=\"outlined\">&<\/span> Save<\/p>",
+            "color_title": "#ffffff",
+            "stitle": "Lorem ipsum dolor sit amet adipiscing.",
+            "color_desc": "#ffffff",
+            "textBtn": "{{'general.newsletter_form.submit_html' | t}}<i class=\"d-icon-arrow-right\"><\/i>",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "btn-rounded",
+            "btn_shadow": false,
+            "social_media": false
+          }
+        }
+      },
+      "block_order": [
+        "3587ecc8-f687-45ad-831f-31ce58bd31e2"
+      ],
+      "custom_css": [
+        ".outlined {line-height: 1; color: #d3f6fe !important; text-shadow: -1px -1px 0 #700073, 1px -1px 0 #700073, -1px 1px 0 #700073, 1px 1px 0 #700073;}",
+        ".cta-title,p {line-height: 1;}",
+        ".col-lg-8 {align-self: center;}"
+      ],
+      "settings": {
+        "title": "Call to Action",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container-fluid wide",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "30px",
+        "section_bg": "#d2d2d2",
+        "use_round": false,
+        "color_title": "#333333",
+        "color_desc": "#221f1f",
+        "color_text_input": "#999999",
+        "color_border_input": "#dadada",
+        "color_placeholder": "#999999",
+        "color_bg_input": "#ffffff",
+        "preview": false,
+        "css_section": ""
+      }
     }
   },
   "order": [
@@ -1646,7 +1646,7 @@
     "275cbf37-5eaf-4d88-8661-7eda9e89a00c",
     "36e322f5-bb5b-4fc1-ac56-1c226c8feb41",
     "1223ffad-1eef-4908-a6a3-54632e584348",
-    "3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb",
-    "fa7fe549-8389-4aa9-bb23-1d50ceffd364"
+    "fa7fe549-8389-4aa9-bb23-1d50ceffd364",
+    "3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb"
   ]
 }
