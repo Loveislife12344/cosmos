@@ -13,14 +13,14 @@
             "width_lg": 4,
             "width_xl": 3,
             "width_xxl": 3,
-            "image": "shopify:\/\/shop_images\/Rectangle_12.png",
+            "image": "shopify:\/\/shop_images\/happy-senior-man-jogging-in-nature-2022-11-30-16-59-22-utc.png",
             "image_link": "",
             "blank_link": false,
             "titlex": "Who We Are",
             "preheading": "",
             "title-below": false,
             "description": "<br>Cosmac Healthcare is one of the longest-established suppliers of healthcare products in Australia.\n<br><br>\nWe back this up with a well-deserved reputation for providing quick, efficient service, and strong customer support.",
-            "color_titlex": "#222222",
+            "color_titlex": "#66066f",
             "name_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
@@ -36,8 +36,8 @@
             "width_lg": 8,
             "width_xl": 9,
             "width_xxl": 9,
-            "image": "shopify:\/\/shop_images\/Rectangle_14_d715a9ed-f812-4e95-a0cd-a96111e63cb4.png",
-            "image_mb": "shopify:\/\/shop_images\/Rectangle_13.png",
+            "image": "shopify:\/\/shop_images\/O68Z4K0.png",
+            "image_mb": "shopify:\/\/shop_images\/O68Z4K0.png",
             "image_link": "",
             "blank_link": false,
             "desc": "",
@@ -75,7 +75,7 @@
         "off_desktop": false,
         "width_section": "container-fluid wide",
         "width_content": true,
-        "section_margin_top": "",
+        "section_margin_top": "116px|80px|40px",
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
@@ -98,8 +98,8 @@
             "width_lg": 6,
             "width_xl": 6,
             "width_xxl": 6,
-            "image": "shopify:\/\/shop_images\/Rectangle_682.png",
-            "image_mb": "shopify:\/\/shop_images\/Rectangle_13.png",
+            "image": "shopify:\/\/shop_images\/pharmacist-staff-counseling-customer-about-drugs-u-2022-11-29-02-33-27-utc.png",
+            "image_mb": "shopify:\/\/shop_images\/pharmacist-staff-counseling-customer-about-drugs-u-2022-11-29-02-33-27-utc.png",
             "image_link": "",
             "blank_link": false,
             "desc": "",
@@ -136,14 +136,14 @@
             "width_lg": 6,
             "width_xl": 6,
             "width_xxl": 6,
-            "image": "shopify:\/\/shop_images\/Rectangle_14.png",
+            "image": "shopify:\/\/shop_images\/5e7ae705d160ce6c801b4f6f_compression-stocking.png",
             "image_link": "",
             "blank_link": false,
             "titlex": "Our Products &amp; Service",
             "preheading": "",
             "title-below": false,
             "description": "Cosmac Healthcare specialises in products relating to body compression, support and protection.\nNo-one knows more about these products than Cosmac.\n\nOur trained and experienced staff members are always happy to assist in providing helpful and constructive advice.\n\nThrough our affiliated company, Axcess Nutrition, the group is also active in the supply of clinical nutrition and texture-modified products, and feeding pumps &amp; accessories.\n\nAxcess is a contracted supplier under the NSW Home Enteral Nutrition (HEN) programme.",
-            "color_titlex": "#222222",
+            "color_titlex": "#66066f",
             "name_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
@@ -396,6 +396,7 @@
         },
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-2": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "name": "Tomasz Treflerzan<span>Ceo \/ Founder<\/span>",
             "social_twitter_link": "",
@@ -451,11 +452,11 @@
           "type": "item_icon_box_card",
           "settings": {
             "icon_font": "",
-            "icon": "shopify:\/\/shop_images\/Group_2264.png",
+            "icon": "shopify:\/\/shop_images\/Group_2493_5e1fccbf-49f8-4ae8-989a-04dc99e08314.png",
             "size": 74,
             "title": "Professional",
             "content": "Cosmac Healthcare supplies products to public and private hospitals, aged care facilities, physiotherapists, occupational therapists, pharmacies, vascular clinics, medical clinics, plastic surgeons, medical supply companies, and many other health professionals.",
-            "bg_color": "#fafafa",
+            "bg_color": "#fbf5fa",
             "url": ""
           }
         },
@@ -463,11 +464,11 @@
           "type": "item_icon_box_card",
           "settings": {
             "icon_font": "",
-            "icon": "shopify:\/\/shop_images\/Group_2264.png",
+            "icon": "shopify:\/\/shop_images\/Group_2472.png",
             "size": 74,
             "title": "Consumer",
             "content": "we understand and appreciate the needs of the users of our products, through the hands-on measuring and fitting services provided at our three Sydney-based Fitting Centers.",
-            "bg_color": "#fafafa",
+            "bg_color": "#fbf5fa",
             "url": ""
           }
         },
@@ -475,11 +476,23 @@
           "type": "item_icon_box_card",
           "settings": {
             "icon_font": "",
-            "icon": "shopify:\/\/shop_images\/Group_2264.png",
-            "size": 74,
+            "icon": "shopify:\/\/shop_images\/Group_2487.png",
+            "size": 60,
             "title": "Veterans",
             "content": "Cosmac is proud to be a long-standing sub-contracted supplier of rehabilitation aids and appliances to the veteran community. Should any health professional wish to discuss specific veteran requirements or product suitability, please feel free to contact us for advice, assistance and guidance.",
-            "bg_color": "#fafafa",
+            "bg_color": "#fbf5fa",
+            "url": ""
+          }
+        },
+        "05c14ff7-3cb5-4c36-8591-2e1f04b22ddf": {
+          "type": "item_icon_box_card",
+          "settings": {
+            "icon_font": "",
+            "icon": "shopify:\/\/shop_images\/Group_2495.png",
+            "size": 60,
+            "title": "NDIS",
+            "content": "Cosmac is proud to be a long-standing sub-contracted supplier of rehabilitation aids and appliances to the veteran community. Should any health professional wish to discuss specific veteran requirements or product suitability, please feel free to contact us for advice, assistance and guidance.",
+            "bg_color": "#fbf5fa",
             "url": ""
           }
         }
@@ -488,7 +501,8 @@
         "4cb1da94-d3ba-4934-bfac-dbfe7c784bf0",
         "b6123392-4ded-4e1a-a716-04f8f974b047",
         "87e81b18-a380-4e2b-8a82-22e6db5a2e3d",
-        "3b0b4a48-1a35-4476-a634-49d4cbd3dd33"
+        "3b0b4a48-1a35-4476-a634-49d4cbd3dd33",
+        "05c14ff7-3cb5-4c36-8591-2e1f04b22ddf"
       ],
       "settings": {
         "title": "Icon Boxes",
