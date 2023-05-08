@@ -1,28 +1,26 @@
 
 <section class="{{section.id}}">
 {% for block in section.blocks %}
-{% if block.type == 'parent' %}
-  {%- assign parent_id = block.settings.block_id -%}
-  <div class="col-md-6">
-    <div>
-      <span class="preheading">{{block.settings.pre_heading}}</span>
-      <h3 class="custom-title-h3">{{block.settings.title}}</h3>
-      <div>
-{% for block in section.blocks offset: forloop.index %}
- 
-  {% if block.type == 'child' %}
-    {%- if block.settings.parent_id == parent_id -%}
-      <div class="block-content">
-      {{block.settings.content}}
-      </div>
-    {%- endif -%}
-    {% else %}
-    {%- continue -%} 
-  {% endif %}
- 
-{% endfor %}
-  </div>
-{% endif %}
+  {% case block.type %}
+    {% when 'parent' %}
+      {%- assign parent_id = block.settings.block_id -%}
+        <div class="col-md-6">
+          <div>
+            <span class="preheading">{{block.settings.pre_heading}}</span>
+            <h3 class="custom-title-h3">{{block.settings.title}}</h3>
+          <div>
+            {%- for block in section.blocks -%} 
+              {% case block.type %}
+                {% when 'child' %}
+                  {% if block.settings.parent_id == parent_id %}
+                    <div class="block-content">
+                      {{block.settings.content}}
+                    </div>
+                  {% endif %}
+              {% endcase %}
+            {%- endfor -%}
+        </div> 
+  {% endcase %}
 {% endfor %}
 </section>
 
