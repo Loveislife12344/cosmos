@@ -1565,6 +1565,49 @@
         "preview": false,
         "css_section": ""
       }
+    },
+    "fa7fe549-8389-4aa9-bb23-1d50ceffd364": {
+      "type": "store-locator",
+      "blocks": {
+        "cd7c0249-a519-42ab-a9ad-ec1106e1ca57": {
+          "type": "parent",
+          "settings": {
+            "title": "Our locations",
+            "pre_heading": "Contact us",
+            "block_id": 1
+          }
+        },
+        "59ead641-970b-4d05-809c-d1115840744b": {
+          "type": "parent",
+          "settings": {
+            "title": "",
+            "pre_heading": "",
+            "block_id": 2
+          }
+        },
+        "18a3e08a-52d5-4d99-9c13-ffcfd58e9f28": {
+          "type": "child",
+          "settings": {
+            "content": "<a><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> Contact <\/a>",
+            "parent_id": 1
+          }
+        },
+        "ac4809b2-9bb9-4925-940a-6548c66e2c79": {
+          "type": "child",
+          "settings": {
+            "content": "<a><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> Contact <\/a>",
+            "parent_id": 1
+          }
+        }
+      },
+      "block_order": [
+        "cd7c0249-a519-42ab-a9ad-ec1106e1ca57",
+        "59ead641-970b-4d05-809c-d1115840744b",
+        "18a3e08a-52d5-4d99-9c13-ffcfd58e9f28",
+        "ac4809b2-9bb9-4925-940a-6548c66e2c79"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -1587,6 +1630,7 @@
     "275cbf37-5eaf-4d88-8661-7eda9e89a00c",
     "36e322f5-bb5b-4fc1-ac56-1c226c8feb41",
     "1223ffad-1eef-4908-a6a3-54632e584348",
-    "3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb"
+    "3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb",
+    "fa7fe549-8389-4aa9-bb23-1d50ceffd364"
   ]
 }
