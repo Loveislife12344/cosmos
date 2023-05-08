@@ -148,7 +148,7 @@ margin-top: 15px;
 
 /* home page  */
 
-@media (min-width:768px) {
+@media (min-width:769px) {
   #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_1 .banner-wrap{
     margin-right: 50px;
   }
@@ -161,6 +161,9 @@ margin-top: 15px;
   .shop-collage .section-title{
     margin-bottom: 38px;
   }
+  #shopify-section-template--18286564376879__cb32a200-b1f4-4d8b-9c93-cff843d876ee .item_1 .titlex{
+    margin-bottom: 67px !important;
+  }
 }
 
 @media (max-width:768px) {
@@ -172,6 +175,9 @@ margin-top: 15px;
   .shop-collage .row>*{
     padding-right: 0 !important;
     padding-left: 0 !important;
+  }
+  #shopify-section-template--18286564376879__cb32a200-b1f4-4d8b-9c93-cff843d876ee .item_1 .titlex{
+    margin-bottom: 20px !important;
   }
 }
 /* home page cahnges */
