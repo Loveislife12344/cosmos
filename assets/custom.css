@@ -151,6 +151,30 @@ margin-top: 15px;
 .store-locater .block-content:not(:last-child){
 margin-bottom: 40px;
 }
+.store-locater{
+  margin-bottom: 40px;
+}
+
+@media (min-width:768) {
+  .store-locater{
+    margin-bottom: 60px;
+  }
+}
+@media (min-width:992) {
+  .store-locater{
+    margin-bottom: 100px;
+  }
+}
+@media (min-width:1200) {
+  .store-locater{
+    margin-bottom: 145px;
+  }
+}
+@media (min-width:1400) {
+  .store-locater{
+    margin-bottom: 156px;
+  }
+}
 /* store-locater */
 @media (min-width:769px) {
   #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_1 .banner-wrap{
