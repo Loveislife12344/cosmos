@@ -631,7 +631,7 @@
             "stitle": "Contact Cosmac to open an account, or to obtain details of our trading terms and conditions.",
             "link_to": "",
             "name_link": "",
-            "margin_btitle": 30
+            "margin_btitle": 0
           }
         },
         "3670f200-cc76-4460-b913-00053809a940": {
@@ -660,7 +660,7 @@
         "off_desktop": false,
         "width_section": "container-fluid wide",
         "width_content": false,
-        "section_margin_top": "",
+        "section_margin_top": "40px|60px|80px|93px",
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
@@ -670,8 +670,8 @@
         "title_align": "",
         "link_to": "",
         "name_link": "",
-        "margin_btitle": 30,
-        "border_top": true,
+        "margin_btitle": 0,
+        "border_top": false,
         "border_bottom": false,
         "border_color": "#ebebeb"
       }
@@ -707,8 +707,8 @@
         "off_desktop": false,
         "width_section": "container-fluid wide",
         "width_content": false,
-        "section_margin_top": "",
-        "section_margin_bottom": "",
+        "section_margin_top": "40px|60px|80px|93px|120px|150px",
+        "section_margin_bottom": "40px|60px|80px|93px|120px|155px",
         "section_padding": "",
         "section_bg": "",
         "title_section": "",
@@ -717,8 +717,8 @@
         "title_align": "",
         "link_to": "",
         "name_link": "",
-        "margin_btitle": 30,
-        "border_top": true,
+        "margin_btitle": 0,
+        "border_top": false,
         "border_bottom": false,
         "border_color": "#ebebeb"
       }
