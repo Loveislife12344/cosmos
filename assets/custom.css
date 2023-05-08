@@ -443,6 +443,16 @@ footer .insta-icon:before{
   }
 }
 /* font sizes end */
+/* section call ton action */
+@media (max-width:767px) {
+  
+  .content_template--18286564376879__3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb .row{
+display: block;
+text-align: center;
+  }
+  
+}
+/* section call ton action */
 
 /* footer custome css  */
 .rd_call_to_action .cta-title,.rd_call_to_action .cta-desc{
