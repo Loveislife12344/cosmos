@@ -1577,14 +1577,6 @@
             "block_id": 1
           }
         },
-        "59ead641-970b-4d05-809c-d1115840744b": {
-          "type": "parent",
-          "settings": {
-            "title": "",
-            "pre_heading": "",
-            "block_id": 2
-          }
-        },
         "18a3e08a-52d5-4d99-9c13-ffcfd58e9f28": {
           "type": "child",
           "settings": {
@@ -1598,13 +1590,21 @@
             "content": "<a><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> Contact <\/a>",
             "parent_id": 1
           }
+        },
+        "59ead641-970b-4d05-809c-d1115840744b": {
+          "type": "parent",
+          "settings": {
+            "title": "",
+            "pre_heading": "",
+            "block_id": 2
+          }
         }
       },
       "block_order": [
         "cd7c0249-a519-42ab-a9ad-ec1106e1ca57",
-        "59ead641-970b-4d05-809c-d1115840744b",
         "18a3e08a-52d5-4d99-9c13-ffcfd58e9f28",
-        "ac4809b2-9bb9-4925-940a-6548c66e2c79"
+        "ac4809b2-9bb9-4925-940a-6548c66e2c79",
+        "59ead641-970b-4d05-809c-d1115840744b"
       ],
       "settings": {
       }
