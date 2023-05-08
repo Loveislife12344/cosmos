@@ -399,7 +399,7 @@ margin-top: 20px;
 #offcanvasMenuMb{
   background-color: #faf5fa !important;
 }
-.mobile-menu li a{
+.mobile-menu li a,.icon-box-content *{
   color: var(--primary-color);
 }
 .mobile-search .d-icon-search::before{
