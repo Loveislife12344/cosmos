@@ -258,12 +258,13 @@ footer .insta-icon:before{
 
 /* other */
 #shopify-section-template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38 .content_template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38::before{
-  content: 'Our Customers';
-  font-size: 36px;
-  line-height: 65px;
-  font-weight: 700;
-  text-align: center;
-  color: var(--primary-color);
+    content: "Our Customers";
+    font-size: 36px;
+    line-height: 65px;
+    display: block;
+    color: var(--primary-color);
+    width: 100%;
+    text-align: center;
 }
 #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_2 .banner-wrap ,
 #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_2 .img__banner{
