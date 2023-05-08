@@ -151,6 +151,9 @@ margin-top: 15px;
 .store-locater .block-content:not(:last-child){
 margin-bottom: 40px;
 }
+.block-content *{
+  color: var(--primary-color) !important;
+}
 .store-locater{
   margin-bottom: 40px;
 }
