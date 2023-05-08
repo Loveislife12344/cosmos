@@ -400,6 +400,7 @@ margin-top: 20px;
   background-color: #faf5fa !important;
 }
 .mobile-menu li a,.icon-box-content *{
+  --cl_desc:var(--primary-color);
   color: var(--primary-color);
 }
 .mobile-search .d-icon-search::before{
