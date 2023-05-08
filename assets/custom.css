@@ -146,6 +146,25 @@ margin-top: 15px;
 }
 /* bootstrap css override end */
 
+/* home page  */
+
+@media (min-width:768px) {
+  #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_1 .banner-wrap{
+    margin-right: 50px;
+  }
+  #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_2 .banner-wrap{
+    margin-left: 50px;
+  }
+}
+
+@media (max-width:768px) {
+  .shop-collage .row{
+    display: block !important;
+  }
+}
+/* home page cahnges */
+
+
 /* social icon */
 .socials_.style-02 a.social-icon{
   border:0 !important;
