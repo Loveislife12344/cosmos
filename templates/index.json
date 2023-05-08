@@ -379,8 +379,7 @@
         "b5780f85-8810-4be9-a0d2-2909bcab9406"
       ],
       "custom_css": [
-        ".item_2 .banner-wrap {margin-left: 50px;}",
-        ".item_1 .banner-wrap {margin-right: 50px;}"
+
       ],
       "settings": {
         "title": "Who We Are",
