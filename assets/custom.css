@@ -915,7 +915,7 @@ footer .insta-icon:before {
 
 /* quickview */
 .entry-short-description.d-none{
-  display: none;
+  display: block !important;
 }
 /* quickview end */
 
