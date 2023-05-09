@@ -110,6 +110,8 @@ margin-top: 15px;
   position:absolute;
   right:0;
 }
+/* header custome css end */
+
 /* default btn secendory  override  */
 .btn-secondary.btn-outline{
    border-color:#fff;
@@ -136,9 +138,14 @@ margin-top: 15px;
   background-color:transparent;
    color:#700073;
 }
-
+.btn #Icon_open-data-transfer-download{
+fill: var(--primary-color);
+}
+.btn:hover #Icon_open-data-transfer-download{
+fill: #fff;
+}
 /* default btn secendory  override  end */
-/* header custome css end */
+
 
 /* bootstrap css override */
 .kt_slideshow .row>*{
