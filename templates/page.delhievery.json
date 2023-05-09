@@ -977,6 +977,7 @@
     },
     "28efc14f-6837-44f4-be7f-0be4c93c3634": {
       "type": "rd_image_w_text_1",
+      "disabled": true,
       "blocks": {
         "f96688d8-d74d-46fe-b09b-4641f1a214a3": {
           "type": "1",
