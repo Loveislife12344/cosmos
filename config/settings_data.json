@@ -329,6 +329,7 @@
           "color_text_header": "#222222",
           "color_text_header_hv": "#e82d7c",
           "color_head_bg": "#ffffff",
+          "header_image": "{{ shop.brand.logo }}",
           "color_head_bg_op": 1,
           "color_text_headerb": "#781d7e",
           "color_text_headerb_hv": "#e82d7c",
