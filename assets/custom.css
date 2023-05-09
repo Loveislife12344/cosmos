@@ -660,7 +660,7 @@ text-align: center;
   color: #222;
   border: 0;
 }
-.cart-offcanvas .swatch .swatch-title{
+.cart-offcanvas .swatch .swatch-title,.cart-offcanvas .cart-label,.cart-offcanvas .cart-label *{
   --text: #222;
   color: #222;
 }
