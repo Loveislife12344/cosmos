@@ -264,6 +264,9 @@ footer .insta-icon:before{
 /* social icon end*/
 
 /* other */
+.masonry-item.pb-gutter{
+  padding-bottom: 0 !important;
+}
 .kt_banner_flexible .it_cat_1 .titlex,.icon-box-title,.kt_banner_flexible .stitle, .kt_banner_flexible .btn{
   margin:0 !important;
 }
