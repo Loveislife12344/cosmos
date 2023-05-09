@@ -746,7 +746,7 @@
               "html": "<div class=\"page-header text-center\">\n<h1 class=\"page-title\">{{page_title}}<\/h1>\n<\/div>",
               "color_white": true,
               "breadcrumb": true,
-              "width_section": "container-fluid wide",
+              "width_section": "w-100",
               "width_content": true,
               "section_margin_top": "",
               "section_margin_bottom": "",
