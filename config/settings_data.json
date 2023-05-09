@@ -42,6 +42,8 @@
     "color_pr_price_sale": "#781d7e",
     "color_pr_onsale": "#d26e4b",
     "color_pr_onsoldout": "#cccccc",
+    "share_pinterest": false,
+    "share_tumblr": false,
     "social_twitter_link": "",
     "social_facebook_link": "https:\/\/facebook.com\/shopify",
     "social_pinterest_link": "",
