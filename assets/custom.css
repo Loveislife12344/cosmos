@@ -683,6 +683,15 @@ border: 0;
 }
 /* cart end */
 
+/* customer login */
+@media (max-width:575px) {
+  .content_login-register-template{
+    padding: 80px 0 80px 0 !important;
+  }
+}
+
+/* customer login */
+
 /* footer custome css  */
 .rd_call_to_action .cta-title,.rd_call_to_action .cta-desc{
   color:#700073 !important;
