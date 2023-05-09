@@ -270,6 +270,9 @@ footer .insta-icon:before{
 .kt_banner_flexible .it_cat_1 .titlex,.icon-box-title,.kt_banner_flexible .stitle, .kt_banner_flexible .btn{
   margin:0 !important;
 }
+.content_template--18426875609391__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_2 .img__banner{
+  display: none;
+}
 #shopify-section-template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38 .content_template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38::before{
     content: "Our Customers";
     font-size: 36px;
