@@ -637,7 +637,7 @@
         "link_to": "",
         "name_link": "",
         "margin_btitle": 30,
-        "border_top": true,
+        "border_top": false,
         "border_bottom": false,
         "border_color": "#ebebeb"
       }
