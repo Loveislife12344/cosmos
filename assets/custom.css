@@ -900,7 +900,7 @@ footer .insta-icon:before {
 .address-new-toggle,
 .address-new-toggle:hover,
 .edit_customer_address .btn-dark,
-.edit_customer_address .btn-dark:hover {
+.edit_customer_address .btn-dark:hover,.btn-dark, .btn-dark:hover{
   --color_bg: var(--primary-color);
   --lighten: var(--primary-color);
   --border: var(--primary-color);
