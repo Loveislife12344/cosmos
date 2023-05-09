@@ -613,7 +613,7 @@
         "b51f59ce-d11a-4c31-add4-abc25a5fd363": {
           "type": "content2",
           "settings": {
-            "text": "To place an order with Cosmac for entitled veterans, war widow\/ers and dependants the Direct Order Form below needs to be completed by the appropriate Healthcare Professional and can be either emailed or faxed to us:\n<br><br>\nE: vetorders@cosmac.com.au  \n<br><br>\nF: (02) 9033 7410"
+            "text": "To place an order with Cosmac for entitled veterans, war widow\/ers and dependants the Direct Order Form below needs to be completed by the appropriate Healthcare Professional and can be either emailed or faxed to us:\n<br><br>\n<b>E:<\/b> <a href=\"mailto:vetorders@cosmac.com.au\">vetorders@cosmac.com.au <\/a> \n<br><br>\n<b>F:<\/b><a href=\"tel:0290337410\"> (02) 9033 7410<\/a>"
           }
         }
       },
