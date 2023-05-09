@@ -606,13 +606,21 @@ text-align: center;
 /* page vatern */
 
 /* cart */
-.cart-offcanvas{
+.cart-offcanvas,.footer__cart-offcanvas,.footer__cart-offcanvas .tab-content{
   --bs-offcanvas-bg:#AF50A7;
+  background-color: #AF50A7;
 }
 .cart-offcanvas *{
   --text: #fff;
-  --bs-offcanvas-bg:#AF50A7;
 }
+.cart-offcanvas .close-canvas,.cart-offcanvas .agree_checkbox a,.cart-offcanvas .agree_checkbox a:hover,.info__cart .product-name a,.cart-offcanvas .price,.footer__cart-offcanvas .table th,.cart-offcanvas .btn-link{
+  color: #fff !important;
+}
+.cart-offcanvas .check-out {
+  --color_bg: #fff;
+  color: #222;
+}
+
 /* cart end */
 
 /* footer custome css  */
