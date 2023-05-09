@@ -615,7 +615,7 @@ text-align: center;
   color: #fff;
 }
 .cart-offcanvas .close-canvas,.cart-offcanvas .agree_checkbox a,.cart-offcanvas .agree_checkbox a:hover,.info__cart .product-name a,.cart-offcanvas .price,.footer__cart-offcanvas .table th,.cart-offcanvas .btn-link,
-.cart-offcanvas .btn .d-icon-arrow-right::before,.editOpts-offcanvas .product .name_option,.editOpts-offcanvas .n_selected{
+.cart-offcanvas .btn .d-icon-arrow-right::before,.editOpts-offcanvas .product-loop-variants .name_option,.editOpts-offcanvas .n_selected{
   color: #fff !important;
   text-decoration: none;
 }
