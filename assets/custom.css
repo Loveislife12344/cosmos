@@ -920,6 +920,13 @@ footer .insta-icon:before {
 .product-quickview-content .ProductPrice-main-product-qv{
   font-size: 26px;
 }
+.content-item.product-quickview-content .social-label{
+  display: none;
+}
+.product-form-main-product-qv + ._mb-1{
+  display: flex;
+  flex-direction: row-reverse;
+}
 /* quickview end */
 
 /* footer custome css  */
