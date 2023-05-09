@@ -938,6 +938,9 @@ footer .insta-icon:before {
 .wishlist_compare_btns .btn.wishlist{
   margin: 0;
 }
+.product-quickview-content .socials_.socials_color .social-facebook:hover,.product-quickview-content .socials_.socials_color .social-facebook{
+color: var(--primary-color);
+}
 /* quickview end */
 
 /* footer custome css  */
