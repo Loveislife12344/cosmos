@@ -917,6 +917,10 @@ footer .insta-icon:before {
 .entry-short-description.d-none{
   display: block !important;
 }
+.product-quickview-content .ProductPrice-main-product-qv{
+  font-size: 26px;
+  line-height: 87px;
+}
 /* quickview end */
 
 /* footer custome css  */
