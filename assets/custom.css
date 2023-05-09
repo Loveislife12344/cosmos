@@ -928,10 +928,11 @@ footer .insta-icon:before {
   flex-direction: row-reverse;
   column-gap:80px;
   justify-content: flex-end;
+  align-items: center;
 }
 .product-form-main-product-qv + ._mb-1 .social-share::after{
   content: '|';
-  transform: translate(40px,0);
+  transform: translate(32px,5px);
   position: absolute;
 }
 .wishlist_compare_btns .btn.wishlist{
