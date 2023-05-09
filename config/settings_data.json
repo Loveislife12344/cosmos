@@ -1061,10 +1061,13 @@
       "login-register-template": {
         "type": "login-register-template",
         "settings": {
+          "width_section": "container-fluid wide",
+          "width_content": true,
           "section_margin_top": "",
           "section_margin_bottom": "",
           "section_padding": "65px 0 175px",
-          "section_bg": ""
+          "section_bg": "",
+          "image": "shopify:\/\/shop_images\/Group_2494.png"
         }
       },
       "account-template": {
