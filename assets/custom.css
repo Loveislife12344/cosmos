@@ -620,7 +620,9 @@ text-align: center;
   --color_bg: #fff;
   color: #222;
 }
-
+.cart-offcanvas .icon-link{
+  background-color: #fff;
+}
 /* cart end */
 
 /* footer custome css  */
