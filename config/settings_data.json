@@ -22,7 +22,7 @@
     "newsletter_popup": false,
     "ajax_cart": true,
     "cart_notes_enable": false,
-    "shipping_calculator": true,
+    "shipping_calculator": false,
     "use_gift_wrapping": true,
     "gift_wrap_product": "gift-wrapping",
     "type_ajax_cart": "offcanvas",
