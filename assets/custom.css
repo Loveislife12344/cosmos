@@ -555,6 +555,17 @@ text-align: center;
 }
 /* section call ton action */
 
+/* page vatern */
+
+.content_template--18311167148345__6c95f6ee-4048-4d6e-86cd-c82001950c6b .kt_banner_flexible .titlex{
+  text-transform: lowercase;
+}
+.content_template--18311167148345__6c95f6ee-4048-4d6e-86cd-c82001950c6b .kt_banner_flexible .titlex::first-letter{
+  text-transform: uppercase;
+}
+
+/* page vatern */
+
 /* footer custome css  */
 .rd_call_to_action .cta-title,.rd_call_to_action .cta-desc{
   color:#700073 !important;
