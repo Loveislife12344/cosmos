@@ -906,7 +906,7 @@ footer .insta-icon:before {
   --border: var(--primary-color);
 }
 
-.btn-dark.address-delete:hover {
+.btn-dark.address-delete:hover,.btn-dark.address-delete {
   background-color: transparent !important;
   border:0 !important
 }
