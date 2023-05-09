@@ -617,13 +617,14 @@ text-align: center;
 .cart-offcanvas .close-canvas,.cart-offcanvas .agree_checkbox a,.cart-offcanvas .agree_checkbox a:hover,.info__cart .product-name a,.cart-offcanvas .price,.footer__cart-offcanvas .table th,.cart-offcanvas .btn-link,
 .cart-offcanvas .btn .d-icon-arrow-right::before{
   color: #fff !important;
+  text-decoration: none;
 }
-.cart-offcanvas .check-out,.cart-offcanvas .check-out:hover {
+.cart-offcanvas .check-out,.cart-offcanvas .check-out:hover{
   --color_bg: #fff;
   color: #222;
   border: 0;
 }
-.cart-offcanvas .icon-link{
+.cart-offcanvas .icon-link,.cart-offcanvas .check-out:hover{
   background-color: #fff;
 }
 .cart-offcanvas .fa-times::before{
