@@ -564,11 +564,18 @@ text-align: center;
 .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .titlex::first-letter{
   text-transform: uppercase;
 }
+.content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1:before{
+  position: absolute;
+  z-index: 2;
+}
 @media(min-width:768px){
 
   .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1{
     margin-top: 150px;
      }
+     .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1:before {
+      content: url(https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Group_2455.png?v=1683268629);
+  }
  }
 @media(min-width:1200px){
 
