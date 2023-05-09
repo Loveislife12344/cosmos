@@ -913,6 +913,12 @@ footer .insta-icon:before {
 
 /* customer Accounts */
 
+/* quickview */
+.entry-short-description.d-none{
+  display: none;
+}
+/* quickview end */
+
 /* footer custome css  */
 .rd_call_to_action .cta-title,
 .rd_call_to_action .cta-desc {
