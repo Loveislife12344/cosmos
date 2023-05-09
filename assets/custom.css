@@ -575,7 +575,7 @@ text-align: center;
      }
      .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1:before {
       content: url(https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Group_2455.png?v=1683268629);
-      transform: translate(60px, -47%);
+      transform: translate(20px, -47%);
   }
  }
 @media(min-width:1200px){
@@ -583,6 +583,9 @@ text-align: center;
   .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1{
     margin-top: 200px;
      }
+     .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1:before {
+      transform: translate(50px, -47%);
+  }
  }
  @media(min-width:1400px){
 
@@ -601,6 +604,16 @@ text-align: center;
      }
  }
 /* page vatern */
+
+/* cart */
+.cart-offcanvas{
+  --bs-offcanvas-bg:#AF50A7;
+}
+.cart-offcanvas *{
+  --text: #fff;
+  --bs-offcanvas-bg:#AF50A7;
+}
+/* cart end */
 
 /* footer custome css  */
 .rd_call_to_action .cta-title,.rd_call_to_action .cta-desc{
