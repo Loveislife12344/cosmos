@@ -28,7 +28,7 @@
     "use_gift_message": false,
     "type_ajax_cart": "offcanvas",
     "terms_conditions": false,
-    "use_threshold_in_page": true,
+    "use_threshold_in_page": false,
     "enable_auto_gift": false,
     "auto_gift_limit": "",
     "auto_gift_product": "",
