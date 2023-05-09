@@ -907,7 +907,7 @@ footer .insta-icon:before {
 }
 
 .btn-dark.address-delete:hover,.btn-dark.address-delete {
-  background-color: transparent !important;
+  background-color: transparent !important; 
   border:0 !important
 }
 
