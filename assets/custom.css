@@ -626,6 +626,9 @@ text-align: center;
 .cart-offcanvas .icon-link{
   background-color: #fff;
 }
+.cart-offcanvas .fa-times::before{
+content: url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Icon_awesome-trash.png?v=1683606586');
+}
 /* cart end */
 
 /* footer custome css  */
