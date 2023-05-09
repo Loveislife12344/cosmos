@@ -660,7 +660,7 @@ text-align: center;
   color: #222;
   border: 0;
 }
-.cart-offcanvas .swatch{
+.cart-offcanvas .swatch .swatch-title{
   --text: #222;
   color: #222;
 }
