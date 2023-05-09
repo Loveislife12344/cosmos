@@ -637,6 +637,10 @@ content: url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Icon_awesom
 background-color:transparent;
 border: 0;
 }
+.cart-offcanvas .nav-tabs._pb-1{
+  visibility: hidden;  
+  /* removed cart not fromm css as from theme it is not being disabled funcnality was not working properly */
+}
 /* cart end */
 
 /* footer custome css  */
