@@ -713,7 +713,7 @@ display: none;
   --lighten:var(--primary-color);
   --border:var(--primary-color);
 }
-.address-delete{
+.btn-dark.btn-underline.address-delete:hover{
   background-color: transparent !important;
 }
 /* customer Accounts */
