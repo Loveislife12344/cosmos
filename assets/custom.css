@@ -708,6 +708,9 @@ body  .content_login-register-template{
 .template-customers-login .kt_top_banner,.template-customers-register .kt_top_banner{
 display: none;
 }
+.address-new-toggle{
+  --color_bg:var(--primary-color);
+}
 /* customer Accounts */
 
 /* footer custome css  */
