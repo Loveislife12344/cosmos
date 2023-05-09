@@ -514,6 +514,7 @@ margin-top: 20px;
 }
 }
 /* font sizes end */
+
 /* icon-box-card */
 .icon-box-card{
   height: 100%;
@@ -563,7 +564,30 @@ text-align: center;
 .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .titlex::first-letter{
   text-transform: uppercase;
 }
+@media(min-width:768px){
 
+  .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1{
+    margin-top: 150px;
+     }
+ }
+@media(min-width:1200px){
+
+  .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1{
+    margin-top: 200px;
+     }
+ }
+ @media(min-width:1400px){
+
+  .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1{
+    margin-top: 250px;
+     }
+ }
+ @media(min-width:1600px){
+
+  .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1{
+       margin-top: 310px;
+     }
+ }
 /* page vatern */
 
 /* footer custome css  */
