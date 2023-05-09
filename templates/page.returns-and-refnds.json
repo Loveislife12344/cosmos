@@ -100,7 +100,7 @@
         "width_section": "container-fluid wide",
         "width_content": true,
         "section_margin_top": "40px|60px|80px|100px|112px",
-        "section_margin_bottom": "",
+        "section_margin_bottom": "40px|60px|80px|100px|130px|139px",
         "section_padding": "",
         "section_bg": "",
         "layout_mode": "normal",
