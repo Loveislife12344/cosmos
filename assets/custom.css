@@ -927,10 +927,15 @@ footer .insta-icon:before {
   display: flex;
   flex-direction: row-reverse;
   column-gap:80px;
+  justify-content: flex-end;
 }
 .product-form-main-product-qv + ._mb-1 .social-share::after{
   content: '|';
   transform: translate(40px,0);
+  position: absolute;
+}
+.wishlist_compare_btns .btn.wishlist{
+  margin: 0;
 }
 /* quickview end */
 
