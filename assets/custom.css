@@ -704,7 +704,11 @@ body  .content_login-register-template{
     padding: 226px 0 257px 0 !important;
   }
 }
-/* customer login */
+/* customer Accounts */
+.template-customers-login .kt_top_banner,.template-customers-register .kt_top_banner{
+display: none;
+}
+/* customer Accounts */
 
 /* footer custome css  */
 .rd_call_to_action .cta-title,.rd_call_to_action .cta-desc{
