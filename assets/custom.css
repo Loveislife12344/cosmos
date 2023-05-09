@@ -686,6 +686,10 @@ footer .insta-icon:before {
 
   }
 }
+.product-page .entry-title{
+  font-size: 22px;
+  line-height: 30px;
+}
 
 /* font sizes end */
 
