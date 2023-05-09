@@ -684,12 +684,26 @@ border: 0;
 /* cart end */
 
 /* customer login */
-@media (max-width:575px) {
+@media (max-width:1200px) {
   .content_login-register-template{
     padding: 80px 0 80px 0 !important;
   }
 }
-
+@media (min-width:1201px) {
+body  .content_login-register-template{
+    padding: 80px 0 100px 0 !important;
+  }
+}
+@media (min-width:1400px) {
+body  .content_login-register-template{
+    padding: 120px 0 120px 0 !important;
+  }
+}
+@media (min-width:1600px) {
+body  .content_login-register-template{
+    padding: 226px 0 257px 0 !important;
+  }
+}
 /* customer login */
 
 /* footer custome css  */
