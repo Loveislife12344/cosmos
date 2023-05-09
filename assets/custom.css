@@ -942,6 +942,9 @@ footer .insta-icon:before {
 .wishlist_compare_btns .btn.wishlist{
   margin: 0;
 }
+.table-wishlist .in-stock{
+  color: #222;
+}
 .product-quickview-content .socials_.socials_color .social-icon:hover,.product-quickview-content .socials_.socials_color .social-icon{
 color: var(--primary-color);
 }
