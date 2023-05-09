@@ -612,13 +612,16 @@ text-align: center;
 }
 .cart-offcanvas *{
   --text: #fff;
+  color: #fff;
 }
-.cart-offcanvas .close-canvas,.cart-offcanvas .agree_checkbox a,.cart-offcanvas .agree_checkbox a:hover,.info__cart .product-name a,.cart-offcanvas .price,.footer__cart-offcanvas .table th,.cart-offcanvas .btn-link{
+.cart-offcanvas .close-canvas,.cart-offcanvas .agree_checkbox a,.cart-offcanvas .agree_checkbox a:hover,.info__cart .product-name a,.cart-offcanvas .price,.footer__cart-offcanvas .table th,.cart-offcanvas .btn-link,
+.cart-offcanvas .btn .d-icon-arrow-right::before{
   color: #fff !important;
 }
-.cart-offcanvas .check-out {
+.cart-offcanvas .check-out,.cart-offcanvas .check-out:hover {
   --color_bg: #fff;
   color: #222;
+  border: 0;
 }
 .cart-offcanvas .icon-link{
   background-color: #fff;
