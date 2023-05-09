@@ -657,7 +657,7 @@
               "section_margin_top": "",
               "section_margin_bottom": "116px",
               "section_padding": "60px 0",
-              "section_bg": "#f2f2f2",
+              "section_bg": "#680770",
               "section_bg_op": 1,
               "image": "shopify:\/\/shop_images\/Rectangle_2_217faade-4c31-4537-b4a1-080b5d2a41c3.png",
               "image_mb": "shopify:\/\/shop_images\/Rectangle_2_217faade-4c31-4537-b4a1-080b5d2a41c3.png",
@@ -797,14 +797,40 @@
               "by_handle_2": "",
               "by_handle_3": "",
               "by_handle_11": "",
-              "width_section": "container",
+              "width_section": "container-fluid wide",
               "width_content": true,
               "section_margin_top": "",
               "section_margin_bottom": "",
               "section_padding": "60px 0 60px 0",
-              "section_bg": "",
+              "section_bg": "#680770",
               "section_bg_op": 1,
               "image": "shopify:\/\/shop_images\/Rectangle_2_217faade-4c31-4537-b4a1-080b5d2a41c3.png",
+              "image_mb": "shopify:\/\/shop_images\/Rectangle_2_217faade-4c31-4537-b4a1-080b5d2a41c3.png",
+              "link_banner": ""
+            }
+          },
+          "c0ff5ef6-8cd5-48a5-939e-ff3db4872ab4": {
+            "type": "page_banner",
+            "settings": {
+              "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
+              "html": "<div class=\"page-header text-center\">\n\n<h1 class=\"page-title\">{{page.title}}<\/h1>\n<\/div>",
+              "color_white": true,
+              "breadcrumb": true,
+              "by_handle_1": "delivery",
+              "by_handle_2": "",
+              "by_handle_3": "",
+              "by_handle_11": "",
+              "width_section": "container",
+              "width_content": true,
+              "section_margin_top": "",
+              "section_margin_bottom": "",
+              "section_padding": "60px  0 60px 0",
+              "section_bg": "#680770",
+              "section_bg_op": 1,
+              "image": "shopify:\/\/shop_images\/Rectangle_2_217faade-4c31-4537-b4a1-080b5d2a41c3.png",
+              "image_mb": "shopify:\/\/shop_images\/Rectangle_2_217faade-4c31-4537-b4a1-080b5d2a41c3.png",
               "link_banner": ""
             }
           }
@@ -817,7 +843,8 @@
           "30fc4e69-4811-4997-ac38-433fa1dc1e8d",
           "fac1838b-ee0e-4b78-ad1f-fec8a2baf0f9",
           "393ba105-6ac2-4fe2-b0ad-3e4e813b5a3e",
-          "cf477074-7c76-49bf-b8d7-01c70412c2d0"
+          "cf477074-7c76-49bf-b8d7-01c70412c2d0",
+          "c0ff5ef6-8cd5-48a5-939e-ff3db4872ab4"
         ],
         "settings": {
           "title": "(Banner) Page top"
