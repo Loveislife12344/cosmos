@@ -615,7 +615,7 @@ text-align: center;
   color: #fff;
 }
 .cart-offcanvas .close-canvas,.cart-offcanvas .agree_checkbox a,.cart-offcanvas .agree_checkbox a:hover,.info__cart .product-name a,.cart-offcanvas .price,.footer__cart-offcanvas .table th,.cart-offcanvas .btn-link,
-.cart-offcanvas .btn .d-icon-arrow-right::before{
+.cart-offcanvas .btn .d-icon-arrow-right::before,.editOpts-offcanvas .product .name_option,.editOpts-offcanvas .n_selected{
   color: #fff !important;
   text-decoration: none;
 }
@@ -623,6 +623,10 @@ text-align: center;
   --color_bg: #fff;
   color: #222;
   border: 0;
+}
+.cart-offcanvas .swatch{
+  --text: #222;
+  color: #222;
 }
 .cart-offcanvas .icon-link,.cart-offcanvas .check-out:hover{
   background-color: #fff;
