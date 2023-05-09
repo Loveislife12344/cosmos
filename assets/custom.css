@@ -708,8 +708,10 @@ body  .content_login-register-template{
 .template-customers-login .kt_top_banner,.template-customers-register .kt_top_banner{
 display: none;
 }
-.address-new-toggle{
+.address-new-toggle,.address-new-toggle:hover,.edit_customer_address .btn-dark,.edit_customer_address .btn-dark:hover{
   --color_bg:var(--primary-color);
+  --lighten:var(--primary-color);
+  --border:var(--primary-color);
 }
 /* customer Accounts */
 
