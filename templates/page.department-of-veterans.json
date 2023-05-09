@@ -796,7 +796,7 @@
         "section_padding": "",
         "section_bg": "",
         "layout_mode": "normal",
-        "grid_gutter": 10,
+        "grid_gutter": 0,
         "border_radius": 0,
         "css_section": ""
       }
@@ -843,7 +843,7 @@
         "section_padding": "",
         "section_bg": "",
         "layout_mode": "normal",
-        "grid_gutter": 15,
+        "grid_gutter": 0,
         "border_radius": 0,
         "css_section": ""
       }
