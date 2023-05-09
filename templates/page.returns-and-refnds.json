@@ -104,7 +104,7 @@
         "section_padding": "",
         "section_bg": "",
         "layout_mode": "normal",
-        "grid_gutter": 10,
+        "grid_gutter": 28,
         "border_radius": 10,
         "css_section": ""
       }
