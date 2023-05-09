@@ -926,6 +926,11 @@ footer .insta-icon:before {
 .product-form-main-product-qv + ._mb-1{
   display: flex;
   flex-direction: row-reverse;
+  column-gap:80px;
+}
+.product-form-main-product-qv + ._mb-1 .social-share::after{
+  content: '|';
+  transform: translate(40px,0);
 }
 /* quickview end */
 
