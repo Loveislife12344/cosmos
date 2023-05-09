@@ -629,6 +629,10 @@ text-align: center;
 .cart-offcanvas .fa-times::before{
 content: url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Icon_awesome-trash.png?v=1683606586');
 }
+.cart-offcanvas .act-remove{
+background-color:transparent;
+border: 0;
+}
 /* cart end */
 
 /* footer custome css  */
