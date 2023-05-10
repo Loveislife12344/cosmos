@@ -1,14 +1,14 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-// multisteps form
-// email validate 
-function ValidateEmail(input) {
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (input.value.match(validRegex)) {
-      return true;
-    } else {
-      return false;
+    // multisteps form
+    // email validate 
+    function ValidateEmail(input) {
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (input.value.match(validRegex)) {
+            return true;
+        } else {
+            return false;
+        }
     }
-  }
     // next step function
     function NextStep(activeStep, nextStepToggler, backStepToggler, submitBtn) {
         var nextStep = activeStep.nextElementSibling;
@@ -24,7 +24,7 @@ function ValidateEmail(input) {
     }
 
     // Back Step funtion
-    function BackStep(activeStep,SubmitBtn,nextStepToggler,backStepToggler) {
+    function BackStep(activeStep, SubmitBtn, nextStepToggler, backStepToggler) {
         var backStep = activeStep.previousElementSibling;
         backStep.classList.add('show')
         activeStep.classList.remove('show')
@@ -34,25 +34,25 @@ function ValidateEmail(input) {
             backStepToggler.classList.add('d-none')
         }
     }
-// variables 
+    // variables 
     var stapper = document.querySelector('.login-step-toggler');
     var loginBackStep = document.querySelector('.login-beck-step-toggler');
     var Registerstapper = document.querySelector('.register-step-toggler');
     var registerBackStep = document.querySelector('.register-beck-step-toggler');
-    
-// events ------
 
-// login
+    // events ------
+
+    // login
     if (stapper != null) {
         stapper.addEventListener('click', function () {
             var loginActiveStep = document.querySelector('#signin .step.show');
             var loginSubmitBtn = document.querySelector('.login-submit');
             var inputD = loginActiveStep.querySelector('.input-group input')
             var validated = ValidateEmail(inputD)
-            if(validated){
-                inputD.classList.remove('error') 
+            if (validated) {
+                inputD.classList.remove('error')
                 NextStep(loginActiveStep, stapper, loginBackStep, loginSubmitBtn)
-            }else{
+            } else {
                 inputD.classList.add('error');
             }
         })
@@ -61,7 +61,7 @@ function ValidateEmail(input) {
         loginBackStep.addEventListener('click', function () {
             var loginActiveStep = document.querySelector('#signin .step.show')
             var loginSubmitBtn = document.querySelector('.login-submit');
-            BackStep(loginActiveStep,loginSubmitBtn,stapper,loginBackStep)
+            BackStep(loginActiveStep, loginSubmitBtn, stapper, loginBackStep)
         })
     }
 
@@ -72,20 +72,20 @@ function ValidateEmail(input) {
         Registerstapper.addEventListener('click', function () {
             var inputD = registerActiveStep.querySelector('.input-group input')
             var validated = ValidateEmail(inputD)
-            if(validated){
-                inputD.classList.remove('error') 
+            if (validated) {
+                inputD.classList.remove('error')
                 NextStep(registerActiveStep, Registerstapper, registerBackStep, ragisterSubmitBtn)
-            }else{
-                inputD.classList.add('error') 
+            } else {
+                inputD.classList.add('error')
             }
-            
+
         })
     }
     if (registerBackStep != null) {
         var ragisterSubmitBtn = document.querySelector('.register-submit');
-        registerBackStep.addEventListener('click',function(){
+        registerBackStep.addEventListener('click', function () {
             var registerActiveStep = document.querySelector('#register .step.show');
-            BackStep(registerActiveStep,ragisterSubmitBtn,Registerstapper,registerBackStep)
+            BackStep(registerActiveStep, ragisterSubmitBtn, Registerstapper, registerBackStep)
         })
     }
 });
@@ -102,31 +102,32 @@ var icons_html = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://ww
 
 // program to display a changeIcons using setInterval method
 function changeIcons() {
-  var icons = document.querySelectorAll('.v-m-icon');
-  if(icons.length > 0){
-      icons.forEach(icon =>{
-  icon.innerHTML = icons_html;
-  
-})
-    clearInterval(x)
-  }
+    var icons = document.querySelectorAll('.v-m-icon');
+    if (icons.length > 0) {
+        icons.forEach(icon => {
+            icon.innerHTML = icons_html;
+
+        })
+        clearInterval(x)
+    }
 }
 
 var x = setInterval(changeIcons, 1000);
 // icon on verticle menu added
-var iconsArray = document.querySelectorAll('.wishlist-remove i')
-var y = setInterval(function() {
-    replcaeIconUsingClass(iconsArray,'d-icon-close','fa-solid fa-trash')
+
+var y = setInterval(function () {
+    var iconsArray = document.querySelectorAll('.wishlist-remove i')
+    replcaeIconUsingClass(iconsArray, 'd-icon-close', 'fa-solid fa-trash')
     console.log(i++)
 }, 500);
 //wishlist close icon change with trash
-function replcaeIconUsingClass(iconsArray,oldIconClass,NewIconClass) {
-    if(iconsArray.length > 0){
-        iconsArray.forEach(icon =>{
-    icon.classList.add(NewIconClass)
-    icon.classList.remove(oldIconClass)
-    
-  })
-      clearInterval(y)
+function replcaeIconUsingClass(iconsArray, oldIconClass, NewIconClass) {
+    if (iconsArray.length > 0) {
+        iconsArray.forEach(icon => {
+            icon.classList.remove(oldIconClass)
+            icon.classList.add(NewIconClass)
+
+        })
+        clearInterval(y)
     }
 }
