@@ -16,6 +16,7 @@
       "type": "rd_contact_form",
       "custom_css": [
         ".grey-section h4 {margin-top: 30px;}",
+        ".col-lg-3{display:none; }",
         ".grey-section p {margin-bottom: 5px;}"
       ],
       "settings": {
