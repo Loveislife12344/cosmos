@@ -776,7 +776,7 @@ color: #fff !important;
   font-weight: normal !important;
   color: var(--primary-color)!important;
 }
-.card .card-img-overlay,.rd_our_store_1 h4.overlay-visible{
+.card .card-img-overlay .social-links,.rd_our_store_1 h4.overlay-visible{
   text-align: left;
   margin-left: 10px;
 }
