@@ -943,12 +943,14 @@ footer .insta-icon:before {
   margin: 0;
 }
 .table-wishlist .in-stock{
-  color: #222;
+  color: #222 !important;
 }
 .product-quickview-content .socials_.socials_color .social-icon:hover,.product-quickview-content .socials_.socials_color .social-icon{
 color: var(--primary-color);
 }
 /* quickview end */
+
+
 
 /* footer custome css  */
 .rd_call_to_action .cta-title,
