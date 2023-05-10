@@ -768,7 +768,7 @@ color: #fff !important;
   font-size: 22px !important;
   color: var(--primary-color);
 }
-.rd_our_store_1 .card-img-overlay h4{
+.rd_our_store_1 .overlay-visible.h4{
   font-weight: normal !important;
   color: var(--primary-color);
 }
@@ -787,7 +787,7 @@ top: 90px !important;
   .contact-section .overlay-visible span{
     font-size: 16px !important;
   } 
-   .rd_our_store_1 .card-img-overlay h4{
+   .rd_our_store_1 .overlay-visible.h4{
     font-size: 12px !important;
   }
 }
@@ -795,7 +795,7 @@ top: 90px !important;
   .contact-section .overlay-visible span{
     font-size: 22px !important;
   } 
-  .rd_our_store_1 .card-img-overlay h4{
+  .rd_our_store_1 .overlay-visible.h4{
     font-size: 18px !important;
   }
 }
