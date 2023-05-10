@@ -148,17 +148,24 @@ function doSomething(scrollPos) {
 
     }
 }
+document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
+    submenu.addEventListener('mouseover',function(){
+        lastKnownScrollPosition = window.scrollY;
+        doSomething(lastKnownScrollPosition);
+    })
 
-document.addEventListener("scroll", (event) => {
-    lastKnownScrollPosition = window.scrollY;
+})
 
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            doSomething(lastKnownScrollPosition);
-            ticking = false;
-        });
+// document.addEventListener("scroll", (event) => {
+//     lastKnownScrollPosition = window.scrollY;
 
-        ticking = true;
-    }
-});
+//     if (!ticking) {
+//         window.requestAnimationFrame(() => {
+//             doSomething(lastKnownScrollPosition);
+//             ticking = false;
+//         });
+
+//         ticking = true;
+//     }
+// });
 // menu background fixed
