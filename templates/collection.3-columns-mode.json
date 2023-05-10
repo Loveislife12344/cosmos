@@ -28,7 +28,7 @@
         "e098f3c4-1e48-4a32-8245-a926ab0de693"
       ],
       "settings": {
-        "width_section": "w-100",
+        "width_section": "container-fluid wide",
         "width_content": true,
         "show_desc": true,
         "sort_enable": true,
