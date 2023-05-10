@@ -127,7 +127,6 @@ function replcaeIconUsingClass(iconsArray, oldIconClass, NewIconClass) {
             icon.classList.remove(oldIconClass)
             icon.classList.add('fa-solid')
             icon.classList.add('fa-trash')
-
         })
         clearInterval(y)
     }
