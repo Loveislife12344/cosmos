@@ -771,6 +771,9 @@ color: #fff !important;
   padding: 0 !important;
   opacity: 1 !important;
 }
+.rd_our_store_1 .card .card-img-overlay{
+top: 90px !important;
+}
 .rd_our_store_1 .card .img__banner{
   background-color: var(--primary-color);
 }
