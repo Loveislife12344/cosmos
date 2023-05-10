@@ -711,6 +711,9 @@ footer .insta-icon:before {
 .cta-btn .btn-product-icon:hover::before{
 color: #fff !important;
 }
+.product-page .entry-price{
+  font-size: 26px;
+}
 /* font sizes end */
 
 /* icon-box-card */
