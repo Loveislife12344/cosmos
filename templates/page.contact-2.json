@@ -184,6 +184,7 @@
     },
     "16336019809d2550fe": {
       "type": "kt_HTML",
+      "disabled": true,
       "blocks": {
         "93599e27-3487-4177-a65f-3e5bc90de50a": {
           "type": "content2",
