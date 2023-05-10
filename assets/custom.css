@@ -769,7 +769,7 @@ color: #fff !important;
   gap: 100px;
   text-align: left !important;
 }
-.template-collection #shopify-section-kt_top_banner{
+#shopify-section-kt_top_banner{
   background-color: var(--primary-color);
 } 
 @media (min-width:1200px) {
