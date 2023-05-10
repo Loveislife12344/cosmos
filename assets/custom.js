@@ -142,7 +142,7 @@ function doSomething(scrollPos) {
         var newPos1;
         // asd
       setTimeout(function(){
-        document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
+        var submenu =  document.querySelector('.item-76a027e8-4a7c-4047-aaae-43ffa5950fba');
             var pos = window.getComputedStyle(submenu, ':before').getPropertyValue('top');
             var posP = pos.split('p');
             var newPos = parseInt(posP[0]) - scrollPos;
@@ -150,13 +150,11 @@ function doSomething(scrollPos) {
             newPos1 = newPos+'px';
             console.log(newPos1)
             // submenu.querySelector(':before').style.top = newPos;
-        })
+      
       },200)
 
     }
-    else{
-
-    }
+  
 
     return newPos1;
 }
