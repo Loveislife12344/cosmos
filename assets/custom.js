@@ -139,6 +139,7 @@ let ticking = false;
 function doSomething(scrollPos) {
     if (scrollPos <= 200) {
         console.log(scrollPos)
+        var newPos1;
         // asd
       setTimeout(function(){
         document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
@@ -146,6 +147,8 @@ function doSomething(scrollPos) {
             var posP = pos.split('p');
             var newPos = pos - parseInt(posP[0]);
             // console.log("newPos", newPos)
+            newPos1 = newPos+'px';
+           
             submenu.querySelector(':before').style.top = newPos;
         })
       },200)
@@ -154,11 +157,14 @@ function doSomething(scrollPos) {
     else{
 
     }
+
+    return newPos1;
 }
 document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
     submenu.addEventListener('mouseover',function(e){
         lastKnownScrollPosition = window.scrollY;
-        doSomething(lastKnownScrollPosition,e);
+       var newTopPos =  doSomething(lastKnownScrollPosition,e);
+       console.log('newTopPos',newTopPos)
     })
 
 })
