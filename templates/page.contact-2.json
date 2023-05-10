@@ -68,6 +68,13 @@
             "parent_id": 2
           }
         },
+        "7829e242-a37e-4b39-bff6-065f8ec4bd5c": {
+          "type": "child",
+          "settings": {
+            "content": "<a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY<\/a>\n<br><span>North Head office &amp; fitting centre \/ <a href=\"mailto:info@cosmac.com.au\">info@cosmac.com.au<\/a><\/span>",
+            "parent_id": 1
+          }
+        },
         "953059ef-c32d-464d-8323-63a50455cb85": {
           "type": "child",
           "settings": {
@@ -88,23 +95,16 @@
             "content": "<div class=\"\">\n                    <a href=\"\/\" class=\"btn btn-primary btn-outline\" aria-label=\"CONTACT US\">CONTACT US<\/a>\n                  <\/div>",
             "parent_id": 1
           }
-        },
-        "7829e242-a37e-4b39-bff6-065f8ec4bd5c": {
-          "type": "child",
-          "settings": {
-            "content": "<a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY<\/a>\n<br><span>North Head office &amp; fitting centre \/ <a href=\"mailto:info@cosmac.com.au\">info@cosmac.com.au<\/a><\/span>",
-            "parent_id": 1
-          }
         }
       },
       "block_order": [
         "b7d5988e-cbcb-41f1-bcc3-91b3019f3faa",
         "594fb241-b954-4ec1-97c6-37d38d8d3a03",
         "81ae1b94-2f75-42d7-8cb5-1232bfc71b17",
+        "7829e242-a37e-4b39-bff6-065f8ec4bd5c",
         "953059ef-c32d-464d-8323-63a50455cb85",
         "ee38d078-7c5c-486e-a588-15bf628e11a4",
-        "83d473d7-a58e-47bd-9ac6-6d69701e66f2",
-        "7829e242-a37e-4b39-bff6-065f8ec4bd5c"
+        "83d473d7-a58e-47bd-9ac6-6d69701e66f2"
       ],
       "settings": {
       }
