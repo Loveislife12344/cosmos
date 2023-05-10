@@ -117,7 +117,7 @@ var x = setInterval(changeIcons, 1000);
 
 var y = setInterval(function () {
     var iconsArray = document.querySelectorAll('.wishlist-remove i')
-    replcaeIconUsingClass(iconsArray, 'd-icon-close', 'fa-solid fa-trash')
+    replcaeIconUsingClass(iconsArray, 'd-icon-close')
     console.log(i++)
 }, 500);
 //wishlist close icon change with trash
@@ -125,7 +125,8 @@ function replcaeIconUsingClass(iconsArray, oldIconClass, NewIconClass) {
     if (iconsArray.length > 0) {
         iconsArray.forEach(icon => {
             icon.classList.remove(oldIconClass)
-            icon.classList.add(NewIconClass)
+            icon.classList.add('fa-solid')
+            icon.classList.add('fa-trash')
 
         })
         clearInterval(y)
