@@ -140,11 +140,13 @@ function doSomething(scrollPos) {
     if (scrollPos <= 200) {
         console.log(scrollPos)
         // asd
+      setTimeout(function(){
         document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
             var pos = window.getComputedStyle(submenu, ':before').getPropertyValue('top');
             var newPos = pos - scrollPos;
             console.log("newPos", newPos)
         })
+      },200)
 
     }
 }
