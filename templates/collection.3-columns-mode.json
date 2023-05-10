@@ -34,7 +34,7 @@
         "sort_enable": true,
         "masonry": false,
         "numbershow_enable": true,
-        "gridlist_enable": true,
+        "gridlist_enable": false,
         "list_enable": false,
         "sidebar": "left",
         "grid": "3",
