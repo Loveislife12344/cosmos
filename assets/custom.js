@@ -137,7 +137,7 @@ let lastKnownScrollPosition = 0;
 let ticking = false;
 
 function doSomething(scrollPos) {
-  if(scrollPos){
+  if(scrollPos <= 200 ){
     console.log(scrollPos)
   }
 }
