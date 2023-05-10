@@ -118,7 +118,7 @@ var x = setInterval(changeIcons, 1000);
 var y = setInterval(function () {
     var iconsArray = document.querySelectorAll('.wishlist-remove i')
     replcaeIconUsingClass(iconsArray, 'd-icon-close')
-    console.log(i++)
+  
 }, 500);
 //wishlist close icon change with trash
 function replcaeIconUsingClass(iconsArray, oldIconClass, NewIconClass) {
@@ -131,3 +131,27 @@ function replcaeIconUsingClass(iconsArray, oldIconClass, NewIconClass) {
         clearInterval(y)
     }
 }
+
+// mega menu background fixed
+let lastKnownScrollPosition = 0;
+let ticking = false;
+
+function doSomething(scrollPos) {
+  if(scrollPos){
+    console.log(scrollPos)
+  }
+}
+
+document.addEventListener("scroll", (event) => {
+    lastKnownScrollPosition = window.scrollY;
+  
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        doSomething(lastKnownScrollPosition);
+        ticking = false;
+      });
+  
+      ticking = true;
+    }
+  });
+// menu background fixed
