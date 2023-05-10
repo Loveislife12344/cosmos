@@ -763,6 +763,11 @@ color: #fff !important;
 }
 
 /* section call ton action */
+/* contact page */
+.contact-section .overlay-visible span{
+  font-size: 22px !important;
+}
+/* contact page */
 
 /* collection */
 .ndis-collection-header{
