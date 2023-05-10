@@ -145,7 +145,7 @@ function doSomething(scrollPos) {
         document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
             var pos = window.getComputedStyle(submenu, ':before').getPropertyValue('top');
             var posP = pos.split('p');
-            var newPos = pos - parseInt(posP[0]);
+            var newPos = parseInt(posP[0]) - scrollPos;
             // console.log("newPos", newPos)
             newPos1 = newPos+'px';
             console.log(newPos1)
