@@ -149,7 +149,7 @@ function doSomething(scrollPos) {
             // console.log("newPos", newPos)
             newPos1 = newPos+'px';
            
-            submenu.querySelector(':before').style.top = newPos;
+            // submenu.querySelector(':before').style.top = newPos;
         })
       },200)
 
