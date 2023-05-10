@@ -148,6 +148,7 @@ function doSomething(scrollPos) {
             var newPos = pos - parseInt(posP[0]);
             // console.log("newPos", newPos)
             newPos1 = newPos+'px';
+            console.log(newPos1)
             // submenu.querySelector(':before').style.top = newPos;
         })
       },200)
