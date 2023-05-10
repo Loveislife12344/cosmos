@@ -706,6 +706,7 @@ footer .insta-icon:before {
 }
 .product-card .product-price ins{
   font-size: 16px;
+  color: #3C3C3C !important;
 }
 .cta-btn .btn-product-icon:hover::before{
 color: #fff !important;
