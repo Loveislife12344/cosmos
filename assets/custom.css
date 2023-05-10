@@ -697,6 +697,19 @@ footer .insta-icon:before {
 .table-wishlist tr th{
   font-size: 18px;
 }
+.custom-control-label{
+  font-size: 16px;
+  line-height: 21px;
+}
+.product-card .grid-item .product-name a{
+  font-size: 22px;
+}
+.product-card .product-price ins{
+  font-size: 16px;
+}
+.cta-btn .btn-product-icon:hover::before{
+color: #fff !important;
+}
 /* font sizes end */
 
 /* icon-box-card */
