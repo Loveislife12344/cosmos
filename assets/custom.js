@@ -148,7 +148,6 @@ function doSomething(scrollPos) {
             var newPos = pos - parseInt(posP[0]);
             // console.log("newPos", newPos)
             newPos1 = newPos+'px';
-           
             // submenu.querySelector(':before').style.top = newPos;
         })
       },200)
@@ -164,7 +163,10 @@ document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
     submenu.addEventListener('mouseover',function(e){
         lastKnownScrollPosition = window.scrollY;
        var newTopPos =  doSomething(lastKnownScrollPosition,e);
-       console.log('newTopPos',newTopPos)
+       setTimeout(() => {
+        
+           console.log('newTopPos',newTopPos)
+       }, 300);
     })
 
 })
