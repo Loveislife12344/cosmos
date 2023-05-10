@@ -149,7 +149,7 @@ function doSomething(scrollPos) {
             // console.log("newPos", newPos)
             newPos1 = newPos+'px';
             console.log(newPos1)
-            // submenu.querySelector(':before').style.top = newPos;
+            submenu.querySelector(':before').style.top = newPos1;
       
       },200)
 
@@ -162,10 +162,7 @@ document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
     submenu.addEventListener('mouseover',function(e){
         lastKnownScrollPosition = window.scrollY;
        var newTopPos =  doSomething(lastKnownScrollPosition,e);
-       setTimeout(() => {
-        
-           console.log('newTopPos',newTopPos)
-       }, 300);
+      
     })
 
 })
