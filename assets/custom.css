@@ -767,6 +767,9 @@ color: #fff !important;
 .contact-section .overlay-visible span{
   font-size: 22px !important;
 }
+.rd_our_store_1 .card-img-overlay h4{
+  font-weight: normal !important;
+}
 .rd_our_store_1 .card:hover .overlay-visible,.rd_our_store_1 .card .card-img-overlay{
   padding: 0 !important;
   opacity: 1 !important;
@@ -776,6 +779,22 @@ top: 90px !important;
 }
 .rd_our_store_1 .card .img__banner{
   background-color: var(--primary-color);
+}
+@media (min-width:768px) {
+  .contact-section .overlay-visible span{
+    font-size: 16px !important;
+  } 
+   .rd_our_store_1 .card-img-overlay h4{
+    font-size: 12px !important;
+  }
+}
+@media (min-width:1200px) {
+  .contact-section .overlay-visible span{
+    font-size: 22px !important;
+  } 
+  .rd_our_store_1 .card-img-overlay h4{
+    font-size: 18px !important;
+  }
 }
 /* contact page */
 
