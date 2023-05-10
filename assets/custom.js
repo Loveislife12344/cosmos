@@ -118,7 +118,7 @@ var x = setInterval(changeIcons, 1000);
 var y = setInterval(function () {
     var iconsArray = document.querySelectorAll('.wishlist-remove i')
     replcaeIconUsingClass(iconsArray, 'd-icon-close')
-  
+
 }, 500);
 //wishlist close icon change with trash
 function replcaeIconUsingClass(iconsArray, oldIconClass, NewIconClass) {
@@ -137,32 +137,28 @@ let lastKnownScrollPosition = 0;
 let ticking = false;
 
 function doSomething(scrollPos) {
-  if(scrollPos <= 200 ){
-    console.log(scrollPos)
-    var color = window.getComputedStyle(
-        document.querySelector('.element'), ':before'
-    ).getPropertyValue('color')
+    if (scrollPos <= 200) {
+        console.log(scrollPos)
+        // asd
+        document.querySelectorAll('.mn-lv1.mn-has-child.show-submn').forEach(submenu => {
+            var pos = window.getComputedStyle(submenu, ':before').getPropertyValue('position');
+            var newPos = pos - scrollPos;
+            console.log("newPos", newPos)
+        })
 
-    // asd
-    document.querySelectorAll('.mn-lv1.mn-has-child.show-submn').forEach( submenu =>{
-var pos =        window.getComputedStyle( submenu, ':before').getPropertyValue('position');
-var newPos = pos -scrollPos;
-console.log("newPos",newPos)
-    } )
-    
-  }
+    }
 }
 
 document.addEventListener("scroll", (event) => {
     lastKnownScrollPosition = window.scrollY;
-  
+
     if (!ticking) {
-      window.requestAnimationFrame(() => {
-        doSomething(lastKnownScrollPosition);
-        ticking = false;
-      });
-  
-      ticking = true;
+        window.requestAnimationFrame(() => {
+            doSomething(lastKnownScrollPosition);
+            ticking = false;
+        });
+
+        ticking = true;
     }
-  });
+});
 // menu background fixed
