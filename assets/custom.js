@@ -143,17 +143,22 @@ function doSomething(scrollPos) {
       setTimeout(function(){
         document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
             var pos = window.getComputedStyle(submenu, ':before').getPropertyValue('top');
-            var newPos = pos - scrollPos;
-            console.log("newPos", newPos)
+            var posP = pos.split('p');
+            var newPos = pos - parseInt(posP[0]);
+            // console.log("newPos", newPos)
+            submenu.querySelector(':before').style.top = newPos;
         })
       },200)
 
     }
+    else{
+
+    }
 }
 document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
-    submenu.addEventListener('mouseover',function(){
+    submenu.addEventListener('mouseover',function(e){
         lastKnownScrollPosition = window.scrollY;
-        doSomething(lastKnownScrollPosition);
+        doSomething(lastKnownScrollPosition,e);
     })
 
 })
