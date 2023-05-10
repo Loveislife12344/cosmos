@@ -116,7 +116,7 @@ var x = setInterval(changeIcons, 1000);
 // icon on verticle menu added
 var iconsArray = document.querySelectorAll('.wishlist-remove i')
 var y = setInterval(function() {
-    replcaeIconUsingClass('d-icon-close','fa-solid fa-trash')
+    replcaeIconUsingClass(iconsArray,'d-icon-close','fa-solid fa-trash')
 }, 500);
 //wishlist close icon change with trash
 function replcaeIconUsingClass(iconsArray,oldIconClass,NewIconClass) {
