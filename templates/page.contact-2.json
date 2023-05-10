@@ -42,6 +42,79 @@
         "from_content": "<p>We'd love to hear from you. Our team is here to help.<\/p>"
       }
     },
+    "1633571935d8eb2381": {
+      "type": "rd_our_store_1",
+      "blocks": {
+        "48c8aa3c-d929-4ecd-a3c2-1a0db6649eb6": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "title_style": "center",
+            "title": "<span style=\"font-size: 30px\">Our locations<\/span>",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        },
+        "3284050c-14f5-4807-b39f-70a4afc639ff": {
+          "type": "item",
+          "settings": {
+            "name": "For Cosmac enquires\n<span style=\"font-size:30px;text-transform:capitalize;font-weight:normal\">info@cosmac.com.au<\/span>",
+            "twitter_link": "#",
+            "facebook_link": "#",
+            "instagram_link": "#",
+            "info": ""
+          }
+        },
+        "881aeed9-1da1-4d42-9e63-0286adb9d783": {
+          "type": "item",
+          "settings": {
+            "name": "For Cosmac enquires\n<span style=\"font-size:30px;text-transform:capitalize;font-weight:normal\">info@cosmac.com.au<\/span>",
+            "twitter_link": "shopify:\/\/products\/copy-of-demo-1",
+            "facebook_link": "#",
+            "instagram_link": "#",
+            "info": "<p>St. Vincents Private Hospital Pharmacy<br\/>406 Victoria St, Darlinghurst NSW 2010<\/p><p><a href=\"mailto:Darlinghurst.Cosmac@hpspharmacies.com.au\" title=\"mailto:Darlinghurst.Cosmac@hpspharmacies.com.au\">Darlinghurst.Cosmac@hpspharmacies.com.au<\/a><\/p><p><a href=\"tel:(02) 7903 5722\" title=\"tel:(02) 7903 5722\">Phone: (02) 7903 5722<\/a><\/p>"
+          }
+        },
+        "ed966c12-6316-426f-9d03-8407985a93bb": {
+          "type": "item",
+          "settings": {
+            "name": "SYDNEY \n<span style=\"font-size:14px;text-transform:capitalize;font-weight:normal;margin-bottom:80px\">West Fitting Centre<\/span>",
+            "twitter_link": "#",
+            "facebook_link": "#",
+            "instagram_link": "#",
+            "info": "<p>Priceline Pharmacy North Parramatta<br\/>460 Church St, Parramatta NSW 2150<br\/><\/p><p><a href=\"mailto:parramatta@cosmac.com.au\" title=\"mailto:parramatta@cosmac.com.au\">parramatta@cosmac.com.au<\/a><\/p><p><a href=\"tel:#\">Phone: (02) 93602966<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "48c8aa3c-d929-4ecd-a3c2-1a0db6649eb6",
+        "3284050c-14f5-4807-b39f-70a4afc639ff",
+        "881aeed9-1da1-4d42-9e63-0286adb9d783",
+        "ed966c12-6316-426f-9d03-8407985a93bb"
+      ],
+      "settings": {
+        "title": "Our store",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container-fluid wide",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "20px",
+        "section_padding": "",
+        "section_bg": "",
+        "autoplay": false,
+        "use_navigation": false,
+        "nav_style": "-default",
+        "nav_mode": "default",
+        "nav_position": "nav-default",
+        "use_dots": true,
+        "dots_mode": "default",
+        "dots_position": "outside",
+        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1.3,\n    \"spaceBetween\": 20\n  },\n  \"375\": {\n    \"slidesPerView\": 1.3,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  }\n}"
+      }
+    },
     "f91f84c4-218a-40ac-82bd-5862f88f8d0f": {
       "type": "store-locator",
       "blocks": {
@@ -107,78 +180,6 @@
         "83d473d7-a58e-47bd-9ac6-6d69701e66f2"
       ],
       "settings": {
-      }
-    },
-    "1633571935d8eb2381": {
-      "type": "rd_our_store_1",
-      "blocks": {
-        "48c8aa3c-d929-4ecd-a3c2-1a0db6649eb6": {
-          "type": "title",
-          "settings": {
-            "title_style": "center",
-            "title": "<span style=\"font-size: 30px\">Our locations<\/span>",
-            "stitle": "",
-            "link_to": "",
-            "name_link": "",
-            "margin_btitle": 30
-          }
-        },
-        "3284050c-14f5-4807-b39f-70a4afc639ff": {
-          "type": "item",
-          "settings": {
-            "name": "SYDNEY \n<span style=\"font-size:14px;text-transform:capitalize;font-weight:normal;margin-bottom:80px\">North Head office & Fitting Centre <\/span>",
-            "twitter_link": "#",
-            "facebook_link": "#",
-            "instagram_link": "#",
-            "info": "<p>Cosmac Healthcare Head Office (ARTARMON)<br\/>21 \/ 76 Reserve Rd, Artarmon<br\/><a href=\"mailto:info@cosmac.com.au\" title=\"mailto:info@cosmac.com.au\">info@cosmac.com.au<\/a><\/p><p><a href=\"tel:#02 9033 7400\" title=\"tel:#02 9033 7400\">Phone: (02) 9033 7400<\/a><\/p>"
-          }
-        },
-        "881aeed9-1da1-4d42-9e63-0286adb9d783": {
-          "type": "item",
-          "settings": {
-            "name": "SYDNEY \n<span style=\"font-size:14px;text-transform:capitalize;font-weight:normal;margin-bottom:100px\">East Fitting Centre<\/span>",
-            "twitter_link": "#",
-            "facebook_link": "#",
-            "instagram_link": "#",
-            "info": "<p>St. Vincents Private Hospital Pharmacy<br\/>406 Victoria St, Darlinghurst NSW 2010<br\/><\/p><p><a href=\"mailto:Darlinghurst.Cosmac@hpspharmacies.com.au\" title=\"mailto:Darlinghurst.Cosmac@hpspharmacies.com.au\">Darlinghurst.Cosmac@hpspharmacies.com.au<\/a><\/p><p><a href=\"tel:(02) 7903 5722\" title=\"tel:(02) 7903 5722\">Phone: (02) 7903 5722<\/a><\/p>"
-          }
-        },
-        "ed966c12-6316-426f-9d03-8407985a93bb": {
-          "type": "item",
-          "settings": {
-            "name": "SYDNEY \n<span style=\"font-size:14px;text-transform:capitalize;font-weight:normal;margin-bottom:80px\">West Fitting Centre<\/span>",
-            "twitter_link": "#",
-            "facebook_link": "#",
-            "instagram_link": "#",
-            "info": "<p>Priceline Pharmacy North Parramatta<br\/>460 Church St, Parramatta NSW 2150<br\/><\/p><p><a href=\"mailto:parramatta@cosmac.com.au\" title=\"mailto:parramatta@cosmac.com.au\">parramatta@cosmac.com.au<\/a><\/p><p><a href=\"tel:#\">Phone: (02) 93602966<\/a><\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "48c8aa3c-d929-4ecd-a3c2-1a0db6649eb6",
-        "3284050c-14f5-4807-b39f-70a4afc639ff",
-        "881aeed9-1da1-4d42-9e63-0286adb9d783",
-        "ed966c12-6316-426f-9d03-8407985a93bb"
-      ],
-      "settings": {
-        "title": "Our store",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "container-fluid wide",
-        "width_content": true,
-        "section_margin_top": "",
-        "section_margin_bottom": "20px",
-        "section_padding": "",
-        "section_bg": "",
-        "autoplay": false,
-        "use_navigation": false,
-        "nav_style": "-default",
-        "nav_mode": "default",
-        "nav_position": "nav-default",
-        "use_dots": true,
-        "dots_mode": "default",
-        "dots_position": "outside",
-        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1.3,\n    \"spaceBetween\": 20\n  },\n  \"375\": {\n    \"slidesPerView\": 1.3,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  }\n}"
       }
     },
     "16336019809d2550fe": {
@@ -288,8 +289,8 @@
   "order": [
     "content",
     "1633509379ea861af9",
-    "f91f84c4-218a-40ac-82bd-5862f88f8d0f",
     "1633571935d8eb2381",
+    "f91f84c4-218a-40ac-82bd-5862f88f8d0f",
     "16336019809d2550fe",
     "798344cf-6f9e-4aac-88a1-a9cae916f69f",
     "2ee5a51f-f1e9-4c56-8f02-c3045908fe37",
