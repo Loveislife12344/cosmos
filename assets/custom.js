@@ -141,7 +141,7 @@ function doSomething(scrollPos) {
         console.log(scrollPos)
         // asd
         document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
-            var pos = window.getComputedStyle(submenu, ':before').getPropertyValue('position');
+            var pos = window.getComputedStyle(submenu, ':before').getPropertyValue('top');
             var newPos = pos - scrollPos;
             console.log("newPos", newPos)
         })
