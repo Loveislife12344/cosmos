@@ -94,6 +94,9 @@
         "881aeed9-1da1-4d42-9e63-0286adb9d783",
         "ed966c12-6316-426f-9d03-8407985a93bb"
       ],
+      "custom_css": [
+        ".img__banner{padding-bottom:65% !important;}"
+      ],
       "settings": {
         "title": "Our store",
         "off_mobile": false,
