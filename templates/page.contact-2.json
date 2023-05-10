@@ -111,6 +111,7 @@
     },
     "1633571935d8eb2381": {
       "type": "rd_our_store_1",
+      "disabled": true,
       "blocks": {
         "48c8aa3c-d929-4ecd-a3c2-1a0db6649eb6": {
           "type": "title",
