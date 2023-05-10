@@ -783,8 +783,7 @@ color: #fff !important;
 top: 90px !important;
 }
 .rd_our_store_1 .card .img__banner,.rd_our_store_1 .card:hover .overlay-visible{
-  --primary-color:#FBF5FA;
-  background-color: var(--primary-color) !important;
+  background-color: #FBF5FA !important;
 }
 @media (min-width:768px) {
   .contact-section .overlay-visible span{
