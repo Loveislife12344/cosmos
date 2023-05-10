@@ -139,6 +139,17 @@ let ticking = false;
 function doSomething(scrollPos) {
   if(scrollPos <= 200 ){
     console.log(scrollPos)
+    var color = window.getComputedStyle(
+        document.querySelector('.element'), ':before'
+    ).getPropertyValue('color')
+
+    // asd
+    document.querySelectorAll('.mn-lv1.mn-has-child.show-submn').forEach( submenu =>{
+var pos =        window.getComputedStyle( submenu, ':before').getPropertyValue('position');
+var newPos = pos -scrollPos;
+console.log("newPos",newPos)
+    } )
+    
   }
 }
 
