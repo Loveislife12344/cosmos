@@ -752,7 +752,7 @@ footer .insta-icon:before {
   gap: 100px;
   text-align: left !important;
 }
-.template-collection .shopify-section-kt_top_banner{
+.template-collection #shopify-section-kt_top_banner{
   background-color: var(--primary-color);
 }
 /* collection end */
