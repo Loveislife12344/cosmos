@@ -1,0 +1,227 @@
+{
+  "sections": {
+    "content": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "width_section": "container",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": ""
+      }
+    },
+    "1633509379ea861af9": {
+      "type": "rd_contact_form",
+      "custom_css": [
+        ".grey-section h4 {margin-top: 30px;}",
+        ".grey-section p {margin-bottom: 5px;}"
+      ],
+      "settings": {
+        "title": "Section Contact form",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container-fluid wide",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "60px",
+        "section_padding": "",
+        "section_bg": "",
+        "address": "Headquarter",
+        "address_content": "<p>SYDNEY \/ North Head office & Fitting Centre<br\/>Cosmac Healthcare Head Office (ARTARMON)<br\/>21 \/ 76 Reserve Rd, Artarmon<br\/><\/p>",
+        "phone": "Phone Number",
+        "phone_content": "<p><a href=\"tel:#(02) 9033 7400 \" title=\"tel:#(02) 9033 7400 \">(02) 9033 7400 <\/a><\/p><p><a href=\"tel:(02) 7903 5722 \" title=\"tel:(02) 7903 5722 \">(02) 7903 5722 <\/a><br\/><a href=\"tel:(02) 9630 2966 \" title=\"tel:(02) 9630 2966 \">(02) 9630 2966 <\/a><\/p>",
+        "support": "Support",
+        "support_content": "<p><a href=\"mailto:#info@cosmac.com.au\" title=\"mailto:#info@cosmac.com.au\">info@cosmac.com.au<\/a><br\/><a href=\"mailto:Darlinghurst.Cosmac@hpspharmacies.com.au\" title=\"mailto:Darlinghurst.Cosmac@hpspharmacies.com.au\">Darlinghurst.Cosmac@hpspharmacies.com.au<\/a><\/p><p><a href=\"mailto:#parramatta@cosmac.com.au\" title=\"mailto:#parramatta@cosmac.com.au\">parramatta@cosmac.com.au<\/a> <\/p>",
+        "from_title": "Let’s Connect",
+        "from_content": "<p>We'd love to hear from you. Our team is here to help.<\/p>"
+      }
+    },
+    "1633571935d8eb2381": {
+      "type": "rd_our_store_1",
+      "blocks": {
+        "48c8aa3c-d929-4ecd-a3c2-1a0db6649eb6": {
+          "type": "title",
+          "settings": {
+            "title_style": "center",
+            "title": "<span style=\"font-size: 30px\">Our locations<\/span>",
+            "stitle": "",
+            "link_to": "",
+            "name_link": "",
+            "margin_btitle": 30
+          }
+        },
+        "3284050c-14f5-4807-b39f-70a4afc639ff": {
+          "type": "item",
+          "settings": {
+            "name": "SYDNEY \n<span style=\"font-size:14px;text-transform:capitalize;font-weight:normal;margin-bottom:80px\">North Head office & Fitting Centre <\/span>",
+            "twitter_link": "#",
+            "facebook_link": "#",
+            "instagram_link": "#",
+            "info": "<p>Cosmac Healthcare Head Office (ARTARMON)<br\/>21 \/ 76 Reserve Rd, Artarmon<br\/><a href=\"mailto:info@cosmac.com.au\" title=\"mailto:info@cosmac.com.au\">info@cosmac.com.au<\/a><\/p><p><a href=\"tel:#02 9033 7400\" title=\"tel:#02 9033 7400\">Phone: (02) 9033 7400<\/a><\/p>"
+          }
+        },
+        "881aeed9-1da1-4d42-9e63-0286adb9d783": {
+          "type": "item",
+          "settings": {
+            "name": "SYDNEY \n<span style=\"font-size:14px;text-transform:capitalize;font-weight:normal;margin-bottom:100px\">East Fitting Centre<\/span>",
+            "twitter_link": "#",
+            "facebook_link": "#",
+            "instagram_link": "#",
+            "info": "<p>St. Vincents Private Hospital Pharmacy<br\/>406 Victoria St, Darlinghurst NSW 2010<br\/><\/p><p><a href=\"mailto:Darlinghurst.Cosmac@hpspharmacies.com.au\" title=\"mailto:Darlinghurst.Cosmac@hpspharmacies.com.au\">Darlinghurst.Cosmac@hpspharmacies.com.au<\/a><\/p><p><a href=\"tel:(02) 7903 5722\" title=\"tel:(02) 7903 5722\">Phone: (02) 7903 5722<\/a><\/p>"
+          }
+        },
+        "ed966c12-6316-426f-9d03-8407985a93bb": {
+          "type": "item",
+          "settings": {
+            "name": "SYDNEY \n<span style=\"font-size:14px;text-transform:capitalize;font-weight:normal;margin-bottom:80px\">West Fitting Centre<\/span>",
+            "twitter_link": "#",
+            "facebook_link": "#",
+            "instagram_link": "#",
+            "info": "<p>Priceline Pharmacy North Parramatta<br\/>460 Church St, Parramatta NSW 2150<br\/><\/p><p><a href=\"mailto:parramatta@cosmac.com.au\" title=\"mailto:parramatta@cosmac.com.au\">parramatta@cosmac.com.au<\/a><\/p><p><a href=\"tel:#\">Phone: (02) 93602966<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "48c8aa3c-d929-4ecd-a3c2-1a0db6649eb6",
+        "3284050c-14f5-4807-b39f-70a4afc639ff",
+        "881aeed9-1da1-4d42-9e63-0286adb9d783",
+        "ed966c12-6316-426f-9d03-8407985a93bb"
+      ],
+      "settings": {
+        "title": "Our store",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container-fluid wide",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "20px",
+        "section_padding": "",
+        "section_bg": "",
+        "autoplay": false,
+        "use_navigation": false,
+        "nav_style": "-default",
+        "nav_mode": "default",
+        "nav_position": "nav-default",
+        "use_dots": true,
+        "dots_mode": "default",
+        "dots_position": "outside",
+        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1.3,\n    \"spaceBetween\": 20\n  },\n  \"375\": {\n    \"slidesPerView\": 1.3,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1500\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  }\n}"
+      }
+    },
+    "16336019809d2550fe": {
+      "type": "kt_HTML",
+      "blocks": {
+        "93599e27-3487-4177-a65f-3e5bc90de50a": {
+          "type": "content2",
+          "settings": {
+            "text": "<div class=\"ratio\" style=\"    --bs-aspect-ratio: 390px;\"><iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d2483.544156289421!2d-0.12181368367820722!3d51.50323211882805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c71a3d651f%3A0x72367f97712bc0ee!2sLondon%20Eye!5e0!3m2!1sen!2s!4v1647141060616!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"><\/iframe>\n<\/div>"
+          }
+        }
+      },
+      "block_order": [
+        "93599e27-3487-4177-a65f-3e5bc90de50a"
+      ],
+      "settings": {
+        "title": "Section Customize",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": false,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "title_section": "",
+        "stitle_section": "",
+        "reverse": false,
+        "title_align": "",
+        "link_to": "",
+        "name_link": "",
+        "margin_btitle": 30,
+        "border_top": true,
+        "border_bottom": false,
+        "border_color": "#ebebeb"
+      }
+    },
+    "798344cf-6f9e-4aac-88a1-a9cae916f69f": {
+      "type": "kt_banner_flexible",
+      "disabled": true,
+      "settings": {
+        "title": "Banner Flexible",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "layout_mode": "normal",
+        "grid_gutter": 10,
+        "border_radius": 10,
+        "css_section": ""
+      }
+    },
+    "2ee5a51f-f1e9-4c56-8f02-c3045908fe37": {
+      "type": "kt_sc_faqs_page",
+      "disabled": true,
+      "settings": {
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "3rem 0 6rem",
+        "section_bg": ""
+      }
+    },
+    "94b0d9cb-fa51-4177-8117-e25569e9a6b2": {
+      "type": "kt_sc_faqs_page",
+      "disabled": true,
+      "settings": {
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "3rem 0 6rem",
+        "section_bg": ""
+      }
+    },
+    "af50e6ac-119d-4baa-b95a-6cf4dc1b67e9": {
+      "type": "kt_sc_faqs_page",
+      "disabled": true,
+      "settings": {
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "3rem 0 6rem",
+        "section_bg": ""
+      }
+    },
+    "f70ff727-4745-406f-9a2b-ae246645a3aa": {
+      "type": "kt_sc_faqs_page",
+      "disabled": true,
+      "settings": {
+        "width_section": "w-100",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "3rem 0 6rem",
+        "section_bg": ""
+      }
+    }
+  },
+  "order": [
+    "content",
+    "1633509379ea861af9",
+    "1633571935d8eb2381",
+    "16336019809d2550fe",
+    "798344cf-6f9e-4aac-88a1-a9cae916f69f",
+    "2ee5a51f-f1e9-4c56-8f02-c3045908fe37",
+    "94b0d9cb-fa51-4177-8117-e25569e9a6b2",
+    "af50e6ac-119d-4baa-b95a-6cf4dc1b67e9",
+    "f70ff727-4745-406f-9a2b-ae246645a3aa"
+  ]
+}
