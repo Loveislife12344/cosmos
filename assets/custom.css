@@ -767,8 +767,7 @@ color: #fff !important;
 .contact-section .overlay-visible span{
   font-size: 22px !important;
   color: var(--primary-color);
-  text-align: left;
-  margin-left: 10px;
+ 
 }
 .rd_our_store_1 .social-link::before{
   color: var(--primary-color);
@@ -777,11 +776,14 @@ color: #fff !important;
   font-weight: normal !important;
   color: var(--primary-color)!important;
 }
+.card .card-img-overlay,.rd_our_store_1 h4.overlay-visible{
+  text-align: left;
+  margin-left: 10px;
+}
 .rd_our_store_1 .card:hover .overlay-visible,.rd_our_store_1 .card .card-img-overlay{
   padding: 0 !important;
   opacity: 1 !important;
-  text-align: left;
-  margin-left: 10px;
+
 }
 .rd_our_store_1 .card .card-img-overlay{
 top: 90px !important;
