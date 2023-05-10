@@ -95,14 +95,14 @@
         "ed966c12-6316-426f-9d03-8407985a93bb"
       ],
       "custom_css": [
-        ".img__banner{padding-bottom:65% !important;}"
+        ".img__banner {padding-bottom: 65% !important;}"
       ],
       "settings": {
         "title": "Our store",
         "off_mobile": false,
         "off_desktop": false,
         "width_section": "container-fluid wide",
-        "width_content": true,
+        "width_content": false,
         "section_margin_top": "",
         "section_margin_bottom": "20px",
         "section_padding": "",
