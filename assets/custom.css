@@ -747,6 +747,13 @@ footer .insta-icon:before {
 
 /* section call ton action */
 
+/* collection */
+.ndis-collection-header{
+  gap: 100px;
+  text-align: left !important;
+}
+/* collection end */
+
 /* page vatern */
 
 .content_template--18311167148335__6c95f6ee-4048-4d6e-86cd-c82001950c6b .titlex {
