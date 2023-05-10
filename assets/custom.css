@@ -767,8 +767,9 @@ color: #fff !important;
 .contact-section .overlay-visible span{
   font-size: 22px !important;
 }
-.rd_our_store_1 .card:hover .overlay-visible{
+.rd_our_store_1 .card:hover .overlay-visible,.rd_our_store_1 .card:hover .card-img-overlay{
   padding: 0 !important;
+  opacity: 1 !important;
 }
 .rd_our_store_1 .card .img__banner{
   background-color: var(--primary-color);
