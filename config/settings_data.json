@@ -869,7 +869,7 @@
               "off_desktop": false,
               "html": "<div class=\"page-header text-center d-flex ndis-collection-header\">\n<h1 class=\"page-title\">{{collection.title}}<\/h1><div style=\"color:#fff\">We are proud to be associated with companies recognised internationally as the leaders in clinical nutrition. We are therefore able to supply the most complete range of clinical nutrition supplements and texture modified products available… all at extremely reasonable prices. Our range includes Dysphagia products, Nutritionally complete (FMR) products, Specialised Medical Nutrition, Tube Feeds, Enteral giving sets. There is no minimum order on most products; we are happy to to split cartons and mix flavours (exluding carton quantity and special order in products).<\/div>\n<\/div>",
               "color_white": true,
-              "breadcrumb": true,
+              "breadcrumb": false,
               "by_handle_1": "ndis",
               "by_handle_2": "",
               "by_handle_3": "",
