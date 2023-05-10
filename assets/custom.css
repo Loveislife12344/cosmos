@@ -690,8 +690,9 @@ footer .insta-icon:before {
   font-size: 22px;
   line-height: 30px;
 }
-.wishlist-page-item .product-title,.wishlist-page-item .product-price,.wishlist-page-item .in-stock{
+.wishlist-page-item .product-title a,.wishlist-page-item .product-price,.wishlist-page-item .in-stock{
   font-size: 22px;
+  color: #3C3C3C !important;
 }
 .table-wishlist tr th{
   font-size: 18px;
