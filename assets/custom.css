@@ -88,7 +88,7 @@ input.error {
 }
 
 .mn-lv1.mn-has-child.show-submn:before {
-  --posTop:191px;
+ 
   content: "";
   position: fixed;
   width: 100%;
