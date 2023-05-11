@@ -1,6 +1,7 @@
 /* variables */
 :root {
   --primary-color: #66066F;
+  --posTop:191px;
 }
 
 /* variables */
@@ -93,7 +94,7 @@ input.error {
   position: fixed;
   width: 100%;
   left: 20px;
-  top: var(--posTop,191px);
+  top: var(--posTop);
   max-width: 1000px;
   height: 100vh;
   max-height: 350px;
