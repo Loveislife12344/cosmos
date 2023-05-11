@@ -93,7 +93,7 @@ input.error {
   position: fixed;
   width: 100%;
   left: 20px;
-  top: var(--posTop);
+  top: var(--posTop,191px);
   max-width: 1000px;
   height: 100vh;
   max-height: 350px;
