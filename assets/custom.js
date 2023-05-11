@@ -135,6 +135,7 @@ function replcaeIconUsingClass(iconsArray, oldIconClass, NewIconClass) {
 // mega menu background fixed
 let lastKnownScrollPosition = 0;
 let ticking = false;
+var initialValue = '191px'
 
 function doSomething(scrollPos) {
     if (scrollPos <= 200) {
@@ -154,6 +155,9 @@ function doSomething(scrollPos) {
       
       },200)
 
+    }
+    else{
+        newPos1 = initialValue;
     }
   
 
