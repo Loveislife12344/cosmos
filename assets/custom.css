@@ -417,11 +417,7 @@ footer .insta-icon:before {
 
 
 /* about us */
-@media (min-width:1025px) {
-  .--about-us .content_template--18286563754287__008f7694-152e-452f-b17a-c18f38112722 .item_2 .img__banner{
-    margin-bottom: 42px;
-  }
-}
+
 .--about-us .kt_banner_flexible .titlex{
   text-transform: capitalize;
 }
@@ -429,6 +425,21 @@ footer .insta-icon:before {
   .content_template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_2 .banner-wrap{
     margin-left: 82px;
   }
+  .--about-us .content_template--18286563754287__008f7694-152e-452f-b17a-c18f38112722 .item_2 .img__banner{
+    margin-bottom: 42px;
+  }
+  }
+  @media (min-width:1200px) {
+    #shopify-section-template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38
+     .content_template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38:before{
+      margin-bottom: 50px;
+     }
+  }
+  @media (min-width:1440px) {
+    #shopify-section-template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38
+    .content_template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38:before{
+     margin-bottom: 90px;
+    }
   }
 /* about us */
 
