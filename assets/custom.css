@@ -142,7 +142,7 @@ input.error {
 
 /* header custome css end */
 
-/* default btn secendory  override  */
+/* default btn   override  */
 .btn-secondary.btn-outline {
   border-color: #fff;
   color: #fff;
@@ -159,7 +159,9 @@ input.error {
   background-color: #fff;
   color: #700073;
 }
-
+.btn{
+  font-size: 15px;
+}
 .btn-secondary:active,
 .btn-secondary:focus,
 .btn-secondary:hover {
