@@ -1138,7 +1138,7 @@ footer{
   line-height: 21px;
 }
 .content_footer{
-  padding: 0 !important;
+  padding: 0!important;
 }
 footer a:hover{
   color: #fff;
