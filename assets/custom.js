@@ -133,6 +133,7 @@ function replcaeIconUsingClass(iconsArray, oldIconClass, NewIconClass) {
 }
 
 // mega menu background fixed
+var submenu = document.querySelector('.item-76a027e8-4a7c-4047-aaae-43ffa5950fba');
 let lastKnownScrollPosition = 0;
 let ticking = false;
 var initialValue = '191px'
@@ -142,36 +143,30 @@ function doSomething(scrollPos) {
         console.log(scrollPos)
         var newPos1;
         // asd
-      setTimeout(function(){
-        var submenu =  document.querySelector('.item-76a027e8-4a7c-4047-aaae-43ffa5950fba');
+        setTimeout(function () {
             var pos = window.getComputedStyle(submenu, ':before').getPropertyValue('top');
             var posP = pos.split('p');
             var newPos = parseInt(posP[0]) - scrollPos;
             // console.log("newPos", newPos)
-            newPos1 = newPos+'px';
+            newPos1 = newPos + 'px';
             console.log(newPos1)
             submenu.style.setProperty("--posTop", newPos1);
             // document.querySelector('.item-76a027e8-4a7c-4047-aaae-43ffa5950fba:before').style.top = newPos1;
-      
-      },200)
+
+        }, 200)
 
     }
-    else{
+    else {
         newPos1 = initialValue;
     }
-  
-
     return newPos1;
 }
-document.querySelectorAll('.mn-lv1.mn-has-child').forEach(submenu => {
-    submenu.addEventListener('mouseover',function(e){
-        lastKnownScrollPosition = window.scrollY;
-       var newTopPos =  doSomething(lastKnownScrollPosition,e);
-      
-    })
+
+submenu.addEventListener('mouseover', function (e) {
+    lastKnownScrollPosition = window.scrollY;
+    var newTopPos = doSomething(lastKnownScrollPosition, e);
 
 })
-
 // document.addEventListener("scroll", (event) => {
 //     lastKnownScrollPosition = window.scrollY;
 
