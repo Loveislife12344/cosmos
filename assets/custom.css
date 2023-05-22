@@ -415,6 +415,13 @@ footer .insta-icon:before {
 
 /* social icon end*/
 
+
+/* about us */
+.--about-us .titlex{
+  text-transform: capitalize;
+}
+/* about us */
+
 /* other */
 .masonry-item.pb-gutter {
   padding-bottom: 0 !important;
