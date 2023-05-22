@@ -30,7 +30,15 @@ input.error {
 .header-logo {
   margin-right: 13px !important;
 }
-
+.header-logo .logo{
+  padding: 0;
+  height: 45.6px;
+  margin-bottom: 0;
+}
+.header-top .block-info, .header-top .block-info .list{
+  font-size: 14px;
+  line-height: 19px;
+}
 .social-facebook {
   color: #700073;
 }
@@ -610,6 +618,7 @@ footer .insta-icon:before {
 .box-search .input-show input{
   font-size: 14px;
   line-height: 19px;
+  height: 45px;
 }
 .menu-vertical .fw-bold {
   font-weight: 300 !important;
