@@ -234,7 +234,7 @@ line-height: 24px;
 }
 
 /* shop-collage */
-.shop-collage .kt_banner_flexible .btn {
+.shop-collage.kt_banner_flexible .btn {
 font-size: 22px !important;
 line-height: 1;
 }
