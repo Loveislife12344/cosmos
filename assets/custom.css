@@ -1127,6 +1127,10 @@ color: var(--primary-color);
 
 
 /* footer custome css  */
+footer{
+  font-size: 16px;
+  line-height: 21px;
+}
 .rd_call_to_action .cta-title,
 .rd_call_to_action .cta-desc {
   color: #700073 !important;
