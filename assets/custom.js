@@ -179,6 +179,9 @@ submenu.addEventListener('mouseover', function (e) {
     var newTopPos = doSomething(lastKnownScrollPosition, e);
 
 })
+submenu.onmouseout = function(){
+    submenu.style.setProperty("--posTop", initialValue);
+}
 document.addEventListener("scroll", (event) => {
     hoveredAgain = false
 });
