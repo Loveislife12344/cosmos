@@ -239,6 +239,9 @@ line-height: 24px;
 .store-locater .block-content *{
   font-size: 18px;
 }
+.store-locater .block-content .btn{
+  font-size: 15px !important;
+}
 @media (min-width:768px) {
   .store-locater h3{
     margin-bottom: 54px !important;
