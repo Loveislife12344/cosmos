@@ -58,7 +58,10 @@ line-height: 22px !important;
   --bg-box: #faf5fa !important;
 
 }
-
+.mn-i .mn-i a>span,.menu-vertical .mn-lv1>a{
+  font-size: 15px;
+  line-height: 20px;
+}
 .menu-vertical .--title {
   color: #781d7e;
 }
@@ -214,6 +217,10 @@ line-height: 22px !important;
 /* bootstrap css override end */
 
 /* home page  */
+.content_template--18286564376879__16361859527a526cba h3{
+  font-size: 22px;
+  line-height: 30px;
+}
 /* store-locater */
 .store-locater h3{
   margin-bottom: 24px !important;
