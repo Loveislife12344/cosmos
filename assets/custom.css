@@ -659,7 +659,10 @@ footer .insta-icon:before {
 #offcanvasMenuMb {
   background-color: #faf5fa !important;
 }
-
+.kt_banner_flexible{
+  font-size: 18px;
+  line-height: 18px;
+}
 .mobile-menu li a,
 .icon-box-content * {
   --cl_desc: var(--primary-color);
