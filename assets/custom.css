@@ -1138,7 +1138,10 @@ footer{
   line-height: 21px;
 }
 footer a:hover{
-  columns: #fff;
+  color: #fff;
+}
+.footer-bottom *{
+  padding: 0 !important;
 }
 footer .widget-list li:not(:last-child){
 margin-bottom: 16px;
