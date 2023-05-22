@@ -1140,6 +1140,10 @@ footer{
 footer a:hover{
   color: #fff;
 }
+.footer-bottom{
+  font-size: 10px;
+  line-height: 5px;
+}
 .footer-bottom *{
   padding: 0 !important;
 }
