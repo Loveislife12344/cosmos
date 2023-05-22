@@ -730,7 +730,8 @@ footer .insta-icon:before {
 .kt_banner_flexible .it_cat_1 .titlex,
 .icon-box-title {
   font-size: 36px !important;
-  line-height: 65px !important;
+  line-height: 1 !important;
+  margin-bottom: 26px;
 }
 
 .kt_banner_flexible .stitle,
