@@ -138,51 +138,47 @@ let lastKnownScrollPosition = 0;
 var currentScrollPosition = lastKnownScrollPosition
 let ticking = false;
 var initialValue = '191px'
-var hoveredAgain = false
+// var hoveredAgain = false
 var hoveredAgainpos = null;
 
 function doSomething(scrollPos) {
    
-    
+    if (scrollPos <= 200) {
+        console.log(scrollPos)
+        var newPos1;
+        // asd
+        setTimeout(function () {
+            var pos = window.getComputedStyle(submenu, ':before').getPropertyValue('top');
+            var posP = pos.split('p');
+            var newPos = parseInt(posP[0]) - scrollPos;
+            // console.log("newPos", newPos)
+            newPos1 = newPos + 'px';
+            console.log(newPos1)
+            submenu.style.setProperty("--posTop", newPos1);
+            // document.querySelector('.item-76a027e8-4a7c-4047-aaae-43ffa5950fba:before').style.top = newPos1;
+            hoveredAgain = true
+            hoveredAgainpos = newPos1
+        }, 200)
+    }
+    else {
+        newPos1 = initialValue;
+        submenu.style.setProperty("--posTop", newPos1);
+    }
 
     if(hoveredAgain && scrollPos <= 200){
         submenu.style.setProperty("--posTop", hoveredAgainpos);
     }else{
-        if (scrollPos <= 200) {
-            console.log(scrollPos)
-            var newPos1;
-            // asd
-            setTimeout(function () {
-                var pos = window.getComputedStyle(submenu, ':before').getPropertyValue('top');
-                var posP = pos.split('p');
-                var newPos = parseInt(posP[0]) - scrollPos;
-                // console.log("newPos", newPos)
-                newPos1 = newPos + 'px';
-                console.log(newPos1)
-                submenu.style.setProperty("--posTop", newPos1);
-                // document.querySelector('.item-76a027e8-4a7c-4047-aaae-43ffa5950fba:before').style.top = newPos1;
-                hoveredAgain = true
-                hoveredAgainpos = newPos1
-            }, 200)
-        }
-        else {
-            newPos1 = initialValue;
-            submenu.style.setProperty("--posTop", newPos1);
-        }
-
-    }
-    
+       
+    } 
 }
-
 submenu.addEventListener('mouseover', function (e) {
     lastKnownScrollPosition = window.scrollY;
     var newTopPos = doSomething(lastKnownScrollPosition, e);
-
 })
 submenu.onmouseout = function(){
     submenu.style.setProperty("--posTop", initialValue);
 }
-document.addEventListener("scroll", (event) => {
-    hoveredAgain = false
-});
+// document.addEventListener("scroll", (event) => {
+//     hoveredAgain = false
+// });
 // menu background fixed
