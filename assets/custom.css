@@ -1143,9 +1143,11 @@ footer a:hover{
 .footer-bottom{
   font-size: 10px;
   line-height: 5px;
+  padding: 16px 0 20px 0;
 }
 .footer-bottom *{
   padding: 0 !important;
+  line-height: 1;
 }
 footer .widget-list li:not(:last-child){
 margin-bottom: 16px;
