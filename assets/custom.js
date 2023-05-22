@@ -140,7 +140,7 @@ let ticking = false;
 var initialValue = '191px'
 
 function doSomething(scrollPos) {
-    if (scrollPos <= 200 && scrollPos != currentScrollPosition ) {
+    if (scrollPos <= 200 ) {
         console.log(scrollPos)
         var newPos1;
         // asd
@@ -155,8 +155,7 @@ function doSomething(scrollPos) {
             // document.querySelector('.item-76a027e8-4a7c-4047-aaae-43ffa5950fba:before').style.top = newPos1;
 
         }, 200)
-        // assiging scroll position in current scroll scroll var to to prevent calculation if it hovering without scroll
-        currentScrollPosition = scrollPos
+
     }
     else {
         newPos1 = initialValue;
