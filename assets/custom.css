@@ -660,8 +660,8 @@ footer .insta-icon:before {
   background-color: #faf5fa !important;
 }
 .kt_banner_flexible{
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 18px !important;
+  line-height: 18px !important;
 }
 .mobile-menu li a,
 .icon-box-content * {
