@@ -158,6 +158,7 @@ function doSomething(scrollPos) {
     }
     else {
         newPos1 = initialValue;
+        submenu.style.setProperty("--posTop", newPos1);
     }
     return newPos1;
 }
