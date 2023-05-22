@@ -191,7 +191,7 @@ input.error {
 
 /* bootstrap css override */
 .kt_slideshow .row>* {
-  padding-left: 0;
+  padding: 0;
 }
 
 /* bootstrap css override end */
