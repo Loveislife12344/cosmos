@@ -35,6 +35,13 @@ input.error {
   height: 45.6px;
   margin-bottom: 0;
 }
+.call-label strong{
+font-size: 17px !important;
+line-height: 22px !important;
+}
+.cart-label{
+  font-size: 14px !important;
+}
 .header-top .block-info, .header-top .block-info .list{
   font-size: 14px !important;
   line-height: 19px !important;
