@@ -1137,6 +1137,9 @@ footer{
   font-size: 16px;
   line-height: 21px;
 }
+.content_footer{
+  padding: 0 ;
+}
 footer a:hover{
   color: #fff;
 }
