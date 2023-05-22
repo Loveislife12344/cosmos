@@ -36,8 +36,8 @@ input.error {
   margin-bottom: 0;
 }
 .header-top .block-info, .header-top .block-info .list{
-  font-size: 14px;
-  line-height: 19px;
+  font-size: 14px !important;
+  line-height: 19px !important;
 }
 .social-facebook {
   color: #700073;
