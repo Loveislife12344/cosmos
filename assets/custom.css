@@ -296,9 +296,23 @@ input.error {
   }
 }
 
-#shopify-section-template--18286564376879__1636168033f185e383 .banner::before{
+#shopify-section-template--18286564376879__1636168033f185e383 .item_2::before{
   content: url(https://cdn.shopify.com/s/files/1/0691/8969/7839/files/I_Heart_NDIS_2020.png?v=1684725211);
   position: absolute;
+  z-index: 1;
+  
+}
+@media (max-width:999px) {
+  #shopify-section-template--18286564376879__1636168033f185e383 .item_2::before{
+    top: 20px;
+    right: 20;
+  }
+}
+@media (min-width:1000px) {
+  #shopify-section-template--18286564376879__1636168033f185e383 .item_2::before{
+    top: 120px;
+    left: 20px;
+  }
 }
 
 /* home page cahnges */
