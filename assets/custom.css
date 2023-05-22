@@ -225,6 +225,13 @@ line-height: 22px !important;
 font-size: 16px;
 line-height: 24px;
 }
+.content_template--18286564376879__3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb .input-group{
+  max-width: 625px;
+}
+.content_template--18286564376879__3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb form{
+  display: flex;
+  justify-content: end;
+}
 /* store-locater */
 .store-locater h3{
   margin-bottom: 24px !important;
