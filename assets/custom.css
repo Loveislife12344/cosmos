@@ -424,6 +424,9 @@ footer .insta-icon:before {
 .icon-boxes-container .icon-box{
 text-align:left !important;
 }
+.icon-box{
+  font-size: 18px;
+}
 @media (min-width:1025px) {
   .content_template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_2 .banner-wrap{
     margin-left: 82px;
