@@ -26,7 +26,9 @@ input.error {
 .block-info._first {
   padding: 0;
 }
-
+ .header-bottom .mn-lv1.active > a{
+  color: #66066F;
+ }
 .header-logo {
   margin-right: 13px !important;
 }
