@@ -459,11 +459,25 @@ text-align:left !important;
      .content_template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38:before{
       margin-bottom: 50px;
      }
+     #shopify-section-template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b 
+     .content_template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b:before{
+       bottom: 34px;
+     }
+  }
+  @media (min-width:1340px) {
+    #shopify-section-template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b 
+    .content_template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b:before{
+      bottom: 9px;
+    }
   }
   @media (min-width:1440px) {
     #shopify-section-template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38
     .content_template--18286563754287__dd4d33fa-a4e2-4056-981b-8c983c7f2f38:before{
      margin-bottom: 90px;
+    }
+    #shopify-section-template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b 
+    .content_template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b:before{
+      transform: translateX(50%);
     }
   }
 /* about us */
