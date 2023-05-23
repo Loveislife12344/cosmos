@@ -485,7 +485,7 @@ text-align:left !important;
     }
     #shopify-section-template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b 
     .content_template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b:before{
-      transform: translateX(50%);
+      transform: translate(50%, 50%);
     }
   }
 /* about us */
