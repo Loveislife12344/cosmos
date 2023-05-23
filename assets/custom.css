@@ -417,6 +417,10 @@ footer .insta-icon:before {
 
 
 /* about us */
+.--about-us .section-title .sub-title{
+  font-size: 18px;
+  line-height: 28px;
+}
 
 .--about-us .kt_banner_flexible .titlex{
   text-transform: capitalize;
