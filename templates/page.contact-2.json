@@ -29,7 +29,7 @@
         "width_section": "container-fluid wide",
         "width_content": false,
         "section_margin_top": "40px|60px|80px|100px|116px",
-        "section_margin_bottom": "60px",
+        "section_margin_bottom": "40px|60px|80px|100px|116px",
         "section_padding": "",
         "section_bg": "",
         "address": "",
