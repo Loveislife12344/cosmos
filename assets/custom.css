@@ -163,7 +163,7 @@ line-height: 22px !important;
 /* header custome css end */
 
 /* default btn   override  */
-.btn-secondary.btn-outline {
+.btn-secondary.btn-outline ,.btn-primary:hover{
   border-color: #fff;
   color: #fff;
 }
