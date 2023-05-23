@@ -673,10 +673,7 @@ text-align:left !important;
   }
 }
 
-.content_template--18313190146351__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1 .titlex.inner {
-  color: var(--primary-color) !important;
-  margin-bottom: 0 !important;
-}
+
 
 .content_template--18313190146351__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1 .titlex.inner::after {
   display: none;
@@ -973,6 +970,14 @@ color: #fff !important;
 }
 
 /* section call ton action */
+
+/* delhivery page */
+.content_template--18313190146351__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1 .titlex.inner {
+  color: var(--primary-color) !important;
+  margin-bottom: 40px !important;
+}
+/* delhivery page */
+
 /* contact page */
 .contact-section .overlay-visible span{
   font-size: 22px !important;
