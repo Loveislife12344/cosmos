@@ -421,6 +421,7 @@ footer .insta-icon:before {
 .--about-us .kt_banner_flexible .titlex{
   text-transform: capitalize;
 }
+
 .icon-boxes-container .icon-box{
 text-align:left !important;
 }
@@ -430,6 +431,12 @@ text-align:left !important;
 }
 .icon-box p{
   line-height: 28px;
+}
+@media (min-width:768px) {
+  #shopify-section-template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b 
+  .content_template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b:before{
+    content: url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Group_2455.png?v=1683268629');
+  }
 }
 @media (min-width:1025px) {
   .content_template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_2 .banner-wrap{
