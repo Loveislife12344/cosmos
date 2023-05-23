@@ -972,9 +972,12 @@ color: #fff !important;
 /* section call ton action */
 
 /* delhivery page */
-.content_template--18313190146351__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1 .titlex.inner {
+.content_template--18313190146351__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1 .titlex {
   color: var(--primary-color) !important;
   margin-bottom: 40px !important;
+}
+.content_template--18313190146351__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1 .titlex::after{
+  top: 50px;
 }
 /* delhivery page */
 
