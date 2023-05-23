@@ -693,7 +693,7 @@
         "b51f59ce-d11a-4c31-add4-abc25a5fd363": {
           "type": "content2",
           "settings": {
-            "text": "<span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.<\/span><br><br>"
+            "text": "<span style=\"font-size:18px;line-height:28px;\">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.<\/span><br><br>"
           }
         }
       },
