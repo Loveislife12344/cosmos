@@ -628,7 +628,7 @@
           "settings": {
             "title_style": "auto",
             "title": "Account Enquiries",
-            "stitle": "Contact Cosmac to open an account, or to obtain details of our trading terms and conditions.",
+            "stitle": "<span style=\"font-size:18px;line-height:28px;margin-top:28px;display:inline-block\">Contact Cosmac to open an account, or to obtain details of our trading terms and conditions.<\/span>",
             "link_to": "",
             "name_link": "",
             "margin_btitle": 0
@@ -687,7 +687,7 @@
             "stitle": "1234567890",
             "link_to": "",
             "name_link": "",
-            "margin_btitle": 30
+            "margin_btitle": 40
           }
         },
         "b51f59ce-d11a-4c31-add4-abc25a5fd363": {
