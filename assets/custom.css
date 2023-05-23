@@ -840,13 +840,15 @@ text-align:left !important;
   fill: #700973 !important;
 }
 
-
+.kt_banner_flexible .it_cat_1 .titlex,
 .icon-box-title {
   font-size: 36px !important;
   line-height: 1 !important;
+ 
+}
+.icon-box-title{
   margin-bottom: 26px !important;
 }
-
 .kt_banner_flexible .stitle,
 .kt_banner_flexible .btn {
   font-size: 15px !important;
