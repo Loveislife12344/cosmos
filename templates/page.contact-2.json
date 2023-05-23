@@ -104,7 +104,7 @@
         "width_section": "container-fluid wide",
         "width_content": false,
         "section_margin_top": "",
-        "section_margin_bottom": "20px",
+        "section_margin_bottom": "40px|60px|80px|100px|116px|135px",
         "section_padding": "",
         "section_bg": "",
         "autoplay": false,
