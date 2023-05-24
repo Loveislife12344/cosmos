@@ -222,6 +222,9 @@ line-height: 22px !important;
 /* bootstrap css override end */
 
 /* home page  */
+.content_template--18286564376879__16361859527a526cba .btn:hover{
+color: var(--primary-color);
+}
 .kt_banner_flexible .content_template--18286564376879__16361859527a526cba .titlex{
   font-size: 22px;
   line-height: 30px;
