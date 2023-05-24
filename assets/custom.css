@@ -1286,16 +1286,21 @@ footer{
 footer .row{
   margin: 0;
 }
-footer .row >div:nth-child(3){
-  margin-left: 55px;
-  margin-right: 117px;
-}
-footer .row >div:last-child{
-margin-left: 40px;
-}
-footer .row> *{
-  width: fit-content;
-  padding: 0;
+@media (min-width:1200px) {
+  footer .row >div:nth-child(2){
+    margin-left: auto;
+  }
+  footer .row >div:nth-child(3){
+    margin-left: 55px;
+    margin-right: 117px;
+  }
+  footer .row >div:last-child{
+  margin-left: 40px;
+  }
+  footer .row> *{
+    width: fit-content;
+    padding: 0;
+  }
 }
 .content_footer{
   padding: 0!important;
