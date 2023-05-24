@@ -1283,8 +1283,12 @@ footer{
   font-size: 16px;
   line-height: 21px;
 }
+footer .row{
+  margin: 0;
+}
 footer .row> *{
   width: fit-content;
+  padding: 0;
 }
 .content_footer{
   padding: 0!important;
