@@ -1283,6 +1283,9 @@ footer{
   font-size: 16px;
   line-height: 21px;
 }
+footer .row> *{
+  width: fit-content;
+}
 .content_footer{
   padding: 0!important;
 }
