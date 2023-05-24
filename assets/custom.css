@@ -167,7 +167,10 @@ line-height: 22px !important;
   border-color: #fff;
   color: #fff !important;
 }
-
+.btn.btn-primary:hover{
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+}
 .vtm.btn {
   margin-top: 15px;
 }
