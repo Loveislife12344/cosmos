@@ -1317,7 +1317,6 @@ footer a:hover{
   padding: 16px 0 20px 0;
 }
 .footer-bottom *{
-  padding: 0 !important;
   line-height: 1;
 }
 footer .widget-list li:not(:last-child){
