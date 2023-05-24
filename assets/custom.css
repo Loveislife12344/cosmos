@@ -551,9 +551,7 @@ text-align:left !important;
   display: none;
 }
 
-.content_template--18426875609391__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_2 {
-  margin-top: 60px !important;
-}
+
 
 .content_template--18426875609391__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1 .titlex {
   margin-bottom: 60px !important;
@@ -981,6 +979,11 @@ color: #fff !important;
 }
 .content_template--18313190146351__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1 .titlex::after{
   top: 50px;
+}
+@media (min-width:768px) {
+  .content_template--18426875609391__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_2 {
+    margin-top: 90px !important;
+  }
 }
 /* delhivery page */
 
