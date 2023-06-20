@@ -70,6 +70,7 @@
         "14f356fd-961b-4662-b708-a5f8030267b9"
       ],
       "settings": {
+        "assign_id": "whoweare",
         "title": "Who We Are",
         "off_mobile": false,
         "off_desktop": false,
@@ -155,6 +156,7 @@
         "84bcd3d0-e907-4fb6-8b8e-a0db4dd7d944"
       ],
       "settings": {
+        "assign_id": "",
         "title": "Who We Are",
         "off_mobile": false,
         "off_desktop": false,
