@@ -34,7 +34,7 @@
   {%- endif -%}
   {%- endcapture -%}
   <div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
-    <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">      
+    <div id="{{section.id}}" class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">      
       <div class="section-width {{width_content_}}">
         {%- assign block = section.blocks | where: 'type', 'title' | first -%}
         {%- render 'kt_sc_title', block: block, attr: true -%}
