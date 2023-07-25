@@ -1430,3 +1430,13 @@ margin-bottom: 16px;
     max-width: calc(100% - ((100% - 1373px)/2));
     margin-left: calc((100% - 1345px)/2)!important;
 }
+
+.kt_slideshow .side-nav:before {
+    content: '';
+    position: absolute;
+    background-color: #faf5fa;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    z-index: 0;
+}
