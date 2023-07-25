@@ -1386,3 +1386,7 @@ margin-bottom: 16px;
 .header-top-wrapper a img {
     margin-right: 10px;
 }
+
+.header-top-wrapper a.d-icon-user span{
+    margin-left: 10px!important;
+ }
