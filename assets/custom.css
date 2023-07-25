@@ -1382,3 +1382,7 @@ margin-bottom: 16px;
     padding: 8px 0!important;
     font-weight: 600;
 }
+
+.header-top-wrapper a img {
+    margin-right: 10px;
+}
