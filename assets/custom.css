@@ -1373,3 +1373,7 @@ margin-bottom: 16px;
     border-radius: 0px;
     border: 2px solid #9B9B9B;
 }
+
+.header-top.container-fluid.wide {
+    border-bottom: 1px solid #C3C5C5;
+}
