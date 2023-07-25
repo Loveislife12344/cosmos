@@ -1391,3 +1391,7 @@ margin-bottom: 16px;
 .header-top-wrapper a.d-icon-user span{
     margin-left: 10px!important;
 }
+
+.header .call-label{
+  margin:0px;
+}
