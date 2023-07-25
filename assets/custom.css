@@ -1395,3 +1395,7 @@ margin-bottom: 16px;
 .header .call-label{
     margin:0px!important;
 }
+
+.mini-cart.cart-offcanvas a {
+    padding: 0px!important;
+}
