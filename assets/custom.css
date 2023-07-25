@@ -1424,3 +1424,9 @@ margin-bottom: 16px;
 #shopify-section-template--18286564376879__16361859527a526cba .item_3 .text-content {
     top: 88%!important;
 }
+
+#shopify-section-template--18286564376879__1636168033f185e383 .section-width.container-fluid{
+    width: 100%;
+    max-width: calc(100% - ((100% - 1373px)/2));
+    margin-left: calc((100% - 1345px)/2)!important;
+}
