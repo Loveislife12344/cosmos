@@ -1415,3 +1415,7 @@ margin-bottom: 16px;
 #shopify-section-template--18286564376879__16361859527a526cba .--button a {
     width: 100%;
 }
+
+#shopify-section-template--18286564376879__16361859527a526cba .kt_banner_flexible .text-content{
+    top: 84%!important;
+}
