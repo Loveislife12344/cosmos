@@ -1399,3 +1399,7 @@ margin-bottom: 16px;
 .mini-cart.cart-offcanvas a {
     padding: 0px!important;
 }
+
+.header .cart-label {
+    margin: 0 1.625rem 0 0;
+}
