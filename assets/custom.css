@@ -1403,3 +1403,7 @@ margin-bottom: 16px;
 .header .cart-label{
     margin: 0 1.625rem 0 0!important;
 }
+
+.cartCount, .icon-count .count, .wishlist-count {
+    background-color: #C177B9!important;
+}
