@@ -198,7 +198,7 @@
           </nav>
         </div>
         {%-endif-%}
-        <div class="col {{col_slide}} --slide height-x{{bannerBlocks.size}}">
+        <div class="col col-lg-9 col-xl-4 --slide height-x{{bannerBlocks.size}}">
         {%- endif -%}
           {%- assign responsive_ = section.settings.responsive | strip_newlines | json | remove: '\t' | remove: '\' | remove: ' ' | replace: '"{"','{"' | replace: '}}"','}}' -%}
           {%- assign items_ = responsive_ | split: '"slidesPerView":' | last | split: ',' | first | plus: 0 -%}
@@ -319,7 +319,7 @@
           {%- if section.settings.width_lg != 0 %}{%-if section.settings.width_lg == 13-%} d-lg-none{%else%} d-lg-block{%endif%} col-lg-{{section.settings.width_lg}}{% endif -%}
           {%- if section.settings.width_xxl != 0 %}{%-if section.settings.width_xxl == 13-%} d-xxl-none{%else%} d-xl-block{%endif%} col-xl-{{section.settings.width_xxl}}{% endif -%}
         {%- endcapture -%}
-        <div class="col-12 {{col_banner}} mt-4 mt-lg-0 bn_{{section.id}} kt_banner_slideshow">
+        <div class="col-12 d-lg-block col-lg-3 d-xl-block col-xl-5 mt-4 mt-lg-0 bn_{{section.id}} kt_banner_slideshow">
           <div class="row {{cols}} justify-content-center align-content-xl-stretch h-100">
           {%- for block in section.blocks-%}
             {%-if block.type != 'banner'-%}{%-continue-%}{%-endif-%}
