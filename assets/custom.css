@@ -1407,3 +1407,7 @@ margin-bottom: 16px;
 .cartCount, .icon-count .count, .wishlist-count {
     background-color: #C177B9!important;
 }
+
+.kt_banner_flexible {
+    margin-top: 19px;
+}
