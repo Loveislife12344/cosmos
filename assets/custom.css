@@ -1400,6 +1400,6 @@ margin-bottom: 16px;
     padding: 0px!important;
 }
 
-.header .cart-label {
-    margin: 0 1.625rem 0 0;
+.header .cart-label{
+    margin: 0 1.625rem 0 0!important;
 }
