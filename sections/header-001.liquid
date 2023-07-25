@@ -178,10 +178,11 @@
             <a href="tel:{{settings.phone_contact | remove:' '}}" class="icon-link">
               <span class="icon-count">
                 {% comment %}<svg class="molla-svg-icon" viewBox="0 0 32 32"><use xlink:href="#icon-wishlist"></use></svg>{% endcomment %}
-                <img src="{{ 'phone-local.svg' | asset_url }}"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="37.734" height="37.734" viewBox="0 0 37.734 37.734">
+                  <path id="phone-local" d="M11.417,14.044a21.528,21.528,0,0,0,9.365,9.365l1.354-1.6a1.413,1.413,0,0,1,1.45-.341,16.211,16.211,0,0,0,5.073.81A1.425,1.425,0,0,1,30.08,23.7v4.96a1.425,1.425,0,0,1-1.421,1.421A24.157,24.157,0,0,1,4.5,5.921,1.425,1.425,0,0,1,5.921,4.5H10.9a1.425,1.425,0,0,1,1.421,1.421,16.144,16.144,0,0,0,.81,5.073,1.426,1.426,0,0,1-.355,1.45Z" transform="matrix(0.914, 0.407, -0.407, 0.914, 10.104, -3.961)" fill="none" stroke="#66066f" stroke-width="3"/>
+                </svg>
               </span>
               <span class="call-label d-none d-lg-block">
-               
                 <strong class="d-block">{{settings.phone_contact}}</strong>
               </span>
             </a>
