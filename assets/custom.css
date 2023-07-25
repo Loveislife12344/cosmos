@@ -1443,3 +1443,7 @@ margin-bottom: 16px;
     left: 40%;
     top: 105px;
 }
+
+.banner-small-boxws .item-banner:first-child .text-content span {
+    font-size: 33px;
+}
