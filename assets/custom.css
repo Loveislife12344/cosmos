@@ -1377,3 +1377,7 @@ margin-bottom: 16px;
 .header-top.container-fluid.wide {
     border-bottom: 1px solid #C3C5C5;
 }
+
+.header-top-wrapper {
+    padding: 8px 0;
+}
