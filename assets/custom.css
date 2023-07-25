@@ -1447,3 +1447,7 @@ margin-bottom: 16px;
 .banner-small-boxws .item-banner:first-child .text-content span {
     font-size: 33px;
 }
+
+.banner-small-boxws .item-banner:last-child .text-content span {
+    font-size: 28px;
+}
