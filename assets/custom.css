@@ -113,11 +113,11 @@ line-height: 22px !important;
   content: "";
   position: absolute;
   width: 100%;
-  left: 40px;
+  left: 20px;
   top: var(--posTop);
-  max-width: 900px;
+  max-width: 1000px;
   height: 100vh;
-  max-height: 300px;
+  max-height: 350px;
   background: #faf5fa;
   z-index: 5;
 }
