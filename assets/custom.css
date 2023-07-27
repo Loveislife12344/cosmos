@@ -270,7 +270,7 @@ line-height: 1;
   }
 }
 
-@media (max-width:1199px) {
+@media (min-width:1199px) and (max-width:1199px) {
   .container-fluid .row .--slide{
     width: 40%;
   }
