@@ -270,7 +270,7 @@ line-height: 1;
   }
 }
 @media (max-width:1199px) {
-  .container-fluid wide{
+  .container-fluid .--slide height-x2{
     margin-bottom: 54px !important;
   }
 }
