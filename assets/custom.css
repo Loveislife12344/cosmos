@@ -1299,6 +1299,9 @@ footer{
 footer .row{
   margin: 0;
 }
+#shopify-section-footer {
+    background-color: #3c3c3c!important;
+}
 @media (min-width:1200px) {
   footer .row >div:nth-child(2){
     margin-left: auto;
