@@ -111,7 +111,7 @@ line-height: 22px !important;
 .mn-lv1.mn-has-child.show-submn:before {
  
   content: "";
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 20px;
   top: var(--posTop);
