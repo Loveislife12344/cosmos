@@ -393,7 +393,9 @@ line-height: 1;
   margin: 0 !important;
 }
 
-.container-fluid wide 
+.container-fluid wide .block-content span a{
+  font-weight: 600;
+}
 /* home page changes */
 
 
