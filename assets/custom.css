@@ -398,8 +398,7 @@ line-height: 1;
     right:20px;
   }
   .banner-small-boxws .item-banner:first-child .text-content {
-    left: 28%!important;
-    top: 295px!important;
+    display: none;
 }
 }
 @media (min-width:481px) {
