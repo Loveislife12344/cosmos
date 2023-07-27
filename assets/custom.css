@@ -273,6 +273,9 @@ line-height: 1;
   .container-fluid .row .--slide{
     width: 40%;
   }
+  .container-fluid .row .banner-small-boxws{
+    
+  }
 }
 .store-locater .block-content:not(:last-child) {
   margin-bottom: 40px;
