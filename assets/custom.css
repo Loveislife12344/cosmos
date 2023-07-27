@@ -270,7 +270,7 @@ line-height: 1;
   }
 }
 @media (max-width:1199px) {
-  .store-locater h3{
+  .container-fluid wide{
     margin-bottom: 54px !important;
   }
 }
