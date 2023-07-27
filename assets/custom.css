@@ -280,6 +280,9 @@ line-height: 1;
       width: 50%;
     }
     }
+.banner-small-boxws .item-banner:last-child .text-content span{
+  font-size: 18px;
+}
 }
 .store-locater .block-content:not(:last-child) {
   margin-bottom: 40px;
