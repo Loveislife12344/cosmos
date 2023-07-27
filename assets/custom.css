@@ -114,11 +114,10 @@ line-height: 22px !important;
   position: fixed;
   width: 100%;
   left: 20px;
-  top: 50px;
   top: var(--posTop);
   max-width: 1000px;
   height: 100vh;
-  max-height: 250px;
+  max-height: 350px;
   background: #faf5fa;
   z-index: 5;
 }
