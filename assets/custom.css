@@ -122,9 +122,6 @@ line-height: 22px !important;
   position: absolute;
     left: 0;
     top: 150%;
-    width: 300px;
-    text-align: left;
-    background-color: #222222;
     z-index: 9999;
 }
 
