@@ -924,7 +924,7 @@ text-align:left !important;
 }
 
 @media (max-width:991px) {
-  .main{
+  .main-content{
     margin-top: 20px;
   }
   .header-logo a, .header-logo img{
