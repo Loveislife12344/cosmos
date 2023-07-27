@@ -120,9 +120,9 @@ line-height: 22px !important;
   max-height: 350px;
   background: #faf5fa;
   position: absolute;
-    left: 0;
-    top: 150%;
-    z-index: 9999;
+  left: 0;
+  top: 150%;
+  z-index: 5;
 }
 
 .onsticky .mn-lv1.mn-has-child.show-submn:before {
