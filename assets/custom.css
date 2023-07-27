@@ -397,6 +397,10 @@ line-height: 1;
     top: 70px;
     right:20px;
   }
+  .banner-small-boxws .item-banner:first-child .text-content {
+    left: 28%!important;
+    top: 295px!important;
+}
 }
 @media (min-width:481px) {
   #shopify-section-template--18286564376879__1636168033f185e383 .item_2::before{
