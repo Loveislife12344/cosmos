@@ -928,7 +928,7 @@ text-align:left !important;
     margin-top: 20px;
   }
   .header-logo a, .header-logo img{
-    margin-top: 5px;
+    margin-top: 5px!important;
   }
   .kt_banner_flexible .it_cat_1 .titlex,
   .sc-title {
