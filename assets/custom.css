@@ -283,6 +283,9 @@ line-height: 1;
 .banner-small-boxws .item-banner:last-child .text-content span{
   font-size: 18px!important;
 }
+.banner-small-boxws .item-banner:first-child .text-content span{
+  font-size: 16px;
+}
 }
 .store-locater .block-content:not(:last-child) {
   margin-bottom: 40px;
