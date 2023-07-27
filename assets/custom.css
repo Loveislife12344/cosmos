@@ -543,6 +543,9 @@ text-align:left !important;
 .masonry-item.pb-gutter {
   padding-bottom: 0 !important;
 }
+.imgs__banner_flexible .masonry-item.pb-gutter{
+  
+}
 .page-title{
   margin-bottom: 0 !important;
 }
