@@ -114,7 +114,7 @@ line-height: 22px !important;
   position: fixed;
   width: 100%;
   left: 20px;
-  top: 100px
+  top: 120px
   top: var(--posTop);
   max-width: 1000px;
   height: 100vh;
