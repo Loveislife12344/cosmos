@@ -275,6 +275,9 @@ line-height: 1;
   }
   .container-fluid .row .banner-small-boxws{
     width: 60%;
+    .item-banner{
+      width: 50%;
+    }
   }
 }
 .store-locater .block-content:not(:last-child) {
