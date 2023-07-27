@@ -1327,6 +1327,9 @@ footer a:hover{
 .footer-middle{
   padding-TOP: 70px;
 }
+.footer-middle .socials_.style-02 a.social-icon{
+  text-align: left;
+}
 .footer-bottom{
   font-size: 10px;
   line-height: 5px;
