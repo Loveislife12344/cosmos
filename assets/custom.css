@@ -120,6 +120,7 @@ line-height: 22px !important;
   max-height: 350px;
   background: #faf5fa;
   position: absolute;
+  left: 0;
   top: 50%;
   z-index: 5;
 }
