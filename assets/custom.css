@@ -269,6 +269,7 @@ line-height: 1;
     margin-bottom: 54px !important;
   }
 }
+
 @media (max-width:1199px) {
   .container-fluid .row .--slide{
     width: 40%;
@@ -286,7 +287,12 @@ line-height: 1;
 .banner-small-boxws .item-banner:first-child .text-content span{
   font-size: 16px;
 }
+.banner-small-boxws .item-banner:first-child .text-content {
+    left: 40%;
+    top: 105px;
 }
+}
+
 .store-locater .block-content:not(:last-child) {
   margin-bottom: 40px;
 }
