@@ -1003,7 +1003,7 @@ color: #fff !important;
     padding: 30px;
   }
   .banner-small-boxws .item-banner:last-child .text-content span{
-    font-size: 16px;
+    font-size: 16px!important;
   }
 }
 
