@@ -1017,7 +1017,7 @@ color: #fff !important;
     text-align: center;
   }
 #shopify-section-template--18286564376879__16361859527a526cba .text-content{
-  
+  top: var(--top)!important;
 }
 }
 
