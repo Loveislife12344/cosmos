@@ -271,7 +271,7 @@ line-height: 1;
 }
 @media (max-width:1199px) {
   .container-fluid .row .--slide{
-    margin-bottom: 54px !important;
+    width: 40%;
   }
 }
 .store-locater .block-content:not(:last-child) {
