@@ -274,9 +274,11 @@ line-height: 1;
     width: 40%;
   }
   .container-fluid .row .banner-small-boxws{
-    width: 60%;
-    .item-banner{
+    width: 60%;{
+    .align-content-xl-stretch .item-banner{
       width: 50%;
+    }
+  
     }
   }
 }
