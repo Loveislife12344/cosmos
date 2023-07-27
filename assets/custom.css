@@ -924,7 +924,9 @@ text-align:left !important;
 }
 
 @media (max-width:991px) {
-
+  .main{
+    margin-top: 20px;
+  }
   .kt_banner_flexible .it_cat_1 .titlex,
   .sc-title {
     font-size: 24px !important;
