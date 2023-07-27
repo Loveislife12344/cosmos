@@ -107,13 +107,11 @@ line-height: 22px !important;
 .d-icon-user:before {
   content: url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Icon_feather-user.png?v=1683268135')
 }
-.mn-lv1 .mn-i .mn-has-child .item-76a027e8-4a7c-4047-aaae-43ffa5950fba:before{
-  padding-top: 50px;
-}
+
 .mn-lv1.mn-has-child.show-submn:before {
  
   content: "";
-  position: fixed;
+  position: sticky;
   width: 100%;
   left: 150px;
   top: var(--posTop);
