@@ -285,7 +285,7 @@ line-height: 1;
   font-size: 18px!important;
 }
 .banner-small-boxws .item-banner:first-child .text-content span{
-  font-size: 16px;
+  font-size: 16px!important;
 }
 .banner-small-boxws .item-banner:first-child .text-content {
     left: 52%;
