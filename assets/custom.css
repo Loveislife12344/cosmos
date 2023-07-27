@@ -1002,6 +1002,9 @@ color: #fff !important;
   .icon-box-card {
     padding: 30px;
   }
+  .banner-small-boxws .item-banner:last-child .text-content span{
+    font-size: 16px;
+  }
 }
 
 @media (min-width:576px) {
