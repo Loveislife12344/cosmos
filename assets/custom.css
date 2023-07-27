@@ -541,7 +541,7 @@ text-align:left !important;
 
 /* other */
 .masonry-item.pb-gutter {
-  padding-bottom: 0 !important;
+  padding-bottom: 0;
 }
 .page-title{
   margin-bottom: 0 !important;
