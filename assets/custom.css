@@ -109,15 +109,11 @@ line-height: 22px !important;
 }
 
 .mn-lv1.mn-has-child.show-submn:before {
-  display: block;
-  position: absolute;
-  
+ 
   content: "";
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
-  width: 1000px;
-  left: 50px;
-  top: 0;
+  left: 150px;
   top: var(--posTop);
   max-width: 1000px;
   height: 100vh;
