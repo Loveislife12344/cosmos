@@ -281,7 +281,7 @@ line-height: 1;
     }
     }
 .banner-small-boxws .item-banner:last-child .text-content span{
-  font-size: 18px;
+  font-size: 18px!important;
 }
 }
 .store-locater .block-content:not(:last-child) {
