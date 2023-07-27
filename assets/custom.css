@@ -541,10 +541,10 @@ text-align:left !important;
 
 /* other */
 .masonry-item.pb-gutter {
-  padding-bottom: 0 !important;
+  padding-bottom: 0;
 }
 .imgs__banner_flexible .masonry-item.pb-gutter{
-  
+  padding-bottom: var(--bs-gutter-x);
 }
 .page-title{
   margin-bottom: 0 !important;
