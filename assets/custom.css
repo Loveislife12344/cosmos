@@ -161,7 +161,7 @@ line-height: 22px !important;
 }
 @media (max-width:391px) {
   .header-top .block-info .list-custom{
-    padding-right: 4px;
+    padding-right: 4px!important;
   }
 }
 /* header custome css end */
