@@ -8,7 +8,9 @@ url("Montserrat-Regular.woff") format("woff");
   --primary-color: #66066F;
   --posTop:191px;
 }
-
+body{
+  font-family: "Montserrat Regular";
+}
 /* variables */
 /* multistep form */
 .step--1:not(.show),
