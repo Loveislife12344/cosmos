@@ -663,7 +663,7 @@ text-align:left !important;
 }
 
 .img__banner+span {
-  margin: 26px 0;
+  /* margin: 26px 0; */
   display: inline-block;
 }
 
