@@ -514,7 +514,7 @@ text-align:left !important;
     margin-left: 82px;
   }
   .--about-us .content_template--18286563754287__008f7694-152e-452f-b17a-c18f38112722 .item_2 .img__banner{
-    /* margin-bottom: 42px; */
+    margin-bottom: 42px;
   }
   }
   @media (min-width:1200px) {
@@ -663,7 +663,7 @@ text-align:left !important;
 }
 
 .img__banner+span {
-  /* margin: 26px 0; */
+  margin: 26px 0;
   display: inline-block;
 }
 
