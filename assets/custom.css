@@ -484,7 +484,7 @@ text-align:left !important;
 .icon-box p{
   line-height: 28px;
 }
-.imgs__banner_flexible .masonry-item .item_2 .banner-wrap .img__banner+span{
+.imgs__banner_flexible .item_2 .banner-wrap .img__banner+span{
   white-space: pre-line;
 }
 @media (min-width:768px) {
