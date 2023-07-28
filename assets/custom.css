@@ -664,7 +664,6 @@ text-align:left !important;
 
 .img__banner+span {
   /* margin: 26px 0; */
-  white-space: pre-line;
   display: inline-block;
 }
 
