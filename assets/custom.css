@@ -1550,8 +1550,6 @@ margin-bottom: 16px;
 @media (min-width: 767px){
   .kt_banner_flexible .it_cat_1 .titlex,
   .sc-title {
-    font-size: 24px !important;
-    line-height: 36px !important;
     margin-bottom: 40px!important;
   }
 }
