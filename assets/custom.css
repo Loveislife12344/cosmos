@@ -850,7 +850,7 @@ text-align:left !important;
 }
 
 .kt_banner_flexible .titlex {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .kt-nav.main-mn>.mn-i>a,
