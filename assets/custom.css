@@ -1067,6 +1067,7 @@ color: #fff !important;
 .card .card-img-overlay .social-links,.rd_our_store_1 h4.overlay-visible{
   text-align: left;
   margin-left: 10px;
+  margin: 0px 50px
 }
 .rd_our_store_1 .card:hover .overlay-visible,.rd_our_store_1 .card .card-img-overlay{
   padding: 0 !important;
