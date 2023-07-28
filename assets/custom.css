@@ -941,7 +941,7 @@ text-align:left !important;
   .sc-title {
     font-size: 24px !important;
     line-height: 36px !important;
-    margin-bottom: 30px;
+    margin-bottom: 30px!important;
 
   }
 
