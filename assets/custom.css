@@ -484,7 +484,9 @@ text-align:left !important;
 .icon-box p{
   line-height: 28px;
 }
-.imgs__banner_flexible .banner-wrap 
+.imgs__banner_flexible .banner-wrap .img__banner+span{
+  white-space: pre-line;
+}
 @media (min-width:768px) {
   #shopify-section-template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b 
   .content_template--18286563754287__6c95f6ee-4048-4d6e-86cd-c82001950c6b{
