@@ -1,15 +1,7 @@
-@font-face {
-font-family: "Montserrat Regular";
-src: url("Montserrat-Regular.woff2") format("woff2"),
-url("Montserrat-Regular.woff") format("woff");
-}
 /* variables */
 :root {
   --primary-color: #66066F;
   --posTop:191px;
-}
-body{
-  font-family: "Montserrat Regular";
 }
 /* variables */
 /* multistep form */
