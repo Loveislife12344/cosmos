@@ -1550,6 +1550,6 @@ margin-bottom: 16px;
 @media (min-width: 767px){
   .kt_banner_flexible .it_cat_1 .titlex,
   .sc-title {
-    margin-bottom: 40px!important;
+    /* margin-bottom: 40px!important; */
   }
 }
