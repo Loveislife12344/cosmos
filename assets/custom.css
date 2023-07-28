@@ -585,6 +585,10 @@ text-align:left !important;
   /* padding-bottom: var(--bs-gutter-x); */
   padding-bottom: 20px;
 }
+.imgs__banner_flexible .masonry-item.pb-gutter .banner-wrap{
+  /* padding-bottom: var(--bs-gutter-x); */
+  border-radius: 0px!important;
+}
 @media (min-width:768px) and (max-width: 991px) {
  .imgs__banner_flexible .masonry-item.pb-gutter {
     width: 100%;
