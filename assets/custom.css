@@ -733,7 +733,7 @@ text-align:left !important;
   }
 }
 
-@media(min-width:768px) {
+@media(max-width:767px) {
 
   #shopify-section-template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .item_1:after {
     content: "";
