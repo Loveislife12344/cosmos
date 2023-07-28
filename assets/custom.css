@@ -724,7 +724,7 @@ text-align:left !important;
     height: 155px;
     background-color: var(--primary-color);
     left: 12%;
-    bottom: -170px;
+    top: 90px;
     z-index: 2;
   }
 
@@ -903,7 +903,7 @@ text-align:left !important;
 .kt_banner_flexible .it_cat_1 .titlex,
 .icon-box-title {
   font-size: 36px !important;
-  /* line-height: 2 !important; */
+  line-height: 2 !important;
 }
 .icon-box-title{
   margin-bottom: 26px !important;
