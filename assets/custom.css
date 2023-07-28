@@ -914,6 +914,7 @@ text-align:left !important;
 .kt_banner_flexible .stitle {
   line-height: 25px !important;
   color: #3C3C3C !important;
+  white-space: pre-line;
 }
 
 .sc-title {
@@ -1053,7 +1054,6 @@ color: #fff !important;
 @media (min-width:768px) {
   .content_template--18426875609391__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_2 {
     margin-top: 60px !important;
-    white-space: pre-line;
   }
 }
 /* delhivery page */
