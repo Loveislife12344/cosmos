@@ -9,9 +9,7 @@
 .step--2:not(.show) {
   display: none;
 }
-body{
-  font-family: monsterrat;
-}
+
 input.error {
   border-color: rgb(226, 11, 11);
 }
