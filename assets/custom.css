@@ -859,7 +859,7 @@ text-align:left !important;
 .show-icon-text .kt--drop-title {
   font-size: 17px !important;
   line-height: 22px !important;
-
+  text-transform: inherit!important;
 }
 
 .item-f3ecc8b1-9418-40d4-98f3-a94211122660 a i:before,
