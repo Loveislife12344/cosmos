@@ -1554,7 +1554,8 @@ margin-bottom: 16px;
   #shopify-section-template--18286563754287__008f7694-152e-452f-b17a-c18f38112722 .item_2 .titlex{
     margin-bottom: 51px!important;
   }
-  #whoweare .imgs__banner_flexible .item_1 .titlex:after {
+  #whoweare .imgs__banner_flexible .item_1 .banner-wrap {
+      .titlex:after {
     content: "";
     display: block;
     width: 1px;
@@ -1567,6 +1568,8 @@ margin-bottom: 16px;
     top: auto!important;
     transform: rotate(90deg);
 }
+  }
+
 }
 
 @media (min-width: 767px){
