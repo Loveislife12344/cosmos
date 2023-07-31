@@ -1392,6 +1392,35 @@
           "padding_size": 20,
           "main_linklist": ""
         }
+      },
+      "montserrat": {
+        "type": "montserrat",
+        "blocks": {
+          "5ddcc27c-68e0-49c6-9a4d-b32ce7fb78bf": {
+            "type": "image",
+            "settings": {
+              "name": "montserrat",
+              "custom_font_weight": "none",
+              "custom_font_style": "none",
+              "custom_font_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Montserrat-VariableFont_wght.ttf?v=1690795748",
+              "apply_h1": true,
+              "apply_h2": true,
+              "apply_h3": true,
+              "apply_h4": true,
+              "apply_h5": true,
+              "apply_h6": true,
+              "apply_span": true,
+              "apply_p": true,
+              "apply_custom": ""
+            }
+          }
+        },
+        "block_order": [
+          "5ddcc27c-68e0-49c6-9a4d-b32ce7fb78bf"
+        ],
+        "settings": {
+          "enable": true
+        }
       }
     },
     "content_for_index": [
