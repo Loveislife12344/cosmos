@@ -471,7 +471,7 @@ footer .insta-icon:before {
 .--about-us .section-title .sub-title{
   font-size: 18px;
   line-height: 28px;
-  color: var(--text);
+  color: var(--text)!important;
   /* margin-top: 28px; */
 }
 .section-title h3{
