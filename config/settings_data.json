@@ -106,6 +106,7 @@
     "fsize_section_title": 24,
     "fsize_section_title_mb": 18,
     "fweight_section_title": 700,
+    "font_section_stitle_family": "--f_family_1",
     "fsize_psingle_title": 26,
     "ttranf_psingle_title": "capitalize",
     "fweight_psingle_title": 700,
@@ -1391,12 +1392,6 @@
           "use_cart": true,
           "padding_size": 20,
           "main_linklist": ""
-        }
-      },
-      "montserrat": {
-        "type": "montserrat",
-        "settings": {
-          "enable": false
         }
       }
     },
