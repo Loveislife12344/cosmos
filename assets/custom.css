@@ -9,7 +9,9 @@
 .step--2:not(.show) {
   display: none;
 }
-
+body{
+  font-family: monsterrat;
+}
 input.error {
   border-color: rgb(226, 11, 11);
 }
@@ -566,6 +568,9 @@ text-align:left !important;
   #shopify-section-template--19012730519855__1633571935d8eb2381 .img__banner{
     padding-bottom: 172.9px !important;
   }
+.contact-section.content_template--19012730519855__1633509379ea861af9 form button {
+    font-weight: 400;
+}
 @media (min-width:768px) {
   
 }
