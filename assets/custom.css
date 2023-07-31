@@ -260,6 +260,7 @@ line-height: 1;
 /* store-locater */
 .store-locater h3{
   margin-bottom: 24px !important;
+  color: black;
 }
 .store-locater .block-content *{
   font-size: 18px;
