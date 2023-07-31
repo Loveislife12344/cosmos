@@ -10,7 +10,7 @@
   display: none;
 }
 body{
-  font-family: monsterrat;
+  font-family: 'Montserrat', sans-serif;
 }
 input.error {
   border-color: rgb(226, 11, 11);
