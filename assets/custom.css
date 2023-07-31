@@ -10,7 +10,7 @@
   display: none;
 }
 body{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif!important;
 }
 input.error {
   border-color: rgb(226, 11, 11);
@@ -471,6 +471,7 @@ footer .insta-icon:before {
 .--about-us .section-title .sub-title{
   font-size: 18px;
   line-height: 28px;
+  color: black;
   /* margin-top: 28px; */
 }
 
