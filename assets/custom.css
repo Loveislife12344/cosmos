@@ -474,7 +474,9 @@ footer .insta-icon:before {
   color: black;
   /* margin-top: 28px; */
 }
-
+.section-title h3{
+  font-family: 'Montserrat', sans-serif!important;
+}
 .--about-us .kt_banner_flexible .titlex{
   text-transform: capitalize;
 }
