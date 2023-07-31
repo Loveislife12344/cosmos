@@ -726,10 +726,10 @@ text-align:left !important;
     display: block;
     position: absolute;
     width: 1px;
-    height: 155px;
+    height: 120px;
     background-color: var(--primary-color);
     left: 12%;
-    bottom: -165px!important;
+    bottom: -130px!important;
     z-index: 2;
     top: auto!important;
   }
