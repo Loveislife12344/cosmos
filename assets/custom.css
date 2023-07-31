@@ -735,19 +735,7 @@ text-align:left !important;
     z-index: 2;
     top: auto!important;
   }
-  #whoweare .imgs__banner_flexible .item_1 .titlex:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 1px;
-    height: 120px;
-    background-color: var(--primary-color);
-    left: 12%;
-    bottom: -130px!important;
-    z-index: 2;
-    top: auto!important;
-    transform: rotate(90deg);
-  }
+
   .content_template--18426875609391__6c95f6ee-4048-4d6e-86cd-c82001950c6b .item_1 .titlex::after {
     background-color: #010101;
   }
@@ -1566,6 +1554,19 @@ margin-bottom: 16px;
   #shopify-section-template--18286563754287__008f7694-152e-452f-b17a-c18f38112722 .item_2 .titlex{
     margin-bottom: 51px!important;
   }
+  #whoweare .imgs__banner_flexible .item_1 .titlex:after {
+    content: "";
+    display: block;
+    width: 1px;
+    position: absolute;
+    height: 224px;
+    background-color: #6a6a6a;
+    left: 124%;
+    bottom: 365px!important;
+    z-index: 2;
+    top: auto!important;
+    transform: rotate(90deg);
+}
 }
 
 @media (min-width: 767px){
