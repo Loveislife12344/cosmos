@@ -593,12 +593,12 @@ text-align:left !important;
   /* padding-bottom: var(--bs-gutter-x); */
   border-radius: 0px!important;
 }
-/* @media (min-width:768px) and (max-width: 991px) {
- .imgs__banner_flexible .masonry-item.pb-gutter {
+@media (min-width:768px) and (max-width: 991px) {
+#content_template--18313190146351__6c95f6ee-4048-4d6e-86cd-c82001950c6b .imgs__banner_flexible .masonry-item.pb-gutter {
     width: 100%;
     margin-top: 30px!important;
     }
-} */
+}
 .page-title{
   margin-bottom: 0 !important;
 }
