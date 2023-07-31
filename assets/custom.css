@@ -1555,7 +1555,8 @@ margin-bottom: 16px;
     margin-bottom: 51px!important;
   }
   #whoweare .imgs__banner_flexible .item_1 .banner-wrap {
-      .titlex:after {
+    overflow: visible!important;
+    .titlex:after {
     content: "";
     display: block;
     width: 1px;
@@ -1567,8 +1568,8 @@ margin-bottom: 16px;
     z-index: 2;
     top: auto!important;
     transform: rotate(90deg);
-}
   }
+}
 
 }
 
