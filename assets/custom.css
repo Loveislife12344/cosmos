@@ -578,6 +578,7 @@ text-align:left !important;
 @media (min-width:1440px) {
   #contact_form h4 {
     margin-bottom: 35px;
+    color: black;
     }
 }
 /* contact page end*/
