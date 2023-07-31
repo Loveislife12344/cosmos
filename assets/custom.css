@@ -477,6 +477,9 @@ footer .insta-icon:before {
 .section-title h3{
   font-family: 'Montserrat', sans-serif!important;
 }
+.section-title .sub-title, dfn.sub-title, .box-sub-title{
+  font-family: 'Montserrat', sans-serif!important;
+}
 .--about-us .kt_banner_flexible .titlex{
   text-transform: capitalize;
 }
