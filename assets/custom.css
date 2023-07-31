@@ -571,6 +571,9 @@ text-align:left !important;
 .contact-section.content_template--19012730519855__1633509379ea861af9 form button {
     font-weight: 400;
 }
+.contact-section.content_template--19012730519855__1633571935d8eb2381 .card {
+    border-radius: 0px;
+}
 @media (min-width:768px) {
   
 }
