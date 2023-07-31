@@ -27,6 +27,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="{{settings.color_primary}}">
     {%-render 'meta-tags', dir_body: dir_body-%}
+    {% render 'css-fonts' %}
     {%- if settings.font_source == 'google' -%}{{settings.embed_google_font}}{%- endif -%}
     <noscript>
       <link type="text/css" rel="stylesheet" id="color_sw-css" href="{{'swatch-color.css' | asset_url}}">
