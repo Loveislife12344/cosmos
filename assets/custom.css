@@ -1504,7 +1504,7 @@ color: var(--primary-color);
   padding: 50px 0;
 }
 #ProductSection-main-product-qv .aspectRatio{
-  padding-bottom: var(--img_ar);!important;
+  padding-bottom: var(--img_ar)!important;
 }
 #rd_qvModal .btn-close.close-outside {
     right: 10px;
