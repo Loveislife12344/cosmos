@@ -46,6 +46,9 @@ input.error {
 .form-label{
   text-transform: capitalize!important;
 }
+.form-check._mb-1{
+  margin-bottom: 1.625rem!important;
+}
 @media (min-width: 767px){
 .form-box {
     padding: 2.3125rem 3.75rem 2.3125rem!important;
