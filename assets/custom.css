@@ -35,7 +35,7 @@ input.error {
 }
 [dir=ltr] .form-tab .form-footer .btn {
     font-size: 18px;
-    font-weight: normal;
+    font-weight: lighter;
     border-radius: 0!important;
     text-transform: uppercase!important;
     margin-top: 0.5rem!important;
