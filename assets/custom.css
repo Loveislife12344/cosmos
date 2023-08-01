@@ -1346,7 +1346,7 @@ top: 90px !important;
   text-decoration: none;
 }
 .cart-offcanvas .image__cart{
-  max-width: 9.5rem!important;
+  max-width: 9.5rem;
 }
 .cart-offcanvas .info__cart{
   padding-top: 45px!important;
