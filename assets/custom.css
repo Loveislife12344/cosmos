@@ -1349,6 +1349,9 @@ top: 90px !important;
     border-radius: 0!important;
     color: white!important;
 }
+.cart-offcanvas .quantity .btn-number{
+  color: white!important;
+}
 .cart-offcanvas .check-out,
 .cart-offcanvas .check-out:hover {
   --color_bg: #fff;
