@@ -1310,6 +1310,13 @@ top: 90px !important;
 /* page vatern */
 
 /* cart */
+
+.btn-alert:active, .btn-alert:focus, .btn-alert:hover, .btn-dark:active, .btn-dark:focus, .btn-dark:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover, .btn-success:active, .btn-success:focus, .btn-success:hover {
+    color: #fff!important;
+    border-color: var(--lighten);
+    background-color: var(--lighten);
+}
+
 .cart-offcanvas,
 .footer__cart-offcanvas,
 .footer__cart-offcanvas .tab-content {
