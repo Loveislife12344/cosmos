@@ -1498,6 +1498,9 @@ color: var(--primary-color);
     max-height: 777px;
     border-radius: 0px;
 }
+#rd_qvModal .entry-summary{
+  padding: 50px 0;
+}
 /* quickview end */
 
 
