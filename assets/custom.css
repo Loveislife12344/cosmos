@@ -1343,7 +1343,12 @@ top: 90px !important;
   color: #fff !important;
   text-decoration: none;
 }
-
+.cart-offcanvas .quantity .control {
+    background-color: none!important;
+    border: 1px solid #d9d9d9!important;
+    border-radius: 0!important;
+    color: white!important;
+}
 .cart-offcanvas .check-out,
 .cart-offcanvas .check-out:hover {
   --color_bg: #fff;
