@@ -47,6 +47,7 @@ input.error {
   margin-bottom: 1rem!important;
 }
 .form-label{
+  font-size: 18px!important;
   text-transform: capitalize!important;
 }
 .form-check._mb-1{
