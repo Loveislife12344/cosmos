@@ -1344,7 +1344,7 @@ top: 90px !important;
   text-decoration: none;
 }
 .cart-offcanvas .quantity .control {
-    background-color: none!important;
+    background-color: transparent!important;
     border: 1px solid #d9d9d9!important;
     border-radius: 0!important;
     color: white!important;
