@@ -1195,6 +1195,12 @@ top: 90px !important;
   gap: 100px;
   text-align: left !important;
 }
+#upadteCartCheckout{
+  border-top: 1px solid white!important;
+  .table{
+    margin-top: 1rem!important;
+  }
+}
 #shopify-section-kt_top_banner{
   background-color: var(--primary-color);
 } 
