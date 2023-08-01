@@ -1506,6 +1506,14 @@ color: var(--primary-color);
 #ProductSection-main-product-qv .aspectRatio{
   padding-bottom: var(--img_ar);!important;
 }
+#rd_qvModal .btn-close.close-outside {
+    right: 10px;
+    position: absolute;
+    top: 10px;
+    opacity: 1;
+    filter: none!important;
+    color: #6c0675!important;
+}
 /* quickview end */
 
 
