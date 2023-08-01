@@ -1201,6 +1201,9 @@ top: 90px !important;
 .shop-top span.label{
   font-size: 16px!important;
 }
+.shop-top .kt--drop-i .kt--drop-title{
+  font-size: 16px!important;
+}
 @media (min-width:1200px) {
   .template-collection .sidebar-content{
     padding-right: 20px !important;
