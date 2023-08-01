@@ -1517,6 +1517,10 @@ color: var(--primary-color);
     filter: none!important;
     color: #6c0675!important;
 }
+#main-product-qv .content-summary .content-more{
+  padding-top: 0.5rem!important;
+  padding-bottom: 0.5rem!important;
+}
 /* quickview end */
 
 
