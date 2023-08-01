@@ -1332,6 +1332,7 @@ top: 90px !important;
 #upadteCartOffcanvas .items__cart-offcanvas .border-top{
   border-top: none!important;
 }
+
 .cart-offcanvas .close-canvas,
 .cart-offcanvas .agree_checkbox a,
 .cart-offcanvas .agree_checkbox a:hover,
@@ -1344,6 +1345,10 @@ top: 90px !important;
 .editOpts-offcanvas .n_selected {
   color: #fff !important;
   text-decoration: none;
+}
+
+.cart-offcanvas .price {
+  font-weight: lighter;
 }
 .cart-offcanvas .image__cart{
   max-width: 9.5rem;
