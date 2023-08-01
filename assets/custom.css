@@ -46,6 +46,10 @@ input.error {
 .form-label{
   text-transform: capitalize!important;
 }
+@media (min-width: 767px)
+.form-box {
+    padding: 2.3125rem 3.75rem 2.3125rem!important;
+}
 /* Login/Register form End */
 
 /* header custome css */
