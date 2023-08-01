@@ -43,7 +43,7 @@ input.error {
     border-bottom: none!important;
     margin-bottom: 0rem!important;
 }
-.content_login-register-template #register #create_customer .form-tab .form-footer{
+.form-box #register #create_customer .form-tab .form-footer{
   margin-bottom: 1rem!important;
 }
 .form-label{
