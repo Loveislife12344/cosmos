@@ -27,9 +27,8 @@ input.error {
 .nav-tabs .nav-item .nav-link.active, .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-item:hover .nav-link {
     color: #66066f;
 }
-.input-group, .form-group>.form-control, .input-group>.form-floating, .input-group>.form-select {
+.input-group>.form-control, .input-group>.form-floating, .input-group>.form-select {
     border-radius: 0!important;
-    margin-bottom: 0.75rem;
 }
 [dir=ltr] .form-tab .form-footer .btn {
     border-radius: 0!important;
