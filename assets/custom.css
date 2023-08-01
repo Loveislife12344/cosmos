@@ -43,7 +43,7 @@ input.error {
     border-bottom: none!important;
     margin-bottom: 0rem!important;
 }
-.content_login-register-template bg-image lazyloaded .form-tab .form-footer{
+.content_login-register-template .form-tab .form-footer{
   margin-bottom: 1rem!important;
 }
 .form-label{
