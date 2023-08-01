@@ -1518,7 +1518,7 @@ color: var(--primary-color);
     color: #6c0675!important;
 }
 #rd_qvModal.show .content-summary .content-more{
-  padding-top: 0.5rem!important;
+  padding-top: 0.75rem!important;
   padding-bottom: 0.5rem!important;
 }
 /* quickview end */
