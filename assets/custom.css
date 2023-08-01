@@ -54,7 +54,7 @@ input.error {
 }
 
 @media (min-width: 767px){
-.form-box .{
+.form-box {
     padding: 2.3125rem 3.75rem 2.3125rem!important;
 }
 }
