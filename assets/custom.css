@@ -1197,6 +1197,7 @@ top: 90px !important;
 }
 .layered_subtitle_heading span.ico::after, .layered_subtitle_heading span.ico::before {
   color: #792581!important;
+  border-top: 2px solid #792581!important;
 }
 @media (min-width:1200px) {
   .template-collection .sidebar-content{
