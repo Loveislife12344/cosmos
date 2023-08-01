@@ -1345,6 +1345,9 @@ top: 90px !important;
   color: #fff !important;
   text-decoration: none;
 }
+.cart-offcanvas .image__cart{
+  max-width: 9.5rem!important;
+}
 .cart-offcanvas .info__cart{
   padding-top: 45px!important;
 }
