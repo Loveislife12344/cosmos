@@ -23,6 +23,14 @@ input.error {
 
 /* multistep form end */
 
+/* Login/Register form */
+
+[dir=ltr] .form-tab .form-footer .btn {
+    border-radius: 0;
+}
+
+/* Login/Register form End */
+
 /* header custome css */
 .block-info._first {
   padding: 0;
