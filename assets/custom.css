@@ -1188,6 +1188,9 @@ top: 90px !important;
 /* contact page */
 
 /* collection */
+#shopify-section-template--18286563098927__main{
+  padding: 7rem 0;
+}
 .ndis-collection-header{
   gap: 100px;
   text-align: left !important;
