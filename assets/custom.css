@@ -1521,7 +1521,7 @@ color: var(--primary-color);
   padding-top: 0.75rem!important;
   padding-bottom: 0.5rem!important;
 }
-#rd_qvModal.show .content-summary .social_sharing_wrapper .socials list-inline{
+#rd_qvModal.show .content-summary .social_sharing_wrapper .socials_ .socials{
   margin: 0 -.3125rem!important;
 }
 /* quickview end */
