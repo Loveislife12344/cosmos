@@ -1315,6 +1315,7 @@ top: 90px !important;
 .footer__cart-offcanvas .tab-content {
   --bs-offcanvas-bg: #AF50A7;
   background-color: #AF50A7;
+  box-shadow: none;
 }
 
 .cart-offcanvas * {
