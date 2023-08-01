@@ -37,7 +37,7 @@ input.error {
 
 .form-tab .form-footer {
     padding-bottom: 0!important;
-    border-bottom: none;
+    border-bottom: none!important;
     margin-bottom: 0!important;
 }
 
