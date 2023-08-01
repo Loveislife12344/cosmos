@@ -1195,6 +1195,9 @@ top: 90px !important;
 .layered_subtitle_heading{
   color: #792581!important;
 }
+.layered_subtitle_heading span.ico::after, .layered_subtitle_heading span.ico::before {
+  color: #792581!important;
+}
 @media (min-width:1200px) {
   .template-collection .sidebar-content{
     padding-right: 20px !important;
