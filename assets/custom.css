@@ -25,7 +25,7 @@ input.error {
 
 /* Login/Register form */
 .input-group>.form-control, .input-group>.form-floating, .input-group>.form-select {
-    border-radius: 0;
+    border-radius: 0!important;
 }
 [dir=ltr] .form-tab .form-footer .btn {
     border-radius: 0;
