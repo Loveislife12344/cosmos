@@ -35,6 +35,12 @@ input.error {
   text-transform: uppercase!important;
 }
 
+.form-tab .form-footer {
+    padding-bottom: 0!important;
+    border-bottom: none;
+    margin-bottom: 0!important;
+}
+
 /* Login/Register form End */
 
 /* header custome css */
