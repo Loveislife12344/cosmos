@@ -1329,7 +1329,9 @@ top: 90px !important;
   --text: #fff;
   color: #fff;
 }
-
+#upadteCartOffcanvas .items__cart-offcanvas .border-top{
+  border-top: none!important;
+}
 .cart-offcanvas .close-canvas,
 .cart-offcanvas .agree_checkbox a,
 .cart-offcanvas .agree_checkbox a:hover,
