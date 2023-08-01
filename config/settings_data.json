@@ -719,12 +719,11 @@
           },
           "30fc4e69-4811-4997-ac38-433fa1dc1e8d": {
             "type": "collection_banner",
-            "disabled": true,
             "settings": {
               "off_section": false,
               "off_mobile": false,
               "off_desktop": false,
-              "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle\">CATEGORIES<\/h3>\n<h1 class=\"page-title\">{{collection.title}}<\/h1>\n<\/div>",
+              "html": "<div class=\"page-header text-center\">\n\n<h1 class=\"page-title\">{{collection.title}}<\/h1>\n<\/div>",
               "color_white": true,
               "breadcrumb": true,
               "by_handle_1": "",
