@@ -32,7 +32,7 @@ input.error {
 }
 [dir=ltr] .form-tab .form-footer .btn {
     border-radius: 0!important;
-  text-transform: uppercase!important;
+    text-transform: uppercase!important;
 }
 
 .form-tab .form-footer {
