@@ -1501,7 +1501,7 @@ color: var(--primary-color);
     border-radius: 0px;
 }
 #rd_qvModal .entry-summary{
-  padding: 20px 0;
+  padding: 60px 0!important;
 }
 #ProductSection-main-product-qv .aspectRatio{
   padding-bottom: var(--img_ar)!important;
