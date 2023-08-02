@@ -1538,8 +1538,6 @@ color: var(--primary-color);
 }
 #rd_qvModal.show .content-summary {
   padding: 0.5rem 1rem!important;
-  max-height: 382.5px!important;
-  overflow: hidden auto!important;
 }
 #rd_qvModal .entry-summary {
     padding: 0!important;
