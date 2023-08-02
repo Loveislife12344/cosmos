@@ -1570,7 +1570,7 @@ color: var(--primary-color);
 #ProductSection-template--18286563393839__main .content-summary .social_sharing_wrapper .socials_ .socials{
   margin: 1rem -.3125rem 0.5rem -.3125rem!important;
 }
-.AddToCart-template--18286563393839__main .d-icon-bag:before{
+#cart-form--template--18286563393839__main .d-icon-bag:before{
   color: white!important;
 }
 #ProductSection-template--18286563393839__main .content-summary .content-more{
