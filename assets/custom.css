@@ -1579,7 +1579,7 @@ color: var(--primary-color);
     left: 0px;
 }
 #product-thumb-slide--main-product-qv .thumbnails .swiper-slide-thumb-active .p-sgl__thumb:before{
-  border: none!important;
+  border-color: white!important;
 }
 /* quickview end */
 
