@@ -1619,6 +1619,12 @@ color: var(--primary-color);
 .table-wishlist th{
   color: #3C3C3C!important;
 }
+@media (max-width: 991px){
+  .wishlist-page-item .product-title a, .wishlist-page-item .product-price, .wishlist-page-item .in-stock {
+    font-size: 16px;
+  }
+}
+
 /* wiahliat page css end*/
 
 /* footer custome css  */
