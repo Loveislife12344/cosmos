@@ -1578,7 +1578,7 @@ color: var(--primary-color);
     width: 100px;
     left: 0px;
 }
-#product-thumb-slide--main-product-qv .thumbnails .p-sgl__thumb:before{
+.thumbnails .p-sgl__thumb:before{
   border: none!important;
 }
 #product-thumb-slide--main-product-qv .thumbnails .swiper-slide-thumb-active .p-sgl__thumb:before{
