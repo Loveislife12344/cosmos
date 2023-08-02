@@ -1525,7 +1525,10 @@ color: var(--primary-color);
   margin: 0.2rem -.3125rem!important;
 }
 @media (max-width:1199px){
-  #rd_qvModal .entry-summary {
+#rd_qvModal .modal-content {
+    padding: 20px 35px;
+}
+#rd_qvModal .entry-summary {
     padding: 0!important;
 }
 #rd_qvModal.show .content-summary .social_sharing_wrapper .socials_ .socials {
