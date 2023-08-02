@@ -1528,6 +1528,9 @@ color: var(--primary-color);
 #rd_qvModal .modal-content {
     padding: 20px 35px!important;
 }
+#rd_qvModal.show .content-summary {
+  padding: 0.5rem 1rem!important;
+}
 #rd_qvModal .entry-summary {
     padding: 0!important;
 }
