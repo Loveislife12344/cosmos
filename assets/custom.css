@@ -1504,7 +1504,7 @@ color: var(--primary-color);
   padding: 30px 0!important;
 }
 #ProductSection-main-product-qv .aspectRatio{
-  /* padding-bottom: var(--img_ar)!important; */
+  padding-bottom: var(--img_ar)!important;
 }
 .is-contain .aspectRatio img{
   object-fit: cover!important;
@@ -1571,7 +1571,7 @@ color: var(--primary-color);
     position: absolute;
     min-height: 100px;
     top: 0px;
-    width: 100px;
+    width: 100%!important;
     left: 0px;
 }
 .thumbnails .p-sgl__thumb:before{
