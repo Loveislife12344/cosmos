@@ -1524,6 +1524,12 @@ color: var(--primary-color);
 #rd_qvModal.show .content-summary .social_sharing_wrapper .socials_ .socials{
   margin: 0.2rem -.3125rem!important;
 }
+@media only screen and (max-width: 768px)
+#rd_qvModal.show .content-summary.max-height-true {
+    overflow: hidden auto!important;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 @media (max-width:1199px){
 #rd_qvModal .modal-content {
     padding: 20px 35px!important;
