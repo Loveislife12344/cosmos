@@ -1600,11 +1600,13 @@ color: var(--primary-color);
 
 /* Check-out-information */
 
-._1fragem18 .nfgb6p0{
-  border-top: 1px solid white;
-  ._1fragem1e{
+.nfgb6p0{
+  border-top: 1px solid white!important;
+    ._1fragem1e{
     margin-top: 10px;
-  }
+    }
+}
+
 ._1fragem18 ._1x41w3p1{
   border-top: 1px solid white;
 }
