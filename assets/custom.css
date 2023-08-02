@@ -1562,8 +1562,8 @@ color: var(--primary-color);
 #ProductSection-template--18286563393839__main .entry-summary {
     padding: 30px 0!important;
 }
-.product-quickview-content .socials_.socials_color .social-icon:hover,.product-quickview-content .socials_.socials_color .social-icon{
-color: var(--primary-color);
+#ProductSection-template--18286563393839__main .socials_.socials_color .social-icon:hover,.product-quickview-content .socials_.socials_color .social-icon{
+  color: var(--primary-color)!important;
 }
 /* clickonproduct end */
 
