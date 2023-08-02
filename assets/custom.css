@@ -1555,8 +1555,8 @@ color: var(--primary-color);
 /* quickview end */
 
 /* clickonproduct */
-#ProductSection-template--18286563393839__main, .fbt-box-st{
-  padding: 30px;
+#ProductSection-template--18286563393839__main{
+  padding: 30px 0px;
 }
 #ProductSection-template--18286563393839__main .aspectRatio{
   padding-bottom: var(--img_ar)!important;
