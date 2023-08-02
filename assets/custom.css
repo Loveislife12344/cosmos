@@ -1591,6 +1591,12 @@ color: var(--primary-color);
 #shopify-section-template--18286563393839__main .addItemsAjax.btn-block{
   border-radius:0px!important;
 }
+@media (min-width: 992px){
+#kt--psgl-js .entry-summary .content-summary, .entry-summary .tab-details-product {
+    padding-left: 30px;
+}
+}
+
 @media (max-width: 991px){
   #ProductSection-template--18286563393839__main .entry-summary {
       padding: 0 10px!important;
