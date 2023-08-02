@@ -670,7 +670,6 @@
           },
           "9acc149b-043b-4b21-803e-be6217cb4e8a": {
             "type": "page_banner",
-            "disabled": true,
             "settings": {
               "off_section": false,
               "off_mobile": false,
