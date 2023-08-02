@@ -1419,13 +1419,13 @@ top: 90px !important;
 /* customer login */
 @media (max-width:1200px) {
   .content_login-register-template {
-    padding: 80px 0 80px 0 !important;
+    padding: 95px 0 95px 0 !important;
   }
 }
 
 @media (min-width:1201px) {
   body .content_login-register-template {
-    padding: 80px 0 100px 0 !important;
+    padding: 90px 0 100px 0 !important;
   }
 }
 
