@@ -1568,7 +1568,7 @@ color: var(--primary-color);
 #ProductSection-template--18286563393839__main .content-summary .social_sharing_wrapper .socials_ .socials{
   margin: 0.5rem -.3125rem!important;
 }
-.AddToCart-template--18286563393839__main [class^=d-icon-]:before, [class*=" d-icon-"]:before{
+.AddToCart-template--18286563393839__main .d-icon-bag i::before{
   color: white!important;
 }
 /* clickonproduct end */
