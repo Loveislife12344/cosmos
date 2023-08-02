@@ -1577,6 +1577,8 @@ color: var(--primary-color);
 #ProductSection-template--18286563393839__main .content-summary .content-more{
   padding-top: 0.75rem!important;
   padding-bottom: 0.5rem!important;
+  max-width: 450px;
+  width:100%;
 }
 #shopify-section-template--18286563393839__main .addItemsAjax.btn-block{
   border-radius:0px!important;
