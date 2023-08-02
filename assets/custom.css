@@ -1636,6 +1636,9 @@ color: var(--primary-color);
     border-top: 2px solid #DAA8D4!important;
     border-bottom: 2px solid #DAA8D4!important;
 }
+.wishlist-page #WishItem-copy-of-copy-of-copy-of-demo-1{
+  border-bottom: 2px solid #DAA8D4!important;
+}
 .table-wishlist th{
   color: #3C3C3C!important;
 }
