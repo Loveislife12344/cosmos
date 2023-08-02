@@ -1622,6 +1622,25 @@ color: var(--primary-color);
       padding: 0 10px!important;
   }
 }
+#ProductSection-template--18286563393839__main.main-image{
+  width: calc(100% - 100px);
+  margin-left: 125px;
+}
+#ProductSection-template--18286563393839__main .thumbnails.oneImageThumb {
+    overflow: hidden!important;
+    height: 0!important;
+    position: absolute;
+    min-height: 100px;
+    top: 0px;
+    width: 100%!important;
+    left: 0px;
+}
+.thumbnails .p-sgl__thumb:before{
+  border: none!important;
+}
+#ProductSection-template--18286563393839__main .thumbnails .swiper-slide-thumb-active .p-sgl__thumb:before{
+  border-color: white!important;
+}
 /* clickonproduct end */
 
 /* wishlist page css */
