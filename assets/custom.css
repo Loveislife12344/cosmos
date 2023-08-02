@@ -1579,7 +1579,7 @@ color: var(--primary-color);
 }
 @media (max-width: 991px){
   #ProductSection-template--18286563393839__main .entry-summary {
-      padding: 0!important;
+      padding: 0 10px!important;
   }
 }
 /* clickonproduct end */
