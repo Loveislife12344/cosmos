@@ -1609,6 +1609,9 @@ color: var(--primary-color);
 .wishlist-page .img-thumbnail{
   border: none!important;
 }
+.wishlist-page .btn{
+  border-radius: 0!important;
+}
 
 /* wiahliat page css end*/
 
