@@ -1599,6 +1599,10 @@ color: var(--primary-color);
 /* clickonproduct end */
 
 /* Check-out-information */
+._1h3po421 ._1h3po424 {
+    border-radius: 0;
+    object-fit: cover;
+}
 header .nBWgL{
   display: none!important;
 }
