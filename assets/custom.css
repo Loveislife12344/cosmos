@@ -1562,7 +1562,7 @@ color: var(--primary-color);
 #ProductSection-template--18286563393839__main .entry-summary {
     padding: 30px 0!important;
 }
-.content-summary .socials_.socials_color .social-icon:hover,.product-quickview-content .socials_.socials_color .social-icon{
+.socials_.socials_color .social-icon{
   color: var(--primary-color)!important;
 }
 #ProductSection-template--18286563393839__main .content-summary .social_sharing_wrapper .socials_ .socials{
