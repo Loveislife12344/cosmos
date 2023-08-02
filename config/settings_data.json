@@ -908,6 +908,29 @@
               "section_bg_op": 1,
               "link_banner": ""
             }
+          },
+          "867e953c-c97e-405a-885c-c8321205d747": {
+            "type": "collection_banner",
+            "settings": {
+              "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
+              "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle\">CATEGORIES<\/h3>\n<h1 class=\"page-title\">{{collection.title}}<\/h1>\n<\/div>",
+              "color_white": true,
+              "breadcrumb": true,
+              "by_handle_1": "",
+              "by_handle_2": "",
+              "by_handle_3": "",
+              "by_handle_11": "",
+              "width_section": "container",
+              "width_content": true,
+              "section_margin_top": "",
+              "section_margin_bottom": "",
+              "section_padding": "",
+              "section_bg": "",
+              "section_bg_op": 1,
+              "link_banner": ""
+            }
           }
         },
         "block_order": [
@@ -922,7 +945,8 @@
           "c0ff5ef6-8cd5-48a5-939e-ff3db4872ab4",
           "dfe6be3e-ce1d-4b8f-9ed8-cb1c1c245650",
           "c70d7410-32e6-4104-a2f3-85c2aaf4fe50",
-          "1738949d-4f95-456a-965d-71cf0485b3ea"
+          "1738949d-4f95-456a-965d-71cf0485b3ea",
+          "867e953c-c97e-405a-885c-c8321205d747"
         ],
         "settings": {
           "title": "(Banner) Page top"
