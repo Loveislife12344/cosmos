@@ -1604,32 +1604,10 @@ color: var(--primary-color);
 }
 /* clickonproduct end */
 
-/* Check-out-information */
-._1h3po421 ._1h3po424 {
-    border-radius: 0;
-    object-fit: cover;
-}
-._1x52f9sn{
-    font-size: 18px;
-    font-weight: 400;
-}
-._19gi7ytg {
-    font-size: 18px;
-    font-weight: bold;
-}
-header .nBWgL{
-  display: none!important;
-}
-.nfgb6p0{
-  border-top: 1px solid white!important;
-}
+/* wishlist page css */
 
-._1fragem18 ._1x41w3p1{
-  border-top: 1px solid white;
-}
-}
 
-/* Check-out-information end*/
+/* wiahliat page css end*/
 
 /* footer custome css  */
 footer{
