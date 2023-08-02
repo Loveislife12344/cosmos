@@ -1568,6 +1568,9 @@ color: var(--primary-color);
 #ProductSection-template--18286563393839__main .content-summary .social_sharing_wrapper .socials_ .socials{
   margin: 0.5rem -.3125rem!important;
 }
+.AddToCart-template--18286563393839__main .d-icon-bag{
+  color: white!important;
+}
 /* clickonproduct end */
 
 /* footer custome css  */
