@@ -888,6 +888,7 @@
           },
           "1738949d-4f95-456a-965d-71cf0485b3ea": {
             "type": "product_banner",
+            "disabled": true,
             "settings": {
               "off_section": false,
               "off_mobile": false,
