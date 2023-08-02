@@ -1577,6 +1577,9 @@ color: var(--primary-color);
   padding-top: 0.75rem!important;
   padding-bottom: 0.5rem!important;
 }
+#shopify-section-template--18286563393839__main .addItemsAjax.btn-block{
+  border-radius:0px!important;
+}
 @media (max-width: 991px){
   #ProductSection-template--18286563393839__main .entry-summary {
       padding: 0 10px!important;
