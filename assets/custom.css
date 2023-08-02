@@ -1524,6 +1524,11 @@ color: var(--primary-color);
 #rd_qvModal.show .content-summary .social_sharing_wrapper .socials_ .socials{
   margin: 0.2rem -.3125rem!important;
 }
+@media (max-width:1199px){
+  #rd_qvModal .entry-summary {
+    padding: 0!important;
+}
+}
 /* quickview end */
 
 
