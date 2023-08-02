@@ -1526,7 +1526,7 @@ color: var(--primary-color);
 }
 @media (max-width:1199px){
 #rd_qvModal .modal-content {
-    padding: 20px 35px;
+    padding: 20px 35px!important;
 }
 #rd_qvModal .entry-summary {
     padding: 0!important;
