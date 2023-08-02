@@ -1555,6 +1555,11 @@ color: var(--primary-color);
 /* quickview end */
 
 /* clickonproduct */
+
+#ProductSection-main-product-qv .aspectRatio{
+  padding-bottom: var(--img_ar)!important;
+}
+
 /* clickonproduct end */
 
 /* footer custome css  */
