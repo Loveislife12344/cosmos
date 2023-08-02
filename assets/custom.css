@@ -1525,8 +1525,12 @@ color: var(--primary-color);
   margin: 0.2rem -.3125rem!important;
 }
 @media (max-width:991px){
-#rd_qvModal .modal-content {
-    padding: 20px 35px!important;
+#rd_qvModal.show .content-summary{
+  max-height: fit-content!important;
+}
+#rd_qvModal .modal-content{
+  max-height: fit-content;
+}
 }
 @media (max-width:1199px){
 #rd_qvModal .modal-content {
