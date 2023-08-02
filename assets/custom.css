@@ -1565,6 +1565,9 @@ color: var(--primary-color);
 #ProductSection-template--18286563393839__main .socials_.socials_color .social-icon:hover,.product-quickview-content .socials_.socials_color .social-icon{
   color: var(--primary-color)!important;
 }
+#ProductSection-template--18286563393839__main .content-summary .social_sharing_wrapper .socials_ .socials{
+  margin: 0.2rem -.3125rem!important;
+}
 /* clickonproduct end */
 
 /* footer custome css  */
