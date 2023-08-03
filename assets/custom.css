@@ -1727,6 +1727,10 @@ footer #shopify-section-footer ul li:first-child {
 }
 #shopify-section-footer .widget.widget-about .d-block a{
     font-weight: 400!important;
+    position: relative;
+    top: 14px;
+    display: inherit;
+    font-size: 16px;
   }
 .rd_call_to_action .cta-title,
 .rd_call_to_action .cta-desc {
