@@ -1,1 +1,18 @@
-{"wrapper":"div#kt--filter-js.kt--filter-js","sections":{"main":{"type":"list-collections-template","settings":{}}},"order":["main"]}
+{
+  "wrapper": "div#kt--filter-js.kt--filter-js",
+  "sections": {
+    "main": {
+      "type": "list-collections-template",
+      "settings": {
+        "list_coll_width_section": "container",
+        "list_coll_width_content": true,
+        "display_type": "all",
+        "sort": "alphabetical",
+        "grid": "3"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

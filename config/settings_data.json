@@ -884,6 +884,25 @@
               "image_mb": "shopify:\/\/shop_images\/Rectangle_2_217faade-4c31-4537-b4a1-080b5d2a41c3.png",
               "link_banner": ""
             }
+          },
+          "c7ba74c4-7eee-4f8d-9d0b-c70bbce6f063": {
+            "type": "list_coll_banner",
+            "settings": {
+              "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
+              "html": "<div class=\"page-header text-center\">\n<h3 class=\"page-subtitle\">CATEGORIES<\/h3>\n<h1 class=\"page-title\">{{page.title}}<\/h1>\n<\/div>",
+              "color_white": true,
+              "breadcrumb": true,
+              "width_section": "container-fluid wide",
+              "width_content": true,
+              "section_margin_top": "",
+              "section_margin_bottom": "",
+              "section_padding": "60px 0 60px 0",
+              "section_bg": "",
+              "section_bg_op": 1,
+              "link_banner": ""
+            }
           }
         },
         "block_order": [
@@ -897,7 +916,8 @@
           "cf477074-7c76-49bf-b8d7-01c70412c2d0",
           "c0ff5ef6-8cd5-48a5-939e-ff3db4872ab4",
           "dfe6be3e-ce1d-4b8f-9ed8-cb1c1c245650",
-          "c70d7410-32e6-4104-a2f3-85c2aaf4fe50"
+          "c70d7410-32e6-4104-a2f3-85c2aaf4fe50",
+          "c7ba74c4-7eee-4f8d-9d0b-c70bbce6f063"
         ],
         "settings": {
           "title": "(Banner) Page top"
