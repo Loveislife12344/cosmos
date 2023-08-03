@@ -1363,7 +1363,7 @@ top: 90px !important;
   max-width: 9.5rem;
 }
 .cart-offcanvas .info__cart{
-  padding-top: 45px!important;
+  /* padding-top: 45px!important; */
 }
 
 .cart-offcanvas .quantity .control {
