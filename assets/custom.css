@@ -1726,7 +1726,7 @@ footer #shopify-section-footer ul li:first-child {
   font-weight: bold;
 }
 #shopify-section-footer .widget.widget-about .d-block a{
-    font-weight: 400!important;
+    font-weight: 100!important;
   }
 .rd_call_to_action .cta-title,
 .rd_call_to_action .cta-desc {
