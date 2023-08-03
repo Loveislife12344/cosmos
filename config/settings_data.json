@@ -903,6 +903,52 @@
               "section_bg_op": 1,
               "link_banner": ""
             }
+          },
+          "d444df58-7aea-49e4-8809-054b02a12779": {
+            "type": "product_banner",
+            "settings": {
+              "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
+              "html": "<div class=\"page-header text-center\">\n\n<h1 class=\"page-title\">{{product.title}}<\/h1>\n<\/div>",
+              "color_white": true,
+              "breadcrumb": true,
+              "by_handle_1": "copy-of-demo-1",
+              "by_handle_2": "demo-1",
+              "by_handle_3": "copy-of-copy-of-copy-of-demo-1",
+              "by_handle_11": "",
+              "width_section": "container-fluid wide",
+              "width_content": true,
+              "section_margin_top": "",
+              "section_margin_bottom": "",
+              "section_padding": "60px 0",
+              "section_bg": "",
+              "section_bg_op": 1,
+              "link_banner": ""
+            }
+          },
+          "8d4e504f-9f37-4cb2-b2c2-8491001d7666": {
+            "type": "product_banner",
+            "settings": {
+              "off_section": false,
+              "off_mobile": false,
+              "off_desktop": false,
+              "html": "<div class=\"page-header text-center\">\n<h1 class=\"page-title\">{{product.title}}<\/h1>\n<\/div>",
+              "color_white": true,
+              "breadcrumb": true,
+              "by_handle_1": "copy-of-copy-of-demo-2",
+              "by_handle_2": "copy-of-copy-of-demo-1",
+              "by_handle_3": "copy-of-arm-sleeve",
+              "by_handle_11": "",
+              "width_section": "container",
+              "width_content": true,
+              "section_margin_top": "",
+              "section_margin_bottom": "",
+              "section_padding": "60px 0px",
+              "section_bg": "",
+              "section_bg_op": 1,
+              "link_banner": ""
+            }
           }
         },
         "block_order": [
@@ -917,7 +963,9 @@
           "c0ff5ef6-8cd5-48a5-939e-ff3db4872ab4",
           "dfe6be3e-ce1d-4b8f-9ed8-cb1c1c245650",
           "c70d7410-32e6-4104-a2f3-85c2aaf4fe50",
-          "c7ba74c4-7eee-4f8d-9d0b-c70bbce6f063"
+          "c7ba74c4-7eee-4f8d-9d0b-c70bbce6f063",
+          "d444df58-7aea-49e4-8809-054b02a12779",
+          "8d4e504f-9f37-4cb2-b2c2-8491001d7666"
         ],
         "settings": {
           "title": "(Banner) Page top"
