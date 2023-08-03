@@ -1719,6 +1719,10 @@ footer a:hover{
 footer .widget-list li:not(:last-child){
 margin-bottom: 16px;
 }
+footer #shopify-section-footer ul li:first-child {
+    font-weight: bold;
+}
+
 .rd_call_to_action .cta-title,
 .rd_call_to_action .cta-desc {
   color: #700073 !important;
