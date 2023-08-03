@@ -1566,7 +1566,7 @@ color: var(--primary-color);
 }
 #product-photo-slide--main-product-qv.main-image{
   width: calc(100% - 100px);
-  margin-left: 125px;
+  margin-left: 110px;
 }
 #ProductSection-main-product-qv .thumbnails.oneImageThumb {
     overflow: hidden!important;
