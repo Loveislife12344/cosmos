@@ -1565,8 +1565,8 @@ color: var(--primary-color);
 }
 }
 #product-photo-slide--main-product-qv.main-image{
-  width: calc(100% - 100px);
-  margin-left: 110px;
+  width: calc(100% - 120px);
+  /* margin-left: 110px; */
 }
 #ProductSection-main-product-qv .thumbnails.oneImageThumb {
     overflow: hidden!important;
@@ -1626,8 +1626,8 @@ color: var(--primary-color);
   }
 }
 #product-photo-slide--template--18286563393839__main.main-image{
-  width: calc(100% - 100px);
-  margin-left: 125px;
+  width: calc(100% - 120px);
+  margin-left: auto;
 }
 #ProductSection-template--18286563393839__main .thumbnails.oneImageThumb {
     overflow: hidden!important;
