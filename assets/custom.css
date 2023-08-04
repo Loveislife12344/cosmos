@@ -1121,7 +1121,9 @@ color: #fff !important;
 /* icon-box-card */
 /* section call ton action */
 @media (max-width:767px) {
-
+  #shopify-section-template--18286564376879__3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb .cta-title{
+    font-size: 24px;
+  }
   .content_template--18286564376879__3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb .row {
     display: block;
     text-align: center;
