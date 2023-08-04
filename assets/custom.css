@@ -247,7 +247,7 @@ line-height: 22px !important;
 
 .vtm.inverse:hover {
   background-color: transparent;
-  color: #700073;
+  color: #700073!important;
 }
 
 .btn #Icon_open-data-transfer-download {
