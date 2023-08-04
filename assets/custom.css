@@ -473,7 +473,7 @@ line-height: 1;
 }
 
 .mn-lv1 mn-i item-fa3894eb-8522-450f-aee8-1ddb73822845 .vtm.inverse{
-  color: #700073;
+  color: var(--color);
 }
 /* home page changes */
 
