@@ -270,7 +270,8 @@ line-height: 22px !important;
 
 /* home page  */
 .content_template--18286564376879__16361859527a526cba .btn:hover{
-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  border-color: white!important;
 }
 div .kt_banner_flexible .content_template--18286564376879__33519491-43fc-497a-bdcf-63fd13eccd1c .titlex{
   margin-bottom: 26px !important;
