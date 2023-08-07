@@ -1394,15 +1394,18 @@ top: 90px !important;
     border-radius: 0!important;
     border: 0.0625rem solid #9704a5!important;
 }
+.product-form__item .selector-attrs select.--js-select{
+  
+}
 .cart-offcanvas .quantity .control {
     background-color: transparent!important;
     border: 1px solid #d9d9d9!important;
     border-radius: 0!important;
     color: white!important;
-  .input-qty{
+}
+.cart-offcanvas .quantity .control .input-qty{
     color: white!important;
   }
-}
 .cart-offcanvas .quantity .btn-number{
   color: white!important;
 }
