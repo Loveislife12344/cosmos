@@ -1388,6 +1388,13 @@ top: 90px !important;
 .quantity .btn-number:not(:hover) {
     color: #71097a;
 }
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+    color: var(--bs-btn-disabled-color);
+    pointer-events: none;
+    background-color: #71097a!important;
+    border-color: #9704a5!important;
+    opacity: var(--bs-btn-disabled-opacity);
+}
 .quantity .input-qty {
     border: 1px solid #9704a5!important;
     color: #71097a!important;
