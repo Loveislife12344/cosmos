@@ -1395,7 +1395,9 @@ top: 90px !important;
     border: 0.0625rem solid #9704a5!important;
 }
 .product-form__item .selector-attrs select.--js-select{
-  
+  color: #71097a!important;
+    border-radius: 0!important;
+    border: 0.0625rem solid #9704a5!important;
 }
 .cart-offcanvas .quantity .control {
     background-color: transparent!important;
