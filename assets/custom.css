@@ -1615,10 +1615,10 @@ color: var(--primary-color);
 #rd_qvModal.show .content-summary .content-more {
     padding-top: 0.5rem!important;
     padding-bottom: 0rem!important;
-  p{
+}
+#rd_qvModal.show .content-summary .content-more   p{
     font-size: 14px!important;
   }
-}
 #AddToCartText-main-product-qv{
   font-size: 12px;
   text-transform: uppercase;
