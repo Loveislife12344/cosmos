@@ -1535,6 +1535,9 @@ color: var(--primary-color);
 #AddToCart-main-product-qv .d-icon-bag{
   display: none!important;
 }
+#AddToCartText-main-product-qv{
+  text-transform: uppercase;
+}
 #rd_qvModal .btn-close.close-outside {
     right: 10px;
     position: absolute;
