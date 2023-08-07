@@ -1404,6 +1404,9 @@ top: 90px !important;
     color: #66066F!important;
     font-size: 16px!important;
 }
+.fake_select.not_select .--js-opt{
+  margin-bottom: 6px;
+}
 .fake_select.not_select .--js-opt.sw .option_title {
     color: #71097a!important;
     border-radius: 0!important;
