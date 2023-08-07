@@ -1385,6 +1385,9 @@ top: 90px !important;
 .cart-offcanvas .info__cart{
   /* padding-top: 45px!important; */
 }
+.quantity .btn-number:not(:hover) {
+    color: #71097a;
+}
 .quantity .input-qty {
     border: 1px solid #9704a5!important;
     color: #71097a!important;
