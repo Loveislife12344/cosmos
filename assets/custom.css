@@ -1386,8 +1386,8 @@ top: 90px !important;
   /* padding-top: 45px!important; */
 }
 .quantity .input-qty {
-    border: 1px solid #9704a5;
-    color: #71097a;
+    border: 1px solid #9704a5!important;
+    color: #71097a!important;
 }
 .cart-offcanvas .quantity .control {
     background-color: transparent!important;
