@@ -1576,9 +1576,6 @@ color: var(--primary-color);
     font-size: 14px!important;
   }
 }
-#AddToCart-main-product-qv .d-icon-bag{
-  display: none!important;
-}
 #AddToCartText-main-product-qv{
   font-size: 12px;
   padding: 0.5625rem 0rem 0.5625rem 0rem;
