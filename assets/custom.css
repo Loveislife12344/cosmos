@@ -1388,7 +1388,7 @@ top: 90px !important;
 .quantity .input-qty {
     border: 1px solid #9704a5!important;
     color: #71097a!important;
-    border: 0!important;
+    border-radius: 0!important;
 }
 .fake_select.not_select .--js-opt.sw .option_title {
     color: #71097a!important;
