@@ -1538,6 +1538,9 @@ color: var(--primary-color);
 #AddToCartText-main-product-qv{
   text-transform: uppercase;
 }
+#cart-form--main-product-qv .border-top{
+  border-top-color: #e767d0 !important;
+}
 #rd_qvModal .btn-close.close-outside {
     right: 10px;
     position: absolute;
