@@ -61,6 +61,9 @@
     {{ 'custom.css' | asset_url | stylesheet_tag }}
     {{ content_for_header }}
     {%-render 'theme_header_js'-%}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=615725d44ec3a20019789cff&product=sop' async='async'></script> -->
   {% if content_for_header contains 'bss-b2b-cp' %}{% include 'bss-b2b-header' %}{% endif %}</head>
   <body class="template-{{ request.page_type | default: page_title | handle }} --{{ page_title | handle }}{%if settings.img_type == 'stretch'%} is-cover{%elsif settings.img_type == 'nonstretch'%} is-contain{%else%} is-default{%endif%}{%if settings.import_header == '20'%} mn-sidebar-active{%endif%}" grid-info="{{settings.pr_grid_talg}}" grid-name-opt="{{settings.qs_use_name_opt}}" grid-ol-first-opt="{{settings.qs_show_first_opt}}" grid-flash="{{settings.label_style}}">
