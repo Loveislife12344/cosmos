@@ -164,7 +164,7 @@ line-height: 22px !important;
     /* top: var(--posTop); */
     max-width: 1305px;
     height: 100vh;
-    max-height: 350px;
+    max-height: 460px;
     background: #faf5fa;
     z-index: 5;
     box-shadow: 3px 3px 6px rgb(0 0 0 / 16%);
