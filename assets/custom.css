@@ -106,7 +106,7 @@ line-height: 22px !important;
   font-size: 16px;
   line-height: 21px;
 }
-.mn-i .mn-i.mn-has-child a>span:hover{
+.mn-i .mn-i.mn-has-child:hover a>span{
   font-weight: bold;
 }
 .menu-vertical .--title {
