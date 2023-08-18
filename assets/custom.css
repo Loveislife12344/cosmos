@@ -131,18 +131,6 @@ line-height: 22px !important;
   line-height: 21px;
   color: #3c3c3c;
 }
-.mn-lv1.mn-has-child.show-submn:before {
-    content: "";
-    position: absolute;
-    width: 1310px;
-    top: 62px;
-    left: -115px;
-    height: 100vh;
-    max-height: 460px;
-    background: #faf5fa;
-    z-index: 5;
-    box-shadow: 3px 3px 6px #00000029;
-}
 .main-mn>.mn-i>a {
   padding: 20px 12px;
 }
