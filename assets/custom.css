@@ -151,17 +151,17 @@ line-height: 22px !important;
 }
 
 .mn-lv1.mn-has-child.show-submn:before {
- 
-  content: "";
-  position: fixed;
-  width: 100%;
-  left: 150px;
-  top: var(--posTop);
-  max-width: 1000px;
-  height: 100vh;
-  max-height: 350px;
-  background: #faf5fa;
-  z-index: 5;
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 202px;
+    left: 304px;
+    /* top: var(--posTop); */
+    max-width: 1305px;
+    height: 100vh;
+    max-height: 350px;
+    background: #faf5fa;
+    z-index: 5;
 }
 
 .onsticky .mn-lv1.mn-has-child.show-submn:before {
