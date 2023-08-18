@@ -164,21 +164,21 @@ line-height: 22px !important;
   content: url('https://cdn.shopify.com/s/files/1/0691/8969/7839/files/Icon_feather-user.png?v=1683268135')
 }
 
-/* .mn-lv1.mn-has-child.show-submn:before {
+.mn-lv1.mn-has-child.show-submn:before {
     content: "";
     position: fixed;
     width: 100%;
     top: 202px;
     left: 304px;
-     top: var(--posTop);
+     /* top: var(--posTop); */
     max-width: 1305px;
     height: 100vh;
     max-height: 460px;
     background: #faf5fa;
     z-index: 5;
     box-shadow: 3px 3px 6px rgb(0 0 0 / 16%);
-} */
-.mn-lv1.mn-has-child.show-submn:before {
+}
+/* .mn-lv1.mn-has-child.show-submn:before {
     content: "";
     position: absolute;
     width: 1310px;
@@ -189,7 +189,7 @@ line-height: 22px !important;
     background: #faf5fa;
     z-index: 5;
     box-shadow: 3px 3px 6px #00000029;
-}
+} */
 
 .onsticky .mn-lv1.mn-has-child.show-submn:before {
   top: 62px;
