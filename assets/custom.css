@@ -112,6 +112,9 @@ line-height: 22px !important;
 .menu-vertical .--title {
   color: #781d7e;
 }
+.mn-i:not(.i-megamn) .sub-mn .mn-has-child>a::after {
+  color: #700073;
+}
 
 .menu-vertical .i-megamn.--vt .sub-mn {
   height: 100%;
