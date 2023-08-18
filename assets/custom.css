@@ -118,6 +118,7 @@ line-height: 22px !important;
 
 .mn-lv1.mn-i.show-submn>.sub-mn {
   transform: translateY(0);
+  left: 0px;
 }
 
 .main-mn>.mn-i>a {
