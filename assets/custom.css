@@ -1016,6 +1016,7 @@ text-align:left !important;
   line-height: 25px !important;
   color: #3C3C3C !important;
   white-space: pre-line;
+  text-transform: uppercase;
 }
 
 .sc-title {
