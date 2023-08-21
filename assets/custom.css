@@ -337,7 +337,8 @@ line-height: 24px;
 font-size: 22px !important;
 line-height: 1;
 }
-#shopify-section-template--18286564376879__1636168033f185e383 .item-banner .banner-effect6{
+#shopify-section-template--18286564376879__1636168033f185e383 .item-banner .banner{
+  border-radius: 0px!important;
 }
 /* shop-collage */
 
