@@ -105,6 +105,7 @@ line-height: 22px !important;
 .mn-i .mn-i a>span,.menu-vertical .mn-lv1>a{
   font-size: 16px;
   line-height: 21px;
+  font-family: Montserrat,sans-serif!important;
 }
 .mn-i .mn-has-child a:hover span{
   font-weight: bold;
