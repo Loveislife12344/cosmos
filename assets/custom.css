@@ -1898,8 +1898,8 @@ footer #shopify-section-footer ul li:first-child {
 
 .header .cart-label{
     margin: 0 1.625rem 0 0!important;
+  font-weight: 700;
 }
-
 .cartCount, .icon-count .count, .wishlist-count {
     background-color: #C177B9!important;
 }
