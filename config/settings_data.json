@@ -208,7 +208,7 @@
             "type": "standard",
             "settings": {
               "title": "Products",
-              "button_link": "",
+              "button_link": "shopify:\/\/collections\/all",
               "icon_font": "",
               "label": "",
               "menu_links": "products"
