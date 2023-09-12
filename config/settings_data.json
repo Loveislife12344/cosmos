@@ -218,7 +218,7 @@
             "type": "standard",
             "settings": {
               "title": "About US",
-              "button_link": "",
+              "button_link": "shopify:\/\/pages\/about-us",
               "icon_font": "",
               "label": "",
               "menu_links": "about-us"
