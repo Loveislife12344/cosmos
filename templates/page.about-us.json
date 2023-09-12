@@ -243,6 +243,7 @@
         "05c14ff7-3cb5-4c36-8591-2e1f04b22ddf"
       ],
       "settings": {
+        "assign_id": "ourcustomer",
         "title": "Icon Boxes",
         "off_mobile": false,
         "off_desktop": false,
@@ -299,6 +300,7 @@
         "b1370dc5-937b-4c74-a522-0186d8e231bb"
       ],
       "settings": {
+        "assign_id": "",
         "title": "Section Customize",
         "off_mobile": false,
         "off_desktop": false,
@@ -346,6 +348,7 @@
         "b51f59ce-d11a-4c31-add4-abc25a5fd363"
       ],
       "settings": {
+        "assign_id": "",
         "title": "Section Customize",
         "off_mobile": false,
         "off_desktop": false,
