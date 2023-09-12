@@ -1989,3 +1989,6 @@ footer #shopify-section-footer ul li:first-child {
     margin-bottom: 40px!important;
   }
 }
+html {
+  scroll-padding-top: 70px; 
+}
