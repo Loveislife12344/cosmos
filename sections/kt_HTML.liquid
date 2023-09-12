@@ -29,7 +29,7 @@
 
 
 {%-render 'sc_css'-%}
-<div class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
+<div id="{{section.settings.assign_id}}" class="{{width_section_}}{%if section.settings.off_mobile%} d-none d-lg-block{%endif%}{%if section.settings.off_desktop%} d-lg-none{%endif%}">
   <div class="content_{{section.id}}{%if section.settings.image%} bg-image lazyload{%endif%}"{%if section.settings.image%} data-bgset="{{section.settings.image | img_url: 'master'}}" data-sizes="auto" data-parent-fit="contain"{%endif%} data-respon="{'el':'.content_{{section.id}}','mt':'{{section.settings.section_margin_top}}','mb':'{{section.settings.section_margin_bottom}}','p':'{{section.settings.section_padding}}'}">   
     <div class="section-width {{width_content_}}">
       {%- if section.settings.border_top -%}<div class="w-100 border-top" style="border-top-color: {{section.settings.border_color}} !important"></div>{%- endif -%}
@@ -62,6 +62,11 @@
     "name": "Section Customize",
     "class": "kt_HTML",
     "settings": [
+      {
+          "type": "text",
+          "id": "assign_id",
+          "label": "Section Id"
+      },
       {
         "type": "text",
         "id": "title",
