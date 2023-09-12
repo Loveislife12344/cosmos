@@ -555,7 +555,7 @@
             "type": "button",
             "settings": {
               "button-text": "Sale Items",
-              "url": ""
+              "url": "shopify:\/\/collections\/sale"
             }
           },
           "29aa19e3-a856-4400-9894-e579b82d6ce3": {
