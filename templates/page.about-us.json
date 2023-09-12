@@ -156,7 +156,7 @@
         "84bcd3d0-e907-4fb6-8b8e-a0db4dd7d944"
       ],
       "settings": {
-        "assign_id": "",
+        "assign_id": "ourproducts",
         "title": "Who We Are",
         "off_mobile": false,
         "off_desktop": false,
@@ -218,7 +218,6 @@
     },
     "16278930620b05d394": {
       "type": "rd_image_w_text_1",
-      "disabled": true,
       "blocks": {
         "d4c9d766-aeb5-421f-8bb2-b8a711042bba": {
           "type": "1",
@@ -244,6 +243,7 @@
       "block_order": [
         "d4c9d766-aeb5-421f-8bb2-b8a711042bba"
       ],
+      "disabled": true,
       "settings": {
         "off_mobile": false,
         "off_desktop": false,
@@ -259,7 +259,6 @@
     },
     "16278930715fe8a30e": {
       "type": "rd_image_w_text_1",
-      "disabled": true,
       "blocks": {
         "8191dd6a-5df3-41a9-acdc-429bcdff63be": {
           "type": "1",
@@ -285,6 +284,7 @@
       "block_order": [
         "8191dd6a-5df3-41a9-acdc-429bcdff63be"
       ],
+      "disabled": true,
       "settings": {
         "off_mobile": false,
         "off_desktop": false,
@@ -300,7 +300,6 @@
     },
     "1627893641ded4ec48": {
       "type": "rd_our_team_1",
-      "disabled": true,
       "blocks": {
         "d279a4a8-6434-44fb-9141-d988293f3d92": {
           "type": "title",
@@ -360,6 +359,7 @@
         "1627893641ded4ec48-2",
         "1627893641ded4ec48-3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our team",
         "off_section": false,
@@ -376,7 +376,6 @@
     },
     "f6503f0d-861c-4eb5-b496-e4afac98aab5": {
       "type": "rd_our_team_1",
-      "disabled": true,
       "blocks": {
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-0": {
           "type": "item",
@@ -422,6 +421,7 @@
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-2",
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our team",
         "off_section": false,
@@ -530,7 +530,6 @@
     },
     "16278933153ac77724": {
       "type": "rd_brand_1",
-      "disabled": true,
       "blocks": {
         "6f4fcc6c-e22f-4751-b8c9-923b34cdddd4": {
           "type": "title",
@@ -597,6 +596,7 @@
         "16278933153ac77724-5",
         "16278933153ac77724-6"
       ],
+      "disabled": true,
       "settings": {
         "title": "Brands",
         "off_mobile": false,
