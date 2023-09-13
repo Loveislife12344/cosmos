@@ -185,42 +185,6 @@
       "settings": {
       }
     },
-    "16336019809d2550fe": {
-      "type": "kt_HTML",
-      "disabled": true,
-      "blocks": {
-        "93599e27-3487-4177-a65f-3e5bc90de50a": {
-          "type": "content2",
-          "settings": {
-            "text": "<div class=\"ratio\" style=\"    --bs-aspect-ratio: 390px;\"><iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d2483.544156289421!2d-0.12181368367820722!3d51.50323211882805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c71a3d651f%3A0x72367f97712bc0ee!2sLondon%20Eye!5e0!3m2!1sen!2s!4v1647141060616!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"><\/iframe>\n<\/div>"
-          }
-        }
-      },
-      "block_order": [
-        "93599e27-3487-4177-a65f-3e5bc90de50a"
-      ],
-      "settings": {
-        "title": "Section Customize",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "w-100",
-        "width_content": false,
-        "section_margin_top": "",
-        "section_margin_bottom": "",
-        "section_padding": "",
-        "section_bg": "",
-        "title_section": "",
-        "stitle_section": "",
-        "reverse": false,
-        "title_align": "",
-        "link_to": "",
-        "name_link": "",
-        "margin_btitle": 30,
-        "border_top": true,
-        "border_bottom": false,
-        "border_color": "#ebebeb"
-      }
-    },
     "798344cf-6f9e-4aac-88a1-a9cae916f69f": {
       "type": "kt_banner_flexible",
       "disabled": true,
@@ -287,6 +251,72 @@
         "section_padding": "3rem 0 6rem",
         "section_bg": ""
       }
+    },
+    "c5845abc-3b25-472b-8028-ee872831cc4a": {
+      "type": "rd_call_to_action",
+      "blocks": {
+        "fedfed86-152f-418f-863b-09148ffafec5": {
+          "type": "design_1",
+          "settings": {
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 0,
+            "width_lg": 0,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "title": "Join Our Newsletter",
+            "color_title": "#fff",
+            "stitle": "Lorem ipsum dolor sit amet adipiscing.",
+            "color_desc": "#fff",
+            "textBtn": "{{'general.newsletter_form.submit_html' | t}}<i class=\"d-icon-arrow-right\"><\/i>",
+            "style_btn": "btn-primary",
+            "style_btn_rounded": "",
+            "btn_shadow": false,
+            "social_media": true
+          }
+        },
+        "0134ebcd-0df1-4755-b920-0804fa734a3b": {
+          "type": "item_title",
+          "settings": {
+            "width": 12,
+            "width_sm": 0,
+            "width_md": 0,
+            "width_lg": 0,
+            "width_xl": 0,
+            "width_xxl": 0,
+            "title": "",
+            "color_title": "#fff",
+            "stitle": "",
+            "color_stitle": "#fff",
+            "title_align": "text-center",
+            "margin_btitle": 30
+          }
+        }
+      },
+      "block_order": [
+        "fedfed86-152f-418f-863b-09148ffafec5",
+        "0134ebcd-0df1-4755-b920-0804fa734a3b"
+      ],
+      "settings": {
+        "title": "Call to Action",
+        "off_mobile": false,
+        "off_desktop": false,
+        "width_section": "container",
+        "width_content": true,
+        "section_margin_top": "",
+        "section_margin_bottom": "",
+        "section_padding": "",
+        "section_bg": "",
+        "use_round": false,
+        "color_title": "#333",
+        "color_desc": "#ccc",
+        "color_text_input": "#999",
+        "color_border_input": "#dadada",
+        "color_placeholder": "#999",
+        "color_bg_input": "#fff",
+        "preview": false,
+        "css_section": ""
+      }
     }
   },
   "order": [
@@ -294,11 +324,11 @@
     "1633509379ea861af9",
     "1633571935d8eb2381",
     "f91f84c4-218a-40ac-82bd-5862f88f8d0f",
-    "16336019809d2550fe",
     "798344cf-6f9e-4aac-88a1-a9cae916f69f",
     "2ee5a51f-f1e9-4c56-8f02-c3045908fe37",
     "94b0d9cb-fa51-4177-8117-e25569e9a6b2",
     "af50e6ac-119d-4baa-b95a-6cf4dc1b67e9",
-    "f70ff727-4745-406f-9a2b-ae246645a3aa"
+    "f70ff727-4745-406f-9a2b-ae246645a3aa",
+    "c5845abc-3b25-472b-8028-ee872831cc4a"
   ]
 }
