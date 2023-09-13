@@ -124,10 +124,10 @@
                 {%-assign width = image_item.width | default: 575.00 -%}{%-assign height = image_item.height | default: 575.00 | plus: 0.00-%}
                 <div class="">
                     {% if  block.settings.title-below != true %}
-                        {% if  block.settings.color_titlex != blank %}
-                          <h4 class="stitle" style="--color: {{block.settings.color_titlex}};margin-bottom:0;">{{block.settings.preheading}}</h4>
+                        <h4 class="stitle" style="--color: {{block.settings.color_titlex}};margin-bottom:0;">{{block.settings.preheading}}</h4>
+                        {% if  block.settings.titlex != blank %}
+                          <div class="titlex" style="--color: {{block.settings.color_titlex}}">{{block.settings.titlex}}</div>
                         {% endif %}
-                        <div class="titlex" style="--color: {{block.settings.color_titlex}}">{{block.settings.titlex}}</div>
                     {% endif %}
                     
                     {%-if block.settings.image_link != blank and collections[block.settings.image_link].title -%}<div class="stitle" style="--color: {{block.settings.color_titlex}}">{{'sections.products_section.products_count' | t: count: collections[block.settings.image_link].all_products_count}}</div>{%- endif -%}
