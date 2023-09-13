@@ -1275,7 +1275,7 @@
               "language_app_show": false,
               "language_app_html": "",
               "custom_show": true,
-              "custom_html": "<a><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> Contact <\/a>",
+              "custom_html": "<a href=\"\/pages\/contact\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> Contact <\/a>",
               "welcome_msg_show": false,
               "welcome_msg": "",
               "cart_show": false,
