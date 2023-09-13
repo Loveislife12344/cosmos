@@ -912,7 +912,7 @@
               "off_desktop": false,
               "html": "<div class=\"page-header text-center\">\n\n<h1 class=\"page-title\">{{product.title}}<\/h1>\n<\/div>",
               "color_white": true,
-              "breadcrumb": true,
+              "breadcrumb": false,
               "by_handle_1": "copy-of-demo-1",
               "by_handle_2": "demo-1",
               "by_handle_3": "copy-of-copy-of-copy-of-demo-1",
