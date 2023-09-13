@@ -145,12 +145,12 @@
             endunless
           -%}
           {%- unless template contains 'index' -%}
-          <section class="kt-breadcrumbs">          
+          <!-- <section class="kt-breadcrumbs">          
             <div class="w-100 border-top" style="border-color: rgba(235, 235, 235, 0.55) !important"></div>
             <div class="container">
-              {%-render 'kt_breadcrumb' -%}
+              {% comment %}{%-render 'kt_breadcrumb' -%} {% endcomment %}
             </div>
-          </section>
+          </section> -->
           {%- endunless -%}
           {{ content_for_layout }}
         {% capture bsscommerce_passcode_to_see_price_product_custom %}{% render 'bss-passcode-to-see-price-js.liquid' %}{% endcapture %}{% unless bsscommerce_passcode_to_see_price_product_custom contains "Liquid error" %}{% render 'bss-passcode-to-see-price-js.liquid' %}{% endunless %}{% capture bsscommerce_login_to_see_price_product_custom %}{% render 'bsscommerce-login-to-see-price-custom-js.liquid' %}{% endcapture %}{% unless bsscommerce_login_to_see_price_product_custom contains "Liquid error" %}{% render 'bsscommerce-login-to-see-price-custom-js.liquid' %}{% endunless %}{% capture bss_ltap_fl_redirect %}{% render 'bss-ltap-fl-redirect.liquid' %}{% endcapture %}{% unless bss_ltap_fl_redirect contains "Liquid error" %}{% render 'bss-ltap-fl-redirect.liquid' %}{% endunless %}</main>
