@@ -26,43 +26,6 @@
             "banner-effect": ""
           }
         },
-        "14f356fd-961b-4662-b708-a5f8030267b9": {
-          "type": "it_banner",
-          "disabled": true,
-          "settings": {
-            "title": "Banner item",
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 6,
-            "width_lg": 6,
-            "width_xl": 6,
-            "width_xxl": 6,
-            "image_link": "",
-            "blank_link": false,
-            "desc": "We aim to dispatch all in stock items within 1-2 business days.\n\nDelivery takes between 3-10 business days depending on your location.",
-            "color_desc": "#ffffff",
-            "titlex": "",
-            "color_titlex": "#ffffff",
-            "stitle": "",
-            "color_stitle": "#ffffff",
-            "name_btn": "",
-            "style_btn": "btn-primary",
-            "style_btn_rounded": "",
-            "btn_shadow": false,
-            "name_btn_2": "",
-            "image_link_2": "",
-            "style_btn_2": "btn-primary",
-            "style_btn_rounded_2": "",
-            "btn_shadow_2": false,
-            "text_align_top": 50,
-            "text_align_start": 16,
-            "text_align": "",
-            "text_align_top_mb": 50,
-            "text_align_start_mb": 16,
-            "text_align_mb": "",
-            "banner-effect": ""
-          }
-        },
         "cc4db527-4d60-4491-8eaa-4eb92d5ad86f": {
           "type": "it_cat_1",
           "settings": {
@@ -88,10 +51,10 @@
       },
       "block_order": [
         "bbbebb89-f48d-4812-9e61-97ff35b48809",
-        "14f356fd-961b-4662-b708-a5f8030267b9",
         "cc4db527-4d60-4491-8eaa-4eb92d5ad86f"
       ],
       "settings": {
+        "assign_id": "",
         "title": "Who We Are",
         "off_mobile": false,
         "off_desktop": false,
@@ -109,7 +72,6 @@
     },
     "008f7694-152e-452f-b17a-c18f38112722": {
       "type": "who-we-are",
-      "disabled": true,
       "blocks": {
         "764d6dad-2ecc-4d64-94a7-d5fc95fa1f8a": {
           "type": "it_banner",
@@ -177,7 +139,9 @@
         "764d6dad-2ecc-4d64-94a7-d5fc95fa1f8a",
         "84bcd3d0-e907-4fb6-8b8e-a0db4dd7d944"
       ],
+      "disabled": true,
       "settings": {
+        "assign_id": "",
         "title": "Who We Are",
         "off_mobile": false,
         "off_desktop": false,
@@ -239,7 +203,6 @@
     },
     "16278930620b05d394": {
       "type": "rd_image_w_text_1",
-      "disabled": true,
       "blocks": {
         "d4c9d766-aeb5-421f-8bb2-b8a711042bba": {
           "type": "1",
@@ -265,6 +228,7 @@
       "block_order": [
         "d4c9d766-aeb5-421f-8bb2-b8a711042bba"
       ],
+      "disabled": true,
       "settings": {
         "off_mobile": false,
         "off_desktop": false,
@@ -280,7 +244,6 @@
     },
     "16278930715fe8a30e": {
       "type": "rd_image_w_text_1",
-      "disabled": true,
       "blocks": {
         "8191dd6a-5df3-41a9-acdc-429bcdff63be": {
           "type": "1",
@@ -306,6 +269,7 @@
       "block_order": [
         "8191dd6a-5df3-41a9-acdc-429bcdff63be"
       ],
+      "disabled": true,
       "settings": {
         "off_mobile": false,
         "off_desktop": false,
@@ -321,7 +285,6 @@
     },
     "1627893641ded4ec48": {
       "type": "rd_our_team_1",
-      "disabled": true,
       "blocks": {
         "d279a4a8-6434-44fb-9141-d988293f3d92": {
           "type": "title",
@@ -381,6 +344,7 @@
         "1627893641ded4ec48-2",
         "1627893641ded4ec48-3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our team",
         "off_section": false,
@@ -397,7 +361,6 @@
     },
     "f6503f0d-861c-4eb5-b496-e4afac98aab5": {
       "type": "rd_our_team_1",
-      "disabled": true,
       "blocks": {
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-0": {
           "type": "item",
@@ -442,6 +405,7 @@
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-2",
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our team",
         "off_section": false,
@@ -458,7 +422,6 @@
     },
     "dd4d33fa-a4e2-4056-981b-8c983c7f2f38": {
       "type": "rd_icon_boxes",
-      "disabled": true,
       "blocks": {
         "4cb1da94-d3ba-4934-bfac-dbfe7c784bf0": {
           "type": "item_title",
@@ -514,7 +477,9 @@
         "87e81b18-a380-4e2b-8a82-22e6db5a2e3d",
         "3b0b4a48-1a35-4476-a634-49d4cbd3dd33"
       ],
+      "disabled": true,
       "settings": {
+        "assign_id": "",
         "title": "Icon Boxes",
         "off_mobile": false,
         "off_desktop": false,
@@ -538,7 +503,6 @@
     },
     "16278933153ac77724": {
       "type": "rd_brand_1",
-      "disabled": true,
       "blocks": {
         "6f4fcc6c-e22f-4751-b8c9-923b34cdddd4": {
           "type": "title",
@@ -604,6 +568,7 @@
         "16278933153ac77724-5",
         "16278933153ac77724-6"
       ],
+      "disabled": true,
       "settings": {
         "title": "Brands",
         "off_mobile": false,
@@ -631,7 +596,6 @@
     },
     "ccbfbc4a-1bac-4d39-b5fc-30d3c7d32cc2": {
       "type": "kt_HTML",
-      "disabled": true,
       "blocks": {
         "44a797e5-86af-450b-ae7c-5a51c50cc1c4": {
           "type": "title",
@@ -664,7 +628,9 @@
         "3670f200-cc76-4460-b913-00053809a940",
         "b1370dc5-937b-4c74-a522-0186d8e231bb"
       ],
+      "disabled": true,
       "settings": {
+        "assign_id": "",
         "title": "Section Customize",
         "off_mobile": false,
         "off_desktop": false,
@@ -688,7 +654,6 @@
     },
     "5d212a61-84e4-4fdc-8406-1420dea2c61d": {
       "type": "kt_HTML",
-      "disabled": true,
       "blocks": {
         "ecfc224c-ce2c-4b09-b760-56a6621952f7": {
           "type": "title",
@@ -712,7 +677,9 @@
         "ecfc224c-ce2c-4b09-b760-56a6621952f7",
         "b51f59ce-d11a-4c31-add4-abc25a5fd363"
       ],
+      "disabled": true,
       "settings": {
+        "assign_id": "",
         "title": "Section Customize",
         "off_mobile": false,
         "off_desktop": false,
@@ -736,7 +703,6 @@
     },
     "e863fe0c-f75b-4fc5-a263-d04ebe574e72": {
       "type": "kt_banner_flexible",
-      "disabled": true,
       "blocks": {
         "dde8c4fd-51cd-4ce5-895c-3386b2edb4ac": {
           "type": "it_banner",
@@ -848,6 +814,7 @@
         "b5b9cf82-640a-468d-8742-4b5fef7d0ab5",
         "3ffa201f-f5b2-4cef-923f-86d62649732e"
       ],
+      "disabled": true,
       "settings": {
         "title": "Banner Flexible",
         "off_mobile": false,
@@ -866,7 +833,6 @@
     },
     "a1358eb3-d385-4d09-b3c8-1e39988a7808": {
       "type": "rd_banner_cta_01",
-      "disabled": true,
       "blocks": {
         "89df672c-8f86-4bc8-8e4c-69b3df55115a": {
           "type": "it_banner",
@@ -905,6 +871,7 @@
       "block_order": [
         "89df672c-8f86-4bc8-8e4c-69b3df55115a"
       ],
+      "disabled": true,
       "settings": {
         "title": "Banner Flexible",
         "off_mobile": false,
@@ -921,7 +888,6 @@
     },
     "0e1e889c-4bb8-4018-8103-767ef1ca5567": {
       "type": "rd_img_text_cta_sc",
-      "disabled": true,
       "blocks": {
         "template--18426875609391__0e1e889c-4bb8-4018-8103-767ef1ca5567-1679651000794f5433-0": {
           "type": "item",
@@ -961,6 +927,7 @@
         "template--18426875609391__0e1e889c-4bb8-4018-8103-767ef1ca5567-1679651000794f5433-0",
         "cb4b2318-1625-4112-9ac6-3ce971944031"
       ],
+      "disabled": true,
       "settings": {
         "title": "Image text + cta",
         "off_mobile": false,
@@ -977,7 +944,6 @@
     },
     "28efc14f-6837-44f4-be7f-0be4c93c3634": {
       "type": "rd_image_w_text_1",
-      "disabled": true,
       "blocks": {
         "f96688d8-d74d-46fe-b09b-4641f1a214a3": {
           "type": "1",
@@ -1024,6 +990,7 @@
         "f96688d8-d74d-46fe-b09b-4641f1a214a3",
         "436e7cbd-9821-4f00-bf86-f768cd8cc6ba"
       ],
+      "disabled": true,
       "settings": {
         "off_mobile": false,
         "off_desktop": false,
