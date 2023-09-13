@@ -264,38 +264,20 @@
             "width_lg": 0,
             "width_xl": 0,
             "width_xxl": 0,
-            "title": "Join Our Newsletter",
+            "title": "Subscribe<span>&<\/span> Save",
             "color_title": "#fff",
-            "stitle": "Lorem ipsum dolor sit amet adipiscing.",
+            "stitle": "Lorem ipsum dolor sit amet adipiscing. Lorem ipsum dolor sit amet adipiscing.",
             "color_desc": "#fff",
             "textBtn": "{{'general.newsletter_form.submit_html' | t}}<i class=\"d-icon-arrow-right\"><\/i>",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
             "btn_shadow": false,
-            "social_media": true
-          }
-        },
-        "0134ebcd-0df1-4755-b920-0804fa734a3b": {
-          "type": "item_title",
-          "settings": {
-            "width": 12,
-            "width_sm": 0,
-            "width_md": 0,
-            "width_lg": 0,
-            "width_xl": 0,
-            "width_xxl": 0,
-            "title": "",
-            "color_title": "#fff",
-            "stitle": "",
-            "color_stitle": "#fff",
-            "title_align": "text-center",
-            "margin_btitle": 30
+            "social_media": false
           }
         }
       },
       "block_order": [
-        "fedfed86-152f-418f-863b-09148ffafec5",
-        "0134ebcd-0df1-4755-b920-0804fa734a3b"
+        "fedfed86-152f-418f-863b-09148ffafec5"
       ],
       "settings": {
         "title": "Call to Action",
@@ -305,8 +287,8 @@
         "width_content": true,
         "section_margin_top": "",
         "section_margin_bottom": "",
-        "section_padding": "",
-        "section_bg": "",
+        "section_padding": "30px",
+        "section_bg": "radial-gradient(rgba(209, 211, 244, 1) 100%, rgba(120, 196, 245, 1) 100%)",
         "use_round": false,
         "color_title": "#333",
         "color_desc": "#ccc",
