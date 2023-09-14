@@ -264,13 +264,13 @@
             "width_lg": 0,
             "width_xl": 0,
             "width_xxl": 0,
-            "title": "Subscribe<span>&<\/span> Save",
-            "color_title": "#fff",
-            "stitle": "Lorem ipsum dolor sit amet adipiscing. Lorem ipsum dolor sit amet adipiscing.",
-            "color_desc": "#fff",
+            "title": "<p>Subscribe<br\/><span class=\"outlined\">&<\/span> Save<\/p>",
+            "color_title": "#ffffff",
+            "stitle": "Lorem ipsum dolor sit amet adipiscing.",
+            "color_desc": "#ffffff",
             "textBtn": "{{'general.newsletter_form.submit_html' | t}}<i class=\"d-icon-arrow-right\"><\/i>",
             "style_btn": "btn-primary",
-            "style_btn_rounded": "",
+            "style_btn_rounded": "btn-rounded",
             "btn_shadow": false,
             "social_media": false
           }
@@ -279,23 +279,28 @@
       "block_order": [
         "fedfed86-152f-418f-863b-09148ffafec5"
       ],
+      "custom_css": [
+        ".outlined {line-height: 1; color: #d3f6fe !important; text-shadow: -1px -1px 0 #700073, 1px -1px 0 #700073, -1px 1px 0 #700073, 1px 1px 0 #700073;}",
+        ".cta-title,p {line-height: 1;}",
+        ".col-lg-8 {align-self: center;}"
+      ],
       "settings": {
         "title": "Call to Action",
         "off_mobile": false,
         "off_desktop": false,
-        "width_section": "container",
+        "width_section": "container-fluid wide",
         "width_content": true,
         "section_margin_top": "",
         "section_margin_bottom": "",
         "section_padding": "30px",
-        "section_bg": "radial-gradient(rgba(209, 211, 244, 1) 100%, rgba(120, 196, 245, 1) 100%)",
+        "section_bg": "#d3f6fe",
         "use_round": false,
-        "color_title": "#333",
-        "color_desc": "#ccc",
-        "color_text_input": "#999",
+        "color_title": "#333333",
+        "color_desc": "#cccccc",
+        "color_text_input": "#999999",
         "color_border_input": "#dadada",
-        "color_placeholder": "#999",
-        "color_bg_input": "#fff",
+        "color_placeholder": "#999999",
+        "color_bg_input": "#ffffff",
         "preview": false,
         "css_section": ""
       }
