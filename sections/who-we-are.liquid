@@ -103,7 +103,7 @@
                   </div>
                   <div class="--button">
                     {%-if block.settings.name_btn != blank -%}
-                    <a href="{{block.settings.image_link | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%}" aria-label="{{block.settings.name_btn | strip_html}}">{{block.settings.name_btn}}</a>
+                    <a href="{{block.settings.link_btn | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="btn {{block.settings.style_btn}} {{block.settings.style_btn_rounded}}{%if block.settings.btn_shadow%} btn-shadow{%endif%}" aria-label="{{block.settings.name_btn | strip_html}}">{{block.settings.name_btn}}</a>
                     {%- endif -%}
                     {%-if block.settings.name_btn_2 != blank -%}
                     <a href="{{block.settings.image_link_2 | default: routes.root_url}}"{%if block.settings.blank_link_2 %} target="_blank"{%endif%} class="btn {{block.settings.style_btn_2}} {{block.settings.style_btn_rounded_2}}{%if block.settings.btn_shadow_2%} btn-shadow{%endif%} ms-4" aria-label="{{block.settings.name_btn_2 | strip_html}}">{{block.settings.name_btn_2}}</a>
@@ -146,7 +146,7 @@
                 {{block.settings.description}}
                 </span>
                   {% if block.settings.name_btn != blank %}
-                    <div class="">block.settings.link_btn
+                    <div class="">
                     <a href="{{block.settings.link_btn}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="btn btn-primary btn-outline" aria-label="{{block.settings.name_btn | strip_html}}">{{block.settings.name_btn}}</a>
                   </div>
                   {% endif %}
