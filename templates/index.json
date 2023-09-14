@@ -331,6 +331,7 @@
             "description": "Cosmac Healthcare is one of the longest-established suppliers of healthcare products in Australia.",
             "color_titlex": "#66066f",
             "name_btn": "FIND OUT MORE",
+            "link_btn": "shopify:\/\/pages\/about-us",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
           }
@@ -421,6 +422,7 @@
             "description": "",
             "color_titlex": "#66066f",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
           }
@@ -444,6 +446,7 @@
             "description": "",
             "color_titlex": "#66066f",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-underline btn-white btn-link",
             "banner-effect": ""
           }
@@ -1566,7 +1569,7 @@
         "627ed763-1f07-4fa1-af7a-9076dfe86004": {
           "type": "child",
           "settings": {
-            "content": "<div class=\"\">\n                    <a href=\"\/\" class=\"btn btn-primary btn-outline\" aria-label=\"CONTACT US\">CONTACT US<\/a>\n                  <\/div>",
+            "content": "<div class=\"\">\n<a href=\"\/pages\/contact\" class=\"btn btn-primary btn-outline\" aria-label=\"CONTACT US\">CONTACT US<\/a>\n<\/div>",
             "parent_id": 1
           }
         }
