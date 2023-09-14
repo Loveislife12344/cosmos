@@ -146,8 +146,8 @@
                 {{block.settings.description}}
                 </span>
                   {% if block.settings.name_btn != blank %}
-                    <div class="">
-                    <a href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="btn btn-primary btn-outline" aria-label="{{block.settings.name_btn | strip_html}}">{{block.settings.name_btn}}</a>
+                    <div class="">block.settings.link_btn
+                    <a href="{{block.settings.link_btn}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="btn btn-primary btn-outline" aria-label="{{block.settings.name_btn | strip_html}}">{{block.settings.name_btn}}</a>
                   </div>
                   {% endif %}
                   
