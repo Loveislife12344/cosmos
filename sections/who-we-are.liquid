@@ -54,11 +54,25 @@
             {%- case block.type -%}
               {%- when 'it_banner' -%}
                 {%-assign width = block.settings.image.width | default: 575.00 -%}{%-assign height = block.settings.image.height | default: 575.00 | plus: 0.00-%}
-                <a href="{{block.settings.image_link | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner{%if block.settings.image_mb != blank%} d-none d-md-block{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+            
+                {% assign imageLink = block.settings.image_link | default: '' %}
+                <a href="{% if imageLink == '' or imageLink == 'javascript:void(0);' %}javascript:void(0);{% else %}{{ imageLink }}{% endif %}"
+                  {% if block.settings.blank_link %} target="_blank" {% endif %}
+                  class="img__banner{% if block.settings.image_mb != blank %} d-none d-md-block{% endif %}
+                  {% if imageLink == '' or imageLink == 'javascript:void(0);' %} pointer-none {% endif %}"
+                  style="padding-bottom: {{ height | divided_by: width | times: 100.00000000 }}%;">
+                  {%- if block.settings.image -%}
+                    {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: class: 'img-fit-cover', alt: block.settings.image.alt, size: '100vw', widths: '385, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840', loading: 'lazy' }}
+                  {%- endif -%}
+                </a>
+            
+                <!-- Code Commented  -->
+                <!-- <a href="{{block.settings.image_link | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner{%if block.settings.image_mb != blank%} d-none d-md-block{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
                   {%- if block.settings.image -%}
                   {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: class: 'img-fit-cover', alt: block.settings.image.alt, size: '100vw', widths: '385, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840', loading: 'lazy' }}
                   {%- endif -%}
-                </a>
+                </a> -->
+                <!-- Code Commented  -->
                 {%- if block.settings.image_mb -%}
                   {%-assign width = block.settings.image_mb.width | default: 575.00 -%}{%-assign height = block.settings.image_mb.height | default: 575.00 | plus: 0.00-%}
                   <a href="{{block.settings.image_link | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner d-md-none" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
@@ -132,11 +146,23 @@
                     
                     {%-if block.settings.image_link != blank and collections[block.settings.image_link].title -%}<div class="stitle" style="--color: {{block.settings.color_titlex}}">{{'sections.products_section.products_count' | t: count: collections[block.settings.image_link].all_products_count}}</div>{%- endif -%}
                   </div>
-                <a href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+            {% assign imageLink = block.settings.image_link | default: '' %}
+            <a href="{% if imageLink == '' or imageLink == 'javascript:void(0);' %}javascript:void(0);{% else %}{{ imageLink }}{% endif %}"
+              {% if block.settings.blank_link %} target="_blank" {% endif %}
+              class="img__banner{% if block.settings.image_mb != blank %} d-none d-md-block{% endif %}
+              {% if imageLink == '' or imageLink == 'javascript:void(0);' %} pointer-none {% endif %}"
+              style="padding-bottom: {{ height | divided_by: width | times: 100.00000000 }}%;">
+              {%- if block.settings.image -%}
+                {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: class: 'img-fit-cover', alt: block.settings.image.alt, size: '100vw', widths: '385, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840', loading: 'lazy' }}
+              {%- endif -%}
+            </a>
+            <!-- Code Commented  -->
+                <!-- <a href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
                   {%- if block.settings.image -%}
                   {{ image_item | image_url: width: image_item.width | image_tag: class: 'img-fit-cover', alt: image_item.alt, size: '100vw', widths: '385, 550, 750, 1100', loading: 'lazy' }}
                   {%- endif -%}
-                </a>
+                </a> -->
+            <!-- Code Commented  -->
                 {% if block.settings.title-below == true %}
                     <h4 class="stitle" style="--color: {{block.settings.color_titlex}};margin-bottom:0;">{{block.settings.preheading}}</h4>
                     <div class="titlex" style="--color: {{block.settings.color_titlex}}">{{block.settings.titlex}}</div>
