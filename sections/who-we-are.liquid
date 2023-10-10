@@ -132,7 +132,7 @@
                     
                     {%-if block.settings.image_link != blank and collections[block.settings.image_link].title -%}<div class="stitle" style="--color: {{block.settings.color_titlex}}">{{'sections.products_section.products_count' | t: count: collections[block.settings.image_link].all_products_count}}</div>{%- endif -%}
                   </div>
-                <a ffff href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                <a href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
                   {%- if block.settings.image -%}
                   {{ image_item | image_url: width: image_item.width | image_tag: class: 'img-fit-cover', alt: image_item.alt, size: '100vw', widths: '385, 550, 750, 1100', loading: 'lazy' }}
                   {%- endif -%}
@@ -153,6 +153,43 @@
                   
               
                 {%- endunless -%}
+
+                {%- when 'it_cat_new' -%}
+                {%- assign use_css = true -%}
+                {%- assign image_item = block.settings.image -%}
+                {%-assign width = image_item.width | default: 575.00 -%}{%-assign height = image_item.height | default: 575.00 | plus: 0.00-%}
+                <div class="">
+                    {% if  block.settings.title-below != true %}
+                        <h4 class="stitle" style="--color: {{block.settings.color_titlex}};margin-bottom:0;">{{block.settings.preheading}}</h4>
+                        {% if  block.settings.titlex != blank %}
+                          <div class="titlex" style="--color: {{block.settings.color_titlex}}">{{block.settings.titlex}}</div>
+                        {% endif %}
+                    {% endif %}
+                    
+                    {%-if block.settings.image_link != blank and collections[block.settings.image_link].title -%}<div class="stitle" style="--color: {{block.settings.color_titlex}}">{{'sections.products_section.products_count' | t: count: collections[block.settings.image_link].all_products_count}}</div>{%- endif -%}
+                  </div>
+                <a href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                  {%- if block.settings.image -%}
+                  {{ image_item | image_url: width: image_item.width | image_tag: class: 'img-fit-cover', alt: image_item.alt, size: '100vw', widths: '385, 550, 750, 1100', loading: 'lazy' }}
+                  {%- endif -%}
+                </a>
+                {% if block.settings.title-below == true %}
+                    <h4 class="stitle" style="--color: {{block.settings.color_titlex}};margin-bottom:0;">{{block.settings.preheading}}</h4>
+                    <div class="titlex" style="--color: {{block.settings.color_titlex}}">{{block.settings.titlex}}</div>
+                  {% endif %}
+                {%- unless block.settings.titlex == blank -%}
+                <span>
+                {{block.settings.description}}
+                </span>
+                  {% if block.settings.name_btn != blank %}
+                    <div class="">
+                    <a href="{{block.settings.link_btn}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="btn btn-primary btn-outline" aria-label="{{block.settings.name_btn | strip_html}}">{{block.settings.name_btn}}</a>
+                  </div>
+                  {% endif %}
+                  
+              
+                {%- endunless -%}
+              
               {%- when 'it_video' -%}  
                 {{block.settings.iframe | html}}
             {%- endcase -%}
@@ -1472,6 +1509,229 @@
         {
           "type": "it_cat_1",
           "name": "Item Categories",
+          "settings": [
+            {
+              "type": "header",
+              "content": "Block settings"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title block",
+              "default": "Categories item",
+              "info": "Name block (in editor bar)"
+            },
+            {
+              "type": "header",
+              "content": "Width of item"
+            },
+            {
+              "type": "range",
+              "id": "width",
+              "min": 1,
+              "max": 13,
+              "step": 1,
+              "unit": "/12",
+              "label": "Width",
+              "default": 12
+            },
+            {
+              "type": "range",
+              "id": "width_sm",
+              "min": 0,
+              "max": 13,
+              "step": 1,
+              "unit": "/12",
+              "label": "Width sm - (>= 576px)",
+              "default": 0
+            },
+            {
+              "type": "range",
+              "id": "width_md",
+              "min": 0,
+              "max": 13,
+              "step": 1,
+              "unit": "/12",
+              "label": "Width md - (>= 768px)",
+              "default": 6
+            },
+            {
+              "type": "range",
+              "id": "width_lg",
+              "min": 0,
+              "max": 13,
+              "step": 1,
+              "unit": "/12",
+              "label": "Width lg - (>= 992px)",
+              "default": 4
+            },
+            {
+              "type": "range",
+              "id": "width_xl",
+              "min": 0,
+              "max": 13,
+              "step": 1,
+              "unit": "/12",
+              "label": "Width xl - (>= 1200px)",
+              "default": 0
+            },
+            {
+              "type": "range",
+              "id": "width_xxl",
+              "min": 0,
+              "max": 13,
+              "step": 1,
+              "unit": "/12",
+              "label": "Width xxl - (>= 1400px)",
+              "default": 0
+            },
+            {
+              "type": "paragraph",
+              "content": "0 - Displayed by previous screen size."
+            },
+            {
+              "type": "paragraph",
+              "content": "13 - Hide at current and larger screen sizes."
+            },
+            {
+              "type": "header",
+              "content": "Image"
+            },
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image banner"
+            },
+            {
+              "type": "collection",
+              "id": "image_link",
+              "label": "Link to"
+            },
+            {
+              "type":"checkbox",
+              "id": "blank_link",
+              "label": "Open link in new window?"
+            },
+            {
+              "type": "header",
+              "content": "Content"
+            },
+            {
+              "type":"html",
+              "id":"titlex",
+              "label": "Title",
+              "default":"This Week's Most Wanted"
+            },
+            {
+              "type":"html",
+              "id":"preheading",
+              "label": "preheading",
+              "default":"This Week's Most Wanted"
+            },
+            {
+              "type":"checkbox",
+              "id":"title-below",
+              "label": "show title below",
+              "default":false
+            },
+            {
+              "type":"html",
+              "id":"description",
+              "label": "Description",
+              "default":"This Week's Most Wanted"
+            },
+            {
+              "type": "color",
+              "id": "color_titlex",
+              "label": "Color",
+              "default": "#222"
+            },
+            {
+              "type": "header",
+              "content": "Button"
+            },
+            {
+              "type":"text",
+              "id":"name_btn",
+              "label": "Name button",
+              "default":"SHOP NOW"
+            },
+            {
+              "type":"url",
+              "id":"link_btn",
+              "label": "Button Link"
+            },
+            {
+              "type": "select",
+              "id": "style_btn",
+              "label": "Button style",
+              "default": "btn-underline btn-link",
+              "options": [
+                {
+                  "value": "btn-underline btn-link",
+                  "label": "Underline dark",
+                  "group": "Underline"
+                },
+                {
+                  "value": "btn-underline btn-white btn-link",
+                  "label": "Underline white",
+                  "group": "Underline"
+                }
+              ]
+            },
+            {
+              "type": "header",
+              "content": "Banner effect"
+            },
+            {
+              "type": "select",
+              "id": "banner-effect",
+              "options": [
+                {
+                  "value": "",
+                  "label": "None effect"
+                },
+                {
+                  "value": "banner-effect1",
+                  "label": "Banner effect 1"
+                },
+                {
+                  "value": "banner-effect2",
+                  "label": "Banner effect 2"
+                },
+                {
+                  "value": "banner-effect3",
+                  "label": "Banner effect 3"
+                },
+                {
+                  "value": "banner-effect4",
+                  "label": "Banner effect 4"
+                },
+                {
+                  "value": "banner-effect5",
+                  "label": "Banner effect 5"
+                },
+                {
+                  "value": "banner-effect6",
+                  "label": "Banner effect 6"
+                },
+                {
+                  "value": "banner-effect7",
+                  "label": "Banner effect 7"
+                },
+                {
+                  "value": "banner-effect8",
+                  "label": "Banner effect 8"
+                }
+              ],
+              "label": "Banner hover effect",
+              "default": ""
+            }
+          ]
+        },
+         {
+          "type": "it_cat_new",
+          "name": "Item Categories New",
           "settings": [
             {
               "type": "header",
