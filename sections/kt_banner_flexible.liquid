@@ -50,7 +50,7 @@
         {%- if block.settings.width_xxl != 0 %} d-xxl-{%-if block.settings.width_xxl == 13-%}none{%else%}block{%endif%} col-xxl-{{block.settings.width_xxl}}{% endif -%}
       {%- endcapture -%}
       <div class="masonry-item item_{{forloop.index}} {{block.type}} col-{{block.settings.width}} {{-col_it | strip_newlines}} pb-gutter" {{ block.shopify_attributes }}>
-        <div class="banner-wrapewewewew {{block.settings.banner-effect}}">
+        <div class="banner-wrap {{block.settings.banner-effect}}">
           {%- case block.type -%}
             {%- when 'it_banner' -%}
               {%-assign width = block.settings.image.width | default: 575.00 -%}{%-assign height = block.settings.image.height | default: 575.00 | plus: 0.00-%}
