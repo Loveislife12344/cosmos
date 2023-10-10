@@ -22,6 +22,7 @@
             "description": "<br>Cosmac Healthcare is one of the longest-established suppliers of healthcare products in Australia.\n<br><br>\nWe back this up with a well-deserved reputation for providing quick, efficient service, and strong customer support.",
             "color_titlex": "#66066f",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
           }
@@ -36,8 +37,8 @@
             "width_lg": 8,
             "width_xl": 9,
             "width_xxl": 9,
-            "image": "shopify:\/\/shop_images\/O68Z4K0.png",
-            "image_mb": "shopify:\/\/shop_images\/O68Z4K0.png",
+            "image": "shopify:\/\/shop_images\/istockphoto-1083790998-1024x1024_1.jpg",
+            "image_mb": "shopify:\/\/shop_images\/istockphoto-1083790998-1024x1024_1.jpg",
             "image_link": "",
             "blank_link": false,
             "desc": "",
@@ -47,6 +48,7 @@
             "stitle": "",
             "color_stitle": "#ffffff",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
             "btn_shadow": false,
@@ -110,6 +112,7 @@
             "stitle": "",
             "color_stitle": "#ffffff",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
             "btn_shadow": false,
@@ -146,6 +149,7 @@
             "description": "Cosmac Healthcare specialises in products relating to body compression, support and protection.\nNo-one knows more about these products than Cosmac.\n\nOur trained and experienced staff members are always happy to assist in providing helpful and constructive advice.\n\nThrough our affiliated company, Axcess Nutrition, the group is also active in the supply of clinical nutrition and texture-modified products, and feeding pumps &amp; accessories.\n\nAxcess is a contracted supplier under the NSW Home Enteral Nutrition (HEN) programme.",
             "color_titlex": "#66066f",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
           }
