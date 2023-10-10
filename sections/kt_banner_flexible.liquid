@@ -54,7 +54,7 @@
           {%- case block.type -%}
             {%- when 'it_banner' -%}
               {%-assign width = block.settings.image.width | default: 575.00 -%}{%-assign height = block.settings.image.height | default: 575.00 | plus: 0.00-%}
-              <a href="{{block.settings.image_link | default: 'javascript:void(0);'}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner{%if block.settings.image_mb != blank%} d-none d-md-block{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+              <a href="{{block.settings.image_link | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner{%if block.settings.image_mb != blank%} d-none d-md-block{%endif%}" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
                 {%- if block.settings.image -%}
                 {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: class: 'img-fit-cover', alt: block.settings.image.alt, size: '100vw', widths: '385, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840', loading: 'lazy' }}
                 {%- endif -%}
