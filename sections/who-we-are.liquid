@@ -145,6 +145,13 @@
     {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: class: 'img-fit-cover', alt: block.settings.image.alt, size: '100vw', widths: '385, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840', loading: 'lazy' }}
   {%- endif -%}
 </a>
+            <!-- Code Commented  -->
+                <!-- <a href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                  {%- if block.settings.image -%}
+                  {{ image_item | image_url: width: image_item.width | image_tag: class: 'img-fit-cover', alt: image_item.alt, size: '100vw', widths: '385, 550, 750, 1100', loading: 'lazy' }}
+                  {%- endif -%}
+                </a> -->
+            <!-- Code Commented  -->
                 {% if block.settings.title-below == true %}
                     <h4 class="stitle" style="--color: {{block.settings.color_titlex}};margin-bottom:0;">{{block.settings.preheading}}</h4>
                     <div class="titlex" style="--color: {{block.settings.color_titlex}}">{{block.settings.titlex}}</div>
