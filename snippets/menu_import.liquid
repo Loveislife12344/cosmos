@@ -780,7 +780,7 @@
       {%- if bg_color_hv != blank -%}--bg_color_hv: {{bg_color_hv}};{%- endif -%}
       {%- if bg_color != blank -%}padding-left: 1.3rem;padding-right: 1.3rem{%- endif -%}
       {%- endcapture -%}
-      <a href="{{menu_link | default: routes.root_url}}" class="item-{{block.id}}" style="{{style_special}}">
+      <a href="{{menu_link | default: routes.root_url}}" class="item-{{block.id}}" style="{{style_special}}" target="_blank">
         {{-block.settings.title | default: 'menu item'-}}    
       </a>
     {%- endfor -%}
