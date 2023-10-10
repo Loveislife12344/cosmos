@@ -8,6 +8,10 @@
     font-weight: bold;
 }
 
+.pointer-none {
+    pointer-events: none;
+}
+
 /* variables */
 /* multistep form */
 .step--1:not(.show),
