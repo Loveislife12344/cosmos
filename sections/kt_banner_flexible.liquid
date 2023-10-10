@@ -122,7 +122,11 @@
               {%- assign use_css = true -%}
               {%- assign image_item = block.settings.image -%}
               {%-assign width = image_item.width | default: 575.00 -%}{%-assign height = image_item.height | default: 575.00 | plus: 0.00-%}
-
+              <a  href="{{collections[block.settings.image_link].url | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                {%- if block.settings.image -%}
+                {{ image_item | image_url: width: image_item.width | image_tag: class: 'img-fit-cover', alt: image_item.alt, size: '100vw', widths: '385, 550, 750, 1100', loading: 'lazy' }}
+                {%- endif -%}
+              </a>
               {%- unless block.settings.titlex == blank -%}
               <div class="text-content position-absolute wait-for-css text-center">
                 <div class="--text">
