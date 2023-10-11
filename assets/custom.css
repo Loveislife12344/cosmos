@@ -503,7 +503,8 @@ line-height: 1;
 }
 
 
- #Swiper-template--18286564376879__1636168033f185e383 span a:hover{
+ #Swiper-template--18286564376879__1636168033f185e383 span a:hover,
+  .text-content.position-absolute span a:hover{
    color:#ffffff!important;
  }
 
