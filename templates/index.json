@@ -77,7 +77,7 @@
             "image_link": "shopify:\/\/collections\/ndis",
             "desc": "",
             "color_desc": "#333333",
-            "titlex": "<span style=\"max-width:165px;display: block;\">ndis\nregistered\nprovider<\/span>",
+            "titlex": "<span style=\"max-width:165px;display: block;\">\n<a href=\"\/collections\/ndis\">ndis\nregistered\nprovider<\/a><\/span>",
             "color_titlex": "#ffffff",
             "stitle": "",
             "color_stitle": "#333333",
