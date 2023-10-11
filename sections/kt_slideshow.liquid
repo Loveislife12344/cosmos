@@ -218,8 +218,9 @@
                     {%- assign node = 'div' -%}
                     {%- if block.settings.textBtn_1 == blank and block.settings.textBtn_2 == blank and block.type != 'video' -%}
          
-{% assign imageLink = block.settings.link_1 | default: '' %}
+
 {%- capture node -%}
+{% assign imageLink = block.settings.link_1 | default: '' %}
 {% if imageLink == '' or imageLink == 'javascript:void(0);' %} a href="javascript:void(0);" {% else %} a href="{{ imageLink }}" {% endif %}
 {%- endcapture -%}
   
