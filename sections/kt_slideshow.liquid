@@ -202,7 +202,7 @@
         {%- endif -%}
           {%- assign responsive_ = section.settings.responsive | strip_newlines | json | remove: '\t' | remove: '\' | remove: ' ' | replace: '"{"','{"' | replace: '}}"','}}' -%}
           {%- assign items_ = responsive_ | split: '"slidesPerView":' | last | split: ',' | first | plus: 0 -%}
-          <div class="kt_home_slide hell">
+          <div class="kt_home_slide">
             <div class="swiper-fuild position-relative {{section.settings.nav_position}} nav-style{{section.settings.nav_style}} nav-mode-{{section.settings.nav_mode}}">
               <div class="swiper{%if section.settings.no_overflow%} swiper-no-overflow{%endif%}" data-breakpoints='{{responsive_}}' data-autoplay="{{section.settings.autoplay}}" data-slides-per-view="{{items_}}" data-space-between="0" data-dots="{{section.settings.use_dots}}" data-nav="{{section.settings.use_navigation}}" data-scrollbar="{{section.settings.use_scrollbar}}" data-delay="{{section.settings.autoplay_speed}}" data-speed="800"{%if section.settings.no_overflow%} data-loop="true" data-loop-additional-slides="2" data-loop-fill-group-with-blank="true" data-no-overflow="true"{% endif %} data-prev-el=".sw-btn-prev-{{section.id}}" data-next-el=".sw-btn-next-{{section.id}}" data-pagination=".swiper-pagination-{{section.id}}">
                 <div class="swiper-wrapper">
@@ -219,7 +219,7 @@
                     {%- if block.settings.textBtn_1 == blank and block.settings.textBtn_2 == blank and block.type != 'video' -%}
                       {%- capture node -%}a href="{{ block.settings.link_1 | default: routes.root_url}}"{%- endcapture -%}
                     {%- endif -%}
-                    <{{node}} class="imgRatio{%if fullscreen%} f-height{%endif%}">
+                    <{{node}} class="imgRatio hhhh{%if fullscreen%} f-height{%endif%}">
                     {%- if block.type == 'video' and iframe -%}
                       <div class="bgndVideo player" data-property="{videoURL:'{{block.settings.video_url}}'{{-block.settings.data_property-}} }"></div>
                     {% elsif block.type == 'video' and iframe == false %}
