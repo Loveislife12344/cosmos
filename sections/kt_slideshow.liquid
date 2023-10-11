@@ -220,7 +220,7 @@
                      {%- capture node -%}a href="{{ block.settings.link_1 | default: routes.root_url}}"{%- endcapture -%}
                       {%- capture node -%}a href="javascript:void(0);"{%- endcapture -%}
                     {%- endif -%}
-                    <{{node}} class="imgRatio{%if fullscreen%} f-height{%endif%}">
+                    <{{node}} class="imgRatio pointer-none {%if fullscreen%} f-height{%endif%}">
                     {%- if block.type == 'video' and iframe -%}
                       <div class="bgndVideo player" data-property="{videoURL:'{{block.settings.video_url}}'{{-block.settings.data_property-}} }"></div>
                     {% elsif block.type == 'video' and iframe == false %}
