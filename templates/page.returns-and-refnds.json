@@ -13,7 +13,7 @@
             "width_lg": 6,
             "width_xl": 6,
             "width_xxl": 6,
-            "image": "shopify:\/\/shop_images\/5e7ae705d160ce6c801b4f6f_compression-stocking_e20fd3f8-91ff-45cc-bb4d-47faf6d485d1.png",
+            "image": "shopify:\/\/shop_images\/Returns.jpg",
             "image_link": "",
             "blank_link": false,
             "titlex": "Our policy",
@@ -22,6 +22,7 @@
             "description": "<br>If you receive items that are damaged upon delivery, please contact us immediately so that we can arrange for new items to be sent to you or for a refund to be issued.\n<br><br>\nPlease carefully choose these items as due to health &amp; hygiene reasons these items cannot be exchanged or refunded unless they are faulty on receipt. We must be notified via email immediately if this is the case.\n<br><br>\nThey cannot be exchanged for any reasons other than manufacturing defect. Please make your choice of styles, colours and sizes carefully.\n<br><br>\n<h4 class=\"ls-m fw-bold titlex inner\">Cancelation of orders<\/h4>\n\nIf you wish to cancel an order for any reason please contact us ASAP. Most orders are dispatched on the same day that they are ordered. If the goods have already left us you may be liable to cover the freight charges for both the delivery and the return of the items. If the goods have not yet been dispatched then no charges will be incurred.",
             "color_titlex": "#66066f",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
           }
@@ -36,7 +37,7 @@
             "width_lg": 6,
             "width_xl": 6,
             "width_xxl": 6,
-            "image": "shopify:\/\/shop_images\/putting-on-night-compression-wrap-on-swollen-leg-2022-10-15-23-25-47-utc_1.png",
+            "image": "shopify:\/\/shop_images\/Refunds.jpg",
             "image_mb": "shopify:\/\/shop_images\/putting-on-night-compression-wrap-on-swollen-leg-2022-10-15-23-25-47-utc_1.png",
             "image_link": "",
             "blank_link": false,
@@ -47,6 +48,7 @@
             "stitle": "",
             "color_stitle": "#ffffff",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
             "btn_shadow": false,
@@ -83,6 +85,7 @@
             "description": "This Week's Most Wanted",
             "color_titlex": "#222222",
             "name_btn": "SHOP NOW",
+            "link_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
           }
@@ -112,7 +115,6 @@
     },
     "008f7694-152e-452f-b17a-c18f38112722": {
       "type": "who-we-are",
-      "disabled": true,
       "blocks": {
         "764d6dad-2ecc-4d64-94a7-d5fc95fa1f8a": {
           "type": "it_banner",
@@ -135,6 +137,7 @@
             "stitle": "",
             "color_stitle": "#ffffff",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
             "btn_shadow": false,
@@ -171,6 +174,7 @@
             "description": "Cosmac Healthcare specialises in products relating to body compression, support and protection.\nNo-one knows more about these products than Cosmac.\n\nOur trained and experienced staff members are always happy to assist in providing helpful and constructive advice.\n\nThrough our affiliated company, Axcess Nutrition, the group is also active in the supply of clinical nutrition and texture-modified products, and feeding pumps &amp; accessories.\n\nAxcess is a contracted supplier under the NSW Home Enteral Nutrition (HEN) programme.",
             "color_titlex": "#222222",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
           }
@@ -180,6 +184,7 @@
         "764d6dad-2ecc-4d64-94a7-d5fc95fa1f8a",
         "84bcd3d0-e907-4fb6-8b8e-a0db4dd7d944"
       ],
+      "disabled": true,
       "settings": {
         "assign_id": "",
         "title": "Who We Are",
@@ -243,7 +248,6 @@
     },
     "16278930620b05d394": {
       "type": "rd_image_w_text_1",
-      "disabled": true,
       "blocks": {
         "d4c9d766-aeb5-421f-8bb2-b8a711042bba": {
           "type": "1",
@@ -269,6 +273,7 @@
       "block_order": [
         "d4c9d766-aeb5-421f-8bb2-b8a711042bba"
       ],
+      "disabled": true,
       "settings": {
         "off_mobile": false,
         "off_desktop": false,
@@ -284,7 +289,6 @@
     },
     "16278930715fe8a30e": {
       "type": "rd_image_w_text_1",
-      "disabled": true,
       "blocks": {
         "8191dd6a-5df3-41a9-acdc-429bcdff63be": {
           "type": "1",
@@ -310,6 +314,7 @@
       "block_order": [
         "8191dd6a-5df3-41a9-acdc-429bcdff63be"
       ],
+      "disabled": true,
       "settings": {
         "off_mobile": false,
         "off_desktop": false,
@@ -325,7 +330,6 @@
     },
     "1627893641ded4ec48": {
       "type": "rd_our_team_1",
-      "disabled": true,
       "blocks": {
         "d279a4a8-6434-44fb-9141-d988293f3d92": {
           "type": "title",
@@ -385,6 +389,7 @@
         "1627893641ded4ec48-2",
         "1627893641ded4ec48-3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our team",
         "off_section": false,
@@ -401,7 +406,6 @@
     },
     "f6503f0d-861c-4eb5-b496-e4afac98aab5": {
       "type": "rd_our_team_1",
-      "disabled": true,
       "blocks": {
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-0": {
           "type": "item",
@@ -446,6 +450,7 @@
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-2",
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our team",
         "off_section": false,
@@ -462,7 +467,6 @@
     },
     "dd4d33fa-a4e2-4056-981b-8c983c7f2f38": {
       "type": "rd_icon_boxes",
-      "disabled": true,
       "blocks": {
         "4cb1da94-d3ba-4934-bfac-dbfe7c784bf0": {
           "type": "item_title",
@@ -518,7 +522,9 @@
         "87e81b18-a380-4e2b-8a82-22e6db5a2e3d",
         "3b0b4a48-1a35-4476-a634-49d4cbd3dd33"
       ],
+      "disabled": true,
       "settings": {
+        "assign_id": "",
         "title": "Icon Boxes",
         "off_mobile": false,
         "off_desktop": false,
@@ -542,7 +548,6 @@
     },
     "16278933153ac77724": {
       "type": "rd_brand_1",
-      "disabled": true,
       "blocks": {
         "6f4fcc6c-e22f-4751-b8c9-923b34cdddd4": {
           "type": "title",
@@ -608,6 +613,7 @@
         "16278933153ac77724-5",
         "16278933153ac77724-6"
       ],
+      "disabled": true,
       "settings": {
         "title": "Brands",
         "off_mobile": false,
@@ -635,7 +641,6 @@
     },
     "ccbfbc4a-1bac-4d39-b5fc-30d3c7d32cc2": {
       "type": "kt_HTML",
-      "disabled": true,
       "blocks": {
         "44a797e5-86af-450b-ae7c-5a51c50cc1c4": {
           "type": "title",
@@ -668,7 +673,9 @@
         "3670f200-cc76-4460-b913-00053809a940",
         "b1370dc5-937b-4c74-a522-0186d8e231bb"
       ],
+      "disabled": true,
       "settings": {
+        "assign_id": "",
         "title": "Section Customize",
         "off_mobile": false,
         "off_desktop": false,
@@ -692,7 +699,6 @@
     },
     "5d212a61-84e4-4fdc-8406-1420dea2c61d": {
       "type": "kt_HTML",
-      "disabled": true,
       "blocks": {
         "ecfc224c-ce2c-4b09-b760-56a6621952f7": {
           "type": "title",
@@ -716,7 +722,9 @@
         "ecfc224c-ce2c-4b09-b760-56a6621952f7",
         "b51f59ce-d11a-4c31-add4-abc25a5fd363"
       ],
+      "disabled": true,
       "settings": {
+        "assign_id": "",
         "title": "Section Customize",
         "off_mobile": false,
         "off_desktop": false,
@@ -740,7 +748,6 @@
     },
     "e863fe0c-f75b-4fc5-a263-d04ebe574e72": {
       "type": "kt_banner_flexible",
-      "disabled": true,
       "blocks": {
         "dde8c4fd-51cd-4ce5-895c-3386b2edb4ac": {
           "type": "it_banner",
@@ -852,6 +859,7 @@
         "b5b9cf82-640a-468d-8742-4b5fef7d0ab5",
         "3ffa201f-f5b2-4cef-923f-86d62649732e"
       ],
+      "disabled": true,
       "settings": {
         "title": "Banner Flexible",
         "off_mobile": false,
