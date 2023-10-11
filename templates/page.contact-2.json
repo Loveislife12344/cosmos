@@ -266,7 +266,7 @@
             "width_xxl": 0,
             "title": "<p>Subscribe<br\/><span class=\"outlined\">&<\/span> Save<\/p>",
             "color_title": "#ffffff",
-            "stitle": "Lorem ipsum dolor sit amet adipiscing.",
+            "stitle": "",
             "color_desc": "#ffffff",
             "textBtn": "{{'general.newsletter_form.submit_html' | t}}<i class=\"d-icon-arrow-right\"><\/i>",
             "style_btn": "btn-primary",
