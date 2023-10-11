@@ -217,7 +217,7 @@
                   <div class="swiper-slide slide_i slide_i--{{ section.id }} slide_i--{{ block.id }}" data-slide-blockid="{{ block.id }}" {{ block.shopify_attributes }}{% if block.type == 'video' %} data-swiper-autoplay="{{block.settings.delay_speed | times: 1000}}"{% endif %}>
                     {%- assign node = 'div' -%}
                     {%- if block.settings.textBtn_1 == blank and block.settings.textBtn_2 == blank and block.type != 'video' -%}
-                      /* {%- capture node -%}a href="{{ block.settings.link_1 | default: routes.root_url}}"{%- endcapture -%} */
+                     {%- capture node -%}a href="{{ block.settings.link_1 | default: routes.root_url}}"{%- endcapture -%}
                       {%- capture node -%}a href="javascript:void(0);"{%- endcapture -%}
                     {%- endif -%}
                     <{{node}} class="imgRatio{%if fullscreen%} f-height{%endif%}">
