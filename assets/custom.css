@@ -504,7 +504,7 @@ line-height: 1;
 
 
 @media (max-width:999px) {
-  #shopify-section-template--18286564376879__1636168033f185e383 .item_2::before{
+  #shopify-section-template--18286564376879__1636168033f185e383 .item_2 a::before{
     top: 70px;
     right:20px;
   }
@@ -513,7 +513,7 @@ line-height: 1;
 }
 }
 @media (min-width:481px) {
-  #shopify-section-template--18286564376879__1636168033f185e383 .item_2::before{
+  #shopify-section-template--18286564376879__1636168033f185e383 .item_2 a::before{
     content: url(https://cosmac-health.myshopify.com/cdn/shop/t/4/assets/heart-nds.svg?v=151331788348895335941690280087
         );
     position: absolute;
@@ -522,7 +522,7 @@ line-height: 1;
   }
 }
 @media (min-width:1000px) {
-  #shopify-section-template--18286564376879__1636168033f185e383 .item_2::before{
+  #shopify-section-template--18286564376879__1636168033f185e383 .item_2 a::before{
     top: 70px;
     left: 20px;
   }
