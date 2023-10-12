@@ -397,7 +397,7 @@ line-height: 1;
     width: 40%;
   }
   .mega-menu-css {
-    margin-bottom: 25px;
+    margin-bottom: 25px!important;
 }
 .container-fluid .row .banner-small-boxws{
     width: 60%;
