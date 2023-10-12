@@ -1307,7 +1307,8 @@ top: 90px !important;
   background-color: var(--primary-color);
 } 
 .layered_subtitle_heading{
-  color: #792581!important;
+    color: #792581!important;
+    font-weight: 700;
 }
 .layered_subtitle_heading span.ico::after, .layered_subtitle_heading span.ico::before {
   border-top: 2px solid #792581!important;
