@@ -1142,7 +1142,7 @@ text-align:left !important;
   font-size: 18px;
 }
 .custom-control-label{
-  font-size: 16px;
+  font-size: 16px!important;
   line-height: 21px;
 }
 .product-card .grid-item .product-name a{
