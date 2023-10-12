@@ -1179,11 +1179,13 @@ color: #fff !important;
     .mega-menu-css {
       margin-bottom: 25px!important;
   }
+  nav.side-nav.nav-box li {
+      padding-left: 0;
+      padding-right: 0px;
+  }
 }
 
 @media (max-width:767px) {
-
-  
   .icon-box-card {
     padding: 30px;
   }
