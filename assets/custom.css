@@ -1320,6 +1320,10 @@ top: 90px !important;
     background-color: #66066f;
 }
 
+.kt--filter.kt_sidebar .kt--filter-gr-i {
+    border-top: 1px solid #79258161;
+}
+
 .shop-top span.label{
   font-size: 16px!important;
 }
