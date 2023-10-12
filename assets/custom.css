@@ -1921,7 +1921,7 @@ footer #shopify-section-footer ul li:first-child {
 }
 
 .header-top.container-fluid.wide {
-    border:none;
+    border:none!important;
 }
 
 .header-top-wrapper {
