@@ -1315,6 +1315,10 @@ top: 90px !important;
   border-top: 2px solid #792581!important;
 }
 
+#shopify-section-template--18286564376879__3bdcf2d4-6aee-4bc3-9de5-21a1ad0f7deb p{
+  margin: 0px;
+}
+
 header .block-info._last.col-auto a.d-icon-user {
     display: flex;
     align-items: center;
