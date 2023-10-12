@@ -1924,6 +1924,10 @@ nav.side-nav.nav-box li {
     padding-left: 0px;
 }
 
+.shop-collage .row{
+  width:auto!important;
+}
+
 .list-socails {
     margin-left: 5px;
 }
