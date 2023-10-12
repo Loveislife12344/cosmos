@@ -1314,6 +1314,11 @@ top: 90px !important;
 .layered_subtitle_heading span.ico::after, .layered_subtitle_heading span.ico::before {
   border-top: 2px solid #792581!important;
 }
+
+.widget_flt_slider .ui-slider-horizontal .ui-slider-handle {
+    background-color: #66066f;
+}
+
 .shop-top span.label{
   font-size: 16px!important;
 }
