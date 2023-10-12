@@ -1175,16 +1175,17 @@ color: #fff !important;
   margin: 0 auto;
 }
 
-@media (max-width:991px) {
-  nav.side-nav.nav-box li {
-      padding-left: 0;
-      padding-right: 0px;
-  }
-}
+/* @media (max-width:991px) {
+
+} */
 
 @media (max-width:1199px){
   .mega-menu-css {
       margin-bottom: 25px!important;
+  }
+  nav.side-nav.nav-box li {
+      padding-left: 0;
+      padding-right: 0px;
   }
 }
 
