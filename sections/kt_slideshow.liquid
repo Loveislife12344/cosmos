@@ -190,7 +190,7 @@
       <div class="row{%if section.settings.width_content == false and section.settings.width_section == 'w-100'%} gx-0{%endif%}">
         {%- if typeBlocks contains 'menu' -%}
         {%- capture col_slide -%}col-lg-9{% if typeBlocks contains 'banner' %} col-xl-6{% endif %}{%- endcapture -%}
-        <div class="col col-lg-6 col-xl-3 mega-menu-css">
+        <div class="col col-lg-12 col-xl-3 mega-menu-css">
           {%- assign bg = section.blocks | where: 'type', 'menu' | first-%}
           <nav class="side-nav nav-box{%if typeBlocks contains 'banner'%} has-banner{%endif%} lazyload" data-include="{{routes.root_url}}?section_id=kt_mega_mn-vertical" data-trigger="loaded" style="--bg-box:{{bg.settings.bg_color}}; --border-color: {{ bg.settings.bg_color | color_darken: 5}}"><div class="lz-place"></div>
           {%-style-%}.side-nav .lz-place:before {background-size: 85% 18px,85% 18px,85% 18px,85% 18px,85% 18px,85% 18px,85% 18px,85% 18px,85% 18px,85% 18px;background-position: 20px 20px,20px 56px,20px 92px,20px 128px,20px 164px,20px 200px,20px 236px,20px 272px,20px 308px,20px 344px;padding-top: 23.75rem;}
@@ -198,7 +198,7 @@
           </nav>
         </div>
         {%-endif-%}
-        <div class="col col-lg-6 col-xl-4 --slide height-x{{bannerBlocks.size}}">
+        <div class="col col-lg-9 col-xl-4 --slide height-x{{bannerBlocks.size}}">
         {%- endif -%}
           {%- assign responsive_ = section.settings.responsive | strip_newlines | json | remove: '\t' | remove: '\' | remove: ' ' | replace: '"{"','{"' | replace: '}}"','}}' -%}
           {%- assign items_ = responsive_ | split: '"slidesPerView":' | last | split: ',' | first | plus: 0 -%}
@@ -320,7 +320,7 @@
           {%- if section.settings.width_lg != 0 %}{%-if section.settings.width_lg == 13-%} d-lg-none{%else%} d-lg-block{%endif%} col-lg-{{section.settings.width_lg}}{% endif -%}
           {%- if section.settings.width_xxl != 0 %}{%-if section.settings.width_xxl == 13-%} d-xxl-none{%else%} d-xl-block{%endif%} col-xl-{{section.settings.width_xxl}}{% endif -%}
         {%- endcapture -%}
-        <div class="col-12 d-lg-block col-lg-12 d-xl-block col-xl-5 mt-4 mt-lg-0 bn_{{section.id}} kt_banner_slideshow banner-small-boxws">
+        <div class="col-12 d-lg-block col-lg-3 d-xl-block col-xl-5 mt-4 mt-lg-0 bn_{{section.id}} kt_banner_slideshow banner-small-boxws">
           <div class="row {{cols}} justify-content-center align-content-xl-stretch h-100">
           {%- for block in section.blocks-%}
             {%-if block.type != 'banner'-%}{%-continue-%}{%-endif-%}
