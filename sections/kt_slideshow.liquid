@@ -190,7 +190,7 @@
       <div class="row{%if section.settings.width_content == false and section.settings.width_section == 'w-100'%} gx-0{%endif%}">
         {%- if typeBlocks contains 'menu' -%}
         {%- capture col_slide -%}col-lg-9{% if typeBlocks contains 'banner' %} col-xl-6{% endif %}{%- endcapture -%}
-        <div class="col col-lg-3 col-xl-3 d-none d-xl-block">
+        <div class="col col-lg-3 col-xl-3 d-none d-xl-block hello">
           {%- assign bg = section.blocks | where: 'type', 'menu' | first-%}
           <nav class="side-nav nav-box{%if typeBlocks contains 'banner'%} has-banner{%endif%} lazyload" data-include="{{routes.root_url}}?section_id=kt_mega_mn-vertical" data-trigger="loaded" style="--bg-box:{{bg.settings.bg_color}}; --border-color: {{ bg.settings.bg_color | color_darken: 5}}"><div class="lz-place"></div>
           {%-style-%}.side-nav .lz-place:before {background-size: 85% 18px,85% 18px,85% 18px,85% 18px,85% 18px,85% 18px,85% 18px,85% 18px,85% 18px,85% 18px;background-position: 20px 20px,20px 56px,20px 92px,20px 128px,20px 164px,20px 200px,20px 236px,20px 272px,20px 308px,20px 344px;padding-top: 23.75rem;}
