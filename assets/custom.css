@@ -1920,6 +1920,10 @@ footer #shopify-section-footer ul li:first-child {
     border: 2px solid #9B9B9B;
 }
 
+.list-socails {
+    margin-left: 5px;
+}
+
 .clone-main-mn li:first-child a {
     padding-left: 0px;
 }
