@@ -454,11 +454,11 @@ line-height: 1;
     margin-bottom: 156px;
   }
 
-  .store-locater .container-fluid {
+  /* .store-locater .container-fluid {
     width: 100%;
     max-width: calc(100% - ((100% - 1345px) / 2));
     margin-left: calc((100% - 1345px) / 2) !important;
-  }
+  } */
 }
 
 /* store-locater */
