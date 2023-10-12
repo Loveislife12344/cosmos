@@ -1315,7 +1315,8 @@ top: 90px !important;
   border-top: 2px solid #792581!important;
 }
 
-.widget_flt_slider .ui-slider-horizontal .ui-slider-handle {
+.widget_flt_slider .ui-slider-horizontal .ui-slider-handle,
+.widget_flt_slider .ui-slider-horizontal{
     background-color: #66066f;
 }
 
