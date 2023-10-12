@@ -1320,6 +1320,11 @@ top: 90px !important;
     background-color: #66066f;
 }
 
+.grid-item .product-name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .kt--filter.kt_sidebar .kt--filter-gr-i {
     border-top: 1px solid #79258161;
 }
