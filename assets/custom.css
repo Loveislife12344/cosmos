@@ -392,7 +392,7 @@ line-height: 1;
     margin-bottom: 54px !important;
   }
 }
-@media screen and (max-width: 1199px) and (min-width: 768px) {
+@media screen and (max-width: 1199px) and (min-width: 992px) {
   .container-fluid .row .--slide{
     width: 40%;
   }
