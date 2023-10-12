@@ -1932,9 +1932,9 @@ nav.side-nav.nav-box li {
     margin-left: 5px;
 }
 
-.clone-main-mn li:first-child a {
+/* .clone-main-mn li:first-child a {
     padding-left: 0px;
-}
+} */
 
 .header-top.container-fluid.wide {
     border-bottom: 1px solid #fff;
