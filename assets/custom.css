@@ -1321,8 +1321,8 @@ top: 90px !important;
 }
 
 .grid-item .product-name {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 20px!important;
+    font-weight: 600!important;
 }
 
 .kt--filter.kt_sidebar .kt--filter-gr-i {
