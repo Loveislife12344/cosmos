@@ -396,6 +396,9 @@ line-height: 1;
   .container-fluid .row .--slide{
     width: 40%;
   }
+  .mega-menu-css {
+    margin-bottom: 25px;
+}
 .container-fluid .row .banner-small-boxws{
     width: 60%;
     margin-top: 0!important;
