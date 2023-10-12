@@ -1323,6 +1323,7 @@ top: 90px !important;
   border-radius: 0!important;
   padding: 0.53125rem 1.2rem!important;
   border: 2px solid #700073!important;
+  font-weight:600px!important;
 }
 @media (min-width:1200px) {
   .template-collection .sidebar-content{
