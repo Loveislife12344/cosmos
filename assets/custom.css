@@ -212,9 +212,9 @@ line-height: 22px !important;
 .mn-lv1.mn-has-child.show-submn:before {
     content: "";
     position: absolute;
-    width: 1310px;
+    width: 1323px;
     top: 62px;
-    left: -115px;
+    left: -130px;
     height: 100vh;
     max-height: 460px;
     background: #faf5fa;
