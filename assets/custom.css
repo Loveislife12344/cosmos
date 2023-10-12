@@ -4,6 +4,10 @@
   --posTop:191px;
 }
 
+html{
+  padding-bottom:0px;
+}
+
 .banner.position-relative.item_3.banner-effect6:hover a {
     box-shadow: inset 0 0 0 2000px #66066f70!important;
 }
