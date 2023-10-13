@@ -709,7 +709,7 @@
         "off_desktop": false,
         "width_section": "container-fluid wide",
         "width_content": false,
-        "section_margin_top": "40px|60px|80px|93px|120px|150px",
+        "section_margin_top": "25px|30px|35px|40px|45px|50px",
         "section_margin_bottom": "",
         "section_padding": "",
         "section_bg": "",
@@ -765,58 +765,6 @@
         "border_bottom": false,
         "border_color": "#ebebeb"
       }
-    },
-    "24247aff-8f9f-4df9-a947-98521c89c9eb": {
-      "type": "rd_icon_boxes",
-      "blocks": {
-        "990351f0-8fb1-417d-bbae-bdae43bdc405": {
-          "type": "item_sircle_icons",
-          "settings": {
-            "content_align": "center",
-            "icon_font": "",
-            "size": 36,
-            "title": "Suspendisse potenti",
-            "content": "Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.",
-            "url": ""
-          }
-        },
-        "ecc54ffc-2ab9-4e11-8b8b-c32774c78165": {
-          "type": "item_icon_side",
-          "settings": {
-            "icon_font": "",
-            "size": 36,
-            "title": "Free Shipping",
-            "content": "Orders $50 or more",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "990351f0-8fb1-417d-bbae-bdae43bdc405",
-        "ecc54ffc-2ab9-4e11-8b8b-c32774c78165"
-      ],
-      "settings": {
-        "assign_id": "",
-        "title": "Icon Boxes",
-        "off_mobile": false,
-        "off_desktop": false,
-        "width_section": "container",
-        "width_content": false,
-        "section_margin_top": "",
-        "section_margin_bottom": "",
-        "section_padding": "",
-        "section_bg": "",
-        "border_top": true,
-        "border_bottom": false,
-        "border_color": "#ebebeb",
-        "color_icon": "#333",
-        "color_title": "#333",
-        "color_desc": "#ccc",
-        "title_font_weight": "400",
-        "use_slide": false,
-        "responsive": "{\n  \"0\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"320\": {\n    \"slidesPerView\": 1,\n    \"spaceBetween\": 20\n  },\n  \"476\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"768\": {\n    \"slidesPerView\": 2,\n    \"spaceBetween\": 20\n  },\n  \"992\": {\n    \"slidesPerView\": 3,\n    \"spaceBetween\": 20\n  },\n  \"1200\": {\n    \"slidesPerView\": 4,\n    \"spaceBetween\": 20\n  }\n}",
-        "css_section": ""
-      }
     }
   },
   "order": [
@@ -832,7 +780,6 @@
     "f6503f0d-861c-4eb5-b496-e4afac98aab5",
     "16278933153ac77724",
     "5d212a61-84e4-4fdc-8406-1420dea2c61d",
-    "958290fd-2f96-4311-adc1-904bcea78c0d",
-    "24247aff-8f9f-4df9-a947-98521c89c9eb"
+    "958290fd-2f96-4311-adc1-904bcea78c0d"
   ]
 }
