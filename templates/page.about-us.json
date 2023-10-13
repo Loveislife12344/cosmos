@@ -751,7 +751,7 @@
         "width_section": "container-fluid wide",
         "width_content": false,
         "section_margin_top": "25px|30px|35px|40px|45px|50px",
-        "section_margin_bottom": "40px|60px|80px|93px|120px|155px",
+        "section_margin_bottom": "25px|30px|35px|40px|45px|50px",
         "section_padding": "",
         "section_bg": "",
         "title_section": "",
