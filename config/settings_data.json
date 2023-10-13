@@ -1237,7 +1237,7 @@
             "settings": {
               "call_us_show": false,
               "email_show": false,
-              "social_contact_show": true,
+              "social_contact_show": false,
               "wishlist_show": false,
               "compare_show": false,
               "account_show": false,
