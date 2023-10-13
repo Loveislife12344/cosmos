@@ -24,6 +24,7 @@
             "stitle": "",
             "color_stitle": "#ffffff",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
             "btn_shadow": false,
@@ -51,7 +52,7 @@
             "width_lg": 6,
             "width_xl": 6,
             "width_xxl": 6,
-            "image": "shopify:\/\/shop_images\/disability-nurse-or-old-man-with-dumbbell-in-whee-2023-03-08-19-26-57-utc.png",
+            "image": "shopify:\/\/shop_images\/Veteran1.jpg",
             "image_link": "",
             "blank_link": false,
             "titlex": "Department of veterans affairs",
@@ -60,6 +61,7 @@
             "description": "<br>Cosmac is a sub-contractor and supplier of products under the Department of Veterans Affairs (DVA) Rehabilitation Appliance Progam (RAP) for the supply of Mobility and Functional Supports to the Veteran Community.\n<br><br>\nThe Rehabilitation Appliances Program (RAP) assists entitled veterans, war widow\/ers and dependants through the provision of aids and appliances to minimise the impact of disabilities, enhance quality of life and maximise independence when undertaking daily living activities.\n<br><br>\nFor further information regarding the program please visit either the DVA website or Aidacare website.\n<br><br>\nAlternatively you may contact us on (02) 9033 7400",
             "color_titlex": "#66066f",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
           }
@@ -70,6 +72,7 @@
         "bbbebb89-f48d-4812-9e61-97ff35b48809"
       ],
       "settings": {
+        "assign_id": "",
         "title": "Who We Are",
         "off_mobile": false,
         "off_desktop": false,
@@ -87,7 +90,6 @@
     },
     "008f7694-152e-452f-b17a-c18f38112722": {
       "type": "who-we-are",
-      "disabled": true,
       "blocks": {
         "764d6dad-2ecc-4d64-94a7-d5fc95fa1f8a": {
           "type": "it_banner",
@@ -110,6 +112,7 @@
             "stitle": "",
             "color_stitle": "#ffffff",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-primary",
             "style_btn_rounded": "",
             "btn_shadow": false,
@@ -146,6 +149,7 @@
             "description": "Cosmac Healthcare specialises in products relating to body compression, support and protection.\nNo-one knows more about these products than Cosmac.\n\nOur trained and experienced staff members are always happy to assist in providing helpful and constructive advice.\n\nThrough our affiliated company, Axcess Nutrition, the group is also active in the supply of clinical nutrition and texture-modified products, and feeding pumps &amp; accessories.\n\nAxcess is a contracted supplier under the NSW Home Enteral Nutrition (HEN) programme.",
             "color_titlex": "#222222",
             "name_btn": "",
+            "link_btn": "",
             "style_btn": "btn-underline btn-link",
             "banner-effect": ""
           }
@@ -155,7 +159,9 @@
         "764d6dad-2ecc-4d64-94a7-d5fc95fa1f8a",
         "84bcd3d0-e907-4fb6-8b8e-a0db4dd7d944"
       ],
+      "disabled": true,
       "settings": {
+        "assign_id": "",
         "title": "Who We Are",
         "off_mobile": false,
         "off_desktop": false,
@@ -217,7 +223,6 @@
     },
     "16278930620b05d394": {
       "type": "rd_image_w_text_1",
-      "disabled": true,
       "blocks": {
         "d4c9d766-aeb5-421f-8bb2-b8a711042bba": {
           "type": "1",
@@ -243,6 +248,7 @@
       "block_order": [
         "d4c9d766-aeb5-421f-8bb2-b8a711042bba"
       ],
+      "disabled": true,
       "settings": {
         "off_mobile": false,
         "off_desktop": false,
@@ -258,7 +264,6 @@
     },
     "16278930715fe8a30e": {
       "type": "rd_image_w_text_1",
-      "disabled": true,
       "blocks": {
         "8191dd6a-5df3-41a9-acdc-429bcdff63be": {
           "type": "1",
@@ -284,6 +289,7 @@
       "block_order": [
         "8191dd6a-5df3-41a9-acdc-429bcdff63be"
       ],
+      "disabled": true,
       "settings": {
         "off_mobile": false,
         "off_desktop": false,
@@ -299,7 +305,6 @@
     },
     "1627893641ded4ec48": {
       "type": "rd_our_team_1",
-      "disabled": true,
       "blocks": {
         "d279a4a8-6434-44fb-9141-d988293f3d92": {
           "type": "title",
@@ -359,6 +364,7 @@
         "1627893641ded4ec48-2",
         "1627893641ded4ec48-3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our team",
         "off_section": false,
@@ -375,7 +381,6 @@
     },
     "f6503f0d-861c-4eb5-b496-e4afac98aab5": {
       "type": "rd_our_team_1",
-      "disabled": true,
       "blocks": {
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-0": {
           "type": "item",
@@ -420,6 +425,7 @@
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-2",
         "template--18286563754287__f6503f0d-861c-4eb5-b496-e4afac98aab5-1678786272282bd350-3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our team",
         "off_section": false,
@@ -436,7 +442,6 @@
     },
     "dd4d33fa-a4e2-4056-981b-8c983c7f2f38": {
       "type": "rd_icon_boxes",
-      "disabled": true,
       "blocks": {
         "4cb1da94-d3ba-4934-bfac-dbfe7c784bf0": {
           "type": "item_title",
@@ -492,7 +497,9 @@
         "87e81b18-a380-4e2b-8a82-22e6db5a2e3d",
         "3b0b4a48-1a35-4476-a634-49d4cbd3dd33"
       ],
+      "disabled": true,
       "settings": {
+        "assign_id": "",
         "title": "Icon Boxes",
         "off_mobile": false,
         "off_desktop": false,
@@ -516,7 +523,6 @@
     },
     "16278933153ac77724": {
       "type": "rd_brand_1",
-      "disabled": true,
       "blocks": {
         "6f4fcc6c-e22f-4751-b8c9-923b34cdddd4": {
           "type": "title",
@@ -582,6 +588,7 @@
         "16278933153ac77724-5",
         "16278933153ac77724-6"
       ],
+      "disabled": true,
       "settings": {
         "title": "Brands",
         "off_mobile": false,
@@ -621,6 +628,7 @@
         "b51f59ce-d11a-4c31-add4-abc25a5fd363"
       ],
       "settings": {
+        "assign_id": "",
         "title": "Section Customize",
         "off_mobile": false,
         "off_desktop": false,
@@ -644,7 +652,6 @@
     },
     "016a8bae-ad1e-4ca0-be49-c27dd4330c74": {
       "type": "rd_call_to_action",
-      "disabled": true,
       "blocks": {
         "6b85a431-ce07-432d-8505-714b4c0c277a": {
           "type": "item_title",
@@ -688,6 +695,7 @@
         "6b85a431-ce07-432d-8505-714b4c0c277a",
         "33cd706c-9ff8-4341-82b7-2e92d72a0b91"
       ],
+      "disabled": true,
       "settings": {
         "title": "Call to Action",
         "off_mobile": false,
