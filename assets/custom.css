@@ -2050,6 +2050,11 @@ nav.side-nav.nav-box li {
 
 .banner-small-boxws .item-banner:first-child a {
     box-shadow: inset 0 0 0 2000px #00000045;
+    transition: .5s ease-in-out
+}
+
+.banner.position-relative.item_3.banner-effect6 a{
+    transition: .5s ease-in-out
 }
 
 .banner-small-boxws .item-banner:first-child .text-content{
