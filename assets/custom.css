@@ -1286,6 +1286,7 @@ top: 90px !important;
 .store-locater .fw-bold.addres {
     display: flex;
     align-items: center;
+    margin-bottom: 6px;
 }
 
 .contact-section .overlay-visible span{
