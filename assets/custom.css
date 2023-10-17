@@ -1289,6 +1289,12 @@ top: 90px !important;
     margin-bottom: 6px;
 }
 
+.store-locater .fw-bold.addres img {
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+}
+
 .contact-section .overlay-visible span{
   font-weight: 500!important;
 } 
