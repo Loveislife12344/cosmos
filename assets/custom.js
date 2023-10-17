@@ -187,9 +187,6 @@ document.addEventListener("scroll", (event) => {
 // Find the element by ID
 const targetElement = document.getElementById('shopify-section-template--19012730519855__f91f84c4-218a-40ac-82bd-5862f88f8d0f');
 
-// Find the element by ID
-const targetElement = document.getElementById('shopify-section-template--19012730519855__f91f84c4-218a-40ac-82bd-5862f88f8d0f');
-
 // Add a click event listener to the element
 targetElement.addEventListener('click', function (event) {
     const locationClicked = event.target.closest('.location');
