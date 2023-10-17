@@ -1282,6 +1282,11 @@ top: 90px !important;
 .rd_our_store_1 .card .img__banner,.rd_our_store_1 .card:hover .overlay-visible{
   background-color: #FBF5FA !important;
 }
+
+.contact-section .overlay-visible span{
+  font-weight: 500!important;
+} 
+
 @media (min-width:768px) {
   .contact-section .overlay-visible span{
     font-size: 16px !important;
