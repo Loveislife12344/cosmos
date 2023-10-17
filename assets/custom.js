@@ -184,16 +184,16 @@ document.addEventListener("scroll", (event) => {
 // menu background fixed
 
 
-document.querySelector('.location').addEventListener('click', function (event) {
-      const currentID = event.target.getAttribute('data-id');
-      const mapLocations = document.querySelectorAll('.map-location');
+// document.querySelector('.location').addEventListener('click', function (event) {
+//       const currentID = event.target.getAttribute('data-id');
+//       const mapLocations = document.querySelectorAll('.map-location');
       
-      mapLocations.forEach(function (mapLocation) {
-          mapLocation.style.display = 'none';
-      });
+//       mapLocations.forEach(function (mapLocation) {
+//           mapLocation.style.display = 'none';
+//       });
       
-      const mapLocationToShow = document.querySelector(`.map-location.map-${currentID}`);
-      if (mapLocationToShow) {
-          mapLocationToShow.style.display = 'block';
-      }
-});
+//       const mapLocationToShow = document.querySelector(`.map-location.map-${currentID}`);
+//       if (mapLocationToShow) {
+//           mapLocationToShow.style.display = 'block';
+//       }
+// });
