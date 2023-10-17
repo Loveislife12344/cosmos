@@ -182,3 +182,20 @@ document.addEventListener("scroll", (event) => {
     hoveredAgain = false
 });
 // menu background fixed
+
+
+document.querySelector('body').addEventListener('click', function (event) {
+    if (event.target.classList.contains('location')) {
+        const currentID = event.target.getAttribute('data-id');
+        const mapLocations = document.querySelectorAll('.map-location');
+        
+        mapLocations.forEach(function (mapLocation) {
+            mapLocation.style.display = 'none';
+        });
+        
+        const mapLocationToShow = document.querySelector(`.map-location.map-${currentID}`);
+        if (mapLocationToShow) {
+            mapLocationToShow.style.display = 'block';
+        }
+    }
+});
