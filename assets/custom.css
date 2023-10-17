@@ -1287,6 +1287,7 @@ top: 90px !important;
     display: flex;
     align-items: center;
     margin-bottom: 6px;
+    cursor: pointer;
 }
 
 .store-locater .fw-bold.addres img {
