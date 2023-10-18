@@ -228,6 +228,14 @@ targetElement2.addEventListener('click', function (event) {
             mapLocation.style.display = 'none';
         });
 
+        const tabLocations = document.querySelectorAll('.location');
+        tabLocations.forEach(function (tabLocation) {
+            tabLocation.classList.remove("active");
+        });
+
+
+        locationClicked.classList.add("active");
+
         // Show the element with the specific class based on 'data-id' value
         const mapLocationToShow = document.querySelector(`.map-location.map-${currentID}`);
         if (mapLocationToShow) {
