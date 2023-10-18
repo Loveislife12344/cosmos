@@ -147,28 +147,28 @@
         "7829e242-a37e-4b39-bff6-065f8ec4bd5c": {
           "type": "child",
           "settings": {
-            "content": "<div class=\"location active\" data-id=\"1\">\n    <a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY\n        - NORTH<\/a>\n    <span>\n        HEAD OFFICE &amp; FITTING CENTRE\n    <\/span>\n    <br>\n    <span>\n        <b style=\"font-size:16px;\">COSMAC HEALTHCARE HEAD OFFICE (ARTARMON)<\/b>\n    <\/span>\n    <br>\n    <span>9 \/ 87 Reserve Rd (via Taylor Lane), Artarmon\n        NSW 2064<\/span>\n    <br>\n    <span>Tel : <b><a href=\"tel:0290337400\">(02) 9033 7400<\/a><\/b><\/span>\n    <br>\n    <span>Fax : <b>Mon-Fri 8.30am-4.30pm<\/b><\/span>\n    <br>\n    <b><a href=\"mailto:info@cosmac.com.au\">info@cosmac.com.au<\/a><b><\/b><\/b>\n<\/div>",
+            "content": "<div class=\"location active\" data-id=\"1\">\n    <a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY\n        - NORTH<\/a>\n    <span>\n        HEAD OFFICE &amp; FITTING CENTRE\n    <\/span>\n    <br>\n    <span>\n        <b style=\"font-size:16px;\">COSMAC HEALTHCARE HEAD OFFICE (ARTARMON)<\/b>\n    <\/span>\n    <br>\n    <span>9 \/ 87 Reserve Rd (via Taylor Lane), Artarmon\n        NSW 2064<\/span>\n    <br>\n    <span>Tel : <b><a href=\"tel:0290337400\">(02) 9033 7400<\/a><\/b><\/span>\n    <br>\n    <span><b>Mon-Fri 8.30am-4.30pm<\/b><\/span>\n    <br>\n    <b><a href=\"mailto:info@cosmac.com.au\">info@cosmac.com.au<\/a><b><\/b><\/b>\n<\/div>",
             "parent_id": 1
           }
         },
         "953059ef-c32d-464d-8323-63a50455cb85": {
           "type": "child",
           "settings": {
-            "content": "<div class=\"location\" data-id=\"2\">\n    <a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY\n        - EAST<\/a>\n    <span>\n        FITTING CENTRE\n    <\/span>\n    <br>\n    <span>\n        <b style=\"font-size:16px;\">ST. VINCENTS PRIVATE HOSPITAL PHARMACY<\/b>\n    <\/span>\n    <br>\n    <span>406 Victoria St, Darlinghurst\n        NSW 2010<\/span>\n    <br>\n    <span>Tel : <b><a href=\"tel:0279035722\">(02) 7903 5722<\/a><\/b><\/span>\n    <br>\n    <span>Fax : <b>Mon-Wed 9am-5pm<\/b><\/span>\n    <br>\n    <b><a href=\"mailto:darlinghurst.cosmac@hpspharmacies.com.au\">darlinghurst.cosmac@hpspharmacies.com.au<\/a><b><\/b><\/b>\n<\/div>",
+            "content": "<div class=\"location\" data-id=\"2\">\n    <a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY\n        - EAST<\/a>\n    <span>\n        FITTING CENTRE\n    <\/span>\n    <br>\n    <span>\n        <b style=\"font-size:16px;\">ST. VINCENTS PRIVATE HOSPITAL PHARMACY<\/b>\n    <\/span>\n    <br>\n    <span>406 Victoria St, Darlinghurst\n        NSW 2010<\/span>\n    <br>\n    <span>Tel : <b><a href=\"tel:0279035722\">(02) 7903 5722<\/a><\/b><\/span>\n    <br>\n    <span><b>Mon-Wed 9am-5pm<\/b><\/span>\n    <br>\n    <b><a href=\"mailto:darlinghurst.cosmac@hpspharmacies.com.au\">darlinghurst.cosmac@hpspharmacies.com.au<\/a><b><\/b><\/b>\n<\/div>",
             "parent_id": 1
           }
         },
         "ee38d078-7c5c-486e-a588-15bf628e11a4": {
           "type": "child",
           "settings": {
-            "content": "<div class=\"location\" data-id=\"3\">\n    <a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY\n        - WEST<\/a>\n    <span>\n        FITTING CENTRE\n    <\/span>\n    <br>\n    <span>\n        <b style=\"font-size:16px;\">PRICELINE PHARMACY NORTH PARRAMATTA<\/b>\n    <\/span>\n    <br>\n    <span>460 Church St, Parramatta\n        NSW 2150<\/span>\n    <br>\n    <span>Tel : <b><a href=\"tel:0296302966\">(02) 9630 2966<\/a><\/b><\/span>\n    <br>\n    <span>Fax : <b>Tuesday &amp; Thursday 9am-5pm<\/b><\/span>\n    <br>\n    <b><a href=\"mailto:parramatta@cosmac.com.au\">parramatta@cosmac.com.au<\/a><b><\/b><\/b>\n<\/div>",
+            "content": "<div class=\"location\" data-id=\"3\">\n    <a class=\"fw-bold addres\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/Icon_material-location-on.png?v=1683267949\"> SYDNEY\n        - WEST<\/a>\n    <span>\n        FITTING CENTRE\n    <\/span>\n    <br>\n    <span>\n        <b style=\"font-size:16px;\">PRICELINE PHARMACY NORTH PARRAMATTA<\/b>\n    <\/span>\n    <br>\n    <span>460 Church St, Parramatta\n        NSW 2150<\/span>\n    <br>\n    <span>Tel : <b><a href=\"tel:0296302966\">(02) 9630 2966<\/a><\/b><\/span>\n    <br>\n    <span><b>Tuesday &amp; Thursday 9am-5pm<\/b><\/span>\n    <br>\n    <b><a href=\"mailto:parramatta@cosmac.com.au\">parramatta@cosmac.com.au<\/a><b><\/b><\/b>\n<\/div>",
             "parent_id": 1
           }
         },
         "83d473d7-a58e-47bd-9ac6-6d69701e66f2": {
           "type": "child",
           "settings": {
-            "content": "<div class=\"\">\n                    <a href=\"\/\" class=\"btn btn-primary btn-outline\" aria-label=\"CONTACT US\">CONTACT US<\/a>\n                  <\/div>",
+            "content": "<div class=\"\">\n                    <a href=\"https:\/\/cosmac-health.myshopify.com\/pages\/contact\" class=\"btn btn-primary btn-outline\" aria-label=\"CONTACT US\">CONTACT US<\/a>\n                  <\/div>",
             "parent_id": 1
           }
         }
