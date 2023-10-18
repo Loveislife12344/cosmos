@@ -407,6 +407,10 @@ line-height: 1;
     margin-top: 35px;
 }
 
+.store-locater b {
+    word-wrap: break-word;
+}
+
 section#shopify-section-template--18286564376879__fa7fe549-8389-4aa9-bb23-1d50ceffd364 .map-location {
     margin-top: 55px;
 }
