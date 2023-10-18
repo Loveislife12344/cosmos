@@ -1134,6 +1134,10 @@ text-align:left !important;
   fill: inherit;
 }
 
+.store-locater b a:hover {
+    border-bottom: 2px solid;
+}
+
 @media (max-width:991px) {
   .main-content{
     margin-top: 20px;
