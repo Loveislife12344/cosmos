@@ -402,6 +402,11 @@ line-height: 1;
 .store-locater .block-content .btn:hover{
   color: #fff;
 }
+
+.map-location {
+    margin-top: 55px;
+}
+
 @media (min-width:768px) {
   .store-locater h3{
     margin-bottom: 30px !important;
