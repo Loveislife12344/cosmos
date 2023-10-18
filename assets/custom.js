@@ -186,8 +186,6 @@ document.addEventListener("scroll", (event) => {
 
 // Find the element by ID
 const targetElement = document.getElementById('shopify-section-template--19012730519855__f91f84c4-218a-40ac-82bd-5862f88f8d0f');
-const targetElement2 = document.getElementById('shopify-section-template--18286564376879__fa7fe549-8389-4aa9-bb23-1d50ceffd364');
-// Add a click event listener to the element
 if(targetElement){
 targetElement.addEventListener('click', function (event) {
     const locationClicked = event.target.closest('.location');
@@ -211,6 +209,7 @@ targetElement.addEventListener('click', function (event) {
 }
 
 // Add a click event listener to the element
+const targetElement2 = document.getElementById('shopify-section-template--18286564376879__fa7fe549-8389-4aa9-bb23-1d50ceffd364');
 if(targetElement2){
 targetElement2.addEventListener('click', function (event) {
     const locationClicked = event.target.closest('.location');
