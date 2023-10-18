@@ -135,7 +135,9 @@ line-height: 22px !important;
 .location {
     padding: 20px;
 }
-.location.active {
+
+.location.active,
+.location:hover{
     background-color: #fbf5fa;
 }
 
