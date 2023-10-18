@@ -1219,6 +1219,12 @@ color: #fff !important;
 }
 
 @media (max-width:767px) {
+
+  section#shopify-section-template--18286564376879__fa7fe549-8389-4aa9-bb23-1d50ceffd364 .map-location,
+  .map-location{
+      margin-top: 0px;
+  }
+  
   .icon-box-card {
     padding: 30px;
   }
