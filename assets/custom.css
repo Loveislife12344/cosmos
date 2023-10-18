@@ -404,7 +404,7 @@ line-height: 1;
 }
 @media (min-width:768px) {
   .store-locater h3{
-    margin-bottom: 54px !important;
+    margin-bottom: 30px !important;
   }
 }
 @media screen and (max-width: 1199px) and (min-width: 992px) {
