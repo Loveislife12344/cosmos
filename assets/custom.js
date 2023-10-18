@@ -192,11 +192,16 @@ targetElement.addEventListener('click', function (event) {
     
     if (locationClicked) {
         const currentID = locationClicked.getAttribute('data-id');
-        
+        locationClicked.classList.add("active");
         // Hide all elements with the class 'map-location'
         const mapLocations = document.querySelectorAll('.map-location');
         mapLocations.forEach(function (mapLocation) {
             mapLocation.style.display = 'none';
+        });
+
+        const tabLocations = document.querySelectorAll('.location');
+        tabLocations.forEach(function (tabLocation) {
+            tabLocation.classList.remove("active");
         });
 
         // Show the element with the specific class based on 'data-id' value
