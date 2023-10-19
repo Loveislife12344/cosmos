@@ -263,7 +263,7 @@ background-color:{{section.settings.section_bg}};
                 {%-if block.settings.copyright != blank-%}
                   {{block.settings.copyright|html}}
                 {%-else-%}
-                  &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }} {{ powered_by_link }}
+                  &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}
                 {%-endif-%}
                 </p>
               </div>
