@@ -16,6 +16,11 @@ html{
     box-shadow: inset 0 0 0 2000px #66066f70!important;
 }
 
+.d-flex.flex-wrap.mn-lv2s .col-lg-6 {
+    width: 100%;
+    max-width: 100%;
+}
+
 .menu-vertical li>a span:not(.tip) {
     text-wrap: wrap!important;
 }
