@@ -75,7 +75,7 @@
                 <!-- Code Commented  -->
                 {%- if block.settings.image_mb -%}
                   {%-assign width = block.settings.image_mb.width | default: 575.00 -%}{%-assign height = block.settings.image_mb.height | default: 575.00 | plus: 0.00-%}
-                  <a dsd href="{{block.settings.image_link | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner d-md-none" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
+                  <a href="{{block.settings.image_link | default: routes.root_url}}"{%if block.settings.blank_link %} target="_blank"{%endif%} class="img__banner d-md-none" style="padding-bottom: {{height | divided_by: width | times: 100.00000000}}%;">
                     {{ block.settings.image_mb | image_url: width: block.settings.image_mb.width | image_tag: class: 'img-fit-cover', alt: block.settings.image_mb.alt, size: '100vw', widths: '375, 550, 750', loading: 'lazy' }}
                   </a>
                 {%- endif -%}
@@ -524,7 +524,7 @@
             {
               "type": "url",
               "id": "link_to",
-              "label": "Link to New 6"
+              "label": "Link to"
             },
             {
               "type": "textarea",
@@ -645,9 +645,9 @@
               "label": "Banner mobile"
             },
             {
-              "type": "collection",
+              "type": "url",
               "id": "image_link",
-              "label": "Link to NEW"
+              "label": "Link to"
             },
             {
               "type":"checkbox",
@@ -802,7 +802,7 @@
             {
               "type": "url",
               "id": "image_link_2",
-              "label": "Link to New 2"
+              "label": "Link to"
             },
             {
               "type": "select",
@@ -1123,7 +1123,7 @@
             {
               "type": "url",
               "id": "image_link",
-              "label": "Link to New 3"
+              "label": "Link to"
             },
             {
               "type":"checkbox",
@@ -1273,7 +1273,7 @@
             {
               "type": "url",
               "id": "image_link_2",
-              "label": "Link to 4"
+              "label": "Link to"
             },
             {
               "type": "select",
@@ -1592,9 +1592,9 @@
               "label": "Image banner"
             },
             {
-              "type": "collection",
+              "type": "url",
               "id": "image_link",
-              "label": "Link to 5"
+              "label": "Link to"
             },
             {
               "type":"checkbox",
