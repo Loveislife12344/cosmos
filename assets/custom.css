@@ -577,7 +577,7 @@ section#shopify-section-template--18286564376879__fa7fe549-8389-4aa9-bb23-1d50ce
 }
 }
 @media (min-width:1000px) {
-  #shopify-section-template--18286564376879__1636168033f185e383 .item_2 a::before{
+  #shopify-section-template--18286564376879__1636168033f185e383 .kt_banner_slideshow.banner-small-boxws .item-banner:first-child a::before{
     top: 70px;
     left: 20px;
   }
