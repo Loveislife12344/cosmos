@@ -18,7 +18,7 @@ html{
 
 .menu-vertical li>a span:not(.tip) {
     position: relative;
-    text-wrap: wrap;
+    text-wrap: wrap!important;
 }
 
 .imgRatio__text-wrap:before {
