@@ -49,14 +49,13 @@
           {%- if block.settings.width_xl != 0 %} d-xl-{%-if block.settings.width_xl == 13-%}none{%else%}block{%endif%} col-xl-{{block.settings.width_xl}}{% endif -%}
           {%- if block.settings.width_xxl != 0 %} d-xxl-{%-if block.settings.width_xxl == 13-%}none{%else%}block{%endif%} col-xxl-{{block.settings.width_xxl}}{% endif -%}
         {%- endcapture -%}
-        <h2>{{ block.settings.image_link | default: routes.root_url }}</h2>
         <div class="masonry-item item_{{forloop.index}} {{block.type}} col-{{block.settings.width}} {{-col_it | strip_newlines}} pb-gutter" {{ block.shopify_attributes }}>
           <div class="banner-wrap {{block.settings.banner-effect}}">
             {%- case block.type -%}
               {%- when 'it_banner' -%}
                 {%-assign width = block.settings.image.width | default: 575.00 -%}{%-assign height = block.settings.image.height | default: 575.00 | plus: 0.00-%}
                 
-                {% assign imageLink = block.settings.image_link | default: routes.root_url %}
+                {% assign imageLink = block.settings.image_link | default: '' %}
                 <a href="{% if imageLink == '' or imageLink == 'javascript:void(0);' %}javascript:void(0);{% else %}{{ imageLink }}{% endif %}"
                   {% if block.settings.blank_link %} target="_blank" {% endif %}
                   class="img__banner{% if block.settings.image_mb != blank %} d-none d-md-block{% endif %}
