@@ -4,6 +4,10 @@
   --posTop:191px;
 }
 
+.masonry-item  .stitle {
+    display: none;
+}
+
 html{
   padding-bottom:0px!important;
 }
