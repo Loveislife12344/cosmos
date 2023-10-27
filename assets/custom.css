@@ -16,6 +16,14 @@ html{
     box-shadow: inset 0 0 0 2000px #66066f70!important;
 }
 
+.imgRatio__text-wrap:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0000005c;
+}
+
 button.check-out:hover {
     color: black!important;
 }
