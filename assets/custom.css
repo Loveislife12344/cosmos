@@ -5,7 +5,7 @@
 }
 
 .masonry-item  .stitle {
-    display: none;
+    display: none!important;
 }
 
 html{
