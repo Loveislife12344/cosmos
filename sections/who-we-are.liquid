@@ -54,9 +54,9 @@
             {%- case block.type -%}
               {%- when 'it_banner' -%}
                 {%-assign width = block.settings.image.width | default: 575.00 -%}{%-assign height = block.settings.image.height | default: 575.00 | plus: 0.00-%}
-                
+            
                 {% assign imageLink = block.settings.image_link | default: '' %}
-                <a href="{% if imageLink == '' or imageLink == 'javascript:void(0);' %}javascript:void(0);{% else %}/collections/{{ imageLink }}{% endif %}"
+                <a href="{% if imageLink == '' or imageLink == 'javascript:void(0);' %}javascript:void(0);{% else %}{{ imageLink }}{% endif %}"
                   {% if block.settings.blank_link %} target="_blank" {% endif %}
                   class="img__banner{% if block.settings.image_mb != blank %} d-none d-md-block{% endif %}
                   {% if imageLink == '' or imageLink == 'javascript:void(0);' %} pointer-none {% endif %}"
