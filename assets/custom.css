@@ -2205,4 +2205,7 @@ html {
     width: 100% !important;
     max-width: 100%;
 }
+  .kt_slideshow .side-nav.has-banner{
+    height:unset
+  }
 }
