@@ -86,7 +86,7 @@
             {%-for link in linklists[menu_handle].links-%}
             {%- if link.handle == 'breakcol'-%}{%- continue -%}{%- endif -%}
             <li class="mn-i{{colitem}}{%if child_links.size > 0%} mn-has-child{%endif%} title_lv1">
-              <a href="{{ link.url }}">{%-render 'kt_menu-title', link: link -%}</a>
+              <a href="{{ link.url }}">{%-render 'kt_menu-title', link: link -%}{%if child_links.size > 0%} <i class="v-m-icon"></i>{%endif%}</a>
               <ul class="mn-lv3s list-unstyled">
                 {%-if link.links.size > 0-%}
                 {%- for sub_link in link.links -%}
