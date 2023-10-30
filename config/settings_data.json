@@ -564,6 +564,17 @@
               "button-text": "View PDF catalogue",
               "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0691\/8969\/7839\/files\/COS1010_Catalogue_2021_V1N_compressed.pdf?v=1696909849"
             }
+          },
+          "598470b2-d821-47b9-a742-d42e0555cf7f": {
+            "type": "products",
+            "settings": {
+              "show_title": true,
+              "show_shortdes": true,
+              "featured_product1": "copy-of-demo-1",
+              "featured_product2": "demo-1",
+              "featured_product3": "copy-of-copy-of-demo-2",
+              "featured_product4": "copy-of-oppo-2060-abdominal-binder"
+            }
           }
         },
         "block_order": [
@@ -584,7 +595,8 @@
           "301ea914-5651-490c-b746-ada1f7017acd",
           "2411103c-a825-4db5-9411-1923a0ab2e72",
           "fa3894eb-8522-450f-aee8-1ddb73822845",
-          "29aa19e3-a856-4400-9894-e579b82d6ce3"
+          "29aa19e3-a856-4400-9894-e579b82d6ce3",
+          "598470b2-d821-47b9-a742-d42e0555cf7f"
         ],
         "settings": {
           "title_categories": "Browse Categories",
