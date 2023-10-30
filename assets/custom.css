@@ -2193,9 +2193,6 @@ html {
   scroll-padding-top: 150px; 
 }
 @media(max-width:767px){
-  ul.menu-vertical> li> a {
-    pointer-events: none;
-}
   .menu-vertical .i-megamn.--vt .sub-mn {
     position: relative;
     left: unset !important;

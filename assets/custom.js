@@ -2,15 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var parentMenuItems = document.querySelectorAll('.mn-has-child');
 
     parentMenuItems.forEach(function(parentMenuItem) {
-        parentMenuItem.addEventListener('click', function(event) {
+        var arrowIcon = parentMenuItem.querySelector('.v-m-icon');
+        arrowIcon.addEventListener('click', function(event) {
             event.preventDefault();
-            var subMenu = this.querySelector('.sub-mn');
+            var subMenu = parentMenuItem.querySelector('.sub-mn');
             if (subMenu) {
                 subMenu.classList.toggle('open');
             }
         });
     });
 });
+
 
 window.addEventListener("DOMContentLoaded", (event) => {
     // multisteps form
