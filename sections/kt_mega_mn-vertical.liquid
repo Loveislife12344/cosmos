@@ -726,16 +726,8 @@
                   </div>
                 {%- endif -%}
               </div>
-            {%-when 'html'-%}
-              <div class="col-lg-{{block.settings.sub_width}}" data-type="{{block.type}}" {{ block.shopify_attributes }}>
-                {%- if block.settings.page_promo_html != blank and pages[block.settings.page_promo_html].title != empty-%}
-                  {{ pages[block.settings.page_promo_html].content | html }}
-                {%-else-%}
-                  {{ block.settings.textarea_promo_html | html }}
-                {%- endif-%}
-              </div>
             {%-when 'slider'-%}
-                  <h1>hello</h1>
+                <h1>hello</h1>
                 <div class="swiper-slide grid-item">
                   {% if block.settings.featured_product1 != 'blank' %}
                     {%- render "product-grid-item", product: block.settings.featured_product1, grid_layout: grid_ly, st_card: st_card -%}
@@ -750,6 +742,15 @@
                     {%- render "product-grid-item", product: block.settings.featured_product4, grid_layout: grid_ly, st_card: st_card -%}
                   {% endif %}
                 </div>
+            {%-when 'html'-%}
+              <div class="col-lg-{{block.settings.sub_width}}" data-type="{{block.type}}" {{ block.shopify_attributes }}>
+                {%- if block.settings.page_promo_html != blank and pages[block.settings.page_promo_html].title != empty-%}
+                  {{ pages[block.settings.page_promo_html].content | html }}
+                {%-else-%}
+                  {{ block.settings.textarea_promo_html | html }}
+                {%- endif-%}
+              </div>
+            
                   
           {%-endcase-%}
           {%- endfor -%}
