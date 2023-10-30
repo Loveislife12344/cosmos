@@ -244,3 +244,16 @@ targetElement2.addEventListener('click', function (event) {
     }
 });
 }
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the menu item and sub-menu elements
+    var menuItem = document.querySelector('.mn-lv1');
+    var subMenu = document.querySelector('.sub-mn');
+
+    // Add a click event listener to the menu item
+    menuItem.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default behavior (e.g., following a link)
+
+        // Toggle the visibility of the sub-menu
+        subMenu.classList.toggle('show'); // You may need to adjust the class name
+    });
+});
