@@ -252,9 +252,8 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             var subMenu = this.querySelector('.sub-mn');
             if (subMenu) {
-                subMenu.style.display = (subMenu.style.display === 'block' || subMenu.style.display === '') ? 'none' : 'block';
+                subMenu.classList.toggle('open');
             }
         });
     });
 });
-
