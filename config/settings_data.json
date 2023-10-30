@@ -349,7 +349,7 @@
           "use_cart": true,
           "sticky_main": true,
           "padding_size": 55,
-          "main_linklist": ""
+          "main_linklist": "main-menu"
         }
       },
       "newsletter-popup": {
