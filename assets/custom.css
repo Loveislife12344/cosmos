@@ -2196,4 +2196,13 @@ html {
   ul.menu-vertical> li> a {
     pointer-events: none;
 }
+  .menu-vertical .i-megamn.--vt .sub-mn {
+    position: relative;
+    left: unset !important;
+    visibility: inherit;
+    opacity: 1;
+    transform: unset;
+    width: 100% !important;
+    max-width: 100%;
+}
 }
