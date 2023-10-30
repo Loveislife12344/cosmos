@@ -2192,3 +2192,8 @@ nav.side-nav.nav-box li {
 html {
   scroll-padding-top: 150px; 
 }
+@media(max-width:767px){
+  ul.menu-vertical> li> a {
+    pointer-events: none;
+}
+}
