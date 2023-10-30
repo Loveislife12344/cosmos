@@ -132,17 +132,17 @@
       "header-mobile": {
         "type": "header-mobile",
         "blocks": {
-          "0eec61f1-4a1c-4778-8ef6-7acebe6dba98": {
+          "852bbab4-bb05-4b4a-bc5e-d1efbf897dd1": {
             "type": "item_menu",
             "settings": {
               "menu_links": "main-menu",
-              "title": "Item tab",
+              "title": "",
               "call_us_show": true,
               "email_show": true,
               "wishlist_show": true,
               "compare_show": true,
-              "account_show": true,
-              "currency_dropdown_show": true,
+              "account_show": false,
+              "currency_dropdown_show": false,
               "language_app_show": false,
               "language_app_html": "",
               "custom_show": false,
@@ -151,10 +151,10 @@
           }
         },
         "block_order": [
-          "0eec61f1-4a1c-4778-8ef6-7acebe6dba98"
+          "852bbab4-bb05-4b4a-bc5e-d1efbf897dd1"
         ],
         "settings": {
-          "use_lazy": false,
+          "use_lazy": true,
           "use_search": true
         }
       },
