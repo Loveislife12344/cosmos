@@ -86,7 +86,7 @@
             {%-for link in linklists[menu_handle].links-%}
             {%- if link.handle == 'breakcol'-%}{%- continue -%}{%- endif -%}
             <li class="mn-i{{colitem}}{%if child_links.size > 0%} mn-has-child{%endif%} title_lv1">
-              <a href="{{ link.url }}">{%-render 'kt_menu-title', link: link -%}{%if child_links.size > 0%} <i class="v-m-icon"></i>{%endif%}</a>
+              <a href="{{ link.url }}">{%-render 'kt_menu-title', link: link -%}</a>
               <ul class="mn-lv3s list-unstyled">
                 {%-if link.links.size > 0-%}
                 {%- for sub_link in link.links -%}
@@ -120,8 +120,7 @@
           {{-block.settings.title | default: linklists[menu_handle].title | default: 'menu item'-}}
           {%-if block.settings.label != "" -%}
           <span class="label-menu _{{block.settings.label | handleize}}"><span>{{block.settings.label}}</span></span> 
-          <i class="v-m-icon"></i>
-          {%endif%}
+          {%-endif-%}
         </a>
         {%-if linklists[menu_handle].links.size > 0-%}
         <div style="width:{{block.settings.menu_links_width | default: '1200px'}};" class="sub-mn mn-scroll{%if block.settings.bg_image%} lazyload lazypreload{%endif%}" {%if block.settings.bg_image%} data-bgset="{%- render 'bgset', image: block.settings.bg_image -%}" data-sizes="auto"{%endif%}>
@@ -727,22 +726,6 @@
                   </div>
                 {%- endif -%}
               </div>
-            {%-when 'slider'-%}
-                <h1>hello</h1>
-                <div class="swiper-slide grid-item">
-                  {% if block.settings.featured_product1 != 'blank' %}
-                    {%- render "product-grid-item", product: block.settings.featured_product1, grid_layout: grid_ly, st_card: st_card -%}
-                  {% endif %}
-                  {% if block.settings.featured_product2 != 'blank' %}
-                    {%- render "product-grid-item", product: block.settings.featured_product2, grid_layout: grid_ly, st_card: st_card -%}
-                  {% endif %}
-                  {% if block.settings.featured_product3 != 'blank' %}
-                    {%- render "product-grid-item", product: block.settings.featured_product3, grid_layout: grid_ly, st_card: st_card -%}
-                  {% endif %}
-                  {% if block.settings.featured_product4 != 'blank' %}
-                    {%- render "product-grid-item", product: block.settings.featured_product4, grid_layout: grid_ly, st_card: st_card -%}
-                  {% endif %}
-                </div>
             {%-when 'html'-%}
               <div class="col-lg-{{block.settings.sub_width}}" data-type="{{block.type}}" {{ block.shopify_attributes }}>
                 {%- if block.settings.page_promo_html != blank and pages[block.settings.page_promo_html].title != empty-%}
@@ -751,8 +734,7 @@
                   {{ block.settings.textarea_promo_html | html }}
                 {%- endif-%}
               </div>
-            
-                  
+
           {%-endcase-%}
           {%- endfor -%}
           <!-- sub menu item -->
@@ -1763,7 +1745,7 @@
       ]
     },
     {
-      "type": "slider",
+      "type": "item_slide",
       "name": "Product Slider",
       "settings": [
         {
