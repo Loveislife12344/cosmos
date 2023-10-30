@@ -734,7 +734,7 @@
                   {{ block.settings.textarea_promo_html | html }}
                 {%- endif-%}
               </div>
-            {%-when 'item_slide' -%}
+            {%-when 'item_slide'-%}
                 <div class="swiper-slide grid-item">
                   {% if block.settings.featured_product1 != 'blank' %}
                     {%- render "product-grid-item", product: block.settings.featured_product1, grid_layout: grid_ly, st_card: st_card -%}
