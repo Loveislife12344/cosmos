@@ -734,6 +734,22 @@
                   {{ block.settings.textarea_promo_html | html }}
                 {%- endif-%}
               </div>
+            {%-when 'item_slide' -%}
+                <div class="swiper-slide grid-item">
+                  {% if block.settings.featured_product1 != 'blank' %}
+                    {%- render "product-grid-item", product: block.settings.featured_product1, grid_layout: grid_ly, st_card: st_card -%}
+                  {% endif %}
+                  {% if block.settings.featured_product2 != 'blank' %}
+                    {%- render "product-grid-item", product: block.settings.featured_product2, grid_layout: grid_ly, st_card: st_card -%}
+                  {% endif %}
+                  {% if block.settings.featured_product3 != 'blank' %}
+                    {%- render "product-grid-item", product: block.settings.featured_product3, grid_layout: grid_ly, st_card: st_card -%}
+                  {% endif %}
+                  {% if block.settings.featured_product4 != 'blank' %}
+                    {%- render "product-grid-item", product: block.settings.featured_product4, grid_layout: grid_ly, st_card: st_card -%}
+                  {% endif %}
+                </div>
+                  
           {%-endcase-%}
           {%- endfor -%}
           <!-- sub menu item -->
@@ -1744,7 +1760,7 @@
       ]
     },
     {
-      "type": "item",
+      "type": "item_slide",
       "name": "Product Slider",
       "settings": [
         {
