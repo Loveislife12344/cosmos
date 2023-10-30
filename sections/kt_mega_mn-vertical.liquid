@@ -120,7 +120,8 @@
           {{-block.settings.title | default: linklists[menu_handle].title | default: 'menu item'-}}
           {%-if block.settings.label != "" -%}
           <span class="label-menu _{{block.settings.label | handleize}}"><span>{{block.settings.label}}</span></span> 
-          {%-endif-%}
+          <i class="v-m-icon"></i>
+          {%endif%}
         </a>
         {%-if linklists[menu_handle].links.size > 0-%}
         <div style="width:{{block.settings.menu_links_width | default: '1200px'}};" class="sub-mn mn-scroll{%if block.settings.bg_image%} lazyload lazypreload{%endif%}" {%if block.settings.bg_image%} data-bgset="{%- render 'bgset', image: block.settings.bg_image -%}" data-sizes="auto"{%endif%}>
