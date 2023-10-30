@@ -245,15 +245,15 @@ targetElement2.addEventListener('click', function (event) {
 });
 }
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the menu item and sub-menu elements
-    var menuItem = document.querySelector('.mn-lv1');
-    var subMenu = document.querySelector('.sub-mn');
+    var parentMenuItems = document.querySelectorAll('.mn-has-child');
 
-    // Add a click event listener to the menu item
-    menuItem.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default behavior (e.g., following a link)
-
-        // Toggle the visibility of the sub-menu
-        subMenu.classList.toggle('show'); // You may need to adjust the class name
+    parentMenuItems.forEach(function(parentMenuItem) {
+        parentMenuItem.addEventListener('click', function(event) {
+            event.preventDefault();
+            var subMenu = this.querySelector('.sub-mn');
+            if (subMenu) {
+                subMenu.style.display = (subMenu.style.display === 'block' || subMenu.style.display === '') ? 'none' : 'block';
+            }
+        });
     });
 });
