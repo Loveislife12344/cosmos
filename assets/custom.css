@@ -2206,6 +2206,9 @@ html {
     max-width: 100%;
 }
   .kt_slideshow .side-nav.has-banner{
-    height:unset
+    overflow-y:scroll;
   }
+  .menu-vertical .i-megamn.--vt {
+    display: block !important;
+}
 }
