@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     parentMenuItems.forEach(function(parentMenuItem) {
         var arrowIcon = parentMenuItem.querySelector('.v-m-icon');
         arrowIcon.addEventListener('click', function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent the default link behavior
             var subMenu = parentMenuItem.querySelector('.sub-mn');
             if (subMenu) {
                 subMenu.classList.toggle('open');
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
