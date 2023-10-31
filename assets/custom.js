@@ -1,19 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var parentMenuItems = document.querySelectorAll('.mn-has-child');
-
-    parentMenuItems.forEach(function(parentMenuItem) {
-        var arrowIcon = parentMenuItem.querySelector('.v-m-icon');
-        arrowIcon.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default link behavior
-            var subMenu = parentMenuItem.querySelector('.sub-mn');
-            if (subMenu) {
-                subMenu.classList.toggle('open');
-            }
-        });
-    });
-});
-
-
 
 window.addEventListener("DOMContentLoaded", (event) => {
     // multisteps form
