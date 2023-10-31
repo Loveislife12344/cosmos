@@ -734,7 +734,6 @@
                   {{ block.settings.textarea_promo_html | html }}
                 {%- endif-%}
               </div>
-
           {%-endcase-%}
           {%- endfor -%}
           <!-- sub menu item -->
@@ -1741,6 +1740,48 @@
           "label": "Name",
           "default": "HTML (child)",
           "info": "Wrong: Don't change"
+        }
+      ]
+    },
+    {
+      "type": "collection",
+      "name": "Product Slider",
+      "settings": [
+        {
+        "type": "header",
+        "content": "Content"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_shortdes",
+          "label": "Show short description.",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_title",
+          "label": "Show Title",
+          "default": true
+        },
+        {
+            "type": "product",
+            "id": "featured_product1",
+            "label": "Featured product 1"
+        },
+        {
+            "type": "product",
+            "id": "featured_product2",
+            "label": "Featured product 2"
+        },
+        {
+            "type": "product",
+            "id": "featured_product3",
+            "label": "Featured product 3"
+        },
+        {
+            "type": "product",
+            "id": "featured_product4",
+            "label": "Featured product 4"
         }
       ]
     }
